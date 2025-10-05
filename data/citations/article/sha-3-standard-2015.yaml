@@ -1,0 +1,14 @@
+id: sha-3-standard-2015
+type: article
+apa7:
+    authors: []
+    year: 2015
+    title: 'SHA-3 standard :'
+    publisher: National Institute of Standards and Technology (U.S.)
+    doi: 10.6028/nist.fips.202
+    url: https://doi.org/10.6028/nist.fips.202
+    accessed: "2025-10-05"
+annotation:
+    summary: 'Bibliographic record for SHA-3 standard : via DOI metadata.'
+    keywords:
+        - article
