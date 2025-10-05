@@ -1,0 +1,11 @@
+id: nvlpubs-nist-gov
+type: website
+apa7:
+    authors: []
+    title: nvlpubs.nist.gov
+    url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-107r1.pdf
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for nvlpubs.nist.gov (manually constructed).
+    keywords:
+        - website
