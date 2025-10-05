@@ -1,0 +1,19 @@
+id: rfc1321
+type: rfc
+apa7:
+    authors:
+        - family: Rivest
+          given: R. L.
+    year: 1992
+    date: "1992-04-01"
+    title: The MD5 Message-Digest Algorithm
+    container_title: RFC 1321
+    publisher: RFC Editor
+    doi: 10.17487/RFC1321
+    url: https://www.rfc-editor.org/info/rfc1321
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for The MD5 Message-Digest Algorithm (RFC 1321).
+    keywords:
+        - rfc
+        - ietf
