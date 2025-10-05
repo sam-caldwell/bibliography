@@ -3,13 +3,13 @@ package main
 import (
     "context"
     "fmt"
+    "net/url"
     "os"
     "strings"
     "time"
 
 	"github.com/spf13/cobra"
 
-	"bibliography/src/internal/ai"
     "bibliography/src/internal/gitutil"
     "bibliography/src/internal/doi"
     "bibliography/src/internal/openlibrary"
@@ -19,29 +19,26 @@ import (
 
 // indirections for testability
 var (
-	newGenerator  = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	commitAndPush = gitutil.CommitAndPush
+    commitAndPush = gitutil.CommitAndPush
 )
 
 func newLookupCmd() *cobra.Command {
-	var model string
-	cmd := &cobra.Command{
-		Use:   "lookup",
-		Short: "Create annotated citations via OpenAI",
-	}
-	cmd.PersistentFlags().StringVar(&model, "model", getEnv("BIBLIOGRAPHY_MODEL", "gpt-4.1-mini"), "OpenAI model")
+    cmd := &cobra.Command{
+        Use:   "lookup",
+        Short: "Create annotated citations via OpenLibrary/DOI (no OpenAI)",
+    }
 
-	// lookup site <url>
-	var siteKeywords string
-	site := &cobra.Command{
-		Use:   "site <url>",
-		Short: "Lookup a website by URL",
-		Args:  cobra.ExactArgs(1),
-		RunE: func(cmd *cobra.Command, args []string) error {
-			url := args[0]
-			return doLookupWithKeywords(cmd.Context(), model, "website", map[string]string{"url": url}, parseKeywordsCSV(siteKeywords))
-		},
-	}
+    // lookup site <url>
+    var siteKeywords string
+    site := &cobra.Command{
+        Use:   "site <url>",
+        Short: "Lookup a website by URL",
+        Args:  cobra.ExactArgs(1),
+        RunE: func(cmd *cobra.Command, args []string) error {
+            url := args[0]
+            return doLookupWithKeywords(cmd.Context(), "website", map[string]string{"url": url}, parseKeywordsCSV(siteKeywords))
+        },
+    }
 	site.Flags().StringVar(&siteKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// lookup book [--name ...] [--author ...] [--isbn ...]
@@ -80,9 +77,9 @@ func newLookupCmd() *cobra.Command {
 				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
 				return nil
 			}
-			return doLookupWithKeywords(cmd.Context(), model, "book", hints, parseKeywordsCSV(bookKeywords))
-		},
-	}
+            return doLookupWithKeywords(cmd.Context(), "book", hints, parseKeywordsCSV(bookKeywords))
+        },
+    }
 	book.Flags().StringVar(&bookName, "name", "", "Book title")
 	book.Flags().StringVar(&bookAuthor, "author", "", "Author (Family, Given)")
 	book.Flags().StringVar(&bookISBN, "isbn", "", "ISBN")
@@ -99,9 +96,9 @@ func newLookupCmd() *cobra.Command {
 			if movieDate != "" {
 				hints["date"] = movieDate
 			}
-			return doLookupWithKeywords(cmd.Context(), model, "movie", hints, parseKeywordsCSV(movieKeywords))
-		},
-	}
+            return doLookupWithKeywords(cmd.Context(), "movie", hints, parseKeywordsCSV(movieKeywords))
+        },
+    }
 	movie.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
 	movie.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
@@ -125,24 +122,21 @@ func newLookupCmd() *cobra.Command {
                 fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
                 return nil
             }
-            if artDOI != "" {
-                hints["doi"] = artDOI
-            }
             if artTitle != "" {
                 hints["title"] = artTitle
             }
             if artAuthor != "" {
-				hints["author"] = artAuthor
-			}
-			if artJournal != "" {
-				hints["journal"] = artJournal
-			}
-			if artDate != "" {
-				hints["date"] = artDate
-			}
-			return doLookupWithKeywords(cmd.Context(), model, "article", hints, parseKeywordsCSV(artKeywords))
-		},
-	}
+                hints["author"] = artAuthor
+            }
+            if artJournal != "" {
+                hints["journal"] = artJournal
+            }
+            if artDate != "" {
+                hints["date"] = artDate
+            }
+            return doLookupWithKeywords(cmd.Context(), "article", hints, parseKeywordsCSV(artKeywords))
+        },
+    }
 	article.Flags().StringVar(&artDOI, "doi", "", "DOI of the article")
 	article.Flags().StringVar(&artTitle, "title", "", "Article title")
 	article.Flags().StringVar(&artAuthor, "author", "", "Author (Family, Given)")
@@ -154,8 +148,8 @@ func newLookupCmd() *cobra.Command {
 	return cmd
 }
 
-func doLookup(ctx context.Context, model string, typ string, hints map[string]string) error {
-	return doLookupWithKeywords(ctx, model, typ, hints, nil)
+func doLookup(ctx context.Context, typ string, hints map[string]string) error {
+    return doLookupWithKeywords(ctx, typ, hints, nil)
 }
 
 func parseKeywordsCSV(s string) []string {
@@ -176,51 +170,48 @@ func parseKeywordsCSV(s string) []string {
 	return out
 }
 
-func doLookupWithKeywords(ctx context.Context, model string, typ string, hints map[string]string, extraKeywords []string) error {
-	// Require API key
-	if os.Getenv("OPENAI_API_KEY") == "" {
-		return fmt.Errorf("OPENAI_API_KEY not set; please export it to use lookup")
-	}
-	gen, err := newGenerator(model)
-	if err != nil {
-		return err
-	}
-	e, _, err := gen.GenerateYAML(ctx, typ, hints)
-	if err != nil {
-		return err
-	}
-	// Ensure ID set if missing
-	if strings.TrimSpace(e.ID) == "" {
-		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
-	}
-	// If DOI was provided, prefer doi.org URL when model omitted URL
-	if doi := hints["doi"]; doi != "" {
-		if e.APA7.URL == "" {
-			e.APA7.URL = "https://doi.org/" + strings.TrimSpace(doi)
-		}
-	}
-	// If URL present and accessed missing, set accessed=today
-	if e.APA7.URL != "" && e.APA7.Accessed == "" {
-		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
-	}
-	// If user provided keywords flag, set/override keywords
-	if len(extraKeywords) > 0 {
-		e.Annotation.Keywords = extraKeywords
-	}
-	// Fallback: ensure at least one keyword to pass validation
-	if len(e.Annotation.Keywords) == 0 {
-		e.Annotation.Keywords = []string{typ}
-	}
-	path, err := store.WriteEntry(e)
-	if err != nil {
-		return err
-	}
-	if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-		return err
-	}
-	// The command context is not passed in here; printing is for CLI feedback only.
-	fmt.Fprintf(os.Stdout, "wrote %s\n", path)
-	return nil
+func doLookupWithKeywords(ctx context.Context, typ string, hints map[string]string, extraKeywords []string) error {
+    var e schema.Entry
+    e.Type = typ
+    title := strings.TrimSpace(hints["title"])
+    switch typ {
+    case "website":
+        if title == "" {
+            if u := strings.TrimSpace(hints["url"]); u != "" {
+                if pu, err := url.Parse(u); err == nil && pu.Host != "" { title = pu.Host } else { title = u }
+            }
+        }
+    default:
+        if title == "" { return fmt.Errorf("title is required for %s lookups without external metadata", typ) }
+    }
+    e.APA7.Title = title
+    if v := strings.TrimSpace(hints["journal"]); v != "" { e.APA7.Journal = v; e.APA7.ContainerTitle = v }
+    if v := strings.TrimSpace(hints["date"]); v != "" {
+        e.APA7.Date = v
+        if len(v) >= 4 { var y int; _, _ = fmt.Sscanf(v[:4], "%d", &y); if y >= 1000 { e.APA7.Year = &y } }
+    }
+    if v := strings.TrimSpace(hints["url"]); v != "" { e.APA7.URL = v }
+    if v := strings.TrimSpace(hints["author"]); v != "" { fam, giv := parseAuthor(v); if fam != "" { e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv}) } }
+    if v := strings.TrimSpace(hints["isbn"]); v != "" { e.APA7.ISBN = v }
+    if v := strings.TrimSpace(hints["doi"]); v != "" { e.APA7.DOI = v; if e.APA7.URL == "" { e.APA7.URL = "https://doi.org/" + v } }
+    if e.APA7.URL != "" { e.APA7.Accessed = time.Now().UTC().Format("2006-01-02") }
+    e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+    if len(extraKeywords) > 0 { e.Annotation.Keywords = extraKeywords }
+    if len(e.Annotation.Keywords) == 0 { e.Annotation.Keywords = []string{typ} }
+    if e.APA7.Title != "" {
+        if e.APA7.Journal != "" { e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s in %s (manually constructed).", e.APA7.Title, e.APA7.Journal) } else { e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (manually constructed).", e.APA7.Title) }
+    }
+    if err := e.Validate(); err != nil { return err }
+    path, err := store.WriteEntry(e)
+    if err != nil {
+        return err
+    }
+    if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+        return err
+    }
+    // The command context is not passed in here; printing is for CLI feedback only.
+    fmt.Fprintf(os.Stdout, "wrote %s\n", path)
+    return nil
 }
 
 func getEnv(key, def string) string {
@@ -228,4 +219,10 @@ func getEnv(key, def string) string {
 		return v
 	}
 	return def
+}
+func parseAuthor(s string) (family, given string) {
+    s = strings.TrimSpace(s)
+    if s == "" { return "", "" }
+    if i := strings.Index(s, ","); i >= 0 { family = strings.TrimSpace(s[:i]); given = strings.TrimSpace(s[i+1:]); return family, given }
+    return s, ""
 }

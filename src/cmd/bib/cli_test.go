@@ -13,7 +13,6 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"bibliography/src/internal/ai"
 	"bibliography/src/internal/doi"
 	"bibliography/src/internal/openlibrary"
 	"bibliography/src/internal/schema"
@@ -90,42 +89,30 @@ func TestIndexAndSearch(t *testing.T) {
 	}
 }
 
-func TestLookupWithFakeAI(t *testing.T) {
+func TestLookupSite_Basic(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-	// Fake AI
-	e := schema.Entry{ID: "example-2025", Type: "website", APA7: schema.APA7{Title: "Example", URL: "https://example.com", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"golang"}}}
-	fake := &ai.FakeGenerator{Entry: e, Raw: "raw"}
-	newGenerator = func(model string) (ai.Generator, error) { return fake, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
-
-	// Fake git commit/push (do nothing)
-	called := false
-	commitAndPush = func(paths []string, msg string) error { called = true; return nil }
-	t.Cleanup(func() { commitAndPush = nil })
+    // Fake git commit/push (do nothing)
+    called := false
+    commitAndPush = func(paths []string, msg string) error { called = true; return nil }
+    t.Cleanup(func() { commitAndPush = nil })
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
 
-	// Set dummy key to pass check
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	// Run lookup site
-	if _, err := execCmd(rootCmd, "lookup", "site", "https://example.com"); err != nil {
-		t.Fatalf("lookup: %v", err)
-	}
-	if _, err := os.Stat(filepath.Join("data/citations", e.ID+".yaml")); err != nil {
-		t.Fatalf("expected citation yaml written: %v", err)
-	}
-	if !called {
-		t.Fatalf("expected commitAndPush to be called")
-	}
+    // Run lookup site
+    if _, err := execCmd(rootCmd, "lookup", "site", "https://example.com"); err != nil {
+        t.Fatalf("lookup: %v", err)
+    }
+    if _, err := os.Stat(filepath.Join("data/citations", "example-com.yaml")); err != nil {
+        t.Fatalf("expected citation yaml written: %v", err)
+    }
+    if !called {
+        t.Fatalf("expected commitAndPush to be called")
+    }
 }
 
 func TestSearchFlagValidation(t *testing.T) {
@@ -136,22 +123,13 @@ func TestSearchFlagValidation(t *testing.T) {
 	}
 }
 
-func TestLookupBookAndMovie_FakeAI(t *testing.T) {
+func TestLookupBookAndMovie_Minimal(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	// Fake AI returns book/movie with missing accessed when no URL
-	fake := &ai.FakeGenerator{Entry: schema.Entry{ID: "the-book", Type: "book", APA7: schema.APA7{Title: "The Book"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}}
-	newGenerator = func(model string) (ai.Generator, error) { return fake, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
-	commitAndPush = func(paths []string, msg string) error { return nil }
+    commitAndPush = func(paths []string, msg string) error { return nil }
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
@@ -163,11 +141,9 @@ func TestLookupBookAndMovie_FakeAI(t *testing.T) {
 		t.Fatalf("book yaml missing: %v", err)
 	}
 
-	// Movie
-	fake.Entry = schema.Entry{ID: "best-movie-2024", Type: "movie", APA7: schema.APA7{Title: "Best Movie", Year: intPtr(2024)}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
-	if _, err := execCmd(rootCmd, "lookup", "movie", "Best", "Movie", "--date", "2024-01-01"); err != nil {
-		t.Fatalf("lookup movie: %v", err)
-	}
+    if _, err := execCmd(rootCmd, "lookup", "movie", "Best", "Movie", "--date", "2024-01-01"); err != nil {
+        t.Fatalf("lookup movie: %v", err)
+    }
 	if _, err := os.Stat(filepath.Join("data/citations", "best-movie-2024.yaml")); err != nil {
 		t.Fatalf("movie yaml missing: %v", err)
 	}
@@ -175,21 +151,7 @@ func TestLookupBookAndMovie_FakeAI(t *testing.T) {
 
 func intPtr(v int) *int { return &v }
 
-func TestLookupRequiresAPIKey(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-
-	t.Setenv("OPENAI_API_KEY", "")
-	// Provide newGenerator anyway but it shouldn't be used due to missing key
-	newGenerator = func(model string) (ai.Generator, error) { return &ai.FakeGenerator{}, nil }
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "site", "https://example.com"); err == nil {
-		t.Fatalf("expected error when OPENAI_API_KEY missing")
-	}
-}
+// Removed: requirement for OPENAI_API_KEY
 
 func TestIndexPrintsPath(t *testing.T) {
 	dir := t.TempDir()
@@ -214,15 +176,7 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	// Fake AI returns URL without accessed
-	e := schema.Entry{ID: "site", Type: "website", APA7: schema.APA7{Title: "T", URL: "https://t"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
-	newGenerator = func(model string) (ai.Generator, error) { return &ai.FakeGenerator{Entry: e}, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
+    // No OpenAI path; the command constructs minimal entry from URL
 
 	// First, simulate commit error
 	commitAndPush = func(paths []string, msg string) error { return fmt.Errorf("push failed") }
@@ -234,14 +188,14 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 
 	// Now simulate success
 	commitAndPush = func(paths []string, msg string) error { return nil }
-	if _, err := execCmd(rootCmd, "lookup", "site", "https://t"); err != nil {
-		t.Fatalf("lookup site: %v", err)
-	}
-	// Verify YAML written and accessed set
-	b, err := os.ReadFile(filepath.Join("data/citations", "site.yaml"))
-	if err != nil {
-		t.Fatalf("read yaml: %v", err)
-	}
+    if _, err := execCmd(rootCmd, "lookup", "site", "https://t"); err != nil {
+        t.Fatalf("lookup site: %v", err)
+    }
+    // Verify YAML written and accessed set
+    b, err := os.ReadFile(filepath.Join("data/citations", "t.yaml"))
+    if err != nil {
+        t.Fatalf("read yaml: %v", err)
+    }
 	if !bytes.Contains(b, []byte("accessed:")) {
 		t.Fatalf("expected accessed set in yaml: %s", string(b))
 	}
@@ -279,30 +233,22 @@ func TestLookupArticleByDOI_NoOpenAI(t *testing.T) {
 	}
 }
 
-func TestLookupArticleByMetadata_FakeAI(t *testing.T) {
+func TestLookupArticleByMetadata_Minimal(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	fake := &ai.FakeGenerator{Entry: schema.Entry{ID: "meta-article-2023", Type: "article", APA7: schema.APA7{Title: "X", Year: intPtr(2023), Journal: "J"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}}
-	newGenerator = func(model string) (ai.Generator, error) { return fake, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
-	commitAndPush = func(paths []string, msg string) error { return nil }
+commitAndPush = func(paths []string, msg string) error { return nil }
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
-		t.Fatalf("lookup article by metadata: %v", err)
-	}
-	if _, err := os.Stat(filepath.Join("data/citations", "meta-article-2023.yaml")); err != nil {
-		t.Fatalf("article yaml missing: %v", err)
-	}
+    if _, err := execCmd(rootCmd, "lookup", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
+        t.Fatalf("lookup article by metadata: %v", err)
+    }
+    if _, err := os.Stat(filepath.Join("data/citations", "x-2023.yaml")); err != nil {
+        t.Fatalf("article yaml missing: %v", err)
+    }
 }
 
 func TestLookupBookByISBN_OpenLibrary(t *testing.T) {
@@ -386,28 +332,20 @@ func TestLookupSite_MissingArg(t *testing.T) {
 	}
 }
 
-func TestDoLookup_ComputesSlugWhenMissingID(t *testing.T) {
+func TestLookupBook_ComputesSlug(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	// Fake AI yields missing ID
-	fake := &ai.FakeGenerator{Entry: schema.Entry{ID: "", Type: "website", APA7: schema.APA7{Title: "Hello World"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}}
-	newGenerator = func(model string) (ai.Generator, error) { return fake, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
-	commitAndPush = func(paths []string, msg string) error { return nil }
-
-	if err := doLookup(context.Background(), "gpt-4.1-mini", "website", map[string]string{}); err != nil {
-		t.Fatalf("doLookup: %v", err)
-	}
-	if _, err := os.Stat(filepath.Join("data/citations", "hello-world.yaml")); err != nil {
-		t.Fatalf("expected hello-world.yaml written: %v", err)
-	}
+commitAndPush = func(paths []string, msg string) error { return nil }
+rootCmd = &cobra.Command{Use: "bib"}
+rootCmd.AddCommand(newLookupCmd())
+if _, err := execCmd(rootCmd, "lookup", "book", "--name", "Hello World"); err != nil {
+    t.Fatalf("lookup book: %v", err)
+}
+if _, err := os.Stat(filepath.Join("data/citations", "hello-world.yaml")); err != nil {
+    t.Fatalf("expected hello-world.yaml written: %v", err)
+}
 }
 
 func TestExecuteFunction(t *testing.T) {
@@ -429,70 +367,23 @@ func TestExecuteReturnsError(t *testing.T) {
 	}
 }
 
-type genErr struct{}
-
-func (genErr) GenerateYAML(ctx context.Context, typ string, hints map[string]string) (schema.Entry, string, error) {
-	return schema.Entry{}, "", fmt.Errorf("gen error")
-}
-
-func TestDoLookup_GeneratorError(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	newGenerator = func(model string) (ai.Generator, error) { return genErr{}, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
-	if err := doLookup(context.Background(), "gpt", "website", map[string]string{"url": "https://x"}); err == nil {
-		t.Fatalf("expected error when generator fails")
-	}
-}
-
-func TestDoLookup_NewGeneratorReturnsError(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	newGenerator = func(model string) (ai.Generator, error) { return nil, fmt.Errorf("new gen err") }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
-	if err := doLookup(context.Background(), "gpt", "website", map[string]string{"url": "https://x"}); err == nil {
-		t.Fatalf("expected error when newGenerator fails")
-	}
-}
+// Removed OpenAI generator error tests
 
 func TestDoLookup_WriteEntryError(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	// Create a file at data/citations to break directory creation
-	if err := os.MkdirAll("data", 0o755); err != nil {
-		t.Fatal(err)
-	}
-	if err := os.WriteFile("data/citations", []byte("not a dir"), 0o644); err != nil {
-		t.Fatal(err)
-	}
-
-	fake := &ai.FakeGenerator{Entry: schema.Entry{ID: "x", Type: "website", APA7: schema.APA7{Title: "T", URL: "https://x", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}}
-	newGenerator = func(model string) (ai.Generator, error) { return fake, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
-	if err := doLookup(context.Background(), "gpt", "website", map[string]string{"url": "https://x"}); err == nil {
-		t.Fatalf("expected error when write entry fails")
-	}
+    // Create a file at data/citations to break directory creation
+    if err := os.MkdirAll("data", 0o755); err != nil {
+        t.Fatal(err)
+    }
+    if err := os.WriteFile("data/citations", []byte("not a dir"), 0o644); err != nil {
+        t.Fatal(err)
+    }
+    if err := doLookup(context.Background(), "website", map[string]string{"url": "https://x", "title": "T"}); err == nil {
+        t.Fatalf("expected error when write entry fails")
+    }
 }
 
 // Compile-time ensure doLookup uses context, no-op just to silence unused in coverage.
