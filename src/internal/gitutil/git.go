@@ -33,8 +33,8 @@ func CommitAndPush(paths []string, message string) error {
 	if len(paths) == 0 {
 		return nil
 	}
-	// git add
-	args := append([]string{"add"}, paths...)
+	// git add (stage additions, modifications, deletions under given paths)
+	args := append([]string{"add", "-A"}, paths...)
 	if _, stderr, err := runner.Run("git", args...); err != nil {
 		return fmt.Errorf("git add failed: %v: %s", err, stderr)
 	}

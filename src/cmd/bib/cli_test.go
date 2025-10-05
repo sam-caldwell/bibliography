@@ -84,7 +84,7 @@ func TestIndexAndSearch(t *testing.T) {
 	if err != nil {
 		t.Fatalf("search: %v", err)
 	}
-	if !bytes.Contains([]byte(out), []byte("a:")) {
+	if !bytes.Contains([]byte(out), []byte("data/citations/site/a.yaml:")) {
 		t.Fatalf("expected match a in output: %q", out)
 	}
 }
@@ -103,11 +103,11 @@ func TestLookupSite_Basic(t *testing.T) {
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
 
-	// Run lookup site
-	if _, err := execCmd(rootCmd, "lookup", "site", "https://example.com"); err != nil {
-		t.Fatalf("lookup: %v", err)
+	// Run add site
+	if _, err := execCmd(rootCmd, "add", "site", "https://example.com"); err != nil {
+		t.Fatalf("add: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "example-com.yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join("data/citations", "site", "example-com.yaml")); err != nil {
 		t.Fatalf("expected citation yaml written: %v", err)
 	}
 	if !called {
@@ -134,17 +134,17 @@ func TestLookupBookAndMovie_Minimal(t *testing.T) {
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
 
-	if _, err := execCmd(rootCmd, "lookup", "book", "--name", "The Book"); err != nil {
-		t.Fatalf("lookup book: %v", err)
+	if _, err := execCmd(rootCmd, "add", "book", "--name", "The Book"); err != nil {
+		t.Fatalf("add book: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "the-book.yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join("data/citations", "books", "the-book.yaml")); err != nil {
 		t.Fatalf("book yaml missing: %v", err)
 	}
 
-	if _, err := execCmd(rootCmd, "lookup", "movie", "Best", "Movie", "--date", "2024-01-01"); err != nil {
-		t.Fatalf("lookup movie: %v", err)
+	if _, err := execCmd(rootCmd, "add", "movie", "Best", "Movie", "--date", "2024-01-01"); err != nil {
+		t.Fatalf("add movie: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "best-movie-2024.yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join("data/citations", "movie", "best-movie-2024.yaml")); err != nil {
 		t.Fatalf("movie yaml missing: %v", err)
 	}
 }
@@ -168,6 +168,9 @@ func TestIndexPrintsPath(t *testing.T) {
 	if !bytes.Contains([]byte(out), []byte("wrote data/metadata/keywords.json")) {
 		t.Fatalf("expected output to mention keywords.json, got %q", out)
 	}
+	if !bytes.Contains([]byte(out), []byte("wrote data/metadata/doi.json")) {
+		t.Fatalf("expected output to mention doi.json, got %q", out)
+	}
 }
 
 func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
@@ -182,17 +185,17 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 	commitAndPush = func(paths []string, msg string) error { return fmt.Errorf("push failed") }
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "site", "https://t"); err == nil {
+	if _, err := execCmd(rootCmd, "add", "site", "https://t"); err == nil {
 		t.Fatalf("expected commit error to surface")
 	}
 
 	// Now simulate success
 	commitAndPush = func(paths []string, msg string) error { return nil }
-	if _, err := execCmd(rootCmd, "lookup", "site", "https://t"); err != nil {
-		t.Fatalf("lookup site: %v", err)
+	if _, err := execCmd(rootCmd, "add", "site", "https://t"); err != nil {
+		t.Fatalf("add site: %v", err)
 	}
 	// Verify YAML written and accessed set
-	b, err := os.ReadFile(filepath.Join("data/citations", "t.yaml"))
+	b, err := os.ReadFile(filepath.Join("data/citations", "site", "t.yaml"))
 	if err != nil {
 		t.Fatalf("read yaml: %v", err)
 	}
@@ -225,11 +228,99 @@ func TestLookupArticleByDOI_NoOpenAI(t *testing.T) {
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "article", "--doi", "10.1234/x"); err != nil {
-		t.Fatalf("lookup article: %v", err)
+	if _, err := execCmd(rootCmd, "add", "article", "--doi", "10.1234/x"); err != nil {
+		t.Fatalf("add article: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "my-article-2023.yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join("data/citations", "article", "my-article-2023.yaml")); err != nil {
 		t.Fatalf("article yaml missing: %v", err)
+	}
+	// verify DOI and doi.org URL recorded in YAML
+	b, err := os.ReadFile(filepath.Join("data/citations", "article", "my-article-2023.yaml"))
+	if err != nil {
+		t.Fatalf("read article yaml: %v", err)
+	}
+	if !bytes.Contains(b, []byte("10.1234/x")) {
+		t.Fatalf("expected DOI recorded in yaml, got:\n%s", string(b))
+	}
+	if !bytes.Contains(b, []byte("url: https://doi.org/10.1234/x")) {
+		t.Fatalf("expected doi.org URL recorded in yaml, got:\n%s", string(b))
+	}
+}
+
+func TestLookupArticleByDOI_RecordsProvidedDOIIfMissingFromCSL(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+
+	commitAndPush = func(paths []string, msg string) error { return nil }
+	// Stub CSL JSON WITHOUT a DOI field
+	csl := `{"title":"T","author":[{"family":"Doe"}],"container-title":"J","issued":{"date-parts":[[2022,1,1]]}}`
+	doi.SetHTTPClient(testHTTPDoer{status: 200, body: csl})
+	t.Cleanup(func() { doi.SetHTTPClient(&http.Client{}) })
+
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newLookupCmd())
+	if _, err := execCmd(rootCmd, "add", "article", "--doi", "10.5555/abc"); err != nil {
+		t.Fatalf("add article: %v", err)
+	}
+	// slug should be t-2022.yaml
+	p := filepath.Join("data/citations", "article", "t-2022.yaml")
+	if _, err := os.Stat(p); err != nil {
+		t.Fatalf("article yaml missing: %v", err)
+	}
+	by, err := os.ReadFile(p)
+	if err != nil {
+		t.Fatalf("read: %v", err)
+	}
+	if !bytes.Contains(by, []byte("10.5555/abc")) {
+		t.Fatalf("expected fallback DOI recorded, got:\n%s", string(by))
+	}
+	if !bytes.Contains(by, []byte("https://doi.org/10.5555/abc")) {
+		t.Fatalf("expected doi.org URL recorded, got:\n%s", string(by))
+	}
+}
+
+func TestRepairDOICommand_ExtractsFromPublisherURLAndNormalizesURL(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+
+	// Seed an article with a non-doi.org publisher URL containing the DOI path
+	if err := os.MkdirAll("data/citations/article", 0o755); err != nil {
+		t.Fatal(err)
+	}
+	yaml := "" +
+		"id: a1\n" +
+		"type: article\n" +
+		"apa7:\n" +
+		"  title: T\n" +
+		"  url: https://dl.acm.org/doi/10.1145/12345.67890\n" +
+		"  accessed: \"2025-01-01\"\n" +
+		"annotation:\n" +
+		"  summary: s\n" +
+		"  keywords: [k]\n"
+	if err := os.WriteFile(filepath.Join("data/citations/article", "a1.yaml"), []byte(yaml), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	// Run repair-doi
+	commitAndPush = func(paths []string, msg string) error { return nil }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newRepairDOICmd())
+	if _, err := execCmd(rootCmd, "repair-doi"); err != nil {
+		t.Fatalf("repair-doi: %v", err)
+	}
+	b, err := os.ReadFile(filepath.Join("data/citations/article", "a1.yaml"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Contains(b, []byte("doi: 10.1145/12345.67890")) {
+		t.Fatalf("expected DOI to be written, got:\n%s", string(b))
+	}
+	if !bytes.Contains(b, []byte("url: https://doi.org/10.1145/12345.67890")) {
+		t.Fatalf("expected doi.org URL, got:\n%s", string(b))
 	}
 }
 
@@ -243,10 +334,10 @@ func TestLookupArticleByMetadata_Minimal(t *testing.T) {
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
-		t.Fatalf("lookup article by metadata: %v", err)
+	if _, err := execCmd(rootCmd, "add", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
+		t.Fatalf("add article by metadata: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "x-2023.yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join("data/citations", "article", "x-2023.yaml")); err != nil {
 		t.Fatalf("article yaml missing: %v", err)
 	}
 }
@@ -267,10 +358,10 @@ func TestLookupBookByISBN_OpenLibrary(t *testing.T) {
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "book", "--name", "Name", "--author", "Smith, J.", "--isbn", "123", "--keywords", "k1,k2"); err != nil {
-		t.Fatalf("lookup book by isbn: %v", err)
+	if _, err := execCmd(rootCmd, "add", "book", "--name", "Name", "--author", "Smith, J.", "--isbn", "123", "--keywords", "k1,k2"); err != nil {
+		t.Fatalf("add book by isbn: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "name-2001.yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join("data/citations", "books", "name-2001.yaml")); err != nil {
 		t.Fatalf("book yaml missing: %v", err)
 	}
 }
@@ -327,7 +418,7 @@ func TestIndexOutputWriteError(t *testing.T) {
 func TestLookupSite_MissingArg(t *testing.T) {
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "site"); err == nil {
+	if _, err := execCmd(rootCmd, "add", "site"); err == nil {
 		t.Fatalf("expected error for missing site arg")
 	}
 }
@@ -340,10 +431,10 @@ func TestLookupBook_ComputesSlug(t *testing.T) {
 	commitAndPush = func(paths []string, msg string) error { return nil }
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "book", "--name", "Hello World"); err != nil {
-		t.Fatalf("lookup book: %v", err)
+	if _, err := execCmd(rootCmd, "add", "book", "--name", "Hello World"); err != nil {
+		t.Fatalf("add book: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "hello-world.yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join("data/citations", "books", "hello-world.yaml")); err != nil {
 		t.Fatalf("expected hello-world.yaml written: %v", err)
 	}
 }

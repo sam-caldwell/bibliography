@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"regexp"
 	"strings"
+
+	"gopkg.in/yaml.v3"
 )
 
 // Entry represents a single citation entry stored on disk as YAML.
@@ -17,22 +19,22 @@ type Entry struct {
 
 // APA7 holds bibliographic fields (subset as per spec).
 type APA7 struct {
-	Authors           []Author `yaml:"authors" json:"authors"`
-	Year              *int     `yaml:"year,omitempty" json:"year,omitempty"`
-	Date              string   `yaml:"date,omitempty" json:"date,omitempty"`
-	Title             string   `yaml:"title" json:"title"`
-	ContainerTitle    string   `yaml:"container_title,omitempty" json:"container_title,omitempty"`
-	Edition           string   `yaml:"edition,omitempty" json:"edition,omitempty"`
-	Publisher         string   `yaml:"publisher,omitempty" json:"publisher,omitempty"`
-	PublisherLocation string   `yaml:"publisher_location,omitempty" json:"publisher_location,omitempty"`
-	Journal           string   `yaml:"journal,omitempty" json:"journal,omitempty"`
-	Volume            string   `yaml:"volume,omitempty" json:"volume,omitempty"`
-	Issue             string   `yaml:"issue,omitempty" json:"issue,omitempty"`
-	Pages             string   `yaml:"pages,omitempty" json:"pages,omitempty"`
-	DOI               string   `yaml:"doi,omitempty" json:"doi,omitempty"`
-	ISBN              string   `yaml:"isbn,omitempty" json:"isbn,omitempty"`
-	URL               string   `yaml:"url,omitempty" json:"url,omitempty"`
-	Accessed          string   `yaml:"accessed,omitempty" json:"accessed,omitempty"`
+	Authors           Authors `yaml:"authors" json:"authors"`
+	Year              *int    `yaml:"year,omitempty" json:"year,omitempty"`
+	Date              string  `yaml:"date,omitempty" json:"date,omitempty"`
+	Title             string  `yaml:"title" json:"title"`
+	ContainerTitle    string  `yaml:"container_title,omitempty" json:"container_title,omitempty"`
+	Edition           string  `yaml:"edition,omitempty" json:"edition,omitempty"`
+	Publisher         string  `yaml:"publisher,omitempty" json:"publisher,omitempty"`
+	PublisherLocation string  `yaml:"publisher_location,omitempty" json:"publisher_location,omitempty"`
+	Journal           string  `yaml:"journal,omitempty" json:"journal,omitempty"`
+	Volume            string  `yaml:"volume,omitempty" json:"volume,omitempty"`
+	Issue             string  `yaml:"issue,omitempty" json:"issue,omitempty"`
+	Pages             string  `yaml:"pages,omitempty" json:"pages,omitempty"`
+	DOI               string  `yaml:"doi,omitempty" json:"doi,omitempty"`
+	ISBN              string  `yaml:"isbn,omitempty" json:"isbn,omitempty"`
+	URL               string  `yaml:"url,omitempty" json:"url,omitempty"`
+	Accessed          string  `yaml:"accessed,omitempty" json:"accessed,omitempty"`
 }
 
 type Author struct {
@@ -43,6 +45,74 @@ type Author struct {
 type Annotation struct {
 	Summary  string   `yaml:"summary" json:"summary"`
 	Keywords []string `yaml:"keywords" json:"keywords"`
+}
+
+// Authors is a slice of Author that can unmarshal from multiple YAML shapes:
+// - a single string (treated as a corporate or full-name author; stored in Family)
+// - a sequence of strings
+// - a mapping (single Author object)
+// - a sequence of Author mappings
+type Authors []Author
+
+func (a *Authors) UnmarshalYAML(value *yaml.Node) error {
+	if value == nil {
+		*a = nil
+		return nil
+	}
+	switch value.Kind {
+	case yaml.ScalarNode:
+		// Single string author (e.g., corporate author)
+		s := strings.TrimSpace(value.Value)
+		if s == "" || s == "null" {
+			*a = nil
+			return nil
+		}
+		*a = Authors{{Family: s}}
+		return nil
+	case yaml.SequenceNode:
+		// Could be sequence of strings or sequence of mappings
+		var out Authors
+		for _, n := range value.Content {
+			if n.Kind == yaml.ScalarNode {
+				s := strings.TrimSpace(n.Value)
+				if s == "" {
+					continue
+				}
+				out = append(out, Author{Family: s})
+				continue
+			}
+			if n.Kind == yaml.MappingNode {
+				var au Author
+				if err := n.Decode(&au); err != nil {
+					return err
+				}
+				// Skip empty entries
+				if strings.TrimSpace(au.Family) == "" && strings.TrimSpace(au.Given) == "" {
+					continue
+				}
+				out = append(out, au)
+				continue
+			}
+		}
+		*a = out
+		return nil
+	case yaml.MappingNode:
+		// Single author object
+		var au Author
+		if err := value.Decode(&au); err != nil {
+			return err
+		}
+		if strings.TrimSpace(au.Family) == "" && strings.TrimSpace(au.Given) == "" {
+			*a = nil
+			return nil
+		}
+		*a = Authors{au}
+		return nil
+	default:
+		// Unknown shape; leave nil rather than erroring
+		*a = nil
+		return nil
+	}
 }
 
 // Validate applies basic validation rules from specification.

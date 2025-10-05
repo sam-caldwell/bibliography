@@ -24,15 +24,15 @@ var (
 
 func newLookupCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "lookup",
-		Short: "Create annotated citations via OpenLibrary/DOI (no OpenAI)",
+		Use:   "add",
+		Short: "Add annotated citations via OpenLibrary/DOI (no OpenAI)",
 	}
 
-	// lookup site <url>
+	// add site <url>
 	var siteKeywords string
 	site := &cobra.Command{
 		Use:   "site <url>",
-		Short: "Lookup a website by URL",
+		Short: "Add a website by URL",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			url := args[0]
@@ -41,11 +41,11 @@ func newLookupCmd() *cobra.Command {
 	}
 	site.Flags().StringVar(&siteKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
-	// lookup book [--name ...] [--author ...] [--isbn ...]
+	// add book [--name ...] [--author ...] [--isbn ...]
 	var bookName, bookAuthor, bookISBN, bookKeywords string
 	book := &cobra.Command{
 		Use:   "book",
-		Short: "Lookup a book",
+		Short: "Add a book",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			hints := map[string]string{}
 			if bookName != "" {
@@ -85,11 +85,11 @@ func newLookupCmd() *cobra.Command {
 	book.Flags().StringVar(&bookISBN, "isbn", "", "ISBN")
 	book.Flags().StringVar(&bookKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
-	// lookup movie <name> [--date YYYY-MM-DD]
+	// add movie <name> [--date YYYY-MM-DD]
 	var movieDate, movieKeywords string
 	movie := &cobra.Command{
 		Use:   "movie <name>",
-		Short: "Lookup a movie",
+		Short: "Add a movie",
 		Args:  cobra.MinimumNArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			hints := map[string]string{"title": strings.Join(args, " ")}
@@ -102,11 +102,11 @@ func newLookupCmd() *cobra.Command {
 	movie.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
 	movie.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
-	// lookup article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
+	// add article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
 	var artDOI, artTitle, artAuthor, artJournal, artDate, artKeywords string
 	article := &cobra.Command{
 		Use:   "article",
-		Short: "Lookup a journal or magazine article",
+		Short: "Add a journal or magazine article",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			hints := map[string]string{}
 			if artDOI != "" {
@@ -114,6 +114,10 @@ func newLookupCmd() *cobra.Command {
 				e, err := doi.FetchArticleByDOI(cmd.Context(), artDOI)
 				if err != nil {
 					return err
+				}
+				// Ensure DOI field is recorded even if provider response omits it
+				if strings.TrimSpace(e.APA7.DOI) == "" {
+					e.APA7.DOI = strings.TrimSpace(artDOI)
 				}
 				if ks := parseKeywordsCSV(artKeywords); len(ks) > 0 {
 					e.Annotation.Keywords = ks

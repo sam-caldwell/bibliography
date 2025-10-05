@@ -25,7 +25,8 @@ func newSearchCmd() *cobra.Command {
 			}
 			matches := store.FilterByKeywordsAND(entries, ks)
 			for _, e := range matches {
-				fmt.Fprintf(cmd.OutOrStdout(), "%s: %s\n", e.ID, e.APA7.Title)
+				seg := store.SegmentForType(e.Type)
+				fmt.Fprintf(cmd.OutOrStdout(), "data/citations/%s/%s.yaml: %s\n", seg, e.ID, e.APA7.Title)
 			}
 			return nil
 		},
