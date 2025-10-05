@@ -1,0 +1,25 @@
+id: rfc5389
+type: rfc
+apa7:
+    authors:
+        - family: Matthews
+          given: P.
+        - family: Rosenberg
+          given: J.
+        - family: Wing
+          given: D.
+        - family: Mahy
+          given: R.
+    year: 2008
+    date: "2008-10-01"
+    title: Session Traversal Utilities for NAT (STUN)
+    container_title: RFC 5389
+    publisher: RFC Editor
+    doi: 10.17487/RFC5389
+    url: https://www.rfc-editor.org/info/rfc5389
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for Session Traversal Utilities for NAT (STUN) (RFC 5389).
+    keywords:
+        - rfc
+        - ietf
