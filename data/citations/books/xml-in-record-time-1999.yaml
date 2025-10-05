@@ -1,0 +1,18 @@
+id: xml-in-record-time-1999
+type: book
+apa7:
+    authors:
+        - family: Pitts-Moultis
+          given: N.
+    year: 1999
+    title: XML in record time
+    publisher: Sybex
+    isbn: "9780782123401"
+    url: https://openlibrary.org/books/OL399067M/XML_in_record_time
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for XML in record time (Sybex, 1999) from OpenLibrary.
+    keywords:
+        - xml (document markup language)
+        - xml (document markup language)
+        - xml (document markup language)
