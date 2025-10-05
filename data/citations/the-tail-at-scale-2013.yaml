@@ -1,0 +1,24 @@
+id: the-tail-at-scale-2013
+type: article
+apa7:
+    authors:
+        - family: Dean
+          given: J.
+        - family: Barroso
+          given: L. A.
+    year: 2013
+    date: "2013-02-01"
+    title: The tail at scale
+    container_title: Communications of the ACM
+    publisher: Association for Computing Machinery (ACM)
+    journal: Communications of the ACM
+    volume: "56"
+    issue: "2"
+    pages: 74-80
+    doi: 10.1145/2408776.2408794
+    url: https://doi.org/10.1145/2408776.2408794
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for The tail at scale in Communications of the ACM via DOI metadata.
+    keywords:
+        - article
