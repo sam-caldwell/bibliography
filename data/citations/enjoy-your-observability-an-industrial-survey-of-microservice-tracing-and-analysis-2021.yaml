@@ -28,6 +28,10 @@ apa7:
     url: https://doi.org/10.1007/s10664-021-10063-9
     accessed: "2025-10-05"
 annotation:
-    summary: 'Bibliographic record for Enjoy your observability: an industrial survey of microservice tracing and analysis in Empirical Software Engineering via DOI metadata.'
+    summary: 'Bibliographic record for Enjoy your observability: an industrial survey of microservice tracing and analysis in Empirical Software Engineering.'
     keywords:
-        - article
+        - observability
+        - microservice
+        - tracing
+        - software
+        - programming

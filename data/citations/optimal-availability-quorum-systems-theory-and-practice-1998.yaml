@@ -21,4 +21,7 @@ apa7:
 annotation:
     summary: 'Bibliographic record for Optimal availability quorum systems: Theory and practice in Information Processing Letters via DOI metadata.'
     keywords:
-        - article
+        - computer science
+        - programming
+        - quorum
+        - distributed systems

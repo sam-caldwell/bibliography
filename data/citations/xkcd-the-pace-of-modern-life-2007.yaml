@@ -11,9 +11,11 @@ apa7:
     url: https://xkcd.com/327/
     accessed: "2024-06-01"
 annotation:
-    summary: This xkcd webcomic titled 'The Pace of Modern Life' humorously illustrates how the speed of modern life has accelerated, using a visual metaphor of a person running faster and faster. It reflects on the perception of time and the increasing pace of daily activities.
+    summary: |
+        This xkcd webcomic titled 'The Pace of Modern Life' humorously illustrates how the speed of modern life has 
+        accelerated, using a visual metaphor of a person running faster and faster. It reflects on the perception of 
+        time and the increasing pace of daily activities.
     keywords:
-        - webcomic
         - modern life
         - time perception
         - humor
