@@ -1,4 +1,4 @@
-# Bibliography CLI (APA7 + Annotation)
+# Bibliography CLI
 
 This project is a single golang binary (`./bin/bib`) which uses git to manage bibliography resources (APAv7).
 The tool integrates with OpenAI to help lookup resources (so you don't have to do as much typing).  OpenAI integration
