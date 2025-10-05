@@ -1,0 +1,11 @@
+id: datatracker-ietf-org
+type: website
+apa7:
+    authors: []
+    title: datatracker.ietf.org
+    url: https://datatracker.ietf.org/doc/html/rfc5766
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for datatracker.ietf.org (manually constructed).
+    keywords:
+        - website
