@@ -2,14 +2,12 @@ id: desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995
 type: book
 apa7:
     authors:
-        - family: mazidi
-          given: M. A.
         - family: Mazidi
           given: M. A.
         - family: Jan
           given: K. U.
     year: 1995
-    title: Desi gn and interfacing of the IBM PC, PS, and compatible
+    title: Design and interfacing of the IBM PC, PS, and compatible
     publisher: Prentice Hall
     isbn: 978-0130985675
     url: https://openlibrary.org/books/OL1104139M/Desi_gn_and_interfacing_of_the_IBM_PC_PS_and_compatible
