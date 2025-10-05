@@ -1,0 +1,1348 @@
+{
+  "005.13/3": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "005.265": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "1961": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "1978": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "1984": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "1991": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "1995": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "1997": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "1998": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "1999": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "2003": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "2004": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "2006": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "2007": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "2009": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "2013": [
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "2015": [
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "2016": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "2020": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "2021": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "2024": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/site/gobyexample-enums.yaml",
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "2025": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "2nd": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "41": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "84": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "[manuel]": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "ach": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "achdevguide.nacha.org": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "acm": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "acm transactions on computer systems": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "addison": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "addison-wesley": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "admin.ich.org": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "ai": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "algebra": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "algebra of programs": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "algorithm design": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "algorithms": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "an": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "analysis": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "and": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "applications": [
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "applied": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "approved": [
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "arguments": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "article": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "assembly": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "association": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "association for computing machinery (acm)": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "at": [
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "availability": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "based": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "be": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "big data": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "book": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "books": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "boost": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "boost.org": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "build": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "business": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "bv": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "by": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "c": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "c (computer program language)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c (programmiersprache)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c plus plus (computer program language)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c plus plus (langage de programmation)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c# (computer program language)": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "c++": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/site/boost-json.yaml"
+  ],
+  "c++ (computer program language)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ (computer programming language)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ (język programowania)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ (langage de programmation)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ (lenguaje de programación)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ computer programming language": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c[plus plus] (computer program language)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "cambridge": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "cambridge university press": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "can": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "capacity": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "cartoons": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "chapter": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "cloudflare.com": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "co": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "code optimization": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "com": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "common": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "communications": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "communications of the acm": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "compatible": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "compiler design": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "compilers": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "computer": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "computer architecture": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "computer interfaces": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "computer programming": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "computer science": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/boost-json.yaml",
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/developer-nvidia-com.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "computer technology": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "computers": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "computers \u0026amp; the internet": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "computing": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "conference": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "cpp": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "cs": [
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "csrc": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "csrc.nist.gov": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "cuda": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "c♯": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "data structures": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "datatracker": [
+    "data/citations/site/datatracker-ietf-org-rfc5424.yaml"
+  ],
+  "datatracker.ietf.org": [
+    "data/citations/site/datatracker-ietf-org-rfc5424.yaml"
+  ],
+  "design": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "developer": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "developer.nvidia.com": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "developers": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "devices": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "distributed systems": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "docs.python.org": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "document": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "documentation": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "doi.org": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "ectd": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "ectd-3.2.2": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "edition": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "edu": [
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "electronic": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "elsevier": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "elsevier bv": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "elsevier science \u0026 technology books": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "empirical": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "empirical software engineering": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "end": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "engineering": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "enjoy": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "enum module": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "enumerations": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "enums": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "ewg": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "example": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "extendable": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "file": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "for": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/site/achdevguide-nacha-org.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "formula": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "foundations": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "from": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "functional": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "functional programming": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "functions": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "general": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "go": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "go by example": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "go programming": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "gobyexample.com": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "gov": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "gpu": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "guide": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "hall": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "harmonisation": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "hash": [
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "highly": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "hill": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "human": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "humor": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "ibm": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm compatible computers": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm compatible computers.": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm microcomputers": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm microcomputers.": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm-compatible computers": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ich": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "ietf": [
+    "data/citations/site/datatracker-ietf-org-rfc5424.yaml"
+  ],
+  "in": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "industrial": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "information": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "information processing letters": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "informatyka": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "informs": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "institute": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "institute for operations research and the management sciences (informs)": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "intel 80x86 series microprocessors": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "intel 80x86 series microprocessors.": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "interactive \u0026 multimedia": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "interfacing": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "international": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "introduction": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "iot": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "is": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "its": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "j klossner cartoons": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "java": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "jk lossner": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "jklossner.com": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "journal": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "json": [
+    "data/citations/site/boost-json.yaml",
+    "data/citations/site/www-json-org.yaml"
+  ],
+  "json.org": [
+    "data/citations/site/www-json-org.yaml"
+  ],
+  "klossner": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "langages de programmation": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "language": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "languages": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "large": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "large language models": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "letters": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "liberated": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "life": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "linguagens de programacao (geral)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "llc": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "llenguatges de programacio .": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "llenguatges de programació": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "llenguatges de programació": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "llm": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "load": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "logiciels": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "m2": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "machinery": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "management": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "manning": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "manning publications co. llc": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "mathematics": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "mcgraw": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "mcgraw-hill": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "media": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "microarray analysis": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "microservice": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "microsoft": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "microsoft.com": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "mips": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "mips (computer architecture)": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "mit": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "model": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "modern": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "modern life": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "msr": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "national": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "national institute of standards and technology (u.s.)": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "networking": [
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "neumann": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "nist": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "nizkp": [
+    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+  ],
+  "non-interactive zero-knowledge proofs": [
+    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+  ],
+  "nonfiction": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "nvidia": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "nvlpubs.nist.gov": [
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "object": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "object-oriented programming (computer science)": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "observability": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "of": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "on": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "online resource": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "open_syllabus_project": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "openlibrary.org": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "operations": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "operations research": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "oprogramowanie": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "optimal": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "org": [
+    "data/citations/site/datatracker-ietf-org-rfc5424.yaml",
+    "data/citations/site/yaml-org.yaml"
+  ],
+  "oriented": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "osborne": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "osborne mcgraw-hill": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "osi": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "osi model": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "output": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "overview": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "pace": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "pascal": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "pc": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "pearson": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "pearson/prentice hall": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "permutation": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "pharmaceutical": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "pharmaceuticals": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "podręczniki": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "practical": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "practice": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "pragmatics": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "prentice": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "prentice hall": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "press": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "principles": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "processing": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e computer science": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e general": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e general interest": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e multimedia": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e programming languages (jr/sr)": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e system administration": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e engineering -\u003e software engineering": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "programmer": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "programming": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml",
+    "data/citations/site/boost-json.yaml",
+    "data/citations/site/developer-nvidia-com.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "programming examples": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "programming languages": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "programming languages (electronic computers)": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "programs": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "proof": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "properties": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "ps": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "publications": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "python": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "python documentation": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "qa76.73.c15 s348 2000": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "qa76.73.c153 s33 1998": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "qa76.9.a73 b79 2004": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "queuing": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "quorum": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "recommendation": [
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "record": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "reference": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "registration": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "requirements": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "research": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "research.cs.wisc.edu": [
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "rfc-editor.org": [
+    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+  ],
+  "rfc5424": [
+    "data/citations/site/datatracker-ietf-org-rfc5424.yaml"
+  ],
+  "rfc8235": [
+    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+  ],
+  "scale": [
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "scaling": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "schnorr": [
+    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+  ],
+  "science": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "sciences": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "scratch": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "secured": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "security": [
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "seven": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "sha": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "siam": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "siam journal on computing": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "society": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "society for industrial \u0026 applied mathematics (siam)": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "software": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "software engineering": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "specification": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "springer": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "springer science and business media llc": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "standard": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "standards": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "statystyka": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "style": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "survey": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "sybex": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "syntax analysis": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "system": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "systems": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "tail": [
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "tech": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "technical": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "techniques": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "technology": [
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "the": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "the mit press": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "theory": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "time": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "time perception": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "to": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "toolkit": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "tools": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "tr": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "tracing": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "transactions": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "turbo": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "turbo c (computer program)": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "turbo c++": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "turbo c++.": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "university": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "use": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "using": [
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "von": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "von neumann style": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "website": [
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/achdevguide-nacha-org.yaml",
+    "data/citations/site/boost-json.yaml",
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/datatracker-ietf-org-rfc5424.yaml",
+    "data/citations/site/developer-nvidia-com.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
+    "data/citations/site/gobyexample-enums.yaml",
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml",
+    "data/citations/site/python-enumerations-2024.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml",
+    "data/citations/site/research-cs-wisc-edu.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml",
+    "data/citations/site/www-json-org.yaml",
+    "data/citations/site/www-rfc-editor-org-rfc8235.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml",
+    "data/citations/site/yaml-org.yaml"
+  ],
+  "wesley": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "what": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "wiley": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "wisc": [
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "with": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "www.boost.org": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "www.cloudflare.com": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "www.jklossner.com": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "www.json.org": [
+    "data/citations/site/www-json-org.yaml"
+  ],
+  "www.microsoft.com": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "www.rfc-editor.org": [
+    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+  ],
+  "xkcd": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "xkcd.com": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "xml": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "xml (document markup language)": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "yaml": [
+    "data/citations/site/yaml-org.yaml"
+  ],
+  "your": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "zkp": [
+    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+  ],
+  "ztna": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "компьютеры//программирование": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ]
+}

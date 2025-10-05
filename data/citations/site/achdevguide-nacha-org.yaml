@@ -1,11 +1,11 @@
 id: achdevguide-nacha-org
 type: website
 apa7:
-    authors: []
-    title: achdevguide.nacha.org
+    authors: National Automated Clearing House Association
+    title: ACH File Overview | ACH Guide for Developers
     url: https://achdevguide.nacha.org/ach-file-overview
     accessed: "2025-10-05"
 annotation:
-    summary: Bibliographic record for achdevguide.nacha.org (manually constructed).
+    summary: ACH clearing house information
     keywords:
         - website

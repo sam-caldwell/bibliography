@@ -3,7 +3,7 @@ type: article
 apa7:
     authors: []
     year: 2015
-    title: 'SHA-3 standard :'
+    title: 'SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions'
     publisher: National Institute of Standards and Technology (U.S.)
     doi: 10.6028/nist.fips.202
     url: https://doi.org/10.6028/nist.fips.202

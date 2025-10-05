@@ -2,10 +2,10 @@ id: www-json-org
 type: website
 apa7:
     authors: []
-    title: www.json.org
+    title: JSON
     url: https://www.json.org/json-en.html
     accessed: "2025-10-05"
 annotation:
-    summary: Bibliographic record for www.json.org (manually constructed).
+    summary: This website defines the JSON specification
     keywords:
         - website

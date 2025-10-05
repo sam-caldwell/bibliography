@@ -3,7 +3,7 @@ type: book
 apa7:
     authors:
         - family: Pitts-Moultis
-          given: N.
+          given: Natanya
     year: 1999
     title: XML in record time
     publisher: Sybex
@@ -14,5 +14,6 @@ annotation:
     summary: Bibliographic record for XML in record time (Sybex, 1999) from OpenLibrary.
     keywords:
         - xml (document markup language)
-        - xml (document markup language)
-        - xml (document markup language)
+        - xml
+        - programming
+        - computer science

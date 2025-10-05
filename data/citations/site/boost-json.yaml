@@ -1,11 +1,17 @@
-id: www-boost-org
+id: boost-json
 type: website
 apa7:
     authors: []
-    title: www.boost.org
+    title: Chapter 1. Boost.JSON - 1.84.0
     url: https://www.boost.org/doc/libs/1_84_0/libs/json/doc/html/index.html
     accessed: "2025-10-05"
 annotation:
     summary: Bibliographic record for www.boost.org (manually constructed).
     keywords:
-        - website
+        - c++
+        - cpp
+        - programming
+        - software engineering
+        - computer science
+        - json
+        - boost
