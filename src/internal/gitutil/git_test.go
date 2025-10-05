@@ -156,7 +156,24 @@ func TestCommitAndPush_ErrorPaths(t *testing.T) {
 }
 
 func TestCommitAndPush_NoPaths(t *testing.T) {
-	if err := CommitAndPush(nil, "msg"); err != nil {
-		t.Fatalf("expected nil on no paths, got %v", err)
-	}
+    if err := CommitAndPush(nil, "msg"); err != nil {
+        t.Fatalf("expected nil on no paths, got %v", err)
+    }
+}
+
+func TestCommitAndPush_SetUpstreamFallback(t *testing.T) {
+    old := runner
+    defer func() { runner = old }()
+    // Sequence: add ok, commit ok, push fails with no upstream, rev-parse returns main, push -u ok
+    fr := &fakeRunner{seq: []resp{
+        {"", "", nil},                                                          // add
+        {"", "", nil},                                                          // commit
+        {"", "The current branch main has no upstream branch.", &cmdError{s: "push fail"}}, // push fails
+        {"main\n", "", nil},                                                     // rev-parse
+        {"", "", nil},                                                          // push -u origin main
+    }}
+    runner = fr
+    if err := CommitAndPush([]string{"x"}, "msg"); err != nil {
+        t.Fatalf("expected fallback push to succeed: %v", err)
+    }
 }
