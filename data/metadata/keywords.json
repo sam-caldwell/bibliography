@@ -89,8 +89,14 @@
     "the-c-programming-language-2013"
   ],
   "computer science": [
+    "a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961",
+    "end-to-end-arguments-in-system-design-1984",
     "introduction-to-algorithms-2009",
-    "programming-language-pragmatics-2015"
+    "optimal-availability-quorum-systems-theory-and-practice-1998",
+    "practical-foundations-for-programming-languages-2016",
+    "programming-language-pragmatics-2015",
+    "the-load-capacity-and-availability-of-quorum-systems-1998",
+    "the-tail-at-scale-2013"
   ],
   "computer technology": [
     "c-2003"
@@ -106,6 +112,10 @@
   ],
   "data structures": [
     "introduction-to-algorithms-2009"
+  ],
+  "distributed systems": [
+    "optimal-availability-quorum-systems-theory-and-practice-1998",
+    "the-load-capacity-and-availability-of-quorum-systems-1998"
   ],
   "enum module": [
     "python-enumerations-2024"
@@ -186,6 +196,13 @@
   "logiciels": [
     "c-2003"
   ],
+  "mathematics": [
+    "a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961",
+    "the-load-capacity-and-availability-of-quorum-systems-1998"
+  ],
+  "microservice": [
+    "enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021"
+  ],
   "mips (computer architecture)": [
     "mips-assembly-language-programming-2004"
   ],
@@ -198,11 +215,19 @@
   "object-oriented programming (computer science)": [
     "object-oriented-programming-with-turbo-c-1991"
   ],
+  "observability": [
+    "a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961",
+    "enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021",
+    "the-tail-at-scale-2013"
+  ],
   "online resource": [
     "kopkf22ta931lmnlmaj3h48vplhotb"
   ],
   "open_syllabus_project": [
     "the-c-programming-language-2013"
+  ],
+  "operations": [
+    "the-load-capacity-and-availability-of-quorum-systems-1998"
   ],
   "oprogramowanie": [
     "the-c-programming-language-2013"
@@ -236,7 +261,10 @@
   ],
   "programming": [
     "build-a-large-language-model-from-scratch-2024",
-    "python-enumerations-2024"
+    "enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021",
+    "optimal-availability-quorum-systems-theory-and-practice-1998",
+    "python-enumerations-2024",
+    "the-tail-at-scale-2013"
   ],
   "programming examples": [
     "gobyexample-enums"
@@ -264,8 +292,23 @@
   "qa76.9.a73 b79 2004": [
     "mips-assembly-language-programming-2004"
   ],
+  "queuing": [
+    "a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961"
+  ],
+  "quorum": [
+    "optimal-availability-quorum-systems-theory-and-practice-1998"
+  ],
+  "scaling": [
+    "the-load-capacity-and-availability-of-quorum-systems-1998",
+    "the-tail-at-scale-2013"
+  ],
   "security": [
     "kopkf22ta931lmnlmaj3h48vplhotb"
+  ],
+  "software": [
+    "enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021",
+    "the-load-capacity-and-availability-of-quorum-systems-1998",
+    "the-tail-at-scale-2013"
   ],
   "statystyka": [
     "the-c-programming-language-2013"
@@ -273,11 +316,17 @@
   "syntax analysis": [
     "compilers-principles-techniques-and-tools"
   ],
+  "systems": [
+    "the-load-capacity-and-availability-of-quorum-systems-1998"
+  ],
   "tech": [
     "kopkf22ta931lmnlmaj3h48vplhotb"
   ],
   "time perception": [
     "xkcd-the-pace-of-modern-life-2007"
+  ],
+  "tracing": [
+    "enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021"
   ],
   "turbo c (computer program)": [
     "object-oriented-programming-with-turbo-c-1991"
@@ -291,11 +340,9 @@
   "von neumann style": [
     "can-programming-be-liberated-from-the-von-neumann-style-1978"
   ],
-  "webcomic": [
-    "xkcd-the-pace-of-modern-life-2007"
-  ],
   "website": [
-    "kopkf22ta931lmnlmaj3h48vplhotb"
+    "kopkf22ta931lmnlmaj3h48vplhotb",
+    "research-cs-wisc-edu"
   ],
   "компьютеры//программирование": [
     "programming-language-pragmatics-2015"
