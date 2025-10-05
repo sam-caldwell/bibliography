@@ -1,4 +1,7 @@
 {
+  "005.13/3": [
+    "c-2003"
+  ],
   "005.265": [
     "mips-assembly-language-programming-2004"
   ],
@@ -17,7 +20,11 @@
   "algorithms": [
     "introduction-to-algorithms-2009"
   ],
+  "c": [
+    "c-2003"
+  ],
   "c (computer program language)": [
+    "c-2003",
     "c-c-programmer-s-reference-1997",
     "the-c-programming-language-2013"
   ],
@@ -25,17 +32,25 @@
     "the-c-programming-language-2013"
   ],
   "c plus plus (computer program language)": [
+    "c-2003",
     "c-c-programmer-s-reference-1997",
+    "object-oriented-programming-with-turbo-c-1991",
     "the-c-programming-language-2013"
   ],
   "c plus plus (langage de programmation)": [
     "the-c-programming-language-2013"
   ],
+  "c# (computer program language)": [
+    "c-2003"
+  ],
   "c++": [
+    "c-2003",
     "the-c-programming-language-2013"
   ],
   "c++ (computer program language)": [
+    "c-2003",
     "c-c-programmer-s-reference-1997",
+    "object-oriented-programming-with-turbo-c-1991",
     "the-c-programming-language-2013"
   ],
   "c++ (computer programming language)": [
@@ -45,6 +60,7 @@
     "the-c-programming-language-2013"
   ],
   "c++ (langage de programmation)": [
+    "c-2003",
     "the-c-programming-language-2013"
   ],
   "c++ (lenguaje de programación)": [
@@ -54,6 +70,7 @@
     "the-c-programming-language-2013"
   ],
   "c[plus plus] (computer program language)": [
+    "c-2003",
     "the-c-programming-language-2013"
   ],
   "code optimization": [
@@ -75,8 +92,17 @@
     "introduction-to-algorithms-2009",
     "programming-language-pragmatics-2015"
   ],
+  "computer technology": [
+    "c-2003"
+  ],
+  "computers": [
+    "c-2003"
+  ],
   "computers \u0026amp; the internet": [
     "the-c-programming-language-2013"
+  ],
+  "c♯": [
+    "c-2003"
   ],
   "data structures": [
     "introduction-to-algorithms-2009"
@@ -130,8 +156,14 @@
   "interactive \u0026 multimedia": [
     "programming-language-pragmatics-2015"
   ],
+  "java": [
+    "c-2003"
+  ],
   "jk lossner": [
     "kopkf22ta931lmnlmaj3h48vplhotb"
+  ],
+  "langages de programmation": [
+    "c-2003"
   ],
   "large language models": [
     "build-a-large-language-model-from-scratch-2024"
@@ -151,11 +183,20 @@
   "llm": [
     "build-a-large-language-model-from-scratch-2024"
   ],
+  "logiciels": [
+    "c-2003"
+  ],
   "mips (computer architecture)": [
     "mips-assembly-language-programming-2004"
   ],
   "modern life": [
     "xkcd-the-pace-of-modern-life-2007"
+  ],
+  "nonfiction": [
+    "c-2003"
+  ],
+  "object-oriented programming (computer science)": [
+    "object-oriented-programming-with-turbo-c-1991"
   ],
   "online resource": [
     "kopkf22ta931lmnlmaj3h48vplhotb"
@@ -165,6 +206,9 @@
   ],
   "oprogramowanie": [
     "the-c-programming-language-2013"
+  ],
+  "pascal": [
+    "c-2003"
   ],
   "podręczniki": [
     "the-c-programming-language-2013"
@@ -198,6 +242,7 @@
     "gobyexample-enums"
   ],
   "programming languages": [
+    "c-2003",
     "can-programming-be-liberated-from-the-von-neumann-style-1978",
     "compilers-principles-techniques-and-tools",
     "the-c-programming-language-2013"
@@ -212,6 +257,9 @@
   ],
   "qa76.73.c15 s348 2000": [
     "c-c-programmer-s-reference-1997"
+  ],
+  "qa76.73.c153 s33 1998": [
+    "c-2003"
   ],
   "qa76.9.a73 b79 2004": [
     "mips-assembly-language-programming-2004"
@@ -230,6 +278,15 @@
   ],
   "time perception": [
     "xkcd-the-pace-of-modern-life-2007"
+  ],
+  "turbo c (computer program)": [
+    "object-oriented-programming-with-turbo-c-1991"
+  ],
+  "turbo c++": [
+    "object-oriented-programming-with-turbo-c-1991"
+  ],
+  "turbo c++.": [
+    "object-oriented-programming-with-turbo-c-1991"
   ],
   "von neumann style": [
     "can-programming-be-liberated-from-the-von-neumann-style-1978"
