@@ -1,0 +1,16 @@
+id: build-a-large-language-model-from-scratch-2024
+type: book
+apa7:
+    authors:
+        - family: Raschka
+          given: S.
+    year: 2024
+    title: Build a Large Language Model (from Scratch)
+    publisher: Manning Publications Co. LLC
+    isbn: "9781633437166"
+    url: https://openlibrary.org/books/OL52234223M/Build_a_Large_Language_Model_(from_Scratch)
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for Build a Large Language Model (from Scratch) (Manning Publications Co. LLC, 2024) from OpenLibrary.
+    keywords:
+        - book
