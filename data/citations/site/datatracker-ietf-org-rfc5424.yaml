@@ -1,4 +1,4 @@
-id: datatracker-ietf-org
+id: datatracker-ietf-org-rfc5424
 type: website
 apa7:
     authors: []
@@ -8,4 +8,4 @@ apa7:
 annotation:
     summary: Bibliographic record for datatracker.ietf.org (manually constructed).
     keywords:
-        - website
+        - rfc5424
