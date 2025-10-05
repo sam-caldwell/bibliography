@@ -17,16 +17,15 @@
   "algorithms": [
     "introduction-to-algorithms-2009"
   ],
-  "book": [
-    "build-a-large-language-model-from-scratch-2024"
-  ],
   "c (computer program language)": [
+    "c-c-programmer-s-reference-1997",
     "the-c-programming-language-2013"
   ],
   "c (programmiersprache)": [
     "the-c-programming-language-2013"
   ],
   "c plus plus (computer program language)": [
+    "c-c-programmer-s-reference-1997",
     "the-c-programming-language-2013"
   ],
   "c plus plus (langage de programmation)": [
@@ -36,6 +35,7 @@
     "the-c-programming-language-2013"
   ],
   "c++ (computer program language)": [
+    "c-c-programmer-s-reference-1997",
     "the-c-programming-language-2013"
   ],
   "c++ (computer programming language)": [
@@ -209,6 +209,9 @@
   ],
   "python": [
     "python-enumerations-2024"
+  ],
+  "qa76.73.c15 s348 2000": [
+    "c-c-programmer-s-reference-1997"
   ],
   "qa76.9.a73 b79 2004": [
     "mips-assembly-language-programming-2004"
