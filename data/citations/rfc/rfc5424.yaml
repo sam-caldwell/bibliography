@@ -11,10 +11,10 @@ apa7:
         - family: Gerhards
           given: R.
     year: 2009
-    date: "2009-03-01"
     title: The Syslog Protocol
     container_title: RFC 5424
     publisher: Internet Engineering Task Force
+    doi: 10.17487/RFC5424
     url: https://datatracker.ietf.org/doc/html/rfc5424
     accessed: "2025-10-05"
 annotation:
