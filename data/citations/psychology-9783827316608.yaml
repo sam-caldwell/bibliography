@@ -1,0 +1,18 @@
+id: psychology-9783827316608
+type: book
+apa7:
+    authors:
+        - family: Unknown
+          given: Unknown
+    year: 2025
+    title: Psychology
+    edition: 2nd
+    publisher: Springer
+    publisher_location: Berlin, DE
+    isbn: 978-3827316608
+annotation:
+    summary: A comprehensive overview of psychological theories and practices, covering fundamental concepts and recent developments in the field.
+    keywords:
+        - psychology
+        - behavior
+        - mental processes
