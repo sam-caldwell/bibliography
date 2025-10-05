@@ -1,0 +1,7 @@
+bin/
+coverage.out
+*.log
+.DS_Store
+.idea
+data/metadata/*.json
+
