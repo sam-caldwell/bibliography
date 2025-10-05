@@ -231,5 +231,31 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 	}
 }
 
+func TestLookupArticle_FakeAI(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+
+	os.Setenv("OPENAI_API_KEY", "dummy")
+	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
+
+	fake := &ai.FakeGenerator{Entry: schema.Entry{ID: "my-article-2023", Type: "article", APA7: schema.APA7{Title: "My Article", DOI: "10.1234/x", Year: intPtr(2023)}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}}
+	newGenerator = func(model string) (ai.Generator, error) { return fake, nil }
+	t.Cleanup(func() {
+		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
+	})
+	commitAndPush = func(paths []string, msg string) error { return nil }
+
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newLookupCmd())
+	if _, err := execCmd(rootCmd, "lookup", "article", "--doi", "10.1234/x"); err != nil {
+		t.Fatalf("lookup article: %v", err)
+	}
+	if _, err := os.Stat(filepath.Join("data/citations", "my-article-2023.yaml")); err != nil {
+		t.Fatalf("article yaml missing: %v", err)
+	}
+}
+
 // Compile-time ensure doLookup uses context, no-op just to silence unused in coverage.
 var _ = context.Background()

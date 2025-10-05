@@ -78,7 +78,13 @@ func (g *openAIGenerator) GenerateYAML(ctx context.Context, typ string, hints ma
 		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
 	}
 	if err := e.Validate(); err != nil {
-		return schema.Entry{}, yamlText, err
+		// Relaxed rule: if the only validation error is missing accessed while URL present,
+		// allow the caller (CLI) to populate accessed before final write.
+		if strings.Contains(err.Error(), "apa7.accessed is required when apa7.url is present") {
+			// proceed; CLI will set accessed timestamp
+		} else {
+			return schema.Entry{}, yamlText, err
+		}
 	}
 	return e, yamlText, nil
 }

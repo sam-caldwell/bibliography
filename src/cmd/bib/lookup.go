@@ -79,7 +79,38 @@ func newLookupCmd() *cobra.Command {
 	}
 	movie.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
 
-	cmd.AddCommand(site, book, movie)
+	// lookup article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
+	var artDOI, artTitle, artAuthor, artJournal, artDate string
+	article := &cobra.Command{
+		Use:   "article",
+		Short: "Lookup a journal or magazine article",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			hints := map[string]string{}
+			if artDOI != "" {
+				hints["doi"] = artDOI
+			}
+			if artTitle != "" {
+				hints["title"] = artTitle
+			}
+			if artAuthor != "" {
+				hints["author"] = artAuthor
+			}
+			if artJournal != "" {
+				hints["journal"] = artJournal
+			}
+			if artDate != "" {
+				hints["date"] = artDate
+			}
+			return doLookup(cmd.Context(), model, "article", hints)
+		},
+	}
+	article.Flags().StringVar(&artDOI, "doi", "", "DOI of the article")
+	article.Flags().StringVar(&artTitle, "title", "", "Article title")
+	article.Flags().StringVar(&artAuthor, "author", "", "Author (Family, Given)")
+	article.Flags().StringVar(&artJournal, "journal", "", "Journal or publication name")
+	article.Flags().StringVar(&artDate, "date", "", "Publication date YYYY-MM-DD")
+
+	cmd.AddCommand(site, book, movie, article)
 	return cmd
 }
 
@@ -99,6 +130,12 @@ func doLookup(ctx context.Context, model string, typ string, hints map[string]st
 	// Ensure ID set if missing
 	if strings.TrimSpace(e.ID) == "" {
 		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+	}
+	// If DOI was provided, prefer doi.org URL when model omitted URL
+	if doi := hints["doi"]; doi != "" {
+		if e.APA7.URL == "" {
+			e.APA7.URL = "https://doi.org/" + strings.TrimSpace(doi)
+		}
 	}
 	// If URL present and accessed missing, set accessed=today
 	if e.APA7.URL != "" && e.APA7.Accessed == "" {

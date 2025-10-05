@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 .PHONY: build fmt test cover clean
 
-build:
+build: clean
 	go fmt ./src/...
 	go build -o bin/bib ./src/cmd/bib
 
