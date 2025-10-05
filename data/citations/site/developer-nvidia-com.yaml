@@ -1,0 +1,15 @@
+id: developer-nvidia-com
+type: website
+apa7:
+    authors: []
+    title: developer.nvidia.com
+    url: https://developer.nvidia.com/cuda-toolkit
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for developer.nvidia.com (manually constructed).
+    keywords:
+        - cuda
+        - nvidia
+        - programming
+        - computer science
+        - gpu
