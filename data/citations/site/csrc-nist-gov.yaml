@@ -1,0 +1,15 @@
+id: csrc-nist-gov
+type: website
+apa7:
+    authors: []
+    title: csrc.nist.gov
+    url: https://csrc.nist.gov/pubs/sp/800/207/final
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for csrc.nist.gov (manually constructed).
+    keywords:
+        - ztna
+        - security
+        - computers
+        - computer science
+        - networking
