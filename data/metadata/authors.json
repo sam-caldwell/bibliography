@@ -23,6 +23,12 @@
   "Dean, J.": [
     "data/citations/article/the-tail-at-scale-2013.yaml"
   ],
+  "Gerhards, R.": [
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "Hao, F.": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
   "Harper, Robert": [
     "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
   ],
@@ -43,6 +49,14 @@
   ],
   "Liu, X.": [
     "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "Mahy, R.": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "Matthews, P.": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
   ],
   "Mazidi, M. A.": [
     "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
@@ -72,7 +86,12 @@
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
   ],
   "Rivest, R. L.": [
-    "data/citations/books/introduction-to-algorithms-2009.yaml"
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "Rosenberg, J.": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
   ],
   "Saltzer, J. H.": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
@@ -101,6 +120,9 @@
   ],
   "Weiskamp, K.": [
     "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "Wing, D.": [
+    "data/citations/rfc/rfc5389.yaml"
   ],
   "Wool, A.": [
     "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",

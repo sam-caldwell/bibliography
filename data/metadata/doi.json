@@ -5,5 +5,11 @@
   "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml": "10.1016/s0020-0190(98)00017-9",
   "data/citations/article/sha-3-standard-2015.yaml": "10.6028/nist.fips.202",
   "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml": "10.1137/s0097539795281232",
-  "data/citations/article/the-tail-at-scale-2013.yaml": "10.1145/2408776.2408794"
+  "data/citations/article/the-tail-at-scale-2013.yaml": "10.1145/2408776.2408794",
+  "data/citations/rfc/rfc1321.yaml": "10.17487/RFC1321",
+  "data/citations/rfc/rfc3600.yaml": "10.17487/RFC3600",
+  "data/citations/rfc/rfc5389.yaml": "10.17487/RFC5389",
+  "data/citations/rfc/rfc5424.yaml": "10.17487/RFC5424",
+  "data/citations/rfc/rfc5766.yaml": "10.17487/RFC5766",
+  "data/citations/rfc/rfc8235.yaml": "10.17487/RFC8235"
 }

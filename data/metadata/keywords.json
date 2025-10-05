@@ -5,6 +5,9 @@
   "005.265": [
     "data/citations/books/mips-assembly-language-programming-2004.yaml"
   ],
+  "1321": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
   "1961": [
     "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
   ],
@@ -16,6 +19,9 @@
   ],
   "1991": [
     "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "1992": [
+    "data/citations/rfc/rfc1321.yaml"
   ],
   "1995": [
     "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
@@ -31,7 +37,8 @@
     "data/citations/books/xml-in-record-time-1999.yaml"
   ],
   "2003": [
-    "data/citations/books/c-2003.yaml"
+    "data/citations/books/c-2003.yaml",
+    "data/citations/rfc/rfc3600.yaml"
   ],
   "2004": [
     "data/citations/books/mips-assembly-language-programming-2004.yaml"
@@ -42,8 +49,15 @@
   "2007": [
     "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
   ],
+  "2008": [
+    "data/citations/rfc/rfc5389.yaml"
+  ],
   "2009": [
-    "data/citations/books/introduction-to-algorithms-2009.yaml"
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "2010": [
+    "data/citations/rfc/rfc5766.yaml"
   ],
   "2013": [
     "data/citations/article/the-tail-at-scale-2013.yaml",
@@ -55,6 +69,9 @@
   ],
   "2016": [
     "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "2017": [
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "2020": [
     "data/citations/site/MSR-TR-2020-41.yaml"
@@ -73,8 +90,23 @@
   "2nd": [
     "data/citations/site/MSR-TR-2020-41.yaml"
   ],
+  "3600": [
+    "data/citations/rfc/rfc3600.yaml"
+  ],
   "41": [
     "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "5389": [
+    "data/citations/rfc/rfc5389.yaml"
+  ],
+  "5424": [
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "5766": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "8235": [
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "84": [
     "data/citations/site/boost-json.yaml"
@@ -116,6 +148,9 @@
   "algebra of programs": [
     "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
   ],
+  "algorithm": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
   "algorithm design": [
     "data/citations/books/introduction-to-algorithms-2009.yaml"
   ],
@@ -150,6 +185,9 @@
   ],
   "arguments": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "around": [
+    "data/citations/rfc/rfc5766.yaml"
   ],
   "article": [
     "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
@@ -394,12 +432,6 @@
   "data structures": [
     "data/citations/books/introduction-to-algorithms-2009.yaml"
   ],
-  "datatracker": [
-    "data/citations/site/datatracker-ietf-org-rfc5424.yaml"
-  ],
-  "datatracker.ietf.org": [
-    "data/citations/site/datatracker-ietf-org-rfc5424.yaml"
-  ],
   "design": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
     "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
@@ -415,6 +447,9 @@
   ],
   "devices": [
     "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "digest": [
+    "data/citations/rfc/rfc1321.yaml"
   ],
   "distributed systems": [
     "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
@@ -447,6 +482,14 @@
   ],
   "edition": [
     "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "editor": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "edu": [
     "data/citations/site/research-cs-wisc-edu.yaml"
@@ -497,6 +540,9 @@
   "extendable": [
     "data/citations/article/sha-3-standard-2015.yaml"
   ],
+  "extensions": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
   "file": [
     "data/citations/site/achdevguide-nacha-org.yaml"
   ],
@@ -506,6 +552,8 @@
     "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
     "data/citations/article/the-tail-at-scale-2013.yaml",
     "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml",
     "data/citations/site/achdevguide-nacha-org.yaml",
     "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
     "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
@@ -600,7 +648,12 @@
     "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
   ],
   "ietf": [
-    "data/citations/site/datatracker-ietf-org-rfc5424.yaml"
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "in": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
@@ -635,6 +688,9 @@
   "intel 80x86 series microprocessors.": [
     "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
   ],
+  "interactive": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
   "interactive \u0026 multimedia": [
     "data/citations/books/programming-language-pragmatics-2015.yaml"
   ],
@@ -643,6 +699,9 @@
   ],
   "international": [
     "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "internet": [
+    "data/citations/rfc/rfc3600.yaml"
   ],
   "introduction": [
     "data/citations/books/introduction-to-algorithms-2009.yaml"
@@ -680,6 +739,9 @@
   ],
   "klossner": [
     "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "knowledge": [
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "langages de programmation": [
     "data/citations/books/c-2003.yaml"
@@ -760,8 +822,14 @@
   "mcgraw-hill": [
     "data/citations/books/c-2003.yaml"
   ],
+  "md5": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
   "media": [
     "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "message": [
+    "data/citations/rfc/rfc1321.yaml"
   ],
   "microarray analysis": [
     "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
@@ -797,6 +865,10 @@
   "msr": [
     "data/citations/site/MSR-TR-2020-41.yaml"
   ],
+  "nat": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
   "national": [
     "data/citations/article/sha-3-standard-2015.yaml"
   ],
@@ -814,10 +886,13 @@
     "data/citations/site/csrc-nist-gov.yaml"
   ],
   "nizkp": [
-    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+    "data/citations/rfc/rfc8235.yaml"
   ],
-  "non-interactive zero-knowledge proofs": [
-    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+  "non": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "non-interactive zero-knowledge proof": [
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "nonfiction": [
     "data/citations/books/c-2003.yaml"
@@ -849,6 +924,9 @@
     "data/citations/site/MSR-TR-2020-41.yaml",
     "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
     "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "official": [
+    "data/citations/rfc/rfc3600.yaml"
   ],
   "on": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
@@ -887,7 +965,6 @@
     "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
   ],
   "org": [
-    "data/citations/site/datatracker-ietf-org-rfc5424.yaml",
     "data/citations/site/yaml-org.yaml"
   ],
   "oriented": [
@@ -1023,10 +1100,15 @@
     "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
   ],
   "proof": [
-    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "properties": [
     "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "protocol": [
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5424.yaml"
   ],
   "ps": [
     "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
@@ -1068,6 +1150,12 @@
   "registration": [
     "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
   ],
+  "relay": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "relays": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
   "requirements": [
     "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
   ],
@@ -1078,14 +1166,47 @@
   "research.cs.wisc.edu": [
     "data/citations/site/research-cs-wisc-edu.yaml"
   ],
+  "rfc": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "rfc 1321": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "rfc 3600": [
+    "data/citations/rfc/rfc3600.yaml"
+  ],
+  "rfc 5389": [
+    "data/citations/rfc/rfc5389.yaml"
+  ],
+  "rfc 5424": [
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "rfc 5766": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "rfc 8235": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "rfc editor": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
   "rfc-editor.org": [
-    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
-  ],
-  "rfc5424": [
-    "data/citations/site/datatracker-ietf-org-rfc5424.yaml"
-  ],
-  "rfc8235": [
-    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "scale": [
     "data/citations/article/the-tail-at-scale-2013.yaml"
@@ -1095,7 +1216,7 @@
     "data/citations/article/the-tail-at-scale-2013.yaml"
   ],
   "schnorr": [
-    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "science": [
     "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
@@ -1114,6 +1235,10 @@
     "data/citations/site/MSR-TR-2020-41.yaml",
     "data/citations/site/csrc-nist-gov.yaml",
     "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "session": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
   ],
   "seven": [
     "data/citations/site/MSR-TR-2020-41.yaml"
@@ -1154,10 +1279,15 @@
     "data/citations/article/sha-3-standard-2015.yaml"
   ],
   "standards": [
-    "data/citations/article/sha-3-standard-2015.yaml"
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/rfc/rfc3600.yaml"
   ],
   "statystyka": [
     "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "stun": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
   ],
   "style": [
     "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
@@ -1170,6 +1300,9 @@
   ],
   "syntax analysis": [
     "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "syslog": [
+    "data/citations/rfc/rfc5424.yaml"
   ],
   "system": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
@@ -1203,6 +1336,8 @@
     "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
     "data/citations/books/introduction-to-algorithms-2009.yaml",
     "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc5424.yaml",
     "data/citations/site/MSR-TR-2020-41.yaml",
     "data/citations/site/what-is-the-osi-model.yaml",
     "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
@@ -1221,7 +1356,8 @@
   ],
   "to": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
-    "data/citations/books/introduction-to-algorithms-2009.yaml"
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/rfc/rfc5766.yaml"
   ],
   "toolkit": [
     "data/citations/site/developer-nvidia-com.yaml"
@@ -1238,6 +1374,10 @@
   "transactions": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
   ],
+  "traversal": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
   "turbo": [
     "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
   ],
@@ -1250,6 +1390,9 @@
   "turbo c++.": [
     "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
   ],
+  "turn": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
   "university": [
     "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
   ],
@@ -1257,7 +1400,12 @@
     "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
   ],
   "using": [
+    "data/citations/rfc/rfc5766.yaml",
     "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "utilities": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
   ],
   "von": [
     "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
@@ -1270,7 +1418,6 @@
     "data/citations/site/achdevguide-nacha-org.yaml",
     "data/citations/site/boost-json.yaml",
     "data/citations/site/csrc-nist-gov.yaml",
-    "data/citations/site/datatracker-ietf-org-rfc5424.yaml",
     "data/citations/site/developer-nvidia-com.yaml",
     "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
     "data/citations/site/gobyexample-enums.yaml",
@@ -1280,7 +1427,6 @@
     "data/citations/site/research-cs-wisc-edu.yaml",
     "data/citations/site/what-is-the-osi-model.yaml",
     "data/citations/site/www-json-org.yaml",
-    "data/citations/site/www-rfc-editor-org-rfc8235.yaml",
     "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml",
     "data/citations/site/yaml-org.yaml"
   ],
@@ -1316,7 +1462,12 @@
     "data/citations/site/MSR-TR-2020-41.yaml"
   ],
   "www.rfc-editor.org": [
-    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "xkcd": [
     "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
@@ -1336,8 +1487,11 @@
   "your": [
     "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
   ],
+  "zero": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
   "zkp": [
-    "data/citations/site/www-rfc-editor-org-rfc8235.yaml"
+    "data/citations/rfc/rfc8235.yaml"
   ],
   "ztna": [
     "data/citations/site/csrc-nist-gov.yaml"

@@ -17,3 +17,7 @@ annotation:
     keywords:
         - rfc
         - ietf
+        - Schnorr
+        - nizkp
+        - zkp
+        - non-interactive zero-knowledge proof
