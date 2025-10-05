@@ -1,0 +1,23 @@
+id: c-c-programmer-s-reference-1997
+type: book
+apa7:
+    authors:
+        - family: Schildt
+          given: H.
+    year: 1997
+    title: C/C++ programmerʼs reference
+    publisher: Osborne McGraw-Hill
+    isbn: 978-0078823671
+    url: https://openlibrary.org/books/OL300379M/C_C_programmerʼs_reference
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for C/C++ programmerʼs reference (Osborne McGraw-Hill, 1997) from OpenLibrary.
+    keywords:
+        - c++ (computer program language)
+        - c (computer program language)
+        - c (computer program language)
+        - c plus plus (computer program language)
+        - c++ (computer program language)
+        - qa76.73.c15 s348 2000
+        - c (computer program language)
+        - c++ (computer program language)
