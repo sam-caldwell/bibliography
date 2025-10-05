@@ -1,0 +1,24 @@
+id: optimal-availability-quorum-systems-theory-and-practice-1998
+type: article
+apa7:
+    authors:
+        - family: Amir
+          given: Y.
+        - family: Wool
+          given: A.
+    year: 1998
+    date: "1998-03-01"
+    title: 'Optimal availability quorum systems: Theory and practice'
+    container_title: Information Processing Letters
+    publisher: Elsevier BV
+    journal: Information Processing Letters
+    volume: "65"
+    issue: "5"
+    pages: 223-228
+    doi: 10.1016/s0020-0190(98)00017-9
+    url: https://doi.org/10.1016/s0020-0190(98)00017-9
+    accessed: "2025-10-05"
+annotation:
+    summary: 'Bibliographic record for Optimal availability quorum systems: Theory and practice in Information Processing Letters via DOI metadata.'
+    keywords:
+        - article
