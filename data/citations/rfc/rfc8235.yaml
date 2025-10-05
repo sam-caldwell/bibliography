@@ -1,0 +1,19 @@
+id: rfc8235
+type: rfc
+apa7:
+    authors:
+        - family: Hao
+          given: F.
+    year: 2017
+    date: "2017-09-01"
+    title: Schnorr Non-interactive Zero-Knowledge Proof
+    container_title: RFC 8235
+    publisher: RFC Editor
+    doi: 10.17487/RFC8235
+    url: https://www.rfc-editor.org/info/rfc8235
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for Schnorr Non-interactive Zero-Knowledge Proof (RFC 8235).
+    keywords:
+        - rfc
+        - ietf
