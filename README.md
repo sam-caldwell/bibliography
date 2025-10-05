@@ -4,6 +4,8 @@ This project is a single golang binary (`./bin/bib`) which uses git to manage bi
 The tool integrates with OpenAI to help lookup resources (so you don't have to do as much typing).  OpenAI integration
 replaces the older lookup methods.
 
+<img src="./docs/logo.png" />
+
 ## To Use:
 - Fork the repo for your own use.
 - Build the software (`make`) 
