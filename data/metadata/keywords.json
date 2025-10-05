@@ -8,6 +8,9 @@
   "[manuel]": [
     "the-c-programming-language-2013"
   ],
+  "agriculture": [
+    "effects-of-plant-growth-regulators-on-cotton-1998"
+  ],
   "ai": [
     "build-a-large-language-model-from-scratch-2024"
   ],
@@ -100,6 +103,9 @@
   ],
   "computers \u0026amp; the internet": [
     "the-c-programming-language-2013"
+  ],
+  "cotton": [
+    "effects-of-plant-growth-regulators-on-cotton-1998"
   ],
   "c♯": [
     "c-2003"
@@ -210,6 +216,18 @@
   "pascal": [
     "c-2003"
   ],
+  "physiology": [
+    "effects-of-temperature-on-plant-growth-1998"
+  ],
+  "plant growth": [
+    "effects-of-temperature-on-plant-growth-1998"
+  ],
+  "plant growth regulators": [
+    "effects-of-plant-growth-regulators-on-cotton-1998"
+  ],
+  "plant physiology": [
+    "effects-of-plant-growth-regulators-on-cotton-1998"
+  ],
   "podręczniki": [
     "the-c-programming-language-2013"
   ],
@@ -275,6 +293,9 @@
   ],
   "tech": [
     "kopkf22ta931lmnlmaj3h48vplhotb"
+  ],
+  "temperature": [
+    "effects-of-temperature-on-plant-growth-1998"
   ],
   "time perception": [
     "xkcd-the-pace-of-modern-life-2007"
