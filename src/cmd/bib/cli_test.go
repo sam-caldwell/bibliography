@@ -95,24 +95,24 @@ func TestLookupSite_Basic(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-    // Fake git commit/push (do nothing)
-    called := false
-    commitAndPush = func(paths []string, msg string) error { called = true; return nil }
-    t.Cleanup(func() { commitAndPush = nil })
+	// Fake git commit/push (do nothing)
+	called := false
+	commitAndPush = func(paths []string, msg string) error { called = true; return nil }
+	t.Cleanup(func() { commitAndPush = nil })
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
 
-    // Run lookup site
-    if _, err := execCmd(rootCmd, "lookup", "site", "https://example.com"); err != nil {
-        t.Fatalf("lookup: %v", err)
-    }
-    if _, err := os.Stat(filepath.Join("data/citations", "example-com.yaml")); err != nil {
-        t.Fatalf("expected citation yaml written: %v", err)
-    }
-    if !called {
-        t.Fatalf("expected commitAndPush to be called")
-    }
+	// Run lookup site
+	if _, err := execCmd(rootCmd, "lookup", "site", "https://example.com"); err != nil {
+		t.Fatalf("lookup: %v", err)
+	}
+	if _, err := os.Stat(filepath.Join("data/citations", "example-com.yaml")); err != nil {
+		t.Fatalf("expected citation yaml written: %v", err)
+	}
+	if !called {
+		t.Fatalf("expected commitAndPush to be called")
+	}
 }
 
 func TestSearchFlagValidation(t *testing.T) {
@@ -129,7 +129,7 @@ func TestLookupBookAndMovie_Minimal(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-    commitAndPush = func(paths []string, msg string) error { return nil }
+	commitAndPush = func(paths []string, msg string) error { return nil }
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
@@ -141,9 +141,9 @@ func TestLookupBookAndMovie_Minimal(t *testing.T) {
 		t.Fatalf("book yaml missing: %v", err)
 	}
 
-    if _, err := execCmd(rootCmd, "lookup", "movie", "Best", "Movie", "--date", "2024-01-01"); err != nil {
-        t.Fatalf("lookup movie: %v", err)
-    }
+	if _, err := execCmd(rootCmd, "lookup", "movie", "Best", "Movie", "--date", "2024-01-01"); err != nil {
+		t.Fatalf("lookup movie: %v", err)
+	}
 	if _, err := os.Stat(filepath.Join("data/citations", "best-movie-2024.yaml")); err != nil {
 		t.Fatalf("movie yaml missing: %v", err)
 	}
@@ -176,7 +176,7 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-    // No OpenAI path; the command constructs minimal entry from URL
+	// No OpenAI path; the command constructs minimal entry from URL
 
 	// First, simulate commit error
 	commitAndPush = func(paths []string, msg string) error { return fmt.Errorf("push failed") }
@@ -188,14 +188,14 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 
 	// Now simulate success
 	commitAndPush = func(paths []string, msg string) error { return nil }
-    if _, err := execCmd(rootCmd, "lookup", "site", "https://t"); err != nil {
-        t.Fatalf("lookup site: %v", err)
-    }
-    // Verify YAML written and accessed set
-    b, err := os.ReadFile(filepath.Join("data/citations", "t.yaml"))
-    if err != nil {
-        t.Fatalf("read yaml: %v", err)
-    }
+	if _, err := execCmd(rootCmd, "lookup", "site", "https://t"); err != nil {
+		t.Fatalf("lookup site: %v", err)
+	}
+	// Verify YAML written and accessed set
+	b, err := os.ReadFile(filepath.Join("data/citations", "t.yaml"))
+	if err != nil {
+		t.Fatalf("read yaml: %v", err)
+	}
 	if !bytes.Contains(b, []byte("accessed:")) {
 		t.Fatalf("expected accessed set in yaml: %s", string(b))
 	}
@@ -239,16 +239,16 @@ func TestLookupArticleByMetadata_Minimal(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-commitAndPush = func(paths []string, msg string) error { return nil }
+	commitAndPush = func(paths []string, msg string) error { return nil }
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-    if _, err := execCmd(rootCmd, "lookup", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
-        t.Fatalf("lookup article by metadata: %v", err)
-    }
-    if _, err := os.Stat(filepath.Join("data/citations", "x-2023.yaml")); err != nil {
-        t.Fatalf("article yaml missing: %v", err)
-    }
+	if _, err := execCmd(rootCmd, "lookup", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
+		t.Fatalf("lookup article by metadata: %v", err)
+	}
+	if _, err := os.Stat(filepath.Join("data/citations", "x-2023.yaml")); err != nil {
+		t.Fatalf("article yaml missing: %v", err)
+	}
 }
 
 func TestLookupBookByISBN_OpenLibrary(t *testing.T) {
@@ -337,15 +337,15 @@ func TestLookupBook_ComputesSlug(t *testing.T) {
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
-commitAndPush = func(paths []string, msg string) error { return nil }
-rootCmd = &cobra.Command{Use: "bib"}
-rootCmd.AddCommand(newLookupCmd())
-if _, err := execCmd(rootCmd, "lookup", "book", "--name", "Hello World"); err != nil {
-    t.Fatalf("lookup book: %v", err)
-}
-if _, err := os.Stat(filepath.Join("data/citations", "hello-world.yaml")); err != nil {
-    t.Fatalf("expected hello-world.yaml written: %v", err)
-}
+	commitAndPush = func(paths []string, msg string) error { return nil }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newLookupCmd())
+	if _, err := execCmd(rootCmd, "lookup", "book", "--name", "Hello World"); err != nil {
+		t.Fatalf("lookup book: %v", err)
+	}
+	if _, err := os.Stat(filepath.Join("data/citations", "hello-world.yaml")); err != nil {
+		t.Fatalf("expected hello-world.yaml written: %v", err)
+	}
 }
 
 func TestExecuteFunction(t *testing.T) {
@@ -374,16 +374,16 @@ func TestDoLookup_WriteEntryError(t *testing.T) {
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
-    // Create a file at data/citations to break directory creation
-    if err := os.MkdirAll("data", 0o755); err != nil {
-        t.Fatal(err)
-    }
-    if err := os.WriteFile("data/citations", []byte("not a dir"), 0o644); err != nil {
-        t.Fatal(err)
-    }
-    if err := doLookup(context.Background(), "website", map[string]string{"url": "https://x", "title": "T"}); err == nil {
-        t.Fatalf("expected error when write entry fails")
-    }
+	// Create a file at data/citations to break directory creation
+	if err := os.MkdirAll("data", 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile("data/citations", []byte("not a dir"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := doLookup(context.Background(), "website", map[string]string{"url": "https://x", "title": "T"}); err == nil {
+		t.Fatalf("expected error when write entry fails")
+	}
 }
 
 // Compile-time ensure doLookup uses context, no-op just to silence unused in coverage.
