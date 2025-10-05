@@ -5,6 +5,9 @@
   "[manuel]": [
     "the-c-programming-language-2013"
   ],
+  "ai": [
+    "build-a-large-language-model-from-scratch-2024"
+  ],
   "algebra of programs": [
     "can-programming-be-liberated-from-the-von-neumann-style-1978"
   ],
@@ -127,6 +130,9 @@
   "jk lossner": [
     "kopkf22ta931lmnlmaj3h48vplhotb"
   ],
+  "large language models": [
+    "build-a-large-language-model-from-scratch-2024"
+  ],
   "linguagens de programacao (geral)": [
     "the-c-programming-language-2013"
   ],
@@ -138,6 +144,9 @@
   ],
   "llenguatges de programació": [
     "programming-language-pragmatics-2015"
+  ],
+  "llm": [
+    "build-a-large-language-model-from-scratch-2024"
   ],
   "mips (computer architecture)": [
     "mips-assembly-language-programming-2004"
@@ -179,6 +188,7 @@
     "programming-language-pragmatics-2015"
   ],
   "programming": [
+    "build-a-large-language-model-from-scratch-2024",
     "python-enumerations-2024"
   ],
   "programming examples": [
