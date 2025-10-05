@@ -1,5 +1,5 @@
 bin/
-coverage.out
+*.out
 *.log
 .DS_Store
 .idea
