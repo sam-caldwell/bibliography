@@ -1,8 +1,8 @@
-id: nvlpubs-nist-gov
+id: recommendation-for-applications-using-approved-hash-algorithms
 type: website
 apa7:
     authors: []
-    title: nvlpubs.nist.gov
+    title: Recommendation for applications using approved hash algorithms
     url: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-107r1.pdf
     accessed: "2025-10-05"
 annotation:

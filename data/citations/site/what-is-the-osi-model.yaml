@@ -1,11 +1,13 @@
-id: www-cloudflare-com
+id: what-is-the-osi-model
 type: website
 apa7:
     authors: []
-    title: www.cloudflare.com
+    title: What is the OSI Model?
     url: https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/
     accessed: "2025-10-05"
 annotation:
     summary: Bibliographic record for www.cloudflare.com (manually constructed).
     keywords:
-        - website
+        - networking
+        - osi
+        - osi model

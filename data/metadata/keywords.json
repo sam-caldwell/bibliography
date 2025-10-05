@@ -209,6 +209,9 @@
   "modern life": [
     "xkcd-the-pace-of-modern-life-2007"
   ],
+  "networking": [
+    "what-is-the-osi-model"
+  ],
   "nonfiction": [
     "c-2003"
   ],
@@ -231,6 +234,12 @@
   ],
   "oprogramowanie": [
     "the-c-programming-language-2013"
+  ],
+  "osi": [
+    "what-is-the-osi-model"
+  ],
+  "osi model": [
+    "what-is-the-osi-model"
   ],
   "pascal": [
     "c-2003"
@@ -342,7 +351,9 @@
   ],
   "website": [
     "kopkf22ta931lmnlmaj3h48vplhotb",
-    "research-cs-wisc-edu"
+    "recommendation-for-applications-using-approved-hash-algorithms",
+    "research-cs-wisc-edu",
+    "yaml-org"
   ],
   "компьютеры//программирование": [
     "programming-language-pragmatics-2015"
