@@ -1,0 +1,26 @@
+id: rfc3600
+type: rfc
+apa7:
+    authors:
+        - family: Official
+          given: I.
+        - family: Standards
+          given: P.
+        - family: Current
+          given: B.
+        - family: RFCs
+          given: P.
+        - family: Internet-Draft
+          given: I.
+    year: 2003
+    title: Internet Official Protocol Standards
+    container_title: RFC 3600
+    publisher: Internet Engineering Task Force
+    doi: 10.17487/RFC3600
+    url: https://datatracker.ietf.org/doc/html/rfc3600
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for Internet Official Protocol Standards (RFC 3600).
+    keywords:
+        - rfc
+        - ietf
