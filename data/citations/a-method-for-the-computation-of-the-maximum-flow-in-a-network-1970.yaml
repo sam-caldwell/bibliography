@@ -1,0 +1,23 @@
+id: a-method-for-the-computation-of-the-maximum-flow-in-a-network-1970
+type: article
+apa7:
+    authors:
+        - family: Ford
+          given: L. R.
+        - family: Fulkerson
+          given: D. R.
+    year: 1970
+    title: A Method for the Computation of the Maximum Flow in a Network
+    journal: Journal of the ACM
+    volume: "17"
+    issue: "3"
+    pages: 385–395
+    doi: 10.1145/359576.359579
+    url: https://doi.org/10.1145/359576.359579
+    accessed: "2025-10-05"
+annotation:
+    summary: This article presents a method for computing the maximum flow in a network, introducing the Ford-Fulkerson algorithm. It is foundational in the field of network flow theory and has applications in computer science and operations research.
+    keywords:
+        - maximum flow
+        - network flow
+        - Ford-Fulkerson algorithm
