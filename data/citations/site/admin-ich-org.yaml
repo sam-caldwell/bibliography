@@ -1,0 +1,17 @@
+id: admin-ich-org
+type: website
+apa7:
+    authors: []
+    title: admin.ich.org
+    url: https://admin.ich.org/sites/default/files/inline-files/eCTD_Specification_v3_2_2_0.pdf
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for admin.ich.org (manually constructed).
+    keywords:
+        - computer science
+        - programming
+        - ich
+        - ectd
+        - ectd-3.2.2
+        - pharmaceutical
+        - specification
