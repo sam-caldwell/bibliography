@@ -11,6 +11,7 @@ import (
 
 	"bibliography/src/internal/ai"
 	"bibliography/src/internal/gitutil"
+	"bibliography/src/internal/openlibrary"
 	"bibliography/src/internal/schema"
 	"bibliography/src/internal/store"
 )
@@ -30,18 +31,20 @@ func newLookupCmd() *cobra.Command {
 	cmd.PersistentFlags().StringVar(&model, "model", getEnv("BIBLIOGRAPHY_MODEL", "gpt-4.1-mini"), "OpenAI model")
 
 	// lookup site <url>
+	var siteKeywords string
 	site := &cobra.Command{
 		Use:   "site <url>",
 		Short: "Lookup a website by URL",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			url := args[0]
-			return doLookup(cmd.Context(), model, "website", map[string]string{"url": url})
+			return doLookupWithKeywords(cmd.Context(), model, "website", map[string]string{"url": url}, parseKeywordsCSV(siteKeywords))
 		},
 	}
+	site.Flags().StringVar(&siteKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// lookup book [--name ...] [--author ...] [--isbn ...]
-	var bookName, bookAuthor, bookISBN string
+	var bookName, bookAuthor, bookISBN, bookKeywords string
 	book := &cobra.Command{
 		Use:   "book",
 		Short: "Lookup a book",
@@ -56,15 +59,36 @@ func newLookupCmd() *cobra.Command {
 			if bookISBN != "" {
 				hints["isbn"] = bookISBN
 			}
-			return doLookup(cmd.Context(), model, "book", hints)
+			// If ISBN provided, use OpenLibrary instead of OpenAI
+			if bookISBN != "" {
+				e, err := openlibrary.FetchBookByISBN(cmd.Context(), bookISBN)
+				if err != nil {
+					return err
+				}
+				// If keywords flag provided, override
+				if ks := parseKeywordsCSV(bookKeywords); len(ks) > 0 {
+					e.Annotation.Keywords = ks
+				}
+				path, err := store.WriteEntry(e)
+				if err != nil {
+					return err
+				}
+				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+					return err
+				}
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+				return nil
+			}
+			return doLookupWithKeywords(cmd.Context(), model, "book", hints, parseKeywordsCSV(bookKeywords))
 		},
 	}
 	book.Flags().StringVar(&bookName, "name", "", "Book title")
 	book.Flags().StringVar(&bookAuthor, "author", "", "Author (Family, Given)")
 	book.Flags().StringVar(&bookISBN, "isbn", "", "ISBN")
+	book.Flags().StringVar(&bookKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// lookup movie <name> [--date YYYY-MM-DD]
-	var movieDate string
+	var movieDate, movieKeywords string
 	movie := &cobra.Command{
 		Use:   "movie <name>",
 		Short: "Lookup a movie",
@@ -74,13 +98,14 @@ func newLookupCmd() *cobra.Command {
 			if movieDate != "" {
 				hints["date"] = movieDate
 			}
-			return doLookup(cmd.Context(), model, "movie", hints)
+			return doLookupWithKeywords(cmd.Context(), model, "movie", hints, parseKeywordsCSV(movieKeywords))
 		},
 	}
 	movie.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
+	movie.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// lookup article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
-	var artDOI, artTitle, artAuthor, artJournal, artDate string
+	var artDOI, artTitle, artAuthor, artJournal, artDate, artKeywords string
 	article := &cobra.Command{
 		Use:   "article",
 		Short: "Lookup a journal or magazine article",
@@ -101,7 +126,7 @@ func newLookupCmd() *cobra.Command {
 			if artDate != "" {
 				hints["date"] = artDate
 			}
-			return doLookup(cmd.Context(), model, "article", hints)
+			return doLookupWithKeywords(cmd.Context(), model, "article", hints, parseKeywordsCSV(artKeywords))
 		},
 	}
 	article.Flags().StringVar(&artDOI, "doi", "", "DOI of the article")
@@ -109,12 +134,35 @@ func newLookupCmd() *cobra.Command {
 	article.Flags().StringVar(&artAuthor, "author", "", "Author (Family, Given)")
 	article.Flags().StringVar(&artJournal, "journal", "", "Journal or publication name")
 	article.Flags().StringVar(&artDate, "date", "", "Publication date YYYY-MM-DD")
+	article.Flags().StringVar(&artKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	cmd.AddCommand(site, book, movie, article)
 	return cmd
 }
 
 func doLookup(ctx context.Context, model string, typ string, hints map[string]string) error {
+	return doLookupWithKeywords(ctx, model, typ, hints, nil)
+}
+
+func parseKeywordsCSV(s string) []string {
+	if strings.TrimSpace(s) == "" {
+		return nil
+	}
+	parts := strings.Split(s, ",")
+	out := make([]string, 0, len(parts))
+	seen := map[string]bool{}
+	for _, p := range parts {
+		p = strings.TrimSpace(p)
+		if p == "" || seen[strings.ToLower(p)] {
+			continue
+		}
+		seen[strings.ToLower(p)] = true
+		out = append(out, p)
+	}
+	return out
+}
+
+func doLookupWithKeywords(ctx context.Context, model string, typ string, hints map[string]string, extraKeywords []string) error {
 	// Require API key
 	if os.Getenv("OPENAI_API_KEY") == "" {
 		return fmt.Errorf("OPENAI_API_KEY not set; please export it to use lookup")
@@ -140,6 +188,14 @@ func doLookup(ctx context.Context, model string, typ string, hints map[string]st
 	// If URL present and accessed missing, set accessed=today
 	if e.APA7.URL != "" && e.APA7.Accessed == "" {
 		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+	}
+	// If user provided keywords flag, set/override keywords
+	if len(extraKeywords) > 0 {
+		e.Annotation.Keywords = extraKeywords
+	}
+	// Fallback: ensure at least one keyword to pass validation
+	if len(e.Annotation.Keywords) == 0 {
+		e.Annotation.Keywords = []string{typ}
 	}
 	path, err := store.WriteEntry(e)
 	if err != nil {

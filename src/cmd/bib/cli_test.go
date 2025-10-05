@@ -4,15 +4,30 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"io"
+	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"github.com/spf13/cobra"
 
 	"bibliography/src/internal/ai"
+	"bibliography/src/internal/openlibrary"
 	"bibliography/src/internal/schema"
 )
+
+// test HTTP client for OpenLibrary injection
+type testHTTPDoer struct {
+	status int
+	body   string
+}
+
+func (t testHTTPDoer) Do(req *http.Request) (*http.Response, error) {
+	r := &http.Response{StatusCode: t.status, Body: io.NopCloser(strings.NewReader(t.body)), Header: make(http.Header)}
+	return r, nil
+}
 
 // Helper to execute a Cobra command and capture stdout/stderr
 func execCmd(root *cobra.Command, args ...string) (string, error) {
@@ -283,28 +298,26 @@ func TestLookupArticleByMetadata_FakeAI(t *testing.T) {
 	}
 }
 
-func TestLookupBookAllFlags_FakeAI(t *testing.T) {
+func TestLookupBookByISBN_OpenLibrary(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	fake := &ai.FakeGenerator{Entry: schema.Entry{ID: "book-123", Type: "book", APA7: schema.APA7{Title: "Name", ISBN: "123"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}}
-	newGenerator = func(model string) (ai.Generator, error) { return fake, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
 	commitAndPush = func(paths []string, msg string) error { return nil }
+
+	// Stub OpenLibrary HTTP client
+	body := `{"ISBN:123": {"title":"Name","publish_date":"2001","publishers":[{"name":"Pub"}],"authors":[{"name":"John Smith"}],"subjects":[{"name":"Topic"}],"url":"https://openlibrary.org/books/OL1M/Name"}}`
+	// swap client
+	openlibrary.SetHTTPClient(testHTTPDoer{status: 200, body: body})
+	t.Cleanup(func() { openlibrary.SetHTTPClient(&http.Client{}) })
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "lookup", "book", "--name", "Name", "--author", "Smith, J.", "--isbn", "123"); err != nil {
-		t.Fatalf("lookup book with all flags: %v", err)
+	if _, err := execCmd(rootCmd, "lookup", "book", "--name", "Name", "--author", "Smith, J.", "--isbn", "123", "--keywords", "k1,k2"); err != nil {
+		t.Fatalf("lookup book by isbn: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "book-123.yaml")); err != nil {
+	if _, err := os.Stat(filepath.Join("data/citations", "name-2001.yaml")); err != nil {
 		t.Fatalf("book yaml missing: %v", err)
 	}
 }
