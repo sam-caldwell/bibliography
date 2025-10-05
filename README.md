@@ -7,7 +7,8 @@ replaces the older lookup methods.
 ## To Use:
 - Fork the repo for your own use.
 - Build the software (`make`) 
-- Run `./bin/bib help` for usage info.
+- Run `./bin/bib help` for usage info (you need an OpenAI API Key in your local env vars).
+  WARNING: DO NOT PUT YOUR OPENAI API KEY IN THIS REPO!
 
 ## To Build:
 `make`
