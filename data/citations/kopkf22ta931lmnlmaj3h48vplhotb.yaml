@@ -2,11 +2,12 @@ id: kopkf22ta931lmnlmaj3h48vplhotb
 type: website
 apa7:
     authors:
-        - family: Unknown
+        - family: Klossner
+          given: John
     year: 2025
     date: "2025-01-01"
-    title: Kopkf22ta931lmnlmaj3h48vplhotb
-    container_title: JK Lossner
+    title: J Klossner Cartoons
+    container_title: J Klossner Cartoons
     url: https://www.jklossner.com/kopkf22ta931lmnlmaj3h48vplhotb
     accessed: "2025-01-01"
 annotation:
@@ -15,3 +16,6 @@ annotation:
         - website
         - JK Lossner
         - online resource
+        - tech
+        - humor
+        - security

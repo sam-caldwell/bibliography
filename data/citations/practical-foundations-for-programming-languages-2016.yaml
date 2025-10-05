@@ -3,7 +3,7 @@ type: book
 apa7:
     authors:
         - family: Harper
-          given: R.
+          given: Robert
     year: 2016
     title: Practical Foundations for Programming Languages
     publisher: Cambridge University Press
