@@ -13,6 +13,7 @@ import (
 	"bibliography/src/internal/doi"
 	"bibliography/src/internal/gitutil"
 	"bibliography/src/internal/openlibrary"
+	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
 	"bibliography/src/internal/store"
 )
@@ -158,7 +159,34 @@ func newLookupCmd() *cobra.Command {
 	article.Flags().StringVar(&artDate, "date", "", "Publication date YYYY-MM-DD")
 	article.Flags().StringVar(&artKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
-	cmd.AddCommand(site, book, movie, article)
+	// add rfc <rfcNumber>
+	var rfcKeywords string
+	rfc := &cobra.Command{
+		Use:   "rfc <rfcNumber>",
+		Short: "Add an RFC by number (e.g., rfc5424)",
+		Args:  cobra.ExactArgs(1),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			e, err := rfcpkg.FetchRFC(cmd.Context(), args[0])
+			if err != nil {
+				return err
+			}
+			if ks := parseKeywordsCSV(rfcKeywords); len(ks) > 0 {
+				e.Annotation.Keywords = ks
+			}
+			path, err := store.WriteEntry(e)
+			if err != nil {
+				return err
+			}
+			if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+				return err
+			}
+			fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+			return nil
+		},
+	}
+	rfc.Flags().StringVar(&rfcKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+
+	cmd.AddCommand(site, book, movie, article, rfc)
 	return cmd
 }
 

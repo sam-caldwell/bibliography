@@ -40,6 +40,8 @@ func dirForType(typ string) string {
 		return "books"
 	case "website":
 		return "site"
+	case "rfc":
+		return "rfc"
 	default:
 		return "citation"
 	}

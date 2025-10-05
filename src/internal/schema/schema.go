@@ -121,7 +121,7 @@ func (e *Entry) Validate() error {
 		return errors.New("id is required")
 	}
 	switch e.Type {
-	case "website", "book", "movie", "article", "report", "dataset", "software":
+	case "website", "book", "movie", "article", "report", "dataset", "software", "rfc":
 	default:
 		return fmt.Errorf("invalid type: %s", e.Type)
 	}

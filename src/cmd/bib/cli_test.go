@@ -15,6 +15,7 @@ import (
 
 	"bibliography/src/internal/doi"
 	"bibliography/src/internal/openlibrary"
+	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
 )
 
@@ -278,6 +279,39 @@ func TestLookupArticleByDOI_RecordsProvidedDOIIfMissingFromCSL(t *testing.T) {
 	}
 	if !bytes.Contains(by, []byte("https://doi.org/10.5555/abc")) {
 		t.Fatalf("expected doi.org URL recorded, got:\n%s", string(by))
+	}
+}
+
+func TestLookupRFC_Basic(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+
+	// stub rfc HTTP (BibTeX)
+	bib := `@misc{rfc5424,
+  series = {Request for Comments},
+  number = 5424,
+  howpublished = {RFC 5424},
+  publisher = {RFC Editor},
+  doi = {10.17487/RFC5424},
+  url = {https://www.rfc-editor.org/info/rfc5424},
+  author = {Rainer Gerhards},
+  title = {{The Syslog Protocol}},
+  year = 2009,
+  month = mar,
+}`
+	rfcpkg.SetHTTPClient(testHTTPDoer{status: 200, body: bib})
+	t.Cleanup(func() { rfcpkg.SetHTTPClient(&http.Client{}) })
+
+	commitAndPush = func(paths []string, msg string) error { return nil }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newLookupCmd())
+	if _, err := execCmd(rootCmd, "add", "rfc", "rfc5424"); err != nil {
+		t.Fatalf("add rfc: %v", err)
+	}
+	if _, err := os.Stat(filepath.Join("data/citations", "rfc", "rfc5424.yaml")); err != nil {
+		t.Fatalf("rfc yaml missing: %v", err)
 	}
 }
 
