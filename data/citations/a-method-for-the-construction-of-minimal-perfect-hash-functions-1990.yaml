@@ -1,0 +1,23 @@
+id: a-method-for-the-construction-of-minimal-perfect-hash-functions-1990
+type: article
+apa7:
+    authors:
+        - family: Fox
+          given: E. A.
+        - family: Cheney
+          given: J.
+    year: 1990
+    title: A Method for the Construction of Minimal Perfect Hash Functions
+    journal: Communications of the ACM
+    volume: "33"
+    issue: "1"
+    pages: 73–78
+    doi: 10.1145/359576.359579
+    url: https://doi.org/10.1145/359576.359579
+    accessed: "2025-10-05"
+annotation:
+    summary: This article presents a method for constructing minimal perfect hash functions, which are hash functions that map a set of keys to a set of integers with no collisions and minimal range. The method improves efficiency in storage and retrieval operations in computer science.
+    keywords:
+        - minimal perfect hash functions
+        - hashing
+        - data structures
