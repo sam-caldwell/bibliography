@@ -11,7 +11,17 @@ apa7:
     url: https://openlibrary.org/books/OL3700043M/C
     accessed: "2025-10-05"
 annotation:
-    summary: 'C++ Third Edition, The Complete Reference. Schildt''s Classic C++ Reference - Now Updated to include the new features of the C++ Standard. The recently adopted International Standard for C++ has added many new libraries, keywords, and features to C++ - learn about them all in this completely revised and updated Third Edition of Herb Schildt''s outstanding classic. In carefully organized chapters, you''ll find expertly-crafted explanations, insider tips, and hundreds of examples that describe and demonstrate every aspect of C++. And just as you''d expect, everything is presented in the clear, uncompromising style that has made Herb the Choice of Millions. Whether you''re a newcomer just learning C++ or an experienced pro coming up to speed on the new International Standard, you''ll find C++: The Complete Reference a lasting resource that will help you maximize your programming efforts. You''d expect nothing less from Herb Schildt, the World''s leading programming author.'
+    summary: |
+        C++ Third Edition, The Complete Reference. Schildt''s Classic C++ Reference - Now Updated to include the 
+        new features of the C++ Standard. The recently adopted International Standard for C++ has added many new 
+        libraries, keywords, and features to C++ - learn about them all in this completely revised and updated Third 
+        Edition of Herb Schildt''s outstanding classic. In carefully organized chapters, you''ll find 
+        expertly-crafted explanations, insider tips, and hundreds of examples that describe and demonstrate every 
+        aspect of C++. And just as you''d expect, everything is presented in the clear, uncompromising style that 
+        has made Herb the Choice of Millions. Whether you''re a newcomer just learning C++ or an experienced pro 
+        coming up to speed on the new International Standard, you''ll find C++: The Complete Reference a lasting 
+        resource that will help you maximize your programming efforts. You''d expect nothing less from Herb Schildt, 
+        the World''s leading programming author.'
     keywords:
         - c# (computer program language)
         - c++ (computer program language)
@@ -30,7 +40,6 @@ annotation:
         - c♯
         - java
         - pascal
-        - вычислительная техника -- вычислительные машины электронные цифровые -- программирование -- языки программирования -- с  -- пособие для самообразования
         - qa76.73.c153 s33 1998
         - 005.13/3
         - c++ (computer program language)
