@@ -1,0 +1,33 @@
+id: enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021
+type: article
+apa7:
+    authors:
+        - family: Li
+          given: B.
+        - family: Peng
+          given: X.
+        - family: Xiang
+          given: Q.
+        - family: Wang
+          given: H.
+        - family: Xie
+          given: T.
+        - family: Sun
+          given: J.
+        - family: Liu
+          given: X.
+    year: 2021
+    date: "2021-11-30"
+    title: 'Enjoy your observability: an industrial survey of microservice tracing and analysis'
+    container_title: Empirical Software Engineering
+    publisher: Springer Science and Business Media LLC
+    journal: Empirical Software Engineering
+    volume: "27"
+    issue: "1"
+    doi: 10.1007/s10664-021-10063-9
+    url: https://doi.org/10.1007/s10664-021-10063-9
+    accessed: "2025-10-05"
+annotation:
+    summary: 'Bibliographic record for Enjoy your observability: an industrial survey of microservice tracing and analysis in Empirical Software Engineering via DOI metadata.'
+    keywords:
+        - article
