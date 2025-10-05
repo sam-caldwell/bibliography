@@ -1,0 +1,21 @@
+id: example-article-1998
+type: article
+apa7:
+    authors:
+        - family: Unknown
+          given: U.
+    year: 1998
+    title: Example Article
+    journal: Journal of Example Studies
+    volume: "45"
+    issue: "2"
+    pages: 123–134
+    doi: 10.1002/s0020019098000179
+    url: https://doi.org/10.1002/s0020019098000179
+    accessed: "2025-10-05"
+annotation:
+    summary: This article presents an example study demonstrating the application of bibliographic metadata standards.
+    keywords:
+        - example
+        - bibliography
+        - metadata
