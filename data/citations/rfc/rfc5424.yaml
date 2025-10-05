@@ -1,0 +1,19 @@
+id: rfc5424
+type: rfc
+apa7:
+    authors:
+        - family: Gerhards
+          given: R.
+    year: 2009
+    date: "2009-03-01"
+    title: The Syslog Protocol
+    container_title: RFC 5424
+    publisher: RFC Editor
+    doi: 10.17487/RFC5424
+    url: https://www.rfc-editor.org/info/rfc5424
+    accessed: "2025-10-05"
+annotation:
+    summary: Bibliographic record for The Syslog Protocol (RFC 5424).
+    keywords:
+        - rfc
+        - ietf
