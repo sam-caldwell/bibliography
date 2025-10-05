@@ -14,6 +14,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"bibliography/src/internal/ai"
+	"bibliography/src/internal/doi"
 	"bibliography/src/internal/openlibrary"
 	"bibliography/src/internal/schema"
 )
@@ -246,21 +247,27 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 	}
 }
 
-func TestLookupArticle_FakeAI(t *testing.T) {
+func TestLookupArticleByDOI_NoOpenAI(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-	os.Setenv("OPENAI_API_KEY", "dummy")
-	t.Cleanup(func() { os.Unsetenv("OPENAI_API_KEY") })
-
-	fake := &ai.FakeGenerator{Entry: schema.Entry{ID: "my-article-2023", Type: "article", APA7: schema.APA7{Title: "My Article", DOI: "10.1234/x", Year: intPtr(2023)}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}}
-	newGenerator = func(model string) (ai.Generator, error) { return fake, nil }
-	t.Cleanup(func() {
-		newGenerator = func(model string) (ai.Generator, error) { return ai.NewGeneratorFromEnv(model) }
-	})
 	commitAndPush = func(paths []string, msg string) error { return nil }
+	// Stub doi.org CSL JSON response
+	csl := `{
+		"title": "My Article",
+		"author": [{"family":"Doe","given":"Jane Q"}],
+		"container-title": "Journal of Tests",
+		"issued": {"date-parts": [[2023,5,2]]},
+		"DOI": "10.1234/x",
+		"volume": "12",
+		"issue": "3",
+		"page": "45-60",
+		"publisher": "TestPub"
+	}`
+	doi.SetHTTPClient(testHTTPDoer{status: 200, body: csl})
+	t.Cleanup(func() { doi.SetHTTPClient(&http.Client{}) })
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newLookupCmd())

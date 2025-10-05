@@ -1,19 +1,20 @@
 package main
 
 import (
-	"context"
-	"fmt"
-	"os"
-	"strings"
-	"time"
+    "context"
+    "fmt"
+    "os"
+    "strings"
+    "time"
 
 	"github.com/spf13/cobra"
 
 	"bibliography/src/internal/ai"
-	"bibliography/src/internal/gitutil"
-	"bibliography/src/internal/openlibrary"
-	"bibliography/src/internal/schema"
-	"bibliography/src/internal/store"
+    "bibliography/src/internal/gitutil"
+    "bibliography/src/internal/doi"
+    "bibliography/src/internal/openlibrary"
+    "bibliography/src/internal/schema"
+    "bibliography/src/internal/store"
 )
 
 // indirections for testability
@@ -105,19 +106,32 @@ func newLookupCmd() *cobra.Command {
 	movie.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// lookup article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
-	var artDOI, artTitle, artAuthor, artJournal, artDate, artKeywords string
-	article := &cobra.Command{
-		Use:   "article",
-		Short: "Lookup a journal or magazine article",
-		RunE: func(cmd *cobra.Command, args []string) error {
-			hints := map[string]string{}
-			if artDOI != "" {
-				hints["doi"] = artDOI
-			}
-			if artTitle != "" {
-				hints["title"] = artTitle
-			}
-			if artAuthor != "" {
+    var artDOI, artTitle, artAuthor, artJournal, artDate, artKeywords string
+    article := &cobra.Command{
+        Use:   "article",
+        Short: "Lookup a journal or magazine article",
+        RunE: func(cmd *cobra.Command, args []string) error {
+            hints := map[string]string{}
+            if artDOI != "" {
+                // Resolve via DOI using doi.org, without OpenAI
+                e, err := doi.FetchArticleByDOI(cmd.Context(), artDOI)
+                if err != nil { return err }
+                if ks := parseKeywordsCSV(artKeywords); len(ks) > 0 { e.Annotation.Keywords = ks }
+                // Ensure at least one keyword
+                if len(e.Annotation.Keywords) == 0 { e.Annotation.Keywords = []string{"article"} }
+                path, err := store.WriteEntry(e)
+                if err != nil { return err }
+                if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil { return err }
+                fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+                return nil
+            }
+            if artDOI != "" {
+                hints["doi"] = artDOI
+            }
+            if artTitle != "" {
+                hints["title"] = artTitle
+            }
+            if artAuthor != "" {
 				hints["author"] = artAuthor
 			}
 			if artJournal != "" {
