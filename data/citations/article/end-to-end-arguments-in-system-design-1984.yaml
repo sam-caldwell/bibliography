@@ -21,6 +21,8 @@ apa7:
     url: https://doi.org/10.1145/357401.357402
     accessed: "2025-10-05"
 annotation:
-    summary: Bibliographic record for End-to-end arguments in system design in ACM Transactions on Computer Systems via DOI metadata.
+    summary: |
+        Bibliographic record for End-to-end arguments in system design in ACM Transactions on Computer Systems 
+        via DOI metadata.
     keywords:
-        - article
+        - computer science
