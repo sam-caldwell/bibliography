@@ -1,0 +1,30 @@
+name: Build Bibliography Metadata
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: ["**"]
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 1.22.x
+      - name: Build CLI
+        run: go build -o bin/bib ./src/cmd/bib
+      - name: Rebuild metadata
+        run: ./bin/bib index
+      - name: Commit metadata (if changed)
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/metadata
+            git commit -m "CI: rebuild keyword metadata"
+            git push
+          fi
