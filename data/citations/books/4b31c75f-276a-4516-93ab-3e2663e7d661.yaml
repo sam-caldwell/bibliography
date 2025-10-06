@@ -1,0 +1,19 @@
+id: 4b31c75f-276a-4516-93ab-3e2663e7d661
+type: book
+apa7:
+    authors:
+        - family: Armstrong
+          given: J.
+    year: 2013
+    title: 'Programming Erlang: Software for a Concurrent World (Pragmatic Programmers)'
+    publisher: Pragmatic Bookshelf
+    isbn: "9781937785536"
+    url: https://openlibrary.org/books/OL26838553M/Programming_Erlang_Software_for_a_Concurrent_World_(Pragmatic_Programmers)
+    accessed: "2025-10-06"
+annotation:
+    summary: 'Bibliographic record for Programming Erlang: Software for a Concurrent World (Pragmatic Programmers) (Pragmatic Bookshelf, 2013) from OpenLibrary.'
+    keywords:
+        - programming languages (electronic computers)
+        - computers &amp; internet
+        - erlang (computer program language)
+        - computer programming
