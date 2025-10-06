@@ -1,0 +1,28 @@
+id: aa0423ef-e802-4ff4-af10-c0cc8ec928fe
+type: article
+apa7:
+    authors:
+        - family: Jin
+          given: P.
+        - family: Kim
+          given: N.
+        - family: Lee
+          given: S.
+        - family: Jeong
+          given: D.
+    year: 2023
+    date: "2023-08-22"
+    title: 'Forensic investigation of the dark web on the Tor network: pathway toward the surface web'
+    container_title: International Journal of Information Security
+    publisher: Springer Science and Business Media LLC
+    journal: International Journal of Information Security
+    volume: "23"
+    issue: "1"
+    pages: 331-346
+    doi: 10.1007/s10207-023-00745-4
+    url: https://doi.org/10.1007/s10207-023-00745-4
+    accessed: "2025-10-06"
+annotation:
+    summary: 'Bibliographic record for Forensic investigation of the dark web on the Tor network: pathway toward the surface web in International Journal of Information Security via DOI metadata.'
+    keywords:
+        - article
