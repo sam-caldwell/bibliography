@@ -125,64 +125,64 @@ func BuildKeywordIndex(entries []schema.Entry) (string, error) {
 			index[t] = append(index[t], path)
 		}
 
-        // 1) annotation keywords
-        for _, k := range e.Annotation.Keywords {
-            add(k)
-        }
+		// 1) annotation keywords
+		for _, k := range e.Annotation.Keywords {
+			add(k)
+		}
 
-        // 2) words in the summary (generate keywords from summaries)
-        for _, w := range tokenizeWords(e.Annotation.Summary) {
-            add(w)
-        }
+		// 2) words in the summary (generate keywords from summaries)
+		for _, w := range tokenizeWords(e.Annotation.Summary) {
+			add(w)
+		}
 
-        // 3) words in the title (and implicitly names within title)
-        for _, w := range tokenizeWords(e.APA7.Title) {
-            add(w)
-        }
+		// 3) words in the title (and implicitly names within title)
+		for _, w := range tokenizeWords(e.APA7.Title) {
+			add(w)
+		}
 
-        // 4) publisher (full phrase and tokens)
-        if strings.TrimSpace(e.APA7.Publisher) != "" {
-            add(e.APA7.Publisher)
-            for _, w := range tokenizeWords(e.APA7.Publisher) {
-                add(w)
-            }
-        }
+		// 4) publisher (full phrase and tokens)
+		if strings.TrimSpace(e.APA7.Publisher) != "" {
+			add(e.APA7.Publisher)
+			for _, w := range tokenizeWords(e.APA7.Publisher) {
+				add(w)
+			}
+		}
 
-        // 5) publication container/journal (full phrases and tokens)
-        if strings.TrimSpace(e.APA7.Journal) != "" {
-            add(e.APA7.Journal)
-            for _, w := range tokenizeWords(e.APA7.Journal) {
-                add(w)
-            }
-        }
-        if strings.TrimSpace(e.APA7.ContainerTitle) != "" {
-            add(e.APA7.ContainerTitle)
-            for _, w := range tokenizeWords(e.APA7.ContainerTitle) {
-                add(w)
-            }
-        }
+		// 5) publication container/journal (full phrases and tokens)
+		if strings.TrimSpace(e.APA7.Journal) != "" {
+			add(e.APA7.Journal)
+			for _, w := range tokenizeWords(e.APA7.Journal) {
+				add(w)
+			}
+		}
+		if strings.TrimSpace(e.APA7.ContainerTitle) != "" {
+			add(e.APA7.ContainerTitle)
+			for _, w := range tokenizeWords(e.APA7.ContainerTitle) {
+				add(w)
+			}
+		}
 
-        // 6) year published
-        if e.APA7.Year != nil {
-            add(fmt.Sprintf("%d", *e.APA7.Year))
-        }
+		// 6) year published
+		if e.APA7.Year != nil {
+			add(fmt.Sprintf("%d", *e.APA7.Year))
+		}
 
-        // 7) website domain (host and host without leading www.)
-        if u := strings.TrimSpace(e.APA7.URL); u != "" {
-            if parsed, err := url.Parse(u); err == nil {
-                host := strings.ToLower(strings.TrimSpace(parsed.Host))
-                if host != "" {
-                    add(host)
-                    add(strings.TrimPrefix(host, "www."))
-                }
-            }
-        }
+		// 7) website domain (host and host without leading www.)
+		if u := strings.TrimSpace(e.APA7.URL); u != "" {
+			if parsed, err := url.Parse(u); err == nil {
+				host := strings.ToLower(strings.TrimSpace(parsed.Host))
+				if host != "" {
+					add(host)
+					add(strings.TrimPrefix(host, "www."))
+				}
+			}
+		}
 
-        // 8) type (e.g., article, book, website)
-        if strings.TrimSpace(e.Type) != "" {
-            add(e.Type)
-        }
-    }
+		// 8) type (e.g., article, book, website)
+		if strings.TrimSpace(e.Type) != "" {
+			add(e.Type)
+		}
+	}
 	// sort lists for determinism
 	for k := range index {
 		sort.Strings(index[k])

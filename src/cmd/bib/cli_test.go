@@ -44,14 +44,14 @@ func execCmd(root *cobra.Command, args ...string) (string, error) {
 }
 
 func TestIndexAndSearch(t *testing.T) {
-    dir := t.TempDir()
-    old, _ := os.Getwd()
-    t.Cleanup(func() { _ = os.Chdir(old) })
-    _ = os.Chdir(dir)
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
 
-    // Stub commit for index to avoid requiring a git repo
-    commitAndPush = func(paths []string, msg string) error { return nil }
-    t.Cleanup(func() { commitAndPush = nil })
+	// Stub commit for index to avoid requiring a git repo
+	commitAndPush = func(paths []string, msg string) error { return nil }
+	t.Cleanup(func() { commitAndPush = nil })
 
 	// Seed two entries
 	if err := os.MkdirAll("data/citations", 0o755); err != nil {
@@ -109,7 +109,7 @@ func TestLookupSite_Basic(t *testing.T) {
 	t.Cleanup(func() { commitAndPush = nil })
 
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 
 	// Run add site
 	if _, err := execCmd(rootCmd, "add", "site", "https://example.com"); err != nil {
@@ -141,7 +141,7 @@ func TestLookupBookAndMovie_Minimal(t *testing.T) {
 	commitAndPush = func(paths []string, msg string) error { return nil }
 
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "The Book"); err != nil {
 		t.Fatalf("add book: %v", err)
@@ -165,14 +165,14 @@ func intPtr(v int) *int { return &v }
 // Removed: requirement for OPENAI_API_KEY
 
 func TestIndexPrintsPath(t *testing.T) {
-    dir := t.TempDir()
-    old, _ := os.Getwd()
-    t.Cleanup(func() { _ = os.Chdir(old) })
-    _ = os.Chdir(dir)
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
 
-    // Stub commit for index
-    commitAndPush = func(paths []string, msg string) error { return nil }
-    t.Cleanup(func() { commitAndPush = nil })
+	// Stub commit for index
+	commitAndPush = func(paths []string, msg string) error { return nil }
+	t.Cleanup(func() { commitAndPush = nil })
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newIndexCmd())
@@ -199,7 +199,7 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 	// First, simulate commit error
 	commitAndPush = func(paths []string, msg string) error { return fmt.Errorf("push failed") }
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "site", "https://t"); err == nil {
 		t.Fatalf("expected commit error to surface")
 	}
@@ -254,7 +254,7 @@ func TestLookupArticleByDOI_NoOpenAI(t *testing.T) {
 	t.Cleanup(func() { doi.SetHTTPClient(&http.Client{}) })
 
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--doi", "10.1234/x"); err != nil {
 		t.Fatalf("add article: %v", err)
 	}
@@ -288,7 +288,7 @@ func TestLookupArticleByDOI_RecordsProvidedDOIIfMissingFromCSL(t *testing.T) {
 	t.Cleanup(func() { doi.SetHTTPClient(&http.Client{}) })
 
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--doi", "10.5555/abc"); err != nil {
 		t.Fatalf("add article: %v", err)
 	}
@@ -331,7 +331,7 @@ func TestLookupArticleByURL_OGTags(t *testing.T) {
 
 	commitAndPush = func(paths []string, msg string) error { return nil }
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--url", "https://example.com/post"); err != nil {
 		t.Fatalf("add article by url: %v", err)
 	}
@@ -366,7 +366,7 @@ func TestLookupArticleByURL_PDF(t *testing.T) {
 
 	commitAndPush = func(paths []string, msg string) error { return nil }
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--url", "https://example.com/sample.pdf"); err != nil {
 		t.Fatalf("add article by pdf url: %v", err)
 	}
@@ -404,7 +404,7 @@ func TestLookupRFC_Basic(t *testing.T) {
 
 	commitAndPush = func(paths []string, msg string) error { return nil }
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "rfc", "rfc5424"); err != nil {
 		t.Fatalf("add rfc: %v", err)
 	}
@@ -477,7 +477,7 @@ func TestLookupArticleByMetadata_Minimal(t *testing.T) {
 	commitAndPush = func(paths []string, msg string) error { return nil }
 
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
 		t.Fatalf("add article by metadata: %v", err)
 	}
@@ -502,7 +502,7 @@ func TestLookupBookByISBN_OpenLibrary(t *testing.T) {
 	t.Cleanup(func() { openlibrary.SetHTTPClient(&http.Client{}) })
 
 	rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "Name", "--author", "Smith, J.", "--isbn", "123", "--keywords", "k1,k2"); err != nil {
 		t.Fatalf("add book by isbn: %v", err)
 	}
@@ -562,13 +562,13 @@ func TestIndexOutputWriteError(t *testing.T) {
 }
 
 func TestLookupSite_MissingArg(t *testing.T) {
-    rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
-    // Provide empty stdin so manualAdd immediately hits EOF and errors
-    rootCmd.SetIn(strings.NewReader(""))
-    if _, err := execCmd(rootCmd, "add", "site"); err == nil {
-        t.Fatalf("expected error for missing site arg")
-    }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newAddCmd())
+	// Provide empty stdin so manualAdd immediately hits EOF and errors
+	rootCmd.SetIn(strings.NewReader(""))
+	if _, err := execCmd(rootCmd, "add", "site"); err == nil {
+		t.Fatalf("expected error for missing site arg")
+	}
 }
 
 func TestLookupBook_ComputesSlug(t *testing.T) {
@@ -577,8 +577,8 @@ func TestLookupBook_ComputesSlug(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 	commitAndPush = func(paths []string, msg string) error { return nil }
-    rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newAddCmd())
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "Hello World"); err != nil {
 		t.Fatalf("add book: %v", err)
 	}
@@ -601,10 +601,10 @@ func TestExecuteFunction(t *testing.T) {
 }
 
 func TestExecuteReturnsError(t *testing.T) {
-    rootCmd = &cobra.Command{Use: "bib", RunE: func(cmd *cobra.Command, args []string) error { return fmt.Errorf("boom") }}
-    if err := execute(); err == nil {
-        t.Fatalf("expected execute to return error")
-    }
+	rootCmd = &cobra.Command{Use: "bib", RunE: func(cmd *cobra.Command, args []string) error { return fmt.Errorf("boom") }}
+	if err := execute(); err == nil {
+		t.Fatalf("expected execute to return error")
+	}
 }
 
 // Removed OpenAI generator error tests
@@ -621,7 +621,7 @@ func TestDoLookup_WriteEntryError(t *testing.T) {
 	if err := os.WriteFile("data/citations", []byte("not a dir"), 0o644); err != nil {
 		t.Fatal(err)
 	}
-    if err := doAdd(context.Background(), "website", map[string]string{"url": "https://x", "title": "T"}); err == nil {
+	if err := doAdd(context.Background(), "website", map[string]string{"url": "https://x", "title": "T"}); err == nil {
 		t.Fatalf("expected error when write entry fails")
 	}
 }
@@ -726,147 +726,147 @@ func TestSummarizeCommand_SkipsWhenNotAccessible(t *testing.T) {
 // --- Edit command tests ---
 
 func TestEdit_ShowPrintsYAML(t *testing.T) {
-    dir := t.TempDir()
-    old, _ := os.Getwd()
-    t.Cleanup(func() { _ = os.Chdir(old) })
-    _ = os.Chdir(dir)
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
 
-    // seed minimal valid YAML
-    id := schema.NewID()
-    if err := os.MkdirAll(filepath.Join("data", "citations", "site"), 0o755); err != nil {
-        t.Fatal(err)
-    }
-    y := "" +
-        "id: " + id + "\n" +
-        "type: website\n" +
-        "apa7:\n  title: Title\n  url: https://x\n  accessed: \"2025-01-01\"\n" +
-        "annotation:\n  summary: s\n  keywords: [k]\n"
-    if err := os.WriteFile(filepath.Join("data/citations/site", id+".yaml"), []byte(y), 0o644); err != nil {
-        t.Fatal(err)
-    }
+	// seed minimal valid YAML
+	id := schema.NewID()
+	if err := os.MkdirAll(filepath.Join("data", "citations", "site"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	y := "" +
+		"id: " + id + "\n" +
+		"type: website\n" +
+		"apa7:\n  title: Title\n  url: https://x\n  accessed: \"2025-01-01\"\n" +
+		"annotation:\n  summary: s\n  keywords: [k]\n"
+	if err := os.WriteFile(filepath.Join("data/citations/site", id+".yaml"), []byte(y), 0o644); err != nil {
+		t.Fatal(err)
+	}
 
-    rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newEditCmd())
-    out, err := execCmd(rootCmd, "edit", "--id", id)
-    if err != nil {
-        t.Fatalf("edit show: %v", err)
-    }
-    if !strings.Contains(out, "id: "+id) || !strings.Contains(out, "apa7:") {
-        t.Fatalf("expected YAML printed, got: %q", out)
-    }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newEditCmd())
+	out, err := execCmd(rootCmd, "edit", "--id", id)
+	if err != nil {
+		t.Fatalf("edit show: %v", err)
+	}
+	if !strings.Contains(out, "id: "+id) || !strings.Contains(out, "apa7:") {
+		t.Fatalf("expected YAML printed, got: %q", out)
+	}
 }
 
 func TestEdit_UpdateScalarAndArray(t *testing.T) {
-    dir := t.TempDir()
-    old, _ := os.Getwd()
-    t.Cleanup(func() { _ = os.Chdir(old) })
-    _ = os.Chdir(dir)
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
 
-    id := schema.NewID()
-    if err := os.MkdirAll(filepath.Join("data", "citations", "site"), 0o755); err != nil {
-        t.Fatal(err)
-    }
-    y := "" +
-        "id: " + id + "\n" +
-        "type: website\n" +
-        "apa7:\n  title: Old\n  url: https://x\n  accessed: \"2025-01-01\"\n" +
-        "annotation:\n  summary: s\n  keywords: [k]\n"
-    path := filepath.Join("data/citations/site", id+".yaml")
-    if err := os.WriteFile(path, []byte(y), 0o644); err != nil {
-        t.Fatal(err)
-    }
+	id := schema.NewID()
+	if err := os.MkdirAll(filepath.Join("data", "citations", "site"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	y := "" +
+		"id: " + id + "\n" +
+		"type: website\n" +
+		"apa7:\n  title: Old\n  url: https://x\n  accessed: \"2025-01-01\"\n" +
+		"annotation:\n  summary: s\n  keywords: [k]\n"
+	path := filepath.Join("data/citations/site", id+".yaml")
+	if err := os.WriteFile(path, []byte(y), 0o644); err != nil {
+		t.Fatal(err)
+	}
 
-    rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newEditCmd())
-    out, err := execCmd(rootCmd, "edit", "--id", id, "--apa7.title=New Title", `--annotation.keywords=["alpha","beta"]`)
-    if err != nil {
-        t.Fatalf("edit update: %v", err)
-    }
-    if !strings.Contains(out, "updated data/citations/site/") {
-        t.Fatalf("expected updated message, got %q", out)
-    }
-    b, err := os.ReadFile(path)
-    if err != nil {
-        t.Fatal(err)
-    }
-    if !bytes.Contains(b, []byte("New Title")) {
-        t.Fatalf("expected title updated, got:\n%s", string(b))
-    }
-    if !bytes.Contains(b, []byte("alpha")) || !bytes.Contains(b, []byte("beta")) {
-        t.Fatalf("expected keywords updated, got:\n%s", string(b))
-    }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newEditCmd())
+	out, err := execCmd(rootCmd, "edit", "--id", id, "--apa7.title=New Title", `--annotation.keywords=["alpha","beta"]`)
+	if err != nil {
+		t.Fatalf("edit update: %v", err)
+	}
+	if !strings.Contains(out, "updated data/citations/site/") {
+		t.Fatalf("expected updated message, got %q", out)
+	}
+	b, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Contains(b, []byte("New Title")) {
+		t.Fatalf("expected title updated, got:\n%s", string(b))
+	}
+	if !bytes.Contains(b, []byte("alpha")) || !bytes.Contains(b, []byte("beta")) {
+		t.Fatalf("expected keywords updated, got:\n%s", string(b))
+	}
 }
 
 func TestEdit_TypeChangeMovesFile(t *testing.T) {
-    dir := t.TempDir()
-    old, _ := os.Getwd()
-    t.Cleanup(func() { _ = os.Chdir(old) })
-    _ = os.Chdir(dir)
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
 
-    id := schema.NewID()
-    if err := os.MkdirAll(filepath.Join("data", "citations", "site"), 0o755); err != nil {
-        t.Fatal(err)
-    }
-    y := "" +
-        "id: " + id + "\n" +
-        "type: website\n" +
-        "apa7:\n  title: Title\n  url: https://x\n  accessed: \"2025-01-01\"\n" +
-        "annotation:\n  summary: s\n  keywords: [k]\n"
-    oldPath := filepath.Join("data/citations/site", id+".yaml")
-    if err := os.WriteFile(oldPath, []byte(y), 0o644); err != nil {
-        t.Fatal(err)
-    }
+	id := schema.NewID()
+	if err := os.MkdirAll(filepath.Join("data", "citations", "site"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	y := "" +
+		"id: " + id + "\n" +
+		"type: website\n" +
+		"apa7:\n  title: Title\n  url: https://x\n  accessed: \"2025-01-01\"\n" +
+		"annotation:\n  summary: s\n  keywords: [k]\n"
+	oldPath := filepath.Join("data/citations/site", id+".yaml")
+	if err := os.WriteFile(oldPath, []byte(y), 0o644); err != nil {
+		t.Fatal(err)
+	}
 
-    rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newEditCmd())
-    out, err := execCmd(rootCmd, "edit", "--id", id, "--type=book")
-    if err != nil {
-        t.Fatalf("edit change type: %v", err)
-    }
-    if !strings.Contains(out, "moved data/citations/site/") || !strings.Contains(out, "data/citations/books/") {
-        t.Fatalf("expected move notice, got %q", out)
-    }
-    if _, err := os.Stat(oldPath); !os.IsNotExist(err) {
-        t.Fatalf("expected old path removed")
-    }
-    // new file exists
-    matches, _ := filepath.Glob(filepath.Join("data/citations/books", id+".yaml"))
-    if len(matches) != 1 {
-        t.Fatalf("expected new file in books dir")
-    }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newEditCmd())
+	out, err := execCmd(rootCmd, "edit", "--id", id, "--type=book")
+	if err != nil {
+		t.Fatalf("edit change type: %v", err)
+	}
+	if !strings.Contains(out, "moved data/citations/site/") || !strings.Contains(out, "data/citations/books/") {
+		t.Fatalf("expected move notice, got %q", out)
+	}
+	if _, err := os.Stat(oldPath); !os.IsNotExist(err) {
+		t.Fatalf("expected old path removed")
+	}
+	// new file exists
+	matches, _ := filepath.Glob(filepath.Join("data/citations/books", id+".yaml"))
+	if len(matches) != 1 {
+		t.Fatalf("expected new file in books dir")
+	}
 }
 
 func TestEdit_SetURLSetsAccessed(t *testing.T) {
-    dir := t.TempDir()
-    old, _ := os.Getwd()
-    t.Cleanup(func() { _ = os.Chdir(old) })
-    _ = os.Chdir(dir)
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
 
-    id := schema.NewID()
-    if err := os.MkdirAll(filepath.Join("data", "citations", "site"), 0o755); err != nil {
-        t.Fatal(err)
-    }
-    // URL initially empty, accessed missing
-    y := "" +
-        "id: " + id + "\n" +
-        "type: website\n" +
-        "apa7:\n  title: Title\n" +
-        "annotation:\n  summary: s\n  keywords: [k]\n"
-    p := filepath.Join("data/citations/site", id+".yaml")
-    if err := os.WriteFile(p, []byte(y), 0o644); err != nil {
-        t.Fatal(err)
-    }
+	id := schema.NewID()
+	if err := os.MkdirAll(filepath.Join("data", "citations", "site"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	// URL initially empty, accessed missing
+	y := "" +
+		"id: " + id + "\n" +
+		"type: website\n" +
+		"apa7:\n  title: Title\n" +
+		"annotation:\n  summary: s\n  keywords: [k]\n"
+	p := filepath.Join("data/citations/site", id+".yaml")
+	if err := os.WriteFile(p, []byte(y), 0o644); err != nil {
+		t.Fatal(err)
+	}
 
-    rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newEditCmd())
-    if _, err := execCmd(rootCmd, "edit", "--id", id, "--apa7.url=https://example.com"); err != nil {
-        t.Fatalf("edit set url: %v", err)
-    }
-    b, err := os.ReadFile(p)
-    if err != nil {
-        t.Fatal(err)
-    }
-    if !bytes.Contains(b, []byte("accessed:")) {
-        t.Fatalf("expected accessed set when url provided, got:\n%s", string(b))
-    }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newEditCmd())
+	if _, err := execCmd(rootCmd, "edit", "--id", id, "--apa7.url=https://example.com"); err != nil {
+		t.Fatalf("edit set url: %v", err)
+	}
+	b, err := os.ReadFile(p)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Contains(b, []byte("accessed:")) {
+		t.Fatalf("expected accessed set when url provided, got:\n%s", string(b))
+	}
 }

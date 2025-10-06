@@ -1,24 +1,24 @@
 package main
 
 import (
-    "bufio"
-    "context"
-    "fmt"
-    "io"
-    "net/url"
-    "os"
-    "strings"
-    "time"
+	"bufio"
+	"context"
+	"fmt"
+	"io"
+	"net/url"
+	"os"
+	"strings"
+	"time"
 
-    "github.com/spf13/cobra"
+	"github.com/spf13/cobra"
 
-    "bibliography/src/internal/doi"
-    "bibliography/src/internal/gitutil"
-    "bibliography/src/internal/openlibrary"
-    rfcpkg "bibliography/src/internal/rfc"
-    "bibliography/src/internal/schema"
-    "bibliography/src/internal/store"
-    webfetch "bibliography/src/internal/webfetch"
+	"bibliography/src/internal/doi"
+	"bibliography/src/internal/gitutil"
+	"bibliography/src/internal/openlibrary"
+	rfcpkg "bibliography/src/internal/rfc"
+	"bibliography/src/internal/schema"
+	"bibliography/src/internal/store"
+	webfetch "bibliography/src/internal/webfetch"
 )
 
 // indirections for testability
@@ -27,50 +27,50 @@ var (
 )
 
 func newAddCmd() *cobra.Command {
-    cmd := &cobra.Command{
-        Use:   "add",
-        Short: "Add annotated citations via OpenLibrary/DOI (no OpenAI)",
-    }
+	cmd := &cobra.Command{
+		Use:   "add",
+		Short: "Add annotated citations via OpenLibrary/DOI (no OpenAI)",
+	}
 
 	// add site <url>
 	var siteKeywords string
-    site := &cobra.Command{
-        Use:   "site [url]",
-        Short: "Add a website by URL or prompt for manual entry",
-        Args:  cobra.ArbitraryArgs,
-        RunE: func(cmd *cobra.Command, args []string) error {
-            if len(args) >= 1 && strings.TrimSpace(args[0]) != "" {
-                url := args[0]
-                return doAddWithKeywords(cmd.Context(), "website", map[string]string{"url": url}, parseKeywordsCSV(siteKeywords))
-            }
-            // Manual entry when no URL provided
-            return manualAdd(cmd, "website", parseKeywordsCSV(siteKeywords))
-        },
-    }
+	site := &cobra.Command{
+		Use:   "site [url]",
+		Short: "Add a website by URL or prompt for manual entry",
+		Args:  cobra.ArbitraryArgs,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			if len(args) >= 1 && strings.TrimSpace(args[0]) != "" {
+				url := args[0]
+				return doAddWithKeywords(cmd.Context(), "website", map[string]string{"url": url}, parseKeywordsCSV(siteKeywords))
+			}
+			// Manual entry when no URL provided
+			return manualAdd(cmd, "website", parseKeywordsCSV(siteKeywords))
+		},
+	}
 	site.Flags().StringVar(&siteKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// add book [--name ...] [--author ...] [--isbn ...]
 	var bookName, bookAuthor, bookISBN, bookKeywords string
-    book := &cobra.Command{
-        Use:   "book",
-        Short: "Add a book (flags or manual entry)",
-        RunE: func(cmd *cobra.Command, args []string) error {
-            hints := map[string]string{}
-            if bookName != "" {
-                hints["title"] = bookName
-            }
+	book := &cobra.Command{
+		Use:   "book",
+		Short: "Add a book (flags or manual entry)",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			hints := map[string]string{}
+			if bookName != "" {
+				hints["title"] = bookName
+			}
 			if bookAuthor != "" {
 				hints["author"] = bookAuthor
 			}
 			if bookISBN != "" {
 				hints["isbn"] = bookISBN
 			}
-            // If ISBN provided, use OpenLibrary instead of manual
-            if bookISBN != "" {
-                e, err := openlibrary.FetchBookByISBN(cmd.Context(), bookISBN)
-                if err != nil {
-                    return err
-                }
+			// If ISBN provided, use OpenLibrary instead of manual
+			if bookISBN != "" {
+				e, err := openlibrary.FetchBookByISBN(cmd.Context(), bookISBN)
+				if err != nil {
+					return err
+				}
 				// If keywords flag provided, override
 				if ks := parseKeywordsCSV(bookKeywords); len(ks) > 0 {
 					e.Annotation.Keywords = ks
@@ -82,15 +82,15 @@ func newAddCmd() *cobra.Command {
 				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
 					return err
 				}
-                fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-                return nil
-            }
-            if bookName == "" && bookAuthor == "" {
-                return manualAdd(cmd, "book", parseKeywordsCSV(bookKeywords))
-            }
-            return doAddWithKeywords(cmd.Context(), "book", hints, parseKeywordsCSV(bookKeywords))
-        },
-    }
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+				return nil
+			}
+			if bookName == "" && bookAuthor == "" {
+				return manualAdd(cmd, "book", parseKeywordsCSV(bookKeywords))
+			}
+			return doAddWithKeywords(cmd.Context(), "book", hints, parseKeywordsCSV(bookKeywords))
+		},
+	}
 	book.Flags().StringVar(&bookName, "name", "", "Book title")
 	book.Flags().StringVar(&bookAuthor, "author", "", "Author (Family, Given)")
 	book.Flags().StringVar(&bookISBN, "isbn", "", "ISBN")
@@ -98,34 +98,34 @@ func newAddCmd() *cobra.Command {
 
 	// add movie <name> [--date YYYY-MM-DD]
 	var movieDate, movieKeywords string
-    movie := &cobra.Command{
-        Use:   "movie [name]",
-        Short: "Add a movie (name or manual entry)",
-        Args:  cobra.ArbitraryArgs,
-        RunE: func(cmd *cobra.Command, args []string) error {
-            if len(args) > 0 {
-                hints := map[string]string{"title": strings.Join(args, " ")}
-                if movieDate != "" {
-                    hints["date"] = movieDate
-                }
-                return doAddWithKeywords(cmd.Context(), "movie", hints, parseKeywordsCSV(movieKeywords))
-            }
-            return manualAdd(cmd, "movie", parseKeywordsCSV(movieKeywords))
-        },
-    }
+	movie := &cobra.Command{
+		Use:   "movie [name]",
+		Short: "Add a movie (name or manual entry)",
+		Args:  cobra.ArbitraryArgs,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			if len(args) > 0 {
+				hints := map[string]string{"title": strings.Join(args, " ")}
+				if movieDate != "" {
+					hints["date"] = movieDate
+				}
+				return doAddWithKeywords(cmd.Context(), "movie", hints, parseKeywordsCSV(movieKeywords))
+			}
+			return manualAdd(cmd, "movie", parseKeywordsCSV(movieKeywords))
+		},
+	}
 	movie.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
 	movie.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// add article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
 	var artDOI, artURL, artTitle, artAuthor, artJournal, artDate, artKeywords string
-    article := &cobra.Command{
-        Use:   "article",
-        Short: "Add a journal or magazine article (flags or manual entry)",
-        RunE: func(cmd *cobra.Command, args []string) error {
-            hints := map[string]string{}
-            if artDOI != "" {
-                // Resolve via DOI using doi.org, without OpenAI
-                e, err := doi.FetchArticleByDOI(cmd.Context(), artDOI)
+	article := &cobra.Command{
+		Use:   "article",
+		Short: "Add a journal or magazine article (flags or manual entry)",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			hints := map[string]string{}
+			if artDOI != "" {
+				// Resolve via DOI using doi.org, without OpenAI
+				e, err := doi.FetchArticleByDOI(cmd.Context(), artDOI)
 				if err != nil {
 					return err
 				}
@@ -147,48 +147,48 @@ func newAddCmd() *cobra.Command {
 				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
 					return err
 				}
-                fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-                return nil
-            } else if strings.TrimSpace(artURL) != "" {
-                e, err := webfetch.FetchArticleByURL(cmd.Context(), artURL)
-                if err != nil {
-                    return err
-                }
-                if ks := parseKeywordsCSV(artKeywords); len(ks) > 0 {
-                    e.Annotation.Keywords = ks
-                }
-                if len(e.Annotation.Keywords) == 0 {
-                    e.Annotation.Keywords = []string{"article"}
-                }
-                path, err := store.WriteEntry(e)
-                if err != nil {
-                    return err
-                }
-                if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-                    return err
-                }
-                fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-                return nil
-            }
-            // Manual entry fallback when no DOI/URL provided and minimal hints empty
-            if artTitle != "" {
-                hints["title"] = artTitle
-            }
-            if artAuthor != "" {
-                hints["author"] = artAuthor
-            }
-            if artJournal != "" {
-                hints["journal"] = artJournal
-            }
-            if artDate != "" {
-                hints["date"] = artDate
-            }
-            if len(hints) == 0 {
-                return manualAdd(cmd, "article", parseKeywordsCSV(artKeywords))
-            }
-            return doAddWithKeywords(cmd.Context(), "article", hints, parseKeywordsCSV(artKeywords))
-        },
-    }
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+				return nil
+			} else if strings.TrimSpace(artURL) != "" {
+				e, err := webfetch.FetchArticleByURL(cmd.Context(), artURL)
+				if err != nil {
+					return err
+				}
+				if ks := parseKeywordsCSV(artKeywords); len(ks) > 0 {
+					e.Annotation.Keywords = ks
+				}
+				if len(e.Annotation.Keywords) == 0 {
+					e.Annotation.Keywords = []string{"article"}
+				}
+				path, err := store.WriteEntry(e)
+				if err != nil {
+					return err
+				}
+				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+					return err
+				}
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+				return nil
+			}
+			// Manual entry fallback when no DOI/URL provided and minimal hints empty
+			if artTitle != "" {
+				hints["title"] = artTitle
+			}
+			if artAuthor != "" {
+				hints["author"] = artAuthor
+			}
+			if artJournal != "" {
+				hints["journal"] = artJournal
+			}
+			if artDate != "" {
+				hints["date"] = artDate
+			}
+			if len(hints) == 0 {
+				return manualAdd(cmd, "article", parseKeywordsCSV(artKeywords))
+			}
+			return doAddWithKeywords(cmd.Context(), "article", hints, parseKeywordsCSV(artKeywords))
+		},
+	}
 	article.Flags().StringVar(&artDOI, "doi", "", "DOI of the article")
 	article.Flags().StringVar(&artURL, "url", "", "URL of an online article to fetch via OpenGraph/JSON-LD")
 	article.Flags().StringVar(&artTitle, "title", "", "Article title")
@@ -199,40 +199,40 @@ func newAddCmd() *cobra.Command {
 
 	// add rfc <rfcNumber>
 	var rfcKeywords string
-    rfc := &cobra.Command{
-        Use:   "rfc [rfcNumber]",
-        Short: "Add an RFC by number or prompt for manual entry",
-        Args:  cobra.ArbitraryArgs,
-        RunE: func(cmd *cobra.Command, args []string) error {
-            if len(args) == 1 && strings.TrimSpace(args[0]) != "" {
-                e, err := rfcpkg.FetchRFC(cmd.Context(), args[0])
-                if err != nil {
-                    return err
-                }
-                if ks := parseKeywordsCSV(rfcKeywords); len(ks) > 0 {
-                    e.Annotation.Keywords = ks
-                }
-                path, err := store.WriteEntry(e)
-                if err != nil {
-                    return err
-                }
-                if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-                    return err
-                }
-                fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-                return nil
-            }
-            return manualAdd(cmd, "rfc", parseKeywordsCSV(rfcKeywords))
-        },
-    }
+	rfc := &cobra.Command{
+		Use:   "rfc [rfcNumber]",
+		Short: "Add an RFC by number or prompt for manual entry",
+		Args:  cobra.ArbitraryArgs,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			if len(args) == 1 && strings.TrimSpace(args[0]) != "" {
+				e, err := rfcpkg.FetchRFC(cmd.Context(), args[0])
+				if err != nil {
+					return err
+				}
+				if ks := parseKeywordsCSV(rfcKeywords); len(ks) > 0 {
+					e.Annotation.Keywords = ks
+				}
+				path, err := store.WriteEntry(e)
+				if err != nil {
+					return err
+				}
+				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+					return err
+				}
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+				return nil
+			}
+			return manualAdd(cmd, "rfc", parseKeywordsCSV(rfcKeywords))
+		},
+	}
 	rfc.Flags().StringVar(&rfcKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
-    cmd.AddCommand(site, book, movie, article, rfc)
-    return cmd
+	cmd.AddCommand(site, book, movie, article, rfc)
+	return cmd
 }
 
 func doAdd(ctx context.Context, typ string, hints map[string]string) error {
-    return doAddWithKeywords(ctx, typ, hints, nil)
+	return doAddWithKeywords(ctx, typ, hints, nil)
 }
 
 func parseKeywordsCSV(s string) []string {
@@ -254,25 +254,25 @@ func parseKeywordsCSV(s string) []string {
 }
 
 func doAddWithKeywords(ctx context.Context, typ string, hints map[string]string, extraKeywords []string) error {
-    var e schema.Entry
-    e.Type = typ
-    title := strings.TrimSpace(hints["title"])
-    switch typ {
-    case "website":
-        if title == "" {
-            if u := strings.TrimSpace(hints["url"]); u != "" {
-                if pu, err := url.Parse(u); err == nil && pu.Host != "" {
-                    title = pu.Host
-                } else {
-                    title = u
-                }
-            }
-        }
-    default:
-        if title == "" {
-            return fmt.Errorf("title is required for %s adds without external metadata", typ)
-        }
-    }
+	var e schema.Entry
+	e.Type = typ
+	title := strings.TrimSpace(hints["title"])
+	switch typ {
+	case "website":
+		if title == "" {
+			if u := strings.TrimSpace(hints["url"]); u != "" {
+				if pu, err := url.Parse(u); err == nil && pu.Host != "" {
+					title = pu.Host
+				} else {
+					title = u
+				}
+			}
+		}
+	default:
+		if title == "" {
+			return fmt.Errorf("title is required for %s adds without external metadata", typ)
+		}
+	}
 	e.APA7.Title = title
 	if v := strings.TrimSpace(hints["journal"]); v != "" {
 		e.APA7.Journal = v
@@ -360,124 +360,124 @@ func parseAuthor(s string) (family, given string) {
 // --- Manual entry helpers ---
 
 func manualAdd(cmd *cobra.Command, typ string, extraKeywords []string) error {
-    in := cmd.InOrStdin()
-    out := cmd.OutOrStdout()
-    // Basic prompts
-    title := strings.TrimSpace(prompt(cmd, in, out, "Title (required): "))
-    if title == "" {
-        return fmt.Errorf("title is required")
-    }
-    authorsIn := strings.TrimSpace(prompt(cmd, in, out, "Authors (semicolon-separated, each as 'Family, Given'; optional): "))
-    date := strings.TrimSpace(prompt(cmd, in, out, "Date (YYYY-MM-DD; optional): "))
-    var yearPtr *int
-    if len(date) >= 4 {
-        var y int
-        if _, err := fmt.Sscanf(date[:4], "%d", &y); err == nil && y >= 1000 {
-            y2 := y
-            yearPtr = &y2
-        }
-    }
-    url := strings.TrimSpace(prompt(cmd, in, out, "URL (optional): "))
-    doi := ""
-    isbn := ""
-    journal := ""
-    publisher := ""
-    switch typ {
-    case "article":
-        journal = strings.TrimSpace(prompt(cmd, in, out, "Journal/Container (optional): "))
-        doi = strings.TrimSpace(prompt(cmd, in, out, "DOI (optional): "))
-    case "book":
-        publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (optional): "))
-        isbn = strings.TrimSpace(prompt(cmd, in, out, "ISBN (optional): "))
-    case "website":
-        // nothing extra
-    case "movie":
-        // accept publisher as studio
-        publisher = strings.TrimSpace(prompt(cmd, in, out, "Studio/Publisher (optional): "))
-    case "rfc":
-        // Allow manual entry for RFC basics
-        publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (default IETF; optional): "))
-        if publisher == "" {
-            publisher = "IETF"
-        }
-    }
-    summary := strings.TrimSpace(prompt(cmd, in, out, "Summary (required): "))
-    if summary == "" {
-        // Provide a sensible default to satisfy validation
-        summary = fmt.Sprintf("Bibliographic record for %s (manually entered).", title)
-    }
-    keywordsIn := strings.TrimSpace(prompt(cmd, in, out, "Keywords (comma-separated; optional): "))
-    keywords := parseKeywordsCSV(keywordsIn)
-    if len(keywords) == 0 {
-        keywords = []string{typ}
-    }
-    if len(extraKeywords) > 0 {
-        keywords = append(keywords, extraKeywords...)
-    }
+	in := cmd.InOrStdin()
+	out := cmd.OutOrStdout()
+	// Basic prompts
+	title := strings.TrimSpace(prompt(cmd, in, out, "Title (required): "))
+	if title == "" {
+		return fmt.Errorf("title is required")
+	}
+	authorsIn := strings.TrimSpace(prompt(cmd, in, out, "Authors (semicolon-separated, each as 'Family, Given'; optional): "))
+	date := strings.TrimSpace(prompt(cmd, in, out, "Date (YYYY-MM-DD; optional): "))
+	var yearPtr *int
+	if len(date) >= 4 {
+		var y int
+		if _, err := fmt.Sscanf(date[:4], "%d", &y); err == nil && y >= 1000 {
+			y2 := y
+			yearPtr = &y2
+		}
+	}
+	url := strings.TrimSpace(prompt(cmd, in, out, "URL (optional): "))
+	doi := ""
+	isbn := ""
+	journal := ""
+	publisher := ""
+	switch typ {
+	case "article":
+		journal = strings.TrimSpace(prompt(cmd, in, out, "Journal/Container (optional): "))
+		doi = strings.TrimSpace(prompt(cmd, in, out, "DOI (optional): "))
+	case "book":
+		publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (optional): "))
+		isbn = strings.TrimSpace(prompt(cmd, in, out, "ISBN (optional): "))
+	case "website":
+		// nothing extra
+	case "movie":
+		// accept publisher as studio
+		publisher = strings.TrimSpace(prompt(cmd, in, out, "Studio/Publisher (optional): "))
+	case "rfc":
+		// Allow manual entry for RFC basics
+		publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (default IETF; optional): "))
+		if publisher == "" {
+			publisher = "IETF"
+		}
+	}
+	summary := strings.TrimSpace(prompt(cmd, in, out, "Summary (required): "))
+	if summary == "" {
+		// Provide a sensible default to satisfy validation
+		summary = fmt.Sprintf("Bibliographic record for %s (manually entered).", title)
+	}
+	keywordsIn := strings.TrimSpace(prompt(cmd, in, out, "Keywords (comma-separated; optional): "))
+	keywords := parseKeywordsCSV(keywordsIn)
+	if len(keywords) == 0 {
+		keywords = []string{typ}
+	}
+	if len(extraKeywords) > 0 {
+		keywords = append(keywords, extraKeywords...)
+	}
 
-    // Build entry
-    var e schema.Entry
-    e.Type = typ
-    e.ID = schema.NewID()
-    e.APA7.Title = title
-    e.APA7.ContainerTitle = journal
-    e.APA7.Journal = journal
-    e.APA7.Publisher = publisher
-    if yearPtr != nil {
-        e.APA7.Year = yearPtr
-    }
-    e.APA7.Date = date
-    e.APA7.URL = url
-    e.APA7.DOI = doi
-    e.APA7.ISBN = isbn
-    if strings.TrimSpace(e.APA7.URL) != "" {
-        e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
-    }
-    // Authors
-    for _, name := range splitAuthorsBySemi(authorsIn) {
-        fam, giv := parseAuthor(name)
-        if fam != "" {
-            e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
-        }
-    }
-    e.Annotation.Summary = summary
-    e.Annotation.Keywords = keywords
+	// Build entry
+	var e schema.Entry
+	e.Type = typ
+	e.ID = schema.NewID()
+	e.APA7.Title = title
+	e.APA7.ContainerTitle = journal
+	e.APA7.Journal = journal
+	e.APA7.Publisher = publisher
+	if yearPtr != nil {
+		e.APA7.Year = yearPtr
+	}
+	e.APA7.Date = date
+	e.APA7.URL = url
+	e.APA7.DOI = doi
+	e.APA7.ISBN = isbn
+	if strings.TrimSpace(e.APA7.URL) != "" {
+		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+	}
+	// Authors
+	for _, name := range splitAuthorsBySemi(authorsIn) {
+		fam, giv := parseAuthor(name)
+		if fam != "" {
+			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
+		}
+	}
+	e.Annotation.Summary = summary
+	e.Annotation.Keywords = keywords
 
-    if err := e.Validate(); err != nil {
-        return err
-    }
-    path, err := store.WriteEntry(e)
-    if err != nil {
-        return err
-    }
-    if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-        return err
-    }
-    fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-    return nil
+	if err := e.Validate(); err != nil {
+		return err
+	}
+	path, err := store.WriteEntry(e)
+	if err != nil {
+		return err
+	}
+	if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+		return err
+	}
+	fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+	return nil
 }
 
 func prompt(cmd *cobra.Command, in io.Reader, out io.Writer, q string) string {
-    // write prompt
-    fmt.Fprint(out, q)
-    // read line
-    br := bufio.NewReader(in)
-    s, _ := br.ReadString('\n')
-    return strings.TrimRight(s, "\r\n")
+	// write prompt
+	fmt.Fprint(out, q)
+	// read line
+	br := bufio.NewReader(in)
+	s, _ := br.ReadString('\n')
+	return strings.TrimRight(s, "\r\n")
 }
 
 func splitAuthorsBySemi(s string) []string {
-    s = strings.TrimSpace(s)
-    if s == "" {
-        return nil
-    }
-    parts := strings.Split(s, ";")
-    out := make([]string, 0, len(parts))
-    for _, p := range parts {
-        p = strings.TrimSpace(p)
-        if p != "" {
-            out = append(out, p)
-        }
-    }
-    return out
+	s = strings.TrimSpace(s)
+	if s == "" {
+		return nil
+	}
+	parts := strings.Split(s, ";")
+	out := make([]string, 0, len(parts))
+	for _, p := range parts {
+		p = strings.TrimSpace(p)
+		if p != "" {
+			out = append(out, p)
+		}
+	}
+	return out
 }
