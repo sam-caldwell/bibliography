@@ -64,6 +64,30 @@
     "quantum",
     "annealer"
   ],
+  "data/citations/article/1be227c2-bb9f-4a18-9279-18695275c46d.yaml": [
+    "zero",
+    "trust",
+    "based",
+    "framework",
+    "employing",
+    "blockchain",
+    "technology",
+    "and",
+    "ring",
+    "oscillator",
+    "physical",
+    "unclonable",
+    "functions",
+    "for",
+    "security",
+    "of",
+    "field",
+    "programmable",
+    "gate",
+    "array",
+    "supply",
+    "chain"
+  ],
   "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml": [
     "the",
     "resource",
@@ -647,6 +671,24 @@
     "organic",
     "semiconductors"
   ],
+  "data/citations/article/adff12c7-e675-4514-b8b4-baf9f6d0fc14.yaml": [
+    "3219",
+    "2023",
+    "ieee",
+    "standard",
+    "for",
+    "blockchain",
+    "based",
+    "zero",
+    "trust",
+    "framework",
+    "for",
+    "the",
+    "internet",
+    "of",
+    "things",
+    "iot"
+  ],
   "data/citations/article/b086551a-7f10-4140-9efa-7b4bfda58184.yaml": [
     "experimental",
     "quantum",
@@ -661,6 +703,24 @@
     "era",
     "and",
     "beyond"
+  ],
+  "data/citations/article/b31b91bf-97a0-4c6d-9bc8-bbcbf922c7da.yaml": [
+    "securing",
+    "digital",
+    "identity",
+    "in",
+    "the",
+    "zero",
+    "trust",
+    "architecture",
+    "blockchain",
+    "approach",
+    "to",
+    "privacy",
+    "focused",
+    "multi",
+    "factor",
+    "authentication"
   ],
   "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml": [
     "building",
@@ -712,6 +772,24 @@
     "action",
     "at",
     "distance"
+  ],
+  "data/citations/article/c3dc778f-d94c-4ccb-a40b-9581ff90a5d5.yaml": [
+    "securing",
+    "digital",
+    "identity",
+    "in",
+    "the",
+    "zero",
+    "trust",
+    "architecture",
+    "blockchain",
+    "approach",
+    "to",
+    "privacy",
+    "focused",
+    "multi",
+    "factor",
+    "authentication"
   ],
   "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml": [
     "microsoft",
@@ -792,6 +870,11 @@
     "chain",
     "hack",
     "ever"
+  ],
+  "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml": [
+    "docs",
+    "sentinel",
+    "co"
   ],
   "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml": [
     "the",
