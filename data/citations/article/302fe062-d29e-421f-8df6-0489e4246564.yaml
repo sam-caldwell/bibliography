@@ -1,0 +1,26 @@
+id: 302fe062-d29e-421f-8df6-0489e4246564
+type: article
+apa7:
+    authors:
+        - family: Deshpande
+          given: S.
+        - family: Park
+          given: Y.
+        - family: Stamp
+          given: M.
+    year: 2013
+    date: "2013-10-15"
+    title: Eigenvalue analysis for metamorphic detection
+    container_title: Journal of Computer Virology and Hacking Techniques
+    publisher: Springer Science and Business Media LLC
+    journal: Journal of Computer Virology and Hacking Techniques
+    volume: "10"
+    issue: "1"
+    pages: 53-65
+    doi: 10.1007/s11416-013-0193-4
+    url: https://doi.org/10.1007/s11416-013-0193-4
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Eigenvalue analysis for metamorphic detection in Journal of Computer Virology and Hacking Techniques via DOI metadata.
+    keywords:
+        - article
