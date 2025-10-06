@@ -1,0 +1,28 @@
+id: 6cd73a77-01b1-4b80-94a3-3b112ce48c98
+type: article
+apa7:
+    authors:
+        - family: Macedo
+          given: E. L. C.
+        - family: Delicato
+          given: F. C.
+        - family: de Moraes
+          given: L. F. M.
+        - family: Fortino
+          given: G.
+    year: 2024
+    date: "2024-01-01"
+    title: Assigning Trust to Devices in the Context of Consumer IoT Applications
+    container_title: IEEE Consumer Electronics Magazine
+    publisher: Institute of Electrical and Electronics Engineers (IEEE)
+    journal: IEEE Consumer Electronics Magazine
+    volume: "13"
+    issue: "1"
+    pages: 12-21
+    doi: 10.1109/mce.2022.3154357
+    url: https://doi.org/10.1109/MCE.2022.3154357
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Assigning Trust to Devices in the Context of Consumer IoT Applications in IEEE Consumer Electronics Magazine via DOI metadata.
+    keywords:
+        - article
