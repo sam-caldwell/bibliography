@@ -16,6 +16,7 @@ import (
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
 	"bibliography/src/internal/store"
+	webfetch "bibliography/src/internal/webfetch"
 )
 
 // indirections for testability
@@ -104,7 +105,7 @@ func newLookupCmd() *cobra.Command {
 	movie.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// add article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
-	var artDOI, artTitle, artAuthor, artJournal, artDate, artKeywords string
+	var artDOI, artURL, artTitle, artAuthor, artJournal, artDate, artKeywords string
 	article := &cobra.Command{
 		Use:   "article",
 		Short: "Add a journal or magazine article",
@@ -136,6 +137,26 @@ func newLookupCmd() *cobra.Command {
 				}
 				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
 				return nil
+			} else if strings.TrimSpace(artURL) != "" {
+				e, err := webfetch.FetchArticleByURL(cmd.Context(), artURL)
+				if err != nil {
+					return err
+				}
+				if ks := parseKeywordsCSV(artKeywords); len(ks) > 0 {
+					e.Annotation.Keywords = ks
+				}
+				if len(e.Annotation.Keywords) == 0 {
+					e.Annotation.Keywords = []string{"article"}
+				}
+				path, err := store.WriteEntry(e)
+				if err != nil {
+					return err
+				}
+				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+					return err
+				}
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+				return nil
 			}
 			if artTitle != "" {
 				hints["title"] = artTitle
@@ -153,6 +174,7 @@ func newLookupCmd() *cobra.Command {
 		},
 	}
 	article.Flags().StringVar(&artDOI, "doi", "", "DOI of the article")
+	article.Flags().StringVar(&artURL, "url", "", "URL of an online article to fetch via OpenGraph/JSON-LD")
 	article.Flags().StringVar(&artTitle, "title", "", "Article title")
 	article.Flags().StringVar(&artAuthor, "author", "", "Author (Family, Given)")
 	article.Flags().StringVar(&artJournal, "journal", "", "Journal or publication name")

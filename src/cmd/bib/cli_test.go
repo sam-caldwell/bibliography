@@ -17,6 +17,7 @@ import (
 	"bibliography/src/internal/openlibrary"
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
+	webfetch "bibliography/src/internal/webfetch"
 )
 
 // test HTTP client for OpenLibrary injection
@@ -279,6 +280,49 @@ func TestLookupArticleByDOI_RecordsProvidedDOIIfMissingFromCSL(t *testing.T) {
 	}
 	if !bytes.Contains(by, []byte("https://doi.org/10.5555/abc")) {
 		t.Fatalf("expected doi.org URL recorded, got:\n%s", string(by))
+	}
+}
+
+func TestLookupArticleByURL_OGTags(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+
+	// stub web page with OG/meta and JSON-LD
+	html := `<!doctype html><html><head>
+    <meta property="og:title" content="Faster-Than-Light Telegraph That Wasn't">
+    <meta property="og:site_name" content="Scientific American">
+    <meta property="article:published_time" content="2024-05-01T12:00:00Z">
+    <meta name="author" content="Jane Doe">
+    <meta name="description" content="A piece about a telegraph mistake.">
+    <script type="application/ld+json">{"@type":"NewsArticle","headline":"Faster-Than-Light Telegraph That Wasn't","author":{"name":"Jane Doe"},"datePublished":"2024-05-01","publisher":{"name":"Scientific American"}}</script>
+    <title>FTL Telegraph</title>
+    </head><body>...</body></html>`
+
+	// make a minimal HTTPDoer that returns this HTML for any URL
+	webfetch.SetHTTPClient(testHTTPDoer{status: 200, body: html})
+	t.Cleanup(func() { webfetch.SetHTTPClient(&http.Client{}) })
+
+	commitAndPush = func(paths []string, msg string) error { return nil }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newLookupCmd())
+	if _, err := execCmd(rootCmd, "add", "article", "--url", "https://example.com/post"); err != nil {
+		t.Fatalf("add article by url: %v", err)
+	}
+	// slug from title + year
+	if _, err := os.Stat(filepath.Join("data/citations", "article", "faster-than-light-telegraph-that-wasn-t-2024.yaml")); err != nil {
+		t.Fatalf("expected YAML written: %v", err)
+	}
+	by, err := os.ReadFile(filepath.Join("data/citations", "article", "faster-than-light-telegraph-that-wasn-t-2024.yaml"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Contains(by, []byte("Scientific American")) {
+		t.Fatalf("expected container/publisher in yaml: %s", string(by))
+	}
+	if !bytes.Contains(by, []byte("accessed:")) {
+		t.Fatalf("expected accessed date")
 	}
 }
 
