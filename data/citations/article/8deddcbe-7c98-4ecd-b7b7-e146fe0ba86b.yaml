@@ -1,0 +1,26 @@
+id: 8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b
+type: article
+apa7:
+    authors:
+        - family: Jardine
+          given: E.
+        - family: Lindner
+          given: A. M.
+        - family: Owenson
+          given: G.
+    year: 2020
+    date: "2020-11-30"
+    title: The potential harms of the Tor anonymity network cluster disproportionately in free countries
+    container_title: Proceedings of the National Academy of Sciences
+    publisher: Proceedings of the National Academy of Sciences
+    journal: Proceedings of the National Academy of Sciences
+    volume: "117"
+    issue: "50"
+    pages: 31716-31721
+    doi: 10.1073/pnas.2011893117
+    url: https://doi.org/10.1073/pnas.2011893117
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for The potential harms of the Tor anonymity network cluster disproportionately in free countries in Proceedings of the National Academy of Sciences via DOI metadata.
+    keywords:
+        - article
