@@ -18,6 +18,7 @@ import (
 	"bibliography/src/internal/openlibrary"
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
+	songfetch "bibliography/src/internal/song"
 	"bibliography/src/internal/store"
 	"bibliography/src/internal/summarize"
 	youtube "bibliography/src/internal/video"
@@ -144,6 +145,55 @@ func newAddCmd() *cobra.Command {
 	}
 	movie.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
 	movie.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+
+	// add song <title> [--artist ...] [--date YYYY-MM-DD]
+	var songArtist, songDate, songKeywords string
+	song := &cobra.Command{
+		Use:   "song [title]",
+		Short: "Add a song (title/artist or manual entry)",
+		Args:  cobra.ArbitraryArgs,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			if len(args) > 0 {
+				title := strings.Join(args, " ")
+				e, err := songfetch.FetchSong(cmd.Context(), title, songArtist, songDate)
+				if err != nil {
+					// Fallback to OpenAI if available
+					if se, serr := summarize.GenerateSongFromTitleArtistDate(cmd.Context(), title, songArtist, songDate); serr == nil {
+						e = se
+					} else {
+						// Minimal construction fallback
+						hints := map[string]string{"title": title}
+						if songDate != "" {
+							hints["date"] = songDate
+						}
+						if songArtist != "" {
+							hints["author"] = songArtist
+						}
+						return doAddWithKeywords(cmd.Context(), "song", hints, parseKeywordsCSV(songKeywords))
+					}
+				}
+				if ks := parseKeywordsCSV(songKeywords); len(ks) > 0 {
+					e.Annotation.Keywords = ks
+				}
+				if len(e.Annotation.Keywords) == 0 {
+					e.Annotation.Keywords = []string{"song"}
+				}
+				path, err := store.WriteEntry(e)
+				if err != nil {
+					return err
+				}
+				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+					return err
+				}
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\\n", path)
+				return nil
+			}
+			return manualAdd(cmd, "song", parseKeywordsCSV(songKeywords))
+		},
+	}
+	song.Flags().StringVar(&songArtist, "artist", "", "Artist/performer name")
+	song.Flags().StringVar(&songDate, "date", "", "release date YYYY-MM-DD")
+	song.Flags().StringVar(&songKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
 	// add article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
 	var artDOI, artURL, artTitle, artAuthor, artJournal, artDate, artKeywords string
@@ -298,7 +348,7 @@ func newAddCmd() *cobra.Command {
 	video.Flags().StringVar(&ytURL, "youtube", "", "YouTube video URL to fetch via oEmbed")
 	video.Flags().StringVar(&videoKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
-	cmd.AddCommand(site, book, movie, article, video, rfc)
+	cmd.AddCommand(site, book, movie, song, article, video, rfc)
 	return cmd
 }
 
@@ -465,6 +515,9 @@ func manualAdd(cmd *cobra.Command, typ string, extraKeywords []string) error {
 	case "movie":
 		// accept publisher as studio
 		publisher = strings.TrimSpace(prompt(cmd, in, out, "Studio/Publisher (optional): "))
+	case "song":
+		journal = strings.TrimSpace(prompt(cmd, in, out, "Album/Container (optional): "))
+		publisher = strings.TrimSpace(prompt(cmd, in, out, "Label/Publisher (optional): "))
 	case "rfc":
 		// Allow manual entry for RFC basics
 		publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (default IETF; optional): "))

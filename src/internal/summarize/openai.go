@@ -476,3 +476,116 @@ func yearFromDate(date string) int {
 	}
 	return 0
 }
+
+// GenerateSongFromTitleArtistDate builds a minimal APA7 song entry from OpenAI output.
+func GenerateSongFromTitleArtistDate(ctx context.Context, title, artist, date string) (schema.Entry, error) {
+	apiKey := os.Getenv("OPENAI_API_KEY")
+	if apiKey == "" {
+		return schema.Entry{}, fmt.Errorf("OPENAI_API_KEY is not set")
+	}
+	model := os.Getenv("OPENAI_MODEL")
+	if model == "" {
+		model = "gpt-4o-mini"
+	}
+	sys := "You extract bibliographic metadata for songs. Return strict JSON only."
+	user := fmt.Sprintf(`Given this song info, return ONLY a single JSON object with keys:
+{
+  "title": string,
+  "date": string,               // YYYY-MM-DD if known; else empty
+  "publisher": string,          // label if known; else empty
+  "container_title": string,    // album if known; else empty
+  "authors": [{"family": string, "given": string}] ,  // artist/performer; may be empty
+  "summary": string             // 80-160 word neutral prose
+}
+Title: %s
+Artist: %s
+Date: %s`, title, artist, date)
+	body := map[string]any{"model": model, "temperature": 0.2, "messages": []map[string]string{{"role": "system", "content": sys}, {"role": "user", "content": user}}}
+	buf, _ := json.Marshal(body)
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	req.Header.Set("Authorization", "Bearer "+apiKey)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("User-Agent", ua)
+	resp, err := client.Do(req)
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
+		return schema.Entry{}, fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
+	}
+	var out struct {
+		Choices []struct {
+			Message struct {
+				Content string `json:"content"`
+			} `json:"message"`
+		} `json:"choices"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
+		return schema.Entry{}, err
+	}
+	if len(out.Choices) == 0 {
+		return schema.Entry{}, fmt.Errorf("openai: empty choices")
+	}
+	content := out.Choices[0].Message.Content
+	var obj struct {
+		Title, Date, Publisher, ContainerTitle, Summary string
+		Authors                                         []struct{ Family, Given string }
+	}
+	if err := json.Unmarshal([]byte(content), &obj); err != nil {
+		if s2, e := extractJSONObject(content); e == nil {
+			_ = json.Unmarshal([]byte(s2), &obj)
+		}
+	}
+	var e schema.Entry
+	e.Type = "song"
+	e.ID = schema.NewID()
+	e.APA7.Title = strings.TrimSpace(first(obj.Title, title))
+	e.APA7.Date = strings.TrimSpace(first(obj.Date, date))
+	if y := yearFromDate(e.APA7.Date); y > 0 {
+		y2 := y
+		e.APA7.Year = &y2
+	}
+	e.APA7.Publisher = strings.TrimSpace(obj.Publisher)
+	e.APA7.ContainerTitle = strings.TrimSpace(obj.ContainerTitle)
+	for _, a := range obj.Authors {
+		fam := strings.TrimSpace(a.Family)
+		giv := strings.TrimSpace(a.Given)
+		if fam != "" {
+			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
+		}
+	}
+	e.Annotation.Summary = strings.TrimSpace(obj.Summary)
+	if e.Annotation.Summary == "" && e.APA7.Title != "" {
+		e.Annotation.Summary = "Song: " + e.APA7.Title + "."
+	}
+	if ks, err := KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); err == nil {
+		e.Annotation.Keywords = ks
+	}
+	if len(e.Annotation.Keywords) == 0 {
+		e.Annotation.Keywords = []string{"song"}
+	}
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
+}
+
+func first(a, b string) string {
+	if strings.TrimSpace(a) != "" {
+		return a
+	}
+	return b
+}
+func extractJSONObject(s string) (string, error) {
+	start := strings.Index(s, "{")
+	end := strings.LastIndex(s, "}")
+	if start >= 0 && end > start {
+		return s[start : end+1], nil
+	}
+	return "", fmt.Errorf("no json object")
+}
