@@ -1,0 +1,30 @@
+id: experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998
+type: article
+apa7:
+    authors:
+        - family: Boschi
+          given: D.
+        - family: Branca
+          given: S.
+        - family: De Martini
+          given: F.
+        - family: Hardy
+          given: L.
+        - family: Popescu
+          given: S.
+    year: 1998
+    date: "1998-02-09"
+    title: Experimental Realization of Teleporting an Unknown Pure Quantum State via Dual Classical and Einstein-Podolsky-Rosen Channels
+    container_title: Physical Review Letters
+    publisher: American Physical Society (APS)
+    journal: Physical Review Letters
+    volume: "80"
+    issue: "6"
+    pages: 1121-1125
+    doi: 10.1103/physrevlett.80.1121
+    url: https://doi.org/10.1103/physrevlett.80.1121
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Experimental Realization of Teleporting an Unknown Pure Quantum State via Dual Classical and Einstein-Podolsky-Rosen Channels in Physical Review Letters via DOI metadata.
+    keywords:
+        - article
