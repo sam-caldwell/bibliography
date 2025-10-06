@@ -1,0 +1,17 @@
+id: 73c5fed8-b6cb-4edf-8891-ad6a83136d41
+type: article
+apa7:
+    authors:
+        - family: Kapko
+          given: M.
+    year: 2024
+    date: "2024-07-12"
+    title: Massive Snowflake-linked attack exposes data on nearly 110M AT&amp;T customers
+    container_title: Cybersecurity Dive
+    publisher: Cybersecurity Dive
+    url: https://www.cybersecuritydive.com/news/att-cyberattack-snowflake-environment/721235/
+    accessed: "2025-10-06"
+annotation:
+    summary: Attackers breached AT&amp;T&rsquo;s Snowflake environment for 11 days in April, and stole customers&rsquo; call&nbsp;and text message records spanning a six-month period from 2022.
+    keywords:
+        - article
