@@ -8,6 +8,20 @@ apa7:
     url: https://ieeexplore.ieee.org/servlet/opac?punumber=10531212
     accessed: "2025-10-06"
 annotation:
-    summary: The surging needs for the Internet of Things (IoT) are dramatically shifting the network structure and challenging the traditional perimeter security paradigm. To establish secure and trustworthy interoperability among billions of heterogeneous interconnected devices, there is a need for standards defining a common framework. In this standard, a blockchain-based Zero-Trust access control framework is defined. The framework provides a typical implementation model and deployment variations, addressing general security and trust in IoT applications with the inspiration of the emerging Zero-Trust paradigm and blockchain technology. The leverage of blockchain and Zero-Trust discussed could provide reliable interactions among people, things, and applications in the presence of failures and attacks, and improve an IoT system’s overall information technology security posture.
+    summary: |
+        The surging needs for the Internet of Things (IoT) are dramatically shifting the network structure and 
+        challenging the traditional perimeter security paradigm. To establish secure and trustworthy interoperability
+        among billions of heterogeneous interconnected devices, there is a need for standards defining a common
+        framework. In this standard, a blockchain-based Zero-Trust access control framework is defined. The framework 
+        provides a typical implementation model and deployment variations, addressing general security and trust in
+        IoT applications with the inspiration of the emerging Zero-Trust paradigm and blockchain technology. The
+        leverage of blockchain and Zero-Trust discussed could provide reliable interactions among people, things, 
+        and applications in the presence of failures and attacks, and improve an IoT system’s overall information 
+        technology security posture.
     keywords:
-        - article
+        - iot
+        - blockchain
+        - zero trust network architecture
+        - ztna
+        - cybersecurity
+        - networking
