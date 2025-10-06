@@ -39,13 +39,16 @@ func CommitAndPush(paths []string, message string) error {
 		return fmt.Errorf("git add failed: %v: %s", err, stderr)
 	}
 	// git commit
-	if _, stderr, err := runner.Run("git", "commit", "-m", message); err != nil {
-		// If nothing to commit, treat as success
-		if bytes.Contains([]byte(stderr), []byte("nothing to commit")) ||
-			bytes.Contains([]byte(stderr), []byte("no changes added to commit")) {
+	if stdout, stderr, err := runner.Run("git", "commit", "-m", message); err != nil {
+		// If nothing to commit, treat as success. Some Git versions print this on stdout.
+		combined := append([]byte(stderr), []byte(stdout)...)
+		if bytes.Contains(combined, []byte("nothing to commit")) ||
+			bytes.Contains(combined, []byte("no changes added to commit")) ||
+			bytes.Contains(combined, []byte("working tree clean")) {
 			// no-op
 		} else {
-			return fmt.Errorf("git commit failed: %v: %s", err, stderr)
+			// Return both stderr and stdout for easier diagnostics
+			return fmt.Errorf("git commit failed: %v: %s%s", err, stderr, stdout)
 		}
 	}
 	// git push

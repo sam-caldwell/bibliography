@@ -147,6 +147,13 @@ func TestCommitAndPush_ErrorPaths(t *testing.T) {
 		t.Fatalf("expected success on 'no changes': %v", err)
 	}
 
+	// git commit: message appears on stdout (macOS sometimes)
+	fr = &fakeRunner{seq: []resp{{"", "", nil}, {"On branch main\nnothing to commit, working tree clean\n", "", &cmdError{s: "commit fail"}}, {"", "", nil}}}
+	runner = fr
+	if err := CommitAndPush([]string{"x"}, "msg"); err != nil {
+		t.Fatalf("expected success when 'nothing to commit' is on stdout: %v", err)
+	}
+
 	// git push fails
 	fr = &fakeRunner{seq: []resp{{"", "", nil}, {"", "", nil}, {"", "push fail", &cmdError{s: "push fail"}}}}
 	runner = fr
