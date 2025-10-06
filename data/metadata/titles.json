@@ -1290,6 +1290,43 @@
     "record",
     "time"
   ],
+  "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml": [
+    "star",
+    "wars",
+    "episode",
+    "iii",
+    "revenge",
+    "of",
+    "the",
+    "sith"
+  ],
+  "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml": [
+    "star",
+    "wars",
+    "episode",
+    "the",
+    "empire",
+    "strikes",
+    "back"
+  ],
+  "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml": [
+    "star",
+    "wars",
+    "episode",
+    "ii",
+    "attack",
+    "of",
+    "the",
+    "clones"
+  ],
+  "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml": [
+    "star",
+    "wars",
+    "episode",
+    "iv",
+    "new",
+    "hope"
+  ],
   "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml": [
     "the",
     "hitchhiker",
@@ -1298,14 +1335,36 @@
     "the",
     "galaxy"
   ],
+  "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml": [
+    "star",
+    "wars",
+    "episode",
+    "the",
+    "phantom",
+    "menace"
+  ],
   "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml": [
     "12",
     "angry",
     "men"
   ],
+  "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml": [
+    "office",
+    "space"
+  ],
   "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml": [
     "war",
     "games"
+  ],
+  "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml": [
+    "star",
+    "wars",
+    "episode",
+    "vi",
+    "return",
+    "of",
+    "the",
+    "jedi"
   ],
   "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml": [
     "traversal",

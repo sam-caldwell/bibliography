@@ -422,6 +422,9 @@
   "Jozsa, R.": [
     "data/citations/article/9327ba2a-36aa-4696-a8f3-b37272850c12.yaml"
   ],
+  "Judge, Mike": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "Kaiser, D.": [
     "data/citations/article/72d381ac-c5e0-4a4d-841e-febda1d36d1f.yaml"
   ],
@@ -442,6 +445,9 @@
   ],
   "Kathir, M.": [
     "data/citations/article/97a65561-292d-4372-bd68-4fd8ede75297.yaml"
+  ],
+  "Kershner, Irvin": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "Khan, R. A.": [
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml"
@@ -545,6 +551,12 @@
   "Loe, M.": [
     "data/citations/article/7fa31bfb-1124-416c-b1cf-2e87c3dcee18.yaml"
   ],
+  "Lucas, George": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "Lumet, Sidney": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
@@ -591,6 +603,9 @@
   ],
   "Markov, Y.": [
     "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml"
+  ],
+  "Marquand, Richard": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "Marrucci, L.": [
     "data/citations/article/720f357c-1060-413c-a8f2-3cff2058d0c9.yaml"

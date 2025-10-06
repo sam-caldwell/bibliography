@@ -100,11 +100,20 @@
   "1965": [
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml"
   ],
+  "1977": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "1978": [
     "data/citations/article/6efa14ba-08a0-4b58-b64b-ec79daabd7ce.yaml"
   ],
   "1979": [
     "data/citations/article/6f3719b4-f6ac-470b-97fe-32939f5ed890.yaml"
+  ],
+  "1980": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
+  "1980 film": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "1981": [
     "data/citations/article/72d381ac-c5e0-4a4d-841e-febda1d36d1f.yaml",
@@ -115,7 +124,8 @@
   ],
   "1983": [
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "1984": [
     "data/citations/article/f0778a64-21ac-4713-a29f-cefcec1d062e.yaml"
@@ -159,7 +169,9 @@
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
   ],
   "1999": [
-    "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml"
+    "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "1g": [
     "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml"
@@ -174,6 +186,9 @@
   "2000": [
     "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml"
   ],
+  "2002": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "2003": [
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml"
@@ -184,7 +199,8 @@
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml"
   ],
   "2005": [
-    "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml"
+    "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
   ],
   "2006": [
     "data/citations/article/cd7ba492-08ea-426d-8d2d-ad8490e8a0f1.yaml",
@@ -361,7 +377,11 @@
   ],
   "20th": [
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
-    "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml"
+    "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
+  "20th century fox": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "21st": [
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
@@ -477,6 +497,7 @@
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/bdc4a446-8130-45f2-9f9b-c93c899430e2.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml"
   ],
@@ -496,7 +517,8 @@
     "data/citations/article/6efa14ba-08a0-4b58-b64b-ec79daabd7ce.yaml"
   ],
   "absurd": [
-    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
+    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "abuse": [
     "data/citations/article/f52515c5-66d9-4f41-aefb-03389a2016c0.yaml"
@@ -584,6 +606,7 @@
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "acclaim": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "accommodate": [
@@ -678,7 +701,10 @@
   ],
   "action": [
     "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml",
-    "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml"
+    "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "actionable": [
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml"
@@ -929,6 +955,9 @@
     "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml",
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml"
   ],
+  "adventure": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "adventures": [
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
@@ -965,7 +994,10 @@
   ],
   "after": [
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml",
-    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
+    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "ag": [
     "data/citations/article/5117ba86-4c99-474a-99ba-b2b3ac5b01ed.yaml"
@@ -982,7 +1014,12 @@
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml",
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml",
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml",
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "age": [
     "data/citations/article/b26b190f-b24f-478a-ad04-eb388dcea360.yaml",
@@ -1029,6 +1066,7 @@
     "data/citations/article/6efa14ba-08a0-4b58-b64b-ec79daabd7ce.yaml",
     "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml",
     "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml"
   ],
@@ -1119,10 +1157,19 @@
     "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml"
   ],
   "allegedly": [
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml"
+  ],
+  "alliance": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "allies": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "allocate": [
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml"
@@ -1173,6 +1220,9 @@
   "along": [
     "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml"
   ],
+  "alongside": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "also": [
     "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml",
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml",
@@ -1220,6 +1270,7 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
@@ -1242,6 +1293,9 @@
     "data/citations/article/6efa14ba-08a0-4b58-b64b-ec79daabd7ce.yaml",
     "data/citations/article/cf4a0a7c-f80b-4455-91c4-6871954c8505.yaml",
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml"
+  ],
+  "alters": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
   ],
   "although": [
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml",
@@ -1301,6 +1355,10 @@
     "data/citations/article/9327ba2a-36aa-4696-a8f3-b37272850c12.yaml",
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml",
     "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml"
+  ],
+  "amidala": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "among": [
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
@@ -1388,6 +1446,16 @@
   ],
   "anaconda": [
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml"
+  ],
+  "anakin": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "anakin skywalker": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "analog": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -1574,9 +1642,16 @@
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
@@ -1667,10 +1742,14 @@
     "data/citations/article/9ffd35f4-1db9-4453-a1f9-0936b7c0c195.yaml",
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml",
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml",
-    "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml"
+    "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "apart": [
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml"
+  ],
+  "apathy": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "apoptosis": [
     "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml"
@@ -1766,6 +1845,10 @@
   "appointed": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml"
+  ],
+  "apprentice": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "approach": [
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
@@ -1893,6 +1976,7 @@
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml",
@@ -2204,8 +2288,13 @@
     "data/citations/books/f366773e-3e9a-4403-bfd0-63236f01dfa7.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
@@ -2241,6 +2330,7 @@
     "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml",
     "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml",
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml"
   ],
   "aspiring": [
@@ -2370,6 +2460,7 @@
     "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml",
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml"
   ],
   "atlantic": [
@@ -2386,7 +2477,14 @@
   ],
   "attack": [
     "data/citations/article/73c5fed8-b6cb-4edf-8891-ad6a83136d41.yaml",
-    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "attack of the clones": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "attacked": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "attackers": [
     "data/citations/article/4604c728-cf31-401f-a62a-487ea309f152.yaml",
@@ -2551,6 +2649,7 @@
   "back": [
     "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml",
     "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml"
   ],
   "back doors": [
@@ -2558,6 +2657,10 @@
   ],
   "backbone": [
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
+  ],
+  "backdrop": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "background": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
@@ -2578,7 +2681,8 @@
   "balance": [
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/f52515c5-66d9-4f41-aefb-03389a2016c0.yaml",
-    "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml"
+    "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "balanced": [
     "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml"
@@ -2630,7 +2734,9 @@
   "battle": [
     "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml",
     "data/citations/article/6ba287f1-c059-42cf-bcfd-54f14bb5d601.yaml",
-    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "bazaars": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -2664,6 +2770,7 @@
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
@@ -2680,7 +2787,9 @@
   ],
   "becomes": [
     "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml",
-    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "been": [
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
@@ -2755,6 +2864,9 @@
   "belief": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
+  "believed": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "bell": [
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml",
@@ -2809,6 +2921,10 @@
   "best practices": [
     "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml"
   ],
+  "betrayal": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "better": [
     "data/citations/article/6cd73a77-01b1-4b80-94a3-3b112ce48c98.yaml",
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml",
@@ -2834,6 +2950,10 @@
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml"
   ],
   "beyond": [
@@ -2913,6 +3033,9 @@
   "bindings": [
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml"
   ],
+  "binks": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "biological": [
     "data/citations/article/e6aeb2e3-30be-4eae-8a5c-0a41457b829e.yaml"
   ],
@@ -2957,13 +3080,18 @@
     "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml"
   ],
   "blend": [
-    "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml"
+    "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "blending": [
     "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml"
   ],
   "bletchley": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+  ],
+  "blissful": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "block": [
     "data/citations/article/1be227c2-bb9f-4a18-9279-18695275c46d.yaml",
@@ -3068,6 +3196,9 @@
   "bootstrapping": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml"
   ],
+  "boss": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "both": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
     "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml",
@@ -3122,6 +3253,7 @@
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml"
   ],
   "boy": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
   "brain": [
@@ -3170,6 +3302,9 @@
   ],
   "brief": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+  ],
+  "bring": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "british": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
@@ -3331,9 +3466,15 @@
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
@@ -3627,7 +3768,8 @@
   "century": [
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
-    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "certain": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
@@ -3654,6 +3796,9 @@
   ],
   "chainalysis.com": [
     "data/citations/site/64f979ba-acfe-4b54-9e65-32d9c5117e82.yaml"
+  ],
+  "challenge": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "challenges": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
@@ -3683,6 +3828,7 @@
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml",
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml",
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml"
   ],
@@ -3713,7 +3859,11 @@
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml"
   ],
   "character": [
-    "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml"
+    "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
+  "character development": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "characteristic": [
     "data/citations/article/6cd73a77-01b1-4b80-94a3-3b112ce48c98.yaml"
@@ -3729,7 +3879,10 @@
   ],
   "characters": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml",
-    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "charging": [
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml"
@@ -3777,6 +3930,9 @@
     "data/citations/article/67780b61-decd-43d7-88b9-f8535b12df51.yaml",
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml",
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml"
+  ],
+  "chosen": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "chronological": [
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml"
@@ -3850,6 +4006,7 @@
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "classical": [
@@ -3899,8 +4056,15 @@
   "clearly": [
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml"
   ],
+  "cleverly": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "client": [
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml"
+  ],
+  "climactic": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "clinical": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml"
@@ -3917,6 +4081,17 @@
   "clocks": [
     "data/citations/article/c1adcf2a-6622-4214-8e84-ed09a276a38e.yaml"
   ],
+  "clone": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "clone wars": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "clones": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "cloning": [
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml"
   ],
@@ -3924,7 +4099,8 @@
     "data/citations/article/7fa31bfb-1124-416c-b1cf-2e87c3dcee18.yaml"
   ],
   "closer": [
-    "data/citations/article/55ba163d-f31d-4b4a-b6ee-8ebf74cac085.yaml"
+    "data/citations/article/55ba163d-f31d-4b4a-b6ee-8ebf74cac085.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "cloud": [
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
@@ -3954,6 +4130,9 @@
   "cluster": [
     "data/citations/article/3c72b4e0-330f-4648-8750-d842904514b3.yaml",
     "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml"
+  ],
+  "clutches": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "co": [
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml",
@@ -4100,7 +4279,8 @@
     "data/citations/article/55ba163d-f31d-4b4a-b6ee-8ebf74cac085.yaml"
   ],
   "comedy": [
-    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
+    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "comfort": [
     "data/citations/article/5117ba86-4c99-474a-99ba-b2b3ac5b01ed.yaml"
@@ -4267,6 +4447,7 @@
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml"
   ],
   "complexities": [
@@ -4467,6 +4648,7 @@
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml",
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml",
@@ -4633,7 +4815,8 @@
     "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml",
     "data/citations/article/d4a1ef86-a55e-4d3b-8482-4231e2c612d6.yaml",
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
-    "data/citations/article/fd7c591f-18e3-4bcc-9bc1-5ef4377df71e.yaml"
+    "data/citations/article/fd7c591f-18e3-4bcc-9bc1-5ef4377df71e.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "conclusions": [
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
@@ -4709,11 +4892,20 @@
   "confined": [
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml"
   ],
+  "conflict": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "conformance": [
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
   ],
+  "confront": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "confrontations": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
+  ],
+  "confronting": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "congestion": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml"
@@ -4768,6 +4960,9 @@
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml",
     "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml",
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml"
+  ],
+  "considered": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "considering": [
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
@@ -4910,6 +5105,10 @@
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
   ],
+  "continues": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "continuous": [
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml"
   ],
@@ -5040,7 +5239,8 @@
   ],
   "corporate": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
-    "data/citations/article/dadb27dc-ced4-439f-bbcf-81e9ecccb2d1.yaml"
+    "data/citations/article/dadb27dc-ced4-439f-bbcf-81e9ecccb2d1.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "correction": [
     "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml",
@@ -5081,6 +5281,12 @@
     "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml",
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml",
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
+  ],
+  "count": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "count dooku": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "countdown": [
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
@@ -5142,6 +5348,9 @@
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
     "data/citations/site/6d5c1a76-f4c3-4d4a-95de-ec9349e2864d.yaml"
   ],
+  "coworkers": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "cpp": [
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml"
   ],
@@ -5193,7 +5402,8 @@
     "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml"
   ],
   "creativity": [
-    "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml"
+    "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "creators": [
     "data/citations/article/aa0423ef-e802-4ff4-af10-c0cc8ec928fe.yaml",
@@ -5225,6 +5435,7 @@
     "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml",
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
@@ -5235,6 +5446,7 @@
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml"
   ],
   "critiques": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml"
   ],
   "crucial": [
@@ -5249,6 +5461,9 @@
   ],
   "crucially": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+  ],
+  "crumbles": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
   ],
   "cryptanalysts": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -5312,8 +5527,13 @@
   "cudnn": [
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml"
   ],
+  "culminating": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "cult": [
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "cultivating": [
@@ -5325,6 +5545,9 @@
   ],
   "culture": [
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml"
   ],
   "curiosity": [
@@ -5445,16 +5668,37 @@
     "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml",
     "data/citations/article/aa0423ef-e802-4ff4-af10-c0cc8ec928fe.yaml",
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml",
-    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
+    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "dark reading": [
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml"
+  ],
+  "dark side": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "darker": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "darkreading.com": [
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml"
   ],
   "darkweb": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml"
+  ],
+  "darth": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "darth vader": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "data": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
@@ -5567,7 +5811,11 @@
     "data/citations/site/d11a9cb5-6fb6-4216-9604-a3c551f67a5f.yaml"
   ],
   "death": [
-    "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml"
+    "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
+  "death star": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "debates": [
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
@@ -5586,6 +5834,9 @@
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml",
     "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml",
     "data/citations/site/18f6e983-a055-499c-8a9a-990fa2be1d9f.yaml"
+  ],
+  "decides": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "deciding": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
@@ -5673,6 +5924,9 @@
   ],
   "degrees": [
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml"
+  ],
+  "dehumanizing": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "delays": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -5886,6 +6140,15 @@
   "despite": [
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml"
   ],
+  "destined": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "destiny": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "destroy": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "destroyed": [
     "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml",
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -6031,6 +6294,7 @@
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml",
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml",
@@ -6176,7 +6440,13 @@
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml"
   ],
   "directed": [
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "direction": [
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml"
@@ -6226,6 +6496,9 @@
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml",
     "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml",
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml"
+  ],
+  "discover": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "discovered": [
     "data/citations/article/97a65561-292d-4372-bd68-4fd8ede75297.yaml"
@@ -6330,6 +6603,9 @@
   ],
   "diseases": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml"
+  ],
+  "disenchanted": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "disentangling": [
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml"
@@ -6612,6 +6888,9 @@
   "done": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml"
   ],
+  "dooku": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "doors": [
     "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml",
     "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml"
@@ -6639,6 +6918,7 @@
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
   ],
   "drama": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
   "dramatic": [
@@ -6805,6 +7085,9 @@
     "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml",
     "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml"
   ],
+  "edges": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "edition": [
     "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml",
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
@@ -6881,7 +7164,11 @@
   "effects": [
     "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml",
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
-    "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml"
+    "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "efficacy": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
@@ -7029,8 +7316,15 @@
   "email": [
     "data/citations/article/5c865251-c50a-48dc-a228-f9880f2f3ea7.yaml"
   ],
+  "embarks": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "embrace": [
     "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml"
+  ],
+  "embroiled": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "emerged": [
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml"
@@ -7071,6 +7365,12 @@
   ],
   "empathy": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml"
+  ],
+  "emperor": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "emperor palpatine": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "emphasize": [
     "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml",
@@ -7139,7 +7439,10 @@
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml"
   ],
   "empire": [
-    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "empires": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -7258,6 +7561,9 @@
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
     "data/citations/site/d11a9cb5-6fb6-4216-9604-a3c551f67a5f.yaml"
   ],
+  "endor": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "endpoint": [
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml"
   ],
@@ -7310,6 +7616,9 @@
   ],
   "engine": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+  ],
+  "engineer": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "engineered": [
     "data/citations/article/3c72b4e0-330f-4648-8750-d842904514b3.yaml"
@@ -7469,6 +7778,7 @@
     "data/citations/article/73c5fed8-b6cb-4edf-8891-ad6a83136d41.yaml",
     "data/citations/books/4e598b3a-e2a8-4132-8152-3c2c0f63fe75.yaml",
     "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml",
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml"
   ],
@@ -7492,6 +7802,17 @@
   ],
   "eoq": [
     "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml"
+  ],
+  "episode": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "episode ii": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "epr": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml"
@@ -7547,6 +7868,9 @@
   "errors": [
     "data/citations/article/738814a3-dd2b-4348-bcc4-db75bea2df6f.yaml"
   ],
+  "escapades": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "eschewing": [
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml"
   ],
@@ -7587,6 +7911,7 @@
   ],
   "establishing": [
     "data/citations/article/cf4a0a7c-f80b-4455-91c4-6871954c8505.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
   ],
   "establishment": [
@@ -7666,7 +7991,9 @@
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml"
   ],
   "events": [
-    "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml"
+    "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "ever": [
     "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml",
@@ -7688,6 +8015,10 @@
   "evidence": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml"
+  ],
+  "evil": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "evolution": [
     "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
@@ -7848,6 +8179,9 @@
   "expanding": [
     "data/citations/article/329909c8-acbd-47ed-9792-3f6be5b71299.yaml"
   ],
+  "expands": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "expect": [
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml"
   ],
@@ -7875,6 +8209,7 @@
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml",
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml"
   ],
@@ -7986,14 +8321,18 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "exploring": [
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml",
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml",
-    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
+    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "explosion": [
     "data/citations/article/077cbe7d-353c-4a6a-bcc8-c6a4dd63264a.yaml"
@@ -8078,6 +8417,8 @@
     "data/citations/article/b6a80a10-5d62-4053-8210-3255d41eae89.yaml"
   ],
   "face": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml"
   ],
   "facebook": [
@@ -8128,6 +8469,9 @@
   "facility": [
     "data/citations/article/077cbe7d-353c-4a6a-bcc8-c6a4dd63264a.yaml"
   ],
+  "facing": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "factor": [
     "data/citations/article/4604c728-cf31-401f-a62a-487ea309f152.yaml",
     "data/citations/article/b31b91bf-97a0-4c6d-9bc8-bbcbf922c7da.yaml",
@@ -8154,6 +8498,9 @@
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/adff12c7-e675-4514-b8b4-baf9f6d0fc14.yaml"
   ],
+  "fall": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
+  ],
   "familiar": [
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml"
@@ -8169,6 +8516,9 @@
   ],
   "far": [
     "data/citations/article/9327ba2a-36aa-4696-a8f3-b37272850c12.yaml"
+  ],
+  "farm": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "fascinating": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -8188,6 +8538,7 @@
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
   ],
   "fate": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
   "father": [
@@ -8215,6 +8566,9 @@
   "fear": [
     "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml"
   ],
+  "fears": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "feature": [
     "data/citations/article/d4a1ef86-a55e-4d3b-8482-4231e2c612d6.yaml",
     "data/citations/article/fd7c591f-18e3-4bcc-9bc1-5ef4377df71e.yaml",
@@ -8232,6 +8586,10 @@
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml",
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml",
@@ -8240,6 +8598,9 @@
   ],
   "featuring": [
     "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml"
+  ],
+  "fed": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "federal": [
     "data/citations/article/cf4a0a7c-f80b-4455-91c4-6871954c8505.yaml",
@@ -8258,7 +8619,8 @@
   ],
   "feelings": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml",
-    "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml"
+    "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "fellow": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -8275,8 +8637,11 @@
   ],
   "fiction": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "fictional": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml"
@@ -8351,11 +8716,22 @@
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
   ],
   "film": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "films": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
+  ],
+  "final": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "finance": [
     "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml",
@@ -8430,7 +8806,10 @@
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml",
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
   ],
   "fish": [
@@ -8508,11 +8887,18 @@
   "following": [
     "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml",
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
   "follows": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "fonda": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
@@ -8622,6 +9008,9 @@
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
@@ -8653,7 +9042,12 @@
   ],
   "force": [
     "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml",
-    "data/citations/article/e66bc34d-3f47-4511-be59-e02ab2ce0c56.yaml"
+    "data/citations/article/e66bc34d-3f47-4511-be59-e02ab2ce0c56.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "forces": [
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
@@ -8681,7 +9075,11 @@
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
   ],
   "forest": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml"
+  ],
+  "forest moon of endor": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "forgeries": [
     "data/citations/article/9ffd35f4-1db9-4453-a1f9-0936b7c0c195.yaml"
@@ -8781,6 +9179,9 @@
   "founding": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
   ],
+  "fox": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "fpga": [
     "data/citations/article/1be227c2-bb9f-4a18-9279-18695275c46d.yaml"
   ],
@@ -8837,6 +9238,9 @@
   "framing": [
     "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml"
   ],
+  "franchise": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "fraud": [
     "data/citations/article/815bed59-af63-4b37-8da6-d1484c621362.yaml"
   ],
@@ -8873,6 +9277,12 @@
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml",
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml"
+  ],
+  "friends": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
+  "friendship": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "from": [
     "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml",
@@ -8920,6 +9330,8 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
@@ -8944,6 +9356,9 @@
   ],
   "frs": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+  ],
+  "frustrations": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "fueled": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -9073,7 +9488,25 @@
     "data/citations/article/35e91c73-3fc9-4e73-8574-e14b3cee6a0d.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
+  "galactic": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "galactic empire": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "galactic republic": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "galaxy": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
   "gallium": [
@@ -9185,6 +9618,9 @@
     "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml",
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
   ],
+  "genre": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "geometric": [
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml"
   ],
@@ -9194,6 +9630,16 @@
   "geometry": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml"
+  ],
+  "george": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "george lucas": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "germ": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml"
@@ -9215,6 +9661,9 @@
   ],
   "giants": [
     "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml"
+  ],
+  "gibbons": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "gilles": [
     "data/citations/article/35e91c73-3fc9-4e73-8574-e14b3cee6a0d.yaml"
@@ -9274,11 +9723,20 @@
     "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml",
     "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml"
   ],
+  "gon": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "gone": [
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml"
   ],
   "good": [
-    "data/citations/article/d84e5a5a-ca3c-46c7-a5ee-bb2dc9af2b2f.yaml"
+    "data/citations/article/d84e5a5a-ca3c-46c7-a5ee-bb2dc9af2b2f.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "good vs evil": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "gossard": [
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
@@ -9346,6 +9804,10 @@
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml",
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml"
   ],
+  "greatest": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "greenberg": [
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml",
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
@@ -9358,7 +9820,10 @@
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
   ],
   "groundbreaking": [
-    "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
+    "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "groundwork": [
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
@@ -9383,7 +9848,8 @@
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/5117ba86-4c99-474a-99ba-b2b3ac5b01ed.yaml",
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml",
-    "data/citations/article/e6aeb2e3-30be-4eae-8a5c-0a41457b829e.yaml"
+    "data/citations/article/e6aeb2e3-30be-4eae-8a5c-0a41457b829e.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "growth": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml",
@@ -9472,6 +9938,15 @@
   "hallmark": [
     "data/citations/article/9327ba2a-36aa-4696-a8f3-b37272850c12.yaml"
   ],
+  "han": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "han solo": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "handful": [
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml"
   ],
@@ -9541,7 +10016,9 @@
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
@@ -9595,7 +10072,10 @@
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
   ],
   "head": [
@@ -9637,6 +10117,7 @@
     "data/citations/article/c3dc778f-d94c-4ccb-a40b-9581ff90a5d5.yaml",
     "data/citations/article/f9e2d5b7-5a2e-4ac3-964d-198ad2a54067.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml"
   ],
   "helps": [
@@ -9768,6 +10249,10 @@
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml"
   ],
+  "him": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "himself": [
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml"
   ],
@@ -9779,9 +10264,14 @@
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "historic": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -9837,6 +10327,9 @@
   "hood": [
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml"
   ],
+  "hope": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "horizon": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml"
   ],
@@ -9856,6 +10349,9 @@
   ],
   "hosts": [
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml"
+  ],
+  "hoth": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "house": [
     "data/citations/site/dccbb75a-cfdb-481c-9300-1d472c0a0dc8.yaml"
@@ -9953,9 +10449,13 @@
   ],
   "humor": [
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml",
     "data/citations/site/3730a604-aed8-4c95-a5b5-dda895fa7796.yaml",
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml"
+  ],
+  "humorous": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "humorously": [
     "data/citations/site/3730a604-aed8-4c95-a5b5-dda895fa7796.yaml"
@@ -9966,12 +10466,18 @@
   "hurdles": [
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml"
   ],
+  "hutt": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "hybrid": [
     "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml",
     "data/citations/article/f9e2d5b7-5a2e-4ac3-964d-198ad2a54067.yaml"
   ],
   "hyperlinks": [
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
+  ],
+  "hypnotherapy": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "hypothesis": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -10004,8 +10510,17 @@
   "ibm-compatible computers": [
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml"
   ],
+  "ice": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "ich": [
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
+  ],
+  "iconic": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "ict": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml"
@@ -10047,6 +10562,7 @@
     "data/citations/article/b26b190f-b24f-478a-ad04-eb388dcea360.yaml",
     "data/citations/article/b31b91bf-97a0-4c6d-9bc8-bbcbf922c7da.yaml",
     "data/citations/article/c3dc778f-d94c-4ccb-a40b-9581ff90a5d5.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml"
   ],
   "identity management": [
@@ -10121,8 +10637,12 @@
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml"
   ],
+  "ii": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "iii": [
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "illegal": [
@@ -10197,6 +10717,8 @@
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml",
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
@@ -10206,6 +10728,9 @@
   ],
   "impacts": [
     "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml"
+  ],
+  "impending": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "imperative": [
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml",
@@ -10317,6 +10842,7 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml",
@@ -10474,8 +11000,15 @@
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
@@ -10535,6 +11068,7 @@
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml",
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml",
@@ -10586,7 +11120,9 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml",
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml",
@@ -10653,6 +11189,9 @@
   "individual": [
     "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml",
     "data/citations/article/e6aeb2e3-30be-4eae-8a5c-0a41457b829e.yaml"
+  ],
+  "individuality": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "individuals": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml",
@@ -10834,6 +11373,9 @@
   "inhibitors": [
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml"
   ],
+  "initech": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "initial": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
@@ -10956,6 +11498,14 @@
   ],
   "installing": [
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml"
+  ],
+  "installment": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "instances": [
     "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml"
@@ -11339,6 +11889,9 @@
   "intricate": [
     "data/citations/article/43599004-8b7d-4726-b7e1-1adb43816647.yaml"
   ],
+  "intrigue": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "intrinsic": [
     "data/citations/article/b6a80a10-5d62-4053-8210-3255d41eae89.yaml"
   ],
@@ -11365,7 +11918,8 @@
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
     "data/citations/books/4b31c75f-276a-4516-93ab-3e2663e7d661.yaml",
     "data/citations/books/4e598b3a-e2a8-4132-8152-3c2c0f63fe75.yaml",
-    "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml"
+    "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "introducing": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
@@ -11529,6 +12083,9 @@
   "irs": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
   ],
+  "irvin": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "is": [
     "data/citations/article/038ac3cc-941f-47bd-ac98-37c48cbdaa0c.yaml",
     "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml",
@@ -11585,9 +12142,16 @@
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
@@ -11697,7 +12261,12 @@
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml",
     "data/citations/books/f366773e-3e9a-4403-bfd0-63236f01dfa7.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
@@ -11776,8 +12345,11 @@
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
     "data/citations/rfc/bdc4a446-8130-45f2-9f9b-c93c899430e2.yaml",
@@ -11791,8 +12363,17 @@
   "itself": [
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml"
   ],
+  "iv": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "j klossner cartoons": [
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml"
+  ],
+  "jabba": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "jabba the hutt": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "jack": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -11800,8 +12381,18 @@
   "jacket": [
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml"
   ],
+  "jar": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "java": [
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml"
+  ],
+  "jedi": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "jennifer": [
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
@@ -11811,6 +12402,9 @@
   ],
   "jimmy": [
     "data/citations/article/6f3719b4-f6ac-470b-97fe-32939f5ed890.yaml"
+  ],
+  "jinn": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "jk": [
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml"
@@ -11823,6 +12417,9 @@
   ],
   "joanna": [
     "data/citations/article/55ba163d-f31d-4b4a-b6ee-8ebf74cac085.yaml"
+  ],
+  "job": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "jobs": [
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml"
@@ -11873,6 +12470,9 @@
   ],
   "journal of strategic security": [
     "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml"
+  ],
+  "journey": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "jr": [
     "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml"
@@ -11926,12 +12526,20 @@
   "keep": [
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml"
   ],
+  "kenobi": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "kernel": [
     "data/citations/article/97a65561-292d-4372-bd68-4fd8ede75297.yaml"
   ],
   "kernels": [
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml",
     "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml"
+  ],
+  "kershner": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "key": [
     "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml",
@@ -11992,6 +12600,13 @@
   ],
   "klossner": [
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml"
+  ],
+  "knight": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "knights": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "knopf": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -12105,6 +12720,7 @@
   ],
   "lasting": [
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
   ],
   "late": [
@@ -12125,6 +12741,9 @@
   "latter": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml"
+  ],
+  "launch": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "laundering": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -12190,6 +12809,7 @@
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml",
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
   "leads": [
@@ -12230,8 +12850,17 @@
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml",
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml"
   ],
+  "learns": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "least": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+  ],
+  "leaves": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
+  "leaving": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "lecture": [
     "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml",
@@ -12244,7 +12873,8 @@
   "led": [
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/72d381ac-c5e0-4a4d-841e-febda1d36d1f.yaml",
-    "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml"
+    "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "ledger": [
     "data/citations/article/1be227c2-bb9f-4a18-9279-18695275c46d.yaml"
@@ -12267,6 +12897,11 @@
   ],
   "legislation": [
     "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml"
+  ],
+  "leia": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "length": [
     "data/citations/article/cf4a0a7c-f80b-4455-91c4-6871954c8505.yaml",
@@ -12347,6 +12982,7 @@
     "data/citations/article/b26b190f-b24f-478a-ad04-eb388dcea360.yaml",
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/3730a604-aed8-4c95-a5b5-dda895fa7796.yaml",
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
   ],
@@ -12359,7 +12995,11 @@
     "data/citations/article/7fa31bfb-1124-416c-b1cf-2e87c3dcee18.yaml",
     "data/citations/article/adcae43e-6d62-4bc2-8209-b6fa2dcb774b.yaml",
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml",
-    "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml"
+    "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "light side": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "lighting": [
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml"
@@ -12586,7 +13226,8 @@
   ],
   "loss": [
     "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml",
-    "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml"
+    "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
   ],
   "losses": [
     "data/citations/article/6cd73a77-01b1-4b80-94a3-3b112ce48c98.yaml"
@@ -12600,6 +13241,9 @@
   ],
   "lov": [
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml"
+  ],
+  "love": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "low": [
     "data/citations/article/329909c8-acbd-47ed-9792-3f6be5b71299.yaml",
@@ -12615,8 +13259,31 @@
   "lt": [
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml"
   ],
+  "lucas": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "lucasfilm": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "lucky": [
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml"
+  ],
+  "luke": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "luke skywalker": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "m2": [
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
@@ -12736,6 +13403,7 @@
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml",
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml",
@@ -12891,6 +13559,9 @@
   "markup": [
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml"
   ],
+  "marquand": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "marquette": [
     "data/citations/article/35e91c73-3fc9-4e73-8574-e14b3cee6a0d.yaml"
   ],
@@ -12904,6 +13575,9 @@
   ],
   "massively": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
+  ],
+  "master": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "matches": [
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml"
@@ -13053,6 +13727,9 @@
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml"
   ],
+  "meanwhile": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "measurement": [
     "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml",
     "data/citations/article/67780b61-decd-43d7-88b9-f8535b12df51.yaml",
@@ -13169,6 +13846,10 @@
   ],
   "men": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
+  ],
+  "menace": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "mental": [
     "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml"
@@ -13397,6 +14078,9 @@
     "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml",
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml"
   ],
+  "mission": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "mistaking": [
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
@@ -13419,6 +14103,9 @@
   "mitigating": [
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/d4a1ef86-a55e-4d3b-8482-4231e2c612d6.yaml"
+  ],
+  "mix": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "mixed": [
     "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml",
@@ -13529,6 +14216,12 @@
   "molecular": [
     "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml"
   ],
+  "moment": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
+  ],
+  "moments": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "money": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
   ],
@@ -13538,11 +14231,17 @@
   "monitoring": [
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml"
   ],
+  "monotonous": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "month": [
     "data/citations/article/73c5fed8-b6cb-4edf-8891-ad6a83136d41.yaml"
   ],
   "months": [
     "data/citations/article/6ba287f1-c059-42cf-bcfd-54f14bb5d601.yaml"
+  ],
+  "moon": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "moral": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
@@ -13605,9 +14304,16 @@
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml"
   ],
   "movie": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "msr": [
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml"
@@ -13643,6 +14349,9 @@
   "multiples": [
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
   ],
+  "mundane": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "murder": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
@@ -13659,6 +14368,7 @@
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
   "named": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "namespaces": [
@@ -13678,6 +14388,8 @@
   ],
   "narrative": [
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
   "narratives": [
@@ -13768,6 +14480,7 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml"
   ],
   "navigates": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
   "navigating": [
@@ -13924,6 +14637,7 @@
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml",
@@ -14181,6 +14895,15 @@
   "obesity": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml"
   ],
+  "obi": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "obi-wan kenobi": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "object": [
     "data/citations/books/4e598b3a-e2a8-4132-8152-3c2c0f63fe75.yaml"
   ],
@@ -14361,9 +15084,16 @@
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
@@ -14392,6 +15122,9 @@
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
+  "offensive": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "offer": [
     "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml"
   ],
@@ -14416,6 +15149,9 @@
     "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml",
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml"
   ],
+  "office": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "official": [
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
     "data/citations/site/6d5c1a76-f4c3-4d4a-95de-ec9349e2864d.yaml"
@@ -14430,14 +15166,16 @@
     "data/citations/article/077cbe7d-353c-4a6a-bcc8-c6a4dd63264a.yaml"
   ],
   "offs": [
-    "data/citations/article/67780b61-decd-43d7-88b9-f8535b12df51.yaml"
+    "data/citations/article/67780b61-decd-43d7-88b9-f8535b12df51.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "often": [
     "data/citations/article/815bed59-af63-4b37-8da6-d1484c621362.yaml",
     "data/citations/article/ac28a807-7506-4994-ba42-eeb396c17f32.yaml",
     "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml",
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
-    "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml"
+    "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "old": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -14515,7 +15253,11 @@
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml",
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml",
@@ -14544,6 +15286,8 @@
     "data/citations/books/4b31c75f-276a-4516-93ab-3e2663e7d661.yaml",
     "data/citations/books/4e598b3a-e2a8-4132-8152-3c2c0f63fe75.yaml",
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
     "data/citations/rfc/bdc4a446-8130-45f2-9f9b-c93c899430e2.yaml"
   ],
@@ -14695,6 +15439,10 @@
   "opposed": [
     "data/citations/article/1be227c2-bb9f-4a18-9279-18695275c46d.yaml"
   ],
+  "oppressive": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "oprogramowanie": [
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml"
   ],
@@ -14838,6 +15586,10 @@
     "data/citations/books/4e598b3a-e2a8-4132-8152-3c2c0f63fe75.yaml"
   ],
   "original": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml"
   ],
   "orthogonal": [
@@ -14895,7 +15647,8 @@
     "data/citations/article/6ba287f1-c059-42cf-bcfd-54f14bb5d601.yaml",
     "data/citations/article/ac28a807-7506-4994-ba42-eeb396c17f32.yaml",
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml",
-    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "outage": [
     "data/citations/article/077cbe7d-353c-4a6a-bcc8-c6a4dd63264a.yaml"
@@ -15039,6 +15792,7 @@
   ],
   "own": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml"
   ],
   "oxford": [
@@ -15062,6 +15816,13 @@
   "packets": [
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml"
   ],
+  "padm": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "padmé amidala": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "page": [
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml",
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml"
@@ -15078,6 +15839,9 @@
   ],
   "palo alto networks": [
     "data/citations/article/ac28a807-7506-4994-ba42-eeb396c17f32.yaml"
+  ],
+  "palpatine": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "paper": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
@@ -15256,6 +16020,9 @@
     "data/citations/article/e1a0a9e7-81ef-49c1-8c0f-62347fb2b5a9.yaml",
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
   ],
+  "peace": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "pearson": [
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml"
   ],
@@ -15361,6 +16128,16 @@
   ],
   "pertinent": [
     "data/citations/article/f52515c5-66d9-4f41-aefb-03389a2016c0.yaml"
+  ],
+  "peter": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
+  "phantom": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "phantom menace": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "pharmaceutical": [
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
@@ -15536,7 +16313,8 @@
     "data/citations/books/4e598b3a-e2a8-4132-8152-3c2c0f63fe75.yaml"
   ],
   "pivotal": [
-    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml"
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
   ],
   "place": [
     "data/citations/article/9ffd35f4-1db9-4453-a1f9-0936b7c0c195.yaml"
@@ -15545,7 +16323,8 @@
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml"
   ],
   "planet": [
-    "data/citations/article/077cbe7d-353c-4a6a-bcc8-c6a4dd63264a.yaml"
+    "data/citations/article/077cbe7d-353c-4a6a-bcc8-c6a4dd63264a.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "planning": [
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml"
@@ -15663,7 +16442,9 @@
   ],
   "political": [
     "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml",
-    "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml"
+    "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "political activity": [
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml"
@@ -15682,6 +16463,13 @@
   ],
   "polynomial": [
     "data/citations/article/aaf3f9be-8c12-425f-acc8-7ef1e8a8d14d.yaml"
+  ],
+  "popular": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "popular culture": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "population": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
@@ -15790,7 +16578,8 @@
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml"
   ],
   "powerful": [
-    "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml"
+    "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "practicable": [
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
@@ -15905,6 +16694,9 @@
   "preferences": [
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml"
   ],
+  "prelude": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "premier": [
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml"
   ],
@@ -15924,6 +16716,14 @@
   "preprocessing": [
     "data/citations/article/fd7c591f-18e3-4bcc-9bc1-5ef4377df71e.yaml",
     "data/citations/books/415a4e38-cfe6-4897-85dc-352560ee72f7.yaml"
+  ],
+  "prequel": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
+  "prequels": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "prerequisites": [
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml"
@@ -16025,6 +16825,15 @@
   ],
   "primer": [
     "data/citations/article/d84e5a5a-ca3c-46c7-a5ee-bb2dc9af2b2f.yaml"
+  ],
+  "princess": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "princess leia": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "princeton": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -16323,6 +17132,7 @@
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/6d5c1a76-f4c3-4d4a-95de-ec9349e2864d.yaml",
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml",
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml",
@@ -16412,6 +17222,9 @@
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml"
+  ],
+  "prophesied": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "proposal": [
     "data/citations/article/6cd73a77-01b1-4b80-94a3-3b112ce48c98.yaml"
@@ -16699,6 +17512,7 @@
   "pursuit": [
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml"
   ],
@@ -16933,11 +17747,20 @@
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml",
     "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml"
   ],
+  "qui": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "quickly": [
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml"
   ],
   "quil": [
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml"
+  ],
+  "quirky": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
+  "quo": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "quorum": [
     "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml",
@@ -17072,6 +17895,9 @@
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml"
   ],
+  "realities": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "reality": [
     "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml",
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
@@ -17090,12 +17916,25 @@
   "reasoning": [
     "data/citations/article/738814a3-dd2b-4348-bcc4-db75bea2df6f.yaml"
   ],
+  "rebel": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "rebel alliance": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "rebels": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "recast": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml"
   ],
   "received": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "recent": [
@@ -17176,6 +18015,12 @@
   ],
   "red": [
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml"
+  ],
+  "red stapler": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
+  "redemption": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "reduce": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
@@ -17357,6 +18202,13 @@
   "release": [
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml"
   ],
+  "released": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
+  "relentless": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "relevance": [
     "data/citations/article/738814a3-dd2b-4348-bcc4-db75bea2df6f.yaml",
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml",
@@ -17424,6 +18276,10 @@
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml"
   ],
+  "renowned": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "replace": [
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
   ],
@@ -17474,6 +18330,10 @@
   "reproducibility": [
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml"
   ],
+  "republic": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "require": [
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml"
   ],
@@ -17491,6 +18351,10 @@
   ],
   "requisite": [
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml"
+  ],
+  "rescue": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "research": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
@@ -17588,6 +18452,9 @@
   ],
   "resonant": [
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml"
+  ],
+  "resonates": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "resonating": [
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
@@ -17714,6 +18581,12 @@
     "data/citations/article/827dcdc9-91f7-4a3c-88cc-d32154640305.yaml",
     "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml"
   ],
+  "return": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "return of the jedi": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "returned": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
   ],
@@ -17737,6 +18610,15 @@
   "revealed": [
     "data/citations/article/4604c728-cf31-401f-a62a-487ea309f152.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
+  ],
+  "revelation": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
+  "revenge": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
+  ],
+  "revenge of the sith": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
   ],
   "reverse": [
     "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml"
@@ -17833,10 +18715,12 @@
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml"
   ],
   "rich": [
-    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "richard": [
-    "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml"
+    "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "rigetti": [
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml",
@@ -17864,7 +18748,11 @@
     "data/citations/article/038ac3cc-941f-47bd-ac98-37c48cbdaa0c.yaml"
   ],
   "rise": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
+  ],
+  "rising": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "risk": [
     "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml",
@@ -17951,6 +18839,9 @@
     "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml",
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml"
   ],
+  "romance": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "room": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
@@ -17976,6 +18867,7 @@
   ],
   "routines": [
     "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml"
   ],
   "routing": [
@@ -18027,7 +18919,11 @@
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml"
   ],
   "saga": [
-    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
+    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "salt": [
     "data/citations/article/45251b33-d16c-42c6-87e0-3ce898ed99cb.yaml"
@@ -18059,7 +18955,8 @@
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml"
   ],
   "satirical": [
-    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
+    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "satisfaction": [
     "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml"
@@ -18148,6 +19045,10 @@
   "schubert": [
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml"
   ],
+  "sci-fi": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "science": [
     "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml",
     "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml",
@@ -18183,8 +19084,11 @@
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml",
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml",
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml",
@@ -18194,7 +19098,9 @@
     "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml"
   ],
   "science fiction": [
-    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "science/mathematics": [
     "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml"
@@ -18260,6 +19166,8 @@
   ],
   "second": [
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml"
   ],
   "secrecy": [
@@ -18357,6 +19265,9 @@
   "securityweek.com": [
     "data/citations/article/6011d791-d0c9-4a5d-937c-7a94cba3b7f5.yaml"
   ],
+  "seduced": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
+  ],
   "seeded": [
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml"
   ],
@@ -18376,7 +19287,8 @@
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml"
   ],
   "seeks": [
-    "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
+    "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "segmentation": [
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml"
@@ -18449,6 +19361,12 @@
   "separated": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
   ],
+  "separatists": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
+  "sequels": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "sequence": [
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml"
   ],
@@ -18476,6 +19394,7 @@
     "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml"
   ],
   "serious": [
@@ -18516,6 +19435,7 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml",
@@ -18553,6 +19473,7 @@
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml"
   ],
   "session": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/site/d11a9cb5-6fb6-4216-9604-a3c551f67a5f.yaml"
@@ -18562,10 +19483,13 @@
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml",
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml"
   ],
   "sets": [
-    "data/citations/article/815bed59-af63-4b37-8da6-d1484c621362.yaml"
+    "data/citations/article/815bed59-af63-4b37-8da6-d1484c621362.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "setting": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -18729,6 +19653,13 @@
   "siam journal on computing": [
     "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml"
   ],
+  "side": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "sides": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
+  ],
   "signaling": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
     "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml"
@@ -18771,6 +19702,7 @@
     "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml",
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml",
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
   ],
@@ -18850,6 +19782,10 @@
     "data/citations/article/d84e5a5a-ca3c-46c7-a5ee-bb2dc9af2b2f.yaml",
     "data/citations/site/18f6e983-a055-499c-8a9a-990fa2be1d9f.yaml"
   ],
+  "sith": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "situations": [
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml"
@@ -18875,6 +19811,17 @@
     "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml",
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml"
+  ],
+  "skywalker": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "slave": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "slicing": [
     "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
@@ -18992,6 +19939,7 @@
     "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml",
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml",
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml",
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml"
   ],
@@ -19003,6 +19951,7 @@
   ],
   "software engineering": [
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml"
   ],
   "solarwinds": [
@@ -19018,6 +19967,11 @@
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml"
+  ],
+  "solo": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "solution": [
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
@@ -19097,7 +20051,8 @@
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml",
     "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml",
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
-    "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml"
+    "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "space-time": [
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml"
@@ -19123,6 +20078,7 @@
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml",
     "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml"
@@ -19219,7 +20175,8 @@
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
   ],
   "spin": [
-    "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml"
+    "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "spins": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
@@ -19303,6 +20260,7 @@
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml"
   ],
   "stage": [
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
   "stakeholders": [
@@ -19315,6 +20273,9 @@
   ],
   "stamps": [
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml"
+  ],
+  "stand": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "standard": [
     "data/citations/article/adff12c7-e675-4514-b8b4-baf9f6d0fc14.yaml",
@@ -19353,6 +20314,22 @@
   "stands": [
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
+  "star": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
+  "star wars": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "starch": [
     "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml",
     "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml"
@@ -19386,6 +20363,7 @@
     "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml",
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml",
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml"
   ],
@@ -19430,6 +20408,9 @@
     "data/citations/article/815bed59-af63-4b37-8da6-d1484c621362.yaml",
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml"
   ],
+  "status": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "statystyka": [
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml"
   ],
@@ -19457,6 +20438,9 @@
   ],
   "steven": [
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
+  ],
+  "stifles": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "still": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -19499,6 +20483,8 @@
     "data/citations/article/dadb27dc-ced4-439f-bbcf-81e9ecccb2d1.yaml",
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
     "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "storytelling": [
@@ -19547,6 +20533,9 @@
   "strict": [
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml"
   ],
+  "strikes": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "string": [
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml"
@@ -19593,6 +20582,12 @@
   ],
   "structuring": [
     "data/citations/article/b6a80a10-5d62-4053-8210-3255d41eae89.yaml"
+  ],
+  "struggle": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "student": [
     "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml"
@@ -19685,6 +20680,7 @@
   "subsequent": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
   ],
   "subspace": [
@@ -19746,6 +20742,8 @@
     "data/citations/books/f366773e-3e9a-4403-bfd0-63236f01dfa7.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
     "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml",
     "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml",
@@ -20081,6 +21079,9 @@
   "tail": [
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml"
   ],
+  "take": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
+  ],
   "takedown": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
   ],
@@ -20137,6 +21138,7 @@
   ],
   "tech": [
     "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml"
   ],
   "techhq": [
@@ -20320,7 +21322,8 @@
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
   ],
   "ten": [
-    "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml"
+    "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "tendency": [
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml"
@@ -20468,7 +21471,10 @@
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
@@ -20607,9 +21613,16 @@
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
@@ -20638,6 +21651,9 @@
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml",
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml",
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml"
+  ],
+  "the empire strikes back": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "the mit press": [
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml"
@@ -20701,6 +21717,8 @@
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml",
@@ -20722,9 +21740,13 @@
   "themes": [
     "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml",
     "data/citations/article/c3dc778f-d94c-4ccb-a40b-9581ff90a5d5.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
-    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
+    "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "then": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -20858,7 +21880,9 @@
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml",
     "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml"
   ],
   "things": [
@@ -20881,7 +21905,9 @@
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
   "third": [
-    "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml"
+    "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "this": [
     "data/citations/article/038ac3cc-941f-47bd-ac98-37c48cbdaa0c.yaml",
@@ -21011,7 +22037,9 @@
   ],
   "threat": [
     "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml",
-    "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml"
+    "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "threat mitigation": [
     "data/citations/article/329909c8-acbd-47ed-9792-3f6be5b71299.yaml"
@@ -21088,6 +22116,7 @@
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
     "data/citations/site/3730a604-aed8-4c95-a5b5-dda895fa7796.yaml"
@@ -21239,9 +22268,16 @@
     "data/citations/books/f366773e-3e9a-4403-bfd0-63236f01dfa7.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml",
@@ -21289,7 +22325,8 @@
     "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml"
   ],
   "tone": [
-    "data/citations/article/3c2d05e6-51df-4d2d-8b73-9627de164caa.yaml"
+    "data/citations/article/3c2d05e6-51df-4d2d-8b73-9627de164caa.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "too": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -21425,10 +22462,17 @@
   "trafficking": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
   ],
+  "tragic": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml"
+  ],
+  "train": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
+  ],
   "training": [
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml",
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
-    "data/citations/books/415a4e38-cfe6-4897-85dc-352560ee72f7.yaml"
+    "data/citations/books/415a4e38-cfe6-4897-85dc-352560ee72f7.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "traits": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
@@ -21538,6 +22582,14 @@
   "tries": [
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml"
   ],
+  "trilogy": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "trivial": [
     "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml"
   ],
@@ -21551,6 +22603,9 @@
   ],
   "troublesome": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml"
+  ],
+  "true": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "trump": [
     "data/citations/article/45251b33-d16c-42c6-87e0-3ce898ed99cb.yaml"
@@ -21617,6 +22672,9 @@
   ],
   "turing": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+  ],
+  "turmoil": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "turn": [
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
@@ -21691,6 +22749,7 @@
     "data/citations/article/b26b190f-b24f-478a-ad04-eb388dcea360.yaml",
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml",
     "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml"
   ],
   "ultraviolet": [
@@ -21750,6 +22809,9 @@
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml",
     "data/citations/article/e6aeb2e3-30be-4eae-8a5c-0a41457b829e.yaml",
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml"
+  ],
+  "undergoing": [
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml"
   ],
   "underlying": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
@@ -21860,6 +22922,9 @@
     "data/citations/article/815bed59-af63-4b37-8da6-d1484c621362.yaml",
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
   ],
+  "unfolds": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "unfortunately": [
     "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml"
   ],
@@ -21909,6 +22974,7 @@
     "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml",
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml"
   ],
   "university": [
@@ -21971,6 +23037,7 @@
     "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml",
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml"
   ],
   "updated": [
@@ -22166,6 +23233,12 @@
   "v4": [
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml"
   ],
+  "vader": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
+  ],
   "valid": [
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml"
   ],
@@ -22314,6 +23387,9 @@
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml",
     "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml"
   ],
+  "vast": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
   "vastly": [
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml"
   ],
@@ -22366,6 +23442,9 @@
   ],
   "veteran": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
+  ],
+  "vi": [
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "via": [
     "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml",
@@ -22451,7 +23530,13 @@
   "visual": [
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/site/3730a604-aed8-4c95-a5b5-dda895fa7796.yaml"
+  ],
+  "visual effects": [
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
   ],
   "visual representation": [
     "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
@@ -22523,12 +23608,25 @@
   "w3": [
     "data/citations/article/844ba6ee-7820-4565-9a71-d65b9abc5d53.yaml"
   ],
+  "wan": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
+  ],
   "war": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "warning": [
     "data/citations/article/6ba287f1-c059-42cf-bcfd-54f14bb5d601.yaml"
+  ],
+  "wars": [
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "wartime": [
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
@@ -22572,7 +23670,8 @@
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml",
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml",
     "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml",
-    "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml"
+    "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml",
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml"
   ],
   "we": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
@@ -22583,6 +23682,9 @@
   "weaknesses": [
     "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml",
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
+  ],
+  "weapon": [
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
   ],
   "wearables": [
     "data/citations/article/6cd73a77-01b1-4b80-94a3-3b112ce48c98.yaml"
@@ -22764,6 +23866,8 @@
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml",
     "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml",
     "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml",
@@ -22790,7 +23894,11 @@
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml",
     "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
+    "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
     "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "why": [
@@ -22917,8 +24025,13 @@
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
     "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml",
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
@@ -23031,6 +24144,7 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml",
+    "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
     "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml",
     "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml"
@@ -23108,6 +24222,7 @@
     "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml",
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml",
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml",
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml"
@@ -23241,13 +24356,18 @@
   ],
   "years": [
     "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml",
-    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
+    "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
+    "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml"
   ],
   "yesterday": [
     "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml"
   ],
   "yet": [
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml"
+  ],
+  "yoda": [
+    "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
+    "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "york": [
     "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml",
@@ -23275,6 +24395,8 @@
   ],
   "young": [
     "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml",
+    "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml",
+    "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml",
     "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml"
   ],
   "young adults": [
