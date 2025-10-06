@@ -11,6 +11,13 @@ apa7:
     url: http://books.google.com/books?id=lLWxbwAACAAJ&dq=isbn:0262060164&hl=&source=gbs_api
     accessed: "2025-10-06"
 annotation:
-    summary: Like any set of oral reflections, "The Character of Physical Law" has special value as a demonstration of the mind in action. The reader is particularly lucky in Richard Feynman. One of the most eminent and imaginative modern physicists, he was Professor of Theoretical Physics at the California Institute of Technology until his death in 1988. He is best known for his work on the quantum theory of the electromagnetic field, as well as for his later research in the field of low-temperature physics. In 1954 he received the Albert Einstein Award for his "outstanding contribution to knowledge in mathematical and physical sciences"; in 1965 he was appointed to Foreign Membership in the Royal Society and was awarded the Nobel Prize.
+    summary: |
+        Like any set of oral reflections, "The Character of Physical Law" has special value as a demonstration of the 
+        mind in action. The reader is particularly lucky in Richard Feynman. One of the most eminent and imaginative 
+        modern physicists, he was Professor of Theoretical Physics at the California Institute of Technology until his
+        death in 1988. He is best known for his work on the quantum theory of the electromagnetic field, as well as for
+        his later research in the field of low-temperature physics. In 1954 he received the Albert Einstein Award for
+        his "outstanding contribution to knowledge in mathematical and physical sciences"; in 1965 he was appointed to
+        Foreign Membership in the Royal Society and was awarded the Nobel Prize.
     keywords:
         - physics
