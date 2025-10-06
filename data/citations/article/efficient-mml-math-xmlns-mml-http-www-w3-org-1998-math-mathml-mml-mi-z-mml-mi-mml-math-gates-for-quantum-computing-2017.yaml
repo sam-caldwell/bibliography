@@ -26,4 +26,4 @@ apa7:
 annotation:
     summary: "Bibliographic record for Efficient \n<mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"><mml:mi>Z</mml:mi></mml:math>\n gates for quantum computing in Physical Review A via DOI metadata."
     keywords:
-        - article
+      - quantum computing

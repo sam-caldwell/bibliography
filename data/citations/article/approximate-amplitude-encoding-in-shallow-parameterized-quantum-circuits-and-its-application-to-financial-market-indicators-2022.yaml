@@ -22,7 +22,9 @@ apa7:
           given: N.
     year: 2022
     date: "2022-05-20"
-    title: Approximate amplitude encoding in shallow parameterized quantum circuits and its application to financial market indicators
+    title: |
+      Approximate amplitude encoding in shallow parameterized quantum circuits and its application to 
+      financial market indicators
     container_title: Physical Review Research
     publisher: American Physical Society (APS)
     journal: Physical Review Research
@@ -32,6 +34,12 @@ apa7:
     url: https://doi.org/10.1103/physrevresearch.4.023136
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Approximate amplitude encoding in shallow parameterized quantum circuits and its application to financial market indicators in Physical Review Research via DOI metadata.
+    summary: |
+      Bibliographic record for Approximate amplitude encoding in shallow parameterized quantum circuits and its 
+      application to financial market indicators in Physical Review Research via DOI metadata.
     keywords:
-        - article
+      - quantum computing
+      - quantum mechanics
+      - fintech
+      - financial
+      - markets
