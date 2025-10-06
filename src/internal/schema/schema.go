@@ -40,8 +40,8 @@ type APA7 struct {
 }
 
 type Author struct {
-    Family string `yaml:"family" json:"family"`
-    Given  string `yaml:"given,omitempty" json:"given,omitempty"`
+	Family string `yaml:"family" json:"family"`
+	Given  string `yaml:"given,omitempty" json:"given,omitempty"`
 }
 
 type Annotation struct {
@@ -57,101 +57,101 @@ type Annotation struct {
 type Authors []Author
 
 func (a *Authors) UnmarshalYAML(value *yaml.Node) error {
-    if value == nil {
-        *a = nil
-        return nil
-    }
-    switch value.Kind {
-    case yaml.ScalarNode:
-        // Single string author (e.g., corporate author)
-        s := strings.TrimSpace(value.Value)
-        if s == "" || s == "null" {
-            *a = nil
-            return nil
-        }
-        *a = Authors{{Family: s}}
-        return nil
-    case yaml.SequenceNode:
-        // Could be sequence of strings or sequence of mappings
-        var out Authors
-        for _, n := range value.Content {
-            if n.Kind == yaml.ScalarNode {
-                s := strings.TrimSpace(n.Value)
-                if s == "" {
-                    continue
-                }
-                out = append(out, Author{Family: s})
-                continue
-            }
-            if n.Kind == yaml.MappingNode {
-                au := parseAuthorMapping(n)
-                if strings.TrimSpace(au.Family) == "" && strings.TrimSpace(au.Given) == "" {
-                    continue
-                }
-                out = append(out, au)
-                continue
-            }
-        }
-        *a = out
-        return nil
-    case yaml.MappingNode:
-        // Single author object
-        au := parseAuthorMapping(value)
-        if strings.TrimSpace(au.Family) == "" && strings.TrimSpace(au.Given) == "" {
-            *a = nil
-            return nil
-        }
-        *a = Authors{au}
-        return nil
-    default:
-        // Unknown shape; leave nil rather than erroring
-        *a = nil
-        return nil
-    }
+	if value == nil {
+		*a = nil
+		return nil
+	}
+	switch value.Kind {
+	case yaml.ScalarNode:
+		// Single string author (e.g., corporate author)
+		s := strings.TrimSpace(value.Value)
+		if s == "" || s == "null" {
+			*a = nil
+			return nil
+		}
+		*a = Authors{{Family: s}}
+		return nil
+	case yaml.SequenceNode:
+		// Could be sequence of strings or sequence of mappings
+		var out Authors
+		for _, n := range value.Content {
+			if n.Kind == yaml.ScalarNode {
+				s := strings.TrimSpace(n.Value)
+				if s == "" {
+					continue
+				}
+				out = append(out, Author{Family: s})
+				continue
+			}
+			if n.Kind == yaml.MappingNode {
+				au := parseAuthorMapping(n)
+				if strings.TrimSpace(au.Family) == "" && strings.TrimSpace(au.Given) == "" {
+					continue
+				}
+				out = append(out, au)
+				continue
+			}
+		}
+		*a = out
+		return nil
+	case yaml.MappingNode:
+		// Single author object
+		au := parseAuthorMapping(value)
+		if strings.TrimSpace(au.Family) == "" && strings.TrimSpace(au.Given) == "" {
+			*a = nil
+			return nil
+		}
+		*a = Authors{au}
+		return nil
+	default:
+		// Unknown shape; leave nil rather than erroring
+		*a = nil
+		return nil
+	}
 }
 
 // parseAuthorMapping accepts either standard APA7 author mapping with
 // family/given keys, or a corporate/organization mapping with keys like
 // organization, org, corporate, or name. It normalizes those to Author{Family: name}.
 func parseAuthorMapping(n *yaml.Node) Author {
-    var au Author
-    // Try direct decode first (family/given)
-    _ = n.Decode(&au)
-    fam := strings.TrimSpace(au.Family)
-    giv := strings.TrimSpace(au.Given)
-    if fam != "" || giv != "" {
-        return Author{Family: fam, Given: giv}
-    }
-    // Fallback: scan mapping for alternate keys
-    if n.Kind != yaml.MappingNode {
-        return Author{}
-    }
-    // Build a simple key->value map
-    m := map[string]string{}
-    for i := 0; i+1 < len(n.Content); i += 2 {
-        k := strings.ToLower(strings.TrimSpace(n.Content[i].Value))
-        v := strings.TrimSpace(n.Content[i+1].Value)
-        m[k] = v
-    }
-    if s := strings.TrimSpace(m["family"]); s != "" {
-        fam = s
-    }
-    if s := strings.TrimSpace(m["given"]); s != "" {
-        giv = s
-    }
-    if fam == "" && giv == "" {
-        // Accept org/name variants for corporate authors
-        if s := strings.TrimSpace(m["organization"]); s != "" {
-            fam = s
-        } else if s := strings.TrimSpace(m["org"]); s != "" {
-            fam = s
-        } else if s := strings.TrimSpace(m["corporate"]); s != "" {
-            fam = s
-        } else if s := strings.TrimSpace(m["name"]); s != "" {
-            fam = s
-        }
-    }
-    return Author{Family: fam, Given: giv}
+	var au Author
+	// Try direct decode first (family/given)
+	_ = n.Decode(&au)
+	fam := strings.TrimSpace(au.Family)
+	giv := strings.TrimSpace(au.Given)
+	if fam != "" || giv != "" {
+		return Author{Family: fam, Given: giv}
+	}
+	// Fallback: scan mapping for alternate keys
+	if n.Kind != yaml.MappingNode {
+		return Author{}
+	}
+	// Build a simple key->value map
+	m := map[string]string{}
+	for i := 0; i+1 < len(n.Content); i += 2 {
+		k := strings.ToLower(strings.TrimSpace(n.Content[i].Value))
+		v := strings.TrimSpace(n.Content[i+1].Value)
+		m[k] = v
+	}
+	if s := strings.TrimSpace(m["family"]); s != "" {
+		fam = s
+	}
+	if s := strings.TrimSpace(m["given"]); s != "" {
+		giv = s
+	}
+	if fam == "" && giv == "" {
+		// Accept org/name variants for corporate authors
+		if s := strings.TrimSpace(m["organization"]); s != "" {
+			fam = s
+		} else if s := strings.TrimSpace(m["org"]); s != "" {
+			fam = s
+		} else if s := strings.TrimSpace(m["corporate"]); s != "" {
+			fam = s
+		} else if s := strings.TrimSpace(m["name"]); s != "" {
+			fam = s
+		}
+	}
+	return Author{Family: fam, Given: giv}
 }
 
 // Validate applies basic validation rules from specification.
