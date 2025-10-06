@@ -19,6 +19,12 @@ apa7:
     url: https://doi.org/10.1016/j.clsr.2015.12.002
     accessed: "2025-10-06"
 annotation:
-    summary: 'Bibliographic record for Tor does not stink: Use and abuse of the Tor anonymity network from the perspective of law in Computer Law &amp; Security Review via DOI metadata.'
+    summary: |
+        This legal review examines the Tor network's usage and its intersection with law enforcement. It 
+        contextualizes the balance between privacy, anonymity, and security—topics pertinent to discussions on 
+        Zero Trust and blockchain technologies when anonymity tools are involved.
     keywords:
-        - article
+        - tor
+        - privacy
+        - networking
+        - law

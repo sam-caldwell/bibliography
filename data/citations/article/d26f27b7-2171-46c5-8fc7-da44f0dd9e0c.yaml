@@ -19,6 +19,18 @@ apa7:
     url: https://doi.org/10.1145/3463676.3485612
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Do You Feel a Chill? in Proceedings of the 20th Workshop on Workshop on Privacy in the Electronic Society via DOI metadata.
+    summary: |
+        This presentation at the 2021 Korean virtual event on privacy addressed gaps in the security of query 
+        information stored on systems running the Invisible Internet Project (I2P) where the query information written 
+        to the Distributed Hash Table (DHT) is not encrypted and may create legal or ethical issues for unsuspecting 
+        volunteer operators.  The presentation goes on to propose a "Private Information Retrieval" (PIR) solution 
+        for DHTs
     keywords:
-        - article
+        - i2p
+        - dht
+        - distributed hash table
+        - privacy
+        - korea
+        - information security
+        - cybersecurity
+        - law

@@ -63,6 +63,21 @@
     "feed",
     "forward"
   ],
+  "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml": [
+    "scheme",
+    "invisible",
+    "internet",
+    "protocol",
+    "i2p",
+    "using",
+    "blockchain",
+    "techniques",
+    "for",
+    "tracking",
+    "darkweb",
+    "user",
+    "activities"
+  ],
   "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml": [
     "pen",
     "testers",
@@ -596,6 +611,12 @@
     "rosen",
     "channels"
   ],
+  "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml": [
+    "do",
+    "you",
+    "feel",
+    "chill"
+  ],
   "data/citations/article/d4a1ef86-a55e-4d3b-8482-4231e2c612d6.yaml": [
     "opportunities",
     "and",
@@ -710,11 +731,37 @@
     "system",
     "design"
   ],
+  "data/citations/article/f1d9c83a-aa87-4caf-93c5-901ee8789d30.yaml": [
+    "is",
+    "instantaneous",
+    "quantum",
+    "internet",
+    "possible"
+  ],
   "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml": [
     "the",
     "tail",
     "at",
     "scale"
+  ],
+  "data/citations/article/f52515c5-66d9-4f41-aefb-03389a2016c0.yaml": [
+    "tor",
+    "does",
+    "not",
+    "stink",
+    "use",
+    "and",
+    "abuse",
+    "of",
+    "the",
+    "tor",
+    "anonymity",
+    "network",
+    "from",
+    "the",
+    "perspective",
+    "of",
+    "law"
   ],
   "data/citations/article/f9e2d5b7-5a2e-4ac3-964d-198ad2a54067.yaml": [
     "hybrid",

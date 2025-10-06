@@ -6,6 +6,9 @@ apa7:
     url: https://www.chainalysis.com/
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for www.chainalysis.com (manually constructed).
+    summary: |
+        This company specializes in block chain analysis, proving that the blockchain technology is not actually
+        anonymous.
     keywords:
-        - website
+        - block chain
+        - cybersecurity
