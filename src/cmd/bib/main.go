@@ -19,6 +19,7 @@ func execute() error {
 	rootCmd.AddCommand(newIndexCmd())
 	rootCmd.AddCommand(newMigrateCmd())
 	rootCmd.AddCommand(newRepairDOICmd())
+	rootCmd.AddCommand(newSummarizeCmd())
 	return rootCmd.Execute()
 }
 
