@@ -44,10 +44,14 @@ func execCmd(root *cobra.Command, args ...string) (string, error) {
 }
 
 func TestIndexAndSearch(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+
+    // Stub commit for index to avoid requiring a git repo
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
 
 	// Seed two entries
 	if err := os.MkdirAll("data/citations", 0o755); err != nil {
@@ -161,10 +165,14 @@ func intPtr(v int) *int { return &v }
 // Removed: requirement for OPENAI_API_KEY
 
 func TestIndexPrintsPath(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+
+    // Stub commit for index
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
 
 	rootCmd = &cobra.Command{Use: "bib"}
 	rootCmd.AddCommand(newIndexCmd())
