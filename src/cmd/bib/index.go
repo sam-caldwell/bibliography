@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/spf13/cobra"
 
@@ -10,8 +11,9 @@ import (
 
 func newIndexCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "index",
-		Short: "Rebuild metadata indexes (keywords, authors, titles, ISBN, DOI)",
+		Use:          "index",
+		Short:        "Rebuild metadata indexes (keywords, authors, titles, ISBN, DOI)",
+		SilenceUsage: true,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			entries, err := store.ReadAll()
 			if err != nil {
@@ -58,8 +60,15 @@ func newIndexCmd() *cobra.Command {
 				return err
 			}
 			toCommit = append(toCommit, dpath)
-			// Commit and push metadata changes. Treat no-op commits as success.
-			if err := commitAndPush(toCommit, "index: rebuild metadata"); err != nil {
+			// Commit and push metadata changes. Stage the whole metadata dir to ensure
+			// new/removed files are included atomically after all writes complete.
+			if err := commitAndPush([]string{store.MetadataDir}, "index: rebuild metadata"); err != nil {
+				// Be friendly if running outside a git repo
+				em := err.Error()
+				if strings.Contains(em, "not a git repository") {
+					fmt.Fprintln(cmd.ErrOrStderr(), "warning: skipping git commit (not a git repository)")
+					return nil
+				}
 				return err
 			}
 			return nil
