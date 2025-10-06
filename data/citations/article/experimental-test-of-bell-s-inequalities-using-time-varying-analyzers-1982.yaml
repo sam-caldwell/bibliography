@@ -1,0 +1,26 @@
+id: experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982
+type: article
+apa7:
+    authors:
+        - family: Aspect
+          given: A.
+        - family: Dalibard
+          given: J.
+        - family: Roger
+          given: G.
+    year: 1982
+    date: "1982-12-20"
+    title: Experimental Test of Bell's Inequalities Using Time- Varying Analyzers
+    container_title: Physical Review Letters
+    publisher: American Physical Society (APS)
+    journal: Physical Review Letters
+    volume: "49"
+    issue: "25"
+    pages: 1804-1807
+    doi: 10.1103/physrevlett.49.1804
+    url: https://doi.org/10.1103/physrevlett.49.1804
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Experimental Test of Bell's Inequalities Using Time- Varying Analyzers in Physical Review Letters via DOI metadata.
+    keywords:
+        - article
