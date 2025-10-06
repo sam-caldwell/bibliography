@@ -1,0 +1,32 @@
+id: teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993
+type: article
+apa7:
+    authors:
+        - family: Bennett
+          given: C. H.
+        - family: Brassard
+          given: G.
+        - family: Crépeau
+          given: C.
+        - family: Jozsa
+          given: R.
+        - family: Peres
+          given: A.
+        - family: Wootters
+          given: W. K.
+    year: 1993
+    date: "1993-03-29"
+    title: Teleporting an unknown quantum state via dual classical and Einstein-Podolsky-Rosen channels
+    container_title: Physical Review Letters
+    publisher: American Physical Society (APS)
+    journal: Physical Review Letters
+    volume: "70"
+    issue: "13"
+    pages: 1895-1899
+    doi: 10.1103/physrevlett.70.1895
+    url: https://doi.org/10.1103/physrevlett.70.1895
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Teleporting an unknown quantum state via dual classical and Einstein-Podolsky-Rosen channels in Physical Review Letters via DOI metadata.
+    keywords:
+        - article
