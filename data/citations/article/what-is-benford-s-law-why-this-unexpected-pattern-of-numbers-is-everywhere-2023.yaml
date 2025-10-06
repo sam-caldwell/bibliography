@@ -1,0 +1,17 @@
+id: what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023
+type: article
+apa7:
+    authors:
+        - family: Murtagh
+          given: J.
+    year: 2023
+    date: "2023-05-08"
+    title: What Is Benford's Law? Why This Unexpected Pattern of Numbers Is Everywhere
+    container_title: Scientific American
+    publisher: Scientific American
+    url: https://www.scientificamerican.com/article/what-is-benfords-law-why-this-unexpected-pattern-of-numbers-is-everywhere/
+    accessed: "2025-10-06"
+annotation:
+    summary: A curious mathematical phenomenon called Benford’s law governs the numbers all around us
+    keywords:
+        - article
