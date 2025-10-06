@@ -1,0 +1,3561 @@
+{
+  "004.0151": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "004.1": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "005.13/3": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "005.265": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "10": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "1321": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "143": [
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml"
+  ],
+  "1949": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml"
+  ],
+  "1961": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "1965": [
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "1978": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "1982": [
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml"
+  ],
+  "1983": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "1984": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "1991": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "1992": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "1993": [
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "1995": [
+    "data/citations/books/computer-graphics-1995.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "1996": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "1997": [
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "1998": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "1999": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "2000": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml"
+  ],
+  "2003": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/rfc/rfc3600.yaml"
+  ],
+  "2004": [
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/the-essential-turing-2004.yaml"
+  ],
+  "2005": [
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml"
+  ],
+  "2006": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml"
+  ],
+  "2007": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "2008": [
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/rfc/rfc5389.yaml"
+  ],
+  "2009": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "2010": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "2012": [
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml"
+  ],
+  "2013": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "2014": [
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "2015": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "2016": [
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "2017": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "2018": [
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "2019": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/quantum-computing-2019.yaml",
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "2020": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "2021": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "2022": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml"
+  ],
+  "2023": [
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml",
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "2024": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/site/gobyexample-enums.yaml",
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "2024 ieee international conference on electronics, computing and communication technologies (conecct)": [
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "2024 international conference on advances in computing, communication and applied informatics (accai)": [
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml"
+  ],
+  "2025": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "2nd": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "3600": [
+    "data/citations/rfc/rfc3600.yaml"
+  ],
+  "41": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "5389": [
+    "data/citations/rfc/rfc5389.yaml"
+  ],
+  "5424": [
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "5766": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "8235": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "84": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "96": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "[manuel]": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "aaas": [
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml"
+  ],
+  "ac": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "accai": [
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml"
+  ],
+  "access": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "ach": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "achdevguide.nacha.org": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "acm": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "acm press": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "acm transactions on computer systems": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "across": [
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml"
+  ],
+  "acs": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "acs nano": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "action": [
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml"
+  ],
+  "active": [
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml"
+  ],
+  "addison": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/computer-graphics-1995.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "addison-wesley": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "addison-wesley professional": [
+    "data/citations/books/computer-graphics-1995.yaml"
+  ],
+  "admin.ich.org": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "advanced": [
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "advancement": [
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml"
+  ],
+  "advances": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml"
+  ],
+  "ag": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "ai": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "algebra": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "algebra of programs": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "algorithm": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "algorithm design": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "algorithms": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "all": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "amazon": [
+    "data/citations/site/aws-amazon-com.yaml"
+  ],
+  "american": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml",
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "american association for the advancement of science (aaas)": [
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml"
+  ],
+  "american chemical society (acs)": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "american physical society (aps)": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "amplitude": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml"
+  ],
+  "an": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "analysis": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "analytic mechanics (mathematical aspects)": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "analyzers": [
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml"
+  ],
+  "and": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "annealer": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "annual": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "application": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "applications": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "applied": [
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "approved": [
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "approximate": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "aps": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "architecture": [
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml"
+  ],
+  "arguments": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "around": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "arrested": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "art": [
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml"
+  ],
+  "article": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "artificial generation": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml"
+  ],
+  "arxiv": [
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml"
+  ],
+  "arxiv.org": [
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml"
+  ],
+  "assembler language (computer program language)": [
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "assembly": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "association": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "association for computing machinery (acm)": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "asymmetric": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "at": [
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "availability": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "aws": [
+    "data/citations/site/aws-amazon-com.yaml"
+  ],
+  "aws.amazon.com": [
+    "data/citations/site/aws-amazon-com.yaml"
+  ],
+  "based": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "be": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "bell": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "bell system technical journal": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml"
+  ],
+  "benford": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "between": [
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml"
+  ],
+  "beyond": [
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "big data": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "binary": [
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "binary system (mathematics)": [
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "black": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml"
+  ],
+  "book": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/computer-graphics-1995.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml",
+    "data/citations/books/quantum-computing-2019.yaml",
+    "data/citations/books/story-of-technology-2019.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/books/the-character-of-physical-law-1965.yaml",
+    "data/citations/books/the-essential-turing-2004.yaml",
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "books": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "books.google.com": [
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "boost": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "boost.org": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "bound": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "build": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "building": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "business": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "buy": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "bv": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "by": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "c": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "c (computer program language)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c (programmiersprache)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c plus plus (computer program language)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c plus plus (langage de programmation)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c# (computer program language)": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "c++": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/site/boost-json.yaml"
+  ],
+  "c++ (computer program language)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ (computer programming language)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ (język programowania)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ (langage de programmation)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ (lenguaje de programación)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c++ computer programming language": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "c[plus plus] (computer program language)": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "cambridge": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "cambridge university press": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "can": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "capacity": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "carbon": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml"
+  ],
+  "cartoons": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "cavity": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml"
+  ],
+  "challenges": [
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml"
+  ],
+  "channels": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "chapter": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "character": [
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "chemical": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "chip": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "circuits": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "classical": [
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "clocks": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml"
+  ],
+  "cloud": [
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml"
+  ],
+  "cloudflare.com": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "cluster": [
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml"
+  ],
+  "co": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "code optimization": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "codes": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml"
+  ],
+  "coherent": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml"
+  ],
+  "com": [
+    "data/citations/site/aws-amazon-com.yaml",
+    "data/citations/site/developer-nvidia-com.yaml",
+    "data/citations/site/docs-rigetti-com.yaml",
+    "data/citations/site/github-com.yaml",
+    "data/citations/site/media-vw-com.yaml",
+    "data/citations/site/pyquil-docs-rigetti-com.yaml"
+  ],
+  "comb": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml"
+  ],
+  "common": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "communication": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "communications": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "communications of the acm": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "compact": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml"
+  ],
+  "compatible": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "compiler design": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "compilers": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "computation": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "computer": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/books/computer-graphics-1995.yaml"
+  ],
+  "computer architecture": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "computer engineering": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "computer graphics": [
+    "data/citations/books/computer-graphics-1995.yaml"
+  ],
+  "computer interfaces": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "computer programming": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "computer science": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/boost-json.yaml",
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/developer-nvidia-com.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "computer science, mathematics": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "computer science--mathematics": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "computer technology": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "computers": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml",
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "computers \u0026amp; the internet": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "computers - general information": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "computing": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/quantum-computing-2019.yaml",
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "concepts": [
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml"
+  ],
+  "conecct": [
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "conference": [
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "controlled": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "cool": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml"
+  ],
+  "correction": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml"
+  ],
+  "coupled": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml"
+  ],
+  "cpp": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "cs": [
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "csrc": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "csrc.nist.gov": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "cuda": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "cyclic": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "c♯": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "danube": [
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml"
+  ],
+  "dark": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "dark reading": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "darkreading.com": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "data structures": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "database": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "deep": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "defect": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml"
+  ],
+  "delivered": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "den": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "der": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml"
+  ],
+  "des": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "design": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "developer": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "developer.nvidia.com": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "developers": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "devices": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "digest": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "digital computer hardware": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "dimensional": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml"
+  ],
+  "dimensions": [
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "diodes": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml"
+  ],
+  "directions": [
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml"
+  ],
+  "discovery": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml"
+  ],
+  "distance": [
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml"
+  ],
+  "distant": [
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml"
+  ],
+  "distributed systems": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "docs": [
+    "data/citations/site/docs-rigetti-com.yaml",
+    "data/citations/site/pyquil-docs-rigetti-com.yaml"
+  ],
+  "docs.python.org": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "docs.rigetti.com": [
+    "data/citations/site/docs-rigetti-com.yaml"
+  ],
+  "document": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "documentation": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "doi.org": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml",
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "doing": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "drug": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml"
+  ],
+  "dual": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "e. fred schubert": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml"
+  ],
+  "ectd": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "ectd-3.2.2": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "ed": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "edition": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "editor": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "edu": [
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "efficient": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml"
+  ],
+  "eighth": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "einstein": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "electrical": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml"
+  ],
+  "electron": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "electronic": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "electronics": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "electronics \u0026 communications engineering": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "elsevier": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "elsevier bv": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "elsevier science \u0026 technology books": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "emerging": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "emission": [
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml"
+  ],
+  "emitting": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml"
+  ],
+  "empirical": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "empirical software engineering": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "encoding": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml"
+  ],
+  "end": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "engineered": [
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml"
+  ],
+  "engineering": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "engineers": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml"
+  ],
+  "enjoy": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "entangled": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "entanglement": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "entropy": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "enum module": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "enumerations": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "enums": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "environment": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "era": [
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "error": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml"
+  ],
+  "error correction": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml"
+  ],
+  "essential": [
+    "data/citations/books/the-essential-turing-2004.yaml"
+  ],
+  "ev": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "everywhere": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "ewg": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "example": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "experimental": [
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml"
+  ],
+  "exploration": [
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml"
+  ],
+  "extendable": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "extensions": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "fantastic": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "fast": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "faster": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml"
+  ],
+  "fault": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "feed": [
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml"
+  ],
+  "file": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "financial": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "fintech": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "flow": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "fool.com": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "for": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/site/achdevguide-nacha-org.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "forderung": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "formula": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "fortschritte": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml"
+  ],
+  "fortschritte der physik": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml"
+  ],
+  "forward": [
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml"
+  ],
+  "foundations": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "fractal": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "fractals": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "fred": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml"
+  ],
+  "free": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "freeman": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "from": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "frontiers": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "frontiers in ict": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "frontiers media sa": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "functional": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "functional programming": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "functions": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "future": [
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml"
+  ],
+  "gates": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml"
+  ],
+  "general": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "general theory of computing": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "geometry": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "github": [
+    "data/citations/site/github-com.yaml"
+  ],
+  "github.com": [
+    "data/citations/site/github-com.yaml"
+  ],
+  "globe": [
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "globe pequot press, the": [
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "go": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "go by example": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "go programming": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "gobyexample.com": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "got": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "gov": [
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/www-nsa-gov.yaml"
+  ],
+  "gpu": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "graphics": [
+    "data/citations/books/computer-graphics-1995.yaml"
+  ],
+  "gráficas por computadoras": [
+    "data/citations/books/computer-graphics-1995.yaml"
+  ],
+  "guide": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "hacking": [
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml"
+  ],
+  "hall": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "harmonisation": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "hash": [
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "hierarchy": [
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "highly": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "hill": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/quantum-computing-2019.yaml"
+  ],
+  "history": [
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "holes": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml"
+  ],
+  "horizons": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml"
+  ],
+  "http": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml"
+  ],
+  "human": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "humor": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "hybrid": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml"
+  ],
+  "ibm": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm compatible computers": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm compatible computers.": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm microcomputers": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm microcomputers.": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ibm-compatible computers": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "ich": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "ict": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "ieee": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "ietf": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "in": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "indicators": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "industrial": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "inequalities": [
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml"
+  ],
+  "inequality": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "informa": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "informa uk limited": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "informatics": [
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml"
+  ],
+  "information": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "information processing letters": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "informatyka": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "informs": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "institute": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "institute for operations research and the management sciences (informs)": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "institute of electrical and electronics engineers (ieee)": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml"
+  ],
+  "instruction": [
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml"
+  ],
+  "instruction set architecture": [
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml"
+  ],
+  "intel 80x86 series microprocessors": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "intel 80x86 series microprocessors.": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "interactive": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "interactive \u0026 multimedia": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "interfacing": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "international": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "international journal of modern physics d": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "international journal of theoretical physics": [
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml"
+  ],
+  "internet": [
+    "data/citations/rfc/rfc3600.yaml"
+  ],
+  "introduction": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "investors": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "iop": [
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "iop publishing": [
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "iot": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "is": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml",
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "isa": [
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml"
+  ],
+  "its": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "j klossner cartoons": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "java": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "jk lossner": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "jklossner.com": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "jobs": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "journal": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "journal of modern optics": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "journal of physics: conference series": [
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml"
+  ],
+  "json": [
+    "data/citations/site/boost-json.yaml",
+    "data/citations/site/www-json-org.yaml"
+  ],
+  "json.org": [
+    "data/citations/site/www-json-org.yaml"
+  ],
+  "just": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "kilometres": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml"
+  ],
+  "klossner": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "knowledge": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "langages de programmation": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "language": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "languages": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "large": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "large language models": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "law": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml",
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "learning": [
+    "data/citations/article/quantum-machine-learning-2017.yaml"
+  ],
+  "letters": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "liberated": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "library": [
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml"
+  ],
+  "life": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "light": [
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml",
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml"
+  ],
+  "limited": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "linguagens de programacao (geral)": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "linux (computer operating system)": [
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "llc": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "llenguatges de programacio .": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "llenguatges de programació": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "llenguatges de programació": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "llm": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "load": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "logiciels": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "loophole": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "lt": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "m2": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "ma": [
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "machine": [
+    "data/citations/article/quantum-machine-learning-2017.yaml"
+  ],
+  "machinery": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "management": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "manning": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "manning publications co. llc": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "many-worlds": [
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml"
+  ],
+  "market": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "markets": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "math": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml"
+  ],
+  "mathematical models": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "mathematical physics and mathematics": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "mathematics": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml",
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "mathml": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml"
+  ],
+  "matter": [
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml"
+  ],
+  "mcgraw": [
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/quantum-computing-2019.yaml"
+  ],
+  "mcgraw hill professional": [
+    "data/citations/books/quantum-computing-2019.yaml"
+  ],
+  "mcgraw-hill": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "md5": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "mdpi": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "mdpi ag": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "measuring": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "mechanical": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "media": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/site/media-vw-com.yaml"
+  ],
+  "media.vw.com": [
+    "data/citations/site/media-vw-com.yaml"
+  ],
+  "memories": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "message": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "mi": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml"
+  ],
+  "microarray analysis": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "microservice": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "microsoft": [
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "microsoft.com": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "millimeter": [
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "mips": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "mips (computer architecture)": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "mit": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "mit press (ma)": [
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "mml": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml"
+  ],
+  "model": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "modern": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "modern life": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "msr": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "multiple": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "nano": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "nanocrystals": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "nanotubes": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml"
+  ],
+  "nat": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "national": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "national institute of standards and technology (u.s.)": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "natural language": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml"
+  ],
+  "natural language generation": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml"
+  ],
+  "nature": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "nature communications": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml"
+  ],
+  "nature photonics": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "net": [
+    "data/citations/site/www-researchgate-net.yaml"
+  ],
+  "networking": [
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "networks": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "neumann": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "neutron": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml"
+  ],
+  "new": [
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "new journal of physics": [
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "news": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "nisq": [
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "nist": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "nlg": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml"
+  ],
+  "no": [
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "no starch press": [
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "noisy": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml"
+  ],
+  "non": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "non-locality": [
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml"
+  ],
+  "nonfiction": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "npj": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml"
+  ],
+  "npj quantum information": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml"
+  ],
+  "nsa": [
+    "data/citations/site/www-nsa-gov.yaml"
+  ],
+  "nsa.gov": [
+    "data/citations/site/www-nsa-gov.yaml"
+  ],
+  "numbers": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "nvidia": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "nvlpubs.nist.gov": [
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "object": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "object-oriented programming (computer science)": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "observability": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "of": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/story-of-technology-2019.yaml",
+    "data/citations/books/the-character-of-physical-law-1965.yaml",
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "official": [
+    "data/citations/rfc/rfc3600.yaml"
+  ],
+  "on": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "one": [
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml"
+  ],
+  "online resource": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "open": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "open_syllabus_project": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "openlibrary.org": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml",
+    "data/citations/books/computer-graphics-1995.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml",
+    "data/citations/books/story-of-technology-2019.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "operations": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "operations research": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "opportunities": [
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml"
+  ],
+  "oprogramowanie": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "optical": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml"
+  ],
+  "optics": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "optimal": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "optimization": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "org": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml",
+    "data/citations/site/yaml-org.yaml"
+  ],
+  "organic": [
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml"
+  ],
+  "oriented": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "osborne": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "osborne mcgraw-hill": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "osi": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "osi model": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "oup": [
+    "data/citations/books/the-essential-turing-2004.yaml"
+  ],
+  "oup oxford": [
+    "data/citations/books/the-essential-turing-2004.yaml"
+  ],
+  "output": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "over": [
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml"
+  ],
+  "overview": [
+    "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "oxford": [
+    "data/citations/books/the-essential-turing-2004.yaml"
+  ],
+  "pace": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "parameterized": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "pascal": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "pattern": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "pc": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "pearson": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "pearson/prentice hall": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "pen": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "pequot": [
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "permutation": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "pharmaceutical": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "pharmaceuticals": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "photoelectrons": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "photonics": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "photons": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "physical": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml",
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "physical review a": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "physical review letters": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "physical review research": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "physics": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "physics letters b": [
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "physik": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml"
+  ],
+  "pipeline": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml"
+  ],
+  "play.google.com": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/quantum-computing-2019.yaml",
+    "data/citations/books/the-essential-turing-2004.yaml"
+  ],
+  "plos": [
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml"
+  ],
+  "plos one": [
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml"
+  ],
+  "podolsky": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "podręczniki": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "polarized": [
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml"
+  ],
+  "polynomial": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml"
+  ],
+  "power": [
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml"
+  ],
+  "practical": [
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
+  ],
+  "practice": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "pragmatics": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "prentice": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "prentice hall": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "press": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml",
+    "data/citations/books/story-of-technology-2019.yaml",
+    "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "principles": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "probability": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "problem": [
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "problems": [
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml"
+  ],
+  "proceedings": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "proceedings of the twenty-eighth annual acm symposium on theory of computing  - stoc '96": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "processing": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
+  ],
+  "professional": [
+    "data/citations/books/computer-graphics-1995.yaml",
+    "data/citations/books/quantum-computing-2019.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e computer science": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e general": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e general interest": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e multimedia": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e programming languages (jr/sr)": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e computer science -\u003e system administration": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "professional, career \u0026 trade -\u003e engineering -\u003e software engineering": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ],
+  "programmer": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "programming": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml",
+    "data/citations/books/mips-assembly-language-programming-2004.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml",
+    "data/citations/site/boost-json.yaml",
+    "data/citations/site/developer-nvidia-com.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "programming examples": [
+    "data/citations/site/gobyexample-enums.yaml"
+  ],
+  "programming languages": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/books/c-2003.yaml",
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "programming languages (electronic computers)": [
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "programs": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "proof": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "properties": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "protocol": [
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "ps": [
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
+  ],
+  "pte": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "pub": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "public": [
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml"
+  ],
+  "public library of science (plos)": [
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml"
+  ],
+  "publications": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "publishing": [
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "publizierens": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "pure": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml"
+  ],
+  "pyquil": [
+    "data/citations/site/pyquil-docs-rigetti-com.yaml"
+  ],
+  "pyquil-docs.rigetti.com": [
+    "data/citations/site/pyquil-docs-rigetti-com.yaml"
+  ],
+  "python": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "python documentation": [
+    "data/citations/site/python-enumerations-2024.yaml"
+  ],
+  "qa76.73.c15 s348 2000": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "qa76.73.c153 s33 1998": [
+    "data/citations/books/c-2003.yaml"
+  ],
+  "qa76.889 .n54 2000": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "qa76.889 .n54 2010": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "qa76.9.a73 b79 2004": [
+    "data/citations/books/mips-assembly-language-programming-2004.yaml"
+  ],
+  "qcl": [
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "quantenwissenschaften": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "quantum": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml",
+    "data/citations/books/quantum-computing-2019.yaml",
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "quantum computers": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "quantum computing": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "quantum mechanics": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml",
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "quantum physics (quantum mechanics)": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "quantum theory": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "qubit": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml"
+  ],
+  "qubits": [
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml"
+  ],
+  "queuing": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "quorum": [
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "reading": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "real": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml"
+  ],
+  "realization": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml"
+  ],
+  "recent": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "recommendation": [
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "record": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "reference": [
+    "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "registration": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "relay": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "relays": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "reports": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml"
+  ],
+  "requirements": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "research": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "research.cs.wisc.edu": [
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "researchgate": [
+    "data/citations/site/www-researchgate-net.yaml"
+  ],
+  "researchgate.net": [
+    "data/citations/site/www-researchgate-net.yaml"
+  ],
+  "resource": [
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "review": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "revolutionizing": [
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml"
+  ],
+  "rfc": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "rfc 1321": [
+    "data/citations/rfc/rfc1321.yaml"
+  ],
+  "rfc 3600": [
+    "data/citations/rfc/rfc3600.yaml"
+  ],
+  "rfc 5389": [
+    "data/citations/rfc/rfc5389.yaml"
+  ],
+  "rfc 5424": [
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "rfc 5766": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "rfc 8235": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "rfc editor": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "rfc-editor.org": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "rigetti": [
+    "data/citations/site/docs-rigetti-com.yaml",
+    "data/citations/site/pyquil-docs-rigetti-com.yaml"
+  ],
+  "rosen": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "sa": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "scale": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "scaling": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "schnorr": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "schubert": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml"
+  ],
+  "science": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/the-essential-turing-2004.yaml"
+  ],
+  "science / quantum theory": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "science/mathematics": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "sciences": [
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
+  ],
+  "scientific": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml",
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "scientific american": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml",
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "scientific reports": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml"
+  ],
+  "scientificamerican.com": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml",
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "scratch": [
+    "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml"
+  ],
+  "search": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "secrecy": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml"
+  ],
+  "secured": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "security": [
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "semiconductors": [
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml"
+  ],
+  "separated": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "series": [
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml"
+  ],
+  "session": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "set": [
+    "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml"
+  ],
+  "seven": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "sha": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "shallow": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml"
+  ],
+  "siam": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "siam journal on computing": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "simulation": [
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "social aspects": [
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "society": [
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "society for industrial \u0026 applied mathematics (siam)": [
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "software": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "software engineering": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "space": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "space-time": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "specification": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "speed": [
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml"
+  ],
+  "spin": [
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml"
+  ],
+  "spins": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "spooky": [
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml"
+  ],
+  "springer": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml",
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml"
+  ],
+  "springer nature": [
+    "data/citations/books/mathematics-of-quantum-computing-2019.yaml"
+  ],
+  "springer science and business media llc": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml",
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml",
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml",
+    "data/citations/article/quantum-machine-learning-2017.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "stabilizer": [
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml"
+  ],
+  "standard": [
+    "data/citations/article/sha-3-standard-2015.yaml"
+  ],
+  "standards": [
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/rfc/rfc3600.yaml"
+  ],
+  "starch": [
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/books/practical-binary-analysis-2018.yaml"
+  ],
+  "state": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "states": [
+    "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml"
+  ],
+  "statystyka": [
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "stoc": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "stochastic processes": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "stock": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "story": [
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "structured": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml"
+  ],
+  "stun": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "style": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "surface": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml"
+  ],
+  "survey": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "sybex": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "symposium": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "syntax analysis": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "syslog": [
+    "data/citations/rfc/rfc5424.yaml"
+  ],
+  "system": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "systems": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml"
+  ],
+  "systems engineering": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml"
+  ],
+  "tail": [
+    "data/citations/article/the-tail-at-scale-2013.yaml"
+  ],
+  "targets": [
+    "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml"
+  ],
+  "tech": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "techhq": [
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml"
+  ],
+  "techhq.com": [
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml"
+  ],
+  "technical": [
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "techniques": [
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "technological forecasting": [
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "technological innovations": [
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "technologies": [
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml"
+  ],
+  "technology": [
+    "data/citations/article/sha-3-standard-2015.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/books/programming-language-pragmatics-2015.yaml",
+    "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "technology \u0026 engineering": [
+    "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml",
+    "data/citations/books/quantum-computing-2019.yaml"
+  ],
+  "telegraph": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml"
+  ],
+  "teleportation": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/experimental-quantum-teleportation-1997.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml",
+    "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml"
+  ],
+  "teleporting": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "tell": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "test": [
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml"
+  ],
+  "testers": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "testing": [
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml"
+  ],
+  "than": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml"
+  ],
+  "that": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml"
+  ],
+  "the": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml",
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml",
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml",
+    "data/citations/article/optical-computing-the-power-of-light-2023.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml",
+    "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml",
+    "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml",
+    "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml",
+    "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml",
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml",
+    "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml",
+    "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml",
+    "data/citations/article/the-tail-at-scale-2013.yaml",
+    "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml",
+    "data/citations/books/hacking-the-art-of-exploration-2008.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/books/story-of-technology-2019.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml",
+    "data/citations/books/the-character-of-physical-law-1965.yaml",
+    "data/citations/books/the-essential-turing-2004.yaml",
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml",
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "the mit press": [
+    "data/citations/books/introduction-to-algorithms-2009.yaml"
+  ],
+  "their": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "theoretical": [
+    "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "theoretical methods": [
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "theory": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml",
+    "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml",
+    "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml",
+    "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "this": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "three": [
+    "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml"
+  ],
+  "through": [
+    "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml"
+  ],
+  "time": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "time perception": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "to": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml",
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml",
+    "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml",
+    "data/citations/books/introduction-to-algorithms-2009.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "tolerant": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "toolkit": [
+    "data/citations/site/developer-nvidia-com.yaml"
+  ],
+  "tools": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "towards": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml"
+  ],
+  "tph": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "tph.tuwien.ac.at": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "tr": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "tracing": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "traffic": [
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml"
+  ],
+  "transactions": [
+    "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "traversal": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "turbo": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "turbo c (computer program)": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "turbo c++": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "turbo c++.": [
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "turing": [
+    "data/citations/books/the-essential-turing-2004.yaml"
+  ],
+  "turn": [
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "tuwien": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "twenty": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "twisting": [
+    "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "two": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml"
+  ],
+  "uk": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "unexpected": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "university": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml",
+    "data/citations/books/practical-foundations-for-programming-languages-2016.yaml",
+    "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml"
+  ],
+  "unknown": [
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "up": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "use": [
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml"
+  ],
+  "using": [
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml",
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml",
+    "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml",
+    "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml"
+  ],
+  "utilities": [
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5766.yaml"
+  ],
+  "varying": [
+    "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml"
+  ],
+  "verein": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "verein zur forderung des open access publizierens in den quantenwissenschaften": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "via": [
+    "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml",
+    "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml",
+    "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
+  ],
+  "vienna": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "vienna university of technology institute for theoretical physics": [
+    "data/citations/article/tph-tuwien-ac-at-2000.yaml",
+    "data/citations/article/tph-tuwien-ac-at-2009.yaml"
+  ],
+  "violation": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "von": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "von neumann style": [
+    "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml"
+  ],
+  "vw": [
+    "data/citations/site/media-vw-com.yaml"
+  ],
+  "w.h. freeman": [
+    "data/citations/books/the-fractal-geometry-of-nature-1983.yaml"
+  ],
+  "w3": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml"
+  ],
+  "wasn": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml"
+  ],
+  "website": [
+    "data/citations/site/MSR-TR-2020-41.yaml",
+    "data/citations/site/achdevguide-nacha-org.yaml",
+    "data/citations/site/aws-amazon-com.yaml",
+    "data/citations/site/boost-json.yaml",
+    "data/citations/site/csrc-nist-gov.yaml",
+    "data/citations/site/developer-nvidia-com.yaml",
+    "data/citations/site/docs-rigetti-com.yaml",
+    "data/citations/site/eCTD_Specification_v3_2_2_0.yaml",
+    "data/citations/site/github-com.yaml",
+    "data/citations/site/gobyexample-enums.yaml",
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml",
+    "data/citations/site/media-vw-com.yaml",
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml",
+    "data/citations/site/pyquil-docs-rigetti-com.yaml",
+    "data/citations/site/python-enumerations-2024.yaml",
+    "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml",
+    "data/citations/site/research-cs-wisc-edu.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml",
+    "data/citations/site/www-json-org.yaml",
+    "data/citations/site/www-nsa-gov.yaml",
+    "data/citations/site/www-researchgate-net.yaml",
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml",
+    "data/citations/site/yaml-org.yaml"
+  ],
+  "wesley": [
+    "data/citations/books/compilers-principles-techniques-and-tools.yaml",
+    "data/citations/books/computer-graphics-1995.yaml",
+    "data/citations/books/the-c-programming-language-2013.yaml"
+  ],
+  "what": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml",
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "white": [
+    "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml"
+  ],
+  "who": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "why": [
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "wiley": [
+    "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "wisc": [
+    "data/citations/site/research-cs-wisc-edu.yaml"
+  ],
+  "with": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml",
+    "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "world": [
+    "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml",
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "world scientific pub co pte lt": [
+    "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml"
+  ],
+  "ws2": [
+    "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml"
+  ],
+  "www": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml",
+    "data/citations/site/www-nsa-gov.yaml",
+    "data/citations/site/www-researchgate-net.yaml"
+  ],
+  "www.boost.org": [
+    "data/citations/site/boost-json.yaml"
+  ],
+  "www.cloudflare.com": [
+    "data/citations/site/what-is-the-osi-model.yaml"
+  ],
+  "www.darkreading.com": [
+    "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml"
+  ],
+  "www.fool.com": [
+    "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml"
+  ],
+  "www.jklossner.com": [
+    "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "www.json.org": [
+    "data/citations/site/www-json-org.yaml"
+  ],
+  "www.microsoft.com": [
+    "data/citations/site/MSR-TR-2020-41.yaml"
+  ],
+  "www.nsa.gov": [
+    "data/citations/site/www-nsa-gov.yaml"
+  ],
+  "www.researchgate.net": [
+    "data/citations/site/www-researchgate-net.yaml"
+  ],
+  "www.rfc-editor.org": [
+    "data/citations/rfc/rfc1321.yaml",
+    "data/citations/rfc/rfc3600.yaml",
+    "data/citations/rfc/rfc5389.yaml",
+    "data/citations/rfc/rfc5424.yaml",
+    "data/citations/rfc/rfc5766.yaml",
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "www.scientificamerican.com": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml",
+    "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml"
+  ],
+  "xkcd": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "xkcd.com": [
+    "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
+  ],
+  "xml": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "xml (document markup language)": [
+    "data/citations/books/xml-in-record-time-1999.yaml"
+  ],
+  "xmlns": [
+    "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml"
+  ],
+  "yaml": [
+    "data/citations/site/yaml-org.yaml"
+  ],
+  "your": [
+    "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "zero": [
+    "data/citations/rfc/rfc8235.yaml"
+  ],
+  "ztna": [
+    "data/citations/site/csrc-nist-gov.yaml"
+  ],
+  "zur": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml",
+    "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml"
+  ],
+  "компьютеры//программирование": [
+    "data/citations/books/programming-language-pragmatics-2015.yaml"
+  ]
+}
