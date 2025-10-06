@@ -9,7 +9,14 @@ apa7:
     title: 'Star Wars: Episode III – Revenge of the Sith'
     publisher: Lucasfilm
 annotation:
-    summary: 'Star Wars: Episode III – Revenge of the Sith is the third installment in the Star Wars prequel trilogy, directed by George Lucas. The film follows the tragic fall of Anakin Skywalker, who is seduced by the dark side of the Force and becomes Darth Vader. Set against the backdrop of the Clone Wars, the story explores themes of betrayal, loss, and the struggle between good and evil. As the Galactic Republic crumbles, Jedi Knight Obi-Wan Kenobi and his apprentice Anakin face their greatest challenges, leading to a climactic battle that alters the fate of the galaxy. The film features a blend of action, drama, and visual effects, culminating in a pivotal moment in the Star Wars saga.'
+    summary: |
+        Star Wars: Episode III – Revenge of the Sith is the third installment in the Star Wars prequel trilogy, 
+        directed by George Lucas. The film follows the tragic fall of Anakin Skywalker, who is seduced by the dark 
+        side of the Force and becomes Darth Vader. Set against the backdrop of the Clone Wars, the story explores 
+        themes of betrayal, loss, and the struggle between good and evil. As the Galactic Republic crumbles, Jedi 
+        Knight Obi-Wan Kenobi and his apprentice Anakin face their greatest challenges, leading to a climactic battle 
+        that alters the fate of the galaxy. The film features a blend of action, drama, and visual effects, 
+        culminating in a pivotal moment in the Star Wars saga.'
     keywords:
         - star wars
         - revenge of the sith

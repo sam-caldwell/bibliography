@@ -8,7 +8,15 @@ apa7:
     date: "1999-02-19"
     title: Office Space
 annotation:
-    summary: Office Space is a satirical comedy film that explores the mundane and often absurd realities of corporate life. The story follows Peter Gibbons, a disenchanted software engineer who is fed up with his oppressive work environment and the monotonous routines of his job at Initech. After undergoing a hypnotherapy session that leaves him in a state of blissful apathy, Peter decides to take a stand against his boss and the corporate culture that stifles creativity and individuality. Alongside his quirky coworkers, he embarks on a series of humorous escapades that challenge the status quo. The film cleverly critiques the dehumanizing aspects of office work, making it a cult classic that resonates with anyone who has experienced the frustrations of corporate life.
+    summary: |
+        Office Space is a satirical comedy film that explores the mundane and often absurd realities of corporate 
+        life. The story follows Peter Gibbons, a disenchanted software engineer who is fed up with his oppressive 
+        work environment and the monotonous routines of his job at Initech. After undergoing a hypnotherapy session 
+        that leaves him in a state of blissful apathy, Peter decides to take a stand against his boss and the 
+        corporate culture that stifles creativity and individuality. Alongside his quirky coworkers, he embarks on a 
+        series of humorous escapades that challenge the status quo. The film cleverly critiques the dehumanizing 
+        aspects of office work, making it a cult classic that resonates with anyone who has experienced the 
+        frustrations of corporate life.
     keywords:
         - humor
         - tech
