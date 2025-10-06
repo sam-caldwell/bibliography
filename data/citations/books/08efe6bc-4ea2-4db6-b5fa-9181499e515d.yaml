@@ -1,0 +1,25 @@
+id: 08efe6bc-4ea2-4db6-b5fa-9181499e515d
+type: book
+apa7:
+    authors:
+        - family: Shostack
+          given: A.
+    year: 2014
+    title: Threat Modeling
+    publisher: Wiley & Sons, Incorporated, John
+    isbn: "9781118810057"
+    url: https://openlibrary.org/books/OL29177482M/Threat_Modeling
+    accessed: "2025-10-06"
+annotation:
+    summary: '"Adam Shostack is responsible for security development lifecycle threat modeling at Microsoft and is one of a handful of threat modeling experts in the world. Now, he is sharing his considerable expertise into this unique book. With pages of specific actionable advice, he details how to build better security into the design of systems, software, or services from the outset. You''ll explore various threat modeling approaches, find out how to test your designs against threats, and learn effective ways to address threats that have been validated at Microsoft and other top companies."--'
+    keywords:
+        - development
+        - computer networks
+        - security measures
+        - computer security
+        - computer software
+        - computer networks / security measures
+        - computer software / development
+        - computersicherheit
+        - software engineering
+        - computer security
