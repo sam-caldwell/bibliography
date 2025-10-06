@@ -12,6 +12,13 @@ apa7:
     url: https://www.scientificamerican.com/article/what-is-benfords-law-why-this-unexpected-pattern-of-numbers-is-everywhere/
     accessed: "2025-10-06"
 annotation:
-    summary: "Benford’s Law states that in many naturally occurring collections of numbers—such as financial data or \nscientific measurements—the leading digit is more likely to be small (1, 2, or 3) than large. Formally, the \nprobability that the first digit is \\(d\\) is given by \\(\\log_{10}(1 + \\frac{1}{d})\\). This pattern often \nemerges in data sets that span several orders of magnitude, and it’s frequently used to detect anomalies or \npotential fraud in accounting and other numeric data.\n"
+    summary: |
+        Benford’s Law states that in many naturally occurring collections of numbers—such as financial data or 
+        scientific measurements—the leading digit is more likely to be small (1, 2, or 3) than large. Formally, the 
+        probability that the first digit is (d) is given by (log_{10}(1 + frac{1}{d})). This pattern often
+        emerges in data sets that span several orders of magnitude, and it’s frequently used to detect anomalies or 
+        potential fraud in accounting and other numeric data."
     keywords:
-        - article
+        - mathematics
+        - statistics
+        - logarithms
