@@ -1,18 +1,36 @@
 {
+  "Abellán, C.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Acedo, P.": [
     "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml"
+  ],
+  "Acosta, V. M.": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
   ],
   "Agarwal, S.": [
     "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml"
   ],
+  "Ahmed, S.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
   "Aho, A. V.": [
     "data/citations/books/compilers-principles-techniques-and-tools.yaml"
+  ],
+  "Amaya, W.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
   ],
   "Amir, Y.": [
     "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml"
   ],
+  "Ammitzböll, M.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
   "Arkani–Hamed, N.": [
     "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
+  ],
+  "Arnold, C. L.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
   ],
   "Aspect, A.": [
     "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml"
@@ -29,8 +47,14 @@
   "Bennett, C. H.": [
     "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
   ],
+  "Bernien, H.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Biamonte, J.": [
     "data/citations/article/quantum-machine-learning-2017.yaml"
+  ],
+  "Blok, M. S.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
   ],
   "Boschi, D.": [
     "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml"
@@ -47,11 +71,23 @@
   "Britton, R.": [
     "data/citations/books/mips-assembly-language-programming-2004.yaml"
   ],
+  "Buchleitner, A.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "Bustard, P. J.": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "Busto, D.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
   "Cardano, F.": [
     "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
   ],
   "Clark, D. D.": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "Cleland, A. N.": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml"
   ],
   "Copeland, B. J.": [
     "data/citations/books/the-essential-turing-2004.yaml"
@@ -74,20 +110,67 @@
   "Dimopoulos, S.": [
     "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
   ],
+  "Dittel, C.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "Dréau, A. E.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Dvali, G.": [
     "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml"
   ],
   "Eibl, M.": [
     "data/citations/article/experimental-quantum-teleportation-1997.yaml"
   ],
+  "Elkouss, D.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "England, D. G.": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "Feifel, R.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
   "Feynman, R. P.": [
     "data/citations/books/the-character-of-physical-law-1965.yaml"
+  ],
+  "Finkelstein-Shapiro, D.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "Fowler, A. G.": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml"
+  ],
+  "Frisk Kockum, A.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
   ],
   "Gerhards, R.": [
     "data/citations/rfc/rfc5424.yaml"
   ],
   "Gerstein, D. M.": [
     "data/citations/books/story-of-technology-2019.yaml"
+  ],
+  "Gheorghiu, V.": [
+    "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml"
+  ],
+  "Gisselbrecht, M.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "Gonzalez-Conde, J.": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml"
+  ],
+  "Gottesman, D.": [
+    "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml",
+    "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml",
+    "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml"
+  ],
+  "Grover, L. K.": [
+    "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml"
+  ],
+  "Guo, C.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "Hanson, R.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
   ],
   "Hao, F.": [
     "data/citations/rfc/rfc8235.yaml"
@@ -98,20 +181,44 @@
   "Harper, Robert": [
     "data/citations/books/practical-foundations-for-programming-languages-2016.yaml"
   ],
+  "Hensen, B.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "Heshami, K.": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "Humphreys, P. C.": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
   "Jan, K. U.": [
     "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
   ],
   "Jozsa, R.": [
     "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
   ],
+  "Kaiser, D.": [
+    "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml"
+  ],
+  "Kalb, N.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Klossner, John": [
     "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml"
+  ],
+  "Lala, P.": [
+    "data/citations/books/quantum-computing-2019.yaml"
+  ],
+  "Laurell, H.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
   ],
   "Leiserson, C. E.": [
     "data/citations/books/introduction-to-algorithms-2009.yaml"
   ],
   "Li, B.": [
     "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "Lindroth, E.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
   ],
   "Little, J. D. C.": [
     "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml"
@@ -122,12 +229,27 @@
   "Lloyd, S.": [
     "data/citations/article/quantum-machine-learning-2017.yaml"
   ],
+  "Luo, S.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "L’Huillier, A.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
   "Mahy, R.": [
     "data/citations/rfc/rfc5389.yaml",
     "data/citations/rfc/rfc5766.yaml"
   ],
+  "Mariantoni, M.": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml"
+  ],
+  "Markham, M.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Marrucci, L.": [
     "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml"
+  ],
+  "Martinis, J. M.": [
+    "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml"
   ],
   "Matthews, P.": [
     "data/citations/rfc/rfc5389.yaml",
@@ -139,6 +261,9 @@
   "Mazidi, M. A.": [
     "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml"
   ],
+  "Mitchell, M. W.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Munroe, R.": [
     "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml"
   ],
@@ -147,6 +272,9 @@
   ],
   "National Automated Clearing House Association": [
     "data/citations/site/achdevguide-nacha-org.yaml"
+  ],
+  "Nunn, J.": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
   ],
   "Pan, J.": [
     "data/citations/article/experimental-quantum-teleportation-1997.yaml"
@@ -160,11 +288,20 @@
   "Peres, A.": [
     "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml"
   ],
+  "Petersson, C. L. M.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
   "Pitts-Moultis, Natanya": [
     "data/citations/books/xml-in-record-time-1999.yaml"
   ],
   "Popescu, S.": [
     "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml"
+  ],
+  "Poulain, V.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "Pruneri, V.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
   ],
   "Python Software Foundation": [
     "data/citations/site/python-enumerations-2024.yaml"
@@ -178,9 +315,15 @@
   "Reed, D. P.": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
   ],
+  "Reiserer, A.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Rivest, R. L.": [
     "data/citations/books/introduction-to-algorithms-2009.yaml",
     "data/citations/rfc/rfc1321.yaml"
+  ],
+  "Rodriguez-Grasa, P.": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml"
   ],
   "Roger, G.": [
     "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml"
@@ -189,12 +332,21 @@
     "data/citations/rfc/rfc5389.yaml",
     "data/citations/rfc/rfc5766.yaml"
   ],
+  "Ruitenberg, J.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Saltzer, J. H.": [
     "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml"
+  ],
+  "Sanz, M.": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml"
   ],
   "Schildt, H.": [
     "data/citations/books/c-2003.yaml",
     "data/citations/books/c-c-programmer-s-reference-1997.yaml"
+  ],
+  "Schouten, R. N.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
   ],
   "Schubert, E. F.": [
     "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml"
@@ -208,6 +360,9 @@
   "Somaddar, A.": [
     "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml"
   ],
+  "Squibb, R. J.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
   "Stein, C.": [
     "data/citations/books/introduction-to-algorithms-2009.yaml"
   ],
@@ -217,17 +372,41 @@
   "Sun, J.": [
     "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
   ],
+  "Sussman, B. J.": [
+    "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml"
+  ],
+  "Söderberg, H.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
+  ],
+  "Taminiau, T. H.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
+  "Twitchen, D. J.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Unknown": [
     "data/citations/site/gobyexample-enums.yaml"
   ],
+  "Vermeulen, R. F. L.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
+  ],
   "Wang, H.": [
     "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml"
+  ],
+  "Watts, T. W.": [
+    "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml"
+  ],
+  "Wehner, S.": [
+    "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml"
   ],
   "Weinfurter, H.": [
     "data/citations/article/experimental-quantum-teleportation-1997.yaml"
   ],
   "Weiskamp, K.": [
     "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml"
+  ],
+  "Weissenbilder, R.": [
+    "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml"
   ],
   "Wiebe, N.": [
     "data/citations/article/quantum-machine-learning-2017.yaml"
