@@ -1,13 +1,30 @@
 id: b9d6997b-8773-4557-858c-9eb6e27ed074
 type: article
 apa7:
-    authors: []
-    title: '{{meta.pageTitle}}'
-    container_title: '{{meta.siteName}}'
-    publisher: '{{meta.siteName}}'
+    authors:
+        - family: Rehnquist
+          given: William H.
+    title: Hustler Magazine, Inc. v. Falwell (485 US 46)
+    container_title: Hustler Magazine, Inc. v. Falwell (485 US 46)
+    publisher: Oyez
     url: https://www.oyez.org/cases/1987/86-1278
     accessed: "2025-10-06"
 annotation:
-    summary: '{{meta.description}}'
+    summary: |
+        A landmark Supreme Court case that addressed whether a public figure could recover damages for emotional 
+        distress caused by a satirical magazine parody. The Court held that the First Amendment protects even 
+        offensive, outrageous satire about public figures, provided there is no false statement knowingly or 
+        recklessly made. This decision underscored the importance of robust free speech protections in public 
+        discourse, even when that speech is crude or insulting.
     keywords:
-        - article
+        - us supreme court
+        - scotus
+        - first amendment
+        - free speech
+        - freedom
+        - free
+        - press
+        - expression
+        - speech
+        - public discourse
+        - satire
