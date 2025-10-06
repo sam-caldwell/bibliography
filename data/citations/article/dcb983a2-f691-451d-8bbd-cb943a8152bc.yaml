@@ -14,8 +14,12 @@ apa7:
     url: https://docs.sentinel.co/assets/files/whitepaper-513665f81a5d6c4b462e111926d26f57.pdf
     accessed: "2025-10-06"
 annotation:
-    summary: | 
-        This document describes the blockchain framework fro building decentralized VPN Applications
+    summary: |
+        This whitepaper describes a Distributed VPN (dVPN) solution based on a public block chain.  The technology 
+        emerged during the blockchain craze of 2020-2022 and establishes some of the arguments against traditional 
+        centralized virtual private network (VPN) products.  Unfortunately it also illustrates the ethical issue of 
+        promising greater security while using a public block chain to facilitate allegedly secure access for users.
+        In light of Greenberg's "Tracers in the Dark" these claims raise concerns.
     keywords:
         - vpn
         - virtual private network
