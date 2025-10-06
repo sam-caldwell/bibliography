@@ -1,0 +1,24 @@
+id: d26f27b7-2171-46c5-8fc7-da44f0dd9e0c
+type: article
+apa7:
+    authors:
+        - family: Mazmudar
+          given: M.
+        - family: Gurtler
+          given: S.
+        - family: Goldberg
+          given: I.
+    year: 2021
+    date: "2021-11-15"
+    title: Do You Feel a Chill?
+    container_title: Proceedings of the 20th Workshop on Workshop on Privacy in the Electronic Society
+    publisher: ACM
+    journal: Proceedings of the 20th Workshop on Workshop on Privacy in the Electronic Society
+    pages: 53-57
+    doi: 10.1145/3463676.3485612
+    url: https://doi.org/10.1145/3463676.3485612
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Do You Feel a Chill? in Proceedings of the 20th Workshop on Workshop on Privacy in the Electronic Society via DOI metadata.
+    keywords:
+        - article
