@@ -1,0 +1,27 @@
+id: surface-codes-towards-practical-large-scale-quantum-computation-2012
+type: article
+apa7:
+    authors:
+        - family: Fowler
+          given: A. G.
+        - family: Mariantoni
+          given: M.
+        - family: Martinis
+          given: J. M.
+        - family: Cleland
+          given: A. N.
+    year: 2012
+    date: "2012-09-18"
+    title: 'Surface codes: Towards practical large-scale quantum computation'
+    container_title: Physical Review A
+    publisher: American Physical Society (APS)
+    journal: Physical Review A
+    volume: "86"
+    issue: "3"
+    doi: 10.1103/physreva.86.032324
+    url: https://doi.org/10.1103/PhysRevA.86.032324
+    accessed: "2025-10-06"
+annotation:
+    summary: 'Bibliographic record for Surface codes: Towards practical large-scale quantum computation in Physical Review A via DOI metadata.'
+    keywords:
+        - article
