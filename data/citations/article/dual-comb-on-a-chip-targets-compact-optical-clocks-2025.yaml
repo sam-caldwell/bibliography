@@ -17,6 +17,8 @@ apa7:
     url: https://doi.org/10.1038/s41566-025-01649-6
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Dual comb on a chip targets compact optical clocks in Nature Photonics via DOI metadata.
+    summary: |
+        Bibliographic record for Dual comb on a chip targets compact optical clocks in Nature Photonics 
+        via DOI metadata.
     keywords:
         - article
