@@ -1,0 +1,32 @@
+id: quantum-machine-learning-2017
+type: article
+apa7:
+    authors:
+        - family: Biamonte
+          given: J.
+        - family: Wittek
+          given: P.
+        - family: Pancotti
+          given: N.
+        - family: Rebentrost
+          given: P.
+        - family: Wiebe
+          given: N.
+        - family: Lloyd
+          given: S.
+    year: 2017
+    date: "2017-09-01"
+    title: Quantum machine learning
+    container_title: Nature
+    publisher: Springer Science and Business Media LLC
+    journal: Nature
+    volume: "549"
+    issue: "7671"
+    pages: 195-202
+    doi: 10.1038/nature23474
+    url: https://doi.org/10.1038/nature23474
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Quantum machine learning in Nature via DOI metadata.
+    keywords:
+        - article
