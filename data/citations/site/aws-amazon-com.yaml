@@ -2,10 +2,10 @@ id: aws-amazon-com
 type: website
 apa7:
     authors: []
-    title: AWS.AMAZON.COM
-    url: HTTPS://AWS.AMAZON.COM/BRAKET/
+    title: aws.amazon.com
+    url: https://aws.amazon.com/braket/quantum-computers/ionq/
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for AWS.AMAZON.COM (manually constructed).
+    summary: Bibliographic record for aws.amazon.com (manually constructed).
     keywords:
         - website
