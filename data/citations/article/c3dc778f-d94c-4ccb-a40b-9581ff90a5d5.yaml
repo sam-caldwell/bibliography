@@ -1,0 +1,24 @@
+id: c3dc778f-d94c-4ccb-a40b-9581ff90a5d5
+type: article
+apa7:
+    authors:
+        - family: Jose Diaz Rivera
+          given: J.
+        - family: Muhammad
+          given: A.
+        - family: Song
+          given: W.
+    year: 2024
+    title: 'Securing Digital Identity in the Zero Trust Architecture: A Blockchain Approach to Privacy-Focused Multi-Factor Authentication'
+    container_title: IEEE Open Journal of the Communications Society
+    publisher: Institute of Electrical and Electronics Engineers (IEEE)
+    journal: IEEE Open Journal of the Communications Society
+    volume: "5"
+    pages: 2792-2814
+    doi: 10.1109/ojcoms.2024.3391728
+    url: https://doi.org/10.1109/ojcoms.2024.3391728
+    accessed: "2025-10-06"
+annotation:
+    summary: 'Bibliographic record for Securing Digital Identity in the Zero Trust Architecture: A Blockchain Approach to Privacy-Focused Multi-Factor Authentication in IEEE Open Journal of the Communications Society via DOI metadata.'
+    keywords:
+        - article
