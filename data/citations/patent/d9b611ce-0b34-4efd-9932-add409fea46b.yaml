@@ -1,13 +1,30 @@
 id: d9b611ce-0b34-4efd-9932-add409fea46b
 type: patent
 apa7:
-    authors: []
-    title: US-11036474-B2 - Patent Public Search | USPTO
+    authors:
+        - family: Caldwell
+          given: Samuel
+        - family: Hill
+          given: Patrick
+    title: US-11036474-B2 - Automating service maturity analysis and estimation
     container_title: ppubs.uspto.gov
-    publisher: ppubs.uspto.gov
-    url: https://ppubs.uspto.gov/api/patents/html/11036474?source=USPAT&requestToken=eyJzdWIiOiI0ZDY2OGM0Ny0wZGM3LTQ5NDQtOWFhZS04MTU0OGMzZDVjNDIiLCJ2ZXIiOiJlZjA0NzY1Zi02NjM2LTQ5YzAtYjU1Zi03MTcwMzYyMTIzZGUiLCJleHAiOjB9
+    publisher: US Patent & Trademark Office
+    url: https://ppubs.uspto.gov/api/patents/html/11036474
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for US-11036474-B2 - Patent Public Search | USPTO on ppubs.uspto.gov.
+    summary: |
+        Techniques for computer-implemented automation of analysis of service maturity and automation of estimation of 
+        service maturity for software applications and services are provided, identifying a service to determine the 
+        service maturity level compared to an identified task comprising optimal service maturity criteria. In response
+        to identifying the service and task, determining that each criteria of the task is met by the service. 
+        Subsequently, updating a score for the overall task and the individual criteria based on the total service 
+        conformity to the criteria. The scores and differences can be displayed in an interface to indicate the 
+        maturity of the service.
     keywords:
-        - article
+        - US Patent
+        - 11036474
+        - observability
+        - atlassian
+        - operational maturity
+        - reliability
+        - automation
