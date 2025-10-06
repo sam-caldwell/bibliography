@@ -1,0 +1,44 @@
+id: quantum-computation-and-quantum-information-10-ed-2010
+type: book
+apa7:
+    authors:
+        - family: Nielsen
+          given: M.
+        - family: Nielsen
+          given: M. A.
+        - family: Chuang
+          given: I. L.
+        - family: INDIA
+          given: C.
+    year: 2010
+    title: Quantum computation and quantum information - 10. ed.
+    publisher: Cambridge University Press
+    isbn: "9781107002173"
+    url: https://openlibrary.org/books/OL26405624M/Quantum_computation_and_quantum_information_-_10._ed.
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Quantum computation and quantum information - 10. ed. (Cambridge University Press, 2010) from OpenLibrary.
+    keywords:
+        - quantum computers
+        - electronics & communications engineering
+        - general theory of computing
+        - quantum physics (quantum mechanics)
+        - theoretical methods
+        - science/mathematics
+        - computers - general information
+        - analytic mechanics (mathematical aspects)
+        - digital computer hardware
+        - computers
+        - quantum theory
+        - computer science
+        - general
+        - science / quantum theory
+        - advanced
+        - computer engineering
+        - computer science, mathematics
+        - mathematics
+        - qa76.889 .n54 2000
+        - "004.1"
+        - computer science--mathematics
+        - qa76.889 .n54 2010
+        - "004.0151"
