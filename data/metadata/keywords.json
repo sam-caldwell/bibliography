@@ -283,6 +283,7 @@
   "2024": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
     "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/5117ba86-4c99-474a-99ba-b2b3ac5b01ed.yaml",
     "data/citations/article/6b64cf08-78cc-44d4-87b1-594cadf8f0dc.yaml",
     "data/citations/article/73c5fed8-b6cb-4edf-8891-ad6a83136d41.yaml",
@@ -368,6 +369,9 @@
   ],
   "5766": [
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml"
+  ],
+  "6g": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml"
   ],
   "800": [
     "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml",
@@ -1280,6 +1284,7 @@
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -1607,6 +1612,7 @@
     "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml"
   ],
   "architecture": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml",
     "data/citations/books/415a4e38-cfe6-4897-85dc-352560ee72f7.yaml",
     "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml",
@@ -1743,6 +1749,7 @@
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -1825,6 +1832,7 @@
   ],
   "artificial": [
     "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/b26b190f-b24f-478a-ad04-eb388dcea360.yaml",
     "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml",
@@ -2477,6 +2485,7 @@
   ],
   "bibliographic": [
     "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/4604c728-cf31-401f-a62a-487ea309f152.yaml",
     "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml",
@@ -5659,6 +5668,7 @@
   ],
   "doi": [
     "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml",
     "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml",
@@ -5679,6 +5689,7 @@
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml",
     "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml",
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -6039,6 +6050,7 @@
     "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml"
   ],
   "electrical": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml",
     "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml",
@@ -6070,6 +6082,7 @@
   ],
   "electronics": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml",
     "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml"
@@ -6255,6 +6268,7 @@
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml"
   ],
   "enabling": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml",
     "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml",
     "data/citations/article/cf4a0a7c-f80b-4455-91c4-6871954c8505.yaml",
@@ -6379,6 +6393,7 @@
     "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml"
   ],
   "engineers": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml",
     "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml",
@@ -7427,6 +7442,7 @@
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -8772,6 +8788,7 @@
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
     "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml",
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/827dcdc9-91f7-4a3c-88cc-d32154640305.yaml",
@@ -8780,6 +8797,9 @@
   ],
   "ieee access": [
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml"
+  ],
+  "ieee network": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml"
   ],
   "ieeexplore": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml"
@@ -9035,6 +9055,7 @@
     "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml",
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -9560,6 +9581,7 @@
     "data/citations/article/f1d9c83a-aa87-4caf-93c5-901ee8789d30.yaml"
   ],
   "institute": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml",
     "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml",
@@ -9573,6 +9595,7 @@
     "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml"
   ],
   "institute of electrical and electronics engineers (ieee)": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml",
     "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml"
@@ -9640,6 +9663,7 @@
   ],
   "intelligence": [
     "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml",
     "data/citations/article/6b64cf08-78cc-44d4-87b1-594cadf8f0dc.yaml",
     "data/citations/article/b26b190f-b24f-478a-ad04-eb388dcea360.yaml",
@@ -11528,6 +11552,7 @@
   ],
   "metadata": [
     "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml",
     "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml",
@@ -12075,6 +12100,7 @@
   ],
   "network": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml",
     "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml",
     "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml",
@@ -12455,6 +12481,7 @@
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -15008,6 +15035,7 @@
   ],
   "record": [
     "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/4604c728-cf31-401f-a62a-487ea309f152.yaml",
     "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml",
@@ -16030,6 +16058,7 @@
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml"
   ],
   "security": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml",
     "data/citations/article/45251b33-d16c-42c6-87e0-3ce898ed99cb.yaml",
@@ -17495,6 +17524,9 @@
   "symposium": [
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml"
   ],
+  "synergy": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml"
+  ],
   "syntax": [
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml",
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml",
@@ -17967,6 +17999,7 @@
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml",
@@ -18907,6 +18940,7 @@
   ],
   "trust": [
     "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml",
     "data/citations/article/9ffd35f4-1db9-4453-a1f9-0936b7c0c195.yaml",
     "data/citations/article/f52515c5-66d9-4f41-aefb-03389a2016c0.yaml",
@@ -19608,6 +19642,7 @@
   ],
   "via": [
     "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml",
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml",
     "data/citations/article/5117ba86-4c99-474a-99ba-b2b3ac5b01ed.yaml",
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml",
@@ -20406,6 +20441,7 @@
     "data/citations/article/5c865251-c50a-48dc-a228-f9880f2f3ea7.yaml"
   ],
   "zero": [
+    "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml",
     "data/citations/article/97a65561-292d-4372-bd68-4fd8ede75297.yaml",
     "data/citations/article/f52515c5-66d9-4f41-aefb-03389a2016c0.yaml",
     "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml",
