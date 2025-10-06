@@ -1,0 +1,25 @@
+id: 6851b44f-63e3-4e3c-86c6-6438c44fe71b
+type: article
+apa7:
+    authors:
+        - family: Egger
+          given: C.
+        - family: Schlumberger
+          given: J.
+        - family: Kruegel
+          given: C.
+        - family: Vigna
+          given: G.
+    year: 2013
+    title: Practical Attacks against the I2P Network
+    container_title: Lecture Notes in Computer Science
+    publisher: Springer Berlin Heidelberg
+    journal: Lecture Notes in Computer Science
+    pages: 432-451
+    doi: 10.1007/978-3-642-41284-4_22
+    url: https://doi.org/10.1007/978-3-642-41284-4_22
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Practical Attacks against the I2P Network in Lecture Notes in Computer Science via DOI metadata.
+    keywords:
+        - article
