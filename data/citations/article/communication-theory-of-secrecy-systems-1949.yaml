@@ -1,0 +1,22 @@
+id: communication-theory-of-secrecy-systems-1949
+type: article
+apa7:
+    authors:
+        - family: Shannon
+          given: C. E.
+    year: 1949
+    date: "1949-10-01"
+    title: Communication Theory of Secrecy Systems*
+    container_title: Bell System Technical Journal
+    publisher: Institute of Electrical and Electronics Engineers (IEEE)
+    journal: Bell System Technical Journal
+    volume: "28"
+    issue: "4"
+    pages: 656-715
+    doi: 10.1002/j.1538-7305.1949.tb00928.x
+    url: https://doi.org/10.1002/j.1538-7305.1949.tb00928.x
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Communication Theory of Secrecy Systems* in Bell System Technical Journal via DOI metadata.
+    keywords:
+        - article
