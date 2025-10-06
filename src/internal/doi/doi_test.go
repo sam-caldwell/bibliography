@@ -79,3 +79,23 @@ func TestFetchArticleByDOI_HTTPError(t *testing.T) {
 		t.Fatalf("expected error on http failure")
 	}
 }
+
+func TestHelpers_ToStringAndDate(t *testing.T) {
+	if toString([]any{"A", "B"}) != "A" {
+		t.Fatalf("toString array")
+	}
+	if toString("X") != "X" {
+		t.Fatalf("toString string")
+	}
+	y, d := yearAndDate(CSLIssued{DateParts: [][]int{{2020}}})
+	if y != 2020 || d != "" {
+		t.Fatalf("year only: %d %q", y, d)
+	}
+	y, d = yearAndDate(CSLIssued{DateParts: [][]int{{2020, 5}}})
+	if y != 2020 || d != "2020-05-01" {
+		t.Fatalf("year-month: %d %q", y, d)
+	}
+	if toInitials("Jane Q Public") != "J. Q. P." {
+		t.Fatalf("toInitials")
+	}
+}

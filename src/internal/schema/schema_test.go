@@ -37,6 +37,49 @@ func TestValidate(t *testing.T) {
 	}
 }
 
+func TestValidateErrors(t *testing.T) {
+	e := Entry{ID: "id", Type: "unknown", APA7: APA7{Title: "T"}, Annotation: Annotation{Summary: "s", Keywords: []string{"k"}}}
+	if err := e.Validate(); err == nil {
+		t.Fatalf("expected invalid type error")
+	}
+	e = Entry{ID: "id", Type: "book", APA7: APA7{}, Annotation: Annotation{Summary: "s", Keywords: []string{"k"}}}
+	if err := e.Validate(); err == nil {
+		t.Fatalf("expected missing title error")
+	}
+	e = Entry{ID: "id", Type: "book", APA7: APA7{Title: "T"}, Annotation: Annotation{Summary: "", Keywords: []string{"k"}}}
+	if err := e.Validate(); err == nil {
+		t.Fatalf("expected missing summary error")
+	}
+	e = Entry{ID: "id", Type: "book", APA7: APA7{Title: "T"}, Annotation: Annotation{Summary: "s", Keywords: nil}}
+	if err := e.Validate(); err == nil {
+		t.Fatalf("expected missing keywords error")
+	}
+}
+
+func TestAuthorsUnmarshalUnknownShape(t *testing.T) {
+	// Sequence with empty entries and mapping empty should result in empty Authors
+	yml := "authors: [ ]\n"
+	var n yaml.Node
+	if err := yaml.NewDecoder(strings.NewReader(yml)).Decode(&n); err != nil {
+		t.Fatal(err)
+	}
+	root := n.Content[0]
+	var val *yaml.Node
+	for i := 0; i+1 < len(root.Content); i += 2 {
+		if root.Content[i].Value == "authors" {
+			val = root.Content[i+1]
+			break
+		}
+	}
+	var a Authors
+	if err := a.UnmarshalYAML(val); err != nil {
+		t.Fatal(err)
+	}
+	if len(a) != 0 {
+		t.Fatalf("expected empty authors, got %d", len(a))
+	}
+}
+
 func TestAuthorsUnmarshalFlexible(t *testing.T) {
 	cases := []struct {
 		name        string

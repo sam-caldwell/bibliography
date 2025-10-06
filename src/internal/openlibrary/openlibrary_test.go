@@ -118,6 +118,24 @@ func TestSplitName(t *testing.T) {
 	}
 }
 
+func TestNormalizeISBNAndCheckDigit(t *testing.T) {
+	if normalizeISBN("0-262-06016") != "0262060164" {
+		t.Fatalf("normalizeISBN failed")
+	}
+	if isbn10CheckDigit("026206016") != "4" {
+		t.Fatalf("isbn10CheckDigit failed")
+	}
+}
+
+func TestFetchBookByISBN_HTTPErrors(t *testing.T) {
+	old := client
+	defer func() { client = old }()
+	client = routeHTTP{routes: []route{{"openlibrary.org/api/books", 500, "boom"}}}
+	if _, err := FetchBookByISBN(context.Background(), "123"); err == nil {
+		t.Fatalf("expected http error from OpenLibrary")
+	}
+}
+
 type route struct {
 	match  string
 	status int

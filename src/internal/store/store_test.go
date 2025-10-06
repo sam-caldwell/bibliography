@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 
 	"bibliography/src/internal/schema"
@@ -285,4 +286,54 @@ func contains(list []string, want string) bool {
 		}
 	}
 	return false
+}
+
+func TestTokenizeAndDOIAndNormalize(t *testing.T) {
+	if got := tokenizeWords("Hello, YAML!"); len(got) != 2 || got[0] != "hello" || got[1] != "yaml" {
+		t.Fatalf("tokenizeWords: %+v", got)
+	}
+	if d := ExtractDOI("https://doi.org/10.1000/ABC.123"); d != "10.1000/ABC.123" {
+		t.Fatalf("ExtractDOI: %q", d)
+	}
+	// NormalizeArticleDOI sets DOI and doi.org URL for article
+	y := 2020
+	e := schema.Entry{ID: "x", Type: "article", APA7: schema.APA7{Title: "T", Year: &y, URL: "https://publisher.com/doi/10.1234/x", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+	if !NormalizeArticleDOI(&e) {
+		t.Fatalf("expected normalize to modify entry")
+	}
+	if e.APA7.DOI == "" || !strings.Contains(e.APA7.URL, "https://doi.org/") {
+		t.Fatalf("normalize fields: %+v", e.APA7)
+	}
+}
+
+func TestMigrateExistingAndSegmentForType(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+	// seed flat yaml files
+	if err := os.MkdirAll(CitationsDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	y := `id: a\ntype: book\napa7:\n  title: Hello\nannotation:\n  summary: s\n  keywords: [k]\n`
+	if err := os.WriteFile(filepath.Join(CitationsDir, "a.yaml"), []byte(y), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	// sanity: ensure file exists before migration
+	if _, err := os.Stat(filepath.Join(CitationsDir, "a.yaml")); err != nil {
+		t.Fatalf("pre-sanity stat: %v", err)
+	}
+	// log dir contents for debugging
+	if ents, derr := os.ReadDir(CitationsDir); derr == nil {
+		for _, de := range ents {
+			t.Logf("pre-migrate entry: name=%s isDir=%v", de.Name(), de.IsDir())
+		}
+	}
+	_, err := MigrateExisting()
+	if err != nil {
+		t.Fatalf("migrate: %v", err)
+	}
+	if SegmentForType("website") != "site" || SegmentForType("book") != "books" {
+		t.Fatalf("segment mapping wrong")
+	}
 }

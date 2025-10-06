@@ -177,3 +177,17 @@ func TestCommitAndPush_SetUpstreamFallback(t *testing.T) {
 		t.Fatalf("expected fallback push to succeed: %v", err)
 	}
 }
+
+func TestDefaultRunner_Run(t *testing.T) {
+	// Success path: run `go version`
+	dr := defaultRunner{}
+	out, errStr, err := dr.Run("go", "version")
+	if err != nil || out == "" {
+		t.Fatalf("expected success running go version, got err=%v out=%q errStr=%q", err, out, errStr)
+	}
+	// Error path: run a missing command
+	_, _, err = dr.Run("nonexistent-cmd-xyz", "arg")
+	if err == nil {
+		t.Fatalf("expected error for missing command")
+	}
+}

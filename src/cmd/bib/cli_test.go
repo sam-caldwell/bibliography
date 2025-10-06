@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/http/httptest"
 	"os"
 	"path/filepath"
 	"strings"
@@ -17,6 +18,7 @@ import (
 	"bibliography/src/internal/openlibrary"
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
+	"bibliography/src/internal/summarize"
 	webfetch "bibliography/src/internal/webfetch"
 )
 
@@ -599,3 +601,117 @@ func TestDoLookup_WriteEntryError(t *testing.T) {
 
 // Compile-time ensure doLookup uses context, no-op just to silence unused in coverage.
 var _ = context.Background()
+
+// --- Summarize command tests ---
+
+type oaFakeDoer struct{ body string }
+
+func (f oaFakeDoer) Do(req *http.Request) (*http.Response, error) {
+	if f.body == "" {
+		f.body = `{"choices":[{"message":{"content":"[\"alpha\",\"beta\"]"}}]}`
+	}
+	return &http.Response{StatusCode: 200, Body: io.NopCloser(strings.NewReader(f.body)), Header: make(http.Header)}, nil
+}
+
+func TestSummarizeCommand_UpdatesSummaryAndKeywords(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+	// Start an HTTP server to be considered accessible
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) { w.WriteHeader(200); _, _ = w.Write([]byte("ok")) }))
+	defer srv.Close()
+
+	// Seed a citation with boilerplate summary and URL
+	if err := os.MkdirAll("data/citations/article", 0o755); err != nil {
+		t.Fatal(err)
+	}
+	y := "" +
+		"id: t\n" +
+		"type: article\n" +
+		"apa7:\n  title: Test Title\n  url: \"" + srv.URL + "\"\n  accessed: \"2025-01-01\"\n" +
+		"annotation:\n  summary: Bibliographic record for x.\n  keywords: [k]\n"
+	if err := os.WriteFile("data/citations/article/t.yaml", []byte(y), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	// Stub OpenAI client for both summary and keywords
+	t.Setenv("OPENAI_API_KEY", "x")
+	summarize.SetHTTPClient(oaFakeDoer{body: `{"choices":[{"message":{"content":"[\"alpha\",\"beta\"]"}}]}`})
+	t.Cleanup(func() { summarize.SetHTTPClient(&http.Client{}) })
+
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newSummarizeCmd())
+	out, err := execCmd(rootCmd, "summarize")
+	if err != nil {
+		t.Fatalf("summarize: %v", err)
+	}
+	if !strings.Contains(out, "updated data/citations/article/t.yaml") {
+		t.Fatalf("expected updated notice, got %q", out)
+	}
+	b, _ := os.ReadFile("data/citations/article/t.yaml")
+	if !bytes.Contains(b, []byte("summary:")) {
+		t.Fatalf("summary not updated: %s", string(b))
+	}
+	if !bytes.Contains(b, []byte("keywords:")) || !bytes.Contains(b, []byte("alpha")) {
+		t.Fatalf("keywords not updated: %s", string(b))
+	}
+}
+
+func TestSummarizeCommand_SkipsWhenNotAccessible(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+	if err := os.MkdirAll("data/citations/article", 0o755); err != nil {
+		t.Fatal(err)
+	}
+	y := "" +
+		"id: t\n" +
+		"type: article\n" +
+		"apa7:\n  title: Test\n  url: https://127.0.0.1:9/\n  accessed: \"2025-01-01\"\n" +
+		"annotation:\n  summary: Bibliographic record for x.\n  keywords: [k]\n"
+	if err := os.WriteFile("data/citations/article/t.yaml", []byte(y), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	t.Setenv("OPENAI_API_KEY", "x")
+	summarize.SetHTTPClient(oaFakeDoer{})
+	t.Cleanup(func() { summarize.SetHTTPClient(&http.Client{}) })
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newSummarizeCmd())
+	out, err := execCmd(rootCmd, "summarize")
+	if err != nil {
+		t.Fatalf("summarize: %v", err)
+	}
+	if !strings.Contains(out, "no entries needed summaries") && !strings.Contains(out, "skip") {
+		t.Fatalf("expected skip or none message, got %q", out)
+	}
+}
+
+func TestMigrateCommand(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+	if err := os.MkdirAll("data/citations", 0o755); err != nil {
+		t.Fatal(err)
+	}
+	y := "id: a\ntype: book\napa7:\n  title: Title\nannotation:\n  summary: s\n  keywords: [k]\n"
+	if err := os.WriteFile("data/citations/a.yaml", []byte(y), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	called := false
+	commitAndPush = func(paths []string, msg string) error { called = true; return nil }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newMigrateCmd())
+	out, err := execCmd(rootCmd, "migrate")
+	if err != nil {
+		t.Fatalf("migrate: %v", err)
+	}
+	if !strings.Contains(out, "migration complete: 1 files moved") {
+		t.Fatalf("unexpected out: %q", out)
+	}
+	if !called {
+		t.Fatalf("expected commitAndPush to be called")
+	}
+}
