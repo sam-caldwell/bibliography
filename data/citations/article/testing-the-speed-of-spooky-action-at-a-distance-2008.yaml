@@ -1,0 +1,30 @@
+id: testing-the-speed-of-spooky-action-at-a-distance-2008
+type: article
+apa7:
+    authors:
+        - family: Salart
+          given: D.
+        - family: Baas
+          given: A.
+        - family: Branciard
+          given: C.
+        - family: Gisin
+          given: N.
+        - family: Zbinden
+          given: H.
+    year: 2008
+    date: "2008-08-01"
+    title: Testing the speed of ‘spooky action at a distance’
+    container_title: Nature
+    publisher: Springer Science and Business Media LLC
+    journal: Nature
+    volume: "454"
+    issue: "7206"
+    pages: 861-864
+    doi: 10.1038/nature07121
+    url: https://doi.org/10.1038/nature07121
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Testing the speed of ‘spooky action at a distance’ in Nature via DOI metadata.
+    keywords:
+        - article
