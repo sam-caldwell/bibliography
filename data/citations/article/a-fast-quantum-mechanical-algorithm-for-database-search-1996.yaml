@@ -14,6 +14,26 @@ apa7:
     url: https://doi.org/10.1145/237814.237866
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for A fast quantum mechanical algorithm for database search in Proceedings of the twenty-eighth annual ACM symposium on Theory of computing  - STOC '96 via DOI metadata.
+    summary: |
+        Lov K. Grover’s 1996 STOC paper introduces a quantum search algorithm that locates a single “marked” item in 
+        an unstructured database of size N using O(√N) oracle queries, versus Θ(N) classically. The algorithm prepares
+        a uniform superposition over N indices and iterates two unitary steps: a phase flip of the marked state(s) via
+        an oracle and an inversion about the mean (the diffusion operator). Each Grover iteration coherently amplifies
+        the marked amplitude, producing a rotation in a two-dimensional subspace spanned by the marked state and the
+        average of unmarked states. After approximately (π/4)√N iterations, measuring the register returns the solution
+        with high probability. The paper proves the query complexity is within a constant factor of optimal for this
+        problem and sketches extensions to multiple matches, where about O(√(N/M)) iterations suffice when M items are
+        marked. Conceptually, the speedup arises from constructive and destructive interference shaped by simple 
+        reflections, not massive parallelism alone. Although idealized—assuming a black-box oracle and noiseless
+        unitaries—the result established a canonical limit for unstructured search and seeded a broad family of 
+        amplitude-amplification techniques used across quantum algorithms. Grover’s construction remains a cornerstone
+        example demonstrating provable quadratic advantage under minimal structure assumptions, complementing Shor’s
+        exponential-speedup results for factoring.
     keywords:
-        - article
+        - quantum mechanics
+        - quantum computing
+        - computer science
+        - database
+        - programming
+        - algorithms
+

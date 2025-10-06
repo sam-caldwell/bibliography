@@ -19,6 +19,12 @@ apa7:
     url: https://doi.org/10.1038/s41566-025-01641-0
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Polarized white-light emission from organic semiconductors in Nature Photonics via DOI metadata.
+    summary: |
+        Intrinsically polarized white-light emission is highly demanded for many applications. It is now possible to 
+        realize it via a bimolecular doping strategy of organic semiconductor single crystals, overcoming long-standing
+        limitations in organic emitters.
     keywords:
-        - article
+        - quantum mechanics
+        - quantum computing
+        - computer science
+        - photonics

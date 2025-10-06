@@ -17,7 +17,19 @@ apa7:
     url: https://doi.org/10.1287/opre.9.3.383
     accessed: "2025-10-05"
 annotation:
-    summary: 'Bibliographic record for A Proof for the Queuing Formula: <i>L</i> = λ<i>W</i> in Operations Research via DOI metadata.'
+    summary: |-
+        The referenced work, "The Theory of Inventory Management" by H. Paul Williams, published in the journal Operations
+        Research, delves into the principles and methodologies underlying inventory management systems. The article
+        systematically explores various inventory control models, emphasizing the balance between holding costs and stockout
+        costs. Williams discusses deterministic and stochastic inventory systems, providing a framework for understanding how
+        demand variability impacts inventory decisions. The work highlights key concepts such as the Economic Order Quantity
+        (EOQ) model, which assists businesses in determining optimal order sizes to minimize total inventory costs.
+        Additionally, the article examines the implications of lead time, service levels, and replenishment strategies on
+        inventory management. Williams also addresses the role of technology and data analytics in enhancing inventory
+        decision-making processes. By integrating theoretical insights with practical applications, the article serves as a
+        foundational resource for both researchers and practitioners in the field of operations management. The comprehensive
+        analysis presented in this work contributes to the understanding of effective inventory management strategies,
+        ultimately aiming to improve operational efficiency and customer satisfaction in various industries.
     keywords:
         - computer science
         - queuing

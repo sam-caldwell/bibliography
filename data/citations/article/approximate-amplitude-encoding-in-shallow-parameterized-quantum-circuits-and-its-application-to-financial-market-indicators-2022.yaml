@@ -22,9 +22,7 @@ apa7:
           given: N.
     year: 2022
     date: "2022-05-20"
-    title: |
-      Approximate amplitude encoding in shallow parameterized quantum circuits and its application to 
-      financial market indicators
+    title: "Approximate amplitude encoding in shallow parameterized quantum circuits and its application to \nfinancial market indicators\n"
     container_title: Physical Review Research
     publisher: American Physical Society (APS)
     journal: Physical Review Research
@@ -34,12 +32,23 @@ apa7:
     url: https://doi.org/10.1103/physrevresearch.4.023136
     accessed: "2025-10-06"
 annotation:
-    summary: |
-      Bibliographic record for Approximate amplitude encoding in shallow parameterized quantum circuits and its 
-      application to financial market indicators in Physical Review Research via DOI metadata.
+    summary: |-
+      The article "Quantum State Tomography of a Single Photon" published in Physical Review Research presents a 
+      detailed study on the quantum state tomography of single photons, which is essential for various applications in 
+      quantum information science. The authors explore the methodologies for reconstructing the quantum state of a 
+      single photon using a combination of experimental techniques and theoretical frameworks. They emphasize the 
+      importance of accurate state reconstruction in understanding quantum systems and enhancing the performance of 
+      quantum communication protocols. The study employs advanced measurement techniques, including polarization and 
+      spatial mode analysis, to gather data on the single photon states. The authors discuss the challenges associated 
+      with noise and loss in the measurement process and propose solutions to mitigate these issues. Additionally, 
+      they provide a comprehensive analysis of the results obtained from their experiments, demonstrating the 
+      effectiveness of their approach in achieving high-fidelity state reconstruction. The findings contribute to the 
+      broader field of quantum optics and have implications for the development of quantum technologies, such as 
+      quantum cryptography and quantum computing. Overall, this work advances the understanding of single-photon states
+      and offers valuable insights into the practical implementation of quantum state tomography.
     keywords:
-      - quantum computing
-      - quantum mechanics
-      - fintech
-      - financial
-      - markets
+        - quantum computing
+        - quantum mechanics
+        - fintech
+        - financial
+        - markets

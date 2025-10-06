@@ -19,4 +19,7 @@ apa7:
 annotation:
     summary: 'Bibliographic record for Quantum++: A modern C++ quantum computing library in PLOS ONE via DOI metadata.'
     keywords:
-        - article
+        - quantum mechanics
+        - quantum computing
+        - computer science
+        - programming

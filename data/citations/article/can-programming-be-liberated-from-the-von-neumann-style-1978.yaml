@@ -12,7 +12,10 @@ apa7:
     url: https://doi.org/10.1145/359576.359579
     accessed: "2025-10-05"
 annotation:
-    summary: This seminal article by John Backus proposes a new functional programming style as an alternative to the traditional von Neumann style. It introduces an algebra of programs that emphasizes function composition and higher-level abstractions, aiming to improve program clarity and correctness.
+    summary: |
+        This seminal article by John Backus proposes a new functional programming style as an alternative to the 
+        traditional von Neumann style. It introduces an algebra of programs that emphasizes function composition and 
+        higher-level abstractions, aiming to improve program clarity and correctness.
     keywords:
         - functional programming
         - von Neumann style
