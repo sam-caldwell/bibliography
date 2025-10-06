@@ -1,6 +1,7 @@
 package schema
 
 import (
+	"crypto/rand"
 	"errors"
 	"fmt"
 	"regexp"
@@ -121,6 +122,10 @@ func (e *Entry) Validate() error {
 	if strings.TrimSpace(e.ID) == "" {
 		return errors.New("id is required")
 	}
+	// Enforce UUIDv4 id with fixed 36-char canonical form
+	if !isUUIDv4(e.ID) {
+		return fmt.Errorf("id must be uuidv4 (36-char canonical), got %q", e.ID)
+	}
 	switch e.Type {
 	case "website", "book", "movie", "article", "report", "dataset", "software", "rfc":
 	default:
@@ -154,4 +159,32 @@ func Slugify(title string, year *int) string {
 		return fmt.Sprintf("%s-%d", t, *year)
 	}
 	return t
+}
+
+// NewID returns a new UUIDv4 string in canonical 8-4-4-4-12 form.
+func NewID() string {
+	var b [16]byte
+	_, _ = rand.Read(b[:])
+	// Set version (4) and variant (10xx)
+	b[6] = (b[6] & 0x0f) | 0x40
+	b[8] = (b[8] & 0x3f) | 0x80
+	hex := func(x byte) byte { const hexd = "0123456789abcdef"; return hexd[x] }
+	dst := make([]byte, 36)
+	pos := 0
+	writeByte := func(x byte) { dst[pos] = x; pos++ }
+	writeHex := func(x byte) { writeByte(hex(x >> 4)); writeByte(hex(x & 0x0f)) }
+	for i, v := range b {
+		if i == 4 || i == 6 || i == 8 || i == 10 {
+			writeByte('-')
+		}
+		writeHex(v)
+	}
+	return string(dst)
+}
+
+var reUUIDv4 = regexp.MustCompile(`^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$`)
+
+func isUUIDv4(s string) bool {
+	s = strings.ToLower(strings.TrimSpace(s))
+	return reUUIDv4.MatchString(s)
 }

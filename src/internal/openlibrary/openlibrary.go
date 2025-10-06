@@ -139,7 +139,7 @@ func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 	}
 	// Compute ID if missing
 	if strings.TrimSpace(e.ID) == "" {
-		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+		e.ID = schema.NewID()
 	}
 	// Validate before returning
 	if err := e.Validate(); err != nil {
@@ -226,7 +226,7 @@ func fetchGoogleBookByISBN(ctx context.Context, isbn string) (schema.Entry, erro
 		}
 	}
 	if strings.TrimSpace(e.ID) == "" {
-		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+		e.ID = schema.NewID()
 	}
 	if err := e.Validate(); err != nil {
 		return schema.Entry{}, err

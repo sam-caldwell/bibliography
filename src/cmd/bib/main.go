@@ -17,7 +17,7 @@ func execute() error {
 	rootCmd.AddCommand(newLookupCmd())
 	rootCmd.AddCommand(newSearchCmd())
 	rootCmd.AddCommand(newIndexCmd())
-    // migration command removed
+	rootCmd.AddCommand(newMigrateIDsCmd())
 	rootCmd.AddCommand(newRepairDOICmd())
 	rootCmd.AddCommand(newSummarizeCmd())
 	return rootCmd.Execute()

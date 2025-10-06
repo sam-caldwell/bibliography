@@ -290,7 +290,7 @@ func doLookupWithKeywords(ctx context.Context, typ string, hints map[string]stri
 	if e.APA7.URL != "" {
 		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
 	}
-	e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+	e.ID = schema.NewID()
 	if len(extraKeywords) > 0 {
 		e.Annotation.Keywords = extraKeywords
 	}

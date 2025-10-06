@@ -51,7 +51,7 @@ func FetchArticleByDOI(ctx context.Context, doi string) (schema.Entry, error) {
 	e.APA7.URL = u
 	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
 	if strings.TrimSpace(e.ID) == "" {
-		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+		e.ID = schema.NewID()
 	}
 	// Ensure at least one keyword; default to ["article"]
 	if len(e.Annotation.Keywords) == 0 {

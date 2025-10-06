@@ -53,8 +53,8 @@ func TestIndexAndSearch(t *testing.T) {
 	if err := os.MkdirAll("data/citations", 0o755); err != nil {
 		t.Fatal(err)
 	}
-	e1 := schema.Entry{ID: "a", Type: "website", APA7: schema.APA7{Title: "A", URL: "https://a", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"golang", "apa7"}}}
-	e2 := schema.Entry{ID: "b", Type: "book", APA7: schema.APA7{Title: "B"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"golang", "yaml"}}}
+	e1 := schema.Entry{ID: schema.NewID(), Type: "website", APA7: schema.APA7{Title: "A", URL: "https://a", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"golang", "apa7"}}}
+	e2 := schema.Entry{ID: schema.NewID(), Type: "book", APA7: schema.APA7{Title: "B"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"golang", "yaml"}}}
 	write := func(e schema.Entry) {
 		path := filepath.Join("data/citations", e.ID+".yaml")
 		f, _ := os.Create(path)
@@ -88,8 +88,8 @@ func TestIndexAndSearch(t *testing.T) {
 	if err != nil {
 		t.Fatalf("search: %v", err)
 	}
-	if !bytes.Contains([]byte(out), []byte("data/citations/site/a.yaml:")) {
-		t.Fatalf("expected match a in output: %q", out)
+	if !bytes.Contains([]byte(out), []byte("data/citations/site/")) || !bytes.Contains([]byte(out), []byte(": A")) {
+		t.Fatalf("expected site match for title A, got: %q", out)
 	}
 }
 
@@ -111,8 +111,9 @@ func TestLookupSite_Basic(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "site", "https://example.com"); err != nil {
 		t.Fatalf("add: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "site", "example-com.yaml")); err != nil {
-		t.Fatalf("expected citation yaml written: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "site"))
+	if len(files) != 1 || !strings.HasSuffix(files[0].Name(), ".yaml") {
+		t.Fatalf("expected one yaml in site dir, got %v", files)
 	}
 	if !called {
 		t.Fatalf("expected commitAndPush to be called")
@@ -141,15 +142,17 @@ func TestLookupBookAndMovie_Minimal(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "The Book"); err != nil {
 		t.Fatalf("add book: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "books", "the-book.yaml")); err != nil {
-		t.Fatalf("book yaml missing: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "books"))
+	if len(files) != 1 {
+		t.Fatalf("expected one book yaml written")
 	}
 
 	if _, err := execCmd(rootCmd, "add", "movie", "Best", "Movie", "--date", "2024-01-01"); err != nil {
 		t.Fatalf("add movie: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "movie", "best-movie-2024.yaml")); err != nil {
-		t.Fatalf("movie yaml missing: %v", err)
+	files, _ = os.ReadDir(filepath.Join("data/citations", "movie"))
+	if len(files) != 1 {
+		t.Fatalf("expected one movie yaml written")
 	}
 }
 
@@ -198,8 +201,20 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "site", "https://t"); err != nil {
 		t.Fatalf("add site: %v", err)
 	}
-	// Verify YAML written and accessed set
-	b, err := os.ReadFile(filepath.Join("data/citations", "site", "t.yaml"))
+	// Verify at least one YAML has accessed set
+	entries, _ := os.ReadDir(filepath.Join("data/citations", "site"))
+	if len(entries) == 0 {
+		t.Fatalf("expected some entries in site dir")
+	}
+	var b []byte
+	var err error
+	for _, de := range entries {
+		bb, rerr := os.ReadFile(filepath.Join("data/citations", "site", de.Name()))
+		if rerr == nil && bytes.Contains(bb, []byte("accessed:")) {
+			b = bb
+			break
+		}
+	}
 	if err != nil {
 		t.Fatalf("read yaml: %v", err)
 	}
@@ -235,11 +250,12 @@ func TestLookupArticleByDOI_NoOpenAI(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "article", "--doi", "10.1234/x"); err != nil {
 		t.Fatalf("add article: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "article", "my-article-2023.yaml")); err != nil {
-		t.Fatalf("article yaml missing: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "article"))
+	if len(files) != 1 {
+		t.Fatalf("expected article yaml written")
 	}
 	// verify DOI and doi.org URL recorded in YAML
-	b, err := os.ReadFile(filepath.Join("data/citations", "article", "my-article-2023.yaml"))
+	b, err := os.ReadFile(filepath.Join("data/citations", "article", files[0].Name()))
 	if err != nil {
 		t.Fatalf("read article yaml: %v", err)
 	}
@@ -268,12 +284,11 @@ func TestLookupArticleByDOI_RecordsProvidedDOIIfMissingFromCSL(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "article", "--doi", "10.5555/abc"); err != nil {
 		t.Fatalf("add article: %v", err)
 	}
-	// slug should be t-2022.yaml
-	p := filepath.Join("data/citations", "article", "t-2022.yaml")
-	if _, err := os.Stat(p); err != nil {
-		t.Fatalf("article yaml missing: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "article"))
+	if len(files) != 1 {
+		t.Fatalf("expected article yaml written")
 	}
-	by, err := os.ReadFile(p)
+	by, err := os.ReadFile(filepath.Join("data/citations", "article", files[0].Name()))
 	if err != nil {
 		t.Fatalf("read: %v", err)
 	}
@@ -313,10 +328,11 @@ func TestLookupArticleByURL_OGTags(t *testing.T) {
 		t.Fatalf("add article by url: %v", err)
 	}
 	// slug from title + year
-	if _, err := os.Stat(filepath.Join("data/citations", "article", "faster-than-light-telegraph-that-wasn-t-2024.yaml")); err != nil {
-		t.Fatalf("expected YAML written: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "article"))
+	if len(files) != 1 {
+		t.Fatalf("expected YAML written")
 	}
-	by, err := os.ReadFile(filepath.Join("data/citations", "article", "faster-than-light-telegraph-that-wasn-t-2024.yaml"))
+	by, err := os.ReadFile(filepath.Join("data/citations", "article", files[0].Name()))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -347,10 +363,11 @@ func TestLookupArticleByURL_PDF(t *testing.T) {
 		t.Fatalf("add article by pdf url: %v", err)
 	}
 	// slug from title + year
-	if _, err := os.Stat(filepath.Join("data/citations", "article", "sample-pdf-title-2023.yaml")); err != nil {
-		t.Fatalf("expected YAML written: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "article"))
+	if len(files) != 1 {
+		t.Fatalf("expected YAML written")
 	}
-	by, err := os.ReadFile(filepath.Join("data/citations", "article", "sample-pdf-title-2023.yaml"))
+	by, err := os.ReadFile(filepath.Join("data/citations", "article", files[0].Name()))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -365,21 +382,16 @@ func TestLookupRFC_Basic(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-	// stub rfc HTTP (BibTeX)
-	bib := `@misc{rfc5424,
-  series = {Request for Comments},
-  number = 5424,
-  howpublished = {RFC 5424},
-  publisher = {RFC Editor},
-  doi = {10.17487/RFC5424},
-  url = {https://www.rfc-editor.org/info/rfc5424},
-  author = {Rainer Gerhards},
-  title = {{The Syslog Protocol}},
-  year = 2009,
-  month = mar,
-  abstract = {This document describes the syslog protocol.}
-}`
-	rfcpkg.SetHTTPClient(testHTTPDoer{status: 200, body: bib})
+	// stub rfc HTTP (XML)
+	xml := `<?xml version="1.0"?><rfc><front>
+        <title>The Syslog Protocol</title>
+        <author fullname="Rainer Gerhards"><name><given>Rainer</given><surname>Gerhards</surname></name></author>
+        <date month="Mar" year="2009"/>
+        <seriesInfo name="RFC" value="5424"/>
+        <seriesInfo name="DOI" value="10.17487/RFC5424"/>
+        <abstract><t>This document describes the syslog protocol.</t></abstract>
+    </front></rfc>`
+	rfcpkg.SetHTTPClient(testHTTPDoer{status: 200, body: xml})
 	t.Cleanup(func() { rfcpkg.SetHTTPClient(&http.Client{}) })
 
 	commitAndPush = func(paths []string, msg string) error { return nil }
@@ -388,10 +400,11 @@ func TestLookupRFC_Basic(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "rfc", "rfc5424"); err != nil {
 		t.Fatalf("add rfc: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "rfc", "rfc5424.yaml")); err != nil {
-		t.Fatalf("rfc yaml missing: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "rfc"))
+	if len(files) != 1 {
+		t.Fatalf("expected rfc yaml written")
 	}
-	by, err := os.ReadFile(filepath.Join("data/citations", "rfc", "rfc5424.yaml"))
+	by, err := os.ReadFile(filepath.Join("data/citations", "rfc", files[0].Name()))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -413,8 +426,9 @@ func TestRepairDOICommand_ExtractsFromPublisherURLAndNormalizesURL(t *testing.T)
 	if err := os.MkdirAll("data/citations/article", 0o755); err != nil {
 		t.Fatal(err)
 	}
+	id := schema.NewID()
 	yaml := "" +
-		"id: a1\n" +
+		"id: " + id + "\n" +
 		"type: article\n" +
 		"apa7:\n" +
 		"  title: T\n" +
@@ -423,7 +437,7 @@ func TestRepairDOICommand_ExtractsFromPublisherURLAndNormalizesURL(t *testing.T)
 		"annotation:\n" +
 		"  summary: s\n" +
 		"  keywords: [k]\n"
-	if err := os.WriteFile(filepath.Join("data/citations/article", "a1.yaml"), []byte(yaml), 0o644); err != nil {
+	if err := os.WriteFile(filepath.Join("data/citations/article", id+".yaml"), []byte(yaml), 0o644); err != nil {
 		t.Fatal(err)
 	}
 
@@ -434,7 +448,7 @@ func TestRepairDOICommand_ExtractsFromPublisherURLAndNormalizesURL(t *testing.T)
 	if _, err := execCmd(rootCmd, "repair-doi"); err != nil {
 		t.Fatalf("repair-doi: %v", err)
 	}
-	b, err := os.ReadFile(filepath.Join("data/citations/article", "a1.yaml"))
+	b, err := os.ReadFile(filepath.Join("data/citations/article", id+".yaml"))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -459,8 +473,9 @@ func TestLookupArticleByMetadata_Minimal(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
 		t.Fatalf("add article by metadata: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "article", "x-2023.yaml")); err != nil {
-		t.Fatalf("article yaml missing: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "article"))
+	if len(files) != 1 {
+		t.Fatalf("expected one article yaml written")
 	}
 }
 
@@ -483,8 +498,9 @@ func TestLookupBookByISBN_OpenLibrary(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "Name", "--author", "Smith, J.", "--isbn", "123", "--keywords", "k1,k2"); err != nil {
 		t.Fatalf("add book by isbn: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "books", "name-2001.yaml")); err != nil {
-		t.Fatalf("book yaml missing: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "books"))
+	if len(files) != 1 {
+		t.Fatalf("expected book yaml written")
 	}
 }
 
@@ -556,8 +572,9 @@ func TestLookupBook_ComputesSlug(t *testing.T) {
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "Hello World"); err != nil {
 		t.Fatalf("add book: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data/citations", "books", "hello-world.yaml")); err != nil {
-		t.Fatalf("expected hello-world.yaml written: %v", err)
+	files, _ := os.ReadDir(filepath.Join("data/citations", "books"))
+	if len(files) != 1 {
+		t.Fatalf("expected one book yaml written")
 	}
 }
 
@@ -626,12 +643,13 @@ func TestSummarizeCommand_UpdatesSummaryAndKeywords(t *testing.T) {
 	if err := os.MkdirAll("data/citations/article", 0o755); err != nil {
 		t.Fatal(err)
 	}
+	id := schema.NewID()
 	y := "" +
-		"id: t\n" +
+		"id: " + id + "\n" +
 		"type: article\n" +
 		"apa7:\n  title: Test Title\n  url: \"" + srv.URL + "\"\n  accessed: \"2025-01-01\"\n" +
 		"annotation:\n  summary: Bibliographic record for x.\n  keywords: [k]\n"
-	if err := os.WriteFile("data/citations/article/t.yaml", []byte(y), 0o644); err != nil {
+	if err := os.WriteFile("data/citations/article/"+id+".yaml", []byte(y), 0o644); err != nil {
 		t.Fatal(err)
 	}
 
@@ -646,10 +664,14 @@ func TestSummarizeCommand_UpdatesSummaryAndKeywords(t *testing.T) {
 	if err != nil {
 		t.Fatalf("summarize: %v", err)
 	}
-	if !strings.Contains(out, "updated data/citations/article/t.yaml") {
+	if !strings.Contains(out, "updated data/citations/article/") {
 		t.Fatalf("expected updated notice, got %q", out)
 	}
-	b, _ := os.ReadFile("data/citations/article/t.yaml")
+	files, _ := os.ReadDir("data/citations/article")
+	if len(files) != 1 {
+		t.Fatalf("expected one article file")
+	}
+	b, _ := os.ReadFile(filepath.Join("data/citations/article", files[0].Name()))
 	if !bytes.Contains(b, []byte("summary:")) {
 		t.Fatalf("summary not updated: %s", string(b))
 	}
@@ -666,12 +688,13 @@ func TestSummarizeCommand_SkipsWhenNotAccessible(t *testing.T) {
 	if err := os.MkdirAll("data/citations/article", 0o755); err != nil {
 		t.Fatal(err)
 	}
+	id2 := schema.NewID()
 	y := "" +
-		"id: t\n" +
+		"id: " + id2 + "\n" +
 		"type: article\n" +
 		"apa7:\n  title: Test\n  url: https://127.0.0.1:9/\n  accessed: \"2025-01-01\"\n" +
 		"annotation:\n  summary: Bibliographic record for x.\n  keywords: [k]\n"
-	if err := os.WriteFile("data/citations/article/t.yaml", []byte(y), 0o644); err != nil {
+	if err := os.WriteFile("data/citations/article/"+id2+".yaml", []byte(y), 0o644); err != nil {
 		t.Fatal(err)
 	}
 	t.Setenv("OPENAI_API_KEY", "x")

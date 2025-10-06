@@ -17,8 +17,8 @@ func TestWriteReadAndIndex(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 
-	e1 := schema.Entry{ID: "a", Type: "website", APA7: schema.APA7{Title: "A", URL: "https://a", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s1", Keywords: []string{"Go", "APA7"}}}
-	e2 := schema.Entry{ID: "b", Type: "book", APA7: schema.APA7{Title: "B", ISBN: "123-456", DOI: "10.1/abc"}, Annotation: schema.Annotation{Summary: "s2", Keywords: []string{"go", "yaml"}}}
+	e1 := schema.Entry{ID: schema.NewID(), Type: "website", APA7: schema.APA7{Title: "A", URL: "https://a", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s1", Keywords: []string{"Go", "APA7"}}}
+	e2 := schema.Entry{ID: schema.NewID(), Type: "book", APA7: schema.APA7{Title: "B", ISBN: "123-456", DOI: "10.1/abc"}, Annotation: schema.Annotation{Summary: "s2", Keywords: []string{"go", "yaml"}}}
 
 	p1, err := WriteEntry(e1)
 	if err != nil {
@@ -98,7 +98,7 @@ func TestWriteReadAndIndex(t *testing.T) {
 
 	// Filter AND semantics: Go + APA7 should match only e1
 	matches := FilterByKeywordsAND(list, []string{"go", "apa7"})
-	if len(matches) != 1 || matches[0].ID != "a" {
+	if len(matches) != 1 || matches[0].ID != e1.ID {
 		t.Fatalf("filter AND mismatch: %+v", matches)
 	}
 }
@@ -132,7 +132,7 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 
 	y1 := 1984
 	e1 := schema.Entry{
-		ID:   "art1",
+		ID:   schema.NewID(),
 		Type: "article",
 		APA7: schema.APA7{
 			Title:     "End to End Arguments in System Design",
@@ -149,7 +149,7 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 
 	y2 := 2024
 	e2 := schema.Entry{
-		ID:   "site1",
+		ID:   schema.NewID(),
 		Type: "website",
 		APA7: schema.APA7{
 			Title:     "JSON at Example",
@@ -197,10 +197,10 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	if err := json.Unmarshal(araw, &aidx); err != nil {
 		t.Fatalf("unmarshal authors index: %v", err)
 	}
-	if !contains(aidx["Doe, J."], "data/citations/article/art1.yaml") {
+	if !contains(aidx["Doe, J."], "data/citations/article/"+e1.ID+".yaml") {
 		t.Fatalf("missing author work for Doe, J.: %+v", aidx)
 	}
-	if !contains(aidx["National Automated Clearing House Association"], "data/citations/site/site1.yaml") {
+	if !contains(aidx["National Automated Clearing House Association"], "data/citations/site/"+e2.ID+".yaml") {
 		t.Fatalf("missing corporate author work: %+v", aidx)
 	}
 
@@ -209,15 +209,16 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	if err != nil {
 		t.Fatalf("read titles index: %v", err)
 	}
-	var tidx map[string]string
+	var tidx map[string][]string
 	if err := json.Unmarshal(traw, &tidx); err != nil {
 		t.Fatalf("unmarshal titles index: %v", err)
 	}
-	if got := tidx["data/citations/article/art1.yaml"]; got != "End to End Arguments in System Design" {
-		t.Fatalf("wrong title for art1: %q", got)
+	// titles index now stores tokenized title words
+	if ws := tidx["data/citations/article/"+e1.ID+".yaml"]; !containsStr(ws, "system") || !containsStr(ws, "design") {
+		t.Fatalf("missing expected title tokens for art1: %+v", ws)
 	}
-	if got := tidx["data/citations/site/site1.yaml"]; got != "JSON at Example" {
-		t.Fatalf("wrong title for site1: %q", got)
+	if ws := tidx["data/citations/site/"+e2.ID+".yaml"]; !containsStr(ws, "json") || !containsStr(ws, "example") {
+		t.Fatalf("missing expected title tokens for site1: %+v", ws)
 	}
 
 	// verify isbn index content for this test set is empty
@@ -241,7 +242,7 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	if err := json.Unmarshal(draw, &didx); err != nil {
 		t.Fatalf("unmarshal doi index: %v", err)
 	}
-	if got := didx["data/citations/article/art1.yaml"]; got != "10.1145/1" {
+	if got := didx["data/citations/article/"+e1.ID+".yaml"]; got != "10.1145/1" {
 		t.Fatalf("wrong or missing doi for art1: %q (idx=%+v)", got, didx)
 	}
 	raw, err := os.ReadFile(KeywordsJSON)
@@ -254,32 +255,41 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	}
 
 	// keywords map to paths with type segment
-	if !contains(idx["networks"], "data/citations/article/art1.yaml") || !contains(idx["web"], "data/citations/site/site1.yaml") {
+	if !contains(idx["networks"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["web"], "data/citations/site/"+e2.ID+".yaml") {
 		t.Fatalf("missing keyword tokens: %+v", idx)
 	}
 	// title words
-	if !contains(idx["system"], "data/citations/article/art1.yaml") || !contains(idx["json"], "data/citations/site/site1.yaml") {
+	if !contains(idx["system"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["json"], "data/citations/site/"+e2.ID+".yaml") {
 		t.Fatalf("missing title tokens: %+v", idx)
 	}
 	// publisher
-	if !contains(idx["acm"], "data/citations/article/art1.yaml") || !contains(idx["example"], "data/citations/site/site1.yaml") {
+	if !contains(idx["acm"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["example"], "data/citations/site/"+e2.ID+".yaml") {
 		t.Fatalf("missing publisher tokens: %+v", idx)
 	}
 	// year
-	if !contains(idx["1984"], "data/citations/article/art1.yaml") || !contains(idx["2024"], "data/citations/site/site1.yaml") {
+	if !contains(idx["1984"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["2024"], "data/citations/site/"+e2.ID+".yaml") {
 		t.Fatalf("missing year tokens: %+v", idx)
 	}
 	// domain (host and host without www.)
-	if !contains(idx["doi.org"], "data/citations/article/art1.yaml") || !contains(idx["www.example.com"], "data/citations/site/site1.yaml") || !contains(idx["example.com"], "data/citations/site/site1.yaml") {
+	if !contains(idx["doi.org"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["www.example.com"], "data/citations/site/"+e2.ID+".yaml") || !contains(idx["example.com"], "data/citations/site/"+e2.ID+".yaml") {
 		t.Fatalf("missing domain tokens: %+v", idx)
 	}
 	// type
-	if !contains(idx["article"], "data/citations/article/art1.yaml") || !contains(idx["website"], "data/citations/site/site1.yaml") {
+	if !contains(idx["article"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["website"], "data/citations/site/"+e2.ID+".yaml") {
 		t.Fatalf("missing type tokens: %+v", idx)
 	}
 }
 
 func contains(list []string, want string) bool {
+	for _, v := range list {
+		if v == want {
+			return true
+		}
+	}
+	return false
+}
+
+func containsStr(list []string, want string) bool {
 	for _, v := range list {
 		if v == want {
 			return true
@@ -308,9 +318,19 @@ func TestTokenizeAndDOIAndNormalize(t *testing.T) {
 
 // Migration removed; keep segment mapping coverage
 func TestSegmentForType(t *testing.T) {
-    if SegmentForType("website") != "site" { t.Fatalf("website segment") }
-    if SegmentForType("book") != "books" { t.Fatalf("book segment") }
-    if SegmentForType("article") != "article" { t.Fatalf("article segment") }
-    if SegmentForType("rfc") != "rfc" { t.Fatalf("rfc segment") }
-    if SegmentForType("unknown") != "citation" { t.Fatalf("default segment") }
+	if SegmentForType("website") != "site" {
+		t.Fatalf("website segment")
+	}
+	if SegmentForType("book") != "books" {
+		t.Fatalf("book segment")
+	}
+	if SegmentForType("article") != "article" {
+		t.Fatalf("article segment")
+	}
+	if SegmentForType("rfc") != "rfc" {
+		t.Fatalf("rfc segment")
+	}
+	if SegmentForType("unknown") != "citation" {
+		t.Fatalf("default segment")
+	}
 }

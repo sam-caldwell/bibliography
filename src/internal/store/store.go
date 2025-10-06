@@ -53,6 +53,9 @@ func SegmentForType(typ string) string { return dirForType(typ) }
 
 // WriteEntry writes the entry YAML to data/citations/<id>.yaml after validation.
 func WriteEntry(e schema.Entry) (string, error) {
+	if strings.TrimSpace(e.ID) == "" {
+		e.ID = schema.NewID()
+	}
 	if err := e.Validate(); err != nil {
 		return "", err
 	}
@@ -231,17 +234,17 @@ func BuildAuthorIndex(entries []schema.Entry) (string, error) {
 	return AuthorsJSON, nil
 }
 
-// BuildTitleIndex builds a map of full repo-relative file path -> title for
-// every cited work and writes it to JSON.
+// BuildTitleIndex builds a map of full repo-relative file path -> list of
+// tokenized title words for every cited work and writes it to JSON.
 func BuildTitleIndex(entries []schema.Entry) (string, error) {
 	if err := os.MkdirAll(MetadataDir, 0o755); err != nil {
 		return "", err
 	}
-	index := map[string]string{}
+	index := map[string][]string{}
 	for _, e := range entries {
 		seg := dirForType(e.Type)
 		path := filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
-		index[path] = e.APA7.Title
+		index[path] = tokenizeWords(e.APA7.Title)
 	}
 	b, err := json.MarshalIndent(index, "", "  ")
 	if err != nil {

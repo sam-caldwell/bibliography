@@ -158,7 +158,7 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 	}
 
 	e := schema.Entry{Type: "rfc"}
-	e.ID = "rfc" + num
+	e.ID = schema.NewID()
 	e.APA7.Title = title
 	e.APA7.ContainerTitle = rfcLabel
 	e.APA7.Publisher = "Internet Engineering Task Force"
@@ -343,7 +343,7 @@ func fetchRFCFromDatatracker(ctx context.Context, num string) (schema.Entry, err
 	}
 
 	e := schema.Entry{Type: "rfc"}
-	e.ID = "rfc" + num
+	e.ID = schema.NewID()
 	e.APA7.Title = title
 	e.APA7.ContainerTitle = "RFC " + num
 	e.APA7.Publisher = "Internet Engineering Task Force"

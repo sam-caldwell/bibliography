@@ -27,7 +27,7 @@ func TestSlugify(t *testing.T) {
 }
 
 func TestValidate(t *testing.T) {
-	e := Entry{ID: "id", Type: "website", APA7: APA7{Title: "Title", URL: "https://x"}, Annotation: Annotation{Summary: "s", Keywords: []string{"k"}}}
+	e := Entry{ID: NewID(), Type: "website", APA7: APA7{Title: "Title", URL: "https://x"}, Annotation: Annotation{Summary: "s", Keywords: []string{"k"}}}
 	if err := e.Validate(); err == nil {
 		t.Fatalf("expected error due to missing accessed when url present")
 	}

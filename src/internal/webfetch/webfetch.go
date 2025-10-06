@@ -136,7 +136,7 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 	}
 	e.Annotation.Keywords = []string{"article"}
 	if strings.TrimSpace(e.ID) == "" {
-		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+		e.ID = schema.NewID()
 	}
 	if err := e.Validate(); err != nil {
 		return schema.Entry{}, err
@@ -480,7 +480,7 @@ func buildFromPDF(b []byte, sourceURL string) (schema.Entry, error) {
 	}
 	e.Annotation.Keywords = []string{"article"}
 	if strings.TrimSpace(e.ID) == "" {
-		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+		e.ID = schema.NewID()
 	}
 	if err := e.Validate(); err != nil {
 		return schema.Entry{}, err
