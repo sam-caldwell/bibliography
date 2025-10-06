@@ -300,6 +300,7 @@ func TestLookupRFC_Basic(t *testing.T) {
   title = {{The Syslog Protocol}},
   year = 2009,
   month = mar,
+  abstract = {This document describes the syslog protocol.}
 }`
 	rfcpkg.SetHTTPClient(testHTTPDoer{status: 200, body: bib})
 	t.Cleanup(func() { rfcpkg.SetHTTPClient(&http.Client{}) })
@@ -312,6 +313,16 @@ func TestLookupRFC_Basic(t *testing.T) {
 	}
 	if _, err := os.Stat(filepath.Join("data/citations", "rfc", "rfc5424.yaml")); err != nil {
 		t.Fatalf("rfc yaml missing: %v", err)
+	}
+	by, err := os.ReadFile(filepath.Join("data/citations", "rfc", "rfc5424.yaml"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Contains(by, []byte("syslog protocol")) {
+		t.Fatalf("expected abstract in YAML summary, got:\n%s", string(by))
+	}
+	if !bytes.Contains(by, []byte("bibtex_url: https://datatracker.ietf.org/doc/rfc5424/bibtex/")) {
+		t.Fatalf("expected bibtex_url in YAML, got:\n%s", string(by))
 	}
 }
 

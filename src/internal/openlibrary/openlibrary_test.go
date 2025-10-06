@@ -59,12 +59,33 @@ func TestFetchBookByISBN_Success(t *testing.T) {
 }
 
 func TestFetchBookByISBN_NoData(t *testing.T) {
-	body := `{}`
+	// OpenLibrary returns empty, Google returns 404
 	old := client
 	defer func() { client = old }()
-	client = fakeHTTP{resp: fakeResp{status: 200, body: body}}
+	client = routeHTTP{routes: []route{{"openlibrary.org/api/books", 200, "{}"}, {"googleapis.com/books", 404, "not found"}}}
 	if _, err := FetchBookByISBN(context.Background(), "0000"); err == nil {
-		t.Fatalf("expected error for missing key")
+		t.Fatalf("expected error for missing key and google fallback")
+	}
+}
+
+func TestFetchBookByISBN_FallbackGoogle(t *testing.T) {
+	// OpenLibrary empty; Google returns a volume
+	old := client
+	defer func() { client = old }()
+	google := `{"items":[{"volumeInfo":{"title":"Clean Code","authors":["Robert C. Martin"],"publisher":"Prentice Hall","publishedDate":"2008","description":"A book.","categories":["Software Engineering"],"infoLink":"https://books.google.com/books?id=ttMsCwAAQBAJ"}}]}`
+	client = routeHTTP{routes: []route{{"openlibrary.org/api/books", 200, "{}"}, {"googleapis.com/books", 200, google}}}
+	e, err := FetchBookByISBN(context.Background(), "9780132350884")
+	if err != nil {
+		t.Fatalf("fallback google: %v", err)
+	}
+	if e.APA7.Title != "Clean Code" || e.APA7.Publisher != "Prentice Hall" {
+		t.Fatalf("bad mapping: %+v", e)
+	}
+	if e.APA7.URL == "" || e.Annotation.Summary == "" {
+		t.Fatalf("missing url/summary: %+v", e)
+	}
+	if len(e.APA7.Authors) == 0 || e.APA7.Authors[0].Family != "Martin" {
+		t.Fatalf("authors parse: %+v", e.APA7.Authors)
 	}
 }
 

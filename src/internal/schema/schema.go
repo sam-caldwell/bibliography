@@ -34,6 +34,7 @@ type APA7 struct {
 	DOI               string  `yaml:"doi,omitempty" json:"doi,omitempty"`
 	ISBN              string  `yaml:"isbn,omitempty" json:"isbn,omitempty"`
 	URL               string  `yaml:"url,omitempty" json:"url,omitempty"`
+	BibTeXURL         string  `yaml:"bibtex_url,omitempty" json:"bibtex_url,omitempty"`
 	Accessed          string  `yaml:"accessed,omitempty" json:"accessed,omitempty"`
 }
 

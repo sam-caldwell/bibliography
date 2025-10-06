@@ -53,6 +53,10 @@ func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 	key := "ISBN:" + strings.ReplaceAll(isbn, " ", "")
 	dataRaw, ok := raw[key]
 	if !ok || len(dataRaw) == 0 {
+		// Fallback to Google Books API if OpenLibrary has no data
+		if e, err := fetchGoogleBookByISBN(ctx, isbn); err == nil {
+			return e, nil
+		}
 		return schema.Entry{}, fmt.Errorf("openlibrary: no data for %s", key)
 	}
 	var data struct {
@@ -134,6 +138,91 @@ func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
 	}
 	// Validate before returning
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
+}
+
+// fetchGoogleBookByISBN queries Google Books API for a given ISBN and maps the first result.
+func fetchGoogleBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
+	q := url.Values{}
+	q.Set("q", "isbn:"+strings.ReplaceAll(isbn, " ", ""))
+	endpoint := "https://www.googleapis.com/books/v1/volumes?" + q.Encode()
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, endpoint, nil)
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	req.Header.Set("Accept", "application/json")
+	resp, err := client.Do(req)
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
+		return schema.Entry{}, fmt.Errorf("googlebooks: http %d: %s", resp.StatusCode, string(b))
+	}
+	var r struct {
+		Items []struct {
+			VolumeInfo struct {
+				Title         string   `json:"title"`
+				Authors       []string `json:"authors"`
+				Publisher     string   `json:"publisher"`
+				PublishedDate string   `json:"publishedDate"`
+				Description   string   `json:"description"`
+				Categories    []string `json:"categories"`
+				InfoLink      string   `json:"infoLink"`
+			} `json:"volumeInfo"`
+		} `json:"items"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&r); err != nil {
+		return schema.Entry{}, err
+	}
+	if len(r.Items) == 0 {
+		return schema.Entry{}, fmt.Errorf("googlebooks: no items for %s", isbn)
+	}
+	v := r.Items[0].VolumeInfo
+	var e schema.Entry
+	e.Type = "book"
+	e.APA7.Title = v.Title
+	e.APA7.Publisher = v.Publisher
+	e.APA7.ISBN = strings.ReplaceAll(isbn, " ", "")
+	if y := extractYear(v.PublishedDate); y > 0 {
+		e.APA7.Year = &y
+	}
+	if strings.TrimSpace(v.InfoLink) != "" {
+		e.APA7.URL = v.InfoLink
+		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+	}
+	for _, a := range v.Authors {
+		fam, giv := splitName(a)
+		e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
+	}
+	// Keywords
+	for _, c := range v.Categories {
+		c = strings.TrimSpace(c)
+		if c != "" {
+			e.Annotation.Keywords = append(e.Annotation.Keywords, strings.ToLower(c))
+		}
+	}
+	if len(e.Annotation.Keywords) == 0 {
+		e.Annotation.Keywords = []string{"book"}
+	}
+	if strings.TrimSpace(v.Description) != "" {
+		e.Annotation.Summary = strings.TrimSpace(v.Description)
+	} else if e.APA7.Title != "" {
+		if e.APA7.Publisher != "" && e.APA7.Year != nil {
+			e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (%s, %d) from Google Books.", e.APA7.Title, e.APA7.Publisher, *e.APA7.Year)
+		} else if e.APA7.Publisher != "" {
+			e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (%s) from Google Books.", e.APA7.Title, e.APA7.Publisher)
+		} else {
+			e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s from Google Books.", e.APA7.Title)
+		}
+	}
+	if strings.TrimSpace(e.ID) == "" {
+		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+	}
 	if err := e.Validate(); err != nil {
 		return schema.Entry{}, err
 	}
