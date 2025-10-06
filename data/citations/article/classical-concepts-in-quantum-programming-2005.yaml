@@ -1,0 +1,22 @@
+id: classical-concepts-in-quantum-programming-2005
+type: article
+apa7:
+    authors:
+        - family: Ömer
+          given: B.
+    year: 2005
+    date: "2005-07-01"
+    title: Classical Concepts in Quantum Programming
+    container_title: International Journal of Theoretical Physics
+    publisher: Springer Science and Business Media LLC
+    journal: International Journal of Theoretical Physics
+    volume: "44"
+    issue: "7"
+    pages: 943-955
+    doi: 10.1007/s10773-005-7071-x
+    url: https://doi.org/10.1007/s10773-005-7071-x
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Classical Concepts in Quantum Programming in International Journal of Theoretical Physics via DOI metadata.
+    keywords:
+        - article
