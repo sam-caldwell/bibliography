@@ -29,6 +29,7 @@ func TestFetchRFC_ParsesTitleDateAuthorsDOI(t *testing.T) {
   title = {{The Syslog Protocol}},
   year = 2009,
   month = mar,
+  abstract = {This document describes the syslog protocol.}
 }`
 	SetHTTPClient(testHTTPDoer{status: 200, body: bib})
 	defer SetHTTPClient(&http.Client{})
@@ -60,5 +61,11 @@ func TestFetchRFC_ParsesTitleDateAuthorsDOI(t *testing.T) {
 	}
 	if len(e.APA7.Authors) == 0 || e.APA7.Authors[0].Family != "Gerhards" {
 		t.Fatalf("authors not parsed correctly: %+v", e.APA7.Authors)
+	}
+	if e.APA7.BibTeXURL == "" {
+		t.Fatalf("expected BibTeXURL to be set")
+	}
+	if !strings.Contains(e.Annotation.Summary, "syslog protocol") {
+		t.Fatalf("expected abstract in summary, got: %q", e.Annotation.Summary)
 	}
 }

@@ -34,6 +34,7 @@ type frontXML struct {
 	Authors     []authorXML     `xml:"author"`
 	Date        dateXML         `xml:"date"`
 	SeriesInfos []seriesInfoXML `xml:"seriesInfo"`
+	Abstract    abstractXML     `xml:"abstract"`
 }
 
 type authorXML struct {
@@ -56,6 +57,10 @@ type dateXML struct {
 type seriesInfoXML struct {
 	Name  string `xml:"name,attr"`
 	Value string `xml:"value,attr"`
+}
+
+type abstractXML struct {
+	Paras []string `xml:"t"`
 }
 
 // FetchRFC fetches an RFC HTML page and maps it into a schema.Entry with type "rfc".
@@ -155,6 +160,7 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 	e.APA7.ContainerTitle = rfcLabel
 	e.APA7.Publisher = "Internet Engineering Task Force"
 	e.APA7.URL = fmt.Sprintf("https://www.rfc-editor.org/rfc/rfc%s.html", num)
+	e.APA7.BibTeXURL = fmt.Sprintf("https://datatracker.ietf.org/doc/rfc%s/bibtex/", num)
 	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
 	if yearPtr != nil {
 		e.APA7.Year = yearPtr
@@ -166,7 +172,11 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 		e.APA7.DOI = doi
 	}
 	e.APA7.Authors = authors
-	e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (%s).", e.APA7.Title, rfcLabel)
+	if abs := strings.TrimSpace(strings.Join(doc.Front.Abstract.Paras, "\n\n")); abs != "" {
+		e.Annotation.Summary = sanitizeAbstract(abs)
+	} else {
+		e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (%s).", e.APA7.Title, rfcLabel)
+	}
 	e.Annotation.Keywords = []string{"rfc", "ietf"}
 	if err := e.Validate(); err != nil {
 		return schema.Entry{}, err
@@ -318,26 +328,8 @@ func fetchRFCFromDatatracker(ctx context.Context, num string) (schema.Entry, err
 			yearPtr = &y2
 		}
 	}
-	// Basic author scan near top
+	// Avoid unreliable author extraction from HTML; leave authors empty
 	var authors []schema.Author
-	scan := body
-	if len(scan) > 5000 {
-		scan = scan[:5000]
-	}
-	seen := map[string]bool{}
-	for _, m := range reName.FindAllStringSubmatch(scan, -1) {
-		given := strings.TrimSpace(m[1])
-		family := strings.TrimSpace(m[2])
-		key := strings.ToLower(given + " " + family)
-		if seen[key] {
-			continue
-		}
-		seen[key] = true
-		authors = append(authors, schema.Author{Family: family, Given: toInitials(given)})
-		if len(authors) >= 12 {
-			break
-		}
-	}
 	doi := ""
 	if m := reDOI.FindStringSubmatch(body); len(m) == 2 {
 		doi = strings.TrimSpace(m[1])
@@ -417,6 +409,7 @@ func fetchRFCFromBibtex(ctx context.Context, num string) (schema.Entry, error) {
 	} else {
 		e.APA7.URL = fmt.Sprintf("https://www.rfc-editor.org/rfc/rfc%s.html", num)
 	}
+	e.APA7.BibTeXURL = fmt.Sprintf("https://datatracker.ietf.org/doc/rfc%s/bibtex/", num)
 	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
 	if y := toInt(yearVal); y > 0 {
 		y2 := y
@@ -452,7 +445,12 @@ func fetchRFCFromBibtex(ctx context.Context, num string) (schema.Entry, error) {
 			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: toInitials(giv)})
 		}
 	}
-	e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (RFC %s).", e.APA7.Title, num)
+	// Prefer abstract for annotation summary
+	if abs := strings.TrimSpace(getBibField(raw, "abstract")); abs != "" {
+		e.Annotation.Summary = sanitizeAbstract(abs)
+	} else {
+		e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (RFC %s).", e.APA7.Title, num)
+	}
 	e.Annotation.Keywords = []string{"rfc", "ietf"}
 	if err := e.Validate(); err != nil {
 		return schema.Entry{}, err
@@ -599,4 +597,29 @@ func splitFullName(s string) (family, given string) {
 	family = parts[len(parts)-1]
 	given = strings.Join(parts[:len(parts)-1], " ")
 	return family, given
+}
+
+func sanitizeAbstract(s string) string {
+	s = strings.ReplaceAll(s, "\r\n", "\n")
+	s = strings.ReplaceAll(s, "\r", "\n")
+	lines := strings.Split(s, "\n")
+	for i := range lines {
+		lines[i] = strings.TrimSpace(lines[i])
+	}
+	// collapse multiple blank lines
+	out := make([]string, 0, len(lines))
+	lastBlank := false
+	for _, ln := range lines {
+		if ln == "" {
+			if lastBlank {
+				continue
+			}
+			lastBlank = true
+			out = append(out, "")
+			continue
+		}
+		lastBlank = false
+		out = append(out, ln)
+	}
+	return strings.TrimSpace(strings.Join(out, "\n"))
 }
