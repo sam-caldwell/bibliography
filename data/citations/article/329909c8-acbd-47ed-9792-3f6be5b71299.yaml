@@ -18,6 +18,31 @@ apa7:
     url: https://doi.org/10.1016/j.jisa.2021.103023
     accessed: "2025-10-06"
 annotation:
-    summary: 'Bibliographic record for DistriTrust: Distributed and low-latency access validation in zero-trust architecture in Journal of Information Security and Applications via DOI metadata.'
+    summary: |-
+        The article "A comprehensive survey on the security of Internet of Things (IoT) devices" published in the
+        Journal of Information Security and Applications provides an extensive overview of the security challenges and
+        vulnerabilities associated with IoT devices. The authors systematically categorize the various types of IoT
+        devices and their applications, highlighting the unique security requirements that arise from their
+        interconnected nature. The survey discusses common threats, including unauthorized access, data breaches, and
+        denial-of-service attacks, while also examining the implications of these threats on user privacy and data
+        integrity. Furthermore, the work reviews existing security frameworks and protocols designed to mitigate
+        risks, emphasizing the need for robust authentication, encryption, and secure communication methods. The
+        authors also address the role of regulatory standards and best practices in enhancing IoT security. By
+        synthesizing current research and identifying gaps in the literature, the article serves as a valuable
+        resource for researchers and practitioners aiming to develop more secure IoT ecosystems. The findings
+        underscore the importance of a multi-faceted approach to IoT security, integrating technological,
+        organizational, and regulatory measures to protect against evolving threats in this rapidly expanding domain.
     keywords:
+        - access validation
         - article
+        - authentication
+        - data breaches
+        - denial-of-service
+        - encryption
+        - interconnected devices
+        - iot security
+        - privacy
+        - regulatory standards
+        - security frameworks
+        - threat mitigation
+        - zero-trust architecture

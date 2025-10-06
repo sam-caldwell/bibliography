@@ -11,9 +11,36 @@ apa7:
     url: https://openlibrary.org/books/OL26838553M/Programming_Erlang_Software_for_a_Concurrent_World_(Pragmatic_Programmers)
     accessed: "2025-10-06"
 annotation:
-    summary: 'Bibliographic record for Programming Erlang: Software for a Concurrent World (Pragmatic Programmers) (Pragmatic Bookshelf, 2013) from OpenLibrary.'
+    summary: |-
+        "Programming Erlang: Software for a Concurrent World" by Joe Armstrong is a comprehensive guide to the Erlang
+        programming language, which is designed for building scalable and fault-tolerant systems. The book introduces
+        readers to the principles of concurrent programming, emphasizing the unique features of Erlang that facilitate
+        the development of distributed applications. Armstrong, one of the creators of Erlang, provides insights into
+        the language's syntax, semantics, and runtime system, making it accessible for both beginners and experienced
+        programmers. The text covers essential topics such as message passing, process creation, and error handling,
+        illustrating how Erlang's lightweight processes and asynchronous communication model enable efficient
+        concurrency. Armstrong also discusses practical applications of Erlang in real-world scenarios, including
+        telecommunications and web services, highlighting its robustness in handling high-traffic environments.
+        Throughout the book, the author employs a hands-on approach, encouraging readers to engage with the material
+        through exercises and examples. By the end, readers gain a solid understanding of how to leverage Erlang's
+        capabilities to create reliable and maintainable software systems. This work serves as both an introduction to
+        Erlang and a reference for advanced users seeking to deepen their knowledge of concurrent programming
+        paradigms.
     keywords:
-        - programming languages (electronic computers)
-        - computers &amp; internet
-        - erlang (computer program language)
+        - asynchronous communication
+        - book
         - computer programming
+        - computers &amp; internet
+        - concurrent programming
+        - distributed applications
+        - erlang
+        - erlang (computer program language)
+        - error handling
+        - fault-tolerant
+        - message passing
+        - process creation
+        - programming guide
+        - programming languages (electronic computers)
+        - scalable systems
+        - telecommunications
+        - web services
