@@ -1,0 +1,32 @@
+id: exploring-the-topological-properties-of-the-tor-dark-web-2021
+type: article
+apa7:
+    authors:
+        - family: Alharbi
+          given: A.
+        - family: Faizan
+          given: M.
+        - family: Alosaimi
+          given: W.
+        - family: Alyami
+          given: H.
+        - family: Agrawal
+          given: A.
+        - family: Kumar
+          given: R.
+        - family: Khan
+          given: R. A.
+    year: 2021
+    title: Exploring the Topological Properties of the Tor Dark Web
+    container_title: IEEE Access
+    publisher: Institute of Electrical and Electronics Engineers (IEEE)
+    journal: IEEE Access
+    volume: "9"
+    pages: 21746-21758
+    doi: 10.1109/access.2021.3055532
+    url: https://doi.org/10.1109/ACCESS.2021.3055532
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Exploring the Topological Properties of the Tor Dark Web in IEEE Access via DOI metadata.
+    keywords:
+        - article
