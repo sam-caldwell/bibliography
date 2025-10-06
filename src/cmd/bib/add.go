@@ -285,6 +285,62 @@ func newAddCmd() *cobra.Command {
 	article.Flags().StringVar(&artDate, "date", "", "Publication date YYYY-MM-DD")
 	article.Flags().StringVar(&artKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
+	// add patent [--url ...] [--title ...] [--inventor ...] [--assignee ...] [--date ...]
+	var patURL, patTitle, patInventor, patAssignee, patDate, patKeywords string
+	patent := &cobra.Command{
+		Use:   "patent",
+		Short: "Add a patent (flags or manual entry)",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			hints := map[string]string{}
+			if strings.TrimSpace(patURL) != "" && strings.TrimSpace(patTitle) == "" {
+				// Try to fetch metadata like article; then coerce type to patent
+				e, err := webfetch.FetchArticleByURL(cmd.Context(), patURL)
+				if err == nil {
+					e.Type = "patent"
+					if ks := parseKeywordsCSV(patKeywords); len(ks) > 0 {
+						e.Annotation.Keywords = ks
+					}
+					if len(e.Annotation.Keywords) == 0 {
+						e.Annotation.Keywords = []string{"patent"}
+					}
+					path, err := store.WriteEntry(e)
+					if err != nil {
+						return err
+					}
+					if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+						return err
+					}
+					fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+					return nil
+				}
+				// If fetch failed, fall through to manual construction with provided URL
+				hints["url"] = strings.TrimSpace(patURL)
+			}
+			if patTitle != "" {
+				hints["title"] = patTitle
+			}
+			if patInventor != "" {
+				hints["author"] = patInventor
+			}
+			if patAssignee != "" {
+				hints["journal"] = patAssignee // reuse container/journal field for assignee/office
+			}
+			if patDate != "" {
+				hints["date"] = patDate
+			}
+			if len(hints) == 0 {
+				return manualAdd(cmd, "patent", parseKeywordsCSV(patKeywords))
+			}
+			return doAddWithKeywords(cmd.Context(), "patent", hints, parseKeywordsCSV(patKeywords))
+		},
+	}
+	patent.Flags().StringVar(&patURL, "url", "", "URL to a patent page to reference")
+	patent.Flags().StringVar(&patTitle, "title", "", "Patent title")
+	patent.Flags().StringVar(&patInventor, "inventor", "", "Inventor (Family, Given)")
+	patent.Flags().StringVar(&patAssignee, "assignee", "", "Assignee/Office (e.g., USPTO)")
+	patent.Flags().StringVar(&patDate, "date", "", "Publication date YYYY-MM-DD")
+	patent.Flags().StringVar(&patKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+
 	// add rfc <rfcNumber>
 	var rfcKeywords string
 	rfc := &cobra.Command{
@@ -348,7 +404,7 @@ func newAddCmd() *cobra.Command {
 	video.Flags().StringVar(&ytURL, "youtube", "", "YouTube video URL to fetch via oEmbed")
 	video.Flags().StringVar(&videoKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
-	cmd.AddCommand(site, book, movie, song, article, video, rfc)
+	cmd.AddCommand(site, book, movie, song, article, video, patent, rfc)
 	return cmd
 }
 
