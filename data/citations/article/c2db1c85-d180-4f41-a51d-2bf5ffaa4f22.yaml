@@ -1,0 +1,28 @@
+id: c2db1c85-d180-4f41-a51d-2bf5ffaa4f22
+type: article
+apa7:
+    authors:
+        - family: Tang
+          given: B.
+        - family: Kang
+          given: H.
+        - family: Fan
+          given: J.
+        - family: Li
+          given: Q.
+        - family: Sandhu
+          given: R.
+    year: 2019
+    date: "2019-05-28"
+    title: IoT Passport
+    container_title: Proceedings of the 24th ACM Symposium on Access Control Models and Technologies
+    publisher: ACM
+    journal: Proceedings of the 24th ACM Symposium on Access Control Models and Technologies
+    pages: 83-92
+    doi: 10.1145/3322431.3326327
+    url: https://doi.org/10.1145/3322431.3326327
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for IoT Passport in Proceedings of the 24th ACM Symposium on Access Control Models and Technologies via DOI metadata.
+    keywords:
+        - article
