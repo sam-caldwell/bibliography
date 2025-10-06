@@ -3,7 +3,7 @@ type: book
 apa7:
     authors:
         - family: Woodward
-          given: B.
+          given: Bob
     year: 2007
     title: Veil
     publisher: Simon & Schuster, Limited
@@ -11,9 +11,15 @@ apa7:
     url: https://openlibrary.org/books/OL33358163M/Veil
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Veil (Simon & Schuster, Limited, 2007) from OpenLibrary.
+    summary: |
+        This book covers the Central Intelligence Agency during the 1980s. Page 92 talks about an early draft of a 
+        proposed executive order to allow domestic surveillance within the US which was leaked to the press.  This 
+        recount claims that DCI Casey initialed the draft order and that his deputy (Inmann) allegedly would have 
+        resigned if the policy had been put in place.
     keywords:
         - united states, central intelligence agency
         - united states, politics and government
         - united states, central intelligence agency
         - united states, politics and government
+        - casey, william
+        - reagan, ronald

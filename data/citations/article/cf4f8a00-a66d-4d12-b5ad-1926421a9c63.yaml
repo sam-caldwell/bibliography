@@ -10,7 +10,13 @@ apa7:
     container_title: University of Kansas Law Review
     journal: University of Kansas Law Review
 annotation:
-    summary: In this article, Rehnquist examines the tension between an increasingly expansive right to privacy and the demands of effective law enforcement. He traces the evolution of privacy protections, especially following pivotal Supreme Court decisions, and questions whether such broad interpretations might undermine legitimate policing efforts. By reviewing historical precedents and contemporary legal arguments, Rehnquist highlights the delicate balance between safeguarding individual freedoms and ensuring public safety, ultimately suggesting that unfettered privacy rights could pose challenges for fair and efficient crime control.
+    summary: |
+        In this article, Rehnquist examines the tension between an increasingly expansive right to privacy and the 
+        demands of effective law enforcement. He traces the evolution of privacy protections, especially following 
+        pivotal Supreme Court decisions, and questions whether such broad interpretations might undermine legitimate 
+        policing efforts. By reviewing historical precedents and contemporary legal arguments, Rehnquist highlights 
+        the delicate balance between safeguarding individual freedoms and ensuring public safety, ultimately 
+        suggesting that unfettered privacy rights could pose challenges for fair and efficient crime control.
     keywords:
         - privacy
         - law

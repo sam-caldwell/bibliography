@@ -11,6 +11,15 @@ apa7:
     url: https://www.wired.com/1996/03/zimmermann-wins-us-loses/
     accessed: "2025-10-06"
 annotation:
-    summary: This January the US Attorney’s office finally pinned the tail on its befuddled two-and-a-half-year investigation of Phil Zimmermann. Zimmermann will not be prosecuted for the international export of Pretty Good Privacy, his popular public key encryption that is considered munitions by the US Customs Service. Problem is, after this colossal waste of time, Main Law \[…\]
+    summary: |
+        This article documents the Phil Zimmerman's legal battle with the US Government over his landmark Pretty Good 
+        Privacy encryption software.  The story provides context on the early struggles of between the individual and 
+        government over privacy before 9/11 or the post-millennial Internet era.
     keywords:
-        - article
+        - privacy
+        - politics
+        - policy
+        - encryption
+        - gpg
+        - pgp
+        - pretty good privacy
