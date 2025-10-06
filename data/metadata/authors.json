@@ -20,6 +20,9 @@
   "Aho, A. V.": [
     "data/citations/books/f366773e-3e9a-4403-bfd0-63236f01dfa7.yaml"
   ],
+  "Albertini, A.": [
+    "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml"
+  ],
   "Alharbi, A.": [
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml"
   ],
@@ -123,6 +126,9 @@
   "Buchleitner, A.": [
     "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml"
   ],
+  "Bursztein, E.": [
+    "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml"
+  ],
   "Bustard, P. J.": [
     "data/citations/article/b890e94e-d917-466c-827c-dd9b8f1f2ec3.yaml"
   ],
@@ -200,6 +206,9 @@
   ],
   "Dermal, S.": [
     "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml"
+  ],
+  "Deshpande, S.": [
+    "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml"
   ],
   "Desjardins, M. M.": [
     "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml"
@@ -383,6 +392,15 @@
   "Kaltenbaek, R.": [
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml"
   ],
+  "Kapko, M.": [
+    "data/citations/article/73c5fed8-b6cb-4edf-8891-ad6a83136d41.yaml"
+  ],
+  "Karpman, P.": [
+    "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml"
+  ],
+  "Kathir, M.": [
+    "data/citations/article/97a65561-292d-4372-bd68-4fd8ede75297.yaml"
+  ],
   "Khan, R. A.": [
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml"
   ],
@@ -427,6 +445,9 @@
   ],
   "Levy, Steven": [
     "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml"
+  ],
+  "Leyden, J.": [
+    "data/citations/article/45251b33-d16c-42c6-87e0-3ce898ed99cb.yaml"
   ],
   "Li, B.": [
     "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml"
@@ -506,6 +527,9 @@
   ],
   "Markham, M.": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
+  ],
+  "Markov, Y.": [
+    "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml"
   ],
   "Marrucci, L.": [
     "data/citations/article/720f357c-1060-413c-a8f2-3cff2058d0c9.yaml"
@@ -608,6 +632,9 @@
   ],
   "Pancotti, N.": [
     "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml"
+  ],
+  "Park, Y.": [
+    "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml"
   ],
   "Parney, B.": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml"
@@ -720,6 +747,9 @@
   "Sheldon, S.": [
     "data/citations/article/844ba6ee-7820-4565-9a71-d65b9abc5d53.yaml"
   ],
+  "Shostack, A.": [
+    "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml"
+  ],
   "Smith, R. S.": [
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml"
   ],
@@ -729,8 +759,14 @@
   "Squibb, R. J.": [
     "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml"
   ],
+  "Stamp, M.": [
+    "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml"
+  ],
   "Stein, C.": [
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml"
+  ],
+  "Stevens, M.": [
+    "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml"
   ],
   "Stroustrup, B.": [
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml"
@@ -823,6 +859,9 @@
   "Wiebe, N.": [
     "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml"
   ],
+  "Williams, J.": [
+    "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml"
+  ],
   "Wing, D.": [
     "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml"
   ],
@@ -874,6 +913,10 @@
   "Zeng, W. J.": [
     "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml"
   ],
+  "Zetter, K.": [
+    "data/citations/article/6ba287f1-c059-42cf-bcfd-54f14bb5d601.yaml",
+    "data/citations/article/dadb27dc-ced4-439f-bbcf-81e9ecccb2d1.yaml"
+  ],
   "Zhang, S.": [
     "data/citations/article/f9e2d5b7-5a2e-4ac3-964d-198ad2a54067.yaml"
   ],
@@ -890,8 +933,14 @@
   "Zou, C.": [
     "data/citations/article/f9e2d5b7-5a2e-4ac3-964d-198ad2a54067.yaml"
   ],
+  "van der Meulen, N.": [
+    "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml"
+  ],
   "von Dollen, D.": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml"
+  ],
+  "wael": [
+    "data/citations/article/e1a0a9e7-81ef-49c1-8c0f-62347fb2b5a9.yaml"
   ],
   "Ömer, B.": [
     "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml"

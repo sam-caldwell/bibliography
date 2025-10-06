@@ -1,4 +1,10 @@
 {
+  "data/citations/article/038ac3cc-941f-47bd-ac98-37c48cbdaa0c.yaml": [
+    "math",
+    "atlas",
+    "sourceforge",
+    "net"
+  ],
   "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml": [
     "simulation",
     "of",
@@ -18,6 +24,21 @@
     "state",
     "of",
     "photoelectrons"
+  ],
+  "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml": [
+    "at",
+    "it",
+    "again",
+    "law",
+    "enforcement",
+    "officials",
+    "anti",
+    "encryption",
+    "new",
+    "york",
+    "times",
+    "op",
+    "ed"
   ],
   "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml": [
     "classical",
@@ -119,6 +140,13 @@
     "black",
     "holes"
   ],
+  "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml": [
+    "eigenvalue",
+    "analysis",
+    "for",
+    "metamorphic",
+    "detection"
+  ],
   "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml": [
     "battle",
     "of",
@@ -174,6 +202,33 @@
     "tolerant",
     "quantum",
     "computation"
+  ],
+  "data/citations/article/45251b33-d16c-42c6-87e0-3ce898ed99cb.yaml": [
+    "trump",
+    "disbands",
+    "cyber",
+    "safety",
+    "review",
+    "board",
+    "salt",
+    "typhoon",
+    "inquiry",
+    "in",
+    "limbo"
+  ],
+  "data/citations/article/4604c728-cf31-401f-a62a-487ea309f152.yaml": [
+    "atlassian",
+    "39",
+    "hipchat",
+    "hacked",
+    "8212",
+    "users",
+    "39",
+    "data",
+    "may",
+    "have",
+    "been",
+    "compromised"
   ],
   "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml": [
     "quantum",
@@ -274,6 +329,32 @@
     "quantum",
     "programming"
   ],
+  "data/citations/article/6b64cf08-78cc-44d4-87b1-594cadf8f0dc.yaml": [
+    "major",
+    "cyber",
+    "attacks",
+    "targeting",
+    "the",
+    "telecommunication",
+    "industry",
+    "2023",
+    "2024",
+    "socradar",
+    "cyber",
+    "intelligence",
+    "inc"
+  ],
+  "data/citations/article/6ba287f1-c059-42cf-bcfd-54f14bb5d601.yaml": [
+    "long",
+    "before",
+    "the",
+    "apple",
+    "fbi",
+    "battle",
+    "lavabit",
+    "sounded",
+    "warning"
+  ],
   "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml": [
     "loophole",
     "free",
@@ -321,6 +402,20 @@
     "that",
     "wasn"
   ],
+  "data/citations/article/73c5fed8-b6cb-4edf-8891-ad6a83136d41.yaml": [
+    "massive",
+    "snowflake",
+    "linked",
+    "attack",
+    "exposes",
+    "data",
+    "on",
+    "nearly",
+    "110m",
+    "at",
+    "amp",
+    "customers"
+  ],
   "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml": [
     "highly",
     "coherent",
@@ -333,6 +428,14 @@
     "to",
     "cavity",
     "photons"
+  ],
+  "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml": [
+    "the",
+    "first",
+    "collision",
+    "for",
+    "full",
+    "sha"
   ],
   "data/citations/article/7fa31bfb-1124-416c-b1cf-2e87c3dcee18.yaml": [
     "optical",
@@ -397,6 +500,15 @@
     "quantum",
     "computing"
   ],
+  "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml": [
+    "diginotar",
+    "dissecting",
+    "the",
+    "first",
+    "dutch",
+    "digital",
+    "disaster"
+  ],
   "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml": [
     "the",
     "potential",
@@ -434,6 +546,30 @@
     "podolsky",
     "rosen",
     "channels"
+  ],
+  "data/citations/article/97a65561-292d-4372-bd68-4fd8ede75297.yaml": [
+    "linux",
+    "kernel",
+    "zero",
+    "day",
+    "smb",
+    "vulnerability",
+    "discovered",
+    "via",
+    "chatgpt"
+  ],
+  "data/citations/article/9ffd35f4-1db9-4453-a1f9-0936b7c0c195.yaml": [
+    "stuxnet",
+    "x2d",
+    "style",
+    "code",
+    "signing",
+    "is",
+    "more",
+    "widespread",
+    "than",
+    "anyone",
+    "thought"
   ],
   "data/citations/article/a0da0f6c-3274-4bce-9417-691483418a36.yaml": [
     "the",
@@ -631,6 +767,18 @@
     "intro",
     "i2p"
   ],
+  "data/citations/article/dadb27dc-ced4-439f-bbcf-81e9ecccb2d1.yaml": [
+    "the",
+    "untold",
+    "story",
+    "of",
+    "the",
+    "boldest",
+    "supply",
+    "chain",
+    "hack",
+    "ever"
+  ],
   "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml": [
     "the",
     "hierarchy",
@@ -653,6 +801,10 @@
     "black",
     "box",
     "investigation"
+  ],
+  "data/citations/article/e1a0a9e7-81ef-49c1-8c0f-62347fb2b5a9.yaml": [
+    "arxiv",
+    "org"
   ],
   "data/citations/article/e66bc34d-3f47-4511-be59-e02ab2ce0c56.yaml": [
     "april",
@@ -780,6 +932,10 @@
     "the",
     "queuing",
     "formula"
+  ],
+  "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml": [
+    "threat",
+    "modeling"
   ],
   "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml": [
     "the",
@@ -1036,6 +1192,11 @@
   ],
   "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml": [
     "github",
+    "com"
+  ],
+  "data/citations/site/64f979ba-acfe-4b54-9e65-32d9c5117e82.yaml": [
+    "www",
+    "chainalysis",
     "com"
   ],
   "data/citations/site/6d5c1a76-f4c3-4d4a-95de-ec9349e2864d.yaml": [
