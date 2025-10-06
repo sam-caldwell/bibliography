@@ -1,15 +1,23 @@
 id: 8e69f10c-f220-4372-8375-c70ba8c6072a
 type: article
 apa7:
-    authors: []
+    authors:
+        - family: Justice Center
     year: 2024
     date: D:20240102
     title: Texas Criminal Justice Data Snapshot
     container_title: justicereinvestmentinitiative.org
-    publisher: justicereinvestmentinitiative.org
+    publisher: Justice Reinvestment Initiative - Council of State Governments
     url: https://justicereinvestmentinitiative.org/wp-content/uploads/2024/01/Texas-Criminal-Justice-Data-Snapshot_accessible.pdf
     accessed: "2025-10-06"
 annotation:
     summary: 'PDF article: Texas Criminal Justice Data Snapshot (from justicereinvestmentinitiative.org).'
     keywords:
-        - article
+        - criminal justice
+        - recidivism
+        - prisons
+        - crime
+        - policy
+        - texas
+        - tdcj
+        - legislature
