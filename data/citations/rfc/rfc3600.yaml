@@ -12,7 +12,10 @@ apa7:
     bibtex_url: https://datatracker.ietf.org/doc/rfc3600/bibtex/
     accessed: "2025-10-06"
 annotation:
-    summary: This memo contains a snapshot of the state of standardization of protocols used in the Internet as of October 2, 2003. It lists official protocol standards and Best Current Practice RFCs; it is not a complete index to the RFC series. The latest version of this memo is designated STD 1.
+    summary: |
+        This memo contains a snapshot of the state of standardization of protocols used in the Internet as of 
+        October 2, 2003. It lists official protocol standards and Best Current Practice RFCs; it is not a complete 
+        index to the RFC series. The latest version of this memo is designated STD 1.
     keywords:
         - rfc
         - ietf
