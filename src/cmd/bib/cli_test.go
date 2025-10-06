@@ -326,6 +326,37 @@ func TestLookupArticleByURL_OGTags(t *testing.T) {
 	}
 }
 
+func TestLookupArticleByURL_PDF(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+
+	// Minimal PDF-like content containing metadata
+	pdf := "%PDF-1.4\n1 0 obj\n<< /Title (Sample PDF Title) /Author (John Q Public) /CreationDate (D:20230501120000Z) >>\nendobj\n"
+	// Set content-type via a custom doer that sets header
+	webfetch.SetHTTPClient(struct{ testHTTPDoer }{testHTTPDoer{status: 200, body: pdf}})
+	t.Cleanup(func() { webfetch.SetHTTPClient(&http.Client{}) })
+
+	commitAndPush = func(paths []string, msg string) error { return nil }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newLookupCmd())
+	if _, err := execCmd(rootCmd, "add", "article", "--url", "https://example.com/sample.pdf"); err != nil {
+		t.Fatalf("add article by pdf url: %v", err)
+	}
+	// slug from title + year
+	if _, err := os.Stat(filepath.Join("data/citations", "article", "sample-pdf-title-2023.yaml")); err != nil {
+		t.Fatalf("expected YAML written: %v", err)
+	}
+	by, err := os.ReadFile(filepath.Join("data/citations", "article", "sample-pdf-title-2023.yaml"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Contains(by, []byte("John Q")) && !bytes.Contains(by, []byte("Public")) {
+		t.Fatalf("expected author in YAML: %s", string(by))
+	}
+}
+
 func TestLookupRFC_Basic(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()

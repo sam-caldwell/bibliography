@@ -25,6 +25,21 @@ const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (
 
 func SetHTTPClient(c HTTPDoer) { client = c }
 
+// PDF extraction extension point for future full-text + XMP integrations
+type PDFExtractor interface {
+	BuildEntryFromPDF(ctx context.Context, data []byte, sourceURL string) (schema.Entry, error)
+}
+
+type defaultPDFExtractor struct{}
+
+func (defaultPDFExtractor) BuildEntryFromPDF(ctx context.Context, data []byte, sourceURL string) (schema.Entry, error) {
+	return buildFromPDF(data, sourceURL)
+}
+
+var pdfExtractor PDFExtractor = defaultPDFExtractor{}
+
+func SetPDFExtractor(e PDFExtractor) { pdfExtractor = e }
+
 // FetchArticleByURL fetches a web page and tries to map it to an APA7 article entry
 // using OpenGraph, JSON-LD, and common meta tags.
 func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
@@ -55,7 +70,7 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 
 	ct := strings.ToLower(resp.Header.Get("Content-Type"))
 	if strings.Contains(ct, "pdf") || strings.HasSuffix(strings.ToLower(u), ".pdf") {
-		return buildFromPDF(bodyBytes, u)
+		return pdfExtractor.BuildEntryFromPDF(ctx, bodyBytes, u)
 	}
 
 	og, metaTitle := parseOpenGraphAndTitle(body)
@@ -375,9 +390,10 @@ func toInitials(s string) string {
 
 func extractYear(s string) int {
 	s = strings.TrimSpace(s)
-	if len(s) >= 4 {
+	// find any 4-digit sequence
+	for i := 0; i+4 <= len(s); i++ {
 		var y int
-		if _, err := fmt.Sscanf(s[:4], "%d", &y); err == nil {
+		if _, err := fmt.Sscanf(s[i:i+4], "%d", &y); err == nil {
 			if y >= 1000 && y <= time.Now().Year()+1 {
 				return y
 			}
