@@ -1,0 +1,27 @@
+id: 78f6e1b6-ea13-49b4-a139-a205a64f1017
+type: article
+apa7:
+    authors:
+        - family: Stevens
+          given: M.
+        - family: Bursztein
+          given: E.
+        - family: Karpman
+          given: P.
+        - family: Albertini
+          given: A.
+        - family: Markov
+          given: Y.
+    year: 2017
+    title: The First Collision for Full SHA-1
+    container_title: Lecture Notes in Computer Science
+    publisher: Springer International Publishing
+    journal: Lecture Notes in Computer Science
+    pages: 570-596
+    doi: 10.1007/978-3-319-63688-7_19
+    url: https://doi.org/10.1007/978-3-319-63688-7_19
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for The First Collision for Full SHA-1 in Lecture Notes in Computer Science via DOI metadata.
+    keywords:
+        - article
