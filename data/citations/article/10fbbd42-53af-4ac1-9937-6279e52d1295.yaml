@@ -1,0 +1,17 @@
+id: 10fbbd42-53af-4ac1-9937-6279e52d1295
+type: article
+apa7:
+    authors:
+        - family: Williams
+          given: J.
+    year: 2015
+    date: "2015-08-12"
+    title: 'At it Again: Law Enforcement Officials’ Anti-Encryption New York Times Op-Ed'
+    container_title: Electronic Frontier Foundation
+    publisher: Electronic Frontier Foundation
+    url: https://www.eff.org/deeplinks/2015/08/it-again-law-enforcement-officials-anti-encryption-new-york-times-op-ed
+    accessed: "2025-10-06"
+annotation:
+    summary: Yesterday, Manhattan District Attorney Cyrus Vance, Jr. and law enforcement officials from Paris, London, and Madrid published an anti-encryption op-ed in the New York Times—an op-ed that amounts to nothing more than a blatant attempt to use fear mongering to further their anti-privacy, anti-...
+    keywords:
+        - article
