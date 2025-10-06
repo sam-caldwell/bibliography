@@ -1,0 +1,28 @@
+id: the-fractal-geometry-of-nature-1983
+type: book
+apa7:
+    authors:
+        - family: Mandelbrot
+          given: B. B.
+        - family: Llosa
+          given: J. M.
+        - family: Llosa
+          given: J. M.
+    year: 1983
+    title: The Fractal Geometry of Nature
+    publisher: W.H. Freeman
+    isbn: "9780716711865"
+    url: https://openlibrary.org/books/OL21995163M/The_Fractal_Geometry_of_Nature
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for The Fractal Geometry of Nature (W.H. Freeman, 1983) from OpenLibrary.
+    keywords:
+        - geometry
+        - mathematical models
+        - fractals
+        - stochastic processes
+        - probability
+        - mathematics
+        - nature
+        - mathematical physics and mathematics
+        - geometry
