@@ -1,0 +1,28 @@
+id: the-resource-theory-of-stabilizer-quantum-computation-2014
+type: article
+apa7:
+    authors:
+        - family: Veitch
+          given: V.
+        - family: Hamed Mousavian
+          given: S. A.
+        - family: Gottesman
+          given: D.
+        - family: Emerson
+          given: J.
+    year: 2014
+    date: "2014-01-09"
+    title: The resource theory of stabilizer quantum computation
+    container_title: New Journal of Physics
+    publisher: IOP Publishing
+    journal: New Journal of Physics
+    volume: "16"
+    issue: "1"
+    pages: "013009"
+    doi: 10.1088/1367-2630/16/1/013009
+    url: https://doi.org/10.1088/1367-2630/16/1/013009
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for The resource theory of stabilizer quantum computation in New Journal of Physics via DOI metadata.
+    keywords:
+        - article
