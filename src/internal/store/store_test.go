@@ -306,34 +306,11 @@ func TestTokenizeAndDOIAndNormalize(t *testing.T) {
 	}
 }
 
-func TestMigrateExistingAndSegmentForType(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-	// seed flat yaml files
-	if err := os.MkdirAll(CitationsDir, 0o755); err != nil {
-		t.Fatal(err)
-	}
-	y := `id: a\ntype: book\napa7:\n  title: Hello\nannotation:\n  summary: s\n  keywords: [k]\n`
-	if err := os.WriteFile(filepath.Join(CitationsDir, "a.yaml"), []byte(y), 0o644); err != nil {
-		t.Fatal(err)
-	}
-	// sanity: ensure file exists before migration
-	if _, err := os.Stat(filepath.Join(CitationsDir, "a.yaml")); err != nil {
-		t.Fatalf("pre-sanity stat: %v", err)
-	}
-	// log dir contents for debugging
-	if ents, derr := os.ReadDir(CitationsDir); derr == nil {
-		for _, de := range ents {
-			t.Logf("pre-migrate entry: name=%s isDir=%v", de.Name(), de.IsDir())
-		}
-	}
-	_, err := MigrateExisting()
-	if err != nil {
-		t.Fatalf("migrate: %v", err)
-	}
-	if SegmentForType("website") != "site" || SegmentForType("book") != "books" {
-		t.Fatalf("segment mapping wrong")
-	}
+// Migration removed; keep segment mapping coverage
+func TestSegmentForType(t *testing.T) {
+    if SegmentForType("website") != "site" { t.Fatalf("website segment") }
+    if SegmentForType("book") != "books" { t.Fatalf("book segment") }
+    if SegmentForType("article") != "article" { t.Fatalf("article segment") }
+    if SegmentForType("rfc") != "rfc" { t.Fatalf("rfc segment") }
+    if SegmentForType("unknown") != "citation" { t.Fatalf("default segment") }
 }

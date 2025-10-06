@@ -407,6 +407,4 @@ func FilterByKeywordsAND(entries []schema.Entry, keywords []string) []schema.Ent
 	return out
 }
 
-// MigrateExisting moves YAML files in data/citations root into segmented
-// subdirectories based on their type. Returns a list of moves (old->new).
 // (store migration removed)

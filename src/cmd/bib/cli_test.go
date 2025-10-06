@@ -688,30 +688,4 @@ func TestSummarizeCommand_SkipsWhenNotAccessible(t *testing.T) {
 	}
 }
 
-func TestMigrateCommand(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-	if err := os.MkdirAll("data/citations", 0o755); err != nil {
-		t.Fatal(err)
-	}
-	y := "id: a\ntype: book\napa7:\n  title: Title\nannotation:\n  summary: s\n  keywords: [k]\n"
-	if err := os.WriteFile("data/citations/a.yaml", []byte(y), 0o644); err != nil {
-		t.Fatal(err)
-	}
-	called := false
-	commitAndPush = func(paths []string, msg string) error { called = true; return nil }
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newMigrateCmd())
-	out, err := execCmd(rootCmd, "migrate")
-	if err != nil {
-		t.Fatalf("migrate: %v", err)
-	}
-	if !strings.Contains(out, "migration complete: 1 files moved") {
-		t.Fatalf("unexpected out: %q", out)
-	}
-	if !called {
-		t.Fatalf("expected commitAndPush to be called")
-	}
-}
+// migrate command removed
