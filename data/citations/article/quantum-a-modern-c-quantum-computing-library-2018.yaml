@@ -1,0 +1,22 @@
+id: quantum-a-modern-c-quantum-computing-library-2018
+type: article
+apa7:
+    authors:
+        - family: Gheorghiu
+          given: V.
+    year: 2018
+    date: "2018-12-10"
+    title: 'Quantum++: A modern C++ quantum computing library'
+    container_title: PLOS ONE
+    publisher: Public Library of Science (PLoS)
+    journal: PLOS ONE
+    volume: "13"
+    issue: "12"
+    pages: e0208073
+    doi: 10.1371/journal.pone.0208073
+    url: https://doi.org/10.1371/journal.pone.0208073
+    accessed: "2025-10-06"
+annotation:
+    summary: 'Bibliographic record for Quantum++: A modern C++ quantum computing library in PLOS ONE via DOI metadata.'
+    keywords:
+        - article
