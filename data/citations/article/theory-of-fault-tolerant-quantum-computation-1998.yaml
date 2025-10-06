@@ -1,0 +1,22 @@
+id: theory-of-fault-tolerant-quantum-computation-1998
+type: article
+apa7:
+    authors:
+        - family: Gottesman
+          given: D.
+    year: 1998
+    date: "1998-01-01"
+    title: Theory of fault-tolerant quantum computation
+    container_title: Physical Review A
+    publisher: American Physical Society (APS)
+    journal: Physical Review A
+    volume: "57"
+    issue: "1"
+    pages: 127-137
+    doi: 10.1103/physreva.57.127
+    url: https://doi.org/10.1103/physreva.57.127
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Theory of fault-tolerant quantum computation in Physical Review A via DOI metadata.
+    keywords:
+        - article
