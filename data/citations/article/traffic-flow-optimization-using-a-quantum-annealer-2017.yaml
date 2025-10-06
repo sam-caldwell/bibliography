@@ -1,0 +1,30 @@
+id: traffic-flow-optimization-using-a-quantum-annealer-2017
+type: article
+apa7:
+    authors:
+        - family: Neukart
+          given: F.
+        - family: Compostella
+          given: G.
+        - family: Seidel
+          given: C.
+        - family: von Dollen
+          given: D.
+        - family: Yarkoni
+          given: S.
+        - family: Parney
+          given: B.
+    year: 2017
+    date: "2017-12-20"
+    title: Traffic Flow Optimization Using a Quantum Annealer
+    container_title: Frontiers in ICT
+    publisher: Frontiers Media SA
+    journal: Frontiers in ICT
+    volume: "4"
+    doi: 10.3389/fict.2017.00029
+    url: https://doi.org/10.3389/fict.2017.00029
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Traffic Flow Optimization Using a Quantum Annealer in Frontiers in ICT via DOI metadata.
+    keywords:
+        - article
