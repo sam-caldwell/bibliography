@@ -11,7 +11,14 @@ apa7:
     url: https://openlibrary.org/books/OL348049M/Through_the_eyes_of_the_enemy
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Through the eyes of the enemy (Regnery Pub., 1998) from OpenLibrary.
+    summary: |
+        Col. Lunev served in the Soviet and Russian Federation military intelligence (GRU), defecting to the United 
+        States in the early 1990s. In Through the Eyes of the Enemy, former Soviet military intelligence officer 
+        Stanislav Lunev presents an inside look at Russian espionage operations targeting the United States. As the 
+        highest-ranking GRU defector to date, he details clandestine strategies to weaken America from within, 
+        shedding light on covert funding, infiltration of vital industries, and preparedness for potential sabotage. 
+        His firsthand accounts illustrate the broader scope of Cold War espionage and highlight the lingering threats 
+        still posed by Russian intelligence networks after the Soviet collapse.
     keywords:
         - biography
         - defectors
@@ -22,6 +29,8 @@ annotation:
         - soviet union
         - soviet union. glavnoe razvedyvatelʹnoe upravlenie
         - spies
+        - gru
+        - russian military intelligence
         - lunev, stanislav, 1946-
         - soviet union. glavnoe razvedyvatelʹnoe upravlenie -- officials and employees -- biography.
         - defectors -- soviet union -- biography.
