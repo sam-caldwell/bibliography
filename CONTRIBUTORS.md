@@ -51,9 +51,9 @@ Maintainers will review in good faith, keep reports as confidential as possible,
 
 ## 5) Commit & Branching
 
-- Commits: Write clear, imperative messages (e.g., “add lookup article support”).
+- Commits: Write clear, imperative messages (e.g., “add article support”).
 - Branching: Use feature branches; keep main green.
-- Git: The CLI auto‑commits/pushes for `lookup`; CI may commit metadata on push.
+- Git: The CLI auto‑commits/pushes for `add`; CI may commit metadata on push.
 
 ## 6) Reviews
 
@@ -82,4 +82,3 @@ Maintainers may take action for behavior that violates these guidelines, includi
 Appeals can be made privately to the maintainers. We aim to be fair, transparent, and proportionate.
 
 By participating, you agree to uphold these principles. Thank you for contributing with civility and care.
-

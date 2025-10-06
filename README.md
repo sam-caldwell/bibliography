@@ -1,6 +1,6 @@
 # Bibliography CLI (APA7 + Annotation)
 
-A single-CLI, Git-backed annotated bibliography that stores one APA7 entry per YAML file. The tool looks up citations using public metadata providers (doi.org for articles; OpenLibrary for books), validates and writes them to `data/citations/`, keeps a keyword index in `data/metadata/`, and commits/pushes changes automatically. A GitHub Action keeps indexes consistent on every push.
+A single-CLI, Git-backed annotated bibliography that stores one APA7 entry per YAML file. The tool adds citations and, when possible, fetches metadata from public providers (doi.org for articles; OpenLibrary for books), validates and writes them to `data/citations/`, keeps a keyword index in `data/metadata/`, and commits/pushes changes automatically. A GitHub Action keeps indexes consistent on every push.
 
 ## Highlights
 
@@ -21,7 +21,7 @@ A single-CLI, Git-backed annotated bibliography that stores one APA7 entry per Y
 - Go 1.22+
 - Git (with a configured `origin` remote and auth for pushes)
 - `curl`
-- Environment: none required for lookups
+ - Environment: none required for adds
 
 ## Build
 
@@ -66,7 +66,7 @@ Add (creates a YAML, commits, and pushes):
 # Article by metadata (minimal)
 ./bin/bib add article --title "Cool Result" --author "Doe, J." --journal "Science" --date 2023-04-12
 
-# Optional keywords for any lookup
+# Optional keywords for any add
 ./bin/bib add book --isbn 9780132350884 --keywords "software,clean-code"
 ```
 
@@ -128,7 +128,7 @@ annotation:
 
 ## Git Agent
 
-- After a successful lookup write, runs:
+- After a successful add write, runs:
   1. `git add <path>`
   2. `git commit -m "add citation: <id>"`
   3. `git push` (sets upstream automatically if missing)
@@ -162,7 +162,7 @@ make cover   # prints total coverage
 
 - Citation YAMLs in `data/citations/` are the canonical source of truth.
 - Metadata in `data/metadata/` is derived and can be regenerated at any time.
-- The CLI only uses public metadata endpoints for lookups and never uploads repository contents.
+- The CLI only uses public metadata endpoints for adds and never uploads repository contents.
 
 ## Project Structure
 
