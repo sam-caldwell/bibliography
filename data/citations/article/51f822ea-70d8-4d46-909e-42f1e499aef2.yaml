@@ -1,0 +1,22 @@
+id: 51f822ea-70d8-4d46-909e-42f1e499aef2
+type: article
+apa7:
+    authors:
+        - family: Bonacich
+          given: P.
+    year: 1972
+    date: "1972-01-01"
+    title: Factoring and weighting approaches to status scores and clique identification
+    container_title: The Journal of Mathematical Sociology
+    publisher: Informa UK Limited
+    journal: The Journal of Mathematical Sociology
+    volume: "2"
+    issue: "1"
+    pages: 113-120
+    doi: 10.1080/0022250x.1972.9989806
+    url: https://doi.org/10.1080/0022250x.1972.9989806
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Factoring and weighting approaches to status scores and clique identification in The Journal of Mathematical Sociology via DOI metadata.
+    keywords:
+        - article
