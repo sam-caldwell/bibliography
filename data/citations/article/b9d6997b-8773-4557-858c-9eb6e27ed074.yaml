@@ -1,0 +1,13 @@
+id: b9d6997b-8773-4557-858c-9eb6e27ed074
+type: article
+apa7:
+    authors: []
+    title: '{{meta.pageTitle}}'
+    container_title: '{{meta.siteName}}'
+    publisher: '{{meta.siteName}}'
+    url: https://www.oyez.org/cases/1987/86-1278
+    accessed: "2025-10-06"
+annotation:
+    summary: '{{meta.description}}'
+    keywords:
+        - article
