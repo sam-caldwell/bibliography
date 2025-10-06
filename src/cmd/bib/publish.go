@@ -1,52 +1,52 @@
 package main
 
 import (
-    "fmt"
-    "html/template"
-    "os"
-    "path/filepath"
-    "sort"
-    "strings"
+	"fmt"
+	"html/template"
+	"os"
+	"path/filepath"
+	"sort"
+	"strings"
 
-    "github.com/spf13/cobra"
+	"github.com/spf13/cobra"
 
-    "bibliography/src/internal/schema"
-    "bibliography/src/internal/store"
+	"bibliography/src/internal/schema"
+	"bibliography/src/internal/store"
 )
 
 func newPublishCmd() *cobra.Command {
-    cmd := &cobra.Command{
-        Use:   "publish",
-        Short: "Publish HTML pages for all citations under docs/ with an index",
-        RunE: func(cmd *cobra.Command, args []string) error {
-            entries, err := store.ReadAll()
-            if err != nil {
-                return err
-            }
-            if err := os.MkdirAll("docs", 0o755); err != nil {
-                return err
-            }
-            // Build per-entry pages and collect for index by category
-            byCat := map[string][]schema.Entry{}
-            for _, e := range entries {
-                seg := store.SegmentForType(e.Type)
-                byCat[seg] = append(byCat[seg], e)
-                if err := writeEntryPage(e, seg); err != nil {
-                    return err
-                }
-            }
-            if err := writeIndex(byCat); err != nil {
-                return err
-            }
-            fmt.Fprintln(cmd.OutOrStdout(), "wrote docs/index.html and per-entry pages")
-            return nil
-        },
-    }
-    return cmd
+	cmd := &cobra.Command{
+		Use:   "publish",
+		Short: "Publish HTML pages for all citations under docs/ with an index",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			entries, err := store.ReadAll()
+			if err != nil {
+				return err
+			}
+			if err := os.MkdirAll("docs", 0o755); err != nil {
+				return err
+			}
+			// Build per-entry pages and collect for index by category
+			byCat := map[string][]schema.Entry{}
+			for _, e := range entries {
+				seg := store.SegmentForType(e.Type)
+				byCat[seg] = append(byCat[seg], e)
+				if err := writeEntryPage(e, seg); err != nil {
+					return err
+				}
+			}
+			if err := writeIndex(byCat); err != nil {
+				return err
+			}
+			fmt.Fprintln(cmd.OutOrStdout(), "wrote docs/index.html and per-entry pages")
+			return nil
+		},
+	}
+	return cmd
 }
 
 var entryTmpl = template.Must(template.New("entry").Funcs(template.FuncMap{
-    "join": strings.Join,
+	"join": strings.Join,
 }).Parse(`<!doctype html>
 <html lang="en">
 <head>
@@ -112,23 +112,23 @@ var entryTmpl = template.Must(template.New("entry").Funcs(template.FuncMap{
 `))
 
 type entryPageModel struct {
-    schema.Entry
-    Canonical string
+	schema.Entry
+	Canonical string
 }
 
 func writeEntryPage(e schema.Entry, seg string) error {
-    dir := filepath.Join("docs", seg)
-    if err := os.MkdirAll(dir, 0o755); err != nil {
-        return err
-    }
-    out := filepath.Join(dir, e.ID+".html")
-    f, err := os.Create(out)
-    if err != nil {
-        return err
-    }
-    defer f.Close()
-    model := entryPageModel{Entry: e, Canonical: filepath.ToSlash(filepath.Join(seg, e.ID+".html"))}
-    return entryTmpl.Execute(f, model)
+	dir := filepath.Join("docs", seg)
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return err
+	}
+	out := filepath.Join(dir, e.ID+".html")
+	f, err := os.Create(out)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	model := entryPageModel{Entry: e, Canonical: filepath.ToSlash(filepath.Join(seg, e.ID+".html"))}
+	return entryTmpl.Execute(f, model)
 }
 
 var indexTmpl = template.Must(template.New("index").Parse(`<!doctype html>
@@ -166,40 +166,40 @@ var indexTmpl = template.Must(template.New("index").Parse(`<!doctype html>
 `))
 
 type indexCategory struct {
-    Name  string
-    Items []indexItem
+	Name  string
+	Items []indexItem
 }
 
 type indexItem struct {
-    Title string
-    Href  string
+	Title string
+	Href  string
 }
 
 type indexModel struct {
-    Categories []indexCategory
+	Categories []indexCategory
 }
 
 func writeIndex(byCat map[string][]schema.Entry) error {
-    // Stable order: category name ascending, then title ascending
-    var cats []string
-    for c := range byCat {
-        cats = append(cats, c)
-    }
-    sort.Strings(cats)
-    var model indexModel
-    for _, c := range cats {
-        es := byCat[c]
-        sort.Slice(es, func(i, j int) bool { return strings.ToLower(es[i].APA7.Title) < strings.ToLower(es[j].APA7.Title) })
-        var items []indexItem
-        for _, e := range es {
-            items = append(items, indexItem{Title: e.APA7.Title, Href: filepath.ToSlash(filepath.Join(c, e.ID+".html"))})
-        }
-        model.Categories = append(model.Categories, indexCategory{Name: c, Items: items})
-    }
-    f, err := os.Create(filepath.Join("docs", "index.html"))
-    if err != nil {
-        return err
-    }
-    defer f.Close()
-    return indexTmpl.Execute(f, model)
+	// Stable order: category name ascending, then title ascending
+	var cats []string
+	for c := range byCat {
+		cats = append(cats, c)
+	}
+	sort.Strings(cats)
+	var model indexModel
+	for _, c := range cats {
+		es := byCat[c]
+		sort.Slice(es, func(i, j int) bool { return strings.ToLower(es[i].APA7.Title) < strings.ToLower(es[j].APA7.Title) })
+		var items []indexItem
+		for _, e := range es {
+			items = append(items, indexItem{Title: e.APA7.Title, Href: filepath.ToSlash(filepath.Join(c, e.ID+".html"))})
+		}
+		model.Categories = append(model.Categories, indexCategory{Name: c, Items: items})
+	}
+	f, err := os.Create(filepath.Join("docs", "index.html"))
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	return indexTmpl.Execute(f, model)
 }

@@ -18,10 +18,10 @@ import (
 	"bibliography/src/internal/openlibrary"
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
+	"bibliography/src/internal/store"
 	"bibliography/src/internal/summarize"
 	video "bibliography/src/internal/video"
 	webfetch "bibliography/src/internal/webfetch"
-	"bibliography/src/internal/store"
 )
 
 // test HTTP client for OpenLibrary injection
@@ -897,26 +897,39 @@ func TestEdit_SetURLSetsAccessed(t *testing.T) {
 	}
 }
 
-
 func TestPublishWritesDocs(t *testing.T) {
-    dir := t.TempDir()
-    old, _ := os.Getwd()
-    t.Cleanup(func() { _ = os.Chdir(old) })
-    _ = os.Chdir(dir)
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
 
-    // Seed two entries
-    e1 := schema.Entry{ID: schema.NewID(), Type: "website", APA7: schema.APA7{Title: "Site A", URL: "https://a", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"web"}}}
-    e2 := schema.Entry{ID: schema.NewID(), Type: "book", APA7: schema.APA7{Title: "Book B"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"book"}}}
-    if _, err := store.WriteEntry(e1); err != nil { t.Fatal(err) }
-    if _, err := store.WriteEntry(e2); err != nil { t.Fatal(err) }
+	// Seed two entries
+	e1 := schema.Entry{ID: schema.NewID(), Type: "website", APA7: schema.APA7{Title: "Site A", URL: "https://a", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"web"}}}
+	e2 := schema.Entry{ID: schema.NewID(), Type: "book", APA7: schema.APA7{Title: "Book B"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"book"}}}
+	if _, err := store.WriteEntry(e1); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := store.WriteEntry(e2); err != nil {
+		t.Fatal(err)
+	}
 
-    rootCmd = &cobra.Command{Use: "bib"}
-    rootCmd.AddCommand(newPublishCmd())
-    out, err := execCmd(rootCmd, "publish")
-    if err != nil { t.Fatalf("publish: %v", err) }
-    if !strings.Contains(out, "wrote docs/index.html") { t.Fatalf("expected publish notice, got %q", out) }
-    if _, err := os.Stat("docs/index.html"); err != nil { t.Fatalf("missing docs/index.html: %v", err) }
-    // per-entry pages
-    if _, err := os.Stat(filepath.Join("docs", "site", e1.ID+".html")); err != nil { t.Fatalf("missing site page: %v", err) }
-    if _, err := os.Stat(filepath.Join("docs", "books", e2.ID+".html")); err != nil { t.Fatalf("missing book page: %v", err) }
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newPublishCmd())
+	out, err := execCmd(rootCmd, "publish")
+	if err != nil {
+		t.Fatalf("publish: %v", err)
+	}
+	if !strings.Contains(out, "wrote docs/index.html") {
+		t.Fatalf("expected publish notice, got %q", out)
+	}
+	if _, err := os.Stat("docs/index.html"); err != nil {
+		t.Fatalf("missing docs/index.html: %v", err)
+	}
+	// per-entry pages
+	if _, err := os.Stat(filepath.Join("docs", "site", e1.ID+".html")); err != nil {
+		t.Fatalf("missing site page: %v", err)
+	}
+	if _, err := os.Stat(filepath.Join("docs", "books", e2.ID+".html")); err != nil {
+		t.Fatalf("missing book page: %v", err)
+	}
 }
