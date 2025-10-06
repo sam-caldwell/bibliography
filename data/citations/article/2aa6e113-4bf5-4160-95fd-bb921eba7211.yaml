@@ -1,0 +1,26 @@
+id: 2aa6e113-4bf5-4160-95fd-bb921eba7211
+type: article
+apa7:
+    authors:
+        - family: Sedjelmaci
+          given: H.
+        - family: Tourki
+          given: K.
+        - family: Ansari
+          given: N.
+    year: 2024
+    date: "2024-05-01"
+    title: 'Enabling 6G Security: The Synergy of Zero Trust Architecture and Artificial Intelligence'
+    container_title: IEEE Network
+    publisher: Institute of Electrical and Electronics Engineers (IEEE)
+    journal: IEEE Network
+    volume: "38"
+    issue: "3"
+    pages: 171-177
+    doi: 10.1109/mnet.2023.3326003
+    url: https://doi.org/10.1109/MNET.2023.3326003
+    accessed: "2025-10-06"
+annotation:
+    summary: 'Bibliographic record for Enabling 6G Security: The Synergy of Zero Trust Architecture and Artificial Intelligence in IEEE Network via DOI metadata.'
+    keywords:
+        - article
