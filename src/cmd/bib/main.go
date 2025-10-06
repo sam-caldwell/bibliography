@@ -13,14 +13,15 @@ var rootCmd = &cobra.Command{
 }
 
 func execute() error {
-	// Attach subcommands
-	rootCmd.AddCommand(newLookupCmd())
-	rootCmd.AddCommand(newSearchCmd())
-	rootCmd.AddCommand(newIndexCmd())
-	rootCmd.AddCommand(newMigrateIDsCmd())
-	rootCmd.AddCommand(newRepairDOICmd())
-	rootCmd.AddCommand(newSummarizeCmd())
-	return rootCmd.Execute()
+    // Attach subcommands
+    rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newSearchCmd())
+    rootCmd.AddCommand(newIndexCmd())
+    rootCmd.AddCommand(newMigrateIDsCmd())
+    rootCmd.AddCommand(newRepairDOICmd())
+    rootCmd.AddCommand(newSummarizeCmd())
+    rootCmd.AddCommand(newEditCmd())
+    return rootCmd.Execute()
 }
 
 func main() {
