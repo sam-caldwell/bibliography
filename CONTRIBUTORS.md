@@ -1,6 +1,7 @@
 # Contributor Guidelines (Civility First)
 
-Welcome — we’re glad you’re here. This project values civility, clarity, and collaboration. These guidelines explain how to participate constructively and how we handle conduct and contributions.
+Welcome — we’re glad you’re here. This project values civility, clarity, and collaboration. These guidelines explain
+how to participate constructively and how we handle conduct and contributions.
 
 ## 1) Civility & Conduct
 
