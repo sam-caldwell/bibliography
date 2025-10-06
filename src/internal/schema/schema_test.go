@@ -81,17 +81,19 @@ func TestAuthorsUnmarshalUnknownShape(t *testing.T) {
 }
 
 func TestAuthorsUnmarshalFlexible(t *testing.T) {
-	cases := []struct {
-		name        string
-		yamlStr     string
-		wantLen     int
-		wantFamily0 string
-	}{
-		{"scalar_corporate", "authors: National Automated Clearing House Association\n", 1, "National Automated Clearing House Association"},
-		{"seq_strings", "authors: [Apple, Google]\n", 2, "Apple"},
-		{"mapping_single", "authors:\n  family: Doe\n  given: John\n", 1, "Doe"},
-		{"seq_mappings", "authors:\n  - family: Doe\n    given: J.\n  - family: Smith\n", 2, "Doe"},
-	}
+    cases := []struct {
+        name        string
+        yamlStr     string
+        wantLen     int
+        wantFamily0 string
+    }{
+        {"scalar_corporate", "authors: National Automated Clearing House Association\n", 1, "National Automated Clearing House Association"},
+        {"seq_strings", "authors: [Apple, Google]\n", 2, "Apple"},
+        {"mapping_single", "authors:\n  family: Doe\n  given: John\n", 1, "Doe"},
+        {"seq_mappings", "authors:\n  - family: Doe\n    given: J.\n  - family: Smith\n", 2, "Doe"},
+        {"mapping_corporate_org", "authors:\n  organization: The Org\n", 1, "The Org"},
+        {"mapping_corporate_name", "authors:\n  name: The Name\n", 1, "The Name"},
+    }
 	for _, c := range cases {
 		var a Authors
 		var node yaml.Node

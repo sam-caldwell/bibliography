@@ -367,7 +367,7 @@ func manualAdd(cmd *cobra.Command, typ string, extraKeywords []string) error {
 	if title == "" {
 		return fmt.Errorf("title is required")
 	}
-	authorsIn := strings.TrimSpace(prompt(cmd, in, out, "Authors (semicolon-separated, each as 'Family, Given'; optional): "))
+    authorsIn := strings.TrimSpace(prompt(cmd, in, out, "Authors (semicolon-separated; use 'Family, Given' or organization name): "))
 	date := strings.TrimSpace(prompt(cmd, in, out, "Date (YYYY-MM-DD; optional): "))
 	var yearPtr *int
 	if len(date) >= 4 {

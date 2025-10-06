@@ -94,9 +94,13 @@ When using `bib add article --doi <DOI>`:
 id: "<slug>"
 type: "website|book|movie|article|report|dataset|software"
 apa7:
-  authors:
+  authors:            # flexible: strings, or mappings with family/given
     - family: "Last"
       given: "F. M."
+    - "National Automated Clearing House Association"   # corporate/organization author
+    # also accepted:
+    # - organization: "World Health Organization"
+    # - name: "U.S. Department of Labor"
   year: 2025         # optional
   date: "YYYY-MM-DD" # optional
   title: "Title Case"
