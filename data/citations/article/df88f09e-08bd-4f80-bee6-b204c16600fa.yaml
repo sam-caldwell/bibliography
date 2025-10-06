@@ -1,0 +1,26 @@
+id: df88f09e-08bd-4f80-bee6-b204c16600fa
+type: article
+apa7:
+    authors:
+        - family: Koch
+          given: R.
+        - family: Golling
+          given: M.
+        - family: Rodosek
+          given: G. D.
+    year: 2016
+    date: "2016-03-01"
+    title: How Anonymous Is the Tor Network? A Long-Term Black-Box Investigation
+    container_title: Computer
+    publisher: Institute of Electrical and Electronics Engineers (IEEE)
+    journal: Computer
+    volume: "49"
+    issue: "3"
+    pages: 42-49
+    doi: 10.1109/mc.2016.73
+    url: https://doi.org/10.1109/mc.2016.73
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for How Anonymous Is the Tor Network? A Long-Term Black-Box Investigation in Computer via DOI metadata.
+    keywords:
+        - article
