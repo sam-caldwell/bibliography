@@ -87,11 +87,17 @@
   "Biamonte, J.": [
     "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml"
   ],
+  "Birnbaum, Emily": [
+    "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml"
+  ],
   "Blok, M. S.": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
   ],
   "Boschi, D.": [
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
+  ],
+  "Bott, E.": [
+    "data/citations/article/5c865251-c50a-48dc-a228-f9880f2f3ea7.yaml"
   ],
   "Bouwmeester, D.": [
     "data/citations/article/b086551a-7f10-4140-9efa-7b4bfda58184.yaml"
@@ -213,6 +219,9 @@
   "Dvali, G.": [
     "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml"
   ],
+  "Egger, C.": [
+    "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml"
+  ],
   "Eibl, M.": [
     "data/citations/article/b086551a-7f10-4140-9efa-7b4bfda58184.yaml"
   ],
@@ -267,6 +276,9 @@
   "Gheorghiu, V.": [
     "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml"
   ],
+  "Gilles, S. M.": [
+    "data/citations/article/35e91c73-3fc9-4e73-8574-e14b3cee6a0d.yaml"
+  ],
   "Gisin, N.": [
     "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml"
   ],
@@ -281,6 +293,10 @@
     "data/citations/article/43599004-8b7d-4726-b7e1-1adb43816647.yaml",
     "data/citations/article/b6a80a10-5d62-4053-8210-3255d41eae89.yaml",
     "data/citations/article/d4a1ef86-a55e-4d3b-8482-4231e2c612d6.yaml"
+  ],
+  "Greenberg, A.": [
+    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
+    "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml"
   ],
   "Grover, L. K.": [
     "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml"
@@ -333,6 +349,9 @@
   "Jan, K. U.": [
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml"
   ],
+  "Jardine, E.": [
+    "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml"
+  ],
   "Jennewein, T.": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml"
@@ -363,6 +382,9 @@
   ],
   "Kropatschek, S.": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml"
+  ],
+  "Kruegel, C.": [
+    "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml"
   ],
   "Kumar, R.": [
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml"
@@ -396,6 +418,9 @@
   ],
   "Lindenthal, M.": [
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml"
+  ],
+  "Lindner, A. M.": [
+    "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml"
   ],
   "Lindroth, E.": [
     "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml"
@@ -536,6 +561,9 @@
   "Onodera, T.": [
     "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml"
   ],
+  "Owenson, G.": [
+    "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml"
+  ],
   "Pan, J.": [
     "data/citations/article/b086551a-7f10-4140-9efa-7b4bfda58184.yaml"
   ],
@@ -629,6 +657,9 @@
     "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml"
   ],
+  "Schlumberger, J.": [
+    "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml"
+  ],
   "Schouten, R. N.": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
   ],
@@ -716,6 +747,9 @@
   ],
   "Vermeulen, R. F. L.": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
+  ],
+  "Vigna, G.": [
+    "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml"
   ],
   "Walther, P.": [
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml"

@@ -9,7 +9,28 @@ apa7:
     title: Apple, Facebook defend encryption during Senate grilling
     container_title: thehill.com
     journal: thehill.com
+    url: https://thehill.com/policy/technology/473978-apple-facebook-defend-encryption-during-senate-grilling/
+    accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Apple, Facebook defend encryption during Senate grilling in thehill.com (manually constructed).
+    summary: |
+        Following the San Bernadino shooting and years of failed attempts to legislate "back doors" into encrypted 
+        systems, this article shows the atmosphere of Congress in 2019 to force "back doors" in encryption systems, 
+        regardless of the mathematical consequences to security. (This should be read in consideration of the 2016 
+        amended Russian law and what was required by Russian technologists to accommodate their country's similar 
+        expectations.)
     keywords:
-        - article
+        - encryption
+        - public policy
+        - cybersecurity
+        - information security
+        - senate
+        - us
+        - terrorism
+        - san bernadino
+        - legislation
+        - apple
+        - facebook
+        - meta
+        - back doors
+        - congress
+        - privacy

@@ -104,6 +104,20 @@
     "black",
     "holes"
   ],
+  "data/citations/article/35e91c73-3fc9-4e73-8574-e14b3cee6a0d.yaml": [
+    "from",
+    "rehnquist",
+    "to",
+    "roberts",
+    "has",
+    "informational",
+    "privacy",
+    "lost",
+    "friend",
+    "and",
+    "gained",
+    "foe"
+  ],
   "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml": [
     "practical",
     "quantum",
@@ -178,10 +192,32 @@
     "in",
     "qcl"
   ],
+  "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml": [
+    "apple",
+    "facebook",
+    "defend",
+    "encryption",
+    "during",
+    "senate",
+    "grilling"
+  ],
   "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml": [
     "quantum",
     "machine",
     "learning"
+  ],
+  "data/citations/article/5c865251-c50a-48dc-a228-f9880f2f3ea7.yaml": [
+    "snowden",
+    "apos",
+    "privacy",
+    "oriented",
+    "email",
+    "provider",
+    "shuts",
+    "down",
+    "under",
+    "government",
+    "pressure"
   ],
   "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml": [
     "the",
@@ -202,6 +238,14 @@
     "scale",
     "quantum",
     "computation"
+  ],
+  "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml": [
+    "practical",
+    "attacks",
+    "against",
+    "the",
+    "i2p",
+    "network"
   ],
   "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml": [
     "structured",
@@ -330,6 +374,21 @@
     "for",
     "quantum",
     "computing"
+  ],
+  "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml": [
+    "the",
+    "potential",
+    "harms",
+    "of",
+    "the",
+    "tor",
+    "anonymity",
+    "network",
+    "cluster",
+    "disproportionately",
+    "in",
+    "free",
+    "countries"
   ],
   "data/citations/article/8ffa1416-8b57-4187-a4e0-bc9e124c3760.yaml": [
     "quantum",
@@ -523,6 +582,10 @@
     "quantum",
     "computation"
   ],
+  "data/citations/article/d84e5a5a-ca3c-46c7-a5ee-bb2dc9af2b2f.yaml": [
+    "intro",
+    "i2p"
+  ],
   "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml": [
     "the",
     "hierarchy",
@@ -647,6 +710,12 @@
     "from",
     "scratch"
   ],
+  "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml": [
+    "tracers",
+    "in",
+    "the",
+    "dark"
+  ],
   "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml": [
     "quantum",
     "computation",
@@ -767,6 +836,12 @@
     "programming",
     "language",
     "pragmatics"
+  ],
+  "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml": [
+    "this",
+    "machine",
+    "kills",
+    "secrets"
   ],
   "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml": [
     "xml",

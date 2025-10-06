@@ -20,6 +20,14 @@ apa7:
     url: https://doi.org/10.1007/978-3-642-41284-4_22
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Practical Attacks against the I2P Network in Lecture Notes in Computer Science via DOI metadata.
+    summary: |
+        This paper proposes several practical ways in which an adversary can exploit weaknesses in the "dark web" 
+        Invisible Internet Project (I2P) to achieve various unintended goals against its users.  The paper presents 
+        many justifications for not implementing decentralized systems using a Distributed Hash Table (DHT), which 
+        ultimately becomes a virtually centralized target.
     keywords:
-        - article
+        - I2P
+        - privacy
+        - cybersecurity
+        - information security
+        - attacks

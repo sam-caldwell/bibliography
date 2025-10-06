@@ -4,10 +4,13 @@ apa7:
     authors: []
     title: Intro - I2P
     container_title: geti2p.net
-    publisher: geti2p.net
+    publisher: ''
     url: https://geti2p.net/en/about/intro
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Intro - I2P on geti2p.net.
+    summary: |
+        This website provides a basic primer for what the Invisible Internet Project (I2P) is intended to be and how 
+        it works.  The site does make some lofty claims, such as its claim that it is "The Internet that should have 
+        been, will be soon."  Nonetheless, it is a good starting point to understand I2P.
     keywords:
         - article
