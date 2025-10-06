@@ -1,0 +1,34 @@
+id: quantum-teleportation-across-the-danube-2004
+type: article
+apa7:
+    authors:
+        - family: Ursin
+          given: R.
+        - family: Jennewein
+          given: T.
+        - family: Aspelmeyer
+          given: M.
+        - family: Kaltenbaek
+          given: R.
+        - family: Lindenthal
+          given: M.
+        - family: Walther
+          given: P.
+        - family: Zeilinger
+          given: A.
+    year: 2004
+    date: "2004-08-18"
+    title: Quantum teleportation across the Danube
+    container_title: Nature
+    publisher: Springer Science and Business Media LLC
+    journal: Nature
+    volume: "430"
+    issue: "7002"
+    pages: 849-849
+    doi: 10.1038/430849a
+    url: https://doi.org/10.1038/430849a
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Quantum teleportation across the Danube in Nature via DOI metadata.
+    keywords:
+        - article
