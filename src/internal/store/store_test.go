@@ -148,19 +148,19 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	}
 
 	y2 := 2024
-	e2 := schema.Entry{
-		ID:   schema.NewID(),
-		Type: "website",
-		APA7: schema.APA7{
-			Title:     "JSON at Example",
-			Year:      &y2,
-			Publisher: "Example Org",
-			URL:       "https://www.example.com/a/b",
-			Accessed:  "2025-01-01",
-			Authors:   schema.Authors{{Family: "National Automated Clearing House Association"}},
-		},
-		Annotation: schema.Annotation{Summary: "s", Keywords: []string{"web"}},
-	}
+    e2 := schema.Entry{
+        ID:   schema.NewID(),
+        Type: "website",
+        APA7: schema.APA7{
+            Title:     "JSON at Example",
+            Year:      &y2,
+            Publisher: "Example Org",
+            URL:       "https://www.example.com/a/b",
+            Accessed:  "2025-01-01",
+            Authors:   schema.Authors{{Family: "National Automated Clearing House Association"}},
+        },
+        Annotation: schema.Annotation{Summary: "Web tools and tutorials", Keywords: []string{"web"}},
+    }
 
 	if _, err := WriteEntry(e1); err != nil {
 		t.Fatalf("write e1: %v", err)
@@ -274,10 +274,14 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	if !contains(idx["doi.org"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["www.example.com"], "data/citations/site/"+e2.ID+".yaml") || !contains(idx["example.com"], "data/citations/site/"+e2.ID+".yaml") {
 		t.Fatalf("missing domain tokens: %+v", idx)
 	}
-	// type
-	if !contains(idx["article"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["website"], "data/citations/site/"+e2.ID+".yaml") {
-		t.Fatalf("missing type tokens: %+v", idx)
-	}
+    // type
+    if !contains(idx["article"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["website"], "data/citations/site/"+e2.ID+".yaml") {
+        t.Fatalf("missing type tokens: %+v", idx)
+    }
+    // summary tokens
+    if !contains(idx["tools"], "data/citations/site/"+e2.ID+".yaml") || !contains(idx["tutorials"], "data/citations/site/"+e2.ID+".yaml") {
+        t.Fatalf("missing summary tokens: %+v", idx)
+    }
 }
 
 func contains(list []string, want string) bool {

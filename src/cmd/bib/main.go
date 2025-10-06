@@ -14,7 +14,7 @@ var rootCmd = &cobra.Command{
 
 func execute() error {
     // Attach subcommands
-    rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
     rootCmd.AddCommand(newSearchCmd())
     rootCmd.AddCommand(newIndexCmd())
     rootCmd.AddCommand(newMigrateIDsCmd())

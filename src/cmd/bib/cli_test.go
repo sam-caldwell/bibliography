@@ -105,7 +105,7 @@ func TestLookupSite_Basic(t *testing.T) {
 	t.Cleanup(func() { commitAndPush = nil })
 
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 
 	// Run add site
 	if _, err := execCmd(rootCmd, "add", "site", "https://example.com"); err != nil {
@@ -137,7 +137,7 @@ func TestLookupBookAndMovie_Minimal(t *testing.T) {
 	commitAndPush = func(paths []string, msg string) error { return nil }
 
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "The Book"); err != nil {
 		t.Fatalf("add book: %v", err)
@@ -191,7 +191,7 @@ func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
 	// First, simulate commit error
 	commitAndPush = func(paths []string, msg string) error { return fmt.Errorf("push failed") }
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "site", "https://t"); err == nil {
 		t.Fatalf("expected commit error to surface")
 	}
@@ -246,7 +246,7 @@ func TestLookupArticleByDOI_NoOpenAI(t *testing.T) {
 	t.Cleanup(func() { doi.SetHTTPClient(&http.Client{}) })
 
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--doi", "10.1234/x"); err != nil {
 		t.Fatalf("add article: %v", err)
 	}
@@ -280,7 +280,7 @@ func TestLookupArticleByDOI_RecordsProvidedDOIIfMissingFromCSL(t *testing.T) {
 	t.Cleanup(func() { doi.SetHTTPClient(&http.Client{}) })
 
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--doi", "10.5555/abc"); err != nil {
 		t.Fatalf("add article: %v", err)
 	}
@@ -323,7 +323,7 @@ func TestLookupArticleByURL_OGTags(t *testing.T) {
 
 	commitAndPush = func(paths []string, msg string) error { return nil }
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--url", "https://example.com/post"); err != nil {
 		t.Fatalf("add article by url: %v", err)
 	}
@@ -358,7 +358,7 @@ func TestLookupArticleByURL_PDF(t *testing.T) {
 
 	commitAndPush = func(paths []string, msg string) error { return nil }
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--url", "https://example.com/sample.pdf"); err != nil {
 		t.Fatalf("add article by pdf url: %v", err)
 	}
@@ -396,7 +396,7 @@ func TestLookupRFC_Basic(t *testing.T) {
 
 	commitAndPush = func(paths []string, msg string) error { return nil }
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "rfc", "rfc5424"); err != nil {
 		t.Fatalf("add rfc: %v", err)
 	}
@@ -469,7 +469,7 @@ func TestLookupArticleByMetadata_Minimal(t *testing.T) {
 	commitAndPush = func(paths []string, msg string) error { return nil }
 
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "article", "--title", "X", "--author", "Doe, J.", "--journal", "J", "--date", "2023-01-01"); err != nil {
 		t.Fatalf("add article by metadata: %v", err)
 	}
@@ -494,7 +494,7 @@ func TestLookupBookByISBN_OpenLibrary(t *testing.T) {
 	t.Cleanup(func() { openlibrary.SetHTTPClient(&http.Client{}) })
 
 	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "Name", "--author", "Smith, J.", "--isbn", "123", "--keywords", "k1,k2"); err != nil {
 		t.Fatalf("add book by isbn: %v", err)
 	}
@@ -554,11 +554,13 @@ func TestIndexOutputWriteError(t *testing.T) {
 }
 
 func TestLookupSite_MissingArg(t *testing.T) {
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
-	if _, err := execCmd(rootCmd, "add", "site"); err == nil {
-		t.Fatalf("expected error for missing site arg")
-	}
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
+    // Provide empty stdin so manualAdd immediately hits EOF and errors
+    rootCmd.SetIn(strings.NewReader(""))
+    if _, err := execCmd(rootCmd, "add", "site"); err == nil {
+        t.Fatalf("expected error for missing site arg")
+    }
 }
 
 func TestLookupBook_ComputesSlug(t *testing.T) {
@@ -567,8 +569,8 @@ func TestLookupBook_ComputesSlug(t *testing.T) {
 	t.Cleanup(func() { _ = os.Chdir(old) })
 	_ = os.Chdir(dir)
 	commitAndPush = func(paths []string, msg string) error { return nil }
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newLookupCmd())
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
 	if _, err := execCmd(rootCmd, "add", "book", "--name", "Hello World"); err != nil {
 		t.Fatalf("add book: %v", err)
 	}
@@ -611,12 +613,12 @@ func TestDoLookup_WriteEntryError(t *testing.T) {
 	if err := os.WriteFile("data/citations", []byte("not a dir"), 0o644); err != nil {
 		t.Fatal(err)
 	}
-	if err := doLookup(context.Background(), "website", map[string]string{"url": "https://x", "title": "T"}); err == nil {
+    if err := doAdd(context.Background(), "website", map[string]string{"url": "https://x", "title": "T"}); err == nil {
 		t.Fatalf("expected error when write entry fails")
 	}
 }
 
-// Compile-time ensure doLookup uses context, no-op just to silence unused in coverage.
+// Compile-time ensure doAdd uses context, no-op just to silence unused in coverage.
 var _ = context.Background()
 
 // --- Summarize command tests ---

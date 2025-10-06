@@ -26,7 +26,7 @@ var (
 	commitAndPush = gitutil.CommitAndPush
 )
 
-func newLookupCmd() *cobra.Command {
+func newAddCmd() *cobra.Command {
     cmd := &cobra.Command{
         Use:   "add",
         Short: "Add annotated citations via OpenLibrary/DOI (no OpenAI)",
@@ -41,7 +41,7 @@ func newLookupCmd() *cobra.Command {
         RunE: func(cmd *cobra.Command, args []string) error {
             if len(args) >= 1 && strings.TrimSpace(args[0]) != "" {
                 url := args[0]
-                return doLookupWithKeywords(cmd.Context(), "website", map[string]string{"url": url}, parseKeywordsCSV(siteKeywords))
+                return doAddWithKeywords(cmd.Context(), "website", map[string]string{"url": url}, parseKeywordsCSV(siteKeywords))
             }
             // Manual entry when no URL provided
             return manualAdd(cmd, "website", parseKeywordsCSV(siteKeywords))
@@ -88,7 +88,7 @@ func newLookupCmd() *cobra.Command {
             if bookName == "" && bookAuthor == "" {
                 return manualAdd(cmd, "book", parseKeywordsCSV(bookKeywords))
             }
-            return doLookupWithKeywords(cmd.Context(), "book", hints, parseKeywordsCSV(bookKeywords))
+            return doAddWithKeywords(cmd.Context(), "book", hints, parseKeywordsCSV(bookKeywords))
         },
     }
 	book.Flags().StringVar(&bookName, "name", "", "Book title")
@@ -108,7 +108,7 @@ func newLookupCmd() *cobra.Command {
                 if movieDate != "" {
                     hints["date"] = movieDate
                 }
-                return doLookupWithKeywords(cmd.Context(), "movie", hints, parseKeywordsCSV(movieKeywords))
+                return doAddWithKeywords(cmd.Context(), "movie", hints, parseKeywordsCSV(movieKeywords))
             }
             return manualAdd(cmd, "movie", parseKeywordsCSV(movieKeywords))
         },
@@ -186,7 +186,7 @@ func newLookupCmd() *cobra.Command {
             if len(hints) == 0 {
                 return manualAdd(cmd, "article", parseKeywordsCSV(artKeywords))
             }
-            return doLookupWithKeywords(cmd.Context(), "article", hints, parseKeywordsCSV(artKeywords))
+            return doAddWithKeywords(cmd.Context(), "article", hints, parseKeywordsCSV(artKeywords))
         },
     }
 	article.Flags().StringVar(&artDOI, "doi", "", "DOI of the article")
@@ -231,8 +231,8 @@ func newLookupCmd() *cobra.Command {
     return cmd
 }
 
-func doLookup(ctx context.Context, typ string, hints map[string]string) error {
-	return doLookupWithKeywords(ctx, typ, hints, nil)
+func doAdd(ctx context.Context, typ string, hints map[string]string) error {
+    return doAddWithKeywords(ctx, typ, hints, nil)
 }
 
 func parseKeywordsCSV(s string) []string {
@@ -253,26 +253,26 @@ func parseKeywordsCSV(s string) []string {
 	return out
 }
 
-func doLookupWithKeywords(ctx context.Context, typ string, hints map[string]string, extraKeywords []string) error {
-	var e schema.Entry
-	e.Type = typ
-	title := strings.TrimSpace(hints["title"])
-	switch typ {
-	case "website":
-		if title == "" {
-			if u := strings.TrimSpace(hints["url"]); u != "" {
-				if pu, err := url.Parse(u); err == nil && pu.Host != "" {
-					title = pu.Host
-				} else {
-					title = u
-				}
-			}
-		}
-	default:
-		if title == "" {
-			return fmt.Errorf("title is required for %s lookups without external metadata", typ)
-		}
-	}
+func doAddWithKeywords(ctx context.Context, typ string, hints map[string]string, extraKeywords []string) error {
+    var e schema.Entry
+    e.Type = typ
+    title := strings.TrimSpace(hints["title"])
+    switch typ {
+    case "website":
+        if title == "" {
+            if u := strings.TrimSpace(hints["url"]); u != "" {
+                if pu, err := url.Parse(u); err == nil && pu.Host != "" {
+                    title = pu.Host
+                } else {
+                    title = u
+                }
+            }
+        }
+    default:
+        if title == "" {
+            return fmt.Errorf("title is required for %s adds without external metadata", typ)
+        }
+    }
 	e.APA7.Title = title
 	if v := strings.TrimSpace(hints["journal"]); v != "" {
 		e.APA7.Journal = v
