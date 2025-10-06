@@ -1,0 +1,17 @@
+id: 815bed59-af63-4b37-8da6-d1484c621362
+type: article
+apa7:
+    authors:
+        - family: Murtagh
+          given: Jack
+    year: 2023
+    date: "2023-05-08"
+    title: What Is Benford's Law? Why This Unexpected Pattern of Numbers Is Everywhere
+    container_title: Scientific American
+    publisher: Scientific American
+    url: https://www.scientificamerican.com/article/what-is-benfords-law-why-this-unexpected-pattern-of-numbers-is-everywhere/
+    accessed: "2025-10-06"
+annotation:
+    summary: "Benford’s Law states that in many naturally occurring collections of numbers—such as financial data or \nscientific measurements—the leading digit is more likely to be small (1, 2, or 3) than large. Formally, the \nprobability that the first digit is \\(d\\) is given by \\(\\log_{10}(1 + \\frac{1}{d})\\). This pattern often \nemerges in data sets that span several orders of magnitude, and it’s frequently used to detect anomalies or \npotential fraud in accounting and other numeric data.\n"
+    keywords:
+        - article

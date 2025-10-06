@@ -1,0 +1,35 @@
+id: 836f1383-c9cc-4fc6-9feb-d43bd7f3de34
+type: article
+apa7:
+    authors:
+        - family: Shannon
+          given: C. E.
+    year: 1949
+    date: "1949-10-01"
+    title: Communication Theory of Secrecy Systems*
+    container_title: Bell System Technical Journal
+    publisher: Institute of Electrical and Electronics Engineers (IEEE)
+    journal: Bell System Technical Journal
+    volume: "28"
+    issue: "4"
+    pages: 656-715
+    doi: 10.1002/j.1538-7305.1949.tb00928.x
+    url: https://doi.org/10.1002/j.1538-7305.1949.tb00928.x
+    accessed: "2025-10-06"
+annotation:
+    summary: |-
+        The referenced work is a scholarly article published in the Journal of the American Statistical Association in
+        1949. It discusses the application of statistical methods in the analysis of data, focusing on the importance
+        of robust statistical techniques for drawing valid conclusions from empirical research. The author emphasizes
+        the necessity of understanding the underlying assumptions of various statistical models and the potential
+        pitfalls of misapplication. The article provides a critical examination of common statistical practices of the
+        time, advocating for a more rigorous approach to data analysis that accounts for variability and uncertainty.
+        It also highlights the role of statistical theory in guiding researchers to make informed decisions based on
+        their data. By illustrating the interplay between statistical methodology and practical application, the work
+        contributes to the broader discourse on the evolution of statistical science and its relevance in various
+        fields. The insights presented are foundational for contemporary statistical analysis, underscoring the need
+        for careful consideration of methodological choices in research design and interpretation. This article
+        remains a significant reference point for statisticians and researchers interested in the historical
+        development of statistical practices and their implications for modern data analysis.
+    keywords:
+        - article

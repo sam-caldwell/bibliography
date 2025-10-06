@@ -1,0 +1,18 @@
+id: f366773e-3e9a-4403-bfd0-63236f01dfa7
+type: book
+apa7:
+    authors:
+        - family: Aho
+          given: A. V.
+    year: 2006
+    title: 'Compilers: Principles, Techniques, and Tools'
+    edition: 2nd
+    publisher: Addison-Wesley
+    isbn: 978-0321486813
+annotation:
+    summary: This book provides a comprehensive introduction to the theory and practice of compiler design. It covers fundamental concepts such as lexical analysis, syntax analysis, semantic analysis, optimization, and code generation.
+    keywords:
+        - compiler design
+        - programming languages
+        - syntax analysis
+        - code optimization

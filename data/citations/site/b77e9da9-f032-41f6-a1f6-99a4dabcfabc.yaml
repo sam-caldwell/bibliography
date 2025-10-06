@@ -1,0 +1,17 @@
+id: b77e9da9-f032-41f6-a1f6-99a4dabcfabc
+type: website
+apa7:
+    authors:
+        - family: Unknown
+    year: 2024
+    date: "2024-06-01"
+    title: 'Go By Example: Enums'
+    container_title: Go By Example
+    url: https://gobyexample.com/enums
+    accessed: "2024-06-01"
+annotation:
+    summary: This webpage provides an example-driven introduction to enums in the Go programming language, demonstrating how to define and use enumerated constants effectively.
+    keywords:
+        - Go programming
+        - enums
+        - programming examples

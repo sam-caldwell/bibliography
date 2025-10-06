@@ -1,0 +1,25 @@
+id: b330fa47-316f-4fd4-bb2a-e65b110ec04b
+type: article
+apa7:
+    authors:
+        - family: VAN RAAMSDONK
+          given: M.
+    year: 2010
+    date: "2010-12-01"
+    title: BUILDING UP SPACE–TIME WITH QUANTUM ENTANGLEMENT
+    container_title: International Journal of Modern Physics D
+    publisher: World Scientific Pub Co Pte Lt
+    journal: International Journal of Modern Physics D
+    volume: "19"
+    issue: "14"
+    pages: 2429-2435
+    doi: 10.1142/s0218271810018529
+    url: https://doi.org/10.1142/s0218271810018529
+    accessed: "2025-10-06"
+annotation:
+    summary: "In this essay, we argue that the emergence of classically connected space–times is intimately related to the \nquantum entanglement of degrees of freedom in a nonperturbative description of quantum gravity. Disentangling \nthe degrees of freedom associated with two regions of space–time results in these regions pulling apart and \npinching off from each other in a way that can be quantified by standard measures of entanglement.\n"
+    keywords:
+        - entanglement
+        - quantum computing
+        - quantum mechanics
+        - space-time

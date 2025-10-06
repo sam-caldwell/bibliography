@@ -1,0 +1,24 @@
+id: 17e0dfcc-786a-4195-8493-4eeae3357973
+type: rfc
+apa7:
+    authors:
+        - family: Matthews
+          given: P.
+        - family: Rosenberg
+          given: J.
+        - family: Mahy
+          given: R.
+    year: 2010
+    date: "2010-04-01"
+    title: 'Traversal Using Relays around NAT (TURN): Relay Extensions to Session Traversal Utilities for NAT (STUN)'
+    container_title: RFC 5766
+    publisher: RFC Editor
+    doi: 10.17487/RFC5766
+    url: https://www.rfc-editor.org/info/rfc5766
+    bibtex_url: https://datatracker.ietf.org/doc/rfc5766/bibtex/
+    accessed: "2025-10-06"
+annotation:
+    summary: "If a host is located behind a NAT, then in certain situations it can be impossible for that host to \ncommunicate directly with other hosts (peers). In these situations, it is necessary for the host to use the \nservices of an intermediate node that acts as a communication relay. This specification defines a protocol, \ncalled TURN (Traversal Using Relays around NAT), that allows the host to control the operation of the relay \nand to exchange packets with its peers using the relay. TURN differs from some other relay control protocols \nin that it allows a client to communicate with multiple peers using a single relay address.\n"
+    keywords:
+        - rfc
+        - ietf

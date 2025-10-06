@@ -1,0 +1,31 @@
+id: fdceb7f2-824f-4e4d-80ce-b886dde17912
+type: book
+apa7:
+    authors:
+        - family: Scott
+          given: M. L.
+    year: 2015
+    title: Programming Language Pragmatics
+    publisher: Elsevier Science & Technology Books
+    isbn: "9780124104099"
+    url: https://openlibrary.org/books/OL28567244M/Programming_Language_Pragmatics
+    accessed: "2025-10-05"
+annotation:
+    summary: "\"This book addresses the fundamental principles at work in the most important contemporary languages, \nhighlights the critical relationship between language design and language implementation, and devotes special \nattention to issues of importance to the expert programmer.\"--BOOK JACKET."
+    keywords:
+        - llenguatges de programacio .
+        - llenguatges de programació
+        - компьютеры//программирование
+        - llenguatges de programació
+        - programming languages (electronic computers)
+        - general
+        - interactive & multimedia
+        - computer science
+        - professional, career & trade -> computer science -> general
+        - professional, career & trade -> computer science -> system administration
+        - professional, career & trade -> computer science -> multimedia
+        - professional, career & trade -> computer science -> programming languages (jr/sr)
+        - professional, career & trade -> engineering -> software engineering
+        - professional, career & trade -> computer science -> general interest
+        - professional, career & trade -> computer science -> computer science
+        - programming languages (electronic computers)

@@ -1,0 +1,25 @@
+id: cd9daf1d-1623-4a2f-a00a-0aeb506c54aa
+type: book
+apa7:
+    authors:
+        - family: Cormen
+          given: T. H.
+        - family: Leiserson
+          given: C. E.
+        - family: Rivest
+          given: R. L.
+        - family: Stein
+          given: C.
+    year: 2009
+    title: Introduction to Algorithms
+    edition: 3rd
+    publisher: The MIT Press
+    publisher_location: Cambridge, MA
+    isbn: "9780262011532"
+annotation:
+    summary: Introduction to Algorithms is a comprehensive textbook covering a broad range of algorithms in depth, including their design, analysis, and implementation. It is widely used in computer science education and professional reference.
+    keywords:
+        - algorithms
+        - computer science
+        - data structures
+        - algorithm design

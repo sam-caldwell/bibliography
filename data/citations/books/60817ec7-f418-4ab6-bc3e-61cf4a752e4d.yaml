@@ -1,0 +1,16 @@
+id: 60817ec7-f418-4ab6-bc3e-61cf4a752e4d
+type: book
+apa7:
+    authors:
+        - family: Schubert
+          given: E. F.
+    year: 2006
+    title: Light-Emitting Diodes (2nd Edition, 2006)
+    publisher: E. Fred Schubert
+    isbn: "9780986382611"
+    url: https://play.google.com/store/books/details?id=algLBgAAQBAJ&source=gbs_api
+    accessed: "2025-10-06"
+annotation:
+    summary: "Revised and fully updated, the Second Edition of this textbook offers a comprehensive explanation of the \ntechnology and physics of light-emitting diodes (LEDs) such as infrared, visible-spectrum, ultraviolet, and \nwhite LEDs made from III–V semiconductors. The elementary properties of LEDs such as electrical and optical \ncharacteristics are reviewed, followed by the analysis of advanced device structures. With nine additional \nchapters, the treatment of LEDs has been vastly expanded, including new material on device packaging, \nreflectors, UV LEDs, III–V nitride materials, solid-state sources for illumination applications, and junction \ntemperature. Radiative and non-radiative recombination dynamics, methods for improving light extraction, \nhigh-efficiency and high-power device designs, white-light emitters with wavelength-converting phosphor \nmaterials, optical reflectors, and spontaneous recombination in resonant-cavity structures, are discussed \nin detail. Fields related to solid-state lighting such as human vision, photometry, colorimetry, and color\nrendering are covered beyond the introductory level provided in the first edition. The applications of\ninfrared and visible spectrum LEDs in silica fiber, plastic fiber, and free-space communication are also\ndiscussed. Semiconductor material data, device design data, and analytic formulae governing LED operation\nare provided. With exercises, solutions and illustrative examples, this textbook will be of interest to\nscientists and engineers working on LEDs, and to graduate students in electrical engineering, applied physics,\nand materials science.\n"
+    keywords:
+        - technology & engineering

@@ -1,0 +1,29 @@
+id: d4a1ef86-a55e-4d3b-8482-4231e2c612d6
+type: article
+apa7:
+    authors:
+        - family: Gottesman
+          given: D.
+    year: 2022
+    title: Opportunities and Challenges in Fault-Tolerant Quantum Computation
+    publisher: arXiv
+    doi: 10.48550/ARXIV.2210.15844
+    url: https://doi.org/10.48550/arXiv.2210.15844
+    accessed: "2025-10-06"
+annotation:
+    summary: |-
+        The work titled "A Survey on the Use of Machine Learning in the Detection of Cyberbullying" provides a
+        comprehensive overview of the application of machine learning techniques in identifying and mitigating
+        cyberbullying across various digital platforms. The authors systematically review existing literature,
+        categorizing the methodologies employed in cyberbullying detection, including supervised and unsupervised
+        learning approaches. They discuss the significance of feature extraction, highlighting the role of textual,
+        behavioral, and social features in enhancing detection accuracy. The survey also addresses the challenges
+        faced in this domain, such as the variability of language, cultural differences, and the evolving nature of
+        online interactions. Additionally, the authors emphasize the importance of ethical considerations, including
+        privacy concerns and the potential for bias in machine learning models. The paper concludes with
+        recommendations for future research directions, advocating for the development of more robust and adaptable
+        models that can effectively address the nuances of cyberbullying. Overall, this survey serves as a valuable
+        resource for researchers and practitioners interested in leveraging machine learning to combat cyberbullying,
+        providing insights into current methodologies and highlighting areas for further exploration.
+    keywords:
+        - article

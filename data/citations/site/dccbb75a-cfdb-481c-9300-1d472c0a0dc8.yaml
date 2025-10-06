@@ -1,0 +1,11 @@
+id: dccbb75a-cfdb-481c-9300-1d472c0a0dc8
+type: website
+apa7:
+    authors: National Automated Clearing House Association
+    title: ACH File Overview | ACH Guide for Developers
+    url: https://achdevguide.nacha.org/ach-file-overview
+    accessed: "2025-10-05"
+annotation:
+    summary: ACH clearing house information
+    keywords:
+        - website

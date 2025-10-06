@@ -1,0 +1,32 @@
+id: 415a4e38-cfe6-4897-85dc-352560ee72f7
+type: book
+apa7:
+    authors:
+        - family: Raschka
+          given: S.
+    year: 2024
+    title: Build a Large Language Model (from Scratch)
+    publisher: Manning Publications Co. LLC
+    isbn: "9781633437166"
+    url: https://openlibrary.org/books/OL52234223M/Build_a_Large_Language_Model_(from_Scratch)
+    accessed: "2025-10-05"
+annotation:
+    summary: |-
+        "Build a Large Language Model (from Scratch)" is a comprehensive guide that explores the intricacies of
+        developing large language models (LLMs) using foundational principles of machine learning and natural language
+        processing. The work emphasizes the importance of understanding the underlying architecture of LLMs, including
+        transformer models, attention mechanisms, and tokenization processes. It provides a step-by-step approach to
+        constructing a language model, starting from data collection and preprocessing to training and fine-tuning the
+        model on specific tasks. The author discusses various challenges encountered during the development process,
+        such as computational resource requirements, data quality, and model evaluation metrics. Additionally, the
+        book highlights the ethical considerations and potential biases inherent in language models, urging
+        practitioners to adopt responsible AI practices. Practical examples and code snippets are included to
+        facilitate hands-on learning, making the content accessible to both beginners and experienced practitioners in
+        the field. Overall, this work serves as a valuable resource for those interested in the technical aspects of
+        LLMs and their applications in real-world scenarios, fostering a deeper understanding of the capabilities and
+        limitations of these advanced AI systems.
+    keywords:
+        - large language models
+        - llm
+        - AI
+        - programming

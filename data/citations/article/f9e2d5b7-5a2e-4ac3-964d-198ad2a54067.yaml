@@ -1,0 +1,52 @@
+id: f9e2d5b7-5a2e-4ac3-964d-198ad2a54067
+type: article
+apa7:
+    authors:
+        - family: Li
+          given: W.
+        - family: Yin
+          given: Z.
+        - family: Li
+          given: X.
+        - family: Ma
+          given: D.
+        - family: Yi
+          given: S.
+        - family: Zhang
+          given: Z.
+        - family: Zou
+          given: C.
+        - family: Bu
+          given: K.
+        - family: Dai
+          given: M.
+        - family: Yue
+          given: J.
+        - family: Chen
+          given: Y.
+        - family: Zhang
+          given: X.
+        - family: Zhang
+          given: S.
+    year: 2024
+    date: "2024-07-23"
+    title: A hybrid quantum computing pipeline for real world drug discovery
+    container_title: Scientific Reports
+    publisher: Springer Science and Business Media LLC
+    journal: Scientific Reports
+    volume: "14"
+    issue: "1"
+    doi: 10.1038/s41598-024-67897-8
+    url: https://doi.org/10.1038/s41598-024-67897-8
+    accessed: "2025-10-06"
+annotation:
+    summary: |-
+        I am unable to access external content, including specific URLs. However, I can help you summarize or analyze
+        a work if you provide me with its main points, findings, or any specific sections you would like to focus on.
+        Please share the relevant details, and I will assist you in creating a concise summary suitable for an
+        annotated bibliography.
+    keywords:
+        - quantum mechanics
+        - quantum computing
+        - computer science
+        - pharmaceuticals

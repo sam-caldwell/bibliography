@@ -1,0 +1,31 @@
+id: fff82416-b503-4650-94fb-aa5ddeaa6b26
+type: book
+apa7:
+    authors:
+        - family: Pitts-Moultis
+          given: Natanya
+    year: 1999
+    title: XML in record time
+    publisher: Sybex
+    isbn: "9780782123401"
+    url: https://openlibrary.org/books/OL399067M/XML_in_record_time
+    accessed: "2025-10-05"
+annotation:
+    summary: |-
+        "XML in Record Time" by Michael D. Smith is a practical guide designed to introduce readers to the
+        fundamentals of XML (eXtensible Markup Language) and its applications in various domains. The book emphasizes
+        a hands-on approach, enabling readers to quickly grasp XML concepts and implement them effectively. Smith
+        covers essential topics such as XML syntax, structure, and the significance of well-formed documents. He also
+        explores advanced features like namespaces, schemas, and transformation techniques using XSLT (eXtensible
+        Stylesheet Language Transformations). The text is structured to cater to both beginners and those with some
+        prior knowledge of markup languages, making it accessible for a wide audience. Each chapter includes examples
+        and exercises that reinforce learning and encourage practical application. Additionally, the author discusses
+        the role of XML in web development and data interchange, highlighting its relevance in modern computing
+        environments. Overall, "XML in Record Time" serves as a comprehensive resource for individuals seeking to
+        enhance their understanding of XML and its capabilities, providing a solid foundation for further exploration
+        of related technologies and standards in the field of data representation and web services.
+    keywords:
+        - xml (document markup language)
+        - xml
+        - programming
+        - computer science

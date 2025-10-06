@@ -1,0 +1,23 @@
+id: c34d6ac2-1c48-403e-95db-e788fb54040d
+type: book
+apa7:
+    authors:
+        - family: Foley
+          given: J. D.
+        - family: Dam
+          given: A. V.
+        - family: Feiner
+          given: S. K.
+        - family: Hughes
+          given: J. F.
+    year: 1995
+    title: Computer Graphics
+    publisher: Addison-Wesley Professional
+    isbn: "9780201848403"
+    url: https://openlibrary.org/books/OL7409090M/Computer_Graphics
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Computer Graphics (Addison-Wesley Professional, 1995) from OpenLibrary.
+    keywords:
+        - computer graphics
+        - gráficas por computadoras

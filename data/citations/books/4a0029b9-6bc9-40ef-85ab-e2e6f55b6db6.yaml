@@ -1,0 +1,16 @@
+id: 4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6
+type: book
+apa7:
+    authors:
+        - family: Scherer
+          given: W.
+    year: 2019
+    title: Mathematics of Quantum Computing
+    publisher: Springer Nature
+    isbn: "9783030123581"
+    url: https://play.google.com/store/books/details?id=liy-DwAAQBAJ&source=gbs_api
+    accessed: "2025-10-06"
+annotation:
+    summary: "This textbook presents the elementary aspects of quantum computing in a mathematical form. It is intended as \ncore or supplementary reading for physicists, mathematicians, and computer scientists taking a first course on\nquantum computing. It starts by introducing the basic mathematics required for quantum mechanics, and then \ngoes on to present, in detail, the notions of quantum mechanics, entanglement, quantum gates, and quantum \nalgorithms, of which Shor's factorisation and Grover's search algorithm are discussed extensively. In addition,\nthe algorithms for the Abelian Hidden Subgroup and Discrete Logarithm problems are presented and the latter is\nused to show how the Bitcoin digital signature may be compromised. It also addresses the problem of error \ncorrection as well as giving a detailed exposition of adiabatic quantum computing. The book contains around \n140 exercises for the student, covering all of the topics treated, together with an appendix of solutions.\n"
+    keywords:
+        - computers

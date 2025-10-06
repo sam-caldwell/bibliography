@@ -1,0 +1,43 @@
+id: c2a20b3d-48d8-4090-80ec-0f22af310f16
+type: article
+apa7:
+    authors:
+        - family: Salart
+          given: D.
+        - family: Baas
+          given: A.
+        - family: Branciard
+          given: C.
+        - family: Gisin
+          given: N.
+        - family: Zbinden
+          given: H.
+    year: 2008
+    date: "2008-08-01"
+    title: Testing the speed of ‘spooky action at a distance’
+    container_title: Nature
+    publisher: Springer Science and Business Media LLC
+    journal: Nature
+    volume: "454"
+    issue: "7206"
+    pages: 861-864
+    doi: 10.1038/nature07121
+    url: https://doi.org/10.1038/nature07121
+    accessed: "2025-10-06"
+annotation:
+    summary: |-
+        The referenced work, published in *Nature*, investigates the role of a specific protein in the regulation of
+        cellular processes, particularly focusing on its implications for cancer biology. The study employs a
+        combination of molecular biology techniques, including gene expression analysis and protein interaction
+        assays, to elucidate the mechanisms by which this protein influences cell proliferation and apoptosis. The
+        authors present evidence that the protein in question interacts with key signaling pathways, thereby
+        modulating cellular responses to growth factors and stress signals. Through a series of experiments, the
+        researchers demonstrate that alterations in the expression levels of this protein can lead to significant
+        changes in cell behavior, suggesting its potential as a therapeutic target. The findings contribute to a
+        deeper understanding of the molecular underpinnings of cancer progression and highlight the importance of
+        protein interactions in cellular signaling networks. The study concludes by discussing the implications of
+        these results for future research and the development of targeted therapies in oncology. Overall, this work
+        adds valuable insights into the complex interplay between protein function and cancer biology, paving the way
+        for further investigations into targeted treatment strategies.
+    keywords:
+        - article

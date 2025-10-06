@@ -1,0 +1,17 @@
+id: 27e6f53b-7f50-43c3-b1cc-f984dee61425
+type: article
+apa7:
+    authors:
+        - family: Higgins
+          given: K. J.
+    year: 2020
+    date: "2020-08-05"
+    title: Pen Testers Who Got Arrested Doing Their Jobs Tell All
+    container_title: Dark Reading
+    publisher: Dark Reading
+    url: https://www.darkreading.com/vulnerabilities-threats/pen-testers-who-got-arrested-doing-their-jobs-tell-all
+    accessed: "2025-10-06"
+annotation:
+    summary: "Coalfire's Gary De Mercurio and Justin Wynn share the details of their physical penetration-testing \nengagement gone wrong, as well as recommendations for protecting all red teamers.\n"
+    keywords:
+        - article

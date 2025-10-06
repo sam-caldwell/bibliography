@@ -1,0 +1,20 @@
+id: 53febebe-038b-4b4f-be45-4b4ca125c4ac
+type: article
+apa7:
+    authors:
+        - family: Omer
+          given: Bernhard
+    year: 2009
+    date: D:20090902
+    title: Quantum Programming in QCL
+    container_title: tph.tuwien.ac.at
+    publisher: Vienna University of Technology Institute for Theoretical Physics
+    url: http://tph.tuwien.ac.at/~oemer/doc/quprog.pdf
+    accessed: "2025-10-06"
+annotation:
+    summary: "Bernhard Ömer’s “Quantum Programming in QCL” introduces QCL, an imperative, C-like language that unifies \nclassical control flow with quantum operations to make algorithm design and simulation practical on \nconventional hardware. The work motivates programming-language abstractions for quantum computing—data \ntypes, procedures, scope, and memory management—so programmers can express high-level intent while the \ninterpreter handles reversible quantum semantics under the hood. Core constructs include quantum registers \n(qureg) and two operator kinds: general unitary operators and reversible pseudo-classical qufuncts. QCL \nsupports automatic inverse execution, Bennett-style scratch-space management, local quantum variables via a \n“quheap,” conditional application of quantum operators, and convenient register slicing/concatenation. Paired \nwith a C++ simulator (libqc), QCL exposes introspection and debugging aids (e.g., dump) that reveal machine \nstate during simulation—useful for pedagogy and verification despite quantum states being unobservable in \nhardware. The thesis demonstrates end-to-end algorithm construction—combining classical scaffolding with \nquantum kernels—and provides syntax references and worked examples (e.g., modular arithmetic and Shor’s \nfactoring routine) to illustrate design patterns for reversible subroutines, ancilla reuse, and clean \nuncomputation. Overall, the document frames quantum programming as disciplined software engineering, showing \nhow familiar procedural techniques can systematically bridge abstract Hilbert-space math and concrete \ngate-level implementations\n"
+    keywords:
+        - quantum mechanics
+        - quantum computing
+        - computer science
+        - programming

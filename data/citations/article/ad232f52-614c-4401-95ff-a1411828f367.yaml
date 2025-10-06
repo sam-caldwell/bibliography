@@ -1,0 +1,30 @@
+id: ad232f52-614c-4401-95ff-a1411828f367
+type: article
+apa7:
+    authors:
+        - family: Amir
+          given: Y.
+        - family: Wool
+          given: A.
+    year: 1998
+    date: "1998-03-01"
+    title: 'Optimal availability quorum systems: Theory and practice'
+    container_title: Information Processing Letters
+    publisher: Elsevier BV
+    journal: Information Processing Letters
+    volume: "65"
+    issue: "5"
+    pages: 223-228
+    doi: 10.1016/s0020-0190(98)00017-9
+    url: https://doi.org/10.1016/s0020-0190(98)00017-9
+    accessed: "2025-10-05"
+annotation:
+    summary: |-
+        I am unable to access external content, including specific URLs or documents. However, if you provide me with
+        details about the work, such as its title, authors, main arguments, and conclusions, I can help you create a
+        summary suitable for an annotated bibliography.
+    keywords:
+        - computer science
+        - programming
+        - quorum
+        - distributed systems

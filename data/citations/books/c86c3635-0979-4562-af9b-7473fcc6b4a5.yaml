@@ -1,0 +1,38 @@
+id: c86c3635-0979-4562-af9b-7473fcc6b4a5
+type: book
+apa7:
+    authors:
+        - family: Mazidi
+          given: M. A.
+        - family: Jan
+          given: K. U.
+    year: 1995
+    title: Design and interfacing of the IBM PC, PS, and compatible
+    publisher: Prentice Hall
+    isbn: 978-0130985675
+    url: https://openlibrary.org/books/OL1104139M/Desi_gn_and_interfacing_of_the_IBM_PC_PS_and_compatible
+    accessed: "2025-10-05"
+annotation:
+    summary: |-
+        "Design and Interfacing of the IBM PC, PS, and Compatible" is a comprehensive guide that explores the
+        architecture and interfacing of IBM personal computers and their compatible systems. The work delves into the
+        fundamental components of PC architecture, including the microprocessor, memory, and input/output systems,
+        providing a detailed understanding of how these elements interact within the system. It emphasizes practical
+        applications, offering insights into hardware design and interfacing techniques that are essential for
+        engineers and technicians working with IBM-compatible computers. The book covers various topics, such as the
+        design of peripheral devices, interfacing techniques, and troubleshooting methods, making it a valuable
+        resource for those involved in computer engineering and hardware development. Additionally, it includes
+        diagrams and examples that illustrate complex concepts, enhancing the reader's comprehension of the material.
+        The author aims to bridge the gap between theoretical knowledge and practical application, equipping readers
+        with the skills necessary to design and interface hardware effectively. Overall, this work serves as an
+        essential reference for students and professionals seeking to deepen their understanding of IBM PC
+        architecture and its compatible systems.
+    keywords:
+        - ibm compatible computers
+        - intel 80x86 series microprocessors
+        - ibm microcomputers
+        - computer interfaces
+        - ibm-compatible computers
+        - intel 80x86 series microprocessors.
+        - ibm microcomputers.
+        - ibm compatible computers.

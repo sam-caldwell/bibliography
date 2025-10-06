@@ -1,0 +1,18 @@
+id: 5a38ddf9-dfcd-4fa5-8470-cc483445783d
+type: book
+apa7:
+    authors:
+        - family: Andriesse
+          given: D.
+    year: 2018
+    title: Practical Binary Analysis
+    publisher: No Starch Press
+    isbn: "9781593279127"
+    url: https://openlibrary.org/books/OL27354069M/Practical_Binary_Analysis
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Practical Binary Analysis (No Starch Press, 2018) from OpenLibrary.
+    keywords:
+        - linux (computer operating system)
+        - binary system (mathematics)
+        - assembler language (computer program language)

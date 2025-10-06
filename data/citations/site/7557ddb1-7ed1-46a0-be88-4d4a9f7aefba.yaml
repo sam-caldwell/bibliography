@@ -1,0 +1,24 @@
+id: 7557ddb1-7ed1-46a0-be88-4d4a9f7aefba
+type: website
+apa7:
+    authors: []
+    title: aws.amazon.com
+    url: https://aws.amazon.com/braket/quantum-computers/ionq/
+    accessed: "2025-10-06"
+annotation:
+    summary: |-
+        The webpage from Amazon Web Services (AWS) provides an overview of IonQ's quantum computing technology,
+        highlighting its integration with AWS Braket, a fully managed service that facilitates quantum computing
+        experimentation. IonQ specializes in trapped ion quantum computers, which utilize ions confined in
+        electromagnetic fields to perform quantum computations. The page details the advantages of IonQ's systems,
+        including their ability to achieve high fidelity in quantum operations and scalability, making them suitable
+        for a range of applications from optimization problems to machine learning. The content emphasizes the
+        user-friendly nature of AWS Braket, which allows researchers and developers to access IonQ's quantum computers
+        through a cloud-based platform. This accessibility is positioned as a significant benefit for those looking to
+        explore quantum algorithms without the need for extensive hardware investment. Additionally, the page outlines
+        the potential use cases for IonQ's technology, including advancements in drug discovery, materials science,
+        and complex system simulations. Overall, the webpage serves as a resource for understanding the capabilities
+        of IonQ's quantum computers and their role within the broader context of quantum computing research and
+        development facilitated by AWS Braket.
+    keywords:
+        - website
