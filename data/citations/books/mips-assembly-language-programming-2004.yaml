@@ -11,7 +11,20 @@ apa7:
     url: https://openlibrary.org/books/OL18188244M/MIPS_assembly_language_programming
     accessed: "2025-10-05"
 annotation:
-    summary: Bibliographic record for MIPS assembly language programming (Pearson/Prentice Hall, 2004) from OpenLibrary.
+    summary: |-
+        "MIPS Assembly Language Programming" serves as a comprehensive introduction to the MIPS assembly language,
+        which is widely used in computer architecture courses. The text is designed for students and professionals
+        seeking to understand the fundamentals of assembly programming and the underlying principles of computer
+        organization. It covers essential topics such as data representation, instruction formats, and the MIPS
+        instruction set architecture. The book emphasizes practical programming skills through numerous examples and
+        exercises, allowing readers to apply theoretical concepts in real-world scenarios. It also discusses the role
+        of assembly language in the context of high-level programming languages, providing insights into how low-level
+        programming interacts with hardware. Key features include detailed explanations of the MIPS pipeline, memory
+        hierarchy, and input/output operations, which are crucial for understanding performance optimization in
+        programming. Additionally, the work includes a variety of programming challenges that encourage critical
+        thinking and problem-solving skills. Overall, "MIPS Assembly Language Programming" is a valuable resource for
+        anyone looking to deepen their understanding of assembly language and its applications in computer science and
+        engineering.
     keywords:
         - mips (computer architecture)
         - computer architecture

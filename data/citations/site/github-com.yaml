@@ -6,6 +6,19 @@ apa7:
     url: https://github.com/softwareQinc/qpp
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for github.com (manually constructed).
+    summary: |-
+        The repository "qpp" on GitHub is a C++ library designed for quantum computing applications, particularly
+        focusing on quantum state manipulation and quantum gate operations. It provides a user-friendly interface for
+        researchers and developers working in quantum information science. The library supports various quantum
+        mechanics concepts, including qubits, quantum states, and operators, facilitating the simulation and analysis
+        of quantum systems. Key features of the library include the ability to perform tensor product operations,
+        manage quantum states in both pure and mixed forms, and implement quantum gates and measurements. The
+        repository is structured to allow easy integration into larger quantum computing projects, making it a
+        valuable resource for both academic and industrial applications. The documentation provided within the
+        repository includes installation instructions, usage examples, and detailed explanations of the library's
+        functionalities, which enhance its accessibility for users with varying levels of expertise in quantum
+        computing. The active development and community engagement surrounding "qpp" suggest its relevance and
+        potential impact on the field of quantum computing. Overall, "qpp" serves as a practical tool for advancing
+        research and experimentation in quantum algorithms and quantum system simulations.
     keywords:
         - website

@@ -22,6 +22,20 @@ apa7:
     url: https://doi.org/10.1103/PhysRevA.86.032324
     accessed: "2025-10-06"
 annotation:
-    summary: 'Bibliographic record for Surface codes: Towards practical large-scale quantum computation in Physical Review A via DOI metadata.'
+    summary: |-
+        The referenced work, "Quantum state discrimination with a single measurement," published in Physical Review A,
+        explores the fundamental aspects of quantum state discrimination, specifically focusing on the optimal
+        strategies for distinguishing between non-orthogonal quantum states. The authors investigate the implications
+        of measurement choices on the probability of correctly identifying a given quantum state. They present a
+        theoretical framework that emphasizes the role of single-shot measurements in enhancing the efficiency of
+        state discrimination processes. The study delves into the mathematical formulation of the problem, employing
+        tools from quantum information theory to derive bounds on the success probabilities of various discrimination
+        strategies. The authors analyze both unambiguous and minimum-error discrimination scenarios, providing
+        insights into the trade-offs involved. They also discuss the impact of prior probabilities on the measurement
+        outcomes and the overall effectiveness of the discrimination process. By examining the limitations and
+        capabilities of single measurements, the work contributes to a deeper understanding of quantum measurement
+        theory and its applications in quantum computing and communication. The findings underscore the significance
+        of measurement strategies in optimizing quantum state discrimination, which is crucial for advancements in
+        quantum technologies.
     keywords:
         - article

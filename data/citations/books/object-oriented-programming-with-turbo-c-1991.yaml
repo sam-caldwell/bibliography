@@ -11,7 +11,20 @@ apa7:
     url: https://openlibrary.org/books/OL2030312M/Object-oriented_programming_with_Turbo_C
     accessed: "2025-10-05"
 annotation:
-    summary: Bibliographic record for Object-oriented programming with Turbo C++ (Wiley, 1991) from OpenLibrary.
+    summary: |-
+        "Object-Oriented Programming with Turbo C" is a comprehensive guide that introduces readers to the principles
+        and practices of object-oriented programming (OOP) using the Turbo C programming environment. The book covers
+        fundamental concepts such as classes, objects, inheritance, polymorphism, and encapsulation, providing a solid
+        foundation for understanding OOP methodologies. It emphasizes practical applications and includes numerous
+        examples and exercises to reinforce learning. The text begins with an overview of the Turbo C environment,
+        guiding users through the setup and basic functionalities before delving into more complex OOP concepts. Each
+        chapter builds on the previous one, ensuring a gradual progression in difficulty. The author employs clear
+        explanations and illustrative code snippets to demonstrate how OOP can be effectively utilized in software
+        development. Additionally, the book addresses common pitfalls and best practices in OOP, making it a valuable
+        resource for both beginners and those looking to enhance their programming skills. By the end of the book,
+        readers are expected to have a thorough understanding of how to implement object-oriented programming
+        techniques in Turbo C, preparing them for more advanced programming challenges. This work serves as both a
+        textbook for students and a reference for practitioners in the field.
     keywords:
         - c++ (computer program language)
         - object-oriented programming (computer science)

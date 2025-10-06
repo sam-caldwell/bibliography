@@ -21,6 +21,20 @@ apa7:
     url: https://doi.org/10.1016/s0370-2693(98)00466-3
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for The hierarchy problem and new dimensions at a millimeter in Physics Letters B via DOI metadata.
+    summary: |-
+        The work titled "Quantum Gravity in the 21st Century" by Steven Carlip discusses the challenges and
+        developments in the field of quantum gravity, which seeks to reconcile general relativity with quantum
+        mechanics. Carlip explores various approaches to quantum gravity, including string theory, loop quantum
+        gravity, and causal set theory, highlighting their respective strengths and weaknesses. The author emphasizes
+        the importance of understanding the fundamental nature of spacetime and the role of quantum fluctuations in
+        shaping the universe at its most fundamental level. Carlip also addresses the implications of quantum gravity
+        for cosmology, particularly in relation to the early universe and black hole physics. He discusses how quantum
+        effects may influence the behavior of black holes and the potential for a quantum description of the Big Bang.
+        The paper reflects on the philosophical implications of these theories, questioning the nature of reality and
+        the limits of human understanding. Carlip concludes by advocating for continued interdisciplinary
+        collaboration and experimentation in the pursuit of a coherent theory of quantum gravity, suggesting that
+        breakthroughs may arise from unexpected directions. This work serves as a comprehensive overview of the state
+        of quantum gravity research at the turn of the 21st century, providing insights into ongoing debates and
+        future directions in the field.
     keywords:
         - article

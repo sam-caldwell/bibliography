@@ -17,7 +17,20 @@ apa7:
     url: https://openlibrary.org/books/OL26405624M/Quantum_computation_and_quantum_information_-_10._ed.
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Quantum computation and quantum information - 10. ed. (Cambridge University Press, 2010) from OpenLibrary.
+    summary: |-
+        "Quantum Computation and Quantum Information," authored by Michael A. Nielsen and Isaac L. Chuang, is a
+        comprehensive textbook that serves as a foundational resource in the field of quantum computing and quantum
+        information theory. The tenth edition of this seminal work provides an in-depth exploration of the principles
+        and applications of quantum mechanics in computation and information processing. The authors systematically
+        introduce key concepts such as quantum bits (qubits), quantum gates, and quantum algorithms, while also
+        addressing the theoretical underpinnings of quantum mechanics that facilitate these innovations. The text is
+        structured to cater to both newcomers and those with a background in physics or computer science, featuring a
+        blend of theoretical discussions and practical examples. It covers a range of topics including quantum error
+        correction, quantum cryptography, and the implications of quantum computing for classical information theory.
+        The book emphasizes the importance of quantum entanglement and superposition, illustrating how these phenomena
+        can be harnessed to achieve computational advantages over classical systems. With its rigorous approach and
+        extensive references, this edition remains a vital resource for students, researchers, and practitioners
+        interested in the rapidly evolving landscape of quantum technologies.
     keywords:
         - quantum computers
         - electronics & communications engineering

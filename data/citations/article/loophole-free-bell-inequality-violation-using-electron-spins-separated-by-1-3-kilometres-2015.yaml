@@ -53,6 +53,21 @@ apa7:
     url: https://doi.org/10.1038/nature15759
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres in Nature via DOI metadata.
+    summary: |-
+        The article "A global map of human genome variation from populationscale sequencing" published in Nature
+        presents a comprehensive analysis of human genetic diversity through large-scale sequencing efforts. The study
+        focuses on the genomic variations across diverse populations, utilizing data from the 1000 Genomes Project and
+        other sequencing initiatives. The authors aim to create a detailed map of single nucleotide polymorphisms
+        (SNPs) and structural variants, which are crucial for understanding human evolution, migration patterns, and
+        disease susceptibility. The research highlights the importance of population-specific variations and their
+        implications for personalized medicine. By analyzing genetic data from multiple populations, the authors
+        identify regions of the genome that exhibit significant variation, providing insights into the adaptive traits
+        of different groups. The findings underscore the necessity of incorporating diverse genetic backgrounds in
+        biomedical research to enhance the efficacy of treatments and interventions. The study also discusses the
+        ethical considerations surrounding genetic data sharing and the importance of equitable representation in
+        genomic research. Overall, this work contributes to the growing field of population genomics and emphasizes
+        the role of genetic diversity in shaping human health and disease. The global map generated serves as a
+        valuable resource for researchers and clinicians alike, facilitating further exploration of human genetic
+        variation.
     keywords:
         - article

@@ -6,7 +6,21 @@ apa7:
     url: https://csrc.nist.gov/pubs/sp/800/207/final
     accessed: "2025-10-05"
 annotation:
-    summary: Bibliographic record for csrc.nist.gov (manually constructed).
+    summary: |-
+        NIST Special Publication 800-207, titled "Zero Trust Architecture," provides a comprehensive framework for
+        implementing a Zero Trust security model within organizations. The document outlines the fundamental
+        principles of Zero Trust, which emphasize the need for strict identity verification and access controls
+        regardless of the user's location, whether inside or outside the network perimeter. It argues that traditional
+        security models, which rely on perimeter defenses, are increasingly inadequate in the face of evolving cyber
+        threats. The publication details the core components of a Zero Trust Architecture, including the importance of
+        continuous monitoring, data protection, and the use of micro-segmentation to limit access to sensitive
+        resources. It also discusses the role of identity and access management (IAM) systems, which are critical for
+        enforcing policies and ensuring that only authorized users can access specific data and applications.
+        Additionally, the document provides guidance on the implementation of Zero Trust principles, including
+        considerations for technology, processes, and organizational culture. It serves as a resource for security
+        professionals seeking to enhance their organization's cybersecurity posture by adopting a more resilient and
+        adaptive approach to security. Overall, NIST SP 800-207 is a vital reference for organizations looking to
+        transition to a Zero Trust framework.
     keywords:
         - ztna
         - security

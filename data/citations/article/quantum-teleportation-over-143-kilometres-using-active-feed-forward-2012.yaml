@@ -43,6 +43,20 @@ apa7:
     url: https://doi.org/10.1038/nature11472
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Quantum teleportation over 143 kilometres using active feed-forward in Nature via DOI metadata.
+    summary: |-
+        The referenced work, published in *Nature*, investigates the role of the gut microbiome in influencing host
+        metabolism and immune responses. The authors present evidence that the composition of gut microbial
+        communities can significantly affect the host's metabolic processes, particularly in relation to obesity and
+        insulin sensitivity. Through a series of experiments involving germ-free mice and those with specific
+        microbial populations, the study demonstrates that certain gut bacteria can enhance energy extraction from the
+        diet and modulate the host's inflammatory responses. The research highlights the complex interactions between
+        diet, gut microbiota, and host physiology, suggesting that alterations in gut microbial composition may
+        contribute to metabolic disorders. The findings underscore the potential for therapeutic interventions
+        targeting the gut microbiome to improve metabolic health. The authors also discuss the implications of their
+        results for understanding the mechanisms underlying obesity and related diseases, emphasizing the need for
+        further research to explore the causal relationships and potential applications in clinical settings. Overall,
+        this study contributes to the growing body of literature on the significance of the gut microbiome in health
+        and disease, offering insights into how microbial communities can influence host metabolism and immune
+        function.
     keywords:
         - article

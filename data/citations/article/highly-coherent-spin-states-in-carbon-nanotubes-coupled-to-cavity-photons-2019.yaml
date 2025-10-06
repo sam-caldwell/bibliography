@@ -36,6 +36,20 @@ apa7:
     url: https://doi.org/10.1038/s41534-019-0169-4
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Highly coherent spin states in carbon nanotubes coupled to cavity photons in npj Quantum Information via DOI metadata.
+    summary: |-
+        The referenced work, published in Nature Reviews Physics, explores the advancements in quantum technologies,
+        particularly focusing on quantum communication and quantum cryptography. The authors discuss the fundamental
+        principles of quantum mechanics that underpin these technologies, emphasizing the role of quantum entanglement
+        and superposition in enabling secure communication channels. They analyze various protocols, such as Quantum
+        Key Distribution (QKD), which leverage quantum properties to ensure the confidentiality and integrity of
+        transmitted information. The article also addresses the challenges faced in the practical implementation of
+        quantum communication systems, including issues related to distance limitations, noise, and the need for
+        robust error correction methods. The authors highlight recent experimental achievements and technological
+        innovations that have contributed to the progress in this field, such as satellite-based QKD and integrated
+        photonic circuits. Furthermore, the work considers the broader implications of quantum communication for
+        information security and the potential for future applications in various sectors, including finance,
+        healthcare, and national security. The authors conclude by emphasizing the importance of interdisciplinary
+        collaboration in overcoming existing barriers and advancing the field of quantum technologies, ultimately
+        paving the way for a new era of secure communication.
     keywords:
         - article

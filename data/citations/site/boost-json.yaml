@@ -6,7 +6,20 @@ apa7:
     url: https://www.boost.org/doc/libs/1_84_0/libs/json/doc/html/index.html
     accessed: "2025-10-05"
 annotation:
-    summary: Bibliographic record for www.boost.org (manually constructed).
+    summary: |-
+        The Boost.JSON library documentation provides a comprehensive overview of the Boost.JSON library, which is
+        part of the larger Boost C++ Libraries. This library facilitates the manipulation of JSON data in C++
+        applications, offering a range of features for parsing, serializing, and manipulating JSON objects and arrays.
+        The documentation outlines the library's core components, including the data types used to represent JSON
+        values, such as objects, arrays, strings, numbers, and booleans. Key functionalities include the ability to
+        parse JSON strings into usable data structures and to serialize these structures back into JSON format. The
+        library supports both standard and custom error handling, ensuring robust parsing and manipulation of JSON
+        data. Additionally, the documentation includes examples and usage patterns that illustrate how to effectively
+        implement the library in various programming scenarios. The Boost.JSON library is designed with performance
+        and ease of use in mind, making it suitable for both novice and experienced C++ developers. The documentation
+        also provides guidance on installation, configuration, and integration with existing Boost libraries,
+        emphasizing the library's compatibility and versatility within the C++ ecosystem. Overall, the Boost.JSON
+        library serves as a valuable resource for developers working with JSON in C++.
     keywords:
         - c++
         - cpp
