@@ -1,0 +1,17 @@
+id: 70e6f609-22d4-4355-9999-0bfc43a88783
+type: article
+apa7:
+    authors:
+        - family: Poulsen
+          given: K.
+    year: 2013
+    date: "2013-07-30"
+    title: MIT Releases Its Report on Aaron Swartz Prosecution
+    container_title: WIRED
+    publisher: WIRED
+    url: https://www.wired.com/2013/07/mit-swartz/
+    accessed: "2025-10-06"
+annotation:
+    summary: A long-awaited independent report on MIT&#x27;s role in the federal prosecution of Aaron Swartz concludes that the institution behaved neutrally throughout the affair, but &quot;did not duly take into account the wider background of information policy against which the prosecution played out and in which MIT people have traditionally been passionate leaders.&quot;
+    keywords:
+        - article
