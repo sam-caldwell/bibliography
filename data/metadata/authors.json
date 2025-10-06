@@ -285,6 +285,9 @@
   "Gisselbrecht, M.": [
     "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml"
   ],
+  "Golling, Mario": [
+    "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml"
+  ],
   "Gonzalez-Conde, J.": [
     "data/citations/article/aaf3f9be-8c12-425f-acc8-7ef1e8a8d14d.yaml"
   ],
@@ -356,6 +359,12 @@
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml",
     "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml"
   ],
+  "Jeong, D.": [
+    "data/citations/article/aa0423ef-e802-4ff4-af10-c0cc8ec928fe.yaml"
+  ],
+  "Jin, P.": [
+    "data/citations/article/aa0423ef-e802-4ff4-af10-c0cc8ec928fe.yaml"
+  ],
   "Jozsa, R.": [
     "data/citations/article/9327ba2a-36aa-4696-a8f3-b37272850c12.yaml"
   ],
@@ -371,8 +380,14 @@
   "Khan, R. A.": [
     "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml"
   ],
+  "Kim, N.": [
+    "data/citations/article/aa0423ef-e802-4ff4-af10-c0cc8ec928fe.yaml"
+  ],
   "Klossner, John": [
     "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml"
+  ],
+  "Koch, Robert": [
+    "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml"
   ],
   "Kofler, J.": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml"
@@ -395,11 +410,17 @@
   "Laurell, H.": [
     "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml"
   ],
+  "Lee, S.": [
+    "data/citations/article/aa0423ef-e802-4ff4-af10-c0cc8ec928fe.yaml"
+  ],
   "Leghtas, Z.": [
     "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml"
   ],
   "Leiserson, C. E.": [
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml"
+  ],
+  "Levy, Steven": [
+    "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml"
   ],
   "Li, B.": [
     "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml"
@@ -624,6 +645,9 @@
   "Rivest, R. L.": [
     "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml",
     "data/citations/rfc/72ebd6ae-5993-4a7a-b998-6b3f838bc588.yaml"
+  ],
+  "Rodosek, Gabi Dreo": [
+    "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml"
   ],
   "Rodriguez-Grasa, P.": [
     "data/citations/article/aaf3f9be-8c12-425f-acc8-7ef1e8a8d14d.yaml"
