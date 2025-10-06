@@ -1,0 +1,17 @@
+id: 077cbe7d-353c-4a6a-bcc8-c6a4dd63264a
+type: article
+apa7:
+    authors:
+        - family: Miller
+          given: R.
+    year: 2008
+    date: "2008-06-01"
+    title: Explosion at The Planet Causes Major Outage
+    container_title: DataCenterKnowledge
+    publisher: DataCenterKnowledge
+    url: https://www.datacenterknowledge.com/outages/explosion-at-the-planet-causes-major-outage
+    accessed: "2025-10-06"
+annotation:
+    summary: An electrical explosion and fire Saturday at a Houston data center operated by The Planet has taken the entire facility offline.
+    keywords:
+        - article
