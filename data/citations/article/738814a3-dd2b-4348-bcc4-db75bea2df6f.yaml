@@ -1,0 +1,30 @@
+id: 738814a3-dd2b-4348-bcc4-db75bea2df6f
+type: article
+apa7:
+    authors:
+        - family: Hughes
+          given: John
+    year: 1989
+    date: "1989-01-01"
+    title: Why Functional Programming Matters
+    publisher: ResearchGate
+    url: https://www.researchgate.net/publication/2452204_Why_Functional_Programming_Matters
+    accessed: "2025-10-06"
+annotation:
+    summary: |-
+        In "Why Functional Programming Matters," John Hughes argues for the significance of functional programming in the context of software development. The paper emphasizes the advantages of functional programming paradigms, particularly in enhancing code clarity, maintainability, and correctness. Hughes illustrates how functional programming promotes a declarative style of coding, which allows developers to express the logic of computation without detailing control flow. This abstraction leads to more concise and understandable code, reducing the likelihood of errors.
+
+        Hughes discusses key concepts such as higher-order functions, lazy evaluation, and recursion, demonstrating how these features enable programmers to construct complex operations from simpler ones. He also highlights the role of functional programming in facilitating reasoning about programs, as functions can be treated as first-class citizens, allowing for more modular and reusable code. The paper concludes by advocating for the adoption of functional programming techniques in mainstream programming practices, suggesting that they can lead to more robust software systems. Overall, Hughes presents a compelling case for the relevance of functional programming, arguing that its principles can significantly improve the quality of software development.
+    keywords:
+        - functional programming
+        - software development
+        - code clarity
+        - maintainability
+        - correctness
+        - declarative style
+        - higher-order functions
+        - lazy evaluation
+        - recursion
+        - modular code
+        - reusable code
+        - robust software
