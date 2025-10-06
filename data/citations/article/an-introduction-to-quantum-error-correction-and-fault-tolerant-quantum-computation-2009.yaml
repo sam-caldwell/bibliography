@@ -1,0 +1,16 @@
+id: an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009
+type: article
+apa7:
+    authors:
+        - family: Gottesman
+          given: D.
+    year: 2009
+    title: An Introduction to Quantum Error Correction and Fault-Tolerant Quantum Computation
+    publisher: arXiv
+    doi: 10.48550/ARXIV.0904.2557
+    url: https://doi.org/10.48550/arXiv.0904.2557
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for An Introduction to Quantum Error Correction and Fault-Tolerant Quantum Computation via DOI metadata.
+    keywords:
+        - article
