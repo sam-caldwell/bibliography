@@ -12,8 +12,10 @@ The CLI reads and writes only local files. It can also use OpenAI to summarize w
 falls back to OpenAI to build a citation when an article URL is blocked (HTTP 401/403).
 
 --------------------------------------------------------------------------------
+## The Contents
+The cited works already added to this repo are listed in human-readable form [here](docs/index.html).
 
-Quick Start
+## Quick Start
 
 Requirements
 
