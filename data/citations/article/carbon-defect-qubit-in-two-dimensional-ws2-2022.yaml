@@ -1,0 +1,29 @@
+id: carbon-defect-qubit-in-two-dimensional-ws2-2022
+type: article
+apa7:
+    authors:
+        - family: Li
+          given: S.
+        - family: Thiering
+          given: G.
+        - family: Udvarhelyi
+          given: P.
+        - family: Ivády
+          given: V.
+        - family: Gali
+          given: A.
+    year: 2022
+    date: "2022-03-08"
+    title: Carbon defect qubit in two-dimensional WS2
+    container_title: Nature Communications
+    publisher: Springer Science and Business Media LLC
+    journal: Nature Communications
+    volume: "13"
+    issue: "1"
+    doi: 10.1038/s41467-022-28876-7
+    url: https://doi.org/10.1038/s41467-022-28876-7
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Carbon defect qubit in two-dimensional WS2 in Nature Communications via DOI metadata.
+    keywords:
+        - article
