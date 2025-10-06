@@ -8,6 +8,30 @@ apa7:
     url: https://thehackernews.com/2017/04/hipchat-group-chat-hacked.html?m=1
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Atlassian&#39;s HipChat Hacked &#8212; Users&#39; Data May Have Been Compromised on thehackernews.com.
+    summary: |-
+        The article from The Hacker News discusses a security breach involving HipChat, a group chat service developed
+        by Atlassian. The incident, reported in April 2017, revealed that unauthorized access to user accounts had
+        occurred, leading to the exposure of sensitive information. The breach was attributed to a vulnerability that
+        allowed attackers to exploit user credentials, potentially compromising private conversations and shared files
+        within the platform. Atlassian responded to the incident by notifying affected users and implementing measures
+        to enhance security protocols. The article emphasizes the importance of using strong, unique passwords and
+        enabling two-factor authentication to mitigate risks associated with such breaches. It also highlights the
+        broader implications of cybersecurity threats in the context of collaboration tools, which are increasingly
+        used by organizations for communication and project management. The incident serves as a reminder of the
+        vulnerabilities inherent in digital communication platforms and the necessity for ongoing vigilance in
+        cybersecurity practices. The article concludes by urging users to remain proactive in protecting their online
+        accounts and to stay informed about potential security threats.
     keywords:
         - article
+        - atlassian
+        - collaboration tools
+        - cybersecurity
+        - digital communication
+        - hipchat
+        - online security
+        - security breach
+        - strong passwords
+        - two-factor authentication
+        - user accounts
+        - user data
+        - vulnerability
