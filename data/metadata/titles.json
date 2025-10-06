@@ -45,6 +45,21 @@
     "of",
     "photoelectrons"
   ],
+  "data/citations/article/10a7c47b-ca57-4e86-9d21-47134f371e58.yaml": [
+    "spectral",
+    "graph",
+    "theory",
+    "chung",
+    "fan",
+    "1949",
+    "free",
+    "download",
+    "borrow",
+    "and",
+    "streaming",
+    "internet",
+    "archive"
+  ],
   "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml": [
     "at",
     "it",
@@ -154,6 +169,13 @@
     "jobs",
     "tell",
     "all"
+  ],
+  "data/citations/article/2815a6f9-f01e-419b-99cb-384b7a3da2f9.yaml": [
+    "laplacian",
+    "matrices",
+    "of",
+    "graphs",
+    "survey"
   ],
   "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml": [
     "enabling",
@@ -319,6 +341,12 @@
     "dark",
     "web"
   ],
+  "data/citations/article/4d5e98ce-ffec-47b7-8694-2773bc77db67.yaml": [
+    "growing",
+    "well",
+    "connected",
+    "graphs"
+  ],
   "data/citations/article/5117ba86-4c99-474a-99ba-b2b3ac5b01ed.yaml": [
     "asymmetric",
     "cyclic",
@@ -333,6 +361,18 @@
     "in",
     "noisy",
     "environment"
+  ],
+  "data/citations/article/51f822ea-70d8-4d46-909e-42f1e499aef2.yaml": [
+    "factoring",
+    "and",
+    "weighting",
+    "approaches",
+    "to",
+    "status",
+    "scores",
+    "and",
+    "clique",
+    "identification"
   ],
   "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml": [
     "quantum",
@@ -639,6 +679,15 @@
     "dutch",
     "digital",
     "disaster"
+  ],
+  "data/citations/article/8cf08e24-dd34-4d8b-a025-dc28eff41853.yaml": [
+    "the",
+    "structure",
+    "and",
+    "function",
+    "of",
+    "complex",
+    "networks"
   ],
   "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml": [
     "the",
@@ -1734,6 +1783,25 @@
     "accepted",
     "the",
     "risk"
+  ],
+  "data/citations/video/754c900d-ebc4-4f86-841d-4bc26a361c2c.yaml": [
+    "aws",
+    "re",
+    "invent",
+    "2016",
+    "case",
+    "study",
+    "how",
+    "atlassian",
+    "uses",
+    "amazon",
+    "efs",
+    "with",
+    "jira",
+    "to",
+    "cut",
+    "costs",
+    "stg207"
   ],
   "data/citations/video/8d030176-29f0-4f22-b07f-6ba8707812e7.yaml": [
     "jon",

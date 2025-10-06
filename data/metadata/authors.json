@@ -35,6 +35,9 @@
   "Amaya, W.": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
   ],
+  "Amazon Web Services": [
+    "data/citations/video/754c900d-ebc4-4f86-841d-4bc26a361c2c.yaml"
+  ],
   "Amir, Y.": [
     "data/citations/article/ad232f52-614c-4401-95ff-a1411828f367.yaml"
   ],
@@ -105,6 +108,9 @@
   "Blok, M. S.": [
     "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml"
   ],
+  "Bonacich, P.": [
+    "data/citations/article/51f822ea-70d8-4d46-909e-42f1e499aef2.yaml"
+  ],
   "Boschi, D.": [
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
   ],
@@ -113,6 +119,9 @@
   ],
   "Bouwmeester, D.": [
     "data/citations/article/b086551a-7f10-4140-9efa-7b4bfda58184.yaml"
+  ],
+  "Boyd, S.": [
+    "data/citations/article/4d5e98ce-ffec-47b7-8694-2773bc77db67.yaml"
   ],
   "Branca, S.": [
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
@@ -325,6 +334,9 @@
   ],
   "Gheorghiu, V.": [
     "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml"
+  ],
+  "Ghosh, A.": [
+    "data/citations/article/4d5e98ce-ffec-47b7-8694-2773bc77db67.yaml"
   ],
   "Gibbon, E.": [
     "data/citations/books/12bfb153-4cce-40cf-b3f4-8c27ab8717ce.yaml"
@@ -668,6 +680,9 @@
   "Mech, A.": [
     "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml"
   ],
+  "Merris, R.": [
+    "data/citations/article/2815a6f9-f01e-419b-99cb-384b7a3da2f9.yaml"
+  ],
   "Michael, J. B.": [
     "data/citations/article/ac28a807-7506-4994-ba42-eeb396c17f32.yaml"
   ],
@@ -717,6 +732,9 @@
   ],
   "Neukart, F.": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml"
+  ],
+  "Newman, M. E. J.": [
+    "data/citations/article/8cf08e24-dd34-4d8b-a025-dc28eff41853.yaml"
   ],
   "Niamat, M. Y.": [
     "data/citations/article/1be227c2-bb9f-4a18-9279-18695275c46d.yaml"
