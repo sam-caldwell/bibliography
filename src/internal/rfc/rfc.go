@@ -20,6 +20,8 @@ type HTTPDoer interface {
 
 var client HTTPDoer = &http.Client{Timeout: 10 * time.Second}
 
+const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
 // SetHTTPClient swaps the http client for tests.
 func SetHTTPClient(c HTTPDoer) { client = c }
 
@@ -80,6 +82,7 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 		return schema.Entry{}, err
 	}
 	req.Header.Set("Accept", "application/xml")
+	req.Header.Set("User-Agent", chromeUA)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -301,6 +304,7 @@ func fetchRFCFromDatatracker(ctx context.Context, num string) (schema.Entry, err
 		return schema.Entry{}, err
 	}
 	req.Header.Set("Accept", "text/html")
+	req.Header.Set("User-Agent", chromeUA)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -369,6 +373,7 @@ func fetchRFCFromBibtex(ctx context.Context, num string) (schema.Entry, error) {
 		return schema.Entry{}, err
 	}
 	req.Header.Set("Accept", "text/plain, text/html")
+	req.Header.Set("User-Agent", chromeUA)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
