@@ -21,6 +21,8 @@ type HTTPDoer interface {
 
 var client HTTPDoer = &http.Client{Timeout: 10 * time.Second}
 
+const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
 func SetHTTPClient(c HTTPDoer) { client = c }
 
 // FetchArticleByURL fetches a web page and tries to map it to an APA7 article entry
@@ -35,6 +37,7 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 		return schema.Entry{}, err
 	}
 	req.Header.Set("Accept", "text/html")
+	req.Header.Set("User-Agent", chromeUA)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -49,6 +52,11 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 		return schema.Entry{}, err
 	}
 	body := string(bodyBytes)
+
+	ct := strings.ToLower(resp.Header.Get("Content-Type"))
+	if strings.Contains(ct, "pdf") || strings.HasSuffix(strings.ToLower(u), ".pdf") {
+		return buildFromPDF(bodyBytes, u)
+	}
 
 	og, metaTitle := parseOpenGraphAndTitle(body)
 	ld := parseJSONLDArticle(body)
@@ -376,4 +384,111 @@ func extractYear(s string) int {
 		}
 	}
 	return 0
+}
+
+var rePDFTitle = regexp.MustCompile(`(?is)/Title\s*\((.*?)\)`)
+var rePDFAuthor = regexp.MustCompile(`(?is)/Author\s*\((.*?)\)`)
+var rePDFCreation = regexp.MustCompile(`(?is)/CreationDate\s*\((.*?)\)`)
+var reXMPTitle = regexp.MustCompile(`(?is)<dc:title>.*?<rdf:Alt>.*?<rdf:li[^>]*>(.*?)</rdf:li>.*?</dc:title>`)
+var reXMPAuthors = regexp.MustCompile(`(?is)<dc:creator>.*?<rdf:Seq>(.*?)</rdf:Seq>.*?</dc:creator>`)
+var reXMPAuthorItem = regexp.MustCompile(`(?is)<rdf:li[^>]*>(.*?)</rdf:li>`)
+var reDOI = regexp.MustCompile(`(?i)10\.\d{4,9}/[-._;()/:A-Z0-9]+`)
+
+func buildFromPDF(b []byte, sourceURL string) (schema.Entry, error) {
+	s := string(b)
+	// Title
+	title := matchFirst(rePDFTitle, s)
+	if title == "" {
+		title = matchFirst(reXMPTitle, s)
+	}
+	title = pdfUnescape(title)
+	// Authors
+	var authorNames []string
+	if block := matchFirst(reXMPAuthors, s); block != "" {
+		for _, m := range reXMPAuthorItem.FindAllStringSubmatch(block, -1) {
+			name := strings.TrimSpace(htmlUnescape(m[1]))
+			if name != "" {
+				authorNames = append(authorNames, name)
+			}
+		}
+	}
+	if len(authorNames) == 0 {
+		a := pdfUnescape(matchFirst(rePDFAuthor, s))
+		if a != "" {
+			authorNames = splitAuthors(a)
+		}
+	}
+	// Date/Year
+	date := pdfUnescape(matchFirst(rePDFCreation, s))
+	var yearPtr *int
+	if y := extractYear(date); y > 0 {
+		y2 := y
+		yearPtr = &y2
+	}
+
+	// DOI
+	doi := matchFirst(reDOI, strings.ToUpper(s))
+
+	host := hostOf(sourceURL)
+	e := schema.Entry{Type: "article"}
+	e.APA7.Title = title
+	e.APA7.ContainerTitle = host
+	e.APA7.Publisher = host
+	if yearPtr != nil {
+		e.APA7.Year = yearPtr
+	}
+	if len(date) >= 10 {
+		e.APA7.Date = date[:10]
+	}
+	e.APA7.URL = sourceURL
+	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+	if doi != "" {
+		e.APA7.DOI = doi
+	}
+	for _, n := range authorNames {
+		fam, giv := splitName(n)
+		if fam != "" {
+			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
+		}
+	}
+	if strings.TrimSpace(e.APA7.Title) == "" {
+		e.APA7.Title = host
+	}
+	// Summary
+	if doi != "" {
+		e.Annotation.Summary = fmt.Sprintf("PDF article from %s with DOI %s.", host, doi)
+	} else if e.APA7.Title != "" {
+		e.Annotation.Summary = fmt.Sprintf("PDF article: %s (from %s).", e.APA7.Title, host)
+	} else {
+		e.Annotation.Summary = fmt.Sprintf("PDF article from %s.", host)
+	}
+	e.Annotation.Keywords = []string{"article"}
+	if strings.TrimSpace(e.ID) == "" {
+		e.ID = schema.Slugify(e.APA7.Title, e.APA7.Year)
+	}
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
+}
+
+func matchFirst(re *regexp.Regexp, s string) string {
+	if m := re.FindStringSubmatch(s); len(m) >= 2 {
+		return strings.TrimSpace(m[1])
+	}
+	return ""
+}
+
+func pdfUnescape(s string) string {
+	s = strings.ReplaceAll(s, `\(`, "(")
+	s = strings.ReplaceAll(s, `\)`, ")")
+	s = strings.ReplaceAll(s, `\\`, `\`)
+	s = strings.ReplaceAll(s, "\r", " ")
+	s = strings.ReplaceAll(s, "\n", " ")
+	return strings.TrimSpace(s)
+}
+
+func htmlUnescape(s string) string {
+	r := strings.NewReplacer("&amp;", "&", "&lt;", "<", "&gt;", ">", "&quot;", "\"", "&#39;", "'")
+	return r.Replace(s)
 }

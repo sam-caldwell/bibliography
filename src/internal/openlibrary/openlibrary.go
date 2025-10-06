@@ -20,6 +20,8 @@ type HTTPDoer interface {
 
 var client HTTPDoer = &http.Client{Timeout: 10 * time.Second}
 
+const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
 // SetHTTPClient allows tests to inject a fake HTTP client.
 func SetHTTPClient(c HTTPDoer) { client = c }
 
@@ -38,6 +40,7 @@ func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 		return schema.Entry{}, err
 	}
 	req.Header.Set("Accept", "application/json")
+	req.Header.Set("User-Agent", chromeUA)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -155,6 +158,7 @@ func fetchGoogleBookByISBN(ctx context.Context, isbn string) (schema.Entry, erro
 		return schema.Entry{}, err
 	}
 	req.Header.Set("Accept", "application/json")
+	req.Header.Set("User-Agent", chromeUA)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -286,6 +290,7 @@ func fetchDescriptionFallback(ctx context.Context, isbn string) (string, []strin
 		return "", nil
 	}
 	req.Header.Set("Accept", "application/json")
+	req.Header.Set("User-Agent", chromeUA)
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", nil
@@ -346,6 +351,7 @@ func fetchWorkDescription(ctx context.Context, workKey string) string {
 		return ""
 	}
 	req.Header.Set("Accept", "application/json")
+	req.Header.Set("User-Agent", chromeUA)
 	resp, err := client.Do(req)
 	if err != nil {
 		return ""
