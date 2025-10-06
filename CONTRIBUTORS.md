@@ -27,10 +27,12 @@ If conflict arises
 
 If you experience or witness behavior that violates these guidelines:
 - Contact the project maintainers (repository Owners) via their GitHub profile.
-- If unsure how to reach out privately, open a minimal issue titled “[MODERATION]” describing the concern at a high level, and request maintainer contact. Do not include sensitive details publicly.
+- If unsure how to reach out privately, open a minimal issue titled “[MODERATION]” describing the concern at a high 
+  level, and request maintainer contact. Do not include sensitive details publicly.
 - In emergencies or for platform abuse, also use GitHub’s reporting tools.
 
-Maintainers will review in good faith, keep reports as confidential as possible, and take proportionate action (warning, content moderation, or removal from the project in severe cases).
+Maintainers will review in good faith, keep reports as confidential as possible, and take proportionate action
+(warning, content moderation, or removal from the project in severe cases).
 
 ## 3) How to Contribute
 
@@ -61,7 +63,7 @@ Maintainers will review in good faith, keep reports as confidential as possible,
 - Prefer specific suggestions over vague critique.
 - It’s okay to say “I don’t know” and ask for a second opinion.
 
-## 7) Decision Making
+## 7) Decision-Making
 
 - Small changes: handled in PRs after review.
 - Larger changes: propose via an issue with rationale and alternatives.
