@@ -12,6 +12,8 @@ apa7:
     url: https://www.darkreading.com/vulnerabilities-threats/pen-testers-who-got-arrested-doing-their-jobs-tell-all
     accessed: "2025-10-06"
 annotation:
-    summary: Coalfire's Gary De Mercurio and Justin Wynn share the details of their physical penetration-testing engagement gone wrong, as well as recommendations for protecting all red teamers.
+    summary: |
+        Coalfire's Gary De Mercurio and Justin Wynn share the details of their physical penetration-testing 
+        engagement gone wrong, as well as recommendations for protecting all red teamers.
     keywords:
         - article
