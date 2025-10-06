@@ -1,0 +1,24 @@
+id: cool-horizons-for-entangled-black-holes-2013
+type: article
+apa7:
+    authors:
+        - family: Maldacena
+          given: J.
+        - family: Susskind
+          given: L.
+    year: 2013
+    date: "2013-08-01"
+    title: Cool horizons for entangled black holes
+    container_title: Fortschritte der Physik
+    publisher: Wiley
+    journal: Fortschritte der Physik
+    volume: "61"
+    issue: "9"
+    pages: 781-811
+    doi: 10.1002/prop.201300020
+    url: https://doi.org/10.1002/prop.201300020
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Cool horizons for entangled black holes in Fortschritte der Physik via DOI metadata.
+    keywords:
+        - article
