@@ -10,7 +10,13 @@ apa7:
     container_title: New York Times
     journal: New York Times
 annotation:
-    summary: Bibliographic record for Battle of the Clipper Chip in New York Times (manually constructed).
+    summary: |
+        This article provides some historical context for the ever-present battle between privacy interests and the 
+        government's interest in accessing information under the cover of "public safety."  In this article the 
+        Clinton-era movement to install an NSA-designed  "clipper chip" on every telecommunications device and its 
+        demise are discussed.  This is especially relevant where it discusses the discovery of a security flaw by 
+        AT&T Bell Laboratories researchers late in the controversy, demonstrating the dangers of so-called "back doors"
+        to encryption
     keywords:
         - privacy
         - cybersecurity
