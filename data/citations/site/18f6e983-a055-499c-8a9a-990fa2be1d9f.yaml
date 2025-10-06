@@ -6,6 +6,16 @@ apa7:
     url: https://github.com/sentinel-official
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for github.com (manually constructed).
+    summary: |
+        This is the github website used to identify the people responsible for Sentinel dVPN, information which is 
+        used in understanding other citations related to sentinel.co.  This site also provides access to much of 
+        sentinel's source code.
     keywords:
-        - website
+        - vpn
+        - decentralized
+        - virtual private network
+        - cybersecurity
+        - information security
+        - dvpn
+        - github
+        - blockchain
