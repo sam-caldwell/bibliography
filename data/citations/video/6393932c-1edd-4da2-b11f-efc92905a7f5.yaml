@@ -9,6 +9,17 @@ apa7:
     url: https://www.youtube.com/watch?v=9IG3zqvUqJY
     accessed: "2025-10-06"
 annotation:
-    summary: 'YouTube video: Host Unknown presents: Accepted the Risk by Host Unknown.'
+    summary: |
+        “Accepted the Risk” is a parody infosec music video that skewers how some organizations treat “risk 
+        acceptance” as a magic stamp to ship faster and dodge real remediation. A swaggering “risk manager” 
+        breezes past auditors, waves around governance buzzwords and certs, and rubber-stamps decisions even 
+        when products handling sensitive data are clearly insecure.
     keywords:
-        - video
+        - cybersecurity
+        - information security
+        - humor
+        - satire
+        - ciso
+        - my life and career
+        - risk management
+        - host unknown

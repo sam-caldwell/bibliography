@@ -17,6 +17,15 @@
     "advanced",
     "networks"
   ],
+  "data/citations/article/077cbe7d-353c-4a6a-bcc8-c6a4dd63264a.yaml": [
+    "explosion",
+    "at",
+    "the",
+    "planet",
+    "causes",
+    "major",
+    "outage"
+  ],
   "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml": [
     "measuring",
     "the",
@@ -1281,6 +1290,23 @@
     "record",
     "time"
   ],
+  "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml": [
+    "the",
+    "hitchhiker",
+    "guide",
+    "to",
+    "the",
+    "galaxy"
+  ],
+  "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml": [
+    "12",
+    "angry",
+    "men"
+  ],
+  "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml": [
+    "war",
+    "games"
+  ],
   "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml": [
     "traversal",
     "using",
@@ -1385,6 +1411,12 @@
     "of",
     "modern",
     "life"
+  ],
+  "data/citations/site/5461a732-592a-4ab5-8972-d29a95eb0fdf.yaml": [
+    "static",
+    "wikia",
+    "nocookie",
+    "net"
   ],
   "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml": [
     "github",
@@ -1494,5 +1526,13 @@
     "technical",
     "document",
     "specification"
+  ],
+  "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml": [
+    "host",
+    "unknown",
+    "presents",
+    "accepted",
+    "the",
+    "risk"
   ]
 }
