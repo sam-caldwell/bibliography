@@ -1,0 +1,21 @@
+id: quantum-computing-in-the-nisq-era-and-beyond-2018
+type: article
+apa7:
+    authors:
+        - family: Preskill
+          given: J.
+    year: 2018
+    date: "2018-08-06"
+    title: Quantum Computing in the NISQ era and beyond
+    container_title: Quantum
+    publisher: Verein zur Forderung des Open Access Publizierens in den Quantenwissenschaften
+    journal: Quantum
+    volume: "2"
+    pages: "79"
+    doi: 10.22331/q-2018-08-06-79
+    url: https://doi.org/10.22331/q-2018-08-06-79
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Quantum Computing in the NISQ era and beyond in Quantum via DOI metadata.
+    keywords:
+        - article
