@@ -36,6 +36,8 @@ func dirForType(typ string) string {
 		return "article"
 	case "movie":
 		return "movie"
+	case "video":
+		return "video"
 	case "book":
 		return "books"
 	case "website":

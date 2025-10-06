@@ -164,7 +164,7 @@ func (e *Entry) Validate() error {
 		return fmt.Errorf("id must be uuidv4 (36-char canonical), got %q", e.ID)
 	}
 	switch e.Type {
-	case "website", "book", "movie", "article", "report", "dataset", "software", "rfc":
+	case "website", "book", "movie", "video", "article", "report", "dataset", "software", "rfc":
 	default:
 		return fmt.Errorf("invalid type: %s", e.Type)
 	}

@@ -14,10 +14,13 @@ import (
 
 	"bibliography/src/internal/doi"
 	"bibliography/src/internal/gitutil"
+	moviefetch "bibliography/src/internal/movie"
 	"bibliography/src/internal/openlibrary"
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
 	"bibliography/src/internal/store"
+	"bibliography/src/internal/summarize"
+	youtube "bibliography/src/internal/video"
 	webfetch "bibliography/src/internal/webfetch"
 )
 
@@ -104,11 +107,37 @@ func newAddCmd() *cobra.Command {
 		Args:  cobra.ArbitraryArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if len(args) > 0 {
-				hints := map[string]string{"title": strings.Join(args, " ")}
-				if movieDate != "" {
-					hints["date"] = movieDate
+				title := strings.Join(args, " ")
+				// Try Google Knowledge Graph first
+				e, err := moviefetch.FetchMovie(cmd.Context(), title, movieDate)
+				if err != nil {
+					// Fallback to OpenAI if available
+					if me, merr := summarize.GenerateMovieFromTitleAndDate(cmd.Context(), title, movieDate); merr == nil {
+						e = me
+					} else {
+						// If both providers fail, fall back to minimal construction
+						hints := map[string]string{"title": title}
+						if movieDate != "" {
+							hints["date"] = movieDate
+						}
+						return doAddWithKeywords(cmd.Context(), "movie", hints, parseKeywordsCSV(movieKeywords))
+					}
 				}
-				return doAddWithKeywords(cmd.Context(), "movie", hints, parseKeywordsCSV(movieKeywords))
+				if ks := parseKeywordsCSV(movieKeywords); len(ks) > 0 {
+					e.Annotation.Keywords = ks
+				}
+				if len(e.Annotation.Keywords) == 0 {
+					e.Annotation.Keywords = []string{"movie"}
+				}
+				path, err := store.WriteEntry(e)
+				if err != nil {
+					return err
+				}
+				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+					return err
+				}
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+				return nil
 			}
 			return manualAdd(cmd, "movie", parseKeywordsCSV(movieKeywords))
 		},
@@ -152,7 +181,16 @@ func newAddCmd() *cobra.Command {
 			} else if strings.TrimSpace(artURL) != "" {
 				e, err := webfetch.FetchArticleByURL(cmd.Context(), artURL)
 				if err != nil {
-					return err
+					// Fallback when access is denied: 401/403 -> try OpenAI citation
+					if hs, ok := err.(*webfetch.HTTPStatusError); ok && (hs.Status == 401 || hs.Status == 403) {
+						if ce, cerr := summarize.GenerateCitationFromURL(cmd.Context(), artURL); cerr == nil {
+							e = ce
+						} else {
+							return fmt.Errorf("access denied (%d) and OpenAI fallback failed: %v", hs.Status, cerr)
+						}
+					} else {
+						return err
+					}
 				}
 				if ks := parseKeywordsCSV(artKeywords); len(ks) > 0 {
 					e.Annotation.Keywords = ks
@@ -227,7 +265,40 @@ func newAddCmd() *cobra.Command {
 	}
 	rfc.Flags().StringVar(&rfcKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
 
-	cmd.AddCommand(site, book, movie, article, rfc)
+	// --- Video ---
+	var ytURL, videoKeywords string
+	video := &cobra.Command{
+		Use:   "video",
+		Short: "Add a video (YouTube URL or manual entry)",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			if strings.TrimSpace(ytURL) != "" {
+				e, err := youtube.FetchYouTube(cmd.Context(), ytURL)
+				if err != nil {
+					return err
+				}
+				if ks := parseKeywordsCSV(videoKeywords); len(ks) > 0 {
+					e.Annotation.Keywords = ks
+				}
+				if len(e.Annotation.Keywords) == 0 {
+					e.Annotation.Keywords = []string{"video"}
+				}
+				path, err := store.WriteEntry(e)
+				if err != nil {
+					return err
+				}
+				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
+					return err
+				}
+				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
+				return nil
+			}
+			return manualAdd(cmd, "video", parseKeywordsCSV(videoKeywords))
+		},
+	}
+	video.Flags().StringVar(&ytURL, "youtube", "", "YouTube video URL to fetch via oEmbed")
+	video.Flags().StringVar(&videoKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+
+	cmd.AddCommand(site, book, movie, article, video, rfc)
 	return cmd
 }
 

@@ -40,6 +40,16 @@ var pdfExtractor PDFExtractor = defaultPDFExtractor{}
 
 func SetPDFExtractor(e PDFExtractor) { pdfExtractor = e }
 
+// HTTPStatusError conveys an HTTP status code from fetch failures so callers can branch on it.
+type HTTPStatusError struct {
+	Status int
+	Body   string
+}
+
+func (e *HTTPStatusError) Error() string {
+	return fmt.Sprintf("url fetch: http %d: %s", e.Status, e.Body)
+}
+
 // FetchArticleByURL fetches a web page and tries to map it to an APA7 article entry
 // using OpenGraph, JSON-LD, and common meta tags.
 func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
@@ -60,7 +70,7 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
 		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
-		return schema.Entry{}, fmt.Errorf("url fetch: http %d: %s", resp.StatusCode, string(b))
+		return schema.Entry{}, &HTTPStatusError{Status: resp.StatusCode, Body: string(b)}
 	}
 	bodyBytes, err := io.ReadAll(io.LimitReader(resp.Body, 2<<20))
 	if err != nil {

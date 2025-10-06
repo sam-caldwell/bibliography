@@ -10,6 +10,8 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"bibliography/src/internal/schema"
 )
 
 // HTTPDoer allows test injection
@@ -194,4 +196,283 @@ func KeywordsFromTitleAndSummary(ctx context.Context, title, summary string) ([]
 		return nil, fmt.Errorf("openai: could not parse keywords")
 	}
 	return cleaned, nil
+}
+
+// GenerateMovieFromTitleAndDate asks OpenAI to return a minimal JSON object describing a film and
+// builds a schema.Entry of type "movie". It also asks for a short neutral summary and derives
+// keywords from title and summary. Requires OPENAI_API_KEY.
+func GenerateMovieFromTitleAndDate(ctx context.Context, title, date string) (schema.Entry, error) {
+	apiKey := os.Getenv("OPENAI_API_KEY")
+	if apiKey == "" {
+		return schema.Entry{}, fmt.Errorf("OPENAI_API_KEY is not set")
+	}
+	model := os.Getenv("OPENAI_MODEL")
+	if model == "" {
+		model = "gpt-4o-mini"
+	}
+	sys := "You extract bibliographic metadata for films. Return strict JSON only."
+	user := fmt.Sprintf(`Given this film information, return ONLY a single JSON object with keys:
+{
+  "title": string,
+  "date": string,               // YYYY-MM-DD if known; else empty
+  "publisher": string,          // studio or distributor; may be empty
+  "authors": [{"family": string, "given": string}] ,  // directors; may be empty
+  "summary": string             // 120-200 word neutral prose
+}
+Title: %s
+Date: %s`, title, date)
+	body := map[string]any{
+		"model":       model,
+		"temperature": 0.2,
+		"messages":    []map[string]string{{"role": "system", "content": sys}, {"role": "user", "content": user}},
+	}
+	buf, _ := json.Marshal(body)
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	req.Header.Set("Authorization", "Bearer "+apiKey)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("User-Agent", ua)
+	resp, err := client.Do(req)
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
+		return schema.Entry{}, fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
+	}
+	var out struct {
+		Choices []struct {
+			Message struct {
+				Content string `json:"content"`
+			} `json:"message"`
+		} `json:"choices"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
+		return schema.Entry{}, err
+	}
+	if len(out.Choices) == 0 {
+		return schema.Entry{}, fmt.Errorf("openai: empty choices")
+	}
+	content := out.Choices[0].Message.Content
+	var obj struct {
+		Title     string `json:"title"`
+		Date      string `json:"date"`
+		Publisher string `json:"publisher"`
+		Authors   []struct{ Family, Given string }
+		Summary   string `json:"summary"`
+	}
+	if err := json.Unmarshal([]byte(content), &obj); err != nil {
+		// Try to recover a JSON object from content
+		start := strings.Index(content, "{")
+		end := strings.LastIndex(content, "}")
+		if start >= 0 && end > start {
+			snippet := content[start : end+1]
+			_ = json.Unmarshal([]byte(snippet), &obj)
+		}
+	}
+	e := schema.Entry{Type: "movie"}
+	e.ID = schema.NewID()
+	if strings.TrimSpace(obj.Title) != "" {
+		e.APA7.Title = strings.TrimSpace(obj.Title)
+	} else {
+		e.APA7.Title = title
+	}
+	e.APA7.Date = strings.TrimSpace(obj.Date)
+	if e.APA7.Date == "" {
+		e.APA7.Date = strings.TrimSpace(date)
+	}
+	if y := yearFromDate(e.APA7.Date); y > 0 {
+		y2 := y
+		e.APA7.Year = &y2
+	}
+	e.APA7.Publisher = strings.TrimSpace(obj.Publisher)
+	for _, a := range obj.Authors {
+		fam := strings.TrimSpace(a.Family)
+		giv := strings.TrimSpace(a.Given)
+		if fam != "" {
+			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
+		}
+	}
+	sum := strings.TrimSpace(obj.Summary)
+	if sum == "" && e.APA7.Title != "" {
+		sum = fmt.Sprintf("Film: %s.", e.APA7.Title)
+	}
+	e.Annotation.Summary = sum
+	if ks, err := KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); err == nil {
+		cleaned := make([]string, 0, len(ks))
+		seen := map[string]bool{}
+		for _, k := range ks {
+			k = strings.ToLower(strings.TrimSpace(k))
+			if k != "" && !seen[k] {
+				seen[k] = true
+				cleaned = append(cleaned, k)
+			}
+		}
+		if len(cleaned) > 0 {
+			e.Annotation.Keywords = cleaned
+		}
+	}
+	if len(e.Annotation.Keywords) == 0 {
+		e.Annotation.Keywords = []string{"movie"}
+	}
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
+}
+
+// GenerateCitationFromURL asks OpenAI to produce minimal bibliographic metadata
+// for an article reachable at the given URL. It returns a schema.Entry with type
+// "article" filled with best-effort fields. It also attempts to generate a summary
+// and keywords using the existing helpers. Requires OPENAI_API_KEY.
+func GenerateCitationFromURL(ctx context.Context, url string) (schema.Entry, error) {
+	apiKey := os.Getenv("OPENAI_API_KEY")
+	if apiKey == "" {
+		return schema.Entry{}, fmt.Errorf("OPENAI_API_KEY is not set")
+	}
+	model := os.Getenv("OPENAI_MODEL")
+	if model == "" {
+		model = "gpt-4o-mini"
+	}
+	sys := "You extract bibliographic metadata for an online article."
+	user := fmt.Sprintf(`Given this URL, return ONLY a single JSON object with these keys:
+{
+  "title": string,
+  "authors": [{"family": string, "given": string}] ,
+  "journal": string,            // publication/container title if known; else empty
+  "container_title": string,    // alternative to journal; may be empty
+  "publisher": string,          // website or publisher; may be empty
+  "date": string,               // YYYY-MM-DD if known; else empty
+  "doi": string                 // DOI if known; else empty
+}
+Use the page if accessible; otherwise use general knowledge cautiously. If unknown, use empty strings.
+URL: %s`, url)
+
+	body := map[string]any{
+		"model":       model,
+		"temperature": 0.2,
+		"messages": []map[string]string{
+			{"role": "system", "content": sys},
+			{"role": "user", "content": user},
+		},
+	}
+	buf, _ := json.Marshal(body)
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	req.Header.Set("Authorization", "Bearer "+apiKey)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("User-Agent", ua)
+	resp, err := client.Do(req)
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
+		return schema.Entry{}, fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
+	}
+	var out struct {
+		Choices []struct {
+			Message struct {
+				Content string `json:"content"`
+			} `json:"message"`
+		} `json:"choices"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
+		return schema.Entry{}, err
+	}
+	if len(out.Choices) == 0 {
+		return schema.Entry{}, fmt.Errorf("openai: empty choices")
+	}
+	content := out.Choices[0].Message.Content
+	var obj struct {
+		Title          string                           `json:"title"`
+		Authors        []struct{ Family, Given string } `json:"authors"`
+		Journal        string                           `json:"journal"`
+		ContainerTitle string                           `json:"container_title"`
+		Publisher      string                           `json:"publisher"`
+		Date           string                           `json:"date"`
+		DOI            string                           `json:"doi"`
+	}
+	if err := json.Unmarshal([]byte(content), &obj); err != nil {
+		start := strings.Index(content, "{")
+		end := strings.LastIndex(content, "}")
+		if start >= 0 && end > start {
+			snippet := content[start : end+1]
+			_ = json.Unmarshal([]byte(snippet), &obj)
+		}
+	}
+	e := schema.Entry{Type: "article"}
+	e.ID = schema.NewID()
+	e.APA7.Title = strings.TrimSpace(obj.Title)
+	if e.APA7.Title == "" {
+		e.APA7.Title = url
+	}
+	if j := strings.TrimSpace(obj.Journal); j != "" {
+		e.APA7.Journal = j
+		e.APA7.ContainerTitle = j
+	}
+	if c := strings.TrimSpace(obj.ContainerTitle); c != "" && e.APA7.Journal == "" {
+		e.APA7.ContainerTitle = c
+		e.APA7.Journal = c
+	}
+	e.APA7.Publisher = strings.TrimSpace(obj.Publisher)
+	e.APA7.Date = strings.TrimSpace(obj.Date)
+	if y := yearFromDate(e.APA7.Date); y > 0 {
+		y2 := y
+		e.APA7.Year = &y2
+	}
+	e.APA7.DOI = strings.TrimSpace(obj.DOI)
+	e.APA7.URL = url
+	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+	for _, a := range obj.Authors {
+		fam := strings.TrimSpace(a.Family)
+		giv := strings.TrimSpace(a.Given)
+		if fam != "" {
+			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
+		}
+	}
+	if s, err := SummarizeURL(ctx, url); err == nil {
+		e.Annotation.Summary = strings.TrimSpace(s)
+	}
+	if strings.TrimSpace(e.Annotation.Summary) == "" && e.APA7.Title != "" {
+		e.Annotation.Summary = fmt.Sprintf("Web article: %s.", e.APA7.Title)
+	}
+	if ks, err := KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); err == nil {
+		cleaned := make([]string, 0, len(ks))
+		seen := map[string]bool{}
+		for _, k := range ks {
+			k = strings.ToLower(strings.TrimSpace(k))
+			if k != "" && !seen[k] {
+				seen[k] = true
+				cleaned = append(cleaned, k)
+			}
+		}
+		if len(cleaned) > 0 {
+			e.Annotation.Keywords = cleaned
+		}
+	}
+	if len(e.Annotation.Keywords) == 0 {
+		e.Annotation.Keywords = []string{"article"}
+	}
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
+}
+
+func yearFromDate(date string) int {
+	date = strings.TrimSpace(date)
+	if len(date) >= 4 {
+		var y int
+		if _, err := fmt.Sscanf(date[:4], "%d", &y); err == nil {
+			return y
+		}
+	}
+	return 0
 }

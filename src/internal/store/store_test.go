@@ -334,6 +334,9 @@ func TestSegmentForType(t *testing.T) {
 	if SegmentForType("rfc") != "rfc" {
 		t.Fatalf("rfc segment")
 	}
+	if SegmentForType("video") != "video" {
+		t.Fatalf("video segment")
+	}
 	if SegmentForType("unknown") != "citation" {
 		t.Fatalf("default segment")
 	}

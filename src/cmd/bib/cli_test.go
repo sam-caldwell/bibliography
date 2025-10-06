@@ -19,6 +19,7 @@ import (
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
 	"bibliography/src/internal/summarize"
+	video "bibliography/src/internal/video"
 	webfetch "bibliography/src/internal/webfetch"
 )
 
@@ -421,6 +422,30 @@ func TestLookupRFC_Basic(t *testing.T) {
 	}
 	if !bytes.Contains(by, []byte("bibtex_url: https://datatracker.ietf.org/doc/rfc5424/bibtex/")) {
 		t.Fatalf("expected bibtex_url in YAML, got:\n%s", string(by))
+	}
+}
+
+func TestAddVideo_YouTube_OEmbed(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+
+	// stub commit
+	commitAndPush = func(paths []string, msg string) error { return nil }
+
+	// stub YouTube oEmbed
+	video.SetHTTPClient(testHTTPDoer{status: 200, body: `{"title":"Cool Video","author_name":"MyChannel","provider_name":"YouTube"}`})
+	t.Cleanup(func() { video.SetHTTPClient(&http.Client{}) })
+
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newAddCmd())
+	if _, err := execCmd(rootCmd, "add", "video", "--youtube", "https://www.youtube.com/watch?v=abc123"); err != nil {
+		t.Fatalf("add video: %v", err)
+	}
+	files, _ := os.ReadDir(filepath.Join("data/citations", "video"))
+	if len(files) != 1 || !strings.HasSuffix(files[0].Name(), ".yaml") {
+		t.Fatalf("expected one yaml in video dir, got %v", files)
 	}
 }
 
