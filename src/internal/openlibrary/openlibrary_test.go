@@ -89,6 +89,24 @@ func TestFetchBookByISBN_FallbackGoogle(t *testing.T) {
 	}
 }
 
+func TestFetchBookByISBN_Normalizes9DigitISBN(t *testing.T) {
+	// OpenLibrary empty; Google returns a volume for normalized 10-digit
+	old := client
+	defer func() { client = old }()
+	google := `{"items":[{"volumeInfo":{"title":"Some Title","authors":["Jane Roe"],"publisher":"Acme","publishedDate":"1999","description":"Desc","categories":["Cat"],"infoLink":"https://books.google.com/..."}}]}`
+	client = routeHTTP{routes: []route{{"openlibrary.org/api/books", 200, "{}"}, {"isbn%3A0262060164", 200, google}}}
+	e, err := FetchBookByISBN(context.Background(), "026206016")
+	if err != nil {
+		t.Fatalf("err: %v", err)
+	}
+	if e.APA7.ISBN != "0262060164" {
+		t.Fatalf("expected normalized ISBN-10, got %q", e.APA7.ISBN)
+	}
+	if len(e.APA7.Authors) == 0 || e.APA7.Authors[0].Family == "" {
+		t.Fatalf("authors not parsed: %+v", e.APA7.Authors)
+	}
+}
+
 func TestSplitName(t *testing.T) {
 	fam, giv := splitName("Jane Q Public")
 	if fam != "Public" || giv != "J. Q." {

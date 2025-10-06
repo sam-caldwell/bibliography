@@ -25,9 +25,10 @@ func SetHTTPClient(c HTTPDoer) { client = c }
 
 // FetchBookByISBN queries OpenLibrary and maps the response to schema.Entry.
 func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
+	norm := normalizeISBN(isbn)
 	// Use Books API with jscmd=data for simpler shape
 	q := url.Values{}
-	q.Set("bibkeys", "ISBN:"+strings.ReplaceAll(isbn, " ", ""))
+	q.Set("bibkeys", "ISBN:"+norm)
 	q.Set("format", "json")
 	q.Set("jscmd", "data")
 	endpoint := "https://openlibrary.org/api/books?" + q.Encode()
@@ -50,11 +51,11 @@ func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 	if err := json.NewDecoder(resp.Body).Decode(&raw); err != nil {
 		return schema.Entry{}, err
 	}
-	key := "ISBN:" + strings.ReplaceAll(isbn, " ", "")
+	key := "ISBN:" + norm
 	dataRaw, ok := raw[key]
 	if !ok || len(dataRaw) == 0 {
 		// Fallback to Google Books API if OpenLibrary has no data
-		if e, err := fetchGoogleBookByISBN(ctx, isbn); err == nil {
+		if e, err := fetchGoogleBookByISBN(ctx, norm); err == nil {
 			return e, nil
 		}
 		return schema.Entry{}, fmt.Errorf("openlibrary: no data for %s", key)
@@ -84,7 +85,7 @@ func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 	if len(data.Publishers) > 0 {
 		e.APA7.Publisher = data.Publishers[0].Name
 	}
-	e.APA7.ISBN = strings.ReplaceAll(isbn, " ", "")
+	e.APA7.ISBN = norm
 	if strings.TrimSpace(data.URL) != "" {
 		e.APA7.URL = data.URL
 		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
@@ -106,7 +107,7 @@ func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 		}
 	}
 	// Enrich from details subjects if available (no OpenAI calls)
-	desc, moreKs := fetchDescriptionFallback(ctx, isbn)
+	desc, moreKs := fetchDescriptionFallback(ctx, norm)
 	if len(moreKs) > 0 {
 		e.Annotation.Keywords = append(e.Annotation.Keywords, moreKs...)
 	}
@@ -147,7 +148,7 @@ func FetchBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 // fetchGoogleBookByISBN queries Google Books API for a given ISBN and maps the first result.
 func fetchGoogleBookByISBN(ctx context.Context, isbn string) (schema.Entry, error) {
 	q := url.Values{}
-	q.Set("q", "isbn:"+strings.ReplaceAll(isbn, " ", ""))
+	q.Set("q", "isbn:"+isbn)
 	endpoint := "https://www.googleapis.com/books/v1/volumes?" + q.Encode()
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, endpoint, nil)
 	if err != nil {
@@ -187,7 +188,7 @@ func fetchGoogleBookByISBN(ctx context.Context, isbn string) (schema.Entry, erro
 	e.Type = "book"
 	e.APA7.Title = v.Title
 	e.APA7.Publisher = v.Publisher
-	e.APA7.ISBN = strings.ReplaceAll(isbn, " ", "")
+	e.APA7.ISBN = isbn
 	if y := extractYear(v.PublishedDate); y > 0 {
 		e.APA7.Year = &y
 	}
@@ -227,6 +228,46 @@ func fetchGoogleBookByISBN(ctx context.Context, isbn string) (schema.Entry, erro
 		return schema.Entry{}, err
 	}
 	return e, nil
+}
+
+// normalizeISBN cleans input and, if a 9-digit core is provided, computes the ISBN-10 check digit.
+func normalizeISBN(isbn string) string {
+	s := strings.ToUpper(strings.TrimSpace(isbn))
+	// keep digits only initially
+	core := make([]rune, 0, len(s))
+	for _, r := range s {
+		if r >= '0' && r <= '9' || r == 'X' {
+			core = append(core, r)
+		}
+	}
+	// If 9 digits, compute ISBN-10 check digit
+	digitsOnly := true
+	for _, r := range core {
+		if r < '0' || r > '9' {
+			digitsOnly = false
+			break
+		}
+	}
+	if len(core) == 9 && digitsOnly {
+		cd := isbn10CheckDigit(string(core))
+		return string(core) + cd
+	}
+	return string(core)
+}
+
+// isbn10CheckDigit computes the ISBN-10 check digit for a 9-digit string, returning "0"-"9" or "X".
+func isbn10CheckDigit(s string) string {
+	sum := 0
+	for i, ch := range s { // i=0..8 corresponds to position 1..9
+		d := int(ch - '0')
+		sum += (i + 1) * d
+	}
+	mod := sum % 11
+	cd := (11 - mod) % 11
+	if cd == 10 {
+		return "X"
+	}
+	return fmt.Sprintf("%d", cd)
 }
 
 // fetchDescriptionFallback attempts to retrieve a richer description by calling
