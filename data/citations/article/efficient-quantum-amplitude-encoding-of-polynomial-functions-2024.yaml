@@ -1,0 +1,27 @@
+id: efficient-quantum-amplitude-encoding-of-polynomial-functions-2024
+type: article
+apa7:
+    authors:
+        - family: Gonzalez-Conde
+          given: J.
+        - family: Watts
+          given: T. W.
+        - family: Rodriguez-Grasa
+          given: P.
+        - family: Sanz
+          given: M.
+    year: 2024
+    date: "2024-03-21"
+    title: Efficient quantum amplitude encoding of polynomial functions
+    container_title: Quantum
+    publisher: Verein zur Forderung des Open Access Publizierens in den Quantenwissenschaften
+    journal: Quantum
+    volume: "8"
+    pages: "1297"
+    doi: 10.22331/q-2024-03-21-1297
+    url: https://doi.org/10.22331/q-2024-03-21-1297
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Efficient quantum amplitude encoding of polynomial functions in Quantum via DOI metadata.
+    keywords:
+        - article
