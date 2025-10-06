@@ -1,111 +1,982 @@
 {
-  "data/citations/article/a-fast-quantum-mechanical-algorithm-for-database-search-1996.yaml": "A fast quantum mechanical algorithm for database search",
-  "data/citations/article/a-hybrid-quantum-computing-pipeline-for-real-world-drug-discovery-2024.yaml": "A hybrid quantum computing pipeline for real world drug discovery",
-  "data/citations/article/a-practical-quantum-instruction-set-architecture-2016.yaml": "A Practical Quantum Instruction Set Architecture",
-  "data/citations/article/a-proof-for-the-queuing-formula-i-l-i-i-w-i-1961.yaml": "A Proof for the Queuing Formula: \u003ci\u003eL\u003c/i\u003e = λ\u003ci\u003eW\u003c/i\u003e",
-  "data/citations/article/an-introduction-to-quantum-error-correction-and-fault-tolerant-quantum-computation-2009.yaml": "An Introduction to Quantum Error Correction and Fault-Tolerant Quantum Computation",
-  "data/citations/article/approximate-amplitude-encoding-in-shallow-parameterized-quantum-circuits-and-its-application-to-financial-market-indicators-2022.yaml": "Approximate amplitude encoding in shallow parameterized quantum circuits and its application to \nfinancial market indicators\n",
-  "data/citations/article/asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024.yaml": "Asymmetric Cyclic Controlled Quantum Teleportation via Multiple-Qubit Entangled State in a Noisy Environment",
-  "data/citations/article/building-up-space-time-with-quantum-entanglement-2010.yaml": "BUILDING UP SPACE–TIME WITH QUANTUM ENTANGLEMENT",
-  "data/citations/article/can-programming-be-liberated-from-the-von-neumann-style-1978.yaml": "Can Programming Be Liberated from the Von Neumann Style?: A Functional Style and Its Algebra of Programs",
-  "data/citations/article/carbon-defect-qubit-in-two-dimensional-ws2-2022.yaml": "Carbon defect qubit in two-dimensional WS2",
-  "data/citations/article/classical-concepts-in-quantum-programming-2005.yaml": "Classical Concepts in Quantum Programming",
-  "data/citations/article/communication-theory-of-secrecy-systems-1949.yaml": "Communication Theory of Secrecy Systems*",
-  "data/citations/article/cool-horizons-for-entangled-black-holes-2013.yaml": "Cool horizons for entangled black holes",
-  "data/citations/article/dual-comb-on-a-chip-targets-compact-optical-clocks-2025.yaml": "Dual comb on a chip targets compact optical clocks",
-  "data/citations/article/efficient-mml-math-xmlns-mml-http-www-w3-org-1998-math-mathml-mml-mi-z-mml-mi-mml-math-gates-for-quantum-computing-2017.yaml": "Efficient \n\u003cmml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"\u003e\u003cmml:mi\u003eZ\u003c/mml:mi\u003e\u003c/mml:math\u003e\n gates for quantum computing",
-  "data/citations/article/efficient-quantum-amplitude-encoding-of-polynomial-functions-2024.yaml": "Efficient quantum amplitude encoding of polynomial functions",
-  "data/citations/article/end-to-end-arguments-in-system-design-1984.yaml": "End-to-end arguments in system design",
-  "data/citations/article/enjoy-your-observability-an-industrial-survey-of-microservice-tracing-and-analysis-2021.yaml": "Enjoy your observability: an industrial survey of microservice tracing and analysis",
-  "data/citations/article/ev-deep-neutron-bound-states-in-nanocrystals-2024.yaml": "μeV-Deep Neutron Bound States in Nanocrystals",
-  "data/citations/article/experimental-quantum-teleportation-1997.yaml": "Experimental quantum teleportation",
-  "data/citations/article/experimental-realization-of-teleporting-an-unknown-pure-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1998.yaml": "Experimental Realization of Teleporting an Unknown Pure Quantum State via Dual Classical and Einstein-Podolsky-Rosen Channels",
-  "data/citations/article/experimental-test-of-bell-s-inequalities-using-time-varying-analyzers-1982.yaml": "Experimental Test of Bell's Inequalities Using Time- Varying Analyzers",
-  "data/citations/article/highly-coherent-spin-states-in-carbon-nanotubes-coupled-to-cavity-photons-2019.yaml": "Highly coherent spin states in carbon nanotubes coupled to cavity photons",
-  "data/citations/article/loophole-free-bell-inequality-violation-using-electron-spins-separated-by-1-3-kilometres-2015.yaml": "Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres",
-  "data/citations/article/measuring-the-quantum-state-of-photoelectrons-2025.yaml": "Measuring the quantum state of photoelectrons",
-  "data/citations/article/opportunities-and-challenges-in-fault-tolerant-quantum-computation-2022.yaml": "Opportunities and Challenges in Fault-Tolerant Quantum Computation",
-  "data/citations/article/optical-computing-the-power-of-light-2023.yaml": "Optical computing: the power of light",
-  "data/citations/article/optimal-availability-quorum-systems-theory-and-practice-1998.yaml": "Optimal availability quorum systems: Theory and practice",
-  "data/citations/article/pen-testers-who-got-arrested-doing-their-jobs-tell-all-2020.yaml": "Pen Testers Who Got Arrested Doing Their Jobs Tell All",
-  "data/citations/article/polarized-white-light-emission-from-organic-semiconductors-2025.yaml": "Polarized white-light emission from organic semiconductors",
-  "data/citations/article/quantum-a-modern-c-quantum-computing-library-2018.yaml": "Quantum++: A modern C++ quantum computing library",
-  "data/citations/article/quantum-cloud-computing-a-review-open-problems-and-future-directions.yaml": "Quantum Cloud Computing: A Review, Open Problems, and Future Directions",
-  "data/citations/article/quantum-cluster-states-engineered-in-three-dimensions-2025.yaml": "Quantum cluster states engineered in three dimensions",
-  "data/citations/article/quantum-computing-in-the-nisq-era-and-beyond-2018.yaml": "Quantum Computing in the NISQ era and beyond",
-  "data/citations/article/quantum-machine-learning-2017.yaml": "Quantum machine learning",
-  "data/citations/article/quantum-memories-emerging-applications-and-recent-advances-2016.yaml": "Quantum memories: emerging applications and recent advances",
-  "data/citations/article/quantum-teleportation-across-the-danube-2004.yaml": "Quantum teleportation across the Danube",
-  "data/citations/article/quantum-teleportation-between-distant-matter-qubits-2009.yaml": "Quantum Teleportation Between Distant Matter Qubits",
-  "data/citations/article/quantum-teleportation-over-143-kilometres-using-active-feed-forward-2012.yaml": "Quantum teleportation over 143 kilometres using active feed-forward",
-  "data/citations/article/revolutionizing-quantum-communication-through-quantum-teleportation-techniques-2024.yaml": "Revolutionizing Quantum Communication through Quantum Teleportation Techniques",
-  "data/citations/article/sha-3-standard-2015.yaml": "SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions",
-  "data/citations/article/simulation-of-quantum-entanglement-and-quantum-teleportation-for-advanced-networks-2024.yaml": "Simulation of Quantum Entanglement and Quantum Teleportation for Advanced Networks",
-  "data/citations/article/surface-codes-towards-practical-large-scale-quantum-computation-2012.yaml": "Surface codes: Towards practical large-scale quantum computation",
-  "data/citations/article/teleporting-an-unknown-quantum-state-via-dual-classical-and-einstein-podolsky-rosen-channels-1993.yaml": "Teleporting an unknown quantum state via dual classical and Einstein-Podolsky-Rosen channels",
-  "data/citations/article/testing-the-speed-of-spooky-action-at-a-distance-2008.yaml": "Testing the speed of ‘spooky action at a distance’",
-  "data/citations/article/the-applications-and-challenges-of-quantum-teleportation-2020.yaml": "The Applications and Challenges of Quantum Teleportation",
-  "data/citations/article/the-faster-than-light-telegraph-that-wasn-t-2012.yaml": "The Faster-Than-Light Telegraph That Wasn't",
-  "data/citations/article/the-hierarchy-problem-and-new-dimensions-at-a-millimeter-1998.yaml": "The hierarchy problem and new dimensions at a millimeter",
-  "data/citations/article/the-load-capacity-and-availability-of-quorum-systems-1998.yaml": "The Load, Capacity, and Availability of Quorum Systems",
-  "data/citations/article/the-resource-theory-of-stabilizer-quantum-computation-2014.yaml": "The resource theory of stabilizer quantum computation",
-  "data/citations/article/the-tail-at-scale-2013.yaml": "The tail at scale",
-  "data/citations/article/theory-of-fault-tolerant-quantum-computation-1998.yaml": "Theory of fault-tolerant quantum computation",
-  "data/citations/article/tph-tuwien-ac-at-2000.yaml": "Structured Quantum Programming",
-  "data/citations/article/tph-tuwien-ac-at-2009.yaml": "Quantum Programming in QCL",
-  "data/citations/article/traffic-flow-optimization-using-a-quantum-annealer-2017.yaml": "Traffic Flow Optimization Using a Quantum Annealer",
-  "data/citations/article/twisting-entangled-photons-on-a-chip-2025.yaml": "Twisting entangled photons on a chip",
-  "data/citations/article/what-is-benford-s-law-why-this-unexpected-pattern-of-numbers-is-everywhere-2023.yaml": "What Is Benford's Law? Why This Unexpected Pattern of Numbers Is Everywhere",
-  "data/citations/books/build-a-large-language-model-from-scratch-2024.yaml": "Build a Large Language Model (from Scratch)",
-  "data/citations/books/c-2003.yaml": "C++",
-  "data/citations/books/c-c-programmer-s-reference-1997.yaml": "C/C++ programmerʼs reference",
-  "data/citations/books/compilers-principles-techniques-and-tools.yaml": "Compilers: Principles, Techniques, and Tools",
-  "data/citations/books/computer-graphics-1995.yaml": "Computer Graphics",
-  "data/citations/books/desi-gn-and-interfacing-of-the-ibm-pc-ps-and-compatible-1995.yaml": "Design and interfacing of the IBM PC, PS, and compatible",
-  "data/citations/books/hacking-the-art-of-exploration-2008.yaml": "Hacking: The Art of Exploration",
-  "data/citations/books/introduction-to-algorithms-2009.yaml": "Introduction to Algorithms",
-  "data/citations/books/light-emitting-diodes-2nd-edition-2006-2006.yaml": "Light-Emitting Diodes (2nd Edition, 2006)",
-  "data/citations/books/mathematics-of-quantum-computing-2019.yaml": "Mathematics of Quantum Computing",
-  "data/citations/books/mips-assembly-language-programming-2004.yaml": "MIPS assembly language programming",
-  "data/citations/books/object-oriented-programming-with-turbo-c-1991.yaml": "Object-oriented programming with Turbo C++",
-  "data/citations/books/practical-binary-analysis-2018.yaml": "Practical Binary Analysis",
-  "data/citations/books/practical-foundations-for-programming-languages-2016.yaml": "Practical Foundations for Programming Languages",
-  "data/citations/books/programming-language-pragmatics-2015.yaml": "Programming Language Pragmatics",
-  "data/citations/books/quantum-computation-and-quantum-information-10-ed-2010.yaml": "Quantum computation and quantum information - 10. ed.",
-  "data/citations/books/quantum-computing-2019.yaml": "Quantum Computing",
-  "data/citations/books/story-of-technology-2019.yaml": "Story of Technology",
-  "data/citations/books/the-c-programming-language-2013.yaml": "The C++ programming language",
-  "data/citations/books/the-character-of-physical-law-1965.yaml": "The Character of Physical Law",
-  "data/citations/books/the-essential-turing-2004.yaml": "The Essential Turing",
-  "data/citations/books/the-fractal-geometry-of-nature-1983.yaml": "The Fractal Geometry of Nature",
-  "data/citations/books/xml-in-record-time-1999.yaml": "XML in record time",
-  "data/citations/rfc/rfc1321.yaml": "The MD5 Message-Digest Algorithm",
-  "data/citations/rfc/rfc3600.yaml": "Internet Official Protocol Standards",
-  "data/citations/rfc/rfc5389.yaml": "Session Traversal Utilities for NAT (STUN)",
-  "data/citations/rfc/rfc5424.yaml": "The Syslog Protocol",
-  "data/citations/rfc/rfc5766.yaml": "Traversal Using Relays around NAT (TURN): Relay Extensions to Session Traversal Utilities for NAT (STUN)",
-  "data/citations/rfc/rfc8235.yaml": "Schnorr Non-interactive Zero-Knowledge Proof",
-  "data/citations/site/MSR-TR-2020-41.yaml": "MSR-TR-2020-41: The Seven Properties of Highly Secured Devices (2nd Edition)",
-  "data/citations/site/achdevguide-nacha-org.yaml": "ACH File Overview | ACH Guide for Developers",
-  "data/citations/site/aws-amazon-com.yaml": "aws.amazon.com",
-  "data/citations/site/boost-json.yaml": "Chapter 1. Boost.JSON - 1.84.0",
-  "data/citations/site/csrc-nist-gov.yaml": "csrc.nist.gov",
-  "data/citations/site/developer-nvidia-com.yaml": "developer.nvidia.com: CUDA Toolkit",
-  "data/citations/site/docs-rigetti-com.yaml": "docs.rigetti.com",
-  "data/citations/site/eCTD_Specification_v3_2_2_0.yaml": "ICH eCTD Specification V 3.2.2 INTERNATIONAL CONFERENCE ON HARMONISATION OF TECHNICAL REQUIREMENTS FOR \nREGISTRATION OF PHARMACEUTICALS FOR HUMAN USE ICH M2 EWG Electronic Common Technical Document Specification\n",
-  "data/citations/site/github-com.yaml": "github.com",
-  "data/citations/site/gobyexample-enums.yaml": "Go By Example: Enums",
-  "data/citations/site/kopkf22ta931lmnlmaj3h48vplhotb.yaml": "J Klossner Cartoons",
-  "data/citations/site/media-vw-com.yaml": "media.vw.com",
-  "data/citations/site/microsoft-just-delivered-fantastic-quantum-computi.yaml": "Microsoft Just Delivered Fantastic Quantum Computing News to Investors. Is the Stock a Buy?",
-  "data/citations/site/pyquil-docs-rigetti-com.yaml": "pyquil-docs.rigetti.com",
-  "data/citations/site/python-enumerations-2024.yaml": "Python Enumerations",
-  "data/citations/site/recommendation-for-applications-using-approved-hash-algorithms.yaml": "Recommendation for applications using approved hash algorithms",
-  "data/citations/site/research-cs-wisc-edu.yaml": "research.cs.wisc.edu",
-  "data/citations/site/what-is-the-osi-model.yaml": "What is the OSI Model?",
-  "data/citations/site/www-json-org.yaml": "JSON",
-  "data/citations/site/www-nsa-gov.yaml": "www.nsa.gov",
-  "data/citations/site/www-researchgate-net.yaml": "www.researchgate.net",
-  "data/citations/site/xkcd-the-pace-of-modern-life-2007.yaml": "The Pace of Modern Life",
-  "data/citations/site/yaml-org.yaml": "yaml.org"
+  "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml": [
+    "simulation",
+    "of",
+    "quantum",
+    "entanglement",
+    "and",
+    "quantum",
+    "teleportation",
+    "for",
+    "advanced",
+    "networks"
+  ],
+  "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml": [
+    "measuring",
+    "the",
+    "quantum",
+    "state",
+    "of",
+    "photoelectrons"
+  ],
+  "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml": [
+    "classical",
+    "concepts",
+    "in",
+    "quantum",
+    "programming"
+  ],
+  "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml": [
+    "revolutionizing",
+    "quantum",
+    "communication",
+    "through",
+    "quantum",
+    "teleportation",
+    "techniques"
+  ],
+  "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml": [
+    "traffic",
+    "flow",
+    "optimization",
+    "using",
+    "quantum",
+    "annealer"
+  ],
+  "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml": [
+    "the",
+    "resource",
+    "theory",
+    "of",
+    "stabilizer",
+    "quantum",
+    "computation"
+  ],
+  "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml": [
+    "quantum",
+    "teleportation",
+    "over",
+    "143",
+    "kilometres",
+    "using",
+    "active",
+    "feed",
+    "forward"
+  ],
+  "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml": [
+    "pen",
+    "testers",
+    "who",
+    "got",
+    "arrested",
+    "doing",
+    "their",
+    "jobs",
+    "tell",
+    "all"
+  ],
+  "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml": [
+    "experimental",
+    "test",
+    "of",
+    "bell",
+    "inequalities",
+    "using",
+    "time",
+    "varying",
+    "analyzers"
+  ],
+  "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml": [
+    "kademlia",
+    "practicable",
+    "approach",
+    "towards",
+    "secure",
+    "key",
+    "based",
+    "routing"
+  ],
+  "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml": [
+    "cool",
+    "horizons",
+    "for",
+    "entangled",
+    "black",
+    "holes"
+  ],
+  "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml": [
+    "practical",
+    "quantum",
+    "instruction",
+    "set",
+    "architecture"
+  ],
+  "data/citations/article/3c2d05e6-51df-4d2d-8b73-9627de164caa.yaml": [
+    "quantum",
+    "cloud",
+    "computing",
+    "review",
+    "open",
+    "problems",
+    "and",
+    "future",
+    "directions"
+  ],
+  "data/citations/article/3c72b4e0-330f-4648-8750-d842904514b3.yaml": [
+    "quantum",
+    "cluster",
+    "states",
+    "engineered",
+    "in",
+    "three",
+    "dimensions"
+  ],
+  "data/citations/article/43599004-8b7d-4726-b7e1-1adb43816647.yaml": [
+    "theory",
+    "of",
+    "fault",
+    "tolerant",
+    "quantum",
+    "computation"
+  ],
+  "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml": [
+    "quantum",
+    "modern",
+    "quantum",
+    "computing",
+    "library"
+  ],
+  "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml": [
+    "exploring",
+    "the",
+    "topological",
+    "properties",
+    "of",
+    "the",
+    "tor",
+    "dark",
+    "web"
+  ],
+  "data/citations/article/5117ba86-4c99-474a-99ba-b2b3ac5b01ed.yaml": [
+    "asymmetric",
+    "cyclic",
+    "controlled",
+    "quantum",
+    "teleportation",
+    "via",
+    "multiple",
+    "qubit",
+    "entangled",
+    "state",
+    "in",
+    "noisy",
+    "environment"
+  ],
+  "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml": [
+    "quantum",
+    "programming",
+    "in",
+    "qcl"
+  ],
+  "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml": [
+    "quantum",
+    "machine",
+    "learning"
+  ],
+  "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml": [
+    "the",
+    "load",
+    "capacity",
+    "and",
+    "availability",
+    "of",
+    "quorum",
+    "systems"
+  ],
+  "data/citations/article/67780b61-decd-43d7-88b9-f8535b12df51.yaml": [
+    "surface",
+    "codes",
+    "towards",
+    "practical",
+    "large",
+    "scale",
+    "quantum",
+    "computation"
+  ],
+  "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml": [
+    "structured",
+    "quantum",
+    "programming"
+  ],
+  "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml": [
+    "loophole",
+    "free",
+    "bell",
+    "inequality",
+    "violation",
+    "using",
+    "electron",
+    "spins",
+    "separated",
+    "by",
+    "kilometres"
+  ],
+  "data/citations/article/6efa14ba-08a0-4b58-b64b-ec79daabd7ce.yaml": [
+    "can",
+    "programming",
+    "be",
+    "liberated",
+    "from",
+    "the",
+    "von",
+    "neumann",
+    "style",
+    "functional",
+    "style",
+    "and",
+    "its",
+    "algebra",
+    "of",
+    "programs"
+  ],
+  "data/citations/article/720f357c-1060-413c-a8f2-3cff2058d0c9.yaml": [
+    "twisting",
+    "entangled",
+    "photons",
+    "on",
+    "chip"
+  ],
+  "data/citations/article/72d381ac-c5e0-4a4d-841e-febda1d36d1f.yaml": [
+    "the",
+    "faster",
+    "than",
+    "light",
+    "telegraph",
+    "that",
+    "wasn"
+  ],
+  "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml": [
+    "highly",
+    "coherent",
+    "spin",
+    "states",
+    "in",
+    "carbon",
+    "nanotubes",
+    "coupled",
+    "to",
+    "cavity",
+    "photons"
+  ],
+  "data/citations/article/7fa31bfb-1124-416c-b1cf-2e87c3dcee18.yaml": [
+    "optical",
+    "computing",
+    "the",
+    "power",
+    "of",
+    "light"
+  ],
+  "data/citations/article/815bed59-af63-4b37-8da6-d1484c621362.yaml": [
+    "what",
+    "is",
+    "benford",
+    "law",
+    "why",
+    "this",
+    "unexpected",
+    "pattern",
+    "of",
+    "numbers",
+    "is",
+    "everywhere"
+  ],
+  "data/citations/article/827dcdc9-91f7-4a3c-88cc-d32154640305.yaml": [
+    "kademlia",
+    "practicable",
+    "approach",
+    "towards",
+    "secure",
+    "key",
+    "based",
+    "routing"
+  ],
+  "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml": [
+    "communication",
+    "theory",
+    "of",
+    "secrecy",
+    "systems"
+  ],
+  "data/citations/article/844ba6ee-7820-4565-9a71-d65b9abc5d53.yaml": [
+    "efficient",
+    "mml",
+    "math",
+    "xmlns",
+    "mml",
+    "http",
+    "www",
+    "w3",
+    "org",
+    "1998",
+    "math",
+    "mathml",
+    "mml",
+    "mi",
+    "mml",
+    "mi",
+    "mml",
+    "math",
+    "gates",
+    "for",
+    "quantum",
+    "computing"
+  ],
+  "data/citations/article/8ffa1416-8b57-4187-a4e0-bc9e124c3760.yaml": [
+    "quantum",
+    "teleportation",
+    "between",
+    "distant",
+    "matter",
+    "qubits"
+  ],
+  "data/citations/article/9327ba2a-36aa-4696-a8f3-b37272850c12.yaml": [
+    "teleporting",
+    "an",
+    "unknown",
+    "quantum",
+    "state",
+    "via",
+    "dual",
+    "classical",
+    "and",
+    "einstein",
+    "podolsky",
+    "rosen",
+    "channels"
+  ],
+  "data/citations/article/a0da0f6c-3274-4bce-9417-691483418a36.yaml": [
+    "the",
+    "applications",
+    "and",
+    "challenges",
+    "of",
+    "quantum",
+    "teleportation"
+  ],
+  "data/citations/article/aaf3f9be-8c12-425f-acc8-7ef1e8a8d14d.yaml": [
+    "efficient",
+    "quantum",
+    "amplitude",
+    "encoding",
+    "of",
+    "polynomial",
+    "functions"
+  ],
+  "data/citations/article/ac2cbe8d-61fc-434e-b6ed-2bb8c2750431.yaml": [
+    "ev",
+    "deep",
+    "neutron",
+    "bound",
+    "states",
+    "in",
+    "nanocrystals"
+  ],
+  "data/citations/article/ad232f52-614c-4401-95ff-a1411828f367.yaml": [
+    "optimal",
+    "availability",
+    "quorum",
+    "systems",
+    "theory",
+    "and",
+    "practice"
+  ],
+  "data/citations/article/adcae43e-6d62-4bc2-8209-b6fa2dcb774b.yaml": [
+    "polarized",
+    "white",
+    "light",
+    "emission",
+    "from",
+    "organic",
+    "semiconductors"
+  ],
+  "data/citations/article/b086551a-7f10-4140-9efa-7b4bfda58184.yaml": [
+    "experimental",
+    "quantum",
+    "teleportation"
+  ],
+  "data/citations/article/b26b190f-b24f-478a-ad04-eb388dcea360.yaml": [
+    "quantum",
+    "computing",
+    "in",
+    "the",
+    "nisq",
+    "era",
+    "and",
+    "beyond"
+  ],
+  "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml": [
+    "building",
+    "up",
+    "space",
+    "time",
+    "with",
+    "quantum",
+    "entanglement"
+  ],
+  "data/citations/article/b6a80a10-5d62-4053-8210-3255d41eae89.yaml": [
+    "an",
+    "introduction",
+    "to",
+    "quantum",
+    "error",
+    "correction",
+    "and",
+    "fault",
+    "tolerant",
+    "quantum",
+    "computation"
+  ],
+  "data/citations/article/b890e94e-d917-466c-827c-dd9b8f1f2ec3.yaml": [
+    "quantum",
+    "memories",
+    "emerging",
+    "applications",
+    "and",
+    "recent",
+    "advances"
+  ],
+  "data/citations/article/c1adcf2a-6622-4214-8e84-ed09a276a38e.yaml": [
+    "dual",
+    "comb",
+    "on",
+    "chip",
+    "targets",
+    "compact",
+    "optical",
+    "clocks"
+  ],
+  "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml": [
+    "testing",
+    "the",
+    "speed",
+    "of",
+    "spooky",
+    "action",
+    "at",
+    "distance"
+  ],
+  "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml": [
+    "microsoft",
+    "just",
+    "delivered",
+    "fantastic",
+    "quantum",
+    "computing",
+    "news",
+    "to",
+    "investors",
+    "is",
+    "the",
+    "stock",
+    "buy",
+    "the",
+    "motley",
+    "fool"
+  ],
+  "data/citations/article/cf4a0a7c-f80b-4455-91c4-6871954c8505.yaml": [
+    "sha",
+    "standard",
+    "permutation",
+    "based",
+    "hash",
+    "and",
+    "extendable",
+    "output",
+    "functions"
+  ],
+  "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml": [
+    "experimental",
+    "realization",
+    "of",
+    "teleporting",
+    "an",
+    "unknown",
+    "pure",
+    "quantum",
+    "state",
+    "via",
+    "dual",
+    "classical",
+    "and",
+    "einstein",
+    "podolsky",
+    "rosen",
+    "channels"
+  ],
+  "data/citations/article/d4a1ef86-a55e-4d3b-8482-4231e2c612d6.yaml": [
+    "opportunities",
+    "and",
+    "challenges",
+    "in",
+    "fault",
+    "tolerant",
+    "quantum",
+    "computation"
+  ],
+  "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml": [
+    "the",
+    "hierarchy",
+    "problem",
+    "and",
+    "new",
+    "dimensions",
+    "at",
+    "millimeter"
+  ],
+  "data/citations/article/e66bc34d-3f47-4511-be59-e02ab2ce0c56.yaml": [
+    "april",
+    "24",
+    "brute",
+    "force",
+    "attacks",
+    "amp",
+    "amp",
+    "vpn",
+    "vulnerabilities",
+    "openvpn",
+    "blog"
+  ],
+  "data/citations/article/e6aeb2e3-30be-4eae-8a5c-0a41457b829e.yaml": [
+    "carbon",
+    "defect",
+    "qubit",
+    "in",
+    "two",
+    "dimensional",
+    "ws2"
+  ],
+  "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml": [
+    "approximate",
+    "amplitude",
+    "encoding",
+    "in",
+    "shallow",
+    "parameterized",
+    "quantum",
+    "circuits",
+    "and",
+    "its",
+    "application",
+    "to",
+    "financial",
+    "market",
+    "indicators"
+  ],
+  "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml": [
+    "enjoy",
+    "your",
+    "observability",
+    "an",
+    "industrial",
+    "survey",
+    "of",
+    "microservice",
+    "tracing",
+    "and",
+    "analysis"
+  ],
+  "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml": [
+    "quantum",
+    "teleportation",
+    "across",
+    "the",
+    "danube"
+  ],
+  "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml": [
+    "fast",
+    "quantum",
+    "mechanical",
+    "algorithm",
+    "for",
+    "database",
+    "search"
+  ],
+  "data/citations/article/f0778a64-21ac-4713-a29f-cefcec1d062e.yaml": [
+    "end",
+    "to",
+    "end",
+    "arguments",
+    "in",
+    "system",
+    "design"
+  ],
+  "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml": [
+    "the",
+    "tail",
+    "at",
+    "scale"
+  ],
+  "data/citations/article/f9e2d5b7-5a2e-4ac3-964d-198ad2a54067.yaml": [
+    "hybrid",
+    "quantum",
+    "computing",
+    "pipeline",
+    "for",
+    "real",
+    "world",
+    "drug",
+    "discovery"
+  ],
+  "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml": [
+    "proof",
+    "for",
+    "the",
+    "queuing",
+    "formula"
+  ],
+  "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml": [
+    "the",
+    "essential",
+    "turing"
+  ],
+  "data/citations/books/415a4e38-cfe6-4897-85dc-352560ee72f7.yaml": [
+    "build",
+    "large",
+    "language",
+    "model",
+    "from",
+    "scratch"
+  ],
+  "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml": [
+    "quantum",
+    "computation",
+    "and",
+    "quantum",
+    "information",
+    "10",
+    "ed"
+  ],
+  "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml": [
+    "mathematics",
+    "of",
+    "quantum",
+    "computing"
+  ],
+  "data/citations/books/4e598b3a-e2a8-4132-8152-3c2c0f63fe75.yaml": [
+    "object",
+    "oriented",
+    "programming",
+    "with",
+    "turbo"
+  ],
+  "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml": [
+    "hacking",
+    "the",
+    "art",
+    "of",
+    "exploration"
+  ],
+  "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml": [
+    "practical",
+    "binary",
+    "analysis"
+  ],
+  "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml": [
+    "light",
+    "emitting",
+    "diodes",
+    "2nd",
+    "edition",
+    "2006"
+  ],
+  "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml": [
+    "mips",
+    "assembly",
+    "language",
+    "programming"
+  ],
+  "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml": [
+    "the",
+    "fractal",
+    "geometry",
+    "of",
+    "nature"
+  ],
+  "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml": [
+    "programmer",
+    "reference"
+  ],
+  "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml": [
+    "the",
+    "character",
+    "of",
+    "physical",
+    "law"
+  ],
+  "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml": [
+    "practical",
+    "foundations",
+    "for",
+    "programming",
+    "languages"
+  ],
+  "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml": [
+    "story",
+    "of",
+    "technology"
+  ],
+  "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml": [
+    "computer",
+    "graphics"
+  ],
+  "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml": [
+    "design",
+    "and",
+    "interfacing",
+    "of",
+    "the",
+    "ibm",
+    "pc",
+    "ps",
+    "and",
+    "compatible"
+  ],
+  "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml": [
+    "introduction",
+    "to",
+    "algorithms"
+  ],
+  "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml": [],
+  "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml": [
+    "quantum",
+    "computing"
+  ],
+  "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml": [
+    "the",
+    "programming",
+    "language"
+  ],
+  "data/citations/books/f366773e-3e9a-4403-bfd0-63236f01dfa7.yaml": [
+    "compilers",
+    "principles",
+    "techniques",
+    "and",
+    "tools"
+  ],
+  "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml": [
+    "programming",
+    "language",
+    "pragmatics"
+  ],
+  "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml": [
+    "xml",
+    "in",
+    "record",
+    "time"
+  ],
+  "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml": [
+    "traversal",
+    "using",
+    "relays",
+    "around",
+    "nat",
+    "turn",
+    "relay",
+    "extensions",
+    "to",
+    "session",
+    "traversal",
+    "utilities",
+    "for",
+    "nat",
+    "stun"
+  ],
+  "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml": [
+    "session",
+    "traversal",
+    "utilities",
+    "for",
+    "nat",
+    "stun"
+  ],
+  "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml": [
+    "internet",
+    "official",
+    "protocol",
+    "standards"
+  ],
+  "data/citations/rfc/72ebd6ae-5993-4a7a-b998-6b3f838bc588.yaml": [
+    "the",
+    "md5",
+    "message",
+    "digest",
+    "algorithm"
+  ],
+  "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml": [
+    "the",
+    "syslog",
+    "protocol"
+  ],
+  "data/citations/rfc/bdc4a446-8130-45f2-9f9b-c93c899430e2.yaml": [
+    "schnorr",
+    "non",
+    "interactive",
+    "zero",
+    "knowledge",
+    "proof"
+  ],
+  "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml": [
+    "msr",
+    "tr",
+    "2020",
+    "41",
+    "the",
+    "seven",
+    "properties",
+    "of",
+    "highly",
+    "secured",
+    "devices",
+    "2nd",
+    "edition"
+  ],
+  "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml": [
+    "research",
+    "cs",
+    "wisc",
+    "edu"
+  ],
+  "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml": [
+    "media",
+    "vw",
+    "com"
+  ],
+  "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml": [
+    "klossner",
+    "cartoons"
+  ],
+  "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml": [
+    "csrc",
+    "nist",
+    "gov"
+  ],
+  "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml": [
+    "docs",
+    "rigetti",
+    "com"
+  ],
+  "data/citations/site/3513ba6f-05de-4db4-a6f8-76d125acc9c8.yaml": [
+    "json"
+  ],
+  "data/citations/site/3730a604-aed8-4c95-a5b5-dda895fa7796.yaml": [
+    "the",
+    "pace",
+    "of",
+    "modern",
+    "life"
+  ],
+  "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml": [
+    "github",
+    "com"
+  ],
+  "data/citations/site/6d5c1a76-f4c3-4d4a-95de-ec9349e2864d.yaml": [
+    "python",
+    "enumerations"
+  ],
+  "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml": [
+    "aws",
+    "amazon",
+    "com"
+  ],
+  "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml": [
+    "recommendation",
+    "for",
+    "applications",
+    "using",
+    "approved",
+    "hash",
+    "algorithms"
+  ],
+  "data/citations/site/a7440c70-24a6-498f-96bd-561f5287304b.yaml": [
+    "www",
+    "nsa",
+    "gov"
+  ],
+  "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml": [
+    "chapter",
+    "boost",
+    "json",
+    "84"
+  ],
+  "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml": [
+    "developer",
+    "nvidia",
+    "com",
+    "cuda",
+    "toolkit"
+  ],
+  "data/citations/site/b77e9da9-f032-41f6-a1f6-99a4dabcfabc.yaml": [
+    "go",
+    "by",
+    "example",
+    "enums"
+  ],
+  "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml": [
+    "pyquil",
+    "docs",
+    "rigetti",
+    "com"
+  ],
+  "data/citations/site/d11a9cb5-6fb6-4216-9604-a3c551f67a5f.yaml": [
+    "what",
+    "is",
+    "the",
+    "osi",
+    "model"
+  ],
+  "data/citations/site/dccbb75a-cfdb-481c-9300-1d472c0a0dc8.yaml": [
+    "ach",
+    "file",
+    "overview",
+    "ach",
+    "guide",
+    "for",
+    "developers"
+  ],
+  "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml": [
+    "www",
+    "researchgate",
+    "net"
+  ],
+  "data/citations/site/f3f63fb5-9662-4e93-b899-5104d09a23ed.yaml": [
+    "yaml",
+    "org"
+  ],
+  "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml": [
+    "ich",
+    "ectd",
+    "specification",
+    "international",
+    "conference",
+    "on",
+    "harmonisation",
+    "of",
+    "technical",
+    "requirements",
+    "for",
+    "registration",
+    "of",
+    "pharmaceuticals",
+    "for",
+    "human",
+    "use",
+    "ich",
+    "m2",
+    "ewg",
+    "electronic",
+    "common",
+    "technical",
+    "document",
+    "specification"
+  ]
 }

@@ -9,7 +9,7 @@ A single-CLI, Git-backed annotated bibliography that stores one APA7 entry per Y
   - `search --keyword k1,k2` lists entries that contain all keywords (AND, case-insensitive).
   - `index` rebuilds the search index JSON (keywords, title words/names, publisher, year, publication/journal or website domain, and type). Values are full paths relative to the repo root (e.g., `data/citations/article/my-article-2023.yaml`). Also writes:
     - `data/metadata/authors.json` mapping author names to their cited works.
-    - `data/metadata/titles.json` mapping each work path to its title.
+- `data/metadata/titles.json` mapping each work path to the tokenized list of words from the work's title.
     - `data/metadata/isbn.json` mapping each book path to its ISBN.
     - `data/metadata/doi.json` mapping each work path (with `apa7.doi`) to its DOI.
 - Deterministic output: strict YAML validated against a schema (no AI calls).
