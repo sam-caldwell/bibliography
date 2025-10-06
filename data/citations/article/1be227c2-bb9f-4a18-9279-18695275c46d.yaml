@@ -1,0 +1,24 @@
+id: 1be227c2-bb9f-4a18-9279-18695275c46d
+type: article
+apa7:
+    authors:
+        - family: Kulkarni
+          given: A.
+        - family: Hazari
+          given: N. A.
+        - family: Niamat
+          given: M. Y.
+    year: 2024
+    title: A Zero Trust-Based Framework Employing Blockchain Technology and Ring Oscillator Physical Unclonable Functions for Security of Field Programmable Gate Array Supply Chain
+    container_title: IEEE Access
+    publisher: Institute of Electrical and Electronics Engineers (IEEE)
+    journal: IEEE Access
+    volume: "12"
+    pages: 89322-89338
+    doi: 10.1109/access.2024.3418572
+    url: https://doi.org/10.1109/access.2024.3418572
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for A Zero Trust-Based Framework Employing Blockchain Technology and Ring Oscillator Physical Unclonable Functions for Security of Field Programmable Gate Array Supply Chain in IEEE Access via DOI metadata.
+    keywords:
+        - article
