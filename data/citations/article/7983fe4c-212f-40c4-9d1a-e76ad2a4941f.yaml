@@ -1,0 +1,16 @@
+id: 7983fe4c-212f-40c4-9d1a-e76ad2a4941f
+type: article
+apa7:
+    authors:
+        - family: RoderickSimpson
+    year: 1996
+    date: "1996-03-01"
+    title: Zimmermann Wins, US Loses
+    container_title: WIRED
+    publisher: WIRED
+    url: https://www.wired.com/1996/03/zimmermann-wins-us-loses/
+    accessed: "2025-10-06"
+annotation:
+    summary: This January the US Attorney’s office finally pinned the tail on its befuddled two-and-a-half-year investigation of Phil Zimmermann. Zimmermann will not be prosecuted for the international export of Pretty Good Privacy, his popular public key encryption that is considered munitions by the US Customs Service. Problem is, after this colossal waste of time, Main Law \[…\]
+    keywords:
+        - article
