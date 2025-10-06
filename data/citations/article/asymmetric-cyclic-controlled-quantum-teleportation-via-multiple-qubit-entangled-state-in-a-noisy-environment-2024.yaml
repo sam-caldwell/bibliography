@@ -1,0 +1,22 @@
+id: asymmetric-cyclic-controlled-quantum-teleportation-via-multiple-qubit-entangled-state-in-a-noisy-environment-2024
+type: article
+apa7:
+    authors:
+        - family: Zhou
+          given: H.
+    year: 2024
+    date: "2024-12-18"
+    title: Asymmetric Cyclic Controlled Quantum Teleportation via Multiple-Qubit Entangled State in a Noisy Environment
+    container_title: Entropy
+    publisher: MDPI AG
+    journal: Entropy
+    volume: "26"
+    issue: "12"
+    pages: "1108"
+    doi: 10.3390/e26121108
+    url: https://doi.org/10.3390/e26121108
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Asymmetric Cyclic Controlled Quantum Teleportation via Multiple-Qubit Entangled State in a Noisy Environment in Entropy via DOI metadata.
+    keywords:
+        - article
