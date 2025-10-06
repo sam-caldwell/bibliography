@@ -1,0 +1,16 @@
+id: 55ba163d-f31d-4b4a-b6ee-8ebf74cac085
+type: article
+apa7:
+    authors:
+        - family: ellen_messmer
+    year: 2007
+    date: "2007-08-03"
+    title: An antidote for the Blue Pill?
+    container_title: Computerworld
+    publisher: Computerworld
+    url: https://www.computerworld.com/article/1584388/an-antidote-for-the-blue-pill.html
+    accessed: "2025-10-06"
+annotation:
+    summary: Is Joanna Rutkowska&#039;s legendary Blue Pill unbeatable? A number of security researchers presented their cases for the possibility of trumping virtual-machine rootkits, and even Rutkowska herself acknowledged that one researcher has come closer than any other to devising a detection method.
+    keywords:
+        - article
