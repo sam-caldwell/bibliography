@@ -1,0 +1,20 @@
+id: a-practical-quantum-instruction-set-architecture-2016
+type: article
+apa7:
+    authors:
+        - family: Smith
+          given: R. S.
+        - family: Curtis
+          given: M. J.
+        - family: Zeng
+          given: W. J.
+    year: 2016
+    title: A Practical Quantum Instruction Set Architecture
+    publisher: arXiv
+    doi: 10.48550/ARXIV.1608.03355
+    url: https://doi.org/10.48550/arxiv.1608.03355
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for A Practical Quantum Instruction Set Architecture via DOI metadata.
+    keywords:
+        - article
