@@ -23,6 +23,16 @@ apa7:
     url: https://doi.org/10.1109/mc.2022.3178813
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Can You Trust Zero Trust? in Computer via DOI metadata.
+    summary: |
+        This article provides a rarely discussed view of Zero Trust Network Architecture (ZTNA), which is often 
+        drowned out by marketing companies from ZTNA vendors like Zscaler, Palo Alto Networks or Microsoft.  In this 
+        discussion, many concerns and counterpoints to the mainstream thought are made and possible solutions are 
+        suggested.
     keywords:
-        - article
+        - ztna
+        - zero-trust network architecture
+        - cybersecurity
+        - information security
+        - zscalar
+        - palo alto networks
+        - microsoft

@@ -23,6 +23,14 @@ apa7:
     url: https://doi.org/10.1109/MCE.2022.3154357
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Assigning Trust to Devices in the Context of Consumer IoT Applications in IEEE Consumer Electronics Magazine via DOI metadata.
+    summary: |
+        With the outstanding growth in the number of consumer Internet of Things (IoT) connected devices, especially
+        boosted by smart home applications and wearables, there is a need to provide such devices with security. If 
+        any device in such consumer IoT systems gets compromised, a data leak may cause serious threats to privacy, 
+        material losses, and even put people's lives at risk. Therefore, in this article, we focus on challenges 
+        associated with the trust involving communication between IoT devices, which is a key security-related 
+        characteristic in consumer IoT applications. A mathematical trust metric, based on a two-level approach, 
+        is used to illustrate how the presented proposal can be useful in the objective assessment of confidence and,
+        consequently, provide better security among IoT devices.
     keywords:
         - article
