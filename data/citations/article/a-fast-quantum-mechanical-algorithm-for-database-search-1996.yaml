@@ -1,0 +1,19 @@
+id: a-fast-quantum-mechanical-algorithm-for-database-search-1996
+type: article
+apa7:
+    authors:
+        - family: Grover
+          given: L. K.
+    year: 1996
+    title: A fast quantum mechanical algorithm for database search
+    container_title: Proceedings of the twenty-eighth annual ACM symposium on Theory of computing  - STOC '96
+    publisher: ACM Press
+    journal: Proceedings of the twenty-eighth annual ACM symposium on Theory of computing  - STOC '96
+    pages: 212-219
+    doi: 10.1145/237814.237866
+    url: https://doi.org/10.1145/237814.237866
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for A fast quantum mechanical algorithm for database search in Proceedings of the twenty-eighth annual ACM symposium on Theory of computing  - STOC '96 via DOI metadata.
+    keywords:
+        - article
