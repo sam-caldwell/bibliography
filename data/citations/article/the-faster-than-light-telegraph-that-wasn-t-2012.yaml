@@ -1,0 +1,17 @@
+id: the-faster-than-light-telegraph-that-wasn-t-2012
+type: article
+apa7:
+    authors:
+        - family: Kaiser
+          given: D.
+    year: 2012
+    date: "2012-05-29"
+    title: The Faster-Than-Light Telegraph That Wasn't
+    container_title: Scientific American
+    publisher: Scientific American
+    url: https://www.scientificamerican.com/article/mistakes-faster-than-light-telegraph-that-wasnt/
+    accessed: "2025-10-06"
+annotation:
+    summary: In 1981 physicist Nick Herbert leveraged strange features of quantum mechanics to design a superluminal communication system. The quest to uncover its subtle flaw led to a profound new understanding of the quantum world
+    keywords:
+        - article
