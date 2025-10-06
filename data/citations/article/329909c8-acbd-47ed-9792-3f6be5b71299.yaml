@@ -1,0 +1,23 @@
+id: 329909c8-acbd-47ed-9792-3f6be5b71299
+type: article
+apa7:
+    authors:
+        - family: Sengupta
+          given: B.
+        - family: Lakshminarayanan
+          given: A.
+    year: 2021
+    date: "2021-12-01"
+    title: 'DistriTrust: Distributed and low-latency access validation in zero-trust architecture'
+    container_title: Journal of Information Security and Applications
+    publisher: Elsevier BV
+    journal: Journal of Information Security and Applications
+    volume: "63"
+    pages: "103023"
+    doi: 10.1016/j.jisa.2021.103023
+    url: https://doi.org/10.1016/j.jisa.2021.103023
+    accessed: "2025-10-06"
+annotation:
+    summary: 'Bibliographic record for DistriTrust: Distributed and low-latency access validation in zero-trust architecture in Journal of Information Security and Applications via DOI metadata.'
+    keywords:
+        - article
