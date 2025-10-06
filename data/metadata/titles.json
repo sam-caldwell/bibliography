@@ -495,6 +495,16 @@
     "experience",
     "pbs"
   ],
+  "data/citations/article/70e6f609-22d4-4355-9999-0bfc43a88783.yaml": [
+    "mit",
+    "releases",
+    "its",
+    "report",
+    "on",
+    "aaron",
+    "swartz",
+    "prosecution"
+  ],
   "data/citations/article/720f357c-1060-413c-a8f2-3cff2058d0c9.yaml": [
     "twisting",
     "entangled",
@@ -551,6 +561,12 @@
     "for",
     "full",
     "sha"
+  ],
+  "data/citations/article/7983fe4c-212f-40c4-9d1a-e76ad2a4941f.yaml": [
+    "zimmermann",
+    "wins",
+    "us",
+    "loses"
   ],
   "data/citations/article/7fa31bfb-1124-416c-b1cf-2e87c3dcee18.yaml": [
     "optical",
@@ -679,6 +695,19 @@
     "discovered",
     "via",
     "chatgpt"
+  ],
+  "data/citations/article/9e48ba5a-68d6-4cee-af68-f1e81d7379d9.yaml": [
+    "reina",
+    "state",
+    "940",
+    "2d",
+    "770",
+    "tex",
+    "app",
+    "judgment",
+    "law",
+    "casemine",
+    "com"
   ],
   "data/citations/article/9ffd35f4-1db9-4453-a1f9-0936b7c0c195.yaml": [
     "stuxnet",
@@ -937,6 +966,29 @@
     "output",
     "functions"
   ],
+  "data/citations/article/cf4f8a00-a66d-4d12-b5ad-1926421a9c63.yaml": [
+    "is",
+    "an",
+    "expanded",
+    "right",
+    "of",
+    "privacy",
+    "consistent",
+    "with",
+    "fair",
+    "and",
+    "effective",
+    "law",
+    "enforcement",
+    "or",
+    "privacy",
+    "you",
+    "ve",
+    "come",
+    "long",
+    "way",
+    "baby"
+  ],
   "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml": [
     "experimental",
     "realization",
@@ -1174,6 +1226,9 @@
     "roman",
     "empire"
   ],
+  "data/citations/books/17689904-88a8-4401-859a-a40f6ddd9f13.yaml": [
+    "veil"
+  ],
   "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml": [
     "the",
     "essential",
@@ -1280,6 +1335,14 @@
     "story",
     "of",
     "technology"
+  ],
+  "data/citations/books/aeaee977-0e60-4cad-b54e-dd3d30c16a77.yaml": [
+    "through",
+    "the",
+    "eyes",
+    "of",
+    "the",
+    "enemy"
   ],
   "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml": [
     "computer",
@@ -1655,5 +1718,19 @@
     "accepted",
     "the",
     "risk"
+  ],
+  "data/citations/video/8d030176-29f0-4f22-b07f-6ba8707812e7.yaml": [
+    "jon",
+    "stewart",
+    "nick",
+    "gillespie",
+    "on",
+    "trump",
+    "freedom",
+    "bob",
+    "dylan",
+    "the",
+    "weekly",
+    "show"
   ]
 }
