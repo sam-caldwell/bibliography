@@ -1,0 +1,22 @@
+id: 859a9788-c204-4dda-92bf-c6f809733568
+type: article
+apa7:
+    authors:
+        - family: van der Meulen
+          given: N.
+    year: 2013
+    date: "2013-06-01"
+    title: 'DigiNotar: Dissecting the First Dutch Digital Disaster'
+    container_title: Journal of Strategic Security
+    publisher: University of South Florida Libraries
+    journal: Journal of Strategic Security
+    volume: "6"
+    issue: "2"
+    pages: 46-58
+    doi: 10.5038/1944-0472.6.2.4
+    url: https://doi.org/10.5038/1944-0472.6.2.4
+    accessed: "2025-10-06"
+annotation:
+    summary: 'Bibliographic record for DigiNotar: Dissecting the First Dutch Digital Disaster in Journal of Strategic Security via DOI metadata.'
+    keywords:
+        - article
