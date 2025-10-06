@@ -1,0 +1,21 @@
+id: 4d5e98ce-ffec-47b7-8694-2773bc77db67
+type: article
+apa7:
+    authors:
+        - family: Ghosh
+          given: A.
+        - family: Boyd
+          given: S.
+    year: 2006
+    title: Growing Well-connected Graphs
+    container_title: Proceedings of the 45th IEEE Conference on Decision and Control
+    publisher: IEEE
+    journal: Proceedings of the 45th IEEE Conference on Decision and Control
+    pages: 6605-6611
+    doi: 10.1109/cdc.2006.377282
+    url: https://doi.org/10.1109/CDC.2006.377282
+    accessed: "2025-10-06"
+annotation:
+    summary: Bibliographic record for Growing Well-connected Graphs in Proceedings of the 45th IEEE Conference on Decision and Control via DOI metadata.
+    keywords:
+        - article
