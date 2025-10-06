@@ -17,7 +17,31 @@ apa7:
     url: https://openlibrary.org/books/OL7409090M/Computer_Graphics
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Computer Graphics (Addison-Wesley Professional, 1995) from OpenLibrary.
+    summary: |-
+        "Computer Graphics" is a comprehensive text that explores the fundamental concepts and techniques in the field
+        of computer graphics. The work delves into the mathematical and algorithmic foundations that underpin graphic
+        rendering, including topics such as geometric transformations, rasterization, and shading models. It addresses
+        both 2D and 3D graphics, providing insights into the processes involved in creating visual representations on
+        digital platforms. The book also discusses various applications of computer graphics, ranging from video games
+        and simulations to scientific visualization and user interface design. It emphasizes the importance of
+        understanding the hardware and software components that contribute to graphics rendering, including graphics
+        processing units (GPUs) and rendering engines. In addition to theoretical concepts, the text includes
+        practical examples and exercises that encourage readers to apply their knowledge. The author aims to equip
+        students and professionals with the skills necessary to navigate the rapidly evolving landscape of computer
+        graphics technology. Overall, this work serves as a foundational resource for anyone interested in the
+        principles and practices of creating and manipulating visual content through computational means.
     keywords:
+        - 2d graphics
+        - 3d graphics
+        - book
         - computer graphics
+        - geometric transformations
         - gráficas por computadoras
+        - rasterization
+        - rendering
+        - scientific visualization
+        - shading models
+        - simulations
+        - user interface design
+        - video games
+        - visual representation

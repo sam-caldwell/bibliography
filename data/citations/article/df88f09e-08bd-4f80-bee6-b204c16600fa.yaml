@@ -3,11 +3,11 @@ type: article
 apa7:
     authors:
         - family: Koch
-          given: R.
+          given: Robert
         - family: Golling
-          given: M.
+          given: Mario
         - family: Rodosek
-          given: G. D.
+          given: Gabi Dreo
     year: 2016
     date: "2016-03-01"
     title: How Anonymous Is the Tor Network? A Long-Term Black-Box Investigation
@@ -21,6 +21,15 @@ apa7:
     url: https://doi.org/10.1109/mc.2016.73
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for How Anonymous Is the Tor Network? A Long-Term Black-Box Investigation in Computer via DOI metadata.
+    summary: |
+        This article describes some of the security issues with centralized or semi-decentralized systems like Tor 
+        in an increasingly surveillance oriented world where both criminal and nation-state threat actors have 
+        increased capabilities and privacy-focused solutions like Tor are shown to have non-trivial flaws.
     keywords:
-        - article
+        - privacy
+        - tor
+        - surveillance
+        - terrorism
+        - security
+        - crime
+        - cybersecurity

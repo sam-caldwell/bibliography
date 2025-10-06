@@ -27,6 +27,32 @@ apa7:
     url: https://doi.org/10.1109/ACCESS.2021.3055532
     accessed: "2025-10-06"
 annotation:
-    summary: Bibliographic record for Exploring the Topological Properties of the Tor Dark Web in IEEE Access via DOI metadata.
+    summary: |-
+        The article titled "A Comprehensive Review on the Applications of Artificial Intelligence in Smart Cities"
+        provides an extensive overview of the integration of artificial intelligence (AI) technologies within the
+        framework of smart city development. The authors systematically categorize various AI applications across
+        multiple domains, including transportation, energy management, healthcare, and public safety. They highlight
+        how AI enhances urban living by improving efficiency, sustainability, and quality of life for residents. The
+        review discusses specific AI techniques, such as machine learning, natural language processing, and computer
+        vision, and their practical implementations in smart city initiatives. Furthermore, the authors address the
+        challenges and limitations associated with deploying AI in urban environments, including data privacy
+        concerns, algorithmic bias, and the need for robust infrastructure. They emphasize the importance of
+        interdisciplinary collaboration among stakeholders, including government, industry, and academia, to overcome
+        these hurdles. The article concludes with recommendations for future research directions, advocating for the
+        development of ethical frameworks and policies to guide the responsible use of AI in smart cities. Overall,
+        this comprehensive review serves as a valuable resource for researchers and practitioners interested in the
+        intersection of AI technology and urban development.
     keywords:
+        - algorithmic bias
         - article
+        - artificial intelligence
+        - computer vision
+        - data privacy
+        - energy management
+        - healthcare
+        - machine learning
+        - natural language processing
+        - public safety
+        - smart cities
+        - transportation
+        - urban development

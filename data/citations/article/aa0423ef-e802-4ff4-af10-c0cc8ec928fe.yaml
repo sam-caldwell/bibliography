@@ -23,6 +23,15 @@ apa7:
     url: https://doi.org/10.1007/s10207-023-00745-4
     accessed: "2025-10-06"
 annotation:
-    summary: 'Bibliographic record for Forensic investigation of the dark web on the Tor network: pathway toward the surface web in International Journal of Information Security via DOI metadata.'
+    summary: |
+        This paper investigates the dark web through forensic analysis on the Tor network, providing insights into 
+        the security challenges posed by anonymity networks. The study discusses the illegal activities found on 
+        "dark web" systems like Tor or I2P, which creates ethical issues for the creators of any privacy-focused 
+        system.
     keywords:
-        - article
+        - i2p
+        - privacy
+        - cybersecurity
+        - crime
+        - information security
+        - tor
