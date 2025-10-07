@@ -411,9 +411,6 @@
   "Higgins, K. J.": [
     "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml"
   ],
-  "Highwaymen": [
-    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
-  ],
   "Hill, Patrick": [
     "data/citations/patent/d9b611ce-0b34-4efd-9932-add409fea46b.yaml"
   ],
@@ -966,6 +963,9 @@
   ],
   "Tezuka, H.": [
     "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml"
+  ],
+  "The Highwaymen": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "The Weekly Show with Jon Stewart": [
     "data/citations/video/8d030176-29f0-4f22-b07f-6ba8707812e7.yaml"
