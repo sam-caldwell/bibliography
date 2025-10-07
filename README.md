@@ -1,4 +1,7 @@
 # Bibliography CLI (APA7 + Annotated YAML)
+
+Version: [![Version](https://img.shields.io/github/v/tag/sam-caldwell/bibliography?sort=semver)](https://github.com/sam-caldwell/bibliography/tags)
+
 (c) 2025 Sam Caldwell. (mail@samcaldwell.net). See [LICENSE](LICENSE)
 
 ![Bibliography CLI Logo](docs/logo.png)
@@ -207,4 +210,3 @@ Security & Data Ownership
 - Citation YAMLs in `data/citations/` are the canonical source of truth checked into your repo.
 - Everything in `data/metadata/` is derived and can be regenerated at any time.
 - The CLI only uses public metadata endpoints for adds and never uploads repository contents.
-
