@@ -56,7 +56,11 @@ func newSearchCmd() *cobra.Command {
 				}
 				sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
 				for _, it := range out {
-					fmt.Fprintf(cmd.OutOrStdout(), "%s, %s, %s, %s\n", it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e))
+					_, err = fmt.Fprintf(cmd.OutOrStdout(), "%s, %s, %s, %s\n",
+						it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e))
+					if err != nil {
+						return err
+					}
 				}
 				return nil
 			}
