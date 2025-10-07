@@ -16,6 +16,7 @@ func execute() error {
 	// Attach subcommands
 	rootCmd.AddCommand(newAddCmd())
 	rootCmd.AddCommand(newSearchCmd())
+	rootCmd.AddCommand(newCiteCmd())
 	rootCmd.AddCommand(newIndexCmd())
 	rootCmd.AddCommand(newPublishCmd())
 	rootCmd.AddCommand(newMigrateIDsCmd())

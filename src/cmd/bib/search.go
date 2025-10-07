@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"io"
 	"regexp"
 	"sort"
 	"strconv"
@@ -55,13 +56,11 @@ func newSearchCmd() *cobra.Command {
 					}
 				}
 				sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
+				rows := make([][]string, 0, len(out))
 				for _, it := range out {
-					_, err = fmt.Fprintf(cmd.OutOrStdout(), "%s, %s, %s, %s\n",
-						it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e))
-					if err != nil {
-						return err
-					}
+					rows = append(rows, []string{it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e)})
 				}
+				renderTable(cmd.OutOrStdout(), []string{"id", "type", "title", "author"}, rows)
 				return nil
 			}
 
@@ -70,12 +69,24 @@ func newSearchCmd() *cobra.Command {
 				if strings.TrimSpace(keywords) == "" {
 					return fmt.Errorf("provide an expression, --keyword, or a query flag like --all, --author, --title, or --summary")
 				}
-				ks := strings.Split(keywords, ",")
-				matches := store.FilterByKeywordsAND(entries, ks)
-				for _, e := range matches {
-					seg := store.SegmentForType(e.Type)
-					fmt.Fprintf(cmd.OutOrStdout(), "data/citations/%s/%s.yaml: %s\n", seg, e.ID, e.APA7.Title)
+				// Relevance using keyword-only scoring
+				type scored struct {
+					e schema.Entry
+					s int
 				}
+				var out []scored
+				for _, e := range entries {
+					s := scoreEntry(e, keywords, "", "", "", "")
+					if s > 0 {
+						out = append(out, scored{e: e, s: s})
+					}
+				}
+				sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
+				rows := make([][]string, 0, len(out))
+				for _, it := range out {
+					rows = append(rows, []string{it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e)})
+				}
+				renderTable(cmd.OutOrStdout(), []string{"id", "type", "title", "author"}, rows)
 				return nil
 			}
 
@@ -92,9 +103,11 @@ func newSearchCmd() *cobra.Command {
 				}
 			}
 			sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
+			rows := make([][]string, 0, len(out))
 			for _, it := range out {
-				fmt.Fprintf(cmd.OutOrStdout(), "%s, %s, %s, %s\n", it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e))
+				rows = append(rows, []string{it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e)})
 			}
+			renderTable(cmd.OutOrStdout(), []string{"id", "type", "title", "author"}, rows)
 			return nil
 		},
 	}
@@ -389,4 +402,52 @@ func trimQuotes(s string) string {
 		}
 	}
 	return s
+}
+
+// renderTable prints a simple ASCII table (left-aligned) with headers and rows.
+func renderTable(w io.Writer, headers []string, rows [][]string) {
+	// compute widths
+	widths := make([]int, len(headers))
+	for i, h := range headers {
+		widths[i] = len(h)
+	}
+	for _, r := range rows {
+		for i := range headers {
+			if i < len(r) {
+				if l := len(r[i]); l > widths[i] {
+					widths[i] = l
+				}
+			}
+		}
+	}
+	// header
+	for i, h := range headers {
+		fmt.Fprintf(w, "%-*s", widths[i], h)
+		if i != len(headers)-1 {
+			fmt.Fprint(w, "  ")
+		}
+	}
+	fmt.Fprint(w, "\n")
+	// separator
+	for i := range headers {
+		fmt.Fprint(w, strings.Repeat("-", widths[i]))
+		if i != len(headers)-1 {
+			fmt.Fprint(w, "  ")
+		}
+	}
+	fmt.Fprint(w, "\n")
+	// rows
+	for _, r := range rows {
+		for i := range headers {
+			val := ""
+			if i < len(r) {
+				val = r[i]
+			}
+			fmt.Fprintf(w, "%-*s", widths[i], val)
+			if i != len(headers)-1 {
+				fmt.Fprint(w, "  ")
+			}
+		}
+		fmt.Fprint(w, "\n")
+	}
 }

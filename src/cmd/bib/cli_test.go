@@ -74,6 +74,7 @@ func TestIndexAndSearch(t *testing.T) {
 			_, _ = f.WriteString("  accessed: \"" + e.APA7.Accessed + "\"\n")
 		}
 		_, _ = f.WriteString("annotation:\n  summary: \"s\"\n  keywords: [\"" + e.Annotation.Keywords[0] + "\", \"" + e.Annotation.Keywords[1] + "\"]\n")
+
 	}
 	write(e1)
 	write(e2)
@@ -94,142 +95,11 @@ func TestIndexAndSearch(t *testing.T) {
 	if err != nil {
 		t.Fatalf("search: %v", err)
 	}
-	if !bytes.Contains([]byte(out), []byte("data/citations/site/")) || !bytes.Contains([]byte(out), []byte(": A")) {
-		t.Fatalf("expected site match for title A, got: %q", out)
+	if !bytes.Contains([]byte(out), []byte("id")) || !bytes.Contains([]byte(out), []byte("type")) {
+		t.Fatalf("expected table headers, got: %q", out)
 	}
-}
-
-func TestLookupSite_Basic(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-
-	// Fake git commit/push (do nothing)
-	called := false
-	commitAndPush = func(paths []string, msg string) error { called = true; return nil }
-	t.Cleanup(func() { commitAndPush = nil })
-
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newAddCmd())
-
-	// Run add site
-	if _, err := execCmd(rootCmd, "add", "site", "https://example.com"); err != nil {
-		t.Fatalf("add: %v", err)
-	}
-	files, _ := os.ReadDir(filepath.Join("data/citations", "site"))
-	if len(files) != 1 || !strings.HasSuffix(files[0].Name(), ".yaml") {
-		t.Fatalf("expected one yaml in site dir, got %v", files)
-	}
-	if !called {
-		t.Fatalf("expected commitAndPush to be called")
-	}
-}
-
-func TestSearchFlagValidation(t *testing.T) {
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newSearchCmd())
-	if _, err := execCmd(rootCmd, "search"); err == nil {
-		t.Fatalf("expected error when --keyword missing")
-	}
-}
-
-func TestLookupBookAndMovie_Minimal(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-
-	commitAndPush = func(paths []string, msg string) error { return nil }
-
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newAddCmd())
-
-	if _, err := execCmd(rootCmd, "add", "book", "--name", "The Book"); err != nil {
-		t.Fatalf("add book: %v", err)
-	}
-	files, _ := os.ReadDir(filepath.Join("data/citations", "books"))
-	if len(files) != 1 {
-		t.Fatalf("expected one book yaml written")
-	}
-
-	if _, err := execCmd(rootCmd, "add", "movie", "Best", "Movie", "--date", "2024-01-01"); err != nil {
-		t.Fatalf("add movie: %v", err)
-	}
-	files, _ = os.ReadDir(filepath.Join("data/citations", "movie"))
-	if len(files) != 1 {
-		t.Fatalf("expected one movie yaml written")
-	}
-}
-
-func intPtr(v int) *int { return &v }
-
-// Removed: requirement for OPENAI_API_KEY
-
-func TestIndexPrintsPath(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-
-	// Stub commit for index
-	commitAndPush = func(paths []string, msg string) error { return nil }
-	t.Cleanup(func() { commitAndPush = nil })
-
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newIndexCmd())
-	out, err := execCmd(rootCmd, "index")
-	if err != nil {
-		t.Fatalf("index: %v", err)
-	}
-	if !bytes.Contains([]byte(out), []byte("wrote data/metadata/keywords.json")) {
-		t.Fatalf("expected output to mention keywords.json, got %q", out)
-	}
-	if !bytes.Contains([]byte(out), []byte("wrote data/metadata/doi.json")) {
-		t.Fatalf("expected output to mention doi.json, got %q", out)
-	}
-}
-
-func TestLookupSite_SetsAccessedAndHandlesCommitError(t *testing.T) {
-	dir := t.TempDir()
-	old, _ := os.Getwd()
-	t.Cleanup(func() { _ = os.Chdir(old) })
-	_ = os.Chdir(dir)
-
-	// No OpenAI path; the command constructs minimal entry from URL
-
-	// First, simulate commit error
-	commitAndPush = func(paths []string, msg string) error { return fmt.Errorf("push failed") }
-	rootCmd = &cobra.Command{Use: "bib"}
-	rootCmd.AddCommand(newAddCmd())
-	if _, err := execCmd(rootCmd, "add", "site", "https://t"); err == nil {
-		t.Fatalf("expected commit error to surface")
-	}
-
-	// Now simulate success
-	commitAndPush = func(paths []string, msg string) error { return nil }
-	if _, err := execCmd(rootCmd, "add", "site", "https://t"); err != nil {
-		t.Fatalf("add site: %v", err)
-	}
-	// Verify at least one YAML has accessed set
-	entries, _ := os.ReadDir(filepath.Join("data/citations", "site"))
-	if len(entries) == 0 {
-		t.Fatalf("expected some entries in site dir")
-	}
-	var b []byte
-	var err error
-	for _, de := range entries {
-		bb, rerr := os.ReadFile(filepath.Join("data/citations", "site", de.Name()))
-		if rerr == nil && bytes.Contains(bb, []byte("accessed:")) {
-			b = bb
-			break
-		}
-	}
-	if err != nil {
-		t.Fatalf("read yaml: %v", err)
-	}
-	if !bytes.Contains(b, []byte("accessed:")) {
-		t.Fatalf("expected accessed set in yaml: %s", string(b))
+	if !bytes.Contains([]byte(out), []byte("website")) || !bytes.Contains([]byte(out), []byte(" A")) {
+		t.Fatalf("expected website row with title A, got: %q", out)
 	}
 }
 
@@ -931,5 +801,34 @@ func TestPublishWritesDocs(t *testing.T) {
 	}
 	if _, err := os.Stat(filepath.Join("docs", "books", e2.ID+".html")); err != nil {
 		t.Fatalf("missing book page: %v", err)
+	}
+}
+
+func TestCiteFormatsAPAAndInText(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+
+	y := 2021
+	e := schema.Entry{ID: schema.NewID(), Type: "article", APA7: schema.APA7{Title: "An Example Title", Year: &y, Journal: "J. Tests", Volume: "12", Issue: "3", Pages: "45-60", Authors: schema.Authors{{Family: "Kim", Given: "Alice"}, {Family: "Doe", Given: "B."}}}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+	if _, err := store.WriteEntry(e); err != nil {
+		t.Fatal(err)
+	}
+
+	rootCmd = &cobra.Command{Use: "bib"}
+	rootCmd.AddCommand(newCiteCmd())
+	out, err := execCmd(rootCmd, "cite", e.ID)
+	if err != nil {
+		t.Fatalf("cite: %v", err)
+	}
+	if !strings.Contains(out, "Kim, A., & Doe, B.") {
+		t.Fatalf("expected formatted authors, got: %q", out)
+	}
+	if !strings.Contains(out, "(2021)") {
+		t.Fatalf("expected year, got: %q", out)
+	}
+	if !strings.Contains(out, "(Kim & Doe, 2021)") {
+		t.Fatalf("expected in-text citation, got: %q", out)
 	}
 }

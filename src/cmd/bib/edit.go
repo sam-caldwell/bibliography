@@ -106,9 +106,15 @@ func newEditCmd() *cobra.Command {
 			newPathSlash := filepath.ToSlash(newPath)
 			if oldPathSlash != newPathSlash {
 				_ = os.Remove(oldPath)
-				fmt.Fprintf(cmd.OutOrStdout(), "moved %s -> %s\n", oldPathSlash, newPathSlash)
+				_, err = fmt.Fprintf(cmd.OutOrStdout(), "moved %s -> %s\n", oldPathSlash, newPathSlash)
+				if err != nil {
+					return err
+				}
 			}
-			fmt.Fprintf(cmd.OutOrStdout(), "updated %s\n", newPathSlash)
+			_, err = fmt.Fprintf(cmd.OutOrStdout(), "updated %s\n", newPathSlash)
+			if err != nil {
+				return err
+			}
 			return nil
 		},
 	}
