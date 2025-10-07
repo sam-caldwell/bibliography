@@ -71,6 +71,24 @@ func TestParseAuthorAndSplitAuthorsBySemi(t *testing.T) {
 	}
 }
 
+func TestManualAdd_TitleRequired(t *testing.T) {
+    dir := t.TempDir(); old,_ := os.Getwd(); t.Cleanup(func(){ _ = os.Chdir(old) }); _ = os.Chdir(dir)
+    // Provide empty title as first prompt answer
+    in := strings.NewReader("\n")
+    out := new(strings.Builder)
+    cmd := &cobra.Command{}
+    cmd.SetIn(in)
+    cmd.SetOut(out)
+    err := manualAdd(cmd, func(paths []string, msg string) error { return nil }, "article", nil)
+    if err == nil { t.Fatalf("expected error when title is empty") }
+}
+
+func TestDeriveTitle_ErrorForNonURLTypes(t *testing.T) {
+    if _, err := deriveTitle("article", map[string]string{}); err == nil {
+        t.Fatalf("expected error for missing title on non-url types")
+    }
+}
+
 func TestManualAdd_BookFlow(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
