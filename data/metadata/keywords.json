@@ -155,7 +155,8 @@
     "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml"
   ],
   "1989": [
-    "data/citations/article/738814a3-dd2b-4348-bcc4-db75bea2df6f.yaml"
+    "data/citations/article/738814a3-dd2b-4348-bcc4-db75bea2df6f.yaml",
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml"
   ],
   "1990s": [
     "data/citations/books/aeaee977-0e60-4cad-b54e-dd3d30c16a77.yaml"
@@ -6846,6 +6847,12 @@
   "devil": [
     "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
+  "devil's": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
+  ],
+  "devils": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
+  ],
   "devising": [
     "data/citations/article/55ba163d-f31d-4b4a-b6ee-8ebf74cac085.yaml"
   ],
@@ -9804,6 +9811,7 @@
     "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
   "forever": [
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml",
     "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "forgeries": [
@@ -10485,6 +10493,7 @@
   "goes": [
     "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml",
     "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml",
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml",
     "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "gon": [
@@ -11059,6 +11068,9 @@
     "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml",
     "data/citations/article/adcae43e-6d62-4bc2-8209-b6fa2dcb774b.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml"
+  ],
+  "highwaymen": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "hilbert": [
     "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml"
@@ -15472,6 +15484,7 @@
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml"
   ],
   "music.apple.com": [
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml",
     "data/citations/song/6e26fb2d-bfc0-4056-8867-f7c08cfabd13.yaml",
     "data/citations/song/97250d9b-b9e9-4d59-b931-903700a0f132.yaml",
     "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml",
@@ -16450,6 +16463,7 @@
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml",
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml",
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml",
     "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml",
     "data/citations/video/8d030176-29f0-4f22-b07f-6ba8707812e7.yaml"
   ],
@@ -20219,6 +20233,7 @@
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
   ],
   "road": [
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml",
     "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "rob": [
@@ -21566,6 +21581,7 @@
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml"
   ],
   "song": [
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml",
     "data/citations/song/6e26fb2d-bfc0-4056-8867-f7c08cfabd13.yaml",
     "data/citations/song/97250d9b-b9e9-4d59-b931-903700a0f132.yaml",
     "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml",
@@ -23069,6 +23085,9 @@
   "textual": [
     "data/citations/article/d4a1ef86-a55e-4d3b-8482-4231e2c612d6.yaml"
   ],
+  "textures": [
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml"
+  ],
   "than": [
     "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml",
     "data/citations/article/55ba163d-f31d-4b4a-b6ee-8ebf74cac085.yaml",
@@ -23351,6 +23370,7 @@
     "data/citations/site/d11a9cb5-6fb6-4216-9604-a3c551f67a5f.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml",
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml",
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml",
     "data/citations/song/97250d9b-b9e9-4d59-b931-903700a0f132.yaml",
     "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml",
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml",
@@ -25621,6 +25641,12 @@
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
     "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml",
     "data/citations/books/f366773e-3e9a-4403-bfd0-63236f01dfa7.yaml"
+  ],
+  "west": [
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml"
+  ],
+  "west textures": [
+    "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml"
   ],
   "what": [
     "data/citations/article/01599980-8fdc-42c4-9456-1f0b1f71e602.yaml",
