@@ -11,12 +11,12 @@ import (
 	"strings"
 	"time"
 
-    "bibliography/src/internal/dates"
-    "bibliography/src/internal/httpx"
-    "bibliography/src/internal/names"
-    "bibliography/src/internal/sanitize"
-    "bibliography/src/internal/schema"
-    "bibliography/src/internal/stringsx"
+	"bibliography/src/internal/dates"
+	"bibliography/src/internal/httpx"
+	"bibliography/src/internal/names"
+	"bibliography/src/internal/sanitize"
+	"bibliography/src/internal/schema"
+	"bibliography/src/internal/stringsx"
 )
 
 var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
@@ -33,7 +33,7 @@ type defaultPDFExtractor struct{}
 
 // BuildEntryFromPDF implements PDFExtractor by delegating to buildFromPDF.
 func (defaultPDFExtractor) BuildEntryFromPDF(ctx context.Context, data []byte, sourceURL string) (schema.Entry, error) {
-    return buildFromPDF(data, sourceURL)
+	return buildFromPDF(data, sourceURL)
 }
 
 var pdfExtractor PDFExtractor = defaultPDFExtractor{}
@@ -43,13 +43,13 @@ func SetPDFExtractor(e PDFExtractor) { pdfExtractor = e }
 
 // HTTPStatusError conveys an HTTP status code from fetch failures so callers can branch on it.
 type HTTPStatusError struct {
-    Status int
-    Body   string
+	Status int
+	Body   string
 }
 
 // Error formats the HTTPStatusError message with status and body snippet.
 func (e *HTTPStatusError) Error() string {
-    return fmt.Sprintf("url fetch: http %d: %s", e.Status, e.Body)
+	return fmt.Sprintf("url fetch: http %d: %s", e.Status, e.Body)
 }
 
 // FetchArticleByURL fetches a web page and tries to map it to an APA7 article entry
@@ -69,7 +69,7 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 	if err != nil {
 		return schema.Entry{}, err
 	}
-    defer resp.Body.Close()
+	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
 		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
 		return schema.Entry{}, &HTTPStatusError{Status: resp.StatusCode, Body: string(b)}

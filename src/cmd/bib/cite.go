@@ -1,8 +1,8 @@
 package main
 
 import (
-    "github.com/spf13/cobra"
-    "bibliography/src/cmd/bib/citecmd"
+	"bibliography/src/cmd/bib/citecmd"
+	"github.com/spf13/cobra"
 )
 
 // newCiteCmd creates the "cite" command to print formatted APA7 and in‑text citations for an id.

@@ -1,32 +1,32 @@
 package store
 
 import (
-    "encoding/json"
-    "errors"
-    "fmt"
-    "io/fs"
-    "net/url"
-    "os"
-    "path/filepath"
-    "regexp"
-    "sort"
-    "strings"
-    // time removed; use dates.NowISO
+	"encoding/json"
+	"errors"
+	"fmt"
+	"io/fs"
+	"net/url"
+	"os"
+	"path/filepath"
+	"regexp"
+	"sort"
+	"strings"
+	// time removed; use dates.NowISO
 
-    "gopkg.in/yaml.v3"
+	"gopkg.in/yaml.v3"
 
-    "bibliography/src/internal/schema"
-    "bibliography/src/internal/dates"
+	"bibliography/src/internal/dates"
+	"bibliography/src/internal/schema"
 )
 
 const (
-    CitationsDir = "data/citations"
-    MetadataDir  = "data/metadata"
-    KeywordsJSON = "data/metadata/keywords.json"
-    AuthorsJSON  = "data/metadata/authors.json"
-    TitlesJSON   = "data/metadata/titles.json"
-    ISBNJSON     = "data/metadata/isbn.json"
-    DOIJSON      = "data/metadata/doi.json"
+	CitationsDir = "data/citations"
+	MetadataDir  = "data/metadata"
+	KeywordsJSON = "data/metadata/keywords.json"
+	AuthorsJSON  = "data/metadata/authors.json"
+	TitlesJSON   = "data/metadata/titles.json"
+	ISBNJSON     = "data/metadata/isbn.json"
+	DOIJSON      = "data/metadata/doi.json"
 )
 
 // --- Small helpers to lower duplication and cognitive load ---
@@ -36,16 +36,20 @@ func ensureMetaDir() error { return os.MkdirAll(MetadataDir, 0o755) }
 
 // entryPath returns the repo-relative path to the YAML file for an entry id/type.
 func entryPath(e schema.Entry) string {
-    seg := dirForType(e.Type)
-    return filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
+	seg := dirForType(e.Type)
+	return filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
 }
 
 // writeJSON writes the given value to the target JSON file with indentation.
 func writeJSON(target string, v any) (string, error) {
-    b, err := json.MarshalIndent(v, "", "  ")
-    if err != nil { return "", err }
-    if err := os.WriteFile(target, b, 0o644); err != nil { return "", err }
-    return target, nil
+	b, err := json.MarshalIndent(v, "", "  ")
+	if err != nil {
+		return "", err
+	}
+	if err := os.WriteFile(target, b, 0o644); err != nil {
+		return "", err
+	}
+	return target, nil
 }
 
 // dirForType maps an entry type to its subdirectory under data/citations.
@@ -131,22 +135,22 @@ func ReadAll() ([]schema.Entry, error) {
 
 // BuildKeywordIndex writes data/metadata/keywords.json mapping keyword -> list of entry YAML paths.
 func BuildKeywordIndex(entries []schema.Entry) (string, error) {
-    if err := ensureMetaDir(); err != nil {
-        return "", err
-    }
-    index := map[string][]string{}
-    for _, e := range entries {
-        seen := map[string]bool{}
+	if err := ensureMetaDir(); err != nil {
+		return "", err
+	}
+	index := map[string][]string{}
+	for _, e := range entries {
+		seen := map[string]bool{}
 
 		// helper to add a token (lowercased, trimmed) to the index once per entry
-        add := func(tok string) {
-            t := strings.ToLower(strings.TrimSpace(tok))
-            if t == "" || seen[t] {
-                return
-            }
-            seen[t] = true
-            index[t] = append(index[t], entryPath(e))
-        }
+		add := func(tok string) {
+			t := strings.ToLower(strings.TrimSpace(tok))
+			if t == "" || seen[t] {
+				return
+			}
+			seen[t] = true
+			index[t] = append(index[t], entryPath(e))
+		}
 
 		// 1) annotation keywords
 		for _, k := range e.Annotation.Keywords {
@@ -210,23 +214,23 @@ func BuildKeywordIndex(entries []schema.Entry) (string, error) {
 	for k := range index {
 		sort.Strings(index[k])
 	}
-    return writeJSON(KeywordsJSON, index)
+	return writeJSON(KeywordsJSON, index)
 }
 
 // BuildAuthorIndex writes data/metadata/authors.json mapping author name -> entry YAML paths.
 // Author key format is "Family, Given" when both present; otherwise the non-empty name.
 func BuildAuthorIndex(entries []schema.Entry) (string, error) {
-    if err := ensureMetaDir(); err != nil {
-        return "", err
-    }
-    index := map[string][]string{}
-    for _, e := range entries {
-        path := entryPath(e)
-        // Deduplicate per author per entry
-        perEntrySeen := map[string]bool{}
-        for _, au := range e.APA7.Authors {
-            name := strings.TrimSpace(au.Family)
-            g := strings.TrimSpace(au.Given)
+	if err := ensureMetaDir(); err != nil {
+		return "", err
+	}
+	index := map[string][]string{}
+	for _, e := range entries {
+		path := entryPath(e)
+		// Deduplicate per author per entry
+		perEntrySeen := map[string]bool{}
+		for _, au := range e.APA7.Authors {
+			name := strings.TrimSpace(au.Family)
+			g := strings.TrimSpace(au.Given)
 			if name == "" && g != "" {
 				name = g
 			} else if name != "" && g != "" {
@@ -243,54 +247,54 @@ func BuildAuthorIndex(entries []schema.Entry) (string, error) {
 	for k := range index {
 		sort.Strings(index[k])
 	}
-    return writeJSON(AuthorsJSON, index)
+	return writeJSON(AuthorsJSON, index)
 }
 
 // BuildTitleIndex writes data/metadata/titles.json mapping entry YAML path -> tokenized title words.
 func BuildTitleIndex(entries []schema.Entry) (string, error) {
-    if err := ensureMetaDir(); err != nil {
-        return "", err
-    }
-    index := map[string][]string{}
-    for _, e := range entries {
-        index[entryPath(e)] = tokenizeWords(e.APA7.Title)
-    }
-    return writeJSON(TitlesJSON, index)
+	if err := ensureMetaDir(); err != nil {
+		return "", err
+	}
+	index := map[string][]string{}
+	for _, e := range entries {
+		index[entryPath(e)] = tokenizeWords(e.APA7.Title)
+	}
+	return writeJSON(TitlesJSON, index)
 }
 
 // BuildISBNIndex writes data/metadata/isbn.json mapping entry YAML path -> ISBN for books with ISBNs.
 func BuildISBNIndex(entries []schema.Entry) (string, error) {
-    if err := ensureMetaDir(); err != nil {
-        return "", err
-    }
-    index := map[string]string{}
-    for _, e := range entries {
-        if strings.ToLower(strings.TrimSpace(e.Type)) != "book" {
-            continue
-        }
-        isbn := strings.TrimSpace(e.APA7.ISBN)
-        if isbn == "" {
-            continue
-        }
-        index[entryPath(e)] = isbn
-    }
-    return writeJSON(ISBNJSON, index)
+	if err := ensureMetaDir(); err != nil {
+		return "", err
+	}
+	index := map[string]string{}
+	for _, e := range entries {
+		if strings.ToLower(strings.TrimSpace(e.Type)) != "book" {
+			continue
+		}
+		isbn := strings.TrimSpace(e.APA7.ISBN)
+		if isbn == "" {
+			continue
+		}
+		index[entryPath(e)] = isbn
+	}
+	return writeJSON(ISBNJSON, index)
 }
 
 // BuildDOIIndex writes data/metadata/doi.json mapping entry YAML path -> DOI for entries with DOIs.
 func BuildDOIIndex(entries []schema.Entry) (string, error) {
-    if err := ensureMetaDir(); err != nil {
-        return "", err
-    }
-    index := map[string]string{}
-    for _, e := range entries {
-        doi := strings.TrimSpace(e.APA7.DOI)
-        if doi == "" {
-            continue
-        }
-        index[entryPath(e)] = doi
-    }
-    return writeJSON(DOIJSON, index)
+	if err := ensureMetaDir(); err != nil {
+		return "", err
+	}
+	index := map[string]string{}
+	for _, e := range entries {
+		doi := strings.TrimSpace(e.APA7.DOI)
+		if doi == "" {
+			continue
+		}
+		index[entryPath(e)] = doi
+	}
+	return writeJSON(DOIJSON, index)
 }
 
 var nonWord = regexp.MustCompile(`[^a-zA-Z0-9]+`)
@@ -348,10 +352,10 @@ func NormalizeArticleDOI(e *schema.Entry) bool {
 		desired := "https://doi.org/" + doi
 		if strings.TrimSpace(e.APA7.URL) != desired {
 			e.APA7.URL = desired
-            // Ensure accessed is set to satisfy validation
-            if strings.TrimSpace(e.APA7.Accessed) == "" {
-                e.APA7.Accessed = dates.NowISO()
-            }
+			// Ensure accessed is set to satisfy validation
+			if strings.TrimSpace(e.APA7.Accessed) == "" {
+				e.APA7.Accessed = dates.NowISO()
+			}
 			changed = true
 		}
 	}

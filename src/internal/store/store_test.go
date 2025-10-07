@@ -343,11 +343,15 @@ func TestSegmentForType(t *testing.T) {
 }
 
 func TestFilterByKeywordsAND_AndExtractDOI(t *testing.T) {
-    es := []schema.Entry{
-        {ID: schema.NewID(), Type: "article", APA7: schema.APA7{Title: "T", DOI: "10.1/x"}, Annotation: schema.Annotation{Keywords: []string{"Go", "YAML"}}},
-        {ID: schema.NewID(), Type: "book", APA7: schema.APA7{Title: "B"}, Annotation: schema.Annotation{Keywords: []string{"go"}}},
-    }
-    out := FilterByKeywordsAND(es, []string{"go", "yaml"})
-    if len(out) != 1 || out[0].Type != "article" { t.Fatalf("AND filter wrong: %+v", out) }
-    if d := ExtractDOI("https://doi.org/10.5555/ABC"); d == "" { t.Fatalf("expected doi extracted") }
+	es := []schema.Entry{
+		{ID: schema.NewID(), Type: "article", APA7: schema.APA7{Title: "T", DOI: "10.1/x"}, Annotation: schema.Annotation{Keywords: []string{"Go", "YAML"}}},
+		{ID: schema.NewID(), Type: "book", APA7: schema.APA7{Title: "B"}, Annotation: schema.Annotation{Keywords: []string{"go"}}},
+	}
+	out := FilterByKeywordsAND(es, []string{"go", "yaml"})
+	if len(out) != 1 || out[0].Type != "article" {
+		t.Fatalf("AND filter wrong: %+v", out)
+	}
+	if d := ExtractDOI("https://doi.org/10.5555/ABC"); d == "" {
+		t.Fatalf("expected doi extracted")
+	}
 }

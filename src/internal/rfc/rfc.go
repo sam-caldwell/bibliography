@@ -1,19 +1,19 @@
 package rfc
 
 import (
-    "context"
-    "encoding/xml"
-    "fmt"
-    "io"
-    "net/http"
-    "regexp"
-    "strings"
-    "time"
+	"context"
+	"encoding/xml"
+	"fmt"
+	"io"
+	"net/http"
+	"regexp"
+	"strings"
+	"time"
 
-    "bibliography/src/internal/schema"
-    "bibliography/src/internal/httpx"
-    "bibliography/src/internal/names"
-    "bibliography/src/internal/sanitize"
+	"bibliography/src/internal/httpx"
+	"bibliography/src/internal/names"
+	"bibliography/src/internal/sanitize"
+	"bibliography/src/internal/schema"
 )
 
 var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
@@ -77,8 +77,8 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 	if err != nil {
 		return schema.Entry{}, err
 	}
-    req.Header.Set("Accept", "application/xml")
-    httpx.SetUA(req)
+	req.Header.Set("Accept", "application/xml")
+	httpx.SetUA(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -135,7 +135,7 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 		if fam == "" {
 			continue
 		}
-    authors = append(authors, schema.Author{Family: fam, Given: names.Initials(giv)})
+		authors = append(authors, schema.Author{Family: fam, Given: names.Initials(giv)})
 	}
 	// Series info
 	rfcLabel := "RFC " + num
@@ -177,11 +177,11 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 		e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (%s).", e.APA7.Title, rfcLabel)
 	}
 	e.Annotation.Keywords = []string{"rfc", "ietf"}
-    sanitize.CleanEntry(&e)
-    if err := e.Validate(); err != nil {
-        return schema.Entry{}, err
-    }
-    return e, nil
+	sanitize.CleanEntry(&e)
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
 }
 
 // normalizeRFCNumber extracts the numeric RFC identifier from strings like "rfc5424".
@@ -283,8 +283,8 @@ func fetchRFCFromDatatracker(ctx context.Context, num string) (schema.Entry, err
 	if err != nil {
 		return schema.Entry{}, err
 	}
-    req.Header.Set("Accept", "text/html")
-    httpx.SetUA(req)
+	req.Header.Set("Accept", "text/html")
+	httpx.SetUA(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -338,11 +338,11 @@ func fetchRFCFromDatatracker(ctx context.Context, num string) (schema.Entry, err
 	e.APA7.Authors = authors
 	e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (RFC %s).", e.APA7.Title, num)
 	e.Annotation.Keywords = []string{"rfc", "ietf"}
-    sanitize.CleanEntry(&e)
-    if err := e.Validate(); err != nil {
-        return schema.Entry{}, err
-    }
-    return e, nil
+	sanitize.CleanEntry(&e)
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
 }
 
 // --- BibTeX fetch and parse ---
@@ -354,8 +354,8 @@ func fetchRFCFromBibtex(ctx context.Context, num string) (schema.Entry, error) {
 	if err != nil {
 		return schema.Entry{}, err
 	}
-    req.Header.Set("Accept", "text/plain, text/html")
-    httpx.SetUA(req)
+	req.Header.Set("Accept", "text/plain, text/html")
+	httpx.SetUA(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -429,7 +429,7 @@ func fetchRFCFromBibtex(ctx context.Context, num string) (schema.Entry, error) {
 			if fam == "" {
 				continue
 			}
-            e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: names.Initials(giv)})
+			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: names.Initials(giv)})
 		}
 	}
 	// Prefer abstract for annotation summary

@@ -19,7 +19,6 @@ func execute() error {
 	rootCmd.AddCommand(newSearchCmd())
 	rootCmd.AddCommand(newCiteCmd())
 	rootCmd.AddCommand(newIndexCmd())
-	rootCmd.AddCommand(newPublishCmd())
 	rootCmd.AddCommand(newRepairDOICmd())
 	rootCmd.AddCommand(newSummarizeCmd())
 	rootCmd.AddCommand(newEditCmd())

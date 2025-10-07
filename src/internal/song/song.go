@@ -1,19 +1,19 @@
 package song
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "net/http"
-    "net/url"
-    "strings"
-    "time"
+	"context"
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"net/url"
+	"strings"
+	"time"
 
-    "bibliography/src/internal/schema"
-    "bibliography/src/internal/httpx"
-    "bibliography/src/internal/dates"
-    "bibliography/src/internal/stringsx"
-    "bibliography/src/internal/sanitize"
+	"bibliography/src/internal/dates"
+	"bibliography/src/internal/httpx"
+	"bibliography/src/internal/sanitize"
+	"bibliography/src/internal/schema"
+	"bibliography/src/internal/stringsx"
 )
 
 var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
@@ -40,16 +40,16 @@ func FetchSong(ctx context.Context, title string, artist string, date string) (s
 
 // fetchFromITunes queries the iTunes Search API and maps the first result to an Entry.
 func fetchFromITunes(ctx context.Context, title, artist, date string) (schema.Entry, error) {
-    term := stringsx.FirstNonEmpty(strings.TrimSpace(title+" "+artist), title)
+	term := stringsx.FirstNonEmpty(strings.TrimSpace(title+" "+artist), title)
 	u, _ := url.Parse("https://itunes.apple.com/search")
 	q := u.Query()
 	q.Set("term", term)
 	q.Set("entity", "song")
 	q.Set("limit", "1")
 	u.RawQuery = q.Encode()
-    req, _ := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
-    httpx.SetUA(req)
-    req.Header.Set("Accept", "application/json")
+	req, _ := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
+	httpx.SetUA(req)
+	req.Header.Set("Accept", "application/json")
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -78,7 +78,7 @@ func fetchFromITunes(ctx context.Context, title, artist, date string) (schema.En
 	var e schema.Entry
 	e.Type = "song"
 	e.ID = schema.NewID()
-    e.APA7.Title = stringsx.FirstNonEmpty(r.TrackName, title)
+	e.APA7.Title = stringsx.FirstNonEmpty(r.TrackName, title)
 	// Authors -> performer
 	if a := strings.TrimSpace(r.ArtistName); a != "" {
 		e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: a})
@@ -92,23 +92,23 @@ func fetchFromITunes(ctx context.Context, title, artist, date string) (schema.En
 	if e.APA7.Date == "" {
 		e.APA7.Date = strings.TrimSpace(date)
 	}
-    if y := dates.YearFromDate(e.APA7.Date); y > 0 {
-        y2 := y
-        e.APA7.Year = &y2
-    }
+	if y := dates.YearFromDate(e.APA7.Date); y > 0 {
+		y2 := y
+		e.APA7.Year = &y2
+	}
 	// URL
-    if u := strings.TrimSpace(r.TrackViewURL); u != "" {
-        e.APA7.URL = u
-        e.APA7.Accessed = dates.NowISO()
-    }
+	if u := strings.TrimSpace(r.TrackViewURL); u != "" {
+		e.APA7.URL = u
+		e.APA7.Accessed = dates.NowISO()
+	}
 	// Summary / keywords
 	e.Annotation.Summary = "Song: " + e.APA7.Title + "."
 	e.Annotation.Keywords = []string{"song"}
-    sanitize.CleanEntry(&e)
-    if err := e.Validate(); err != nil {
-        return schema.Entry{}, err
-    }
-    return e, nil
+	sanitize.CleanEntry(&e)
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
 }
 
 // fetchFromMusicBrainz queries MusicBrainz for a recording and maps minimal metadata.
@@ -124,9 +124,9 @@ func fetchFromMusicBrainz(ctx context.Context, title, artist, date string) (sche
 	qq.Set("fmt", "json")
 	qq.Set("limit", "1")
 	u.RawQuery = qq.Encode()
-    req, _ := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
-    httpx.SetUA(req)
-    req.Header.Set("Accept", "application/json")
+	req, _ := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
+	httpx.SetUA(req)
+	req.Header.Set("Accept", "application/json")
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -162,7 +162,7 @@ func fetchFromMusicBrainz(ctx context.Context, title, artist, date string) (sche
 	var e schema.Entry
 	e.Type = "song"
 	e.ID = schema.NewID()
-    e.APA7.Title = stringsx.FirstNonEmpty(r.Title, title)
+	e.APA7.Title = stringsx.FirstNonEmpty(r.Title, title)
 	if len(r.ArtistCredit) > 0 {
 		a := strings.TrimSpace(r.ArtistCredit[0].Name)
 		if a != "" {
@@ -184,17 +184,17 @@ func fetchFromMusicBrainz(ctx context.Context, title, artist, date string) (sche
 	if e.APA7.Date == "" {
 		e.APA7.Date = strings.TrimSpace(date)
 	}
-    if y := dates.YearFromDate(e.APA7.Date); y > 0 {
-        y2 := y
-        e.APA7.Year = &y2
-    }
+	if y := dates.YearFromDate(e.APA7.Date); y > 0 {
+		y2 := y
+		e.APA7.Year = &y2
+	}
 	e.Annotation.Summary = "Song: " + e.APA7.Title + "."
 	e.Annotation.Keywords = []string{"song"}
-    sanitize.CleanEntry(&e)
-    if err := e.Validate(); err != nil {
-        return schema.Entry{}, err
-    }
-    return e, nil
+	sanitize.CleanEntry(&e)
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
 }
 
 // firstNonEmpty removed; using stringsx.FirstNonEmpty

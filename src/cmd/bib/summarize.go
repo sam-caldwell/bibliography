@@ -1,9 +1,8 @@
 package main
 
 import (
-    "github.com/spf13/cobra"
-    "bibliography/src/cmd/bib/summarizecmd"
+	"bibliography/src/cmd/bib/summarizecmd"
+	"github.com/spf13/cobra"
 )
 
 func newSummarizeCmd() *cobra.Command { return summarizecmd.New() }
-

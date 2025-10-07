@@ -1,18 +1,18 @@
 package video
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "net/http"
-    "net/url"
-    "strings"
-    "time"
+	"context"
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"net/url"
+	"strings"
+	"time"
 
-    "bibliography/src/internal/schema"
-    "bibliography/src/internal/httpx"
-    "bibliography/src/internal/dates"
-    "bibliography/src/internal/sanitize"
+	"bibliography/src/internal/dates"
+	"bibliography/src/internal/httpx"
+	"bibliography/src/internal/sanitize"
+	"bibliography/src/internal/schema"
 )
 
 var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
@@ -36,9 +36,9 @@ func FetchYouTube(ctx context.Context, pageURL string) (schema.Entry, error) {
 	q.Set("format", "json")
 	q.Set("url", pageURL)
 	ou.RawQuery = q.Encode()
-    req, _ := http.NewRequestWithContext(ctx, http.MethodGet, ou.String(), nil)
-    httpx.SetUA(req)
-    req.Header.Set("Accept", "application/json")
+	req, _ := http.NewRequestWithContext(ctx, http.MethodGet, ou.String(), nil)
+	httpx.SetUA(req)
+	req.Header.Set("Accept", "application/json")
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -70,8 +70,8 @@ func FetchYouTube(ctx context.Context, pageURL string) (schema.Entry, error) {
 	e.APA7.ContainerTitle = "YouTube"
 	e.APA7.Publisher = "YouTube"
 	// URL + accessed
-    e.APA7.URL = pageURL
-    e.APA7.Accessed = dates.NowISO()
+	e.APA7.URL = pageURL
+	e.APA7.Accessed = dates.NowISO()
 	// Minimal summary and keyword
 	if a := strings.TrimSpace(out.AuthorName); a != "" {
 		e.Annotation.Summary = fmt.Sprintf("YouTube video: %s by %s.", e.APA7.Title, a)
@@ -79,9 +79,9 @@ func FetchYouTube(ctx context.Context, pageURL string) (schema.Entry, error) {
 		e.Annotation.Summary = fmt.Sprintf("YouTube video: %s.", e.APA7.Title)
 	}
 	e.Annotation.Keywords = []string{"video"}
-    sanitize.CleanEntry(&e)
-    if err := e.Validate(); err != nil {
-        return schema.Entry{}, err
-    }
-    return e, nil
+	sanitize.CleanEntry(&e)
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
 }

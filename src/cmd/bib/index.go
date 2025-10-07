@@ -1,8 +1,8 @@
 package main
 
 import (
-    "github.com/spf13/cobra"
-    "bibliography/src/cmd/bib/indexcmd"
+	"bibliography/src/cmd/bib/indexcmd"
+	"github.com/spf13/cobra"
 )
 
 // newIndexCmd creates the "index" command to rebuild metadata indexes.
