@@ -68,6 +68,12 @@ func gatherCitationPaths() ([]string, error) {
 	return paths, nil
 }
 
+// Injection seams for OpenAI summarize/keywords to allow faking in tests.
+var (
+	summarizeURLFunc                = summarize.SummarizeURL
+	keywordsFromTitleAndSummaryFunc = summarize.KeywordsFromTitleAndSummary
+)
+
 func processSummaryForPath(ctx context.Context, cmd *cobra.Command, p string) (bool, error) {
 	e, ok, err := loadEntryIfSummarizable(p)
 	if err != nil || !ok {
@@ -77,13 +83,13 @@ func processSummaryForPath(ctx context.Context, cmd *cobra.Command, p string) (b
 		fmt.Fprintf(cmd.ErrOrStderr(), "skip %s: url not accessible\n", p)
 		return false, nil
 	}
-	s, err := summarize.SummarizeURL(ctx, e.APA7.URL)
+	s, err := summarizeURLFunc(ctx, e.APA7.URL)
 	if err != nil {
 		fmt.Fprintf(cmd.ErrOrStderr(), "skip %s: %v\n", p, err)
 		return false, nil
 	}
 	e.Annotation.Summary = wrapText(strings.TrimSpace(s), 110)
-	if ks, kerr := summarize.KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); kerr == nil {
+	if ks, kerr := keywordsFromTitleAndSummaryFunc(ctx, e.APA7.Title, e.Annotation.Summary); kerr == nil {
 		e.Annotation.Keywords = mergeSortDedupKeywords(e.Annotation.Keywords, ks, strings.ToLower(e.Type))
 	} else {
 		if len(e.Annotation.Keywords) == 0 {

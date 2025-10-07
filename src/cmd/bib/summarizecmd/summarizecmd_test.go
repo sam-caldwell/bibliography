@@ -4,8 +4,12 @@ import (
 	"context"
 	"net/http"
 	"net/http/httptest"
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
+
+	"bibliography/src/internal/schema"
 )
 
 func TestWrapText(t *testing.T) {
@@ -32,5 +36,31 @@ func TestURLAccessible(t *testing.T) {
 	defer srv.Close()
 	if !urlAccessible(context.Background(), srv.URL) {
 		t.Fatalf("expected urlAccessible true for test server")
+	}
+}
+
+func TestNeedsSummaryVariants(t *testing.T) {
+	if !needsSummary(schema.Entry{Annotation: schema.Annotation{Summary: ""}}) {
+		t.Fatalf("empty should need summary")
+	}
+	if !needsSummary(schema.Entry{Annotation: schema.Annotation{Summary: "Bibliographic record for X."}}) {
+		t.Fatalf("placeholder should need summary")
+	}
+	if needsSummary(schema.Entry{Annotation: schema.Annotation{Summary: "Actual summary."}}) {
+		t.Fatalf("real summary should not need summary")
+	}
+}
+
+func TestLoadEntryIfSummarizable_InvalidYAML(t *testing.T) {
+	dir := t.TempDir()
+	old, _ := os.Getwd()
+	t.Cleanup(func() { _ = os.Chdir(old) })
+	_ = os.Chdir(dir)
+	// invalid YAML but should return ok=false and no error (parse error suppressed)
+	p := filepath.Join("data", "citations", "x.yaml")
+	_ = os.MkdirAll(filepath.Dir(p), 0o755)
+	_ = os.WriteFile(p, []byte("not: [valid"), 0o644)
+	if _, ok, err := loadEntryIfSummarizable(p); err != nil || ok {
+		t.Fatalf("expected ok=false err=nil; got ok=%v err=%v", ok, err)
 	}
 }
