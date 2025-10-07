@@ -14,6 +14,7 @@ import (
 	"bibliography/src/internal/store"
 )
 
+// newPublishCmd creates the "publish" command to generate HTML pages for all entries.
 func newPublishCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "publish",
@@ -116,6 +117,7 @@ type entryPageModel struct {
 	Canonical string
 }
 
+// writeEntryPage renders and writes one entry page under docs/<seg>/<id>.html.
 func writeEntryPage(e schema.Entry, seg string) error {
 	dir := filepath.Join("docs", seg)
 	if err := os.MkdirAll(dir, 0o755); err != nil {
@@ -179,6 +181,7 @@ type indexModel struct {
 	Categories []indexCategory
 }
 
+// writeIndex renders and writes the top-level index.html from categorized entries.
 func writeIndex(byCat map[string][]schema.Entry) error {
 	// Stable order: category name ascending, then title ascending
 	var cats []string

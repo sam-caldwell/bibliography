@@ -6,10 +6,13 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"bibliography/src/internal/names"
 	"bibliography/src/internal/schema"
 	"bibliography/src/internal/store"
+	"bibliography/src/internal/stringsx"
 )
 
+// newCiteCmd creates the "cite" command to print formatted APA7 and in‑text citations for an id.
 func newCiteCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "cite <id>",
@@ -43,11 +46,12 @@ func newCiteCmd() *cobra.Command {
 	return cmd
 }
 
+// toAPACitation builds an APA7 reference string for the given entry.
 func toAPACitation(e schema.Entry) string {
 	authors := formatAuthors(e.APA7.Authors)
 	year := apaYear(e)
 	title := strings.TrimSpace(e.APA7.Title)
-	cont := strings.TrimSpace(firstNonEmpty(e.APA7.Journal, e.APA7.ContainerTitle))
+	cont := strings.TrimSpace(stringsx.FirstNonEmpty(e.APA7.Journal, e.APA7.ContainerTitle))
 	vol := strings.TrimSpace(e.APA7.Volume)
 	iss := strings.TrimSpace(e.APA7.Issue)
 	pgs := strings.TrimSpace(e.APA7.Pages)
@@ -87,6 +91,7 @@ func toAPACitation(e schema.Entry) string {
 	return out
 }
 
+// typeDetails returns the detail segment for a given entry type.
 func typeDetails(typ, cont, vol, iss, pgs, pub string) string {
 	// Table-driven dispatch keeps branching out of this function
 	if f, ok := detailFormatters[typ]; ok {
@@ -107,6 +112,7 @@ var detailFormatters = map[string]func(cont, vol, iss, pgs, pub string) []string
 	"rfc":     detailsRFC,
 }
 
+// detailsArticle returns details for an article: container, volume/issue, and pages.
 func detailsArticle(cont, vol, iss, pgs, _ string) []string {
 	var parts []string
 	add(&parts, cont)
@@ -115,31 +121,40 @@ func detailsArticle(cont, vol, iss, pgs, _ string) []string {
 	return parts
 }
 
+// detailsBook returns details for a book: publisher.
 func detailsBook(_, _, _, _, pub string) []string     { return compact(pub) }
+// detailsWebsite returns details for a website: container/site.
 func detailsWebsite(cont, _, _, _, _ string) []string { return compact(cont) }
+// detailsMovie returns details for a movie: marker and studio/publisher.
 func detailsMovie(_, _, _, _, pub string) []string    { return compact("[Film]", pub) }
+// detailsVideo returns details for a video: marker and platform name.
 func detailsVideo(cont, _, _, _, _ string) []string {
 	if strings.TrimSpace(cont) == "" {
 		cont = "YouTube"
 	}
 	return compact("[Video]", cont)
 }
+// detailsSong returns details for a song: marker and album/label.
 func detailsSong(cont, _, _, _, pub string) []string { return compact("[Song]", cont, pub) }
+// detailsPatent returns details for a patent: office and publisher.
 func detailsPatent(cont, _, _, _, pub string) []string {
 	if strings.TrimSpace(cont) != "" {
 		cont = "Patent office: " + cont
 	}
 	return compact(cont, pub)
 }
+// detailsRFC returns details for an RFC: RFC tag container.
 func detailsRFC(cont, _, _, _, _ string) []string {
 	if strings.TrimSpace(cont) == "" {
 		cont = "RFC"
 	}
 	return compact(cont)
 }
+// detailsDefault returns generic details for unrecognized types.
 func detailsDefault(cont, _, _, _, pub string) []string { return compact(cont, pub) }
 
 // Helpers
+// volIssue formats volume and optional issue as "vol(issue)".
 func volIssue(vol, iss string) string {
 	vol = strings.TrimSpace(vol)
 	iss = strings.TrimSpace(iss)
@@ -151,11 +166,13 @@ func volIssue(vol, iss string) string {
 	}
 	return fmt.Sprintf("%s(%s)", vol, iss)
 }
+// add appends a trimmed non-empty string to parts.
 func add(parts *[]string, s string) {
 	if strings.TrimSpace(s) != "" {
 		*parts = append(*parts, strings.TrimSpace(s))
 	}
 }
+// compact returns a slice of trimmed non-empty values in order.
 func compact(vals ...string) []string {
 	var out []string
 	for _, v := range vals {
@@ -165,6 +182,7 @@ func compact(vals ...string) []string {
 	}
 	return out
 }
+// joinDetails joins detail parts with punctuation and a trailing period.
 func joinDetails(parts []string) string {
 	if len(parts) == 0 {
 		return ""
@@ -172,12 +190,13 @@ func joinDetails(parts []string) string {
 	return strings.Join(parts, ". ") + ". "
 }
 
+// toInTextCitation computes an APA7 in‑text citation for the entry, e.g., (Doe, 2020).
 func toInTextCitation(e schema.Entry) string {
 	year := apaYear(e)
 	// first author family or org
 	if len(e.APA7.Authors) == 0 {
 		// fallback to publisher or container
-		name := strings.TrimSpace(firstNonEmpty(e.APA7.Publisher, e.APA7.ContainerTitle, e.APA7.Journal, e.APA7.Title))
+		name := strings.TrimSpace(stringsx.FirstNonEmpty(e.APA7.Publisher, e.APA7.ContainerTitle, e.APA7.Journal, e.APA7.Title))
 		if name == "" {
 			name = "Anon"
 		}
@@ -208,6 +227,7 @@ func toInTextCitation(e schema.Entry) string {
 	return fmt.Sprintf("(%s et al., %s)", fams[0], year)
 }
 
+// apaYear returns the four-digit year for an entry if available.
 func apaYear(e schema.Entry) string {
 	if e.APA7.Year != nil && *e.APA7.Year > 0 {
 		return fmt.Sprintf("%d", *e.APA7.Year)
@@ -219,6 +239,7 @@ func apaYear(e schema.Entry) string {
 	return ""
 }
 
+// formatAuthors renders the authors list in APA style.
 func formatAuthors(authors schema.Authors) string {
 	if len(authors) == 0 {
 		return ""
@@ -240,26 +261,10 @@ func formatAuthor(a schema.Author) string {
 	if fam == "" {
 		return giv
 	}
-	if gi := initials(giv); gi != "" {
+	if gi := names.Initials(giv); gi != "" {
 		return fmt.Sprintf("%s, %s", fam, gi)
 	}
 	return fam
-}
-
-// initials converts a full given name into spaced initials: "Jane Q" -> "J. Q.".
-func initials(given string) string {
-	given = strings.TrimSpace(given)
-	if given == "" {
-		return ""
-	}
-	var out []string
-	for _, w := range strings.Fields(given) {
-		r := []rune(w)
-		if len(r) > 0 {
-			out = append(out, strings.ToUpper(string(r[0]))+".")
-		}
-	}
-	return strings.Join(out, " ")
 }
 
 // joinOxfordAmp joins names with an Oxford comma and & before the last: A., B., & C.
@@ -276,11 +281,4 @@ func joinOxfordAmp(parts []string) string {
 	}
 }
 
-func firstNonEmpty(vals ...string) string {
-	for _, v := range vals {
-		if strings.TrimSpace(v) != "" {
-			return strings.TrimSpace(v)
-		}
-	}
-	return ""
-}
+// firstNonEmpty removed; using stringsx.FirstNonEmpty

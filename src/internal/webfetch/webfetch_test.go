@@ -1,11 +1,13 @@
 package webfetch
 
 import (
-	"context"
-	"io"
-	"net/http"
-	"strings"
-	"testing"
+    "context"
+    "io"
+    "net/http"
+    "strings"
+    "testing"
+    datespkg "bibliography/src/internal/dates"
+    namespkg "bibliography/src/internal/names"
 )
 
 type fakeHTTP struct {
@@ -80,17 +82,17 @@ func TestHelpers(t *testing.T) {
 	if h := hostOf("https://www.Example.com/path"); h != "example.com" {
 		t.Fatalf("hostOf: %q", h)
 	}
-	fam, giv := splitName("Doe, Jane Q")
+    fam, giv := namespkg.Split("Doe, Jane Q")
 	if fam != "Doe" || giv != "J. Q." {
 		t.Fatalf("splitName: %s %s", fam, giv)
 	}
-	fam, giv = splitName("Jane Q Public")
+    fam, giv = namespkg.Split("Jane Q Public")
 	if fam != "Public" || giv == "" {
 		t.Fatalf("splitName parts: %s %s", fam, giv)
 	}
-	if y := extractYear("May 2020"); y != 2020 {
-		t.Fatalf("extractYear: %d", y)
-	}
+    if y := datespkg.ExtractYear("May 2020"); y != 2020 {
+        t.Fatalf("extractYear: %d", y)
+    }
 }
 
 func TestParsers_OpenGraphAndJSONLD(t *testing.T) {

@@ -1,29 +1,25 @@
 package rfc
 
 import (
-	"context"
-	"encoding/xml"
-	"fmt"
-	"io"
-	"net/http"
-	"regexp"
-	"strings"
-	"time"
+    "context"
+    "encoding/xml"
+    "fmt"
+    "io"
+    "net/http"
+    "regexp"
+    "strings"
+    "time"
 
-	"bibliography/src/internal/schema"
+    "bibliography/src/internal/schema"
+    "bibliography/src/internal/httpx"
+    "bibliography/src/internal/names"
+    "bibliography/src/internal/sanitize"
 )
 
-// HTTPDoer allows injecting an HTTP client for testing.
-type HTTPDoer interface {
-	Do(req *http.Request) (*http.Response, error)
-}
-
-var client HTTPDoer = &http.Client{Timeout: 10 * time.Second}
-
-const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
 
 // SetHTTPClient swaps the http client for tests.
-func SetHTTPClient(c HTTPDoer) { client = c }
+func SetHTTPClient(c httpx.Doer) { client = c }
 
 // Minimal subset of RFC Editor XML structures we care about
 type rfcXML struct {
@@ -81,8 +77,8 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 	if err != nil {
 		return schema.Entry{}, err
 	}
-	req.Header.Set("Accept", "application/xml")
-	req.Header.Set("User-Agent", chromeUA)
+    req.Header.Set("Accept", "application/xml")
+    httpx.SetUA(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -139,7 +135,7 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 		if fam == "" {
 			continue
 		}
-		authors = append(authors, schema.Author{Family: fam, Given: toInitials(giv)})
+    authors = append(authors, schema.Author{Family: fam, Given: names.Initials(giv)})
 	}
 	// Series info
 	rfcLabel := "RFC " + num
@@ -181,12 +177,14 @@ func FetchRFC(ctx context.Context, spec string) (schema.Entry, error) {
 		e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (%s).", e.APA7.Title, rfcLabel)
 	}
 	e.Annotation.Keywords = []string{"rfc", "ietf"}
-	if err := e.Validate(); err != nil {
-		return schema.Entry{}, err
-	}
-	return e, nil
+    sanitize.CleanEntry(&e)
+    if err := e.Validate(); err != nil {
+        return schema.Entry{}, err
+    }
+    return e, nil
 }
 
+// normalizeRFCNumber extracts the numeric RFC identifier from strings like "rfc5424".
 func normalizeRFCNumber(s string) string {
 	s = strings.TrimSpace(strings.ToLower(s))
 	if s == "" {
@@ -205,6 +203,7 @@ func normalizeRFCNumber(s string) string {
 	return string(out)
 }
 
+// monthToNum converts a month name/abbrev to 1-12, or 0 if unknown.
 func monthToNum(m string) int {
 	m = strings.ToLower(strings.TrimSpace(m))
 	switch m {
@@ -259,34 +258,14 @@ func monthToNum(m string) int {
 	}
 }
 
+// toInt parses an int from s, returning 0 on failure.
 func toInt(s string) int {
 	var v int
 	_, _ = fmt.Sscanf(s, "%d", &v)
 	return v
 }
 
-func toInitials(given string) string {
-	given = strings.TrimSpace(given)
-	if given == "" {
-		return ""
-	}
-	parts := strings.Fields(given)
-	var out []string
-	for _, p := range parts {
-		r := []rune(p)
-		if len(r) == 0 {
-			continue
-		}
-		if len(r) == 1 && r[0] >= 'A' && r[0] <= 'Z' {
-			out = append(out, string(r[0])+".")
-		} else if strings.HasSuffix(p, ".") {
-			out = append(out, p)
-		} else {
-			out = append(out, strings.ToUpper(string(r[0]))+".")
-		}
-	}
-	return strings.Join(out, " ")
-}
+// initials helper removed; using names.Initials
 
 // --- Fallback: datatracker HTML parser for legacy RFCs without XML ---
 
@@ -297,14 +276,15 @@ var (
 	reName      = regexp.MustCompile(`\b([A-Z](?:\.|[a-z]+)(?:\s+[A-Z]\\.)*)\s+([A-Z][a-zA-Z\-']+)\b`)
 )
 
+// fetchRFCFromDatatracker loads minimal RFC data from the datatracker HTML fallback.
 func fetchRFCFromDatatracker(ctx context.Context, num string) (schema.Entry, error) {
 	url := fmt.Sprintf("https://datatracker.ietf.org/doc/html/rfc%s", num)
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return schema.Entry{}, err
 	}
-	req.Header.Set("Accept", "text/html")
-	req.Header.Set("User-Agent", chromeUA)
+    req.Header.Set("Accept", "text/html")
+    httpx.SetUA(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -358,22 +338,24 @@ func fetchRFCFromDatatracker(ctx context.Context, num string) (schema.Entry, err
 	e.APA7.Authors = authors
 	e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (RFC %s).", e.APA7.Title, num)
 	e.Annotation.Keywords = []string{"rfc", "ietf"}
-	if err := e.Validate(); err != nil {
-		return schema.Entry{}, err
-	}
-	return e, nil
+    sanitize.CleanEntry(&e)
+    if err := e.Validate(); err != nil {
+        return schema.Entry{}, err
+    }
+    return e, nil
 }
 
 // --- BibTeX fetch and parse ---
 
+// fetchRFCFromBibtex fetches and parses a datatracker BibTeX page into an Entry.
 func fetchRFCFromBibtex(ctx context.Context, num string) (schema.Entry, error) {
 	url := fmt.Sprintf("https://datatracker.ietf.org/doc/rfc%s/bibtex/", num)
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return schema.Entry{}, err
 	}
-	req.Header.Set("Accept", "text/plain, text/html")
-	req.Header.Set("User-Agent", chromeUA)
+    req.Header.Set("Accept", "text/plain, text/html")
+    httpx.SetUA(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -447,7 +429,7 @@ func fetchRFCFromBibtex(ctx context.Context, num string) (schema.Entry, error) {
 			if fam == "" {
 				continue
 			}
-			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: toInitials(giv)})
+            e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: names.Initials(giv)})
 		}
 	}
 	// Prefer abstract for annotation summary
@@ -475,6 +457,7 @@ var (
 	reGetBare     = regexp.MustCompile(`(?is)\b([a-zA-Z]+)\s*=\s*([^\s,}]+)`)
 )
 
+// parseBibtexFields extracts simple key/value fields from a BibTeX entry string.
 func parseBibtexFields(s string) map[string]string {
 	fields := map[string]string{}
 	// Extract only the entry body if wrapped (handle HTML wrappers)
@@ -513,12 +496,14 @@ func parseBibtexFields(s string) map[string]string {
 	return fields
 }
 
+// cleanBibVal trims and removes wrapping braces from a BibTeX value.
 func cleanBibVal(s string) string {
 	s = strings.TrimSpace(s)
 	s = strings.Trim(s, "{}")
 	return s
 }
 
+// getBibField returns a field's value by key from a BibTeX entry string.
 func getBibField(s, key string) string {
 	// search for braced value (multiline)
 	rb := regexp.MustCompile(`(?is)\b` + regexp.QuoteMeta(key) + `\s*=\s*\{([^}]*)\}`)
@@ -536,6 +521,7 @@ func getBibField(s, key string) string {
 	return ""
 }
 
+// extractBibtexBlock returns the first top-level BibTeX entry substring.
 func extractBibtexBlock(s string) string {
 	i := strings.Index(s, "@")
 	if i < 0 {
@@ -565,6 +551,7 @@ func extractBibtexBlock(s string) string {
 	return s
 }
 
+// splitAuthorNameBib splits a BibTeX author into family and given names.
 func splitAuthorNameBib(s string) (family, given string) {
 	s = strings.TrimSpace(s)
 	if s == "" {
@@ -588,8 +575,10 @@ func splitAuthorNameBib(s string) (family, given string) {
 	return family, given
 }
 
+// normalizeSpaces collapses whitespace to single spaces and trims.
 func normalizeSpaces(s string) string { return reSpaces.ReplaceAllString(strings.TrimSpace(s), " ") }
 
+// splitFullName splits a "Given ... Family" into family and given parts.
 func splitFullName(s string) (family, given string) {
 	s = strings.TrimSpace(s)
 	if s == "" {
@@ -604,6 +593,7 @@ func splitFullName(s string) (family, given string) {
 	return family, given
 }
 
+// sanitizeAbstract normalizes whitespace and collapses blank lines in abstracts.
 func sanitizeAbstract(s string) string {
 	s = strings.ReplaceAll(s, "\r\n", "\n")
 	s = strings.ReplaceAll(s, "\r", "\n")

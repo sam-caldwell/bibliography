@@ -1,6 +1,7 @@
 package doi
 
 import (
+	namespkg "bibliography/src/internal/names"
 	"context"
 	"io"
 	"net/http"
@@ -95,7 +96,7 @@ func TestHelpers_ToStringAndDate(t *testing.T) {
 	if y != 2020 || d != "2020-05-01" {
 		t.Fatalf("year-month: %d %q", y, d)
 	}
-	if toInitials("Jane Q Public") != "J. Q. P." {
+	if namespkg.Initials("Jane Q Public") != "J. Q. P." {
 		t.Fatalf("toInitials")
 	}
 }

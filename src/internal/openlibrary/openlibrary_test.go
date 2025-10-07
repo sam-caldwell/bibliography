@@ -1,11 +1,12 @@
 package openlibrary
 
 import (
-	"context"
-	"io/ioutil"
-	"net/http"
-	"strings"
-	"testing"
+    "context"
+    "io/ioutil"
+    "net/http"
+    "strings"
+    "testing"
+    namespkg "bibliography/src/internal/names"
 )
 
 type fakeResp struct {
@@ -108,14 +109,14 @@ func TestFetchBookByISBN_Normalizes9DigitISBN(t *testing.T) {
 }
 
 func TestSplitName(t *testing.T) {
-	fam, giv := splitName("Jane Q Public")
-	if fam != "Public" || giv != "J. Q." {
-		t.Fatalf("got %s %s", fam, giv)
-	}
-	fam, giv = splitName("Plato")
-	if fam != "Plato" || giv != "" {
-		t.Fatalf("got %s %s", fam, giv)
-	}
+    fam, giv := namespkg.Split("Jane Q Public")
+    if fam != "Public" || giv != "J. Q." {
+        t.Fatalf("got %s %s", fam, giv)
+    }
+    fam, giv = namespkg.Split("Plato")
+    if fam != "Plato" || giv != "" {
+        t.Fatalf("got %s %s", fam, giv)
+    }
 }
 
 func TestNormalizeISBNAndCheckDigit(t *testing.T) {

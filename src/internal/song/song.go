@@ -1,27 +1,27 @@
 package song
 
 import (
-	"context"
-	"encoding/json"
-	"fmt"
-	"net/http"
-	"net/url"
-	"strings"
-	"time"
+    "context"
+    "encoding/json"
+    "fmt"
+    "net/http"
+    "net/url"
+    "strings"
+    "time"
 
-	"bibliography/src/internal/schema"
+    "bibliography/src/internal/schema"
+    "bibliography/src/internal/httpx"
+    "bibliography/src/internal/dates"
+    "bibliography/src/internal/stringsx"
+    "bibliography/src/internal/sanitize"
 )
 
-// HTTPDoer allows injection for tests.
-type HTTPDoer interface {
-	Do(req *http.Request) (*http.Response, error)
-}
+var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
 
-var client HTTPDoer = &http.Client{Timeout: 10 * time.Second}
+// SetHTTPClient sets the HTTP client used for external API calls (for tests).
+func SetHTTPClient(c httpx.Doer) { client = c }
 
-func SetHTTPClient(c HTTPDoer) { client = c }
-
-const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+// chrome UA constant removed; use httpx.SetUA
 
 // FetchSong tries iTunes Search API first, then MusicBrainz. Returns a minimally valid APA7 entry of type "song".
 func FetchSong(ctx context.Context, title string, artist string, date string) (schema.Entry, error) {
@@ -38,17 +38,18 @@ func FetchSong(ctx context.Context, title string, artist string, date string) (s
 	return schema.Entry{}, fmt.Errorf("no song metadata provider succeeded")
 }
 
+// fetchFromITunes queries the iTunes Search API and maps the first result to an Entry.
 func fetchFromITunes(ctx context.Context, title, artist, date string) (schema.Entry, error) {
-	term := strings.TrimSpace(title + " " + artist)
+    term := stringsx.FirstNonEmpty(strings.TrimSpace(title+" "+artist), title)
 	u, _ := url.Parse("https://itunes.apple.com/search")
 	q := u.Query()
 	q.Set("term", term)
 	q.Set("entity", "song")
 	q.Set("limit", "1")
 	u.RawQuery = q.Encode()
-	req, _ := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
-	req.Header.Set("User-Agent", chromeUA)
-	req.Header.Set("Accept", "application/json")
+    req, _ := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
+    httpx.SetUA(req)
+    req.Header.Set("Accept", "application/json")
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -77,7 +78,7 @@ func fetchFromITunes(ctx context.Context, title, artist, date string) (schema.En
 	var e schema.Entry
 	e.Type = "song"
 	e.ID = schema.NewID()
-	e.APA7.Title = firstNonEmpty(r.TrackName, title)
+    e.APA7.Title = stringsx.FirstNonEmpty(r.TrackName, title)
 	// Authors -> performer
 	if a := strings.TrimSpace(r.ArtistName); a != "" {
 		e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: a})
@@ -91,24 +92,26 @@ func fetchFromITunes(ctx context.Context, title, artist, date string) (schema.En
 	if e.APA7.Date == "" {
 		e.APA7.Date = strings.TrimSpace(date)
 	}
-	if y := yearFromDate(e.APA7.Date); y > 0 {
-		y2 := y
-		e.APA7.Year = &y2
-	}
+    if y := dates.YearFromDate(e.APA7.Date); y > 0 {
+        y2 := y
+        e.APA7.Year = &y2
+    }
 	// URL
-	if u := strings.TrimSpace(r.TrackViewURL); u != "" {
-		e.APA7.URL = u
-		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
-	}
+    if u := strings.TrimSpace(r.TrackViewURL); u != "" {
+        e.APA7.URL = u
+        e.APA7.Accessed = dates.NowISO()
+    }
 	// Summary / keywords
 	e.Annotation.Summary = "Song: " + e.APA7.Title + "."
 	e.Annotation.Keywords = []string{"song"}
-	if err := e.Validate(); err != nil {
-		return schema.Entry{}, err
-	}
-	return e, nil
+    sanitize.CleanEntry(&e)
+    if err := e.Validate(); err != nil {
+        return schema.Entry{}, err
+    }
+    return e, nil
 }
 
+// fetchFromMusicBrainz queries MusicBrainz for a recording and maps minimal metadata.
 func fetchFromMusicBrainz(ctx context.Context, title, artist, date string) (schema.Entry, error) {
 	// Build query
 	q := "recording:" + quote(title)
@@ -121,9 +124,9 @@ func fetchFromMusicBrainz(ctx context.Context, title, artist, date string) (sche
 	qq.Set("fmt", "json")
 	qq.Set("limit", "1")
 	u.RawQuery = qq.Encode()
-	req, _ := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
-	req.Header.Set("User-Agent", chromeUA)
-	req.Header.Set("Accept", "application/json")
+    req, _ := http.NewRequestWithContext(ctx, http.MethodGet, u.String(), nil)
+    httpx.SetUA(req)
+    req.Header.Set("Accept", "application/json")
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -159,7 +162,7 @@ func fetchFromMusicBrainz(ctx context.Context, title, artist, date string) (sche
 	var e schema.Entry
 	e.Type = "song"
 	e.ID = schema.NewID()
-	e.APA7.Title = firstNonEmpty(r.Title, title)
+    e.APA7.Title = stringsx.FirstNonEmpty(r.Title, title)
 	if len(r.ArtistCredit) > 0 {
 		a := strings.TrimSpace(r.ArtistCredit[0].Name)
 		if a != "" {
@@ -181,27 +184,22 @@ func fetchFromMusicBrainz(ctx context.Context, title, artist, date string) (sche
 	if e.APA7.Date == "" {
 		e.APA7.Date = strings.TrimSpace(date)
 	}
-	if y := yearFromDate(e.APA7.Date); y > 0 {
-		y2 := y
-		e.APA7.Year = &y2
-	}
+    if y := dates.YearFromDate(e.APA7.Date); y > 0 {
+        y2 := y
+        e.APA7.Year = &y2
+    }
 	e.Annotation.Summary = "Song: " + e.APA7.Title + "."
 	e.Annotation.Keywords = []string{"song"}
-	if err := e.Validate(); err != nil {
-		return schema.Entry{}, err
-	}
-	return e, nil
+    sanitize.CleanEntry(&e)
+    if err := e.Validate(); err != nil {
+        return schema.Entry{}, err
+    }
+    return e, nil
 }
 
-func firstNonEmpty(vals ...string) string {
-	for _, v := range vals {
-		if strings.TrimSpace(v) != "" {
-			return strings.TrimSpace(v)
-		}
-	}
-	return ""
-}
+// firstNonEmpty removed; using stringsx.FirstNonEmpty
 
+// quote wraps s in double quotes if it contains spaces.
 func quote(s string) string {
 	s = strings.TrimSpace(s)
 	if strings.ContainsAny(s, " ") {
@@ -210,13 +208,4 @@ func quote(s string) string {
 	return s
 }
 
-func yearFromDate(date string) int {
-	date = strings.TrimSpace(date)
-	if len(date) >= 4 {
-		var y int
-		if _, err := fmt.Sscanf(date[:4], "%d", &y); err == nil {
-			return y
-		}
-	}
-	return 0
-}
+// yearFromDate removed; now using dates.YearFromDate

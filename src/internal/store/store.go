@@ -1,35 +1,55 @@
 package store
 
 import (
-	"encoding/json"
-	"errors"
-	"fmt"
-	"io/fs"
-	"net/url"
-	"os"
-	"path/filepath"
-	"regexp"
-	"sort"
-	"strings"
-	"time"
+    "encoding/json"
+    "errors"
+    "fmt"
+    "io/fs"
+    "net/url"
+    "os"
+    "path/filepath"
+    "regexp"
+    "sort"
+    "strings"
+    // time removed; use dates.NowISO
 
-	"gopkg.in/yaml.v3"
+    "gopkg.in/yaml.v3"
 
-	"bibliography/src/internal/schema"
+    "bibliography/src/internal/schema"
+    "bibliography/src/internal/dates"
 )
 
 const (
-	CitationsDir = "data/citations"
-	MetadataDir  = "data/metadata"
-	KeywordsJSON = "data/metadata/keywords.json"
-	AuthorsJSON  = "data/metadata/authors.json"
-	TitlesJSON   = "data/metadata/titles.json"
-	ISBNJSON     = "data/metadata/isbn.json"
-	DOIJSON      = "data/metadata/doi.json"
+    CitationsDir = "data/citations"
+    MetadataDir  = "data/metadata"
+    KeywordsJSON = "data/metadata/keywords.json"
+    AuthorsJSON  = "data/metadata/authors.json"
+    TitlesJSON   = "data/metadata/titles.json"
+    ISBNJSON     = "data/metadata/isbn.json"
+    DOIJSON      = "data/metadata/doi.json"
 )
 
-// dirForType maps entry types to subdirectories under data/citations.
-// Unknown types fall back to "citation". Pluralization/aliases per request.
+// --- Small helpers to lower duplication and cognitive load ---
+
+// ensureMetaDir creates the metadata directory if missing.
+func ensureMetaDir() error { return os.MkdirAll(MetadataDir, 0o755) }
+
+// entryPath returns the repo-relative path to the YAML file for an entry id/type.
+func entryPath(e schema.Entry) string {
+    seg := dirForType(e.Type)
+    return filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
+}
+
+// writeJSON writes the given value to the target JSON file with indentation.
+func writeJSON(target string, v any) (string, error) {
+    b, err := json.MarshalIndent(v, "", "  ")
+    if err != nil { return "", err }
+    if err := os.WriteFile(target, b, 0o644); err != nil { return "", err }
+    return target, nil
+}
+
+// dirForType maps an entry type to its subdirectory under data/citations.
+// Unknown types fall back to "citation"; some types use plural or aliased forms.
 func dirForType(typ string) string {
 	switch strings.ToLower(strings.TrimSpace(typ)) {
 	case "article":
@@ -53,11 +73,10 @@ func dirForType(typ string) string {
 	}
 }
 
-// SegmentForType exposes the directory segment used for a given type.
-// E.g., "book" -> "books", "website" -> "site".
+// SegmentForType returns the directory segment used for a given type (e.g., book->books).
 func SegmentForType(typ string) string { return dirForType(typ) }
 
-// WriteEntry writes the entry YAML to data/citations/<id>.yaml after validation.
+// WriteEntry validates and writes the entry YAML to data/citations/<segment>/<id>.yaml.
 func WriteEntry(e schema.Entry) (string, error) {
 	if strings.TrimSpace(e.ID) == "" {
 		e.ID = schema.NewID()
@@ -80,7 +99,7 @@ func WriteEntry(e schema.Entry) (string, error) {
 	return path, nil
 }
 
-// ReadAll loads all entries from data/citations.
+// ReadAll loads, validates, and returns all entries under data/citations.
 func ReadAll() ([]schema.Entry, error) {
 	var entries []schema.Entry
 	if _, err := os.Stat(CitationsDir); errors.Is(err, fs.ErrNotExist) {
@@ -110,26 +129,24 @@ func ReadAll() ([]schema.Entry, error) {
 	return entries, err
 }
 
-// BuildKeywordIndex builds a map of keyword -> list of entry IDs and writes to JSON.
+// BuildKeywordIndex writes data/metadata/keywords.json mapping keyword -> list of entry YAML paths.
 func BuildKeywordIndex(entries []schema.Entry) (string, error) {
-	if err := os.MkdirAll(MetadataDir, 0o755); err != nil {
-		return "", err
-	}
-	index := map[string][]string{}
-	for _, e := range entries {
-		seen := map[string]bool{}
+    if err := ensureMetaDir(); err != nil {
+        return "", err
+    }
+    index := map[string][]string{}
+    for _, e := range entries {
+        seen := map[string]bool{}
 
 		// helper to add a token (lowercased, trimmed) to the index once per entry
-		add := func(tok string) {
-			t := strings.ToLower(strings.TrimSpace(tok))
-			if t == "" || seen[t] {
-				return
-			}
-			seen[t] = true
-			seg := dirForType(e.Type)
-			path := filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
-			index[t] = append(index[t], path)
-		}
+        add := func(tok string) {
+            t := strings.ToLower(strings.TrimSpace(tok))
+            if t == "" || seen[t] {
+                return
+            }
+            seen[t] = true
+            index[t] = append(index[t], entryPath(e))
+        }
 
 		// 1) annotation keywords
 		for _, k := range e.Annotation.Keywords {
@@ -193,32 +210,23 @@ func BuildKeywordIndex(entries []schema.Entry) (string, error) {
 	for k := range index {
 		sort.Strings(index[k])
 	}
-	b, err := json.MarshalIndent(index, "", "  ")
-	if err != nil {
-		return "", err
-	}
-	if err := os.WriteFile(KeywordsJSON, b, 0o644); err != nil {
-		return "", err
-	}
-	return KeywordsJSON, nil
+    return writeJSON(KeywordsJSON, index)
 }
 
-// BuildAuthorIndex builds a map of author name -> list of full repo-relative
-// file paths for works they authored, and writes it to JSON.
-// Author key format: "Family, Given" if both present, else the non-empty name.
+// BuildAuthorIndex writes data/metadata/authors.json mapping author name -> entry YAML paths.
+// Author key format is "Family, Given" when both present; otherwise the non-empty name.
 func BuildAuthorIndex(entries []schema.Entry) (string, error) {
-	if err := os.MkdirAll(MetadataDir, 0o755); err != nil {
-		return "", err
-	}
-	index := map[string][]string{}
-	for _, e := range entries {
-		seg := dirForType(e.Type)
-		path := filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
-		// Deduplicate per author per entry
-		perEntrySeen := map[string]bool{}
-		for _, au := range e.APA7.Authors {
-			name := strings.TrimSpace(au.Family)
-			g := strings.TrimSpace(au.Given)
+    if err := ensureMetaDir(); err != nil {
+        return "", err
+    }
+    index := map[string][]string{}
+    for _, e := range entries {
+        path := entryPath(e)
+        // Deduplicate per author per entry
+        perEntrySeen := map[string]bool{}
+        for _, au := range e.APA7.Authors {
+            name := strings.TrimSpace(au.Family)
+            g := strings.TrimSpace(au.Given)
 			if name == "" && g != "" {
 				name = g
 			} else if name != "" && g != "" {
@@ -235,97 +243,60 @@ func BuildAuthorIndex(entries []schema.Entry) (string, error) {
 	for k := range index {
 		sort.Strings(index[k])
 	}
-	b, err := json.MarshalIndent(index, "", "  ")
-	if err != nil {
-		return "", err
-	}
-	if err := os.WriteFile(AuthorsJSON, b, 0o644); err != nil {
-		return "", err
-	}
-	return AuthorsJSON, nil
+    return writeJSON(AuthorsJSON, index)
 }
 
-// BuildTitleIndex builds a map of full repo-relative file path -> list of
-// tokenized title words for every cited work and writes it to JSON.
+// BuildTitleIndex writes data/metadata/titles.json mapping entry YAML path -> tokenized title words.
 func BuildTitleIndex(entries []schema.Entry) (string, error) {
-	if err := os.MkdirAll(MetadataDir, 0o755); err != nil {
-		return "", err
-	}
-	index := map[string][]string{}
-	for _, e := range entries {
-		seg := dirForType(e.Type)
-		path := filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
-		index[path] = tokenizeWords(e.APA7.Title)
-	}
-	b, err := json.MarshalIndent(index, "", "  ")
-	if err != nil {
-		return "", err
-	}
-	if err := os.WriteFile(TitlesJSON, b, 0o644); err != nil {
-		return "", err
-	}
-	return TitlesJSON, nil
+    if err := ensureMetaDir(); err != nil {
+        return "", err
+    }
+    index := map[string][]string{}
+    for _, e := range entries {
+        index[entryPath(e)] = tokenizeWords(e.APA7.Title)
+    }
+    return writeJSON(TitlesJSON, index)
 }
 
-// BuildISBNIndex builds a map of full repo-relative file path -> ISBN for
-// every cited book and writes it to JSON. Entries without ISBN are skipped.
+// BuildISBNIndex writes data/metadata/isbn.json mapping entry YAML path -> ISBN for books with ISBNs.
 func BuildISBNIndex(entries []schema.Entry) (string, error) {
-	if err := os.MkdirAll(MetadataDir, 0o755); err != nil {
-		return "", err
-	}
-	index := map[string]string{}
-	for _, e := range entries {
-		if strings.ToLower(strings.TrimSpace(e.Type)) != "book" {
-			continue
-		}
-		isbn := strings.TrimSpace(e.APA7.ISBN)
-		if isbn == "" {
-			continue
-		}
-		seg := dirForType(e.Type)
-		path := filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
-		index[path] = isbn
-	}
-	b, err := json.MarshalIndent(index, "", "  ")
-	if err != nil {
-		return "", err
-	}
-	if err := os.WriteFile(ISBNJSON, b, 0o644); err != nil {
-		return "", err
-	}
-	return ISBNJSON, nil
+    if err := ensureMetaDir(); err != nil {
+        return "", err
+    }
+    index := map[string]string{}
+    for _, e := range entries {
+        if strings.ToLower(strings.TrimSpace(e.Type)) != "book" {
+            continue
+        }
+        isbn := strings.TrimSpace(e.APA7.ISBN)
+        if isbn == "" {
+            continue
+        }
+        index[entryPath(e)] = isbn
+    }
+    return writeJSON(ISBNJSON, index)
 }
 
-// BuildDOIIndex builds a map of full repo-relative file path -> DOI for
-// every cited book and writes it to JSON. Entries without DOI are skipped.
+// BuildDOIIndex writes data/metadata/doi.json mapping entry YAML path -> DOI for entries with DOIs.
 func BuildDOIIndex(entries []schema.Entry) (string, error) {
-	if err := os.MkdirAll(MetadataDir, 0o755); err != nil {
-		return "", err
-	}
-	index := map[string]string{}
-	for _, e := range entries {
-		doi := strings.TrimSpace(e.APA7.DOI)
-		if doi == "" {
-			continue
-		}
-		seg := dirForType(e.Type)
-		path := filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
-		index[path] = doi
-	}
-	b, err := json.MarshalIndent(index, "", "  ")
-	if err != nil {
-		return "", err
-	}
-	if err := os.WriteFile(DOIJSON, b, 0o644); err != nil {
-		return "", err
-	}
-	return DOIJSON, nil
+    if err := ensureMetaDir(); err != nil {
+        return "", err
+    }
+    index := map[string]string{}
+    for _, e := range entries {
+        doi := strings.TrimSpace(e.APA7.DOI)
+        if doi == "" {
+            continue
+        }
+        index[entryPath(e)] = doi
+    }
+    return writeJSON(DOIJSON, index)
 }
 
 var nonWord = regexp.MustCompile(`[^a-zA-Z0-9]+`)
 var doiRegex = regexp.MustCompile(`(?i)10\.\d{4,9}/[-._;()/:A-Z0-9]+`)
 
-// tokenizeWords splits a phrase into lowercased word tokens, filtering empties and 1-char tokens.
+// tokenizeWords splits a phrase into lowercased word tokens, filtering empties and 1-character tokens.
 func tokenizeWords(s string) []string {
 	s = strings.TrimSpace(s)
 	if s == "" {
@@ -342,7 +313,7 @@ func tokenizeWords(s string) []string {
 	return out
 }
 
-// ExtractDOI tries to extract a DOI from an arbitrary string (URL or text).
+// ExtractDOI extracts a DOI-like token from an arbitrary string containing a DOI or DOI URL.
 func ExtractDOI(s string) string {
 	s = strings.TrimSpace(s)
 	if s == "" {
@@ -356,9 +327,7 @@ func ExtractDOI(s string) string {
 	return strings.TrimSpace(match)
 }
 
-// NormalizeArticleDOI ensures that if a DOI is available, the entry has
-// apa7.doi set and apa7.url points to https://doi.org/<doi>. It will extract
-// a DOI from the existing URL if missing. Returns true if modified.
+// NormalizeArticleDOI ensures an article's DOI and URL are consistent (doi and https://doi.org/<doi>). Returns true if modified.
 func NormalizeArticleDOI(e *schema.Entry) bool {
 	if e == nil {
 		return false
@@ -379,17 +348,17 @@ func NormalizeArticleDOI(e *schema.Entry) bool {
 		desired := "https://doi.org/" + doi
 		if strings.TrimSpace(e.APA7.URL) != desired {
 			e.APA7.URL = desired
-			// Ensure accessed is set to satisfy validation
-			if strings.TrimSpace(e.APA7.Accessed) == "" {
-				e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
-			}
+            // Ensure accessed is set to satisfy validation
+            if strings.TrimSpace(e.APA7.Accessed) == "" {
+                e.APA7.Accessed = dates.NowISO()
+            }
 			changed = true
 		}
 	}
 	return changed
 }
 
-// FilterByKeywordsAND returns entries whose annotation.keywords contains all keywords (case-insensitive).
+// FilterByKeywordsAND filters entries to those containing all provided keywords (case-insensitive).
 func FilterByKeywordsAND(entries []schema.Entry, keywords []string) []schema.Entry {
 	if len(keywords) == 0 {
 		return entries

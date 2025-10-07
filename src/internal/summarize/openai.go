@@ -1,136 +1,95 @@
 package summarize
 
 import (
-	"bytes"
-	"context"
-	"encoding/json"
-	"fmt"
-	"io"
-	"net/http"
-	"os"
-	"strings"
-	"time"
+    "bytes"
+    "context"
+    "encoding/json"
+    "fmt"
+    "io"
+    "net/http"
+    "os"
+    "strings"
+    "time"
 
-	"bibliography/src/internal/schema"
+    "bibliography/src/internal/schema"
+    "bibliography/src/internal/dates"
+    "bibliography/src/internal/httpx"
+    "bibliography/src/internal/sanitize"
 )
 
-// HTTPDoer allows test injection
-type HTTPDoer interface {
-	Do(req *http.Request) (*http.Response, error)
+var client httpx.Doer = &http.Client{Timeout: 15 * time.Second}
+
+// SetHTTPClient sets the HTTP client used for OpenAI API calls (for tests).
+func SetHTTPClient(c httpx.Doer) { client = c }
+
+// --- Internal helpers to reduce repeated request logic ---
+
+// openAIKey returns the OPENAI_API_KEY env var or an error if unset.
+func openAIKey() (string, error) {
+    apiKey := os.Getenv("OPENAI_API_KEY")
+    if apiKey == "" {
+        return "", fmt.Errorf("OPENAI_API_KEY is not set")
+    }
+    return apiKey, nil
 }
 
-var client HTTPDoer = &http.Client{Timeout: 15 * time.Second}
+// openAIModel returns the model name from OPENAI_MODEL or a default.
+func openAIModel() string {
+    model := os.Getenv("OPENAI_MODEL")
+    if model == "" { model = "gpt-4o-mini" }
+    return model
+}
 
-const ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-
-func SetHTTPClient(c HTTPDoer) { client = c }
+// chatRequest performs a Chat Completions API request and returns content.
+func chatRequest(ctx context.Context, sys, user string) (string, error) {
+    apiKey, err := openAIKey()
+    if err != nil { return "", err }
+    body := map[string]any{
+        "model":       openAIModel(),
+        "temperature": 0.2,
+        "messages": []map[string]string{
+            {"role": "system", "content": sys},
+            {"role": "user", "content": user},
+        },
+    }
+    buf, _ := json.Marshal(body)
+    req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
+    if err != nil { return "", err }
+    req.Header.Set("Authorization", "Bearer "+apiKey)
+    req.Header.Set("Content-Type", "application/json")
+    httpx.SetUA(req)
+    resp, err := client.Do(req)
+    if err != nil { return "", err }
+    defer resp.Body.Close()
+    if resp.StatusCode != http.StatusOK {
+        b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
+        return "", fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
+    }
+    var out struct {
+        Choices []struct { Message struct{ Content string `json:"content"` } `json:"message"` } `json:"choices"`
+    }
+    if err := json.NewDecoder(resp.Body).Decode(&out); err != nil { return "", err }
+    if len(out.Choices) == 0 { return "", fmt.Errorf("openai: empty choices") }
+    return out.Choices[0].Message.Content, nil
+}
 
 // SummarizeURL asks OpenAI to produce ~200-word prose summary for a given URL.
 func SummarizeURL(ctx context.Context, url string) (string, error) {
-	apiKey := os.Getenv("OPENAI_API_KEY")
-	if apiKey == "" {
-		return "", fmt.Errorf("OPENAI_API_KEY is not set")
-	}
-	model := os.Getenv("OPENAI_MODEL")
-	if model == "" {
-		model = "gpt-4o-mini"
-	}
-
-	body := map[string]any{
-		"model":       model,
-		"temperature": 0.2,
-		"messages": []map[string]string{
-			{"role": "system", "content": "You are a concise scholarly assistant. Write ~200 words of neutral prose suitable for an annotated bibliography. Avoid bullets, quotes, disclaimers."},
-			{"role": "user", "content": fmt.Sprintf("Please summarize this work in about 200 words. Use the page itself as reference if you can access it. URL: %s", url)},
-		},
-	}
-	buf, _ := json.Marshal(body)
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
-	if err != nil {
-		return "", err
-	}
-	req.Header.Set("Authorization", "Bearer "+apiKey)
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("User-Agent", ua)
-	resp, err := client.Do(req)
-	if err != nil {
-		return "", err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != http.StatusOK {
-		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
-		return "", fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
-	}
-	var out struct {
-		Choices []struct {
-			Message struct {
-				Content string `json:"content"`
-			} `json:"message"`
-		} `json:"choices"`
-	}
-	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
-		return "", err
-	}
-	if len(out.Choices) == 0 {
-		return "", fmt.Errorf("openai: empty choices")
-	}
-	return out.Choices[0].Message.Content, nil
+    sys := "You are a concise scholarly assistant. Write ~200 words of neutral prose suitable for an annotated bibliography. Avoid bullets, quotes, disclaimers."
+    user := fmt.Sprintf("Please summarize this work in about 200 words. Use the page itself as reference if you can access it. URL: %s", url)
+    return chatRequest(ctx, sys, user)
 }
 
 // KeywordsFromTitleAndSummary asks OpenAI for topical keywords given title and summary.
 // It returns a list of lowercase keywords. The model is instructed to return ONLY a
 // JSON array of strings for robust parsing.
 func KeywordsFromTitleAndSummary(ctx context.Context, title, summary string) ([]string, error) {
-	apiKey := os.Getenv("OPENAI_API_KEY")
-	if apiKey == "" {
-		return nil, fmt.Errorf("OPENAI_API_KEY is not set")
-	}
-	model := os.Getenv("OPENAI_MODEL")
-	if model == "" {
-		model = "gpt-4o-mini"
-	}
-
-	userPrompt := fmt.Sprintf("Given the following work, return 5-12 topical keywords as a JSON array of lowercase strings. Use single- or short multi-word terms (no sentences), avoid duplicates and punctuation, and do not explain.\\n\\nTitle: %s\\nSummary: %s\\n\\nReturn ONLY a JSON array, e.g., [\"keyword\", \"another\"].", title, summary)
-
-	body := map[string]any{
-		"model":       model,
-		"temperature": 0.2,
-		"messages": []map[string]string{
-			{"role": "system", "content": "You generate concise topical keywords for cataloging and search. Output strictly JSON arrays of lowercase strings."},
-			{"role": "user", "content": userPrompt},
-		},
-	}
-	buf, _ := json.Marshal(body)
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
-	if err != nil {
-		return nil, err
-	}
-	req.Header.Set("Authorization", "Bearer "+apiKey)
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("User-Agent", ua)
-	resp, err := client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != http.StatusOK {
-		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
-		return nil, fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
-	}
-	var out struct {
-		Choices []struct {
-			Message struct {
-				Content string `json:"content"`
-			} `json:"message"`
-		} `json:"choices"`
-	}
-	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
-		return nil, err
-	}
-	if len(out.Choices) == 0 {
-		return nil, fmt.Errorf("openai: empty choices")
-	}
-	content := out.Choices[0].Message.Content
+    userPrompt := fmt.Sprintf("Given the following work, return 5-12 topical keywords as a JSON array of lowercase strings. Use single- or short multi-word terms (no sentences), avoid duplicates and punctuation, and do not explain.\n\nTitle: %s\nSummary: %s\n\nReturn ONLY a JSON array, e.g., [\"keyword\", \"another\"].", title, summary)
+    content, err := chatRequest(ctx,
+        "You generate concise topical keywords for cataloging and search. Output strictly JSON arrays of lowercase strings.",
+        userPrompt,
+    )
+    if err != nil { return nil, err }
 
 	// Try strict JSON array parsing first
 	var arr []string
@@ -202,15 +161,7 @@ func KeywordsFromTitleAndSummary(ctx context.Context, title, summary string) ([]
 // builds a schema.Entry of type "movie". It also asks for a short neutral summary and derives
 // keywords from title and summary. Requires OPENAI_API_KEY.
 func GenerateMovieFromTitleAndDate(ctx context.Context, title, date string) (schema.Entry, error) {
-	apiKey := os.Getenv("OPENAI_API_KEY")
-	if apiKey == "" {
-		return schema.Entry{}, fmt.Errorf("OPENAI_API_KEY is not set")
-	}
-	model := os.Getenv("OPENAI_MODEL")
-	if model == "" {
-		model = "gpt-4o-mini"
-	}
-	sys := "You extract bibliographic metadata for films. Return strict JSON only."
+    sys := "You extract bibliographic metadata for films. Return strict JSON only."
 	user := fmt.Sprintf(`Given this film information, return ONLY a single JSON object with keys:
 {
   "title": string,
@@ -221,42 +172,8 @@ func GenerateMovieFromTitleAndDate(ctx context.Context, title, date string) (sch
 }
 Title: %s
 Date: %s`, title, date)
-	body := map[string]any{
-		"model":       model,
-		"temperature": 0.2,
-		"messages":    []map[string]string{{"role": "system", "content": sys}, {"role": "user", "content": user}},
-	}
-	buf, _ := json.Marshal(body)
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
-	if err != nil {
-		return schema.Entry{}, err
-	}
-	req.Header.Set("Authorization", "Bearer "+apiKey)
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("User-Agent", ua)
-	resp, err := client.Do(req)
-	if err != nil {
-		return schema.Entry{}, err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != http.StatusOK {
-		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
-		return schema.Entry{}, fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
-	}
-	var out struct {
-		Choices []struct {
-			Message struct {
-				Content string `json:"content"`
-			} `json:"message"`
-		} `json:"choices"`
-	}
-	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
-		return schema.Entry{}, err
-	}
-	if len(out.Choices) == 0 {
-		return schema.Entry{}, fmt.Errorf("openai: empty choices")
-	}
-	content := out.Choices[0].Message.Content
+    content, err := chatRequest(ctx, sys, user)
+    if err != nil { return schema.Entry{}, err }
 	var obj struct {
 		Title     string `json:"title"`
 		Date      string `json:"date"`
@@ -284,10 +201,10 @@ Date: %s`, title, date)
 	if e.APA7.Date == "" {
 		e.APA7.Date = strings.TrimSpace(date)
 	}
-	if y := yearFromDate(e.APA7.Date); y > 0 {
-		y2 := y
-		e.APA7.Year = &y2
-	}
+    if y := dates.YearFromDate(e.APA7.Date); y > 0 {
+        y2 := y
+        e.APA7.Year = &y2
+    }
 	e.APA7.Publisher = strings.TrimSpace(obj.Publisher)
 	for _, a := range obj.Authors {
 		fam := strings.TrimSpace(a.Family)
@@ -301,27 +218,17 @@ Date: %s`, title, date)
 		sum = fmt.Sprintf("Film: %s.", e.APA7.Title)
 	}
 	e.Annotation.Summary = sum
-	if ks, err := KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); err == nil {
-		cleaned := make([]string, 0, len(ks))
-		seen := map[string]bool{}
-		for _, k := range ks {
-			k = strings.ToLower(strings.TrimSpace(k))
-			if k != "" && !seen[k] {
-				seen[k] = true
-				cleaned = append(cleaned, k)
-			}
-		}
-		if len(cleaned) > 0 {
-			e.Annotation.Keywords = cleaned
-		}
-	}
+    if ks, err := KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); err == nil {
+        e.Annotation.Keywords = normalizeKeywords(ks)
+    }
 	if len(e.Annotation.Keywords) == 0 {
 		e.Annotation.Keywords = []string{"movie"}
 	}
-	if err := e.Validate(); err != nil {
-		return schema.Entry{}, err
-	}
-	return e, nil
+    sanitize.CleanEntry(&e)
+    if err := e.Validate(); err != nil {
+        return schema.Entry{}, err
+    }
+    return e, nil
 }
 
 // GenerateCitationFromURL asks OpenAI to produce minimal bibliographic metadata
@@ -329,15 +236,7 @@ Date: %s`, title, date)
 // "article" filled with best-effort fields. It also attempts to generate a summary
 // and keywords using the existing helpers. Requires OPENAI_API_KEY.
 func GenerateCitationFromURL(ctx context.Context, url string) (schema.Entry, error) {
-	apiKey := os.Getenv("OPENAI_API_KEY")
-	if apiKey == "" {
-		return schema.Entry{}, fmt.Errorf("OPENAI_API_KEY is not set")
-	}
-	model := os.Getenv("OPENAI_MODEL")
-	if model == "" {
-		model = "gpt-4o-mini"
-	}
-	sys := "You extract bibliographic metadata for an online article."
+    sys := "You extract bibliographic metadata for an online article."
 	user := fmt.Sprintf(`Given this URL, return ONLY a single JSON object with these keys:
 {
   "title": string,
@@ -351,45 +250,8 @@ func GenerateCitationFromURL(ctx context.Context, url string) (schema.Entry, err
 Use the page if accessible; otherwise use general knowledge cautiously. If unknown, use empty strings.
 URL: %s`, url)
 
-	body := map[string]any{
-		"model":       model,
-		"temperature": 0.2,
-		"messages": []map[string]string{
-			{"role": "system", "content": sys},
-			{"role": "user", "content": user},
-		},
-	}
-	buf, _ := json.Marshal(body)
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
-	if err != nil {
-		return schema.Entry{}, err
-	}
-	req.Header.Set("Authorization", "Bearer "+apiKey)
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("User-Agent", ua)
-	resp, err := client.Do(req)
-	if err != nil {
-		return schema.Entry{}, err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != http.StatusOK {
-		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
-		return schema.Entry{}, fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
-	}
-	var out struct {
-		Choices []struct {
-			Message struct {
-				Content string `json:"content"`
-			} `json:"message"`
-		} `json:"choices"`
-	}
-	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
-		return schema.Entry{}, err
-	}
-	if len(out.Choices) == 0 {
-		return schema.Entry{}, fmt.Errorf("openai: empty choices")
-	}
-	content := out.Choices[0].Message.Content
+    content, err := chatRequest(ctx, sys, user)
+    if err != nil { return schema.Entry{}, err }
 	var obj struct {
 		Title          string                           `json:"title"`
 		Authors        []struct{ Family, Given string } `json:"authors"`
@@ -423,13 +285,13 @@ URL: %s`, url)
 	}
 	e.APA7.Publisher = strings.TrimSpace(obj.Publisher)
 	e.APA7.Date = strings.TrimSpace(obj.Date)
-	if y := yearFromDate(e.APA7.Date); y > 0 {
-		y2 := y
-		e.APA7.Year = &y2
-	}
+    if y := dates.YearFromDate(e.APA7.Date); y > 0 {
+        y2 := y
+        e.APA7.Year = &y2
+    }
 	e.APA7.DOI = strings.TrimSpace(obj.DOI)
 	e.APA7.URL = url
-	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+    e.APA7.Accessed = dates.NowISO()
 	for _, a := range obj.Authors {
 		fam := strings.TrimSpace(a.Family)
 		giv := strings.TrimSpace(a.Given)
@@ -437,58 +299,31 @@ URL: %s`, url)
 			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
 		}
 	}
-	if s, err := SummarizeURL(ctx, url); err == nil {
-		e.Annotation.Summary = strings.TrimSpace(s)
-	}
+    if s, err := SummarizeURL(ctx, url); err == nil {
+        e.Annotation.Summary = strings.TrimSpace(s)
+    }
 	if strings.TrimSpace(e.Annotation.Summary) == "" && e.APA7.Title != "" {
 		e.Annotation.Summary = fmt.Sprintf("Web article: %s.", e.APA7.Title)
 	}
-	if ks, err := KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); err == nil {
-		cleaned := make([]string, 0, len(ks))
-		seen := map[string]bool{}
-		for _, k := range ks {
-			k = strings.ToLower(strings.TrimSpace(k))
-			if k != "" && !seen[k] {
-				seen[k] = true
-				cleaned = append(cleaned, k)
-			}
-		}
-		if len(cleaned) > 0 {
-			e.Annotation.Keywords = cleaned
-		}
-	}
+    if ks, err := KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); err == nil {
+        e.Annotation.Keywords = normalizeKeywords(ks)
+    }
 	if len(e.Annotation.Keywords) == 0 {
 		e.Annotation.Keywords = []string{"article"}
 	}
-	if err := e.Validate(); err != nil {
-		return schema.Entry{}, err
-	}
-	return e, nil
+    sanitize.CleanEntry(&e)
+    if err := e.Validate(); err != nil {
+        return schema.Entry{}, err
+    }
+    return e, nil
 }
 
-func yearFromDate(date string) int {
-	date = strings.TrimSpace(date)
-	if len(date) >= 4 {
-		var y int
-		if _, err := fmt.Sscanf(date[:4], "%d", &y); err == nil {
-			return y
-		}
-	}
-	return 0
-}
+// yearFromDate removed; now using dates.YearFromDate
 
 // GenerateSongFromTitleArtistDate builds a minimal APA7 song entry from OpenAI output.
 func GenerateSongFromTitleArtistDate(ctx context.Context, title, artist, date string) (schema.Entry, error) {
-	apiKey := os.Getenv("OPENAI_API_KEY")
-	if apiKey == "" {
-		return schema.Entry{}, fmt.Errorf("OPENAI_API_KEY is not set")
-	}
-	model := os.Getenv("OPENAI_MODEL")
-	if model == "" {
-		model = "gpt-4o-mini"
-	}
-	sys := "You extract bibliographic metadata for songs. Return strict JSON only."
-	user := fmt.Sprintf(`Given this song info, return ONLY a single JSON object with keys:
+    sys := "You extract bibliographic metadata for songs. Return strict JSON only."
+    user := fmt.Sprintf(`Given this song info, return ONLY a single JSON object with keys:
 {
   "title": string,
   "date": string,               // YYYY-MM-DD if known; else empty
@@ -500,38 +335,8 @@ func GenerateSongFromTitleArtistDate(ctx context.Context, title, artist, date st
 Title: %s
 Artist: %s
 Date: %s`, title, artist, date)
-	body := map[string]any{"model": model, "temperature": 0.2, "messages": []map[string]string{{"role": "system", "content": sys}, {"role": "user", "content": user}}}
-	buf, _ := json.Marshal(body)
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(buf))
-	if err != nil {
-		return schema.Entry{}, err
-	}
-	req.Header.Set("Authorization", "Bearer "+apiKey)
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("User-Agent", ua)
-	resp, err := client.Do(req)
-	if err != nil {
-		return schema.Entry{}, err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != http.StatusOK {
-		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
-		return schema.Entry{}, fmt.Errorf("openai: http %d: %s", resp.StatusCode, string(b))
-	}
-	var out struct {
-		Choices []struct {
-			Message struct {
-				Content string `json:"content"`
-			} `json:"message"`
-		} `json:"choices"`
-	}
-	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
-		return schema.Entry{}, err
-	}
-	if len(out.Choices) == 0 {
-		return schema.Entry{}, fmt.Errorf("openai: empty choices")
-	}
-	content := out.Choices[0].Message.Content
+    content, err := chatRequest(ctx, sys, user)
+    if err != nil { return schema.Entry{}, err }
 	var obj struct {
 		Title, Date, Publisher, ContainerTitle, Summary string
 		Authors                                         []struct{ Family, Given string }
@@ -546,10 +351,10 @@ Date: %s`, title, artist, date)
 	e.ID = schema.NewID()
 	e.APA7.Title = strings.TrimSpace(first(obj.Title, title))
 	e.APA7.Date = strings.TrimSpace(first(obj.Date, date))
-	if y := yearFromDate(e.APA7.Date); y > 0 {
-		y2 := y
-		e.APA7.Year = &y2
-	}
+    if y := dates.YearFromDate(e.APA7.Date); y > 0 {
+        y2 := y
+        e.APA7.Year = &y2
+    }
 	e.APA7.Publisher = strings.TrimSpace(obj.Publisher)
 	e.APA7.ContainerTitle = strings.TrimSpace(obj.ContainerTitle)
 	for _, a := range obj.Authors {
@@ -575,17 +380,33 @@ Date: %s`, title, artist, date)
 	return e, nil
 }
 
+// first returns a if non-empty, otherwise b.
 func first(a, b string) string {
 	if strings.TrimSpace(a) != "" {
 		return a
 	}
 	return b
 }
+// extractJSONObject returns the first {...} substring or an error if absent.
 func extractJSONObject(s string) (string, error) {
-	start := strings.Index(s, "{")
-	end := strings.LastIndex(s, "}")
-	if start >= 0 && end > start {
-		return s[start : end+1], nil
-	}
-	return "", fmt.Errorf("no json object")
+    start := strings.Index(s, "{")
+    end := strings.LastIndex(s, "}")
+    if start >= 0 && end > start {
+        return s[start : end+1], nil
+    }
+    return "", fmt.Errorf("no json object")
+}
+
+// normalizeKeywords lowercases, trims, and de-duplicates a list of keywords.
+func normalizeKeywords(keys []string) []string {
+    if len(keys) == 0 { return nil }
+    seen := map[string]bool{}
+    out := make([]string, 0, len(keys))
+    for _, k := range keys {
+        k = strings.ToLower(strings.TrimSpace(k))
+        if k == "" || seen[k] { continue }
+        seen[k] = true
+        out = append(out, k)
+    }
+    return out
 }

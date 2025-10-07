@@ -1,27 +1,26 @@
 package video
 
 import (
-	"context"
-	"encoding/json"
-	"fmt"
-	"net/http"
-	"net/url"
-	"strings"
-	"time"
+    "context"
+    "encoding/json"
+    "fmt"
+    "net/http"
+    "net/url"
+    "strings"
+    "time"
 
-	"bibliography/src/internal/schema"
+    "bibliography/src/internal/schema"
+    "bibliography/src/internal/httpx"
+    "bibliography/src/internal/dates"
+    "bibliography/src/internal/sanitize"
 )
 
-// HTTPDoer allows test injection.
-type HTTPDoer interface {
-	Do(req *http.Request) (*http.Response, error)
-}
+var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
 
-var client HTTPDoer = &http.Client{Timeout: 10 * time.Second}
+// SetHTTPClient sets the HTTP client used for YouTube oEmbed requests (for tests).
+func SetHTTPClient(c httpx.Doer) { client = c }
 
-func SetHTTPClient(c HTTPDoer) { client = c }
-
-const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+// chrome UA constant removed; use httpx.SetUA
 
 // FetchYouTube fetches minimal metadata for a YouTube video via the oEmbed endpoint.
 // It constructs a valid video entry with at least title, channel (as corporate author),
@@ -37,9 +36,9 @@ func FetchYouTube(ctx context.Context, pageURL string) (schema.Entry, error) {
 	q.Set("format", "json")
 	q.Set("url", pageURL)
 	ou.RawQuery = q.Encode()
-	req, _ := http.NewRequestWithContext(ctx, http.MethodGet, ou.String(), nil)
-	req.Header.Set("User-Agent", chromeUA)
-	req.Header.Set("Accept", "application/json")
+    req, _ := http.NewRequestWithContext(ctx, http.MethodGet, ou.String(), nil)
+    httpx.SetUA(req)
+    req.Header.Set("Accept", "application/json")
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -71,8 +70,8 @@ func FetchYouTube(ctx context.Context, pageURL string) (schema.Entry, error) {
 	e.APA7.ContainerTitle = "YouTube"
 	e.APA7.Publisher = "YouTube"
 	// URL + accessed
-	e.APA7.URL = pageURL
-	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+    e.APA7.URL = pageURL
+    e.APA7.Accessed = dates.NowISO()
 	// Minimal summary and keyword
 	if a := strings.TrimSpace(out.AuthorName); a != "" {
 		e.Annotation.Summary = fmt.Sprintf("YouTube video: %s by %s.", e.APA7.Title, a)
@@ -80,8 +79,9 @@ func FetchYouTube(ctx context.Context, pageURL string) (schema.Entry, error) {
 		e.Annotation.Summary = fmt.Sprintf("YouTube video: %s.", e.APA7.Title)
 	}
 	e.Annotation.Keywords = []string{"video"}
-	if err := e.Validate(); err != nil {
-		return schema.Entry{}, err
-	}
-	return e, nil
+    sanitize.CleanEntry(&e)
+    if err := e.Validate(); err != nil {
+        return schema.Entry{}, err
+    }
+    return e, nil
 }

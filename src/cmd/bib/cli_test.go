@@ -22,6 +22,8 @@ import (
 	"bibliography/src/internal/summarize"
 	video "bibliography/src/internal/video"
 	webfetch "bibliography/src/internal/webfetch"
+	"bibliography/src/internal/movie"
+	"bibliography/src/internal/song"
 )
 
 // test HTTP client for OpenLibrary injection
@@ -256,6 +258,41 @@ func TestLookupArticleByURL_PDF(t *testing.T) {
 	}
 }
 
+func TestSearchExpr_Query(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+    // Seed two entries
+    if err := os.MkdirAll("data/citations/article", 0o755); err != nil { t.Fatal(err) }
+    e1 := schema.Entry{ID: schema.NewID(), Type: "article", APA7: schema.APA7{Title: "Hello World", Date: "2021-02-03", Journal: "J", Authors: schema.Authors{{Family: "Doe", Given: "J."}}, Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "text", Keywords: []string{"k"}}}
+    if _, err := store.WriteEntry(e1); err != nil { t.Fatal(err) }
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newSearchCmd())
+    out, err := execCmd(rootCmd, "search", "author==Doe* && date >= 2021 && title~=hello")
+    if err != nil { t.Fatalf("search expr: %v", err) }
+    if !strings.Contains(out, e1.ID) { t.Fatalf("expected result to include id, got: %q", out) }
+}
+
+// migrate command removed
+
+func TestAddSite_Manual(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
+    // Provide all prompts
+    input := strings.NewReader("My Site\nOrg\n2024-01-01\nhttps://example.com\n\n\nA summary\nweb, site\n")
+    rootCmd.SetIn(input)
+    if _, err := execCmd(rootCmd, "add", "site"); err != nil { t.Fatalf("add site manual: %v", err) }
+    files, _ := os.ReadDir(filepath.Join("data/citations", "site"))
+    if len(files) != 1 { t.Fatalf("expected a site yaml") }
+}
+
 func TestLookupRFC_Basic(t *testing.T) {
 	dir := t.TempDir()
 	old, _ := os.Getwd()
@@ -318,6 +355,141 @@ func TestAddVideo_YouTube_OEmbed(t *testing.T) {
 	if len(files) != 1 || !strings.HasSuffix(files[0].Name(), ".yaml") {
 		t.Fatalf("expected one yaml in video dir, got %v", files)
 	}
+}
+
+func TestAddMovie_Provider(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+
+    // stub commit
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
+
+    // stub OMDb
+    os.Setenv("OMDB_API_KEY", "x")
+    movie.SetHTTPClient(testHTTPDoer{status: 200, body: `{"Response":"True","Title":"The Film","Released":"02 Jan 2020","Director":"Jane Doe","Production":"Studio","Plot":"A plot.","Website":"https://example.com","imdbID":"tt1"}`})
+    t.Cleanup(func() { movie.SetHTTPClient(&http.Client{}) })
+
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
+    if _, err := execCmd(rootCmd, "add", "movie", "The Film"); err != nil {
+        t.Fatalf("add movie: %v", err)
+    }
+    files, _ := os.ReadDir(filepath.Join("data/citations", "movie"))
+    if len(files) != 1 { t.Fatalf("expected a movie yaml") }
+}
+
+func TestAddSong_Provider(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
+
+    // iTunes minimal response
+    song.SetHTTPClient(testHTTPDoer{status: 200, body: `{"resultCount":1,"results":[{"trackName":"T","artistName":"A","collectionName":"C","trackViewUrl":"https://itunes.apple.com/track","releaseDate":"2021-01-01T00:00:00Z"}]}`})
+    t.Cleanup(func() { song.SetHTTPClient(&http.Client{}) })
+
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
+    if _, err := execCmd(rootCmd, "add", "song", "Hello"); err != nil {
+        t.Fatalf("add song: %v", err)
+    }
+    files, _ := os.ReadDir(filepath.Join("data/citations", "song"))
+    if len(files) != 1 { t.Fatalf("expected a song yaml") }
+}
+
+func TestAddSite_WithURL(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
+
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
+    if _, err := execCmd(rootCmd, "add", "site", "https://example.com"); err != nil {
+        t.Fatalf("add site: %v", err)
+    }
+    files, _ := os.ReadDir(filepath.Join("data/citations", "site"))
+    if len(files) != 1 { t.Fatalf("expected a site yaml") }
+}
+
+func TestAddPatent_URLProvider(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
+
+    // minimal OG/JSON-LD content so webfetch builds an article entry; add keyword override via flags
+    html := `<!doctype html><html><head><meta property="og:title" content="Patent Widget"><meta property="og:site_name" content="USPTO"></head><body></body></html>`
+    webfetch.SetHTTPClient(testHTTPDoer{status: 200, body: html})
+    t.Cleanup(func() { webfetch.SetHTTPClient(&http.Client{}) })
+
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
+    if _, err := execCmd(rootCmd, "add", "patent", "--url", "https://patents.example.com/abc"); err != nil {
+        t.Fatalf("add patent: %v", err)
+    }
+    files, _ := os.ReadDir(filepath.Join("data/citations", "patent"))
+    if len(files) != 1 { t.Fatalf("expected a patent yaml") }
+}
+
+func TestAddArticle_WithHints(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
+    if _, err := execCmd(rootCmd, "add", "article", "--title", "X", "--author", "Doe, J.", "--date", "2022-01-01"); err != nil {
+        t.Fatalf("add article with hints: %v", err)
+    }
+    files, _ := os.ReadDir(filepath.Join("data/citations", "article"))
+    if len(files) != 1 { t.Fatalf("expected article yaml written") }
+}
+
+func TestAddBook_Manual(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+    commitAndPush = func(paths []string, msg string) error { return nil }
+    t.Cleanup(func() { commitAndPush = nil })
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newAddCmd())
+    in := strings.NewReader("My Book\nDoe, J.\n2020-01-01\n\n\nPublisher\n123456789\nA summary\nbook, test\n")
+    rootCmd.SetIn(in)
+    if _, err := execCmd(rootCmd, "add", "book"); err != nil {
+        t.Fatalf("add book manual: %v", err)
+    }
+    files, _ := os.ReadDir(filepath.Join("data/citations", "books"))
+    if len(files) != 1 { t.Fatalf("expected book yaml written") }
+}
+
+func TestSearchFlags_AuthorAndAll(t *testing.T) {
+    dir := t.TempDir()
+    old, _ := os.Getwd()
+    t.Cleanup(func() { _ = os.Chdir(old) })
+    _ = os.Chdir(dir)
+    e := schema.Entry{ID: schema.NewID(), Type: "article", APA7: schema.APA7{Title: "Title", Authors: schema.Authors{{Family: "Smith"}}, Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "summary", Keywords: []string{"k"}}}
+    if _, err := store.WriteEntry(e); err != nil { t.Fatal(err) }
+    rootCmd = &cobra.Command{Use: "bib"}
+    rootCmd.AddCommand(newSearchCmd())
+    out, err := execCmd(rootCmd, "search", "--author", "Smith", "--all", "Title")
+    if err != nil { t.Fatalf("search flags: %v", err) }
+    if !strings.Contains(out, e.ID) { t.Fatalf("expected result") }
 }
 
 func TestRepairDOICommand_ExtractsFromPublisherURLAndNormalizesURL(t *testing.T) {
@@ -831,4 +1003,35 @@ func TestCiteFormatsAPAAndInText(t *testing.T) {
 	if !strings.Contains(out, "(Kim & Doe, 2021)") {
 		t.Fatalf("expected in-text citation, got: %q", out)
 	}
+}
+
+func TestCiteFormats_OtherTypes(t *testing.T) {
+    // Book
+    be := schema.Entry{Type: "book", APA7: schema.APA7{Title: "B", Publisher: "P"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+    if c := toAPACitation(be); !strings.Contains(c, "P") { t.Fatalf("book cite missing publisher: %q", c) }
+    // Website
+    we := schema.Entry{Type: "website", APA7: schema.APA7{Title: "W", ContainerTitle: "Site", URL: "https://x", Accessed: "2025-01-01"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+    if c := toAPACitation(we); !strings.Contains(c, "Site") { t.Fatalf("website cite missing container: %q", c) }
+    // Movie
+    me := schema.Entry{Type: "movie", APA7: schema.APA7{Title: "M"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+    if c := toAPACitation(me); !strings.Contains(c, "[Film]") { t.Fatalf("movie cite missing [Film]: %q", c) }
+    // Video (YouTube)
+    ve := schema.Entry{Type: "video", APA7: schema.APA7{Title: "V", ContainerTitle: "YouTube"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+    if c := toAPACitation(ve); !strings.Contains(c, "YouTube") { t.Fatalf("video cite missing YouTube: %q", c) }
+    // Song
+    se := schema.Entry{Type: "song", APA7: schema.APA7{Title: "S", ContainerTitle: "Album", Publisher: "Label"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+    sc := toAPACitation(se)
+    if !(strings.Contains(sc, "Album") || strings.Contains(sc, "Label")) { t.Fatalf("song cite missing details: %q", sc) }
+    // Patent
+    pe := schema.Entry{Type: "patent", APA7: schema.APA7{Title: "P", Publisher: "USPTO"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+    if c := toAPACitation(pe); !strings.Contains(c, "USPTO") { t.Fatalf("patent cite missing publisher: %q", c) }
+    // RFC
+    re := schema.Entry{Type: "rfc", APA7: schema.APA7{Title: "R", ContainerTitle: "RFC"}, Annotation: schema.Annotation{Summary: "s", Keywords: []string{"k"}}}
+    if c := toAPACitation(re); !strings.Contains(c, "RFC") { t.Fatalf("rfc cite missing RFC: %q", c) }
+}
+
+func TestSearchHelpers_WildcardAndCount(t *testing.T) {
+    rx := wildcardToRegex("doe*")
+    if !rx.MatchString("doe, j") || rx.MatchString("roe") { t.Fatalf("wildcardToRegex incorrect") }
+    if n := countContains("hello hello", "hello"); n != 2 { t.Fatalf("countContains want 2 got %d", n) }
 }

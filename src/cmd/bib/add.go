@@ -8,10 +8,10 @@ import (
 	"net/url"
 	"os"
 	"strings"
-	"time"
 
 	"github.com/spf13/cobra"
 
+	"bibliography/src/internal/dates"
 	"bibliography/src/internal/doi"
 	"bibliography/src/internal/gitutil"
 	moviefetch "bibliography/src/internal/movie"
@@ -22,7 +22,7 @@ import (
 	"bibliography/src/internal/store"
 	"bibliography/src/internal/summarize"
 	youtube "bibliography/src/internal/video"
-	webfetch "bibliography/src/internal/webfetch"
+	"bibliography/src/internal/webfetch"
 )
 
 // indirections for testability
@@ -30,320 +30,380 @@ var (
 	commitAndPush = gitutil.CommitAndPush
 )
 
-func newAddCmd() *cobra.Command {
-	cmd := &cobra.Command{
-		Use:   "add",
-		Short: "Add annotated citations via OpenLibrary/DOI (no OpenAI)",
-	}
+const (
+	msgCommaDelimitedKeywords = "comma-delimited keywords to set on the entry"
+	msgWrote                  = "wrote %s\n"
+	msgAddCitation            = "add citation: %s"
+)
 
-	// add site <url>
+// newAddCmd constructs the root "add" command grouping subcommands for each type.
+func newAddCmd() *cobra.Command {
+	cmd := &cobra.Command{Use: "add", Short: "Add annotated citations via OpenLibrary/DOI (no OpenAI)"}
+	cmd.AddCommand(
+		buildAddSiteCmd(),
+		buildAddBookCmd(),
+		buildAddMovieCmd(),
+		buildAddSongCmd(),
+		buildAddArticleCmd(),
+		buildAddVideoCmd(),
+		buildAddPatentCmd(),
+		buildAddRFCCmd(),
+	)
+	return cmd
+}
+
+// --- Subcommand builders (extracted to reduce complexity) ---
+
+// buildAddSiteCmd creates the "add site" subcommand that adds a website by URL or manual prompts.
+func buildAddSiteCmd() *cobra.Command {
 	var siteKeywords string
-	site := &cobra.Command{
+	c := &cobra.Command{
 		Use:   "site [url]",
 		Short: "Add a website by URL or prompt for manual entry",
 		Args:  cobra.ArbitraryArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if len(args) >= 1 && strings.TrimSpace(args[0]) != "" {
-				url := args[0]
-				return doAddWithKeywords(cmd.Context(), "website", map[string]string{"url": url}, parseKeywordsCSV(siteKeywords))
+				thisUrl := args[0]
+				return doAddWithKeywords(cmd.Context(), "website", map[string]string{"url": thisUrl}, parseKeywordsCSV(siteKeywords))
 			}
-			// Manual entry when no URL provided
 			return manualAdd(cmd, "website", parseKeywordsCSV(siteKeywords))
 		},
 	}
-	site.Flags().StringVar(&siteKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+	c.Flags().StringVar(&siteKeywords, "keywords", "", msgCommaDelimitedKeywords)
+	return c
+}
 
-	// add book [--name ...] [--author ...] [--isbn ...]
+// buildAddBookCmd creates the "add book" subcommand that adds a book by hints, ISBN, or manual prompts.
+func buildAddBookCmd() *cobra.Command {
 	var bookName, bookAuthor, bookISBN, bookKeywords string
-	book := &cobra.Command{
+	c := &cobra.Command{
 		Use:   "book",
 		Short: "Add a book (flags or manual entry)",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			hints := map[string]string{}
-			if bookName != "" {
-				hints["title"] = bookName
-			}
-			if bookAuthor != "" {
-				hints["author"] = bookAuthor
-			}
-			if bookISBN != "" {
-				hints["isbn"] = bookISBN
-			}
-			// If ISBN provided, use OpenLibrary instead of manual
-			if bookISBN != "" {
+			// Fast-path: ISBN provided → use OpenLibrary/Google Books providers
+			if strings.TrimSpace(bookISBN) != "" {
 				e, err := openlibrary.FetchBookByISBN(cmd.Context(), bookISBN)
 				if err != nil {
 					return err
 				}
-				// If keywords flag provided, override
-				if ks := parseKeywordsCSV(bookKeywords); len(ks) > 0 {
-					e.Annotation.Keywords = ks
-				}
-				path, err := store.WriteEntry(e)
-				if err != nil {
-					return err
-				}
-				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-					return err
-				}
-				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-				return nil
+				applyKeywordsOverride(&e, bookKeywords)
+				return writeCommitPrint(cmd, e)
 			}
-			if bookName == "" && bookAuthor == "" {
+			// Manual when no minimal hints
+			if strings.TrimSpace(bookName) == "" && strings.TrimSpace(bookAuthor) == "" {
 				return manualAdd(cmd, "book", parseKeywordsCSV(bookKeywords))
 			}
+			// Hinted manual construction path
+			hints := hintsBook(bookName, bookAuthor, bookISBN)
 			return doAddWithKeywords(cmd.Context(), "book", hints, parseKeywordsCSV(bookKeywords))
 		},
 	}
-	book.Flags().StringVar(&bookName, "name", "", "Book title")
-	book.Flags().StringVar(&bookAuthor, "author", "", "Author (Family, Given)")
-	book.Flags().StringVar(&bookISBN, "isbn", "", "ISBN")
-	book.Flags().StringVar(&bookKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+	c.Flags().StringVar(&bookName, "name", "", "Book title")
+	c.Flags().StringVar(&bookAuthor, "author", "", "Author (Family, Given)")
+	c.Flags().StringVar(&bookISBN, "isbn", "", "ISBN")
+	c.Flags().StringVar(&bookKeywords, "keywords", "", msgCommaDelimitedKeywords)
+	return c
+}
 
-	// add movie <name> [--date YYYY-MM-DD]
+// --- Small helpers to keep RunE concise ---
+
+// applyKeywordsOverride replaces entry keywords from a comma-delimited string when provided.
+func applyKeywordsOverride(e *schema.Entry, kwCSV string) {
+	if ks := parseKeywordsCSV(kwCSV); len(ks) > 0 {
+		e.Annotation.Keywords = ks
+	}
+}
+
+// writeCommitPrint writes the entry, commits it via git, and prints the written path.
+func writeCommitPrint(cmd *cobra.Command, e schema.Entry) error {
+	path, err := store.WriteEntry(e)
+	if err != nil {
+		return err
+	}
+	if err := commitAndPush([]string{path}, fmt.Sprintf(msgAddCitation, e.ID)); err != nil {
+		return err
+	}
+	_, err = fmt.Fprintf(cmd.OutOrStdout(), msgWrote, path)
+	return err
+}
+
+// hintsBook builds a hints map from optional book flag values.
+func hintsBook(name, author, isbn string) map[string]string {
+	m := map[string]string{}
+	if strings.TrimSpace(name) != "" {
+		m["title"] = name
+	}
+	if strings.TrimSpace(author) != "" {
+		m["author"] = author
+	}
+	if strings.TrimSpace(isbn) != "" {
+		m["isbn"] = isbn
+	}
+	return m
+}
+
+// buildAddMovieCmd creates the "add movie" subcommand that adds a film by title/date or manual prompts.
+func buildAddMovieCmd() *cobra.Command {
 	var movieDate, movieKeywords string
-	movie := &cobra.Command{
+	c := &cobra.Command{
 		Use:   "movie [name]",
 		Short: "Add a movie (name or manual entry)",
 		Args:  cobra.ArbitraryArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if len(args) > 0 {
 				title := strings.Join(args, " ")
-				// Try Google Knowledge Graph first
-				e, err := moviefetch.FetchMovie(cmd.Context(), title, movieDate)
-				if err != nil {
-					// Fallback to OpenAI if available
-					if me, merr := summarize.GenerateMovieFromTitleAndDate(cmd.Context(), title, movieDate); merr == nil {
-						e = me
-					} else {
-						// If both providers fail, fall back to minimal construction
-						hints := map[string]string{"title": title}
-						if movieDate != "" {
-							hints["date"] = movieDate
-						}
-						return doAddWithKeywords(cmd.Context(), "movie", hints, parseKeywordsCSV(movieKeywords))
-					}
+				if e, ok := getMovieEntry(cmd.Context(), title, movieDate); ok {
+					applyKeywordsOverride(&e, movieKeywords)
+					ensureTypeKeyword(&e, "movie")
+					return writeCommitPrint(cmd, e)
 				}
-				if ks := parseKeywordsCSV(movieKeywords); len(ks) > 0 {
-					e.Annotation.Keywords = ks
-				}
-				if len(e.Annotation.Keywords) == 0 {
-					e.Annotation.Keywords = []string{"movie"}
-				}
-				path, err := store.WriteEntry(e)
-				if err != nil {
-					return err
-				}
-				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-					return err
-				}
-				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-				return nil
+				return doAddWithKeywords(cmd.Context(), "movie", hintsMovie(title, movieDate), parseKeywordsCSV(movieKeywords))
 			}
 			return manualAdd(cmd, "movie", parseKeywordsCSV(movieKeywords))
 		},
 	}
-	movie.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
-	movie.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+	c.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
+	c.Flags().StringVar(&movieKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+	return c
+}
 
-	// add song <title> [--artist ...] [--date YYYY-MM-DD]
+// getMovieEntry fetches or generates a movie entry from providers or OpenAI.
+func getMovieEntry(ctx context.Context, title, date string) (schema.Entry, bool) {
+	if e, err := moviefetch.FetchMovie(ctx, title, date); err == nil {
+		return e, true
+	}
+	if e, err := summarize.GenerateMovieFromTitleAndDate(ctx, title, date); err == nil {
+		return e, true
+	}
+	return schema.Entry{}, false
+}
+
+// hintsMovie builds a hints map for a movie using title and optional date.
+func hintsMovie(title, date string) map[string]string {
+	m := map[string]string{"title": title}
+	if strings.TrimSpace(date) != "" {
+		m["date"] = date
+	}
+	return m
+}
+
+// ensureTypeKeyword sets a default keyword equal to the entry type when keywords are empty.
+func ensureTypeKeyword(e *schema.Entry, typ string) {
+	if e == nil {
+		return
+	}
+	if len(e.Annotation.Keywords) == 0 {
+		e.Annotation.Keywords = []string{typ}
+	}
+}
+
+// finalizeAndWrite applies keyword overrides, ensures a default type keyword,
+// then writes the entry, commits, and prints the resulting path.
+func finalizeAndWrite(cmd *cobra.Command, e schema.Entry, typ string, kwCSV string) error {
+	applyKeywordsOverride(&e, kwCSV)
+	ensureTypeKeyword(&e, typ)
+	return writeCommitPrint(cmd, e)
+}
+
+// buildAddSongCmd creates the "add song" subcommand that adds a song by title/artist or manual prompts.
+func buildAddSongCmd() *cobra.Command {
 	var songArtist, songDate, songKeywords string
-	song := &cobra.Command{
+	c := &cobra.Command{
 		Use:   "song [title]",
 		Short: "Add a song (title/artist or manual entry)",
 		Args:  cobra.ArbitraryArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if len(args) > 0 {
 				title := strings.Join(args, " ")
-				e, err := songfetch.FetchSong(cmd.Context(), title, songArtist, songDate)
-				if err != nil {
-					// Fallback to OpenAI if available
-					if se, serr := summarize.GenerateSongFromTitleArtistDate(cmd.Context(), title, songArtist, songDate); serr == nil {
-						e = se
-					} else {
-						// Minimal construction fallback
-						hints := map[string]string{"title": title}
-						if songDate != "" {
-							hints["date"] = songDate
-						}
-						if songArtist != "" {
-							hints["author"] = songArtist
-						}
-						return doAddWithKeywords(cmd.Context(), "song", hints, parseKeywordsCSV(songKeywords))
-					}
+				if e, ok := getSongEntry(cmd.Context(), title, songArtist, songDate); ok {
+					applyKeywordsOverride(&e, songKeywords)
+					ensureTypeKeyword(&e, "song")
+					return writeCommitPrint(cmd, e)
 				}
-				if ks := parseKeywordsCSV(songKeywords); len(ks) > 0 {
-					e.Annotation.Keywords = ks
-				}
-				if len(e.Annotation.Keywords) == 0 {
-					e.Annotation.Keywords = []string{"song"}
-				}
-				path, err := store.WriteEntry(e)
-				if err != nil {
-					return err
-				}
-				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-					return err
-				}
-				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\\n", path)
-				return nil
+				return doAddWithKeywords(cmd.Context(), "song", hintsSong(title, songArtist, songDate), parseKeywordsCSV(songKeywords))
 			}
 			return manualAdd(cmd, "song", parseKeywordsCSV(songKeywords))
 		},
 	}
-	song.Flags().StringVar(&songArtist, "artist", "", "Artist/performer name")
-	song.Flags().StringVar(&songDate, "date", "", "release date YYYY-MM-DD")
-	song.Flags().StringVar(&songKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+	c.Flags().StringVar(&songArtist, "artist", "", "Artist/performer name")
+	c.Flags().StringVar(&songDate, "date", "", "release date YYYY-MM-DD")
+	c.Flags().StringVar(&songKeywords, "keywords", "", msgCommaDelimitedKeywords)
+	return c
+}
 
-	// add article [--doi ...] [--title ...] [--author ...] [--journal ...] [--date ...]
+// getSongEntry fetches or generates a song entry from providers or OpenAI.
+func getSongEntry(ctx context.Context, title, artist, date string) (schema.Entry, bool) {
+	if e, err := songfetch.FetchSong(ctx, title, artist, date); err == nil {
+		return e, true
+	}
+	if e, err := summarize.GenerateSongFromTitleArtistDate(ctx, title, artist, date); err == nil {
+		return e, true
+	}
+	return schema.Entry{}, false
+}
+
+// hintsSong builds a hints map for a song using title, optional artist, and optional date.
+func hintsSong(title, artist, date string) map[string]string {
+	m := map[string]string{"title": title}
+	if strings.TrimSpace(artist) != "" {
+		m["author"] = artist
+	}
+	if strings.TrimSpace(date) != "" {
+		m["date"] = date
+	}
+	return m
+}
+
+// buildAddArticleCmd creates the "add article" subcommand that adds a journal/web article via DOI/URL or manual.
+func buildAddArticleCmd() *cobra.Command {
 	var artDOI, artURL, artTitle, artAuthor, artJournal, artDate, artKeywords string
-	article := &cobra.Command{
+	c := &cobra.Command{
 		Use:   "article",
 		Short: "Add a journal or magazine article (flags or manual entry)",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			hints := map[string]string{}
-			if artDOI != "" {
-				// Resolve via DOI using doi.org, without OpenAI
-				e, err := doi.FetchArticleByDOI(cmd.Context(), artDOI)
+			ctx := cmd.Context()
+			if strings.TrimSpace(artDOI) != "" {
+				e, err := getArticleByDOI(ctx, artDOI)
 				if err != nil {
 					return err
 				}
-				// Ensure DOI field is recorded even if provider response omits it
-				if strings.TrimSpace(e.APA7.DOI) == "" {
-					e.APA7.DOI = strings.TrimSpace(artDOI)
-				}
-				if ks := parseKeywordsCSV(artKeywords); len(ks) > 0 {
-					e.Annotation.Keywords = ks
-				}
-				// Ensure at least one keyword
-				if len(e.Annotation.Keywords) == 0 {
-					e.Annotation.Keywords = []string{"article"}
-				}
-				path, err := store.WriteEntry(e)
+				return finalizeAndWrite(cmd, e, "article", artKeywords)
+			}
+			if strings.TrimSpace(artURL) != "" {
+				e, err := getArticleByURL(ctx, artURL)
 				if err != nil {
 					return err
 				}
-				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-					return err
-				}
-				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-				return nil
-			} else if strings.TrimSpace(artURL) != "" {
-				e, err := webfetch.FetchArticleByURL(cmd.Context(), artURL)
-				if err != nil {
-					// Fallback when access is denied: 401/403 -> try OpenAI citation
-					if hs, ok := err.(*webfetch.HTTPStatusError); ok && (hs.Status == 401 || hs.Status == 403) {
-						if ce, cerr := summarize.GenerateCitationFromURL(cmd.Context(), artURL); cerr == nil {
-							e = ce
-						} else {
-							return fmt.Errorf("access denied (%d) and OpenAI fallback failed: %v", hs.Status, cerr)
-						}
-					} else {
-						return err
-					}
-				}
-				if ks := parseKeywordsCSV(artKeywords); len(ks) > 0 {
-					e.Annotation.Keywords = ks
-				}
-				if len(e.Annotation.Keywords) == 0 {
-					e.Annotation.Keywords = []string{"article"}
-				}
-				path, err := store.WriteEntry(e)
-				if err != nil {
-					return err
-				}
-				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-					return err
-				}
-				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-				return nil
+				return finalizeAndWrite(cmd, e, "article", artKeywords)
 			}
-			// Manual entry fallback when no DOI/URL provided and minimal hints empty
-			if artTitle != "" {
-				hints["title"] = artTitle
-			}
-			if artAuthor != "" {
-				hints["author"] = artAuthor
-			}
-			if artJournal != "" {
-				hints["journal"] = artJournal
-			}
-			if artDate != "" {
-				hints["date"] = artDate
-			}
-			if len(hints) == 0 {
+			h := hintsArticle(artTitle, artAuthor, artJournal, artDate)
+			if len(h) == 0 {
 				return manualAdd(cmd, "article", parseKeywordsCSV(artKeywords))
 			}
-			return doAddWithKeywords(cmd.Context(), "article", hints, parseKeywordsCSV(artKeywords))
+			return doAddWithKeywords(ctx, "article", h, parseKeywordsCSV(artKeywords))
 		},
 	}
-	article.Flags().StringVar(&artDOI, "doi", "", "DOI of the article")
-	article.Flags().StringVar(&artURL, "url", "", "URL of an online article to fetch via OpenGraph/JSON-LD")
-	article.Flags().StringVar(&artTitle, "title", "", "Article title")
-	article.Flags().StringVar(&artAuthor, "author", "", "Author (Family, Given)")
-	article.Flags().StringVar(&artJournal, "journal", "", "Journal or publication name")
-	article.Flags().StringVar(&artDate, "date", "", "Publication date YYYY-MM-DD")
-	article.Flags().StringVar(&artKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+	c.Flags().StringVar(&artDOI, "doi", "", "DOI of the article")
+	c.Flags().StringVar(&artURL, "url", "", "URL of an online article to fetch via OpenGraph/JSON-LD")
+	c.Flags().StringVar(&artTitle, "title", "", "Article title")
+	c.Flags().StringVar(&artAuthor, "author", "", "Author (Family, Given)")
+	c.Flags().StringVar(&artJournal, "journal", "", "Journal or publication name")
+	c.Flags().StringVar(&artDate, "date", "", "Publication date YYYY-MM-DD")
+	c.Flags().StringVar(&artKeywords, "keywords", "", msgCommaDelimitedKeywords)
+	return c
+}
 
-	// add patent [--url ...] [--title ...] [--inventor ...] [--assignee ...] [--date ...]
+// getArticleByDOI fetches an article via DOI, ensuring the DOI field is set.
+func getArticleByDOI(ctx context.Context, doiStr string) (schema.Entry, error) {
+	e, err := doi.FetchArticleByDOI(ctx, doiStr)
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	if strings.TrimSpace(e.APA7.DOI) == "" {
+		e.APA7.DOI = strings.TrimSpace(doiStr)
+	}
+	return e, nil
+}
+
+// getArticleByURL fetches an article by URL, falling back to OpenAI when access is denied.
+func getArticleByURL(ctx context.Context, u string) (schema.Entry, error) {
+	e, err := webfetch.FetchArticleByURL(ctx, u)
+	if err == nil {
+		return e, nil
+	}
+	if hs, ok := err.(*webfetch.HTTPStatusError); ok && (hs.Status == 401 || hs.Status == 403) {
+		if ce, cerr := summarize.GenerateCitationFromURL(ctx, u); cerr == nil {
+			return ce, nil
+		} else {
+			return schema.Entry{}, fmt.Errorf("access denied (%d) and OpenAI fallback failed: %v", hs.Status, cerr)
+		}
+	}
+	return schema.Entry{}, err
+}
+
+// hintsArticle builds a hints map for an article from optional flags.
+func hintsArticle(title, author, journal, date string) map[string]string {
+	m := map[string]string{}
+	if strings.TrimSpace(title) != "" {
+		m["title"] = title
+	}
+	if strings.TrimSpace(author) != "" {
+		m["author"] = author
+	}
+	if strings.TrimSpace(journal) != "" {
+		m["journal"] = journal
+	}
+	if strings.TrimSpace(date) != "" {
+		m["date"] = date
+	}
+	return m
+}
+
+// buildAddPatentCmd creates the "add patent" subcommand that adds a patent via URL hints or manual.
+func buildAddPatentCmd() *cobra.Command {
 	var patURL, patTitle, patInventor, patAssignee, patDate, patKeywords string
-	patent := &cobra.Command{
+	c := &cobra.Command{
 		Use:   "patent",
 		Short: "Add a patent (flags or manual entry)",
-		RunE: func(cmd *cobra.Command, args []string) error {
-			hints := map[string]string{}
+		RunE: func(cmd *cobra.Command, args []string) (err error) {
 			if strings.TrimSpace(patURL) != "" && strings.TrimSpace(patTitle) == "" {
-				// Try to fetch metadata like article; then coerce type to patent
-				e, err := webfetch.FetchArticleByURL(cmd.Context(), patURL)
-				if err == nil {
-					e.Type = "patent"
-					if ks := parseKeywordsCSV(patKeywords); len(ks) > 0 {
-						e.Annotation.Keywords = ks
-					}
-					if len(e.Annotation.Keywords) == 0 {
-						e.Annotation.Keywords = []string{"patent"}
-					}
-					path, err := store.WriteEntry(e)
-					if err != nil {
-						return err
-					}
-					if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-						return err
-					}
-					fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-					return nil
+				if e, err := getPatentByURL(cmd.Context(), patURL); err == nil {
+					return finalizeAndWrite(cmd, e, "patent", patKeywords)
+				} else {
+					return err
 				}
-				// If fetch failed, fall through to manual construction with provided URL
-				hints["url"] = strings.TrimSpace(patURL)
 			}
-			if patTitle != "" {
-				hints["title"] = patTitle
-			}
-			if patInventor != "" {
-				hints["author"] = patInventor
-			}
-			if patAssignee != "" {
-				hints["journal"] = patAssignee // reuse container/journal field for assignee/office
-			}
-			if patDate != "" {
-				hints["date"] = patDate
-			}
-			if len(hints) == 0 {
+			h := hintsPatent(patTitle, patInventor, patAssignee, patDate, patURL)
+			if len(h) == 0 {
 				return manualAdd(cmd, "patent", parseKeywordsCSV(patKeywords))
 			}
-			return doAddWithKeywords(cmd.Context(), "patent", hints, parseKeywordsCSV(patKeywords))
+			return doAddWithKeywords(cmd.Context(), "patent", h, parseKeywordsCSV(patKeywords))
 		},
 	}
-	patent.Flags().StringVar(&patURL, "url", "", "URL to a patent page to reference")
-	patent.Flags().StringVar(&patTitle, "title", "", "Patent title")
-	patent.Flags().StringVar(&patInventor, "inventor", "", "Inventor (Family, Given)")
-	patent.Flags().StringVar(&patAssignee, "assignee", "", "Assignee/Office (e.g., USPTO)")
-	patent.Flags().StringVar(&patDate, "date", "", "Publication date YYYY-MM-DD")
-	patent.Flags().StringVar(&patKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+	c.Flags().StringVar(&patURL, "url", "", "URL to a patent page to reference")
+	c.Flags().StringVar(&patTitle, "title", "", "Patent title")
+	c.Flags().StringVar(&patInventor, "inventor", "", "Inventor (Family, Given)")
+	c.Flags().StringVar(&patAssignee, "assignee", "", "Assignee/Office (e.g., USPTO)")
+	c.Flags().StringVar(&patDate, "date", "", "Publication date YYYY-MM-DD")
+	c.Flags().StringVar(&patKeywords, "keywords", "", msgCommaDelimitedKeywords)
+	return c
+}
 
-	// add rfc <rfcNumber>
+// getPatentByURL fetches a web page and coerces the resulting entry to type "patent".
+func getPatentByURL(ctx context.Context, u string) (schema.Entry, error) {
+	e, err := webfetch.FetchArticleByURL(ctx, u)
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	e.Type = "patent"
+	return e, nil
+}
+
+// hintsPatent builds a hints map for a patent from optional fields.
+func hintsPatent(title, inventor, assignee, date, url string) map[string]string {
+	m := map[string]string{}
+	if strings.TrimSpace(title) != "" {
+		m["title"] = title
+	}
+	if strings.TrimSpace(inventor) != "" {
+		m["author"] = inventor
+	}
+	if strings.TrimSpace(assignee) != "" {
+		m["journal"] = assignee
+	}
+	if strings.TrimSpace(date) != "" {
+		m["date"] = date
+	}
+	if strings.TrimSpace(url) != "" {
+		m["url"] = strings.TrimSpace(url)
+	}
+	return m
+}
+
+// buildAddRFCCmd creates the "add rfc" subcommand that adds an RFC by number or manual entry.
+func buildAddRFCCmd() *cobra.Command {
 	var rfcKeywords string
-	rfc := &cobra.Command{
+	c := &cobra.Command{
 		Use:   "rfc [rfcNumber]",
 		Short: "Add an RFC by number or prompt for manual entry",
 		Args:  cobra.ArbitraryArgs,
@@ -353,65 +413,43 @@ func newAddCmd() *cobra.Command {
 				if err != nil {
 					return err
 				}
-				if ks := parseKeywordsCSV(rfcKeywords); len(ks) > 0 {
-					e.Annotation.Keywords = ks
-				}
-				path, err := store.WriteEntry(e)
-				if err != nil {
-					return err
-				}
-				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-					return err
-				}
-				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-				return nil
+				return finalizeAndWrite(cmd, e, "rfc", rfcKeywords)
 			}
 			return manualAdd(cmd, "rfc", parseKeywordsCSV(rfcKeywords))
 		},
 	}
-	rfc.Flags().StringVar(&rfcKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
+	c.Flags().StringVar(&rfcKeywords, "keywords", "", msgCommaDelimitedKeywords)
+	return c
+}
 
-	// --- Video ---
+// buildAddVideoCmd creates the "add video" subcommand that adds a video by YouTube URL or manual entry.
+func buildAddVideoCmd() *cobra.Command {
 	var ytURL, videoKeywords string
-	video := &cobra.Command{
+	c := &cobra.Command{
 		Use:   "video",
 		Short: "Add a video (YouTube URL or manual entry)",
-		RunE: func(cmd *cobra.Command, args []string) error {
+		RunE: func(cmd *cobra.Command, args []string) (err error) {
 			if strings.TrimSpace(ytURL) != "" {
 				e, err := youtube.FetchYouTube(cmd.Context(), ytURL)
 				if err != nil {
 					return err
 				}
-				if ks := parseKeywordsCSV(videoKeywords); len(ks) > 0 {
-					e.Annotation.Keywords = ks
-				}
-				if len(e.Annotation.Keywords) == 0 {
-					e.Annotation.Keywords = []string{"video"}
-				}
-				path, err := store.WriteEntry(e)
-				if err != nil {
-					return err
-				}
-				if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-					return err
-				}
-				fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-				return nil
+				return finalizeAndWrite(cmd, e, "video", videoKeywords)
 			}
 			return manualAdd(cmd, "video", parseKeywordsCSV(videoKeywords))
 		},
 	}
-	video.Flags().StringVar(&ytURL, "youtube", "", "YouTube video URL to fetch via oEmbed")
-	video.Flags().StringVar(&videoKeywords, "keywords", "", "comma-delimited keywords to set on the entry")
-
-	cmd.AddCommand(site, book, movie, song, article, video, patent, rfc)
-	return cmd
+	c.Flags().StringVar(&ytURL, "youtube", "", "YouTube video URL to fetch via oEmbed")
+	c.Flags().StringVar(&videoKeywords, "keywords", "", msgCommaDelimitedKeywords)
+	return c
 }
 
+// doAdd is a convenience wrapper for doAddWithKeywords with no extra keywords.
 func doAdd(ctx context.Context, typ string, hints map[string]string) error {
 	return doAddWithKeywords(ctx, typ, hints, nil)
 }
 
+// parseKeywordsCSV splits and normalizes a comma-delimited keywords string.
 func parseKeywordsCSV(s string) []string {
 	if strings.TrimSpace(s) == "" {
 		return nil
@@ -430,31 +468,70 @@ func parseKeywordsCSV(s string) []string {
 	return out
 }
 
+// doAddWithKeywords constructs a minimal entry from hints, validates, writes, and commits it.
 func doAddWithKeywords(ctx context.Context, typ string, hints map[string]string, extraKeywords []string) error {
 	var e schema.Entry
 	e.Type = typ
-	title := strings.TrimSpace(hints["title"])
-	switch typ {
-	case "website":
-		if title == "" {
-			if u := strings.TrimSpace(hints["url"]); u != "" {
-				if pu, err := url.Parse(u); err == nil && pu.Host != "" {
-					title = pu.Host
-				} else {
-					title = u
-				}
-			}
-		}
-	default:
-		if title == "" {
-			return fmt.Errorf("title is required for %s adds without external metadata", typ)
-		}
+
+	title, err := deriveTitle(typ, hints)
+	if err != nil {
+		return err
 	}
 	e.APA7.Title = title
-	if v := strings.TrimSpace(hints["journal"]); v != "" {
-		e.APA7.Journal = v
-		e.APA7.ContainerTitle = v
+
+	applyJournal(&e, hints)
+	applyDate(&e, hints)
+	applyURL(&e, hints)
+	applyAuthorHint(&e, hints)
+	applyIDs(&e, hints)
+	ensureAccessedIfURL(&e)
+
+	applyDefaults(&e, typ, extraKeywords)
+	applyManualSummary(&e)
+
+	if err := e.Validate(); err != nil {
+		return err
 	}
+	path, err := store.WriteEntry(e)
+	if err != nil {
+		return err
+	}
+	if err = commitAndPush([]string{path}, fmt.Sprintf(msgAddCitation, e.ID)); err != nil {
+		return err
+	}
+	if _, err = fmt.Fprintf(os.Stdout, msgWrote, path); err != nil {
+		return err
+	}
+	return nil
+}
+
+// deriveTitle returns the title from hints, with a website fallback from URL host.
+func deriveTitle(typ string, hints map[string]string) (string, error) {
+	title := strings.TrimSpace(hints["title"])
+	if typ == "website" && title == "" {
+		if u := strings.TrimSpace(hints["url"]); u != "" {
+			if pu, err := url.Parse(u); err == nil && pu.Host != "" {
+				title = pu.Host
+			} else {
+				title = u
+			}
+		}
+	}
+	if title == "" {
+		return "", fmt.Errorf("title is required for %s adds without external metadata", typ)
+	}
+	return title, nil
+}
+
+// applyJournal sets journal/container from hints when provided.
+func applyJournal(e *schema.Entry, hints map[string]string) {
+	if v := strings.TrimSpace(hints["journal"]); v != "" {
+		e.APA7.Journal, e.APA7.ContainerTitle = v, v
+	}
+}
+
+// applyDate sets date and derives year from YYYY prefix if available.
+func applyDate(e *schema.Entry, hints map[string]string) {
 	if v := strings.TrimSpace(hints["date"]); v != "" {
 		e.APA7.Date = v
 		if len(v) >= 4 {
@@ -465,15 +542,27 @@ func doAddWithKeywords(ctx context.Context, typ string, hints map[string]string,
 			}
 		}
 	}
+}
+
+// applyURL assigns the URL from hints when provided.
+func applyURL(e *schema.Entry, hints map[string]string) {
 	if v := strings.TrimSpace(hints["url"]); v != "" {
 		e.APA7.URL = v
 	}
+}
+
+// applyAuthorHint parses a single author hint and appends it to the entry.
+func applyAuthorHint(e *schema.Entry, hints map[string]string) {
 	if v := strings.TrimSpace(hints["author"]); v != "" {
 		fam, giv := parseAuthor(v)
 		if fam != "" {
 			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
 		}
 	}
+}
+
+// applyIDs assigns ISBN/DOI from hints and sets doi.org URL if URL is empty and DOI present.
+func applyIDs(e *schema.Entry, hints map[string]string) {
 	if v := strings.TrimSpace(hints["isbn"]); v != "" {
 		e.APA7.ISBN = v
 	}
@@ -483,9 +572,17 @@ func doAddWithKeywords(ctx context.Context, typ string, hints map[string]string,
 			e.APA7.URL = "https://doi.org/" + v
 		}
 	}
-	if e.APA7.URL != "" {
-		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+}
+
+// ensureAccessedIfURL sets accessed date when a URL is present and accessed is empty.
+func ensureAccessedIfURL(e *schema.Entry) {
+	if e.APA7.URL != "" && strings.TrimSpace(e.APA7.Accessed) == "" {
+		e.APA7.Accessed = dates.NowISO()
 	}
+}
+
+// applyDefaults sets id and ensures keywords using provided extras or falls back to the type.
+func applyDefaults(e *schema.Entry, typ string, extraKeywords []string) {
 	e.ID = schema.NewID()
 	if len(extraKeywords) > 0 {
 		e.Annotation.Keywords = extraKeywords
@@ -493,34 +590,29 @@ func doAddWithKeywords(ctx context.Context, typ string, hints map[string]string,
 	if len(e.Annotation.Keywords) == 0 {
 		e.Annotation.Keywords = []string{typ}
 	}
-	if e.APA7.Title != "" {
-		if e.APA7.Journal != "" {
-			e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s in %s (manually constructed).", e.APA7.Title, e.APA7.Journal)
-		} else {
-			e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (manually constructed).", e.APA7.Title)
-		}
-	}
-	if err := e.Validate(); err != nil {
-		return err
-	}
-	path, err := store.WriteEntry(e)
-	if err != nil {
-		return err
-	}
-	if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-		return err
-	}
-	// The command context is not passed in here; printing is for CLI feedback only.
-	fmt.Fprintf(os.Stdout, "wrote %s\n", path)
-	return nil
 }
 
+// applyManualSummary sets a default bibliographic summary based on title and journal.
+func applyManualSummary(e *schema.Entry) {
+	if strings.TrimSpace(e.APA7.Title) == "" {
+		return
+	}
+	if strings.TrimSpace(e.APA7.Journal) != "" {
+		e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s in %s (manually constructed).", e.APA7.Title, e.APA7.Journal)
+	} else {
+		e.Annotation.Summary = fmt.Sprintf("Bibliographic record for %s (manually constructed).", e.APA7.Title)
+	}
+}
+
+// getEnv returns the environment value for key or def if unset.
 func getEnv(key, def string) string {
 	if v := os.Getenv(key); v != "" {
 		return v
 	}
 	return def
 }
+
+// parseAuthor splits a string in the form "Family, Given" into family and given parts.
 func parseAuthor(s string) (family, given string) {
 	s = strings.TrimSpace(s)
 	if s == "" {
@@ -536,116 +628,124 @@ func parseAuthor(s string) (family, given string) {
 
 // --- Manual entry helpers ---
 
+// manualAdd prompts for fields and writes a new entry of the given type.
 func manualAdd(cmd *cobra.Command, typ string, extraKeywords []string) error {
+	mf, err := collectManualFields(cmd, typ, extraKeywords)
+	if err != nil {
+		return err
+	}
+	e, err := buildManualEntry(typ, mf)
+	if err != nil {
+		return err
+	}
+	return writeCommitPrint(cmd, e)
+}
+
+type manualFields struct {
+	title     string
+	authorsIn string
+	date      string
+	url       string
+	doi       string
+	isbn      string
+	journal   string
+	publisher string
+	summary   string
+	keywords  []string
+}
+
+func collectManualFields(cmd *cobra.Command, typ string, extraKeywords []string) (manualFields, error) {
 	in := cmd.InOrStdin()
 	out := cmd.OutOrStdout()
-	// Basic prompts
-	title := strings.TrimSpace(prompt(cmd, in, out, "Title (required): "))
-	if title == "" {
-		return fmt.Errorf("title is required")
+	var mf manualFields
+	mf.title = strings.TrimSpace(prompt(cmd, in, out, "Title (required): "))
+	if mf.title == "" {
+		return manualFields{}, fmt.Errorf("title is required")
 	}
-	authorsIn := strings.TrimSpace(prompt(cmd, in, out, "Authors (semicolon-separated; use 'Family, Given' or organization name): "))
-	date := strings.TrimSpace(prompt(cmd, in, out, "Date (YYYY-MM-DD; optional): "))
-	var yearPtr *int
-	if len(date) >= 4 {
-		var y int
-		if _, err := fmt.Sscanf(date[:4], "%d", &y); err == nil && y >= 1000 {
-			y2 := y
-			yearPtr = &y2
-		}
-	}
-	url := strings.TrimSpace(prompt(cmd, in, out, "URL (optional): "))
-	doi := ""
-	isbn := ""
-	journal := ""
-	publisher := ""
+	mf.authorsIn = strings.TrimSpace(prompt(cmd, in, out, "Authors (semicolon-separated; use 'Family, Given' or organization name): "))
+	mf.date = strings.TrimSpace(prompt(cmd, in, out, "Date (YYYY-MM-DD; optional): "))
+	mf.url = strings.TrimSpace(prompt(cmd, in, out, "URL (optional): "))
 	switch typ {
 	case "article":
-		journal = strings.TrimSpace(prompt(cmd, in, out, "Journal/Container (optional): "))
-		doi = strings.TrimSpace(prompt(cmd, in, out, "DOI (optional): "))
+		mf.journal = strings.TrimSpace(prompt(cmd, in, out, "Journal/Container (optional): "))
+		mf.doi = strings.TrimSpace(prompt(cmd, in, out, "DOI (optional): "))
 	case "book":
-		publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (optional): "))
-		isbn = strings.TrimSpace(prompt(cmd, in, out, "ISBN (optional): "))
-	case "website":
-		// nothing extra
+		mf.publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (optional): "))
+		mf.isbn = strings.TrimSpace(prompt(cmd, in, out, "ISBN (optional): "))
 	case "movie":
-		// accept publisher as studio
-		publisher = strings.TrimSpace(prompt(cmd, in, out, "Studio/Publisher (optional): "))
+		mf.publisher = strings.TrimSpace(prompt(cmd, in, out, "Studio/Publisher (optional): "))
 	case "song":
-		journal = strings.TrimSpace(prompt(cmd, in, out, "Album/Container (optional): "))
-		publisher = strings.TrimSpace(prompt(cmd, in, out, "Label/Publisher (optional): "))
+		mf.journal = strings.TrimSpace(prompt(cmd, in, out, "Album/Container (optional): "))
+		mf.publisher = strings.TrimSpace(prompt(cmd, in, out, "Label/Publisher (optional): "))
 	case "rfc":
-		// Allow manual entry for RFC basics
-		publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (default IETF; optional): "))
-		if publisher == "" {
-			publisher = "IETF"
+		mf.publisher = strings.TrimSpace(prompt(cmd, in, out, "Publisher (default IETF; optional): "))
+		if mf.publisher == "" {
+			mf.publisher = "IETF"
 		}
 	}
-	summary := strings.TrimSpace(prompt(cmd, in, out, "Summary (required): "))
-	if summary == "" {
-		// Provide a sensible default to satisfy validation
-		summary = fmt.Sprintf("Bibliographic record for %s (manually entered).", title)
+	mf.summary = strings.TrimSpace(prompt(cmd, in, out, "Summary (required): "))
+	if mf.summary == "" {
+		mf.summary = fmt.Sprintf("Bibliographic record for %s (manually entered).", mf.title)
 	}
-	keywordsIn := strings.TrimSpace(prompt(cmd, in, out, "Keywords (comma-separated; optional): "))
-	keywords := parseKeywordsCSV(keywordsIn)
-	if len(keywords) == 0 {
-		keywords = []string{typ}
+	mf.keywords = parseKeywordsCSV(strings.TrimSpace(prompt(cmd, in, out, "Keywords (comma-separated; optional): ")))
+	if len(mf.keywords) == 0 {
+		mf.keywords = []string{typ}
 	}
 	if len(extraKeywords) > 0 {
-		keywords = append(keywords, extraKeywords...)
+		mf.keywords = append(mf.keywords, extraKeywords...)
 	}
+	return mf, nil
+}
 
-	// Build entry
+func buildManualEntry(typ string, mf manualFields) (schema.Entry, error) {
 	var e schema.Entry
 	e.Type = typ
 	e.ID = schema.NewID()
-	e.APA7.Title = title
-	e.APA7.ContainerTitle = journal
-	e.APA7.Journal = journal
-	e.APA7.Publisher = publisher
-	if yearPtr != nil {
-		e.APA7.Year = yearPtr
+	e.APA7.Title = mf.title
+	e.APA7.ContainerTitle = mf.journal
+	e.APA7.Journal = mf.journal
+	e.APA7.Publisher = mf.publisher
+	if len(mf.date) >= 4 {
+		var y int
+		if _, err := fmt.Sscanf(mf.date[:4], "%d", &y); err == nil && y >= 1000 {
+			y2 := y
+			e.APA7.Year = &y2
+		}
 	}
-	e.APA7.Date = date
-	e.APA7.URL = url
-	e.APA7.DOI = doi
-	e.APA7.ISBN = isbn
+	e.APA7.Date = mf.date
+	e.APA7.URL = mf.url
+	e.APA7.DOI = mf.doi
+	e.APA7.ISBN = mf.isbn
 	if strings.TrimSpace(e.APA7.URL) != "" {
-		e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+		e.APA7.Accessed = dates.NowISO()
 	}
-	// Authors
-	for _, name := range splitAuthorsBySemi(authorsIn) {
+	for _, name := range splitAuthorsBySemi(mf.authorsIn) {
 		fam, giv := parseAuthor(name)
 		if fam != "" {
 			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
 		}
 	}
-	e.Annotation.Summary = summary
-	e.Annotation.Keywords = keywords
-
+	e.Annotation.Summary = mf.summary
+	e.Annotation.Keywords = mf.keywords
 	if err := e.Validate(); err != nil {
-		return err
+		return schema.Entry{}, err
 	}
-	path, err := store.WriteEntry(e)
-	if err != nil {
-		return err
-	}
-	if err := commitAndPush([]string{path}, fmt.Sprintf("add citation: %s", e.ID)); err != nil {
-		return err
-	}
-	fmt.Fprintf(cmd.OutOrStdout(), "wrote %s\n", path)
-	return nil
+	return e, nil
 }
 
+// prompt writes a question and reads a single line input from the given streams.
 func prompt(cmd *cobra.Command, in io.Reader, out io.Writer, q string) string {
 	// write prompt
-	fmt.Fprint(out, q)
+	if _, err := fmt.Fprint(out, q); err != nil {
+		return ""
+	}
 	// read line
 	br := bufio.NewReader(in)
 	s, _ := br.ReadString('\n')
 	return strings.TrimRight(s, "\r\n")
 }
 
+// splitAuthorsBySemi splits a semicolon-delimited author list and trims each name.
 func splitAuthorsBySemi(s string) []string {
 	s = strings.TrimSpace(s)
 	if s == "" {

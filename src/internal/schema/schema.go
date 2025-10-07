@@ -56,6 +56,8 @@ type Annotation struct {
 // - a sequence of Author mappings
 type Authors []Author
 
+// UnmarshalYAML implements custom decoding for Authors, accepting strings,
+// sequences of strings, a single mapping, or a sequence of mappings.
 func (a *Authors) UnmarshalYAML(value *yaml.Node) error {
 	if value == nil {
 		*a = nil
@@ -221,7 +223,8 @@ func NewID() string {
 
 var reUUIDv4 = regexp.MustCompile(`^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$`)
 
+// isUUIDv4 reports whether s matches the canonical UUIDv4 format.
 func isUUIDv4(s string) bool {
-	s = strings.ToLower(strings.TrimSpace(s))
-	return reUUIDv4.MatchString(s)
+    s = strings.ToLower(strings.TrimSpace(s))
+    return reUUIDv4.MatchString(s)
 }

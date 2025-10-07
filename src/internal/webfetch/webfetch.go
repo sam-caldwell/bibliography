@@ -11,43 +11,45 @@ import (
 	"strings"
 	"time"
 
-	"bibliography/src/internal/schema"
+    "bibliography/src/internal/dates"
+    "bibliography/src/internal/httpx"
+    "bibliography/src/internal/names"
+    "bibliography/src/internal/sanitize"
+    "bibliography/src/internal/schema"
+    "bibliography/src/internal/stringsx"
 )
 
-// HTTPDoer for injection in tests
-type HTTPDoer interface {
-	Do(req *http.Request) (*http.Response, error)
-}
+var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
 
-var client HTTPDoer = &http.Client{Timeout: 10 * time.Second}
+// SetHTTPClient sets the HTTP client used for outbound requests (for tests).
+func SetHTTPClient(c httpx.Doer) { client = c }
 
-const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-
-func SetHTTPClient(c HTTPDoer) { client = c }
-
-// PDF extraction extension point for future full-text + XMP integrations
+// PDFExtractor - PDF extraction extension point for future full-text + XMP integrations
 type PDFExtractor interface {
 	BuildEntryFromPDF(ctx context.Context, data []byte, sourceURL string) (schema.Entry, error)
 }
 
 type defaultPDFExtractor struct{}
 
+// BuildEntryFromPDF implements PDFExtractor by delegating to buildFromPDF.
 func (defaultPDFExtractor) BuildEntryFromPDF(ctx context.Context, data []byte, sourceURL string) (schema.Entry, error) {
-	return buildFromPDF(data, sourceURL)
+    return buildFromPDF(data, sourceURL)
 }
 
 var pdfExtractor PDFExtractor = defaultPDFExtractor{}
 
+// SetPDFExtractor replaces the PDF extraction implementation (for tests/injection).
 func SetPDFExtractor(e PDFExtractor) { pdfExtractor = e }
 
 // HTTPStatusError conveys an HTTP status code from fetch failures so callers can branch on it.
 type HTTPStatusError struct {
-	Status int
-	Body   string
+    Status int
+    Body   string
 }
 
+// Error formats the HTTPStatusError message with status and body snippet.
 func (e *HTTPStatusError) Error() string {
-	return fmt.Sprintf("url fetch: http %d: %s", e.Status, e.Body)
+    return fmt.Sprintf("url fetch: http %d: %s", e.Status, e.Body)
 }
 
 // FetchArticleByURL fetches a web page and tries to map it to an APA7 article entry
@@ -62,12 +64,12 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 		return schema.Entry{}, err
 	}
 	req.Header.Set("Accept", "text/html")
-	req.Header.Set("User-Agent", chromeUA)
+	httpx.SetUA(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
 	}
-	defer resp.Body.Close()
+    defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
 		b, _ := io.ReadAll(io.LimitReader(resp.Body, 4096))
 		return schema.Entry{}, &HTTPStatusError{Status: resp.StatusCode, Body: string(b)}
@@ -86,15 +88,15 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 	og, metaTitle := parseOpenGraphAndTitle(body)
 	ld := parseJSONLDArticle(body)
 
-	title := firstNonEmpty(og["og:title"], ld.headline, ld.name, metaTitle)
-	site := firstNonEmpty(og["og:site_name"], ld.publisher, hostOf(u))
-	desc := firstNonEmpty(og["og:description"], ld.description, metaName(body, "description"))
-	pub := firstNonEmpty(ld.publisher, site)
+	title := stringsx.FirstNonEmpty(og["og:title"], ld.headline, ld.name, metaTitle)
+	site := stringsx.FirstNonEmpty(og["og:site_name"], ld.publisher, hostOf(u))
+	desc := stringsx.FirstNonEmpty(og["og:description"], ld.description, metaName(body, "description"))
+	pub := stringsx.FirstNonEmpty(ld.publisher, site)
 
 	// Authors
 	var authors []schema.Author
 	for _, n := range ld.authors {
-		fam, giv := splitName(n)
+		fam, giv := names.Split(n)
 		if strings.TrimSpace(fam) != "" {
 			authors = append(authors, schema.Author{Family: fam, Given: giv})
 		}
@@ -103,7 +105,7 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 		// try meta name=author (comma separated)
 		if a := metaName(body, "author"); a != "" {
 			for _, part := range splitAuthors(a) {
-				fam, giv := splitName(part)
+				fam, giv := names.Split(part)
 				if fam != "" {
 					authors = append(authors, schema.Author{Family: fam, Given: giv})
 				}
@@ -112,9 +114,9 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 	}
 
 	// Date
-	date := firstNonEmpty(ld.datePublished, og["article:published_time"], metaName(body, "date"))
+	date := stringsx.FirstNonEmpty(ld.datePublished, og["article:published_time"], metaName(body, "date"))
 	var yearPtr *int
-	if y := extractYear(date); y > 0 {
+	if y := dates.ExtractYear(date); y > 0 {
 		y2 := y
 		yearPtr = &y2
 	}
@@ -135,7 +137,7 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 		e.APA7.Date = date
 	}
 	e.APA7.URL = u
-	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+	e.APA7.Accessed = dates.NowISO()
 	e.APA7.Authors = authors
 	if strings.TrimSpace(desc) != "" {
 		e.Annotation.Summary = desc
@@ -148,21 +150,16 @@ func FetchArticleByURL(ctx context.Context, raw string) (schema.Entry, error) {
 	if strings.TrimSpace(e.ID) == "" {
 		e.ID = schema.NewID()
 	}
+	sanitize.CleanEntry(&e)
 	if err := e.Validate(); err != nil {
 		return schema.Entry{}, err
 	}
 	return e, nil
 }
 
-func firstNonEmpty(vals ...string) string {
-	for _, v := range vals {
-		if strings.TrimSpace(v) != "" {
-			return strings.TrimSpace(v)
-		}
-	}
-	return ""
-}
+// firstNonEmpty removed; using stringsx.FirstNonEmpty
 
+// hostOf returns the hostname for a URL without a leading "www.".
 func hostOf(raw string) string {
 	u, err := url.Parse(raw)
 	if err != nil {
@@ -176,6 +173,7 @@ var reTitle = regexp.MustCompile(`(?is)<title[^>]*>(.*?)</title>`)
 var reMetaProperty = regexp.MustCompile(`(?is)<meta[^>]*?property\s*=\s*"([^"]+)"[^>]*?content\s*=\s*"([^"]*)"[^>]*>`)
 var reMetaName = regexp.MustCompile(`(?is)<meta[^>]*?name\s*=\s*"([^"]+)"[^>]*?content\s*=\s*"([^"]*)"[^>]*>`)
 
+// parseOpenGraphAndTitle extracts OpenGraph/meta properties and the <title>.
 func parseOpenGraphAndTitle(body string) (map[string]string, string) {
 	og := map[string]string{}
 	for _, m := range reMetaProperty.FindAllStringSubmatch(body, -1) {
@@ -219,6 +217,7 @@ type simplifiedLD struct {
 	authors                                               []string
 }
 
+// parseJSONLDArticle extracts a simplified article from JSON-LD if present.
 func parseJSONLDArticle(body string) simplifiedLD {
 	m := reLDJSON.FindStringSubmatch(body)
 	if len(m) != 2 {
@@ -261,6 +260,7 @@ func parseJSONLDArticle(body string) simplifiedLD {
 	return out
 }
 
+// hasArticleType reports whether a JSON-LD @type contains an Article flavor.
 func hasArticleType(v any) bool {
 	switch t := v.(type) {
 	case string:
@@ -276,6 +276,7 @@ func hasArticleType(v any) bool {
 	return false
 }
 
+// pickName returns a name string from either a string or {name: "..."} map.
 func pickName(v any) string {
 	if v == nil {
 		return ""
@@ -291,6 +292,7 @@ func pickName(v any) string {
 	return ""
 }
 
+// extractAuthors returns author name strings from common JSON-LD shapes.
 func extractAuthors(v any) []string {
 	var out []string
 	switch t := v.(type) {
@@ -316,6 +318,7 @@ func extractAuthors(v any) []string {
 	return out
 }
 
+// metaName finds a meta tag by name and returns its content value.
 func metaName(body string, name string) string {
 	// simple search
 	lower := strings.ToLower(body)
@@ -349,6 +352,7 @@ func metaName(body string, name string) string {
 	return ""
 }
 
+// splitAuthors splits an author string by comma or " and ".
 func splitAuthors(s string) []string {
 	// split on comma or ' and '
 	s = strings.ReplaceAll(s, " and ", ",")
@@ -363,54 +367,7 @@ func splitAuthors(s string) []string {
 	return out
 }
 
-func splitName(name string) (family, given string) {
-	name = strings.TrimSpace(name)
-	if name == "" {
-		return "", ""
-	}
-	if i := strings.Index(name, ","); i >= 0 {
-		family = strings.TrimSpace(name[:i])
-		given = strings.TrimSpace(name[i+1:])
-		return family, toInitials(given)
-	}
-	parts := strings.Fields(name)
-	if len(parts) == 1 {
-		return parts[0], ""
-	}
-	family = parts[len(parts)-1]
-	giv := strings.Join(parts[:len(parts)-1], " ")
-	return family, toInitials(giv)
-}
-
-func toInitials(s string) string {
-	s = strings.TrimSpace(s)
-	if s == "" {
-		return ""
-	}
-	var out []string
-	for _, w := range strings.Fields(s) {
-		r := []rune(w)
-		if len(r) == 0 {
-			continue
-		}
-		out = append(out, strings.ToUpper(string(r[0]))+".")
-	}
-	return strings.Join(out, " ")
-}
-
-func extractYear(s string) int {
-	s = strings.TrimSpace(s)
-	// find any 4-digit sequence
-	for i := 0; i+4 <= len(s); i++ {
-		var y int
-		if _, err := fmt.Sscanf(s[i:i+4], "%d", &y); err == nil {
-			if y >= 1000 && y <= time.Now().Year()+1 {
-				return y
-			}
-		}
-	}
-	return 0
-}
+// splitName, toInitials, extractYear removed; use names.Split and dates.ExtractYear
 
 var rePDFTitle = regexp.MustCompile(`(?is)/Title\s*\((.*?)\)`)
 var rePDFAuthor = regexp.MustCompile(`(?is)/Author\s*\((.*?)\)`)
@@ -420,6 +377,7 @@ var reXMPAuthors = regexp.MustCompile(`(?is)<dc:creator>.*?<rdf:Seq>(.*?)</rdf:S
 var reXMPAuthorItem = regexp.MustCompile(`(?is)<rdf:li[^>]*>(.*?)</rdf:li>`)
 var reDOI = regexp.MustCompile(`(?i)10\.\d{4,9}/[-._;()/:A-Z0-9]+`)
 
+// buildFromPDF parses minimal metadata from raw PDF bytes and constructs an Entry.
 func buildFromPDF(b []byte, sourceURL string) (schema.Entry, error) {
 	s := string(b)
 	// Title
@@ -447,7 +405,7 @@ func buildFromPDF(b []byte, sourceURL string) (schema.Entry, error) {
 	// Date/Year
 	date := pdfUnescape(matchFirst(rePDFCreation, s))
 	var yearPtr *int
-	if y := extractYear(date); y > 0 {
+	if y := dates.ExtractYear(date); y > 0 {
 		y2 := y
 		yearPtr = &y2
 	}
@@ -467,12 +425,12 @@ func buildFromPDF(b []byte, sourceURL string) (schema.Entry, error) {
 		e.APA7.Date = date[:10]
 	}
 	e.APA7.URL = sourceURL
-	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+	e.APA7.Accessed = dates.NowISO()
 	if doi != "" {
 		e.APA7.DOI = doi
 	}
 	for _, n := range authorNames {
-		fam, giv := splitName(n)
+		fam, giv := names.Split(n)
 		if fam != "" {
 			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
 		}
@@ -498,6 +456,7 @@ func buildFromPDF(b []byte, sourceURL string) (schema.Entry, error) {
 	return e, nil
 }
 
+// matchFirst returns the first submatch group or empty string.
 func matchFirst(re *regexp.Regexp, s string) string {
 	if m := re.FindStringSubmatch(s); len(m) >= 2 {
 		return strings.TrimSpace(m[1])
@@ -505,6 +464,7 @@ func matchFirst(re *regexp.Regexp, s string) string {
 	return ""
 }
 
+// pdfUnescape unescapes common PDF literal string escapes.
 func pdfUnescape(s string) string {
 	s = strings.ReplaceAll(s, `\(`, "(")
 	s = strings.ReplaceAll(s, `\)`, ")")
@@ -514,6 +474,7 @@ func pdfUnescape(s string) string {
 	return strings.TrimSpace(s)
 }
 
+// htmlUnescape decodes a minimal set of HTML entities.
 func htmlUnescape(s string) string {
 	r := strings.NewReplacer("&amp;", "&", "&lt;", "<", "&gt;", ">", "&quot;", "\"", "&#39;", "'")
 	return r.Replace(s)

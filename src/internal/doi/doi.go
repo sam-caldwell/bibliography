@@ -9,20 +9,17 @@ import (
 	"strings"
 	"time"
 
+	"bibliography/src/internal/dates"
+	"bibliography/src/internal/httpx"
+	"bibliography/src/internal/names"
+	"bibliography/src/internal/sanitize"
 	"bibliography/src/internal/schema"
 )
 
-// HTTPDoer abstracts http.Client for testability
-type HTTPDoer interface {
-	Do(*http.Request) (*http.Response, error)
-}
-
-var client HTTPDoer = &http.Client{Timeout: 10 * time.Second}
-
-const chromeUA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+var client httpx.Doer = &http.Client{Timeout: 10 * time.Second}
 
 // SetHTTPClient allows tests to inject a fake HTTP client.
-func SetHTTPClient(c HTTPDoer) { client = c }
+func SetHTTPClient(c httpx.Doer) { client = c }
 
 // FetchArticleByDOI uses doi.org content negotiation (CSL JSON) to build an Entry.
 func FetchArticleByDOI(ctx context.Context, doi string) (schema.Entry, error) {
@@ -32,7 +29,7 @@ func FetchArticleByDOI(ctx context.Context, doi string) (schema.Entry, error) {
 		return schema.Entry{}, err
 	}
 	req.Header.Set("Accept", "application/vnd.citationstyles.csl+json")
-	req.Header.Set("User-Agent", chromeUA)
+	httpx.SetUA(req)
 	resp, err := client.Do(req)
 	if err != nil {
 		return schema.Entry{}, err
@@ -47,9 +44,10 @@ func FetchArticleByDOI(ctx context.Context, doi string) (schema.Entry, error) {
 		return schema.Entry{}, err
 	}
 	e := mapCSLToEntry(csl)
+	sanitize.CleanEntry(&e)
 	// Canonical URL: use doi.org link per requirement
 	e.APA7.URL = u
-	e.APA7.Accessed = time.Now().UTC().Format("2006-01-02")
+	e.APA7.Accessed = dates.NowISO()
 	if strings.TrimSpace(e.ID) == "" {
 		e.ID = schema.NewID()
 	}
@@ -98,6 +96,7 @@ type CSLIssued struct {
 	DateParts [][]int `json:"date-parts"`
 }
 
+// mapCSLToEntry converts a minimal CSL JSON structure into an Entry.
 func mapCSLToEntry(c CSL) schema.Entry {
 	var e schema.Entry
 	e.Type = "article"
@@ -119,28 +118,12 @@ func mapCSLToEntry(c CSL) schema.Entry {
 		if strings.TrimSpace(a.Family) == "" {
 			continue
 		}
-		e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: a.Family, Given: toInitials(a.Given)})
+		e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: a.Family, Given: names.Initials(a.Given)})
 	}
 	return e
 }
 
-func toInitials(given string) string {
-	given = strings.TrimSpace(given)
-	if given == "" {
-		return ""
-	}
-	parts := strings.Fields(given)
-	var out []string
-	for _, p := range parts {
-		r := []rune(p)
-		if len(r) == 0 {
-			continue
-		}
-		out = append(out, strings.ToUpper(string(r[0]))+".")
-	}
-	return strings.Join(out, " ")
-}
-
+// yearAndDate extracts a year and optional YYYY-MM-DD string from CSL issued.
 func yearAndDate(i CSLIssued) (int, string) {
 	if len(i.DateParts) == 0 || len(i.DateParts[0]) == 0 {
 		return 0, ""
@@ -157,6 +140,7 @@ func yearAndDate(i CSLIssued) (int, string) {
 	return y, ""
 }
 
+// toString coerces a string or first element of an array to a string.
 func toString(v any) string {
 	switch t := v.(type) {
 	case string:
