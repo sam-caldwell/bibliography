@@ -32,6 +32,9 @@
   "107": [
     "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml"
   ],
+  "10th": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
+  ],
   "11": [
     "data/citations/article/73c5fed8-b6cb-4edf-8891-ad6a83136d41.yaml",
     "data/citations/article/7983fe4c-212f-40c4-9d1a-e76ad2a4941f.yaml"
@@ -173,7 +176,8 @@
   ],
   "1995": [
     "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml",
-    "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml"
+    "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "1996": [
     "data/citations/article/038ac3cc-941f-47bd-ac98-37c48cbdaa0c.yaml",
@@ -1826,6 +1830,9 @@
   ],
   "annealer": [
     "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml"
+  ],
+  "anniversary": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "annotated": [
     "data/citations/article/3c2d05e6-51df-4d2d-8b73-9627de164caa.yaml",
@@ -6836,6 +6843,9 @@
     "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml"
   ],
+  "devil": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
+  ],
   "devising": [
     "data/citations/article/55ba163d-f31d-4b4a-b6ee-8ebf74cac085.yaml"
   ],
@@ -7662,7 +7672,8 @@
     "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml",
     "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml",
     "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml",
-    "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml"
+    "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml",
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "editor": [
     "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml",
@@ -9792,6 +9803,9 @@
   "forest moon of endor": [
     "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml"
   ],
+  "forever": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
+  ],
   "forgeries": [
     "data/citations/article/9ffd35f4-1db9-4453-a1f9-0936b7c0c195.yaml"
   ],
@@ -10470,7 +10484,8 @@
   ],
   "goes": [
     "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml",
-    "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml"
+    "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml",
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "gon": [
     "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml"
@@ -10726,6 +10741,9 @@
   "han solo": [
     "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml",
     "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml"
+  ],
+  "hand": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "handful": [
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml"
@@ -15456,7 +15474,8 @@
   "music.apple.com": [
     "data/citations/song/6e26fb2d-bfc0-4056-8867-f7c08cfabd13.yaml",
     "data/citations/song/97250d9b-b9e9-4d59-b931-903700a0f132.yaml",
-    "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml"
+    "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml",
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "must": [
     "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml"
@@ -16431,6 +16450,7 @@
     "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml",
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml",
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml",
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml",
     "data/citations/video/8d030176-29f0-4f22-b07f-6ba8707812e7.yaml"
   ],
   "once": [
@@ -20151,7 +20171,8 @@
   "right": [
     "data/citations/article/cf4f8a00-a66d-4d12-b5ad-1926421a9c63.yaml",
     "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml",
-    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
+    "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml",
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "rights": [
     "data/citations/article/cf4f8a00-a66d-4d12-b5ad-1926421a9c63.yaml"
@@ -20196,6 +20217,9 @@
   ],
   "rmer": [
     "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml"
+  ],
+  "road": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "rob": [
     "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml"
@@ -21544,7 +21568,8 @@
   "song": [
     "data/citations/song/6e26fb2d-bfc0-4056-8867-f7c08cfabd13.yaml",
     "data/citations/song/97250d9b-b9e9-4d59-b931-903700a0f132.yaml",
-    "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml"
+    "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml",
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "sons": [
     "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml"
@@ -23327,6 +23352,7 @@
     "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml",
     "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml",
     "data/citations/song/97250d9b-b9e9-4d59-b931-903700a0f132.yaml",
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml",
     "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml",
     "data/citations/video/8d030176-29f0-4f22-b07f-6ba8707812e7.yaml"
   ],
@@ -23341,6 +23367,9 @@
   ],
   "the motley fool": [
     "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml"
+  ],
+  "the road goes on forever (10th anniversary edition)": [
+    "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml"
   ],
   "thehackernews": [
     "data/citations/article/4604c728-cf31-401f-a62a-487ea309f152.yaml"
