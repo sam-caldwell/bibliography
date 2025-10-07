@@ -1,13 +1,15 @@
 package schema
 
 import (
-	"crypto/rand"
-	"errors"
-	"fmt"
-	"regexp"
-	"strings"
+    "crypto/rand"
+    "errors"
+    "fmt"
+    "regexp"
+    "strings"
 
-	"gopkg.in/yaml.v3"
+    "gopkg.in/yaml.v3"
+
+    "bibliography/src/internal/dates"
 )
 
 // Entry represents a single citation entry stored on disk as YAML.
@@ -182,7 +184,17 @@ func (e *Entry) Validate() error {
 	if strings.TrimSpace(e.APA7.URL) != "" && strings.TrimSpace(e.APA7.Accessed) == "" {
 		return errors.New("apa7.accessed is required when apa7.url is present")
 	}
-	return nil
+    return nil
+}
+
+// EnsureAccessedIfURL sets APA7.Accessed to today's UTC date (YYYY-MM-DD)
+// when APA7.URL is non-empty and Accessed is empty. It is a convenience
+// used by CLI commands to keep this rule DRY before calling Validate.
+func EnsureAccessedIfURL(e *Entry) {
+    if e == nil { return }
+    if strings.TrimSpace(e.APA7.URL) != "" && strings.TrimSpace(e.APA7.Accessed) == "" {
+        e.APA7.Accessed = dates.NowISO()
+    }
 }
 
 var nonAlnum = regexp.MustCompile(`[^a-z0-9]+`)
