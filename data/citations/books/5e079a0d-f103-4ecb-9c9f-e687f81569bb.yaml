@@ -3,9 +3,17 @@ type: book
 apa7:
     authors:
         - family: Flux
-          given: jamie
+          given: Jamie
     title: Mastering CUDA Programming with C++
 annotation:
     summary: Bibliographic record for Mastering CUDA Programming with C++ (manually constructed).
     keywords:
-        - book
+        - cuda
+        - programming
+        - computer science
+        - software
+        - software engineering
+        - GPU
+        - nvidia
+        - c++
+        - cpp
