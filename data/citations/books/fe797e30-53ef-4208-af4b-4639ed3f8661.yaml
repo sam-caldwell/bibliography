@@ -1,0 +1,16 @@
+id: fe797e30-53ef-4208-af4b-4639ed3f8661
+type: book
+apa7:
+    authors:
+        - family: Azam
+          given: N.
+    year: 2025
+    title: Rust
+    publisher: Rheinwerk Computing
+    isbn: "9781493226870"
+    url: http://books.google.com/books?id=TKsT0QEACAAJ&dq=isbn:9781493226870&hl=&source=gbs_api
+    accessed: "2025-10-08"
+annotation:
+    summary: 'Get "close to the machine" by programming with Rust! Discover how to effectively use this low-level language to create fast and efficient code. Set up Rust, compile your first program, and learn the language essentials: variables, functions, conditionals, and more. Walk through Rust''s unique ownership model and modular system, and then move on to more complex features, from flexibility and abstraction to web programming and text processing. Numerous code examples and exercises make this your go-to practical resource for Rust! In this book, you''ll learn about: a. Language Basics Take your first steps with Rust! After installation and setup in Visual Studio Code, walk through the language building blocks, from variables to functions to enums. Learn how to implement ownership, define types, test your code, and more. b. Intermediate Programming Expand your toolkit for Rust programming! Write flexible code with generics and traits, incorporate features of functional programming, manage memory, implement data structures, and handle structs. c. Advanced Topics Become a Rust master! Tackle advanced topics, including sized and unsized types, concurrency via threading, the powerful macro system, web programming, text processing, and file and directory handling. Highlights include: 1) Language basics 2) Control flow 3) Ownership 4) Structs and enums 5) Generics and traits 6) Modular structure 7) Memory management 8) Testing 9) Concurrency 10) Functional programming 11) Web programming 12) Text processing and file handling'
+    keywords:
+        - computers
