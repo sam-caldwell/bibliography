@@ -1,0 +1,26 @@
+id: c6c97f40-c059-4d3b-b20c-ca532408c9f3
+type: book
+apa7:
+    authors:
+        - family: Sun
+          given: Tzu
+    year: 2023
+    date: "2023-10-01"
+    title: The Art of War
+    publisher: Independently published
+    isbn: "9798305424645"
+annotation:
+    summary: The Art of War is an ancient Chinese military treatise attributed to Sun Tzu, a military strategist and philosopher. Composed of 13 chapters, each dedicated to a different aspect of warfare, the text emphasizes the importance of strategy, adaptability, and the psychological elements of conflict. It has been widely studied not only in military contexts but also in business and leadership, where its principles of competition and strategy are applied. The work has transcended its original purpose, influencing various fields and becoming a classic in both Eastern and Western literature. Its teachings advocate for careful planning, the value of deception, and the necessity of understanding both oneself and one's adversaries.
+    keywords:
+        - art of war
+        - sun tzu
+        - military strategy
+        - philosophy
+        - conflict
+        - adaptability
+        - leadership
+        - competition
+        - planning
+        - deception
+        - eastern literature
+        - western literature
