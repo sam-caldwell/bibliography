@@ -8,7 +8,7 @@ Version: [![Version](https://img.shields.io/github/v/tag/sam-caldwell/bibliograp
 
 Bibliography is a small, Git‑backed CLI for building an annotated bibliography. Each citation is a single YAML file
 stored under `data/citations/` and validated against a compact APA7‑inspired schema. The tool fetches public
-metadata when available (doi.org for articles; OpenLibrary for books), supports interactive entry for everything
+metadata when available (doi.org for articles; OpenLibrary→Google→Crossref→WorldCat→BNB→openBD→LoC→OpenAI for books by ISBN), supports interactive entry for everything
 else, and keeps lightweight JSON indexes for discovery.
 
 The CLI reads and writes only local files. It can also use OpenAI to summarize works and generate keywords, and it
@@ -40,7 +40,7 @@ Common commands
 ./bin/bib add site https://example.com
 ./bin/bib add site
 
-# Add a book (OpenLibrary when ISBN provided; manual otherwise)
+# Add a book (ISBN lookup with multi-provider fallback; manual otherwise)
 ./bin/bib add book --isbn 9780132350884
 ./bin/bib add book --name "The Pragmatic Programmer" --author "Hunt, A."
 
@@ -139,7 +139,8 @@ Validation
 
 Add Flows
 
-- `add book --isbn` uses OpenLibrary; without ISBN it prompts for manual entry or uses provided hints.
+- `add book --isbn` attempts OpenLibrary first, then falls back in order to Google Books, Crossref REST, OCLC WorldCat (Classify), British National Bibliography (BNB) SPARQL, openBD (Japan), and the US Library of Congress.
+- `add book --name <title> --author <family, given> --lookup` attempts an online lookup (OpenLibrary→Google Books→Crossref). Without `--lookup`, it constructs a basic entry from flags.
 - `add article --doi` uses doi.org (CSL JSON). URL is set to `https://doi.org/<DOI>` and `accessed` is set.
 - `add article --url` fetches the page with a Chrome‑like User‑Agent and extracts OpenGraph/JSON‑LD/PDF metadata.
   - If the server responds 401 or 403, the CLI falls back to OpenAI to generate a citation (requires

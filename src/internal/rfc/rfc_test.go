@@ -123,9 +123,9 @@ func TestFetchRFC_BibtexHTTPError(t *testing.T) {
 // so FetchRFC falls back to XML/datatracker. We cover bibtex parsing via helpers above.
 
 func TestFetchRFC_InvalidSpec(t *testing.T) {
-    if _, err := FetchRFC(context.Background(), "not-an-rfc"); err == nil {
-        t.Fatalf("expected error for invalid rfc spec")
-    }
+	if _, err := FetchRFC(context.Background(), "not-an-rfc"); err == nil {
+		t.Fatalf("expected error for invalid rfc spec")
+	}
 }
 
 func TestFetchRFC_BibtexParseError(t *testing.T) {

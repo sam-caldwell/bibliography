@@ -11,10 +11,10 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"bibliography/src/internal/booksearch"
 	"bibliography/src/internal/dates"
 	"bibliography/src/internal/doi"
 	moviefetch "bibliography/src/internal/movie"
-	"bibliography/src/internal/openlibrary"
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
 	songfetch "bibliography/src/internal/song"
@@ -66,20 +66,61 @@ func (b Builder) Site() *cobra.Command {
 // Book returns the "add book" subcommand.
 func (b Builder) Book() *cobra.Command {
 	var bookName, bookAuthor, bookISBN, bookKeywords string
+	var bookLookup bool
 	c := &cobra.Command{
 		Use:   "book",
 		Short: "Add a book (flags or manual entry)",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if strings.TrimSpace(bookISBN) != "" {
-				e, err := openlibrary.FetchBookByISBN(cmd.Context(), bookISBN)
+				e, provider, attempts, err := booksearch.LookupBookByISBN(cmd.Context(), bookISBN)
+				// Print per-provider attempt status (found/not found)
+				for _, a := range attempts {
+					status := "status: found"
+					if !a.Success {
+						status = "status: not found"
+					}
+					if _, perr := fmt.Fprintf(cmd.OutOrStdout(), "tried: %s: %s\n", a.Provider, status); perr != nil {
+						return perr
+					}
+				}
 				if err != nil {
 					return err
+				}
+				if provider != "" {
+					// Print provider to stdout as requested
+					if _, perr := fmt.Fprintf(cmd.OutOrStdout(), "source: %s\n", provider); perr != nil {
+						return perr
+					}
 				}
 				applyKeywordsOverride(&e, bookKeywords)
 				return b.writeCommitPrint(cmd, e)
 			}
 			if strings.TrimSpace(bookName) == "" && strings.TrimSpace(bookAuthor) == "" {
 				return manualAdd(cmd, b.Commit, "book", parseKeywordsCSV(bookKeywords))
+			}
+			// If title/author provided and lookup enabled, try online lookup chain
+			if bookLookup && strings.TrimSpace(bookISBN) == "" {
+				e, provider, attempts, err := booksearch.LookupBookByTitleAuthor(cmd.Context(), bookName, bookAuthor)
+				for _, a := range attempts {
+					s := "status: found"
+					if !a.Success {
+						s = "status: not found"
+					}
+					if _, perr := fmt.Fprintf(cmd.OutOrStdout(), "tried: %s: %s\n", a.Provider, s); perr != nil {
+						return perr
+					}
+				}
+				if err == nil {
+					if provider != "" {
+						if _, perr := fmt.Fprintf(cmd.OutOrStdout(), "source: %s\n", provider); perr != nil {
+							return perr
+						}
+					}
+					applyKeywordsOverride(&e, bookKeywords)
+					ensureTypeKeyword(&e, "book")
+					return b.writeCommitPrint(cmd, e)
+				}
+				// fall through to manual/hints if lookup failed
 			}
 			hints := hintsBook(bookName, bookAuthor, bookISBN)
 			return doAddWithKeywords(cmd.Context(), b.Commit, "book", hints, parseKeywordsCSV(bookKeywords))
@@ -89,6 +130,7 @@ func (b Builder) Book() *cobra.Command {
 	c.Flags().StringVar(&bookAuthor, "author", "", "Author (Family, Given)")
 	c.Flags().StringVar(&bookISBN, "isbn", "", "ISBN")
 	c.Flags().StringVar(&bookKeywords, "keywords", "", msgCommaDelimitedKeywords)
+	c.Flags().BoolVar(&bookLookup, "lookup", false, "Attempt online lookup when title/author are provided")
 	return c
 }
 

@@ -8,7 +8,7 @@ import (
 
 // newAddCmd constructs the root "add" command grouping subcommands for each type.
 func newAddCmd() *cobra.Command {
-	cmd := &cobra.Command{Use: "add", Short: "Add annotated citations via OpenLibrary/DOI (no OpenAI)"}
+	cmd := &cobra.Command{Use: "add", Short: "Add annotated citations via providers (OpenLibrary/DOI; OpenAI only for article URL fallbacks)"}
 	b := addcmd.New(commitAndPush)
 	cmd.AddCommand(
 		b.Site(),

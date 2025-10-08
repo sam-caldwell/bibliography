@@ -414,7 +414,17 @@ func scoreTitle(e schema.Entry, q string) (int, bool) {
 	if q == "" {
 		return 0, true
 	}
-	add := CountContains(strings.ToLower(e.APA7.Title), q) * 3
+	title := strings.ToLower(strings.TrimSpace(e.APA7.Title))
+	// If the query contains whitespace, treat it as a phrase search for title
+	if strings.ContainsAny(q, " \t\n") {
+		if !strings.Contains(title, q) {
+			return 0, false
+		}
+		// score 3 per full phrase occurrence
+		return CountContains(title, q) * 3, true
+	}
+	// Single-term search: substring match
+	add := CountContains(title, q) * 3
 	if add == 0 {
 		return 0, false
 	}

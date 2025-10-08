@@ -17,8 +17,8 @@ import (
 	rfcpkg "bibliography/src/internal/rfc"
 	"bibliography/src/internal/schema"
 	songfetch "bibliography/src/internal/song"
-    youtube "bibliography/src/internal/video"
-    "bibliography/src/internal/webfetch"
+	youtube "bibliography/src/internal/video"
+	"bibliography/src/internal/webfetch"
 )
 
 // fakeDoer implements httpx.Doer for deterministic responses in tests.
@@ -68,25 +68,27 @@ func TestAdd_Providers_DOI_YouTube_OMDb_TMDb_RFC_ISBN(t *testing.T) {
 		t.Fatalf("article doi: %v", err)
 	}
 
-    // Article via URL using webfetch
-    webfetch.SetHTTPClient(fakeDoer{handler: func(req *http.Request) *http.Response {
-        if strings.Contains(req.URL.Host, "news.example.com") {
-            html := `<!doctype html><html><head>
+	// Article via URL using webfetch
+	webfetch.SetHTTPClient(fakeDoer{handler: func(req *http.Request) *http.Response {
+		if strings.Contains(req.URL.Host, "news.example.com") {
+			html := `<!doctype html><html><head>
             <meta property="og:title" content="News Title">
             <meta property="og:site_name" content="Example News">
             <meta name="author" content="Jane Doe">
             <meta name="description" content="Desc">
             </head><body></body></html>`
-            return &http.Response{StatusCode: 200, Body: ioutil.NopCloser(strings.NewReader(html)), Header: http.Header{"Content-Type": {"text/html"}}}
-        }
-        return textResp(404, "")
-    }})
-    art2 := b.Article()
-    art2.SetArgs([]string{"--url", "https://news.example.com/post"})
-    art2.SetOut(new(bytes.Buffer))
-    if err := art2.Execute(); err != nil { t.Fatalf("article url: %v", err) }
+			return &http.Response{StatusCode: 200, Body: ioutil.NopCloser(strings.NewReader(html)), Header: http.Header{"Content-Type": {"text/html"}}}
+		}
+		return textResp(404, "")
+	}})
+	art2 := b.Article()
+	art2.SetArgs([]string{"--url", "https://news.example.com/post"})
+	art2.SetOut(new(bytes.Buffer))
+	if err := art2.Execute(); err != nil {
+		t.Fatalf("article url: %v", err)
+	}
 
-    // 2) YouTube video via oEmbed
+	// 2) YouTube video via oEmbed
 	youtube.SetHTTPClient(fakeDoer{handler: func(req *http.Request) *http.Response {
 		if strings.Contains(req.URL.Host, "youtube.com") && strings.Contains(req.URL.Path, "/oembed") {
 			return jsonResp(200, map[string]any{"title": "YTitle", "author_name": "Channel", "provider_name": "YouTube"})

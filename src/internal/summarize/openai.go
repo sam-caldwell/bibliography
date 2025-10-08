@@ -439,3 +439,76 @@ func normalizeKeywords(keys []string) []string {
 	}
 	return out
 }
+
+// GenerateBookFromISBN asks OpenAI to return minimal bibliographic metadata for a book by ISBN
+// as a last resort when public data sources do not return results. Requires OPENAI_API_KEY.
+func GenerateBookFromISBN(ctx context.Context, isbn string) (schema.Entry, error) {
+	sys := "You extract bibliographic metadata for books. Return strict JSON only."
+	user := fmt.Sprintf(`Given this ISBN, return ONLY a single JSON object with keys:
+{
+  "title": string,
+  "authors": [{"family": string, "given": string}],
+  "publisher": string,
+  "date": string,               // YYYY or YYYY-MM-DD if known; else empty
+  "summary": string             // 100-180 word neutral prose
+}
+If any value is unknown, use an empty string.
+ISBN: %s`, strings.TrimSpace(isbn))
+	content, err := chatRequest(ctx, sys, user)
+	if err != nil {
+		return schema.Entry{}, err
+	}
+	var obj struct {
+		Title   string `json:"title"`
+		Authors []struct {
+			Family string
+			Given  string
+		} `json:"authors"`
+		Publisher string `json:"publisher"`
+		Date      string `json:"date"`
+		Summary   string `json:"summary"`
+	}
+	if err := json.Unmarshal([]byte(content), &obj); err != nil {
+		// Try to salvage JSON object from content
+		if s2, e := extractJSONObject(content); e == nil {
+			_ = json.Unmarshal([]byte(s2), &obj)
+		}
+	}
+	var e schema.Entry
+	e.Type = "book"
+	e.ID = schema.NewID()
+	e.APA7.Title = strings.TrimSpace(obj.Title)
+	if e.APA7.Title == "" {
+		e.APA7.Title = strings.TrimSpace(isbn)
+	}
+	e.APA7.Publisher = strings.TrimSpace(obj.Publisher)
+	e.APA7.Date = strings.TrimSpace(obj.Date)
+	if y := dates.YearFromDate(e.APA7.Date); y > 0 {
+		y2 := y
+		e.APA7.Year = &y2
+	}
+	e.APA7.ISBN = strings.TrimSpace(isbn)
+	for _, a := range obj.Authors {
+		fam := strings.TrimSpace(a.Family)
+		giv := strings.TrimSpace(a.Given)
+		if fam != "" {
+			e.APA7.Authors = append(e.APA7.Authors, schema.Author{Family: fam, Given: giv})
+		}
+	}
+	sum := strings.TrimSpace(obj.Summary)
+	if sum == "" && e.APA7.Title != "" {
+		sum = fmt.Sprintf("Bibliographic record for %s (OpenAI-assisted).", e.APA7.Title)
+	}
+	e.Annotation.Summary = sum
+	if ks, err := KeywordsFromTitleAndSummary(ctx, e.APA7.Title, e.Annotation.Summary); err == nil {
+		e.Annotation.Keywords = normalizeKeywords(ks)
+	}
+	if len(e.Annotation.Keywords) == 0 {
+		e.Annotation.Keywords = []string{"book"}
+	}
+	sanitize.CleanEntry(&e)
+	if err := e.Validate(); err != nil {
+		return schema.Entry{}, err
+	}
+	return e, nil
+}
