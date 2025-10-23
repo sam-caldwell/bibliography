@@ -24,15 +24,20 @@ func TestWriteReadAndIndex(t *testing.T) {
 	if err != nil {
 		t.Fatalf("write1: %v", err)
 	}
-	if _, err := os.Stat(p1); err != nil {
-		t.Fatalf("stat1: %v", err)
+	if p1 == "" {
+		t.Fatalf("expected path-like identifier")
 	}
 	p2, err := WriteEntry(e2)
 	if err != nil {
 		t.Fatalf("write2: %v", err)
 	}
-	if _, err := os.Stat(p2); err != nil {
-		t.Fatalf("stat2: %v", err)
+	if p2 == "" {
+		t.Fatalf("expected path-like identifier")
+	}
+
+	// BibTeX library should be generated
+	if _, err := os.Stat(BibFile); err != nil {
+		t.Fatalf("missing BibTeX library: %v", err)
 	}
 
 	list, err := ReadAll()
@@ -197,10 +202,10 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	if err := json.Unmarshal(araw, &aidx); err != nil {
 		t.Fatalf("unmarshal authors index: %v", err)
 	}
-	if !contains(aidx["Doe, J."], "data/citations/article/"+e1.ID+".yaml") {
+	if !contains(aidx["Doe, J."], BibFile+"::"+e1.ID) {
 		t.Fatalf("missing author work for Doe, J.: %+v", aidx)
 	}
-	if !contains(aidx["National Automated Clearing House Association"], "data/citations/site/"+e2.ID+".yaml") {
+	if !contains(aidx["National Automated Clearing House Association"], BibFile+"::"+e2.ID) {
 		t.Fatalf("missing corporate author work: %+v", aidx)
 	}
 
@@ -214,10 +219,10 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 		t.Fatalf("unmarshal titles index: %v", err)
 	}
 	// titles index now stores tokenized title words
-	if ws := tidx["data/citations/article/"+e1.ID+".yaml"]; !containsStr(ws, "system") || !containsStr(ws, "design") {
+	if ws := tidx[BibFile+"::"+e1.ID]; !containsStr(ws, "system") || !containsStr(ws, "design") {
 		t.Fatalf("missing expected title tokens for art1: %+v", ws)
 	}
-	if ws := tidx["data/citations/site/"+e2.ID+".yaml"]; !containsStr(ws, "json") || !containsStr(ws, "example") {
+	if ws := tidx[BibFile+"::"+e2.ID]; !containsStr(ws, "json") || !containsStr(ws, "example") {
 		t.Fatalf("missing expected title tokens for site1: %+v", ws)
 	}
 
@@ -242,7 +247,7 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	if err := json.Unmarshal(draw, &didx); err != nil {
 		t.Fatalf("unmarshal doi index: %v", err)
 	}
-	if got := didx["data/citations/article/"+e1.ID+".yaml"]; got != "10.1145/1" {
+	if got := didx[BibFile+"::"+e1.ID]; got != "10.1145/1" {
 		t.Fatalf("wrong or missing doi for art1: %q (idx=%+v)", got, didx)
 	}
 	raw, err := os.ReadFile(KeywordsJSON)
@@ -255,31 +260,31 @@ func TestIndexIncludesRequestedFields(t *testing.T) {
 	}
 
 	// keywords map to paths with type segment
-	if !contains(idx["networks"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["web"], "data/citations/site/"+e2.ID+".yaml") {
+	if !contains(idx["networks"], BibFile+"::"+e1.ID) || !contains(idx["web"], BibFile+"::"+e2.ID) {
 		t.Fatalf("missing keyword tokens: %+v", idx)
 	}
 	// title words
-	if !contains(idx["system"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["json"], "data/citations/site/"+e2.ID+".yaml") {
+	if !contains(idx["system"], BibFile+"::"+e1.ID) || !contains(idx["json"], BibFile+"::"+e2.ID) {
 		t.Fatalf("missing title tokens: %+v", idx)
 	}
 	// publisher
-	if !contains(idx["acm"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["example"], "data/citations/site/"+e2.ID+".yaml") {
+	if !contains(idx["acm"], BibFile+"::"+e1.ID) || !contains(idx["example"], BibFile+"::"+e2.ID) {
 		t.Fatalf("missing publisher tokens: %+v", idx)
 	}
 	// year
-	if !contains(idx["1984"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["2024"], "data/citations/site/"+e2.ID+".yaml") {
+	if !contains(idx["1984"], BibFile+"::"+e1.ID) || !contains(idx["2024"], BibFile+"::"+e2.ID) {
 		t.Fatalf("missing year tokens: %+v", idx)
 	}
 	// domain (host and host without www.)
-	if !contains(idx["doi.org"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["www.example.com"], "data/citations/site/"+e2.ID+".yaml") || !contains(idx["example.com"], "data/citations/site/"+e2.ID+".yaml") {
+	if !contains(idx["doi.org"], BibFile+"::"+e1.ID) || !contains(idx["www.example.com"], BibFile+"::"+e2.ID) || !contains(idx["example.com"], BibFile+"::"+e2.ID) {
 		t.Fatalf("missing domain tokens: %+v", idx)
 	}
 	// type
-	if !contains(idx["article"], "data/citations/article/"+e1.ID+".yaml") || !contains(idx["website"], "data/citations/site/"+e2.ID+".yaml") {
+	if !contains(idx["article"], BibFile+"::"+e1.ID) || !contains(idx["website"], BibFile+"::"+e2.ID) {
 		t.Fatalf("missing type tokens: %+v", idx)
 	}
 	// summary tokens
-	if !contains(idx["tools"], "data/citations/site/"+e2.ID+".yaml") || !contains(idx["tutorials"], "data/citations/site/"+e2.ID+".yaml") {
+	if !contains(idx["tools"], BibFile+"::"+e2.ID) || !contains(idx["tutorials"], BibFile+"::"+e2.ID) {
 		t.Fatalf("missing summary tokens: %+v", idx)
 	}
 }

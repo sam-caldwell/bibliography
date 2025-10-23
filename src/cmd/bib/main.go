@@ -21,7 +21,8 @@ func execute() error {
 	rootCmd.AddCommand(newIndexCmd())
 	rootCmd.AddCommand(newRepairDOICmd())
 	rootCmd.AddCommand(newSummarizeCmd())
-	rootCmd.AddCommand(newEditCmd())
+	// YAML edit command removed
+	rootCmd.AddCommand(newExportBibCmd())
 	return rootCmd.Execute()
 }
 

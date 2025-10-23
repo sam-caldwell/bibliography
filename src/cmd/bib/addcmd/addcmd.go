@@ -298,7 +298,8 @@ func (b Builder) writeCommitPrint(cmd *cobra.Command, e schema.Entry) error {
 	if err != nil {
 		return err
 	}
-	if err := b.Commit([]string{path}, fmt.Sprintf(msgAddCitation, e.ID)); err != nil {
+	// Also commit the regenerated BibTeX library.
+	if err := b.Commit([]string{path, store.BibFile}, fmt.Sprintf(msgAddCitation, e.ID)); err != nil {
 		return err
 	}
 	_, err = fmt.Fprintf(cmd.OutOrStdout(), msgWrote, path)
@@ -567,7 +568,7 @@ func manualAdd(cmd *cobra.Command, commit CommitFunc, typ string, extraKeywords 
 	if err != nil {
 		return err
 	}
-	if err := commit([]string{path}, fmt.Sprintf(msgAddCitation, e.ID)); err != nil {
+	if err := commit([]string{path, store.BibFile}, fmt.Sprintf(msgAddCitation, e.ID)); err != nil {
 		return err
 	}
 	_, err = fmt.Fprintf(cmd.OutOrStdout(), msgWrote, path)

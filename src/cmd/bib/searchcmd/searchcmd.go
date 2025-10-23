@@ -1,7 +1,7 @@
 package searchcmd
 
 import (
-	"bytes"
+	"encoding/json"
 	"fmt"
 	"io"
 	"regexp"
@@ -10,7 +10,6 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"gopkg.in/yaml.v3"
 
 	"bibliography/src/internal/schema"
 	"bibliography/src/internal/store"
@@ -18,34 +17,36 @@ import (
 
 // New returns the search command for keyword and expression-based querying.
 func New() *cobra.Command {
-	var keywords, authorQ, titleQ, summaryQ, allQ string
-	cmd := &cobra.Command{
-		Use:   "search [expr]",
-		Short: "Search citations by keyword/author/title/summary or full record (expr or flags)",
-		Args:  cobra.ArbitraryArgs,
-		RunE: func(cmd *cobra.Command, args []string) error {
-			entries, err := store.ReadAll()
-			if err != nil {
-				return err
-			}
-			if len(args) > 0 {
-				return runExprSearch(cmd, entries, strings.Join(args, " "))
-			}
-			if isEmpty(authorQ) && isEmpty(titleQ) && isEmpty(summaryQ) && isEmpty(allQ) {
-				if isEmpty(keywords) {
-					return fmt.Errorf("provide an expression, --keyword, or a query flag like --all, --author, --title, or --summary")
-				}
-				return runKeywordOnlySearch(cmd, entries, keywords)
-			}
-			return runFlagSearch(cmd, entries, keywords, authorQ, titleQ, summaryQ, allQ)
-		},
-	}
-	cmd.Flags().StringVar(&keywords, "keyword", "", "comma-delimited keywords (AND filter; boosts relevance)")
-	cmd.Flags().StringVar(&authorQ, "author", "", "author search (matches family,given)")
-	cmd.Flags().StringVar(&titleQ, "title", "", "title full-text search")
-	cmd.Flags().StringVar(&summaryQ, "summary", "", "summary full-text search")
-	cmd.Flags().StringVar(&allQ, "all", "", "full-record search (YAML)")
-	return cmd
+    var keywords, authorQ, titleQ, summaryQ, allQ string
+    var showID bool
+    cmd := &cobra.Command{
+        Use:   "search [expr]",
+        Short: "Search citations by keyword/author/title/summary or full record (expr or flags)",
+        Args:  cobra.ArbitraryArgs,
+        RunE: func(cmd *cobra.Command, args []string) error {
+            entries, err := store.ReadAll()
+            if err != nil {
+                return err
+            }
+            if len(args) > 0 {
+                return runExprSearch(cmd, entries, strings.Join(args, " "), showID)
+            }
+            if isEmpty(authorQ) && isEmpty(titleQ) && isEmpty(summaryQ) && isEmpty(allQ) {
+                if isEmpty(keywords) {
+                    return fmt.Errorf("provide an expression, --keyword, or a query flag like --all, --author, --title, or --summary")
+                }
+                return runKeywordOnlySearch(cmd, entries, keywords, showID)
+            }
+            return runFlagSearch(cmd, entries, keywords, authorQ, titleQ, summaryQ, allQ, showID)
+        },
+    }
+    cmd.Flags().StringVar(&keywords, "keyword", "", "comma-delimited keywords (AND filter; boosts relevance)")
+    cmd.Flags().StringVar(&authorQ, "author", "", "author search (matches family,given)")
+    cmd.Flags().StringVar(&titleQ, "title", "", "title full-text search")
+    cmd.Flags().StringVar(&summaryQ, "summary", "", "summary full-text search")
+    cmd.Flags().StringVar(&allQ, "all", "", "full-record search (YAML)")
+    cmd.Flags().BoolVar(&showID, "showId", false, "Print only matching IDs (one per line)")
+    return cmd
 }
 
 func isEmpty(s string) bool { return strings.TrimSpace(s) == "" }
@@ -55,12 +56,12 @@ type scored struct {
 	s int
 }
 
-func runExprSearch(cmd *cobra.Command, entries []schema.Entry, expr string) error {
-	preds, err := parseExpr(expr)
-	if err != nil {
-		return err
-	}
-	var out []scored
+func runExprSearch(cmd *cobra.Command, entries []schema.Entry, expr string, showOnlyID bool) error {
+    preds, err := parseExpr(expr)
+    if err != nil {
+        return err
+    }
+    var out []scored
 	for _, e := range entries {
 		score := 0
 		ok := true
@@ -75,44 +76,50 @@ func runExprSearch(cmd *cobra.Command, entries []schema.Entry, expr string) erro
 		if ok {
 			out = append(out, scored{e: e, s: score})
 		}
-	}
-	sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
-	renderResults(cmd, out)
-	return nil
+    }
+    sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
+    renderResults(cmd, out, showOnlyID)
+    return nil
 }
 
-func runKeywordOnlySearch(cmd *cobra.Command, entries []schema.Entry, keywords string) error {
-	var out []scored
-	for _, e := range entries {
-		s := scoreEntry(e, keywords, "", "", "", "")
-		if s > 0 {
-			out = append(out, scored{e: e, s: s})
-		}
-	}
-	sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
-	renderResults(cmd, out)
-	return nil
+func runKeywordOnlySearch(cmd *cobra.Command, entries []schema.Entry, keywords string, showOnlyID bool) error {
+    var out []scored
+    for _, e := range entries {
+        s := scoreEntry(e, keywords, "", "", "", "")
+        if s > 0 {
+            out = append(out, scored{e: e, s: s})
+        }
+    }
+    sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
+    renderResults(cmd, out, showOnlyID)
+    return nil
 }
 
-func runFlagSearch(cmd *cobra.Command, entries []schema.Entry, keywords, authorQ, titleQ, summaryQ, allQ string) error {
-	var out []scored
-	for _, e := range entries {
-		s := scoreEntry(e, keywords, authorQ, titleQ, summaryQ, allQ)
-		if s > 0 {
-			out = append(out, scored{e: e, s: s})
-		}
-	}
-	sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
-	renderResults(cmd, out)
-	return nil
+func runFlagSearch(cmd *cobra.Command, entries []schema.Entry, keywords, authorQ, titleQ, summaryQ, allQ string, showOnlyID bool) error {
+    var out []scored
+    for _, e := range entries {
+        s := scoreEntry(e, keywords, authorQ, titleQ, summaryQ, allQ)
+        if s > 0 {
+            out = append(out, scored{e: e, s: s})
+        }
+    }
+    sort.Slice(out, func(i, j int) bool { return out[i].s > out[j].s })
+    renderResults(cmd, out, showOnlyID)
+    return nil
 }
 
-func renderResults(cmd *cobra.Command, out []scored) {
-	rows := make([][]string, 0, len(out))
-	for _, it := range out {
-		rows = append(rows, []string{it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e)})
-	}
-	renderTable(cmd.OutOrStdout(), []string{"id", "type", "title", "author"}, rows)
+func renderResults(cmd *cobra.Command, out []scored, showOnlyID bool) {
+    if showOnlyID {
+        for _, it := range out {
+            _, _ = fmt.Fprintln(cmd.OutOrStdout(), it.e.ID)
+        }
+        return
+    }
+    rows := make([][]string, 0, len(out))
+    for _, it := range out {
+        rows = append(rows, []string{it.e.ID, it.e.Type, it.e.APA7.Title, firstAuthor(it.e)})
+    }
+    renderTable(cmd.OutOrStdout(), []string{"id", "type", "title", "author"}, rows)
 }
 
 func firstAuthor(e schema.Entry) string {
@@ -290,9 +297,8 @@ func compileContainsTerm(tt string) (predicate, bool, error) {
 			}
 			return true, c * 2
 		case "all":
-			var buf bytes.Buffer
-			_ = yaml.NewEncoder(&buf).Encode(e)
-			c := CountContains(strings.ToLower(buf.String()), q)
+			b, _ := json.Marshal(e)
+			c := CountContains(strings.ToLower(string(b)), q)
 			if c == 0 {
 				return false, 0
 			}
@@ -446,9 +452,8 @@ func scoreAll(e schema.Entry, q string) (int, bool) {
 	if q == "" {
 		return 0, true
 	}
-	var buf bytes.Buffer
-	_ = yaml.NewEncoder(&buf).Encode(e)
-	add := CountContains(strings.ToLower(buf.String()), q)
+	b, _ := json.Marshal(e)
+	add := CountContains(strings.ToLower(string(b)), q)
 	if add == 0 {
 		return 0, false
 	}

@@ -1,9 +1,9 @@
 package addcmd
 
 import (
+	"bibliography/src/internal/store"
 	"bytes"
 	"os"
-	"path/filepath"
 	"testing"
 )
 
@@ -22,8 +22,8 @@ func TestBuilder_RunSomeSubcommands(t *testing.T) {
 	if err := site.Execute(); err != nil {
 		t.Fatalf("site: %v", err)
 	}
-	if _, err := os.Stat(filepath.Join("data", "citations", "site")); err != nil {
-		t.Fatalf("site yaml missing: %v", err)
+	if _, err := os.Stat(store.BibFile); err != nil {
+		t.Fatalf("bib missing: %v", err)
 	}
 
 	// book via hints flags (no external lookup)

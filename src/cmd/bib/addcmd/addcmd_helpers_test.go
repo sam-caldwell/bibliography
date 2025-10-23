@@ -2,9 +2,9 @@ package addcmd
 
 import (
 	"bibliography/src/internal/schema"
+	"bibliography/src/internal/store"
 	"github.com/spf13/cobra"
 	"os"
-	"path/filepath"
 	"strings"
 	"testing"
 )
@@ -121,9 +121,8 @@ func TestManualAdd_BookFlow(t *testing.T) {
 	if err := manualAdd(cmd, commit, "book", nil); err != nil {
 		t.Fatalf("manualAdd book: %v", err)
 	}
-	// verify file written under books
-	files, _ := os.ReadDir(filepath.Join("data", "citations", "books"))
-	if len(files) != 1 {
-		t.Fatalf("expected one book yaml written, got %d", len(files))
+	// verify bib file exists
+	if _, err := os.Stat(store.BibFile); err != nil {
+		t.Fatalf("expected bib file, err=%v", err)
 	}
 }

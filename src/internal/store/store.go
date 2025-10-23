@@ -13,8 +13,6 @@ import (
 	"strings"
 	// time removed; use dates.NowISO
 
-	"gopkg.in/yaml.v3"
-
 	"bibliography/src/internal/dates"
 	"bibliography/src/internal/schema"
 )
@@ -22,6 +20,8 @@ import (
 const (
 	CitationsDir = "data/citations"
 	MetadataDir  = "data/metadata"
+	// BibFile is the consolidated BibTeX library written from all entries.
+	BibFile      = "data/library.bib"
 	KeywordsJSON = "data/metadata/keywords.json"
 	AuthorsJSON  = "data/metadata/authors.json"
 	TitlesJSON   = "data/metadata/titles.json"
@@ -34,11 +34,9 @@ const (
 // ensureMetaDir creates the metadata directory if missing.
 func ensureMetaDir() error { return os.MkdirAll(MetadataDir, 0o755) }
 
-// entryPath returns the repo-relative path to the YAML file for an entry id/type.
-func entryPath(e schema.Entry) string {
-	seg := dirForType(e.Type)
-	return filepath.ToSlash(filepath.Join(CitationsDir, seg, e.ID+".yaml"))
-}
+// entryPath returns a stable identifier for an entry for use in indexes.
+// Since YAML files are removed, we reference the BibTeX file with an id anchor.
+func entryPath(e schema.Entry) string { return filepath.ToSlash(BibFile) + "::" + e.ID }
 
 // writeJSON writes the given value to the target JSON file with indentation.
 func writeJSON(target string, v any) (string, error) {
@@ -80,7 +78,7 @@ func dirForType(typ string) string {
 // SegmentForType returns the directory segment used for a given type (e.g., book->books).
 func SegmentForType(typ string) string { return dirForType(typ) }
 
-// WriteEntry validates and writes the entry YAML to data/citations/<segment>/<id>.yaml.
+// WriteEntry validates and upserts the entry into the consolidated BibTeX library.
 func WriteEntry(e schema.Entry) (string, error) {
 	if strings.TrimSpace(e.ID) == "" {
 		e.ID = schema.NewID()
@@ -88,23 +86,56 @@ func WriteEntry(e schema.Entry) (string, error) {
 	if err := e.Validate(); err != nil {
 		return "", err
 	}
-	subdir := filepath.Join(CitationsDir, dirForType(e.Type))
-	if err := os.MkdirAll(subdir, 0o755); err != nil {
+	// Upsert into consolidated BibTeX library (primary storage)
+	if err := UpdateBibEntry(e); err != nil {
 		return "", err
 	}
-	path := filepath.Join(subdir, fmt.Sprintf("%s.yaml", e.ID))
-	buf, err := yaml.Marshal(e)
-	if err != nil {
-		return "", err
-	}
-	if err := os.WriteFile(path, buf, 0o644); err != nil {
-		return "", err
-	}
-	return path, nil
+	// Return the BibTeX reference string for printing/commit paths
+	return entryPath(e), nil
 }
 
 // ReadAll loads, validates, and returns all entries under data/citations.
 func ReadAll() ([]schema.Entry, error) {
+	var entries []schema.Entry
+	// Prefer BibTeX as the primary source if present
+	if b, err := os.ReadFile(BibFile); err == nil && len(b) > 0 {
+		rs, perr := parseBib(string(b))
+		if perr != nil {
+			return nil, perr
+		}
+		entries = bibToEntries(rs)
+		return entries, nil
+	}
+	// Legacy fallback: read YAML tree (will be removed in future)
+	if _, err := os.Stat(CitationsDir); errors.Is(err, fs.ErrNotExist) {
+		return entries, nil
+	}
+	err := filepath.WalkDir(CitationsDir, func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() || !strings.HasSuffix(path, ".yaml") {
+			return nil
+		}
+		data, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		var e schema.Entry
+		if err := json.Unmarshal(data, &e); err != nil { // not expected anymore
+			return fmt.Errorf("invalid YAML in %s: %w", path, err)
+		}
+		if err := e.Validate(); err != nil {
+			return fmt.Errorf("invalid entry in %s: %w", path, err)
+		}
+		entries = append(entries, e)
+		return nil
+	})
+	return entries, err
+}
+
+// readAllYAML loads entries directly from YAML files under data/citations, bypassing BibTeX.
+func readAllYAML() ([]schema.Entry, error) {
 	var entries []schema.Entry
 	if _, err := os.Stat(CitationsDir); errors.Is(err, fs.ErrNotExist) {
 		return entries, nil
@@ -121,7 +152,7 @@ func ReadAll() ([]schema.Entry, error) {
 			return err
 		}
 		var e schema.Entry
-		if err := yaml.Unmarshal(data, &e); err != nil {
+		if err := json.Unmarshal(data, &e); err != nil {
 			return fmt.Errorf("invalid YAML in %s: %w", path, err)
 		}
 		if err := e.Validate(); err != nil {

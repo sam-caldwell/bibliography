@@ -1,8 +1,8 @@
 package addcmd
 
 import (
+	"bibliography/src/internal/store"
 	"os"
-	"path/filepath"
 	"strings"
 	"testing"
 )
@@ -17,9 +17,8 @@ func TestAddWithKeywords_WritesWebsite(t *testing.T) {
 	if err := AddWithKeywords(nil, commit, "website", map[string]string{"url": "https://example.com"}, []string{"web"}); err != nil {
 		t.Fatalf("AddWithKeywords: %v", err)
 	}
-	files, _ := os.ReadDir(filepath.Join("data", "citations", "site"))
-	if len(files) != 1 {
-		t.Fatalf("expected one site yaml written")
+	if _, err := os.Stat(store.BibFile); err != nil {
+		t.Fatalf("expected bib written: %v", err)
 	}
 	if called == 0 {
 		t.Fatalf("expected commit to be called")

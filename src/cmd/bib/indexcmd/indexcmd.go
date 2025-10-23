@@ -17,6 +17,9 @@ func New(commit CommitFunc) *cobra.Command {
 		Short:        "Rebuild metadata indexes (keywords, authors, titles, ISBN, DOI)",
 		SilenceUsage: true,
 		RunE: func(cmd *cobra.Command, args []string) error {
+			// Ensure consolidated BibTeX library is present and up-to-date with current entries
+			// For legacy repos with only YAML, this creates data/library.bib once.
+			_ = store.RebuildBibLibrary()
 			entries, err := store.ReadAll()
 			if err != nil {
 				return err

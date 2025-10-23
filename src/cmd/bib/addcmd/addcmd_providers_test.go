@@ -1,13 +1,13 @@
 package addcmd
 
 import (
+	"bibliography/src/internal/store"
 	"bytes"
 	"context"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
 	"os"
-	"path/filepath"
 	"strings"
 	"testing"
 
@@ -201,12 +201,9 @@ func TestAdd_Providers_DOI_YouTube_OMDb_TMDb_RFC_ISBN(t *testing.T) {
 		t.Fatalf("book isbn: %v", err)
 	}
 
-	// Ensure files were written in expected segments
-	mustHave := []string{"article", "video", "movie", "rfc", "books"}
-	for _, seg := range mustHave {
-		if _, err := os.Stat(filepath.Join("data", "citations", seg)); err != nil {
-			t.Fatalf("missing segment %s: %v", seg, err)
-		}
+	// Ensure bib file was written
+	if _, err := os.Stat(store.BibFile); err != nil {
+		t.Fatalf("missing bib file: %v", err)
 	}
 	if commits < 6 {
 		t.Fatalf("expected commits, got %d", commits)

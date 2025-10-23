@@ -1,4 +1,4 @@
-# Bibliography CLI (APA7 + Annotated YAML)
+# Bibliography CLI (APA7 + BibTeX)
 
 Version: [![Version](https://img.shields.io/github/v/tag/sam-caldwell/bibliography?sort=semver)](https://github.com/sam-caldwell/bibliography/tags)
 
@@ -6,8 +6,9 @@ Version: [![Version](https://img.shields.io/github/v/tag/sam-caldwell/bibliograp
 
 ![Bibliography CLI Logo](docs/logo.png)
 
-Bibliography is a small, Git‑backed CLI for building an annotated bibliography. Each citation is a single YAML file
-stored under `data/citations/` and validated against a compact APA7‑inspired schema. The tool fetches public
+Bibliography is a small, Git‑backed CLI for building an annotated bibliography. Citations are stored in a single
+consolidated BibTeX library (`data/library.bib`) validated against a compact APA7‑inspired schema at the CLI boundary,
+so you can use the collection directly with LaTeX and other reference managers. The tool fetches public
 metadata when available (doi.org for articles; OpenLibrary→Google→Crossref→WorldCat→BNB→openBD→LoC→OpenAI for books by ISBN), supports interactive entry for everything
 else, and keeps lightweight JSON indexes for discovery.
 
@@ -80,18 +81,13 @@ Common commands
 
 Data Layout
 
-- `data/citations/` — one YAML per work under a type directory
-  - Articles: `data/citations/article/<uuid>.yaml`
-  - Books:    `data/citations/books/<uuid>.yaml`
-  - Movies:   `data/citations/movie/<uuid>.yaml`
-  - Websites: `data/citations/site/<uuid>.yaml`
-  - RFCs:     `data/citations/rfc/<uuid>.yaml`
 - `data/metadata/` — generated indexes used for fast lookups
   - `keywords.json` — map: keyword → array of work paths
   - `authors.json`  — map: "Family, Given" or organization name → array of work paths
   - `titles.json`   — map: work path → array of tokenized title words
   - `isbn.json`     — map: work path → ISBN (books only)
   - `doi.json`      — map: work path → DOI (works with a DOI)
+\- `data/library.bib` — consolidated BibTeX library (primary storage; updated on add/edit)
 
 All metadata can be regenerated at any time using `bib index`.
 
@@ -208,6 +204,6 @@ Troubleshooting
 
 Security & Data Ownership
 
-- Citation YAMLs in `data/citations/` are the canonical source of truth checked into your repo.
+- `data/data.bib` is the canonical source of truth checked into your repo.
 - Everything in `data/metadata/` is derived and can be regenerated at any time.
 - The CLI only uses public metadata endpoints for adds and never uploads repository contents.
