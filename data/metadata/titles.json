@@ -1,5 +1,5 @@
 {
-  "data/citations/article/01599980-8fdc-42c4-9456-1f0b1f71e602.yaml": [
+  "data/library.bib::01599980-8fdc-42c4-9456-1f0b1f71e602": [
     "breaking",
     "the",
     "cycle",
@@ -10,13 +10,13 @@
     "amp",
     "solutions"
   ],
-  "data/citations/article/038ac3cc-941f-47bd-ac98-37c48cbdaa0c.yaml": [
+  "data/library.bib::038ac3cc-941f-47bd-ac98-37c48cbdaa0c": [
     "math",
     "atlas",
     "sourceforge",
     "net"
   ],
-  "data/citations/article/0635762b-b796-4244-8bbe-d9c49b2e3a19.yaml": [
+  "data/library.bib::0635762b-b796-4244-8bbe-d9c49b2e3a19": [
     "simulation",
     "of",
     "quantum",
@@ -28,7 +28,7 @@
     "advanced",
     "networks"
   ],
-  "data/citations/article/077cbe7d-353c-4a6a-bcc8-c6a4dd63264a.yaml": [
+  "data/library.bib::077cbe7d-353c-4a6a-bcc8-c6a4dd63264a": [
     "explosion",
     "at",
     "the",
@@ -37,7 +37,19 @@
     "major",
     "outage"
   ],
-  "data/citations/article/10308e34-7f34-42fd-970e-98e34a71e28b.yaml": [
+  "data/library.bib::08efe6bc-4ea2-4db6-b5fa-9181499e515d": [
+    "threat",
+    "modeling"
+  ],
+  "data/library.bib::0f32cc17-ade0-467e-a192-649d872675b0": [
+    "hacking",
+    "tricks",
+    "methods",
+    "and",
+    "offensive",
+    "strategies"
+  ],
+  "data/library.bib::10308e34-7f34-42fd-970e-98e34a71e28b": [
     "measuring",
     "the",
     "quantum",
@@ -45,7 +57,7 @@
     "of",
     "photoelectrons"
   ],
-  "data/citations/article/10a7c47b-ca57-4e86-9d21-47134f371e58.yaml": [
+  "data/library.bib::10a7c47b-ca57-4e86-9d21-47134f371e58": [
     "spectral",
     "graph",
     "theory",
@@ -60,7 +72,7 @@
     "internet",
     "archive"
   ],
-  "data/citations/article/10fbbd42-53af-4ac1-9937-6279e52d1295.yaml": [
+  "data/library.bib::10fbbd42-53af-4ac1-9937-6279e52d1295": [
     "at",
     "it",
     "again",
@@ -75,14 +87,39 @@
     "op",
     "ed"
   ],
-  "data/citations/article/135ca6f9-095c-486d-b592-502ea7927773.yaml": [
+  "data/library.bib::1200e846-4ba8-4d32-b04f-3538c1cc5567": [
+    "msr",
+    "tr",
+    "2020",
+    "41",
+    "the",
+    "seven",
+    "properties",
+    "of",
+    "highly",
+    "secured",
+    "devices",
+    "2nd",
+    "edition"
+  ],
+  "data/library.bib::12bfb153-4cce-40cf-b3f4-8c27ab8717ce": [
+    "the",
+    "decline",
+    "and",
+    "fall",
+    "of",
+    "the",
+    "roman",
+    "empire"
+  ],
+  "data/library.bib::135ca6f9-095c-486d-b592-502ea7927773": [
     "classical",
     "concepts",
     "in",
     "quantum",
     "programming"
   ],
-  "data/citations/article/174eaa51-08e5-494b-9f19-94fc5c496edd.yaml": [
+  "data/library.bib::174eaa51-08e5-494b-9f19-94fc5c496edd": [
     "revolutionizing",
     "quantum",
     "communication",
@@ -91,7 +128,41 @@
     "teleportation",
     "techniques"
   ],
-  "data/citations/article/1b3ea537-9775-4cd1-b81a-3b139c9615ca.yaml": [
+  "data/library.bib::17689904-88a8-4401-859a-a40f6ddd9f13": [
+    "veil"
+  ],
+  "data/library.bib::17e0dfcc-786a-4195-8493-4eeae3357973": [
+    "traversal",
+    "using",
+    "relays",
+    "around",
+    "nat",
+    "turn",
+    "relay",
+    "extensions",
+    "to",
+    "session",
+    "traversal",
+    "utilities",
+    "for",
+    "nat",
+    "stun"
+  ],
+  "data/library.bib::18f6e983-a055-499c-8a9a-990fa2be1d9f": [
+    "github",
+    "com"
+  ],
+  "data/library.bib::1b1a8557-7668-4e65-b059-86d6079c9d62": [
+    "star",
+    "wars",
+    "episode",
+    "iii",
+    "revenge",
+    "of",
+    "the",
+    "sith"
+  ],
+  "data/library.bib::1b3ea537-9775-4cd1-b81a-3b139c9615ca": [
     "traffic",
     "flow",
     "optimization",
@@ -99,7 +170,7 @@
     "quantum",
     "annealer"
   ],
-  "data/citations/article/1be227c2-bb9f-4a18-9279-18695275c46d.yaml": [
+  "data/library.bib::1be227c2-bb9f-4a18-9279-18695275c46d": [
     "zero",
     "trust",
     "based",
@@ -123,7 +194,25 @@
     "supply",
     "chain"
   ],
-  "data/citations/article/227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4.yaml": [
+  "data/library.bib::1e811a19-30a1-4624-a8fb-853504b68c19": [
+    "research",
+    "cs",
+    "wisc",
+    "edu"
+  ],
+  "data/library.bib::1ff7df86-ec70-48aa-a4ae-07fbd16da1d5": [
+    "media",
+    "vw",
+    "com"
+  ],
+  "data/library.bib::21e15d4d-5d0d-4924-ae1a-6be7fc933405": [
+    "the",
+    "road",
+    "goes",
+    "on",
+    "forever"
+  ],
+  "data/library.bib::227eb2e6-e9fd-4c9c-a5ff-93cb0e934ed4": [
     "the",
     "resource",
     "theory",
@@ -132,7 +221,11 @@
     "quantum",
     "computation"
   ],
-  "data/citations/article/2571a704-3bde-4180-aad5-d9714326be71.yaml": [
+  "data/library.bib::22b0d431-fbf0-41e0-bcd8-42b2b27a1f00": [
+    "klossner",
+    "cartoons"
+  ],
+  "data/library.bib::2571a704-3bde-4180-aad5-d9714326be71": [
     "quantum",
     "teleportation",
     "over",
@@ -143,7 +236,7 @@
     "feed",
     "forward"
   ],
-  "data/citations/article/26be09f0-2624-426d-b058-34af0b71b4b9.yaml": [
+  "data/library.bib::26be09f0-2624-426d-b058-34af0b71b4b9": [
     "scheme",
     "invisible",
     "internet",
@@ -158,7 +251,7 @@
     "user",
     "activities"
   ],
-  "data/citations/article/27e6f53b-7f50-43c3-b1cc-f984dee61425.yaml": [
+  "data/library.bib::27e6f53b-7f50-43c3-b1cc-f984dee61425": [
     "pen",
     "testers",
     "who",
@@ -170,14 +263,32 @@
     "tell",
     "all"
   ],
-  "data/citations/article/2815a6f9-f01e-419b-99cb-384b7a3da2f9.yaml": [
+  "data/library.bib::2815a6f9-f01e-419b-99cb-384b7a3da2f9": [
     "laplacian",
     "matrices",
     "of",
     "graphs",
     "survey"
   ],
-  "data/citations/article/2aa6e113-4bf5-4160-95fd-bb921eba7211.yaml": [
+  "data/library.bib::299dfc27-b5bb-4726-a802-5fa1382109ba": [
+    "csrc",
+    "nist",
+    "gov"
+  ],
+  "data/library.bib::29c72214-a927-485f-bfa3-f3aaa8b3628d": [
+    "docs",
+    "rigetti",
+    "com"
+  ],
+  "data/library.bib::2a3d66f2-f793-423d-b249-e8e9af6a9d1c": [
+    "session",
+    "traversal",
+    "utilities",
+    "for",
+    "nat",
+    "stun"
+  ],
+  "data/library.bib::2aa6e113-4bf5-4160-95fd-bb921eba7211": [
     "enabling",
     "6g",
     "security",
@@ -191,7 +302,7 @@
     "artificial",
     "intelligence"
   ],
-  "data/citations/article/2bc726f4-7938-46ff-abe3-06c70e05770b.yaml": [
+  "data/library.bib::2bc726f4-7938-46ff-abe3-06c70e05770b": [
     "experimental",
     "test",
     "of",
@@ -202,7 +313,7 @@
     "varying",
     "analyzers"
   ],
-  "data/citations/article/2e722384-ccef-485e-994d-70de22254383.yaml": [
+  "data/library.bib::2e722384-ccef-485e-994d-70de22254383": [
     "kademlia",
     "practicable",
     "approach",
@@ -212,7 +323,7 @@
     "based",
     "routing"
   ],
-  "data/citations/article/2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06.yaml": [
+  "data/library.bib::2eb9a7ff-c6c9-4c2b-ad95-989c71e20d06": [
     "cool",
     "horizons",
     "for",
@@ -220,21 +331,26 @@
     "black",
     "holes"
   ],
-  "data/citations/article/302fe062-d29e-421f-8df6-0489e4246564.yaml": [
+  "data/library.bib::2eeed000-bb01-440b-849e-ab9a78970cff": [
+    "the",
+    "essential",
+    "turing"
+  ],
+  "data/library.bib::302fe062-d29e-421f-8df6-0489e4246564": [
     "eigenvalue",
     "analysis",
     "for",
     "metamorphic",
     "detection"
   ],
-  "data/citations/article/30674695-df36-4f8e-973e-068d34d1e39c.yaml": [
+  "data/library.bib::30674695-df36-4f8e-973e-068d34d1e39c": [
     "battle",
     "of",
     "the",
     "clipper",
     "chip"
   ],
-  "data/citations/article/329909c8-acbd-47ed-9792-3f6be5b71299.yaml": [
+  "data/library.bib::329909c8-acbd-47ed-9792-3f6be5b71299": [
     "distritrust",
     "distributed",
     "and",
@@ -247,7 +363,10 @@
     "trust",
     "architecture"
   ],
-  "data/citations/article/35e91c73-3fc9-4e73-8574-e14b3cee6a0d.yaml": [
+  "data/library.bib::3513ba6f-05de-4db4-a6f8-76d125acc9c8": [
+    "json"
+  ],
+  "data/library.bib::35e91c73-3fc9-4e73-8574-e14b3cee6a0d": [
     "from",
     "rehnquist",
     "to",
@@ -261,14 +380,36 @@
     "gained",
     "foe"
   ],
-  "data/citations/article/3ba7de32-814e-4634-af3c-e317cee4500a.yaml": [
+  "data/library.bib::36a62b8e-548c-49c6-a059-11fb88c0eb5b": [
+    "internet",
+    "official",
+    "protocol",
+    "standards"
+  ],
+  "data/library.bib::36b2bea8-9e8d-4426-8de2-8efb70831451": [
+    "star",
+    "wars",
+    "episode",
+    "the",
+    "empire",
+    "strikes",
+    "back"
+  ],
+  "data/library.bib::3730a604-aed8-4c95-a5b5-dda895fa7796": [
+    "the",
+    "pace",
+    "of",
+    "modern",
+    "life"
+  ],
+  "data/library.bib::3ba7de32-814e-4634-af3c-e317cee4500a": [
     "practical",
     "quantum",
     "instruction",
     "set",
     "architecture"
   ],
-  "data/citations/article/3c2d05e6-51df-4d2d-8b73-9627de164caa.yaml": [
+  "data/library.bib::3c2d05e6-51df-4d2d-8b73-9627de164caa": [
     "quantum",
     "cloud",
     "computing",
@@ -279,7 +420,7 @@
     "future",
     "directions"
   ],
-  "data/citations/article/3c72b4e0-330f-4648-8750-d842904514b3.yaml": [
+  "data/library.bib::3c72b4e0-330f-4648-8750-d842904514b3": [
     "quantum",
     "cluster",
     "states",
@@ -288,7 +429,21 @@
     "three",
     "dimensions"
   ],
-  "data/citations/article/43599004-8b7d-4726-b7e1-1adb43816647.yaml": [
+  "data/library.bib::415a4e38-cfe6-4897-85dc-352560ee72f7": [
+    "build",
+    "large",
+    "language",
+    "model",
+    "from",
+    "scratch"
+  ],
+  "data/library.bib::42c4604e-3182-45c4-b846-c54bae51cf5a": [
+    "tracers",
+    "in",
+    "the",
+    "dark"
+  ],
+  "data/library.bib::43599004-8b7d-4726-b7e1-1adb43816647": [
     "theory",
     "of",
     "fault",
@@ -296,7 +451,16 @@
     "quantum",
     "computation"
   ],
-  "data/citations/article/45251b33-d16c-42c6-87e0-3ce898ed99cb.yaml": [
+  "data/library.bib::44981aa9-30b3-41c1-b160-bd4408ba9ef5": [
+    "quantum",
+    "computation",
+    "and",
+    "quantum",
+    "information",
+    "10",
+    "ed"
+  ],
+  "data/library.bib::45251b33-d16c-42c6-87e0-3ce898ed99cb": [
     "trump",
     "disbands",
     "cyber",
@@ -309,7 +473,7 @@
     "in",
     "limbo"
   ],
-  "data/citations/article/4604c728-cf31-401f-a62a-487ea309f152.yaml": [
+  "data/library.bib::4604c728-cf31-401f-a62a-487ea309f152": [
     "atlassian",
     "39",
     "hipchat",
@@ -323,14 +487,20 @@
     "been",
     "compromised"
   ],
-  "data/citations/article/463eff06-cf70-4990-a2bd-ecf5820613bc.yaml": [
+  "data/library.bib::463eff06-cf70-4990-a2bd-ecf5820613bc": [
     "quantum",
     "modern",
     "quantum",
     "computing",
     "library"
   ],
-  "data/citations/article/4a89df4d-d843-462c-b75f-51324f7c3df6.yaml": [
+  "data/library.bib::4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6": [
+    "mathematics",
+    "of",
+    "quantum",
+    "computing"
+  ],
+  "data/library.bib::4a89df4d-d843-462c-b75f-51324f7c3df6": [
     "exploring",
     "the",
     "topological",
@@ -341,13 +511,40 @@
     "dark",
     "web"
   ],
-  "data/citations/article/4d5e98ce-ffec-47b7-8694-2773bc77db67.yaml": [
+  "data/library.bib::4b31c75f-276a-4516-93ab-3e2663e7d661": [
+    "programming",
+    "erlang",
+    "software",
+    "for",
+    "concurrent",
+    "world",
+    "pragmatic",
+    "programmers"
+  ],
+  "data/library.bib::4cc5310f-4c13-4638-876b-a7ff022cbba8": [
+    "star",
+    "wars",
+    "episode",
+    "ii",
+    "attack",
+    "of",
+    "the",
+    "clones"
+  ],
+  "data/library.bib::4d5e98ce-ffec-47b7-8694-2773bc77db67": [
     "growing",
     "well",
     "connected",
     "graphs"
   ],
-  "data/citations/article/5117ba86-4c99-474a-99ba-b2b3ac5b01ed.yaml": [
+  "data/library.bib::4e598b3a-e2a8-4132-8152-3c2c0f63fe75": [
+    "object",
+    "oriented",
+    "programming",
+    "with",
+    "turbo"
+  ],
+  "data/library.bib::5117ba86-4c99-474a-99ba-b2b3ac5b01ed": [
     "asymmetric",
     "cyclic",
     "controlled",
@@ -362,7 +559,7 @@
     "noisy",
     "environment"
   ],
-  "data/citations/article/51f822ea-70d8-4d46-909e-42f1e499aef2.yaml": [
+  "data/library.bib::51f822ea-70d8-4d46-909e-42f1e499aef2": [
     "factoring",
     "and",
     "weighting",
@@ -374,13 +571,27 @@
     "clique",
     "identification"
   ],
-  "data/citations/article/53febebe-038b-4b4f-be45-4b4ca125c4ac.yaml": [
+  "data/library.bib::53febebe-038b-4b4f-be45-4b4ca125c4ac": [
     "quantum",
     "programming",
     "in",
     "qcl"
   ],
-  "data/citations/article/55831b14-9a14-4dec-94dc-584f50c9cf71.yaml": [
+  "data/library.bib::541f2290-7caf-46e3-b4f4-99a466622645": [
+    "star",
+    "wars",
+    "episode",
+    "iv",
+    "new",
+    "hope"
+  ],
+  "data/library.bib::5461a732-592a-4ab5-8972-d29a95eb0fdf": [
+    "static",
+    "wikia",
+    "nocookie",
+    "net"
+  ],
+  "data/library.bib::55831b14-9a14-4dec-94dc-584f50c9cf71": [
     "apple",
     "facebook",
     "defend",
@@ -389,7 +600,7 @@
     "senate",
     "grilling"
   ],
-  "data/citations/article/55ba163d-f31d-4b4a-b6ee-8ebf74cac085.yaml": [
+  "data/library.bib::55ba163d-f31d-4b4a-b6ee-8ebf74cac085": [
     "an",
     "antidote",
     "for",
@@ -397,12 +608,28 @@
     "blue",
     "pill"
   ],
-  "data/citations/article/5a814537-2f7a-486d-a9b1-6f059d765741.yaml": [
+  "data/library.bib::56f434af-fd27-4a35-80b5-4c2a4802fcd1": [
+    "artificial",
+    "intelligence"
+  ],
+  "data/library.bib::572f10d4-8a4a-48d0-8689-bc71353aee31": [
+    "hacking",
+    "the",
+    "art",
+    "of",
+    "exploration"
+  ],
+  "data/library.bib::5a38ddf9-dfcd-4fa5-8470-cc483445783d": [
+    "practical",
+    "binary",
+    "analysis"
+  ],
+  "data/library.bib::5a814537-2f7a-486d-a9b1-6f059d765741": [
     "quantum",
     "machine",
     "learning"
   ],
-  "data/citations/article/5c865251-c50a-48dc-a228-f9880f2f3ea7.yaml": [
+  "data/library.bib::5c865251-c50a-48dc-a228-f9880f2f3ea7": [
     "snowden",
     "apos",
     "privacy",
@@ -415,7 +642,17 @@
     "government",
     "pressure"
   ],
-  "data/citations/article/5f8f08e8-e3f5-411f-b000-b4fd586bc8eb.yaml": [
+  "data/library.bib::5e079a0d-f103-4ecb-9c9f-e687f81569bb": [
+    "mastering",
+    "cuda",
+    "programming",
+    "with"
+  ],
+  "data/library.bib::5ea18ce5-43dc-491f-b71d-bd7d9a8e7868": [
+    "github",
+    "com"
+  ],
+  "data/library.bib::5f8f08e8-e3f5-411f-b000-b4fd586bc8eb": [
     "the",
     "load",
     "capacity",
@@ -425,7 +662,7 @@
     "quorum",
     "systems"
   ],
-  "data/citations/article/6011d791-d0c9-4a5d-937c-7a94cba3b7f5.yaml": [
+  "data/library.bib::6011d791-d0c9-4a5d-937c-7a94cba3b7f5": [
     "the",
     "history",
     "and",
@@ -434,7 +671,36 @@
     "zero",
     "trust"
   ],
-  "data/citations/article/67780b61-decd-43d7-88b9-f8535b12df51.yaml": [
+  "data/library.bib::60817ec7-f418-4ab6-bc3e-61cf4a752e4d": [
+    "light",
+    "emitting",
+    "diodes",
+    "2nd",
+    "edition",
+    "2006"
+  ],
+  "data/library.bib::62f887c5-a213-4bf7-bf10-3978c659b5eb": [
+    "the",
+    "hitchhiker",
+    "guide",
+    "to",
+    "the",
+    "galaxy"
+  ],
+  "data/library.bib::6393932c-1edd-4da2-b11f-efc92905a7f5": [
+    "host",
+    "unknown",
+    "presents",
+    "accepted",
+    "the",
+    "risk"
+  ],
+  "data/library.bib::64f979ba-acfe-4b54-9e65-32d9c5117e82": [
+    "www",
+    "chainalysis",
+    "com"
+  ],
+  "data/library.bib::67780b61-decd-43d7-88b9-f8535b12df51": [
     "surface",
     "codes",
     "towards",
@@ -444,7 +710,7 @@
     "quantum",
     "computation"
   ],
-  "data/citations/article/6851b44f-63e3-4e3c-86c6-6438c44fe71b.yaml": [
+  "data/library.bib::6851b44f-63e3-4e3c-86c6-6438c44fe71b": [
     "practical",
     "attacks",
     "against",
@@ -452,12 +718,18 @@
     "i2p",
     "network"
   ],
-  "data/citations/article/6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5.yaml": [
+  "data/library.bib::6a3bc167-f146-4ee5-bd9d-15545956106a": [
+    "mips",
+    "assembly",
+    "language",
+    "programming"
+  ],
+  "data/library.bib::6b55c4c4-3a2c-4fc1-bdd5-aa25c0ddf4b5": [
     "structured",
     "quantum",
     "programming"
   ],
-  "data/citations/article/6b64cf08-78cc-44d4-87b1-594cadf8f0dc.yaml": [
+  "data/library.bib::6b64cf08-78cc-44d4-87b1-594cadf8f0dc": [
     "major",
     "cyber",
     "attacks",
@@ -472,7 +744,7 @@
     "intelligence",
     "inc"
   ],
-  "data/citations/article/6ba287f1-c059-42cf-bcfd-54f14bb5d601.yaml": [
+  "data/library.bib::6ba287f1-c059-42cf-bcfd-54f14bb5d601": [
     "long",
     "before",
     "the",
@@ -483,7 +755,7 @@
     "sounded",
     "warning"
   ],
-  "data/citations/article/6cd73a77-01b1-4b80-94a3-3b112ce48c98.yaml": [
+  "data/library.bib::6cd73a77-01b1-4b80-94a3-3b112ce48c98": [
     "assigning",
     "trust",
     "to",
@@ -496,7 +768,11 @@
     "iot",
     "applications"
   ],
-  "data/citations/article/6ddde8ae-8773-4265-ae01-54ca0e30a050.yaml": [
+  "data/library.bib::6d5c1a76-f4c3-4d4a-95de-ec9349e2864d": [
+    "python",
+    "enumerations"
+  ],
+  "data/library.bib::6ddde8ae-8773-4265-ae01-54ca0e30a050": [
     "loophole",
     "free",
     "bell",
@@ -509,7 +785,18 @@
     "by",
     "kilometres"
   ],
-  "data/citations/article/6efa14ba-08a0-4b58-b64b-ec79daabd7ce.yaml": [
+  "data/library.bib::6e26fb2d-bfc0-4056-8867-f7c08cfabd13": [
+    "fix",
+    "you"
+  ],
+  "data/library.bib::6e831057-f239-4573-abf3-39b3f725e903": [
+    "the",
+    "fractal",
+    "geometry",
+    "of",
+    "nature"
+  ],
+  "data/library.bib::6efa14ba-08a0-4b58-b64b-ec79daabd7ce": [
     "can",
     "programming",
     "be",
@@ -527,7 +814,7 @@
     "of",
     "programs"
   ],
-  "data/citations/article/6f3719b4-f6ac-470b-97fe-32939f5ed890.yaml": [
+  "data/library.bib::6f3719b4-f6ac-470b-97fe-32939f5ed890": [
     "crisis",
     "of",
     "confidence",
@@ -535,7 +822,7 @@
     "experience",
     "pbs"
   ],
-  "data/citations/article/70e6f609-22d4-4355-9999-0bfc43a88783.yaml": [
+  "data/library.bib::70e6f609-22d4-4355-9999-0bfc43a88783": [
     "mit",
     "releases",
     "its",
@@ -545,14 +832,14 @@
     "swartz",
     "prosecution"
   ],
-  "data/citations/article/720f357c-1060-413c-a8f2-3cff2058d0c9.yaml": [
+  "data/library.bib::720f357c-1060-413c-a8f2-3cff2058d0c9": [
     "twisting",
     "entangled",
     "photons",
     "on",
     "chip"
   ],
-  "data/citations/article/72d381ac-c5e0-4a4d-841e-febda1d36d1f.yaml": [
+  "data/library.bib::72d381ac-c5e0-4a4d-841e-febda1d36d1f": [
     "the",
     "faster",
     "than",
@@ -561,13 +848,20 @@
     "that",
     "wasn"
   ],
-  "data/citations/article/738814a3-dd2b-4348-bcc4-db75bea2df6f.yaml": [
+  "data/library.bib::72ebd6ae-5993-4a7a-b998-6b3f838bc588": [
+    "the",
+    "md5",
+    "message",
+    "digest",
+    "algorithm"
+  ],
+  "data/library.bib::738814a3-dd2b-4348-bcc4-db75bea2df6f": [
     "why",
     "functional",
     "programming",
     "matters"
   ],
-  "data/citations/article/73c5fed8-b6cb-4edf-8891-ad6a83136d41.yaml": [
+  "data/library.bib::73c5fed8-b6cb-4edf-8891-ad6a83136d41": [
     "massive",
     "snowflake",
     "linked",
@@ -581,7 +875,39 @@
     "amp",
     "customers"
   ],
-  "data/citations/article/75e00c45-a3cc-4fee-ab47-79acd321df65.yaml": [
+  "data/library.bib::754c900d-ebc4-4f86-841d-4bc26a361c2c": [
+    "aws",
+    "re",
+    "invent",
+    "2016",
+    "case",
+    "study",
+    "how",
+    "atlassian",
+    "uses",
+    "amazon",
+    "efs",
+    "with",
+    "jira",
+    "to",
+    "cut",
+    "costs",
+    "stg207"
+  ],
+  "data/library.bib::7557ddb1-7ed1-46a0-be88-4d4a9f7aefba": [
+    "aws",
+    "amazon",
+    "com"
+  ],
+  "data/library.bib::75948b61-97aa-49b5-9e05-4ae735ec6d1a": [
+    "star",
+    "wars",
+    "episode",
+    "the",
+    "phantom",
+    "menace"
+  ],
+  "data/library.bib::75e00c45-a3cc-4fee-ab47-79acd321df65": [
     "highly",
     "coherent",
     "spin",
@@ -594,7 +920,7 @@
     "cavity",
     "photons"
   ],
-  "data/citations/article/78f6e1b6-ea13-49b4-a139-a205a64f1017.yaml": [
+  "data/library.bib::78f6e1b6-ea13-49b4-a139-a205a64f1017": [
     "the",
     "first",
     "collision",
@@ -602,13 +928,13 @@
     "full",
     "sha"
   ],
-  "data/citations/article/7983fe4c-212f-40c4-9d1a-e76ad2a4941f.yaml": [
+  "data/library.bib::7983fe4c-212f-40c4-9d1a-e76ad2a4941f": [
     "zimmermann",
     "wins",
     "us",
     "loses"
   ],
-  "data/citations/article/7fa31bfb-1124-416c-b1cf-2e87c3dcee18.yaml": [
+  "data/library.bib::7fa31bfb-1124-416c-b1cf-2e87c3dcee18": [
     "optical",
     "computing",
     "the",
@@ -616,7 +942,7 @@
     "of",
     "light"
   ],
-  "data/citations/article/815bed59-af63-4b37-8da6-d1484c621362.yaml": [
+  "data/library.bib::815bed59-af63-4b37-8da6-d1484c621362": [
     "what",
     "is",
     "benford",
@@ -630,7 +956,12 @@
     "is",
     "everywhere"
   ],
-  "data/citations/article/827dcdc9-91f7-4a3c-88cc-d32154640305.yaml": [
+  "data/library.bib::81d5aeb4-c214-4eaf-ade2-01387950b1a3": [
+    "12",
+    "angry",
+    "men"
+  ],
+  "data/library.bib::827dcdc9-91f7-4a3c-88cc-d32154640305": [
     "kademlia",
     "practicable",
     "approach",
@@ -640,14 +971,14 @@
     "based",
     "routing"
   ],
-  "data/citations/article/836f1383-c9cc-4fc6-9feb-d43bd7f3de34.yaml": [
+  "data/library.bib::836f1383-c9cc-4fc6-9feb-d43bd7f3de34": [
     "communication",
     "theory",
     "of",
     "secrecy",
     "systems"
   ],
-  "data/citations/article/844ba6ee-7820-4565-9a71-d65b9abc5d53.yaml": [
+  "data/library.bib::844ba6ee-7820-4565-9a71-d65b9abc5d53": [
     "efficient",
     "mml",
     "math",
@@ -671,7 +1002,7 @@
     "quantum",
     "computing"
   ],
-  "data/citations/article/859a9788-c204-4dda-92bf-c6f809733568.yaml": [
+  "data/library.bib::859a9788-c204-4dda-92bf-c6f809733568": [
     "diginotar",
     "dissecting",
     "the",
@@ -680,7 +1011,11 @@
     "digital",
     "disaster"
   ],
-  "data/citations/article/8cf08e24-dd34-4d8b-a025-dc28eff41853.yaml": [
+  "data/library.bib::863ef3d1-57ca-40b1-853a-0a089fafa19b": [
+    "programmer",
+    "reference"
+  ],
+  "data/library.bib::8cf08e24-dd34-4d8b-a025-dc28eff41853": [
     "the",
     "structure",
     "and",
@@ -689,7 +1024,26 @@
     "complex",
     "networks"
   ],
-  "data/citations/article/8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b.yaml": [
+  "data/library.bib::8d030176-29f0-4f22-b07f-6ba8707812e7": [
+    "jon",
+    "stewart",
+    "nick",
+    "gillespie",
+    "on",
+    "trump",
+    "freedom",
+    "bob",
+    "dylan",
+    "the",
+    "weekly",
+    "show"
+  ],
+  "data/library.bib::8d59acfd-256d-4211-a1b0-34e2253ac81f": [
+    "the",
+    "syslog",
+    "protocol"
+  ],
+  "data/library.bib::8deddcbe-7c98-4ecd-b7b7-e146fe0ba86b": [
     "the",
     "potential",
     "harms",
@@ -704,14 +1058,14 @@
     "free",
     "countries"
   ],
-  "data/citations/article/8e69f10c-f220-4372-8375-c70ba8c6072a.yaml": [
+  "data/library.bib::8e69f10c-f220-4372-8375-c70ba8c6072a": [
     "texas",
     "criminal",
     "justice",
     "data",
     "snapshot"
   ],
-  "data/citations/article/8ffa1416-8b57-4187-a4e0-bc9e124c3760.yaml": [
+  "data/library.bib::8ffa1416-8b57-4187-a4e0-bc9e124c3760": [
     "quantum",
     "teleportation",
     "between",
@@ -719,7 +1073,19 @@
     "matter",
     "qubits"
   ],
-  "data/citations/article/9327ba2a-36aa-4696-a8f3-b37272850c12.yaml": [
+  "data/library.bib::90cdd966-79c0-47a4-a26c-fdc4b85f7a14": [
+    "the",
+    "character",
+    "of",
+    "physical",
+    "law"
+  ],
+  "data/library.bib::90d3f658-4a0c-4f63-b959-b03b30b63147": [
+    "charlie",
+    "wilson",
+    "war"
+  ],
+  "data/library.bib::9327ba2a-36aa-4696-a8f3-b37272850c12": [
     "teleporting",
     "an",
     "unknown",
@@ -734,7 +1100,22 @@
     "rosen",
     "channels"
   ],
-  "data/citations/article/97a65561-292d-4372-bd68-4fd8ede75297.yaml": [
+  "data/library.bib::967d4dba-5d58-44f6-909f-dadefbea226c": [
+    "practical",
+    "foundations",
+    "for",
+    "programming",
+    "languages"
+  ],
+  "data/library.bib::97250d9b-b9e9-4d59-b931-903700a0f132": [
+    "all",
+    "the",
+    "things"
+  ],
+  "data/library.bib::97643f8e-ce20-4627-81ec-55d23efc60d8": [
+    "physical"
+  ],
+  "data/library.bib::97a65561-292d-4372-bd68-4fd8ede75297": [
     "linux",
     "kernel",
     "zero",
@@ -745,7 +1126,7 @@
     "via",
     "chatgpt"
   ],
-  "data/citations/article/9e48ba5a-68d6-4cee-af68-f1e81d7379d9.yaml": [
+  "data/library.bib::9e48ba5a-68d6-4cee-af68-f1e81d7379d9": [
     "reina",
     "state",
     "940",
@@ -758,7 +1139,21 @@
     "casemine",
     "com"
   ],
-  "data/citations/article/9ffd35f4-1db9-4453-a1f9-0936b7c0c195.yaml": [
+  "data/library.bib::9f7a048c-ca31-4b01-8805-e45d4266b484": [
+    "recommendation",
+    "for",
+    "applications",
+    "using",
+    "approved",
+    "hash",
+    "algorithms"
+  ],
+  "data/library.bib::9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5": [
+    "story",
+    "of",
+    "technology"
+  ],
+  "data/library.bib::9ffd35f4-1db9-4453-a1f9-0936b7c0c195": [
     "stuxnet",
     "x2d",
     "style",
@@ -771,7 +1166,7 @@
     "anyone",
     "thought"
   ],
-  "data/citations/article/a0da0f6c-3274-4bce-9417-691483418a36.yaml": [
+  "data/library.bib::a0da0f6c-3274-4bce-9417-691483418a36": [
     "the",
     "applications",
     "and",
@@ -780,7 +1175,16 @@
     "quantum",
     "teleportation"
   ],
-  "data/citations/article/a56e0587-0510-4799-b81a-9a4fb6f98eb2.yaml": [
+  "data/library.bib::a39e1267-666c-4436-b791-1a497771fc3c": [
+    "office",
+    "space"
+  ],
+  "data/library.bib::a48a5849-3b0b-4fdf-96c5-6440cbf1519b": [
+    "programming",
+    "in",
+    "haskell"
+  ],
+  "data/library.bib::a56e0587-0510-4799-b81a-9a4fb6f98eb2": [
     "social",
     "justice",
     "definition",
@@ -789,7 +1193,12 @@
     "facts",
     "britannica"
   ],
-  "data/citations/article/aa0423ef-e802-4ff4-af10-c0cc8ec928fe.yaml": [
+  "data/library.bib::a7440c70-24a6-498f-96bd-561f5287304b": [
+    "www",
+    "nsa",
+    "gov"
+  ],
+  "data/library.bib::aa0423ef-e802-4ff4-af10-c0cc8ec928fe": [
     "forensic",
     "investigation",
     "of",
@@ -806,7 +1215,7 @@
     "surface",
     "web"
   ],
-  "data/citations/article/aaf3f9be-8c12-425f-acc8-7ef1e8a8d14d.yaml": [
+  "data/library.bib::aaf3f9be-8c12-425f-acc8-7ef1e8a8d14d": [
     "efficient",
     "quantum",
     "amplitude",
@@ -815,14 +1224,20 @@
     "polynomial",
     "functions"
   ],
-  "data/citations/article/ac28a807-7506-4994-ba42-eeb396c17f32.yaml": [
+  "data/library.bib::ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc": [
+    "chapter",
+    "boost",
+    "json",
+    "84"
+  ],
+  "data/library.bib::ac28a807-7506-4994-ba42-eeb396c17f32": [
     "can",
     "you",
     "trust",
     "zero",
     "trust"
   ],
-  "data/citations/article/ac2cbe8d-61fc-434e-b6ed-2bb8c2750431.yaml": [
+  "data/library.bib::ac2cbe8d-61fc-434e-b6ed-2bb8c2750431": [
     "ev",
     "deep",
     "neutron",
@@ -831,7 +1246,7 @@
     "in",
     "nanocrystals"
   ],
-  "data/citations/article/ad232f52-614c-4401-95ff-a1411828f367.yaml": [
+  "data/library.bib::ad232f52-614c-4401-95ff-a1411828f367": [
     "optimal",
     "availability",
     "quorum",
@@ -840,7 +1255,7 @@
     "and",
     "practice"
   ],
-  "data/citations/article/adcae43e-6d62-4bc2-8209-b6fa2dcb774b.yaml": [
+  "data/library.bib::adcae43e-6d62-4bc2-8209-b6fa2dcb774b": [
     "polarized",
     "white",
     "light",
@@ -849,7 +1264,7 @@
     "organic",
     "semiconductors"
   ],
-  "data/citations/article/adff12c7-e675-4514-b8b4-baf9f6d0fc14.yaml": [
+  "data/library.bib::adff12c7-e675-4514-b8b4-baf9f6d0fc14": [
     "3219",
     "2023",
     "ieee",
@@ -867,12 +1282,20 @@
     "things",
     "iot"
   ],
-  "data/citations/article/b086551a-7f10-4140-9efa-7b4bfda58184.yaml": [
+  "data/library.bib::aeaee977-0e60-4cad-b54e-dd3d30c16a77": [
+    "through",
+    "the",
+    "eyes",
+    "of",
+    "the",
+    "enemy"
+  ],
+  "data/library.bib::b086551a-7f10-4140-9efa-7b4bfda58184": [
     "experimental",
     "quantum",
     "teleportation"
   ],
-  "data/citations/article/b26b190f-b24f-478a-ad04-eb388dcea360.yaml": [
+  "data/library.bib::b26b190f-b24f-478a-ad04-eb388dcea360": [
     "quantum",
     "computing",
     "in",
@@ -882,7 +1305,7 @@
     "and",
     "beyond"
   ],
-  "data/citations/article/b31b91bf-97a0-4c6d-9bc8-bbcbf922c7da.yaml": [
+  "data/library.bib::b31b91bf-97a0-4c6d-9bc8-bbcbf922c7da": [
     "securing",
     "digital",
     "identity",
@@ -900,7 +1323,7 @@
     "factor",
     "authentication"
   ],
-  "data/citations/article/b330fa47-316f-4fd4-bb2a-e65b110ec04b.yaml": [
+  "data/library.bib::b330fa47-316f-4fd4-bb2a-e65b110ec04b": [
     "building",
     "up",
     "space",
@@ -909,7 +1332,17 @@
     "quantum",
     "entanglement"
   ],
-  "data/citations/article/b6a80a10-5d62-4053-8210-3255d41eae89.yaml": [
+  "data/library.bib::b3b2c235-6b8b-470d-9465-6a4a877f56fa": [
+    "the",
+    "devil",
+    "right",
+    "hand"
+  ],
+  "data/library.bib::b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb": [
+    "war",
+    "games"
+  ],
+  "data/library.bib::b6a80a10-5d62-4053-8210-3255d41eae89": [
     "an",
     "introduction",
     "to",
@@ -922,7 +1355,20 @@
     "quantum",
     "computation"
   ],
-  "data/citations/article/b890e94e-d917-466c-827c-dd9b8f1f2ec3.yaml": [
+  "data/library.bib::b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb": [
+    "developer",
+    "nvidia",
+    "com",
+    "cuda",
+    "toolkit"
+  ],
+  "data/library.bib::b77e9da9-f032-41f6-a1f6-99a4dabcfabc": [
+    "go",
+    "by",
+    "example",
+    "enums"
+  ],
+  "data/library.bib::b890e94e-d917-466c-827c-dd9b8f1f2ec3": [
     "quantum",
     "memories",
     "emerging",
@@ -931,7 +1377,7 @@
     "recent",
     "advances"
   ],
-  "data/citations/article/b9d6997b-8773-4557-858c-9eb6e27ed074.yaml": [
+  "data/library.bib::b9d6997b-8773-4557-858c-9eb6e27ed074": [
     "hustler",
     "magazine",
     "inc",
@@ -940,7 +1386,15 @@
     "us",
     "46"
   ],
-  "data/citations/article/c1adcf2a-6622-4214-8e84-ed09a276a38e.yaml": [
+  "data/library.bib::bdc4a446-8130-45f2-9f9b-c93c899430e2": [
+    "schnorr",
+    "non",
+    "interactive",
+    "zero",
+    "knowledge",
+    "proof"
+  ],
+  "data/library.bib::c1adcf2a-6622-4214-8e84-ed09a276a38e": [
     "dual",
     "comb",
     "on",
@@ -950,7 +1404,7 @@
     "optical",
     "clocks"
   ],
-  "data/citations/article/c2a20b3d-48d8-4090-80ec-0f22af310f16.yaml": [
+  "data/library.bib::c2a20b3d-48d8-4090-80ec-0f22af310f16": [
     "testing",
     "the",
     "speed",
@@ -960,11 +1414,15 @@
     "at",
     "distance"
   ],
-  "data/citations/article/c2db1c85-d180-4f41-a51d-2bf5ffaa4f22.yaml": [
+  "data/library.bib::c2db1c85-d180-4f41-a51d-2bf5ffaa4f22": [
     "iot",
     "passport"
   ],
-  "data/citations/article/c3dc778f-d94c-4ccb-a40b-9581ff90a5d5.yaml": [
+  "data/library.bib::c34d6ac2-1c48-403e-95db-e788fb54040d": [
+    "computer",
+    "graphics"
+  ],
+  "data/library.bib::c3dc778f-d94c-4ccb-a40b-9581ff90a5d5": [
     "securing",
     "digital",
     "identity",
@@ -982,7 +1440,7 @@
     "factor",
     "authentication"
   ],
-  "data/citations/article/c6b7e9f2-2362-4285-a608-a7366fa608dc.yaml": [
+  "data/library.bib::c6b7e9f2-2362-4285-a608-a7366fa608dc": [
     "microsoft",
     "just",
     "delivered",
@@ -1000,11 +1458,45 @@
     "motley",
     "fool"
   ],
-  "data/citations/article/cd7ba492-08ea-426d-8d2d-ad8490e8a0f1.yaml": [
+  "data/library.bib::c86c3635-0979-4562-af9b-7473fcc6b4a5": [
+    "design",
+    "and",
+    "interfacing",
+    "of",
+    "the",
+    "ibm",
+    "pc",
+    "ps",
+    "and",
+    "compatible"
+  ],
+  "data/library.bib::cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3": [
+    "pyquil",
+    "docs",
+    "rigetti",
+    "com"
+  ],
+  "data/library.bib::cc5db021-ca3c-4166-b478-097033b5d857": [
+    "star",
+    "wars",
+    "episode",
+    "vi",
+    "return",
+    "of",
+    "the",
+    "jedi"
+  ],
+  "data/library.bib::cd7ba492-08ea-426d-8d2d-ad8490e8a0f1": [
     "microsoft",
     "com"
   ],
-  "data/citations/article/cf4a0a7c-f80b-4455-91c4-6871954c8505.yaml": [
+  "data/library.bib::cd9daf1d-1623-4a2f-a00a-0aeb506c54aa": [
+    "introduction",
+    "to",
+    "algorithms"
+  ],
+  "data/library.bib::cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc": [],
+  "data/library.bib::cf4a0a7c-f80b-4455-91c4-6871954c8505": [
     "sha",
     "standard",
     "permutation",
@@ -1015,7 +1507,7 @@
     "output",
     "functions"
   ],
-  "data/citations/article/cf4f8a00-a66d-4d12-b5ad-1926421a9c63.yaml": [
+  "data/library.bib::cf4f8a00-a66d-4d12-b5ad-1926421a9c63": [
     "is",
     "an",
     "expanded",
@@ -1038,7 +1530,14 @@
     "way",
     "baby"
   ],
-  "data/citations/article/d1f706ac-3fc1-4eaa-a27f-4912e08dced3.yaml": [
+  "data/library.bib::d11a9cb5-6fb6-4216-9604-a3c551f67a5f": [
+    "what",
+    "is",
+    "the",
+    "osi",
+    "model"
+  ],
+  "data/library.bib::d1f706ac-3fc1-4eaa-a27f-4912e08dced3": [
     "experimental",
     "realization",
     "of",
@@ -1057,13 +1556,17 @@
     "rosen",
     "channels"
   ],
-  "data/citations/article/d26f27b7-2171-46c5-8fc7-da44f0dd9e0c.yaml": [
+  "data/library.bib::d26f27b7-2171-46c5-8fc7-da44f0dd9e0c": [
     "do",
     "you",
     "feel",
     "chill"
   ],
-  "data/citations/article/d4a1ef86-a55e-4d3b-8482-4231e2c612d6.yaml": [
+  "data/library.bib::d2841ebf-eec0-4560-9978-30d748318122": [
+    "red",
+    "mafiya"
+  ],
+  "data/library.bib::d4a1ef86-a55e-4d3b-8482-4231e2c612d6": [
     "opportunities",
     "and",
     "challenges",
@@ -1073,11 +1576,31 @@
     "quantum",
     "computation"
   ],
-  "data/citations/article/d84e5a5a-ca3c-46c7-a5ee-bb2dc9af2b2f.yaml": [
+  "data/library.bib::d6d4ce76-5af2-43c3-9915-4d2306e7ed71": [
+    "quantum",
+    "computing"
+  ],
+  "data/library.bib::d84e5a5a-ca3c-46c7-a5ee-bb2dc9af2b2f": [
     "intro",
     "i2p"
   ],
-  "data/citations/article/dadb27dc-ced4-439f-bbcf-81e9ecccb2d1.yaml": [
+  "data/library.bib::d905da90-867b-44f7-812b-39507bbd1e53": [
+    "the",
+    "programming",
+    "language"
+  ],
+  "data/library.bib::d9b611ce-0b34-4efd-9932-add409fea46b": [
+    "us",
+    "11036474",
+    "b2",
+    "automating",
+    "service",
+    "maturity",
+    "analysis",
+    "and",
+    "estimation"
+  ],
+  "data/library.bib::dadb27dc-ced4-439f-bbcf-81e9ecccb2d1": [
     "the",
     "untold",
     "story",
@@ -1089,12 +1612,21 @@
     "hack",
     "ever"
   ],
-  "data/citations/article/dcb983a2-f691-451d-8bbd-cb943a8152bc.yaml": [
+  "data/library.bib::dcb983a2-f691-451d-8bbd-cb943a8152bc": [
     "docs",
     "sentinel",
     "co"
   ],
-  "data/citations/article/dd70852a-773d-4db4-84ae-00b6b87cf966.yaml": [
+  "data/library.bib::dccbb75a-cfdb-481c-9300-1d472c0a0dc8": [
+    "ach",
+    "file",
+    "overview",
+    "ach",
+    "guide",
+    "for",
+    "developers"
+  ],
+  "data/library.bib::dd70852a-773d-4db4-84ae-00b6b87cf966": [
     "the",
     "hierarchy",
     "problem",
@@ -1104,7 +1636,7 @@
     "at",
     "millimeter"
   ],
-  "data/citations/article/df88f09e-08bd-4f80-bee6-b204c16600fa.yaml": [
+  "data/library.bib::df88f09e-08bd-4f80-bee6-b204c16600fa": [
     "how",
     "anonymous",
     "is",
@@ -1117,11 +1649,11 @@
     "box",
     "investigation"
   ],
-  "data/citations/article/e1a0a9e7-81ef-49c1-8c0f-62347fb2b5a9.yaml": [
+  "data/library.bib::e1a0a9e7-81ef-49c1-8c0f-62347fb2b5a9": [
     "arxiv",
     "org"
   ],
-  "data/citations/article/e66bc34d-3f47-4511-be59-e02ab2ce0c56.yaml": [
+  "data/library.bib::e66bc34d-3f47-4511-be59-e02ab2ce0c56": [
     "april",
     "24",
     "brute",
@@ -1134,7 +1666,7 @@
     "openvpn",
     "blog"
   ],
-  "data/citations/article/e6aeb2e3-30be-4eae-8a5c-0a41457b829e.yaml": [
+  "data/library.bib::e6aeb2e3-30be-4eae-8a5c-0a41457b829e": [
     "carbon",
     "defect",
     "qubit",
@@ -1143,7 +1675,7 @@
     "dimensional",
     "ws2"
   ],
-  "data/citations/article/e7eb7132-a69a-4994-89df-a020cd186c48.yaml": [
+  "data/library.bib::e7eb7132-a69a-4994-89df-a020cd186c48": [
     "approximate",
     "amplitude",
     "encoding",
@@ -1160,7 +1692,7 @@
     "market",
     "indicators"
   ],
-  "data/citations/article/e90feee0-69ee-4691-98fa-07d7feb4c3e3.yaml": [
+  "data/library.bib::e90feee0-69ee-4691-98fa-07d7feb4c3e3": [
     "enjoy",
     "your",
     "observability",
@@ -1173,14 +1705,14 @@
     "and",
     "analysis"
   ],
-  "data/citations/article/ea678ce9-6c04-4a8e-bd85-1fddfac0ff37.yaml": [
+  "data/library.bib::ea678ce9-6c04-4a8e-bd85-1fddfac0ff37": [
     "quantum",
     "teleportation",
     "across",
     "the",
     "danube"
   ],
-  "data/citations/article/ec872efd-9aa3-4b48-b2c4-d66f90b857de.yaml": [
+  "data/library.bib::ec872efd-9aa3-4b48-b2c4-d66f90b857de": [
     "fast",
     "quantum",
     "mechanical",
@@ -1189,7 +1721,7 @@
     "database",
     "search"
   ],
-  "data/citations/article/f0778a64-21ac-4713-a29f-cefcec1d062e.yaml": [
+  "data/library.bib::f0778a64-21ac-4713-a29f-cefcec1d062e": [
     "end",
     "to",
     "end",
@@ -1198,552 +1730,36 @@
     "system",
     "design"
   ],
-  "data/citations/article/f1d9c83a-aa87-4caf-93c5-901ee8789d30.yaml": [
+  "data/library.bib::f1d9c83a-aa87-4caf-93c5-901ee8789d30": [
     "is",
     "instantaneous",
     "quantum",
     "internet",
     "possible"
   ],
-  "data/citations/article/f4436653-f896-4029-b1c8-f896f6f9e2b4.yaml": [
-    "the",
-    "tail",
-    "at",
-    "scale"
+  "data/library.bib::f332c7cd-731e-4bbe-b041-db29f243e3e5": [
+    "www",
+    "researchgate",
+    "net"
   ],
-  "data/citations/article/f52515c5-66d9-4f41-aefb-03389a2016c0.yaml": [
-    "tor",
-    "does",
-    "not",
-    "stink",
-    "use",
-    "and",
-    "abuse",
-    "of",
-    "the",
-    "tor",
-    "anonymity",
-    "network",
-    "from",
-    "the",
-    "perspective",
-    "of",
-    "law"
-  ],
-  "data/citations/article/f9e2d5b7-5a2e-4ac3-964d-198ad2a54067.yaml": [
-    "hybrid",
-    "quantum",
-    "computing",
-    "pipeline",
-    "for",
-    "real",
-    "world",
-    "drug",
-    "discovery"
-  ],
-  "data/citations/article/fa8c76c2-427b-4c4c-8a45-ee927470e937.yaml": [
-    "proof",
-    "for",
-    "the",
-    "queuing",
-    "formula"
-  ],
-  "data/citations/article/fd7c591f-18e3-4bcc-9bc1-5ef4377df71e.yaml": [
-    "assigning",
-    "trust",
-    "to",
-    "devices",
-    "in",
-    "the",
-    "context",
-    "of",
-    "consumer",
-    "iot",
-    "applications"
-  ],
-  "data/citations/books/08efe6bc-4ea2-4db6-b5fa-9181499e515d.yaml": [
-    "threat",
-    "modeling"
-  ],
-  "data/citations/books/12bfb153-4cce-40cf-b3f4-8c27ab8717ce.yaml": [
-    "the",
-    "decline",
-    "and",
-    "fall",
-    "of",
-    "the",
-    "roman",
-    "empire"
-  ],
-  "data/citations/books/17689904-88a8-4401-859a-a40f6ddd9f13.yaml": [
-    "veil"
-  ],
-  "data/citations/books/2eeed000-bb01-440b-849e-ab9a78970cff.yaml": [
-    "the",
-    "essential",
-    "turing"
-  ],
-  "data/citations/books/415a4e38-cfe6-4897-85dc-352560ee72f7.yaml": [
-    "build",
-    "large",
-    "language",
-    "model",
-    "from",
-    "scratch"
-  ],
-  "data/citations/books/42c4604e-3182-45c4-b846-c54bae51cf5a.yaml": [
-    "tracers",
-    "in",
-    "the",
-    "dark"
-  ],
-  "data/citations/books/44981aa9-30b3-41c1-b160-bd4408ba9ef5.yaml": [
-    "quantum",
-    "computation",
-    "and",
-    "quantum",
-    "information",
-    "10",
-    "ed"
-  ],
-  "data/citations/books/4a0029b9-6bc9-40ef-85ab-e2e6f55b6db6.yaml": [
-    "mathematics",
-    "of",
-    "quantum",
-    "computing"
-  ],
-  "data/citations/books/4b31c75f-276a-4516-93ab-3e2663e7d661.yaml": [
-    "programming",
-    "erlang",
-    "software",
-    "for",
-    "concurrent",
-    "world",
-    "pragmatic",
-    "programmers"
-  ],
-  "data/citations/books/4e598b3a-e2a8-4132-8152-3c2c0f63fe75.yaml": [
-    "object",
-    "oriented",
-    "programming",
-    "with",
-    "turbo"
-  ],
-  "data/citations/books/572f10d4-8a4a-48d0-8689-bc71353aee31.yaml": [
-    "hacking",
-    "the",
-    "art",
-    "of",
-    "exploration"
-  ],
-  "data/citations/books/5a38ddf9-dfcd-4fa5-8470-cc483445783d.yaml": [
-    "practical",
-    "binary",
-    "analysis"
-  ],
-  "data/citations/books/5e079a0d-f103-4ecb-9c9f-e687f81569bb.yaml": [
-    "mastering",
-    "cuda",
-    "programming",
-    "with"
-  ],
-  "data/citations/books/60817ec7-f418-4ab6-bc3e-61cf4a752e4d.yaml": [
-    "light",
-    "emitting",
-    "diodes",
-    "2nd",
-    "edition",
-    "2006"
-  ],
-  "data/citations/books/6a3bc167-f146-4ee5-bd9d-15545956106a.yaml": [
-    "mips",
-    "assembly",
-    "language",
-    "programming"
-  ],
-  "data/citations/books/6e831057-f239-4573-abf3-39b3f725e903.yaml": [
-    "the",
-    "fractal",
-    "geometry",
-    "of",
-    "nature"
-  ],
-  "data/citations/books/863ef3d1-57ca-40b1-853a-0a089fafa19b.yaml": [
-    "programmer",
-    "reference"
-  ],
-  "data/citations/books/90cdd966-79c0-47a4-a26c-fdc4b85f7a14.yaml": [
-    "the",
-    "character",
-    "of",
-    "physical",
-    "law"
-  ],
-  "data/citations/books/967d4dba-5d58-44f6-909f-dadefbea226c.yaml": [
-    "practical",
-    "foundations",
-    "for",
-    "programming",
-    "languages"
-  ],
-  "data/citations/books/9f9cce7f-5c9a-46d3-bc5e-a81b82abf1b5.yaml": [
-    "story",
-    "of",
-    "technology"
-  ],
-  "data/citations/books/aeaee977-0e60-4cad-b54e-dd3d30c16a77.yaml": [
-    "through",
-    "the",
-    "eyes",
-    "of",
-    "the",
-    "enemy"
-  ],
-  "data/citations/books/c34d6ac2-1c48-403e-95db-e788fb54040d.yaml": [
-    "computer",
-    "graphics"
-  ],
-  "data/citations/books/c86c3635-0979-4562-af9b-7473fcc6b4a5.yaml": [
-    "design",
-    "and",
-    "interfacing",
-    "of",
-    "the",
-    "ibm",
-    "pc",
-    "ps",
-    "and",
-    "compatible"
-  ],
-  "data/citations/books/cd9daf1d-1623-4a2f-a00a-0aeb506c54aa.yaml": [
-    "introduction",
-    "to",
-    "algorithms"
-  ],
-  "data/citations/books/cdc75a95-4fbf-4cd3-a2ef-17d31cecf0fc.yaml": [],
-  "data/citations/books/d2841ebf-eec0-4560-9978-30d748318122.yaml": [
-    "red",
-    "mafiya"
-  ],
-  "data/citations/books/d6d4ce76-5af2-43c3-9915-4d2306e7ed71.yaml": [
-    "quantum",
-    "computing"
-  ],
-  "data/citations/books/d905da90-867b-44f7-812b-39507bbd1e53.yaml": [
-    "the",
-    "programming",
-    "language"
-  ],
-  "data/citations/books/f366773e-3e9a-4403-bfd0-63236f01dfa7.yaml": [
+  "data/library.bib::f366773e-3e9a-4403-bfd0-63236f01dfa7": [
     "compilers",
     "principles",
     "techniques",
     "and",
     "tools"
   ],
-  "data/citations/books/fdceb7f2-824f-4e4d-80ce-b886dde17912.yaml": [
-    "programming",
-    "language",
-    "pragmatics"
-  ],
-  "data/citations/books/ff7487b2-ca24-459c-8196-4bfbe3089a88.yaml": [
-    "this",
-    "machine",
-    "kills",
-    "secrets"
-  ],
-  "data/citations/books/fff82416-b503-4650-94fb-aa5ddeaa6b26.yaml": [
-    "xml",
-    "in",
-    "record",
-    "time"
-  ],
-  "data/citations/movie/1b1a8557-7668-4e65-b059-86d6079c9d62.yaml": [
-    "star",
-    "wars",
-    "episode",
-    "iii",
-    "revenge",
-    "of",
-    "the",
-    "sith"
-  ],
-  "data/citations/movie/36b2bea8-9e8d-4426-8de2-8efb70831451.yaml": [
-    "star",
-    "wars",
-    "episode",
-    "the",
-    "empire",
-    "strikes",
-    "back"
-  ],
-  "data/citations/movie/4cc5310f-4c13-4638-876b-a7ff022cbba8.yaml": [
-    "star",
-    "wars",
-    "episode",
-    "ii",
-    "attack",
-    "of",
-    "the",
-    "clones"
-  ],
-  "data/citations/movie/541f2290-7caf-46e3-b4f4-99a466622645.yaml": [
-    "star",
-    "wars",
-    "episode",
-    "iv",
-    "new",
-    "hope"
-  ],
-  "data/citations/movie/62f887c5-a213-4bf7-bf10-3978c659b5eb.yaml": [
-    "the",
-    "hitchhiker",
-    "guide",
-    "to",
-    "the",
-    "galaxy"
-  ],
-  "data/citations/movie/75948b61-97aa-49b5-9e05-4ae735ec6d1a.yaml": [
-    "star",
-    "wars",
-    "episode",
-    "the",
-    "phantom",
-    "menace"
-  ],
-  "data/citations/movie/81d5aeb4-c214-4eaf-ade2-01387950b1a3.yaml": [
-    "12",
-    "angry",
-    "men"
-  ],
-  "data/citations/movie/90d3f658-4a0c-4f63-b959-b03b30b63147.yaml": [
-    "charlie",
-    "wilson",
-    "war"
-  ],
-  "data/citations/movie/a39e1267-666c-4436-b791-1a497771fc3c.yaml": [
-    "office",
-    "space"
-  ],
-  "data/citations/movie/b4f94d3f-2057-4a8e-9fa3-e70181b5ebbb.yaml": [
-    "war",
-    "games"
-  ],
-  "data/citations/movie/cc5db021-ca3c-4166-b478-097033b5d857.yaml": [
-    "star",
-    "wars",
-    "episode",
-    "vi",
-    "return",
-    "of",
-    "the",
-    "jedi"
-  ],
-  "data/citations/patent/d9b611ce-0b34-4efd-9932-add409fea46b.yaml": [
-    "us",
-    "11036474",
-    "b2",
-    "automating",
-    "service",
-    "maturity",
-    "analysis",
-    "and",
-    "estimation"
-  ],
-  "data/citations/rfc/17e0dfcc-786a-4195-8493-4eeae3357973.yaml": [
-    "traversal",
-    "using",
-    "relays",
-    "around",
-    "nat",
-    "turn",
-    "relay",
-    "extensions",
-    "to",
-    "session",
-    "traversal",
-    "utilities",
-    "for",
-    "nat",
-    "stun"
-  ],
-  "data/citations/rfc/2a3d66f2-f793-423d-b249-e8e9af6a9d1c.yaml": [
-    "session",
-    "traversal",
-    "utilities",
-    "for",
-    "nat",
-    "stun"
-  ],
-  "data/citations/rfc/36a62b8e-548c-49c6-a059-11fb88c0eb5b.yaml": [
-    "internet",
-    "official",
-    "protocol",
-    "standards"
-  ],
-  "data/citations/rfc/72ebd6ae-5993-4a7a-b998-6b3f838bc588.yaml": [
-    "the",
-    "md5",
-    "message",
-    "digest",
-    "algorithm"
-  ],
-  "data/citations/rfc/8d59acfd-256d-4211-a1b0-34e2253ac81f.yaml": [
-    "the",
-    "syslog",
-    "protocol"
-  ],
-  "data/citations/rfc/bdc4a446-8130-45f2-9f9b-c93c899430e2.yaml": [
-    "schnorr",
-    "non",
-    "interactive",
-    "zero",
-    "knowledge",
-    "proof"
-  ],
-  "data/citations/site/1200e846-4ba8-4d32-b04f-3538c1cc5567.yaml": [
-    "msr",
-    "tr",
-    "2020",
-    "41",
-    "the",
-    "seven",
-    "properties",
-    "of",
-    "highly",
-    "secured",
-    "devices",
-    "2nd",
-    "edition"
-  ],
-  "data/citations/site/18f6e983-a055-499c-8a9a-990fa2be1d9f.yaml": [
-    "github",
-    "com"
-  ],
-  "data/citations/site/1e811a19-30a1-4624-a8fb-853504b68c19.yaml": [
-    "research",
-    "cs",
-    "wisc",
-    "edu"
-  ],
-  "data/citations/site/1ff7df86-ec70-48aa-a4ae-07fbd16da1d5.yaml": [
-    "media",
-    "vw",
-    "com"
-  ],
-  "data/citations/site/22b0d431-fbf0-41e0-bcd8-42b2b27a1f00.yaml": [
-    "klossner",
-    "cartoons"
-  ],
-  "data/citations/site/299dfc27-b5bb-4726-a802-5fa1382109ba.yaml": [
-    "csrc",
-    "nist",
-    "gov"
-  ],
-  "data/citations/site/29c72214-a927-485f-bfa3-f3aaa8b3628d.yaml": [
-    "docs",
-    "rigetti",
-    "com"
-  ],
-  "data/citations/site/3513ba6f-05de-4db4-a6f8-76d125acc9c8.yaml": [
-    "json"
-  ],
-  "data/citations/site/3730a604-aed8-4c95-a5b5-dda895fa7796.yaml": [
-    "the",
-    "pace",
-    "of",
-    "modern",
-    "life"
-  ],
-  "data/citations/site/5461a732-592a-4ab5-8972-d29a95eb0fdf.yaml": [
-    "static",
-    "wikia",
-    "nocookie",
-    "net"
-  ],
-  "data/citations/site/5ea18ce5-43dc-491f-b71d-bd7d9a8e7868.yaml": [
-    "github",
-    "com"
-  ],
-  "data/citations/site/64f979ba-acfe-4b54-9e65-32d9c5117e82.yaml": [
-    "www",
-    "chainalysis",
-    "com"
-  ],
-  "data/citations/site/6d5c1a76-f4c3-4d4a-95de-ec9349e2864d.yaml": [
-    "python",
-    "enumerations"
-  ],
-  "data/citations/site/7557ddb1-7ed1-46a0-be88-4d4a9f7aefba.yaml": [
-    "aws",
-    "amazon",
-    "com"
-  ],
-  "data/citations/site/9f7a048c-ca31-4b01-8805-e45d4266b484.yaml": [
-    "recommendation",
-    "for",
-    "applications",
-    "using",
-    "approved",
-    "hash",
-    "algorithms"
-  ],
-  "data/citations/site/a7440c70-24a6-498f-96bd-561f5287304b.yaml": [
-    "www",
-    "nsa",
-    "gov"
-  ],
-  "data/citations/site/ac0ed5a1-9bee-4fa1-84f7-3f19eb57cbdc.yaml": [
-    "chapter",
-    "boost",
-    "json",
-    "84"
-  ],
-  "data/citations/site/b6fed969-6b4c-4ecf-94e3-ee8b2fb48deb.yaml": [
-    "developer",
-    "nvidia",
-    "com",
-    "cuda",
-    "toolkit"
-  ],
-  "data/citations/site/b77e9da9-f032-41f6-a1f6-99a4dabcfabc.yaml": [
-    "go",
-    "by",
-    "example",
-    "enums"
-  ],
-  "data/citations/site/cbf4b5c7-08a8-4ad0-a393-3a98580eb4a3.yaml": [
-    "pyquil",
-    "docs",
-    "rigetti",
-    "com"
-  ],
-  "data/citations/site/d11a9cb5-6fb6-4216-9604-a3c551f67a5f.yaml": [
-    "what",
-    "is",
-    "the",
-    "osi",
-    "model"
-  ],
-  "data/citations/site/dccbb75a-cfdb-481c-9300-1d472c0a0dc8.yaml": [
-    "ach",
-    "file",
-    "overview",
-    "ach",
-    "guide",
-    "for",
-    "developers"
-  ],
-  "data/citations/site/f332c7cd-731e-4bbe-b041-db29f243e3e5.yaml": [
-    "www",
-    "researchgate",
-    "net"
-  ],
-  "data/citations/site/f3f63fb5-9662-4e93-b899-5104d09a23ed.yaml": [
+  "data/library.bib::f3f63fb5-9662-4e93-b899-5104d09a23ed": [
     "yaml",
     "org"
   ],
-  "data/citations/site/f5236ac6-78b1-4e9b-be3a-6050bfe35d0e.yaml": [
+  "data/library.bib::f4436653-f896-4029-b1c8-f896f6f9e2b4": [
+    "the",
+    "tail",
+    "at",
+    "scale"
+  ],
+  "data/library.bib::f5236ac6-78b1-4e9b-be3a-6050bfe35d0e": [
     "ich",
     "ectd",
     "specification",
@@ -1770,70 +1786,74 @@
     "document",
     "specification"
   ],
-  "data/citations/song/21e15d4d-5d0d-4924-ae1a-6be7fc933405.yaml": [
+  "data/library.bib::f52515c5-66d9-4f41-aefb-03389a2016c0": [
+    "tor",
+    "does",
+    "not",
+    "stink",
+    "use",
+    "and",
+    "abuse",
+    "of",
     "the",
-    "road",
-    "goes",
-    "on",
-    "forever"
-  ],
-  "data/citations/song/6e26fb2d-bfc0-4056-8867-f7c08cfabd13.yaml": [
-    "fix",
-    "you"
-  ],
-  "data/citations/song/97250d9b-b9e9-4d59-b931-903700a0f132.yaml": [
-    "all",
+    "tor",
+    "anonymity",
+    "network",
+    "from",
     "the",
-    "things"
+    "perspective",
+    "of",
+    "law"
   ],
-  "data/citations/song/97643f8e-ce20-4627-81ec-55d23efc60d8.yaml": [
-    "physical"
+  "data/library.bib::f9e2d5b7-5a2e-4ac3-964d-198ad2a54067": [
+    "hybrid",
+    "quantum",
+    "computing",
+    "pipeline",
+    "for",
+    "real",
+    "world",
+    "drug",
+    "discovery"
   ],
-  "data/citations/song/b3b2c235-6b8b-470d-9465-6a4a877f56fa.yaml": [
+  "data/library.bib::fa8c76c2-427b-4c4c-8a45-ee927470e937": [
+    "proof",
+    "for",
     "the",
-    "devil",
-    "right",
-    "hand"
+    "queuing",
+    "formula"
   ],
-  "data/citations/video/6393932c-1edd-4da2-b11f-efc92905a7f5.yaml": [
-    "host",
-    "unknown",
-    "presents",
-    "accepted",
-    "the",
-    "risk"
-  ],
-  "data/citations/video/754c900d-ebc4-4f86-841d-4bc26a361c2c.yaml": [
-    "aws",
-    "re",
-    "invent",
-    "2016",
-    "case",
-    "study",
-    "how",
-    "atlassian",
-    "uses",
-    "amazon",
-    "efs",
-    "with",
-    "jira",
+  "data/library.bib::fd7c591f-18e3-4bcc-9bc1-5ef4377df71e": [
+    "assigning",
+    "trust",
     "to",
-    "cut",
-    "costs",
-    "stg207"
-  ],
-  "data/citations/video/8d030176-29f0-4f22-b07f-6ba8707812e7.yaml": [
-    "jon",
-    "stewart",
-    "nick",
-    "gillespie",
-    "on",
-    "trump",
-    "freedom",
-    "bob",
-    "dylan",
+    "devices",
+    "in",
     "the",
-    "weekly",
-    "show"
+    "context",
+    "of",
+    "consumer",
+    "iot",
+    "applications"
+  ],
+  "data/library.bib::fdceb7f2-824f-4e4d-80ce-b886dde17912": [
+    "programming",
+    "language",
+    "pragmatics"
+  ],
+  "data/library.bib::fe797e30-53ef-4208-af4b-4639ed3f8661": [
+    "rust"
+  ],
+  "data/library.bib::ff7487b2-ca24-459c-8196-4bfbe3089a88": [
+    "this",
+    "machine",
+    "kills",
+    "secrets"
+  ],
+  "data/library.bib::fff82416-b503-4650-94fb-aa5ddeaa6b26": [
+    "xml",
+    "in",
+    "record",
+    "time"
   ]
 }
