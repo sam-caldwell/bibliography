@@ -1,0 +1,15 @@
+id: bd6fc690-3df5-4869-b9b0-f3e1c8157764
+type: book
+apa7:
+    authors:
+        - family: Doe
+          given: Jane
+    year: 2002
+    title: TT
+    publisher: P
+    url: https://openlibrary.org/works/OL1W
+    accessed: "2025-10-23"
+annotation:
+    summary: Bibliographic record for TT from OpenLibrary search.
+    keywords:
+        - book
