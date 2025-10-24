@@ -1,12 +1,14 @@
 package store
 
 import (
-	"bytes"
-	"fmt"
-	"os"
-	"path/filepath"
-	"sort"
-	"strings"
+    "bytes"
+    "fmt"
+    "os/exec"
+    "os"
+    "path/filepath"
+    "sort"
+    "strings"
+    "time"
 
 	"bibliography/src/internal/schema"
 )
@@ -79,14 +81,15 @@ func ExportYAMLToBib(target string) error {
 func entryToBibTeX(e schema.Entry) string {
 	typ := bibTypeFor(e.Type)
 	key := bibKeyFor(e)
-	// field helpers
-	w := func(k, v string) string {
-		v = strings.TrimSpace(v)
-		if v == "" {
-			return ""
-		}
-		return fmt.Sprintf("  %s = {%s},\n", k, escapeBib(v))
-	}
+    // field helpers
+    w := func(k, v string) string {
+        v = strings.TrimSpace(v)
+        if v == "" {
+            return ""
+        }
+        return fmt.Sprintf("  %s = {%s},\n", k, escapeBib(v))
+    }
+    wEmpty := func(k, v string) string { return fmt.Sprintf("  %s = {%s},\n", k, escapeBib(v)) }
 	// Authors
 	authors := formatAuthors(e.APA7.Authors)
 	year := ""
@@ -143,9 +146,17 @@ func entryToBibTeX(e schema.Entry) string {
 	if len(e.Annotation.Keywords) > 0 {
 		b.WriteString(w("keywords", strings.Join(e.Annotation.Keywords, ", ")))
 	}
-	// Always include our UUID and original type for traceability/round-trip
-	b.WriteString(w("_id", e.ID))
-	b.WriteString(w("_type", e.Type))
+    // Always include our UUID and original type for traceability/round-trip
+    b.WriteString(w("_id", e.ID))
+    b.WriteString(w("_type", e.Type))
+    // Metadata
+    now := nowISO()
+    b.WriteString(w("created", now))
+    b.WriteString(w("modified", now))
+    b.WriteString(w("source", currentWriteSource()))
+    b.WriteString(w("verified", "false"))
+    // verified_by must be present but empty when not verified
+    b.WriteString(wEmpty("verified_by", ""))
 	// Close record; remove trailing comma if present
 	out := b.String()
 	out = strings.TrimRight(out, "\n")
@@ -252,8 +263,34 @@ func UpdateBibEntry(e schema.Entry) error {
 	if !found {
 		records = append(records, rec)
 	}
-	// Deterministic order
-	sort.Slice(records, func(i, j int) bool {
+    // Ensure metadata fields
+    now := nowISO()
+    idLower := strings.ToLower(id)
+    src := currentWriteSource()
+    for i := range records {
+        r := &records[i]
+        if strings.TrimSpace(r.fields["created"]) == "" { r.fields["created"] = now }
+        // Ensure verified fields exist
+        vstr := strings.ToLower(strings.TrimSpace(r.fields["verified"]))
+        if vstr == "" { vstr = "false" }
+        r.fields["verified"] = vstr
+        if vstr == "true" {
+            if strings.TrimSpace(r.fields["verified_by"]) == "" { r.fields["verified_by"] = gitUserName() }
+        } else {
+            // must be present but empty when not verified
+            r.fields["verified_by"] = ""
+        }
+        if strings.ToLower(strings.TrimSpace(r.fields["_id"])) == idLower {
+            r.fields["modified"] = now
+            if strings.TrimSpace(src) != "" { r.fields["source"] = src }
+            if strings.TrimSpace(r.fields["modified"]) == "" { r.fields["modified"] = now }
+        } else {
+            if strings.TrimSpace(r.fields["modified"]) == "" { r.fields["modified"] = now }
+            if strings.TrimSpace(r.fields["source"]) == "" { r.fields["source"] = "manual" }
+        }
+    }
+    // Deterministic order
+    sort.Slice(records, func(i, j int) bool {
 		if records[i].typ != records[j].typ {
 			return records[i].typ < records[j].typ
 		}
@@ -349,40 +386,76 @@ func entryToRecord(e schema.Entry) bibRecord {
 	return bibRecord{typ: bibTypeFor(e.Type), key: bibKeyFor(e), fields: m}
 }
 
+var lineWrap = 120
+
 func renderRecord(r bibRecord) string {
-	var b bytes.Buffer
-	fmt.Fprintf(&b, "@%s{%s,\n", r.typ, r.key)
-	// stable field order: author, title, journal/howpublished/publisher..., then remaining sorted
-	order := []string{"author", "title", "journal", "booktitle", "howpublished", "publisher", "address", "edition", "volume", "number", "pages", "year", "doi", "isbn", "url", "abstract", "keywords", "_id", "_type"}
-	seen := map[string]bool{}
-	for _, k := range order {
-		if v, ok := r.fields[k]; ok && strings.TrimSpace(v) != "" {
-			b.WriteString(fmt.Sprintf("  %s = {%s},\n", k, escapeBib(v)))
-			seen[k] = true
-		}
-	}
-	// any extras
-	extras := make([]string, 0, len(r.fields))
-	for k := range r.fields {
-		if !seen[k] {
-			extras = append(extras, k)
-		}
-	}
-	sort.Strings(extras)
-	for _, k := range extras {
-		v := r.fields[k]
-		if strings.TrimSpace(v) != "" {
-			b.WriteString(fmt.Sprintf("  %s = {%s},\n", k, escapeBib(v)))
-		}
-	}
-	out := b.String()
-	out = strings.TrimRight(out, "\n")
-	out = strings.TrimRight(out, ",")
-	if !strings.HasSuffix(out, "\n") {
-		out += "\n"
-	}
-	out += "}\n\n"
-	return out
+    var b bytes.Buffer
+    fmt.Fprintf(&b, "@%s{%s,\n", r.typ, r.key)
+    // stable field order: author, title, journal/howpublished/publisher..., then remaining sorted
+    order := []string{"author", "title", "journal", "booktitle", "howpublished", "publisher", "address", "edition", "volume", "number", "pages", "year", "date", "doi", "isbn", "url", "abstract", "keywords", "_id", "_type", "created", "modified", "source", "verified", "verified_by"}
+    seen := map[string]bool{}
+    for _, k := range order {
+        v, ok := r.fields[k]
+        if !ok { continue }
+        if strings.TrimSpace(v) != "" || k == "verified_by" {
+            writeWrappedField(&b, k, v, lineWrap)
+            seen[k] = true
+        }
+    }
+    // any extras
+    extras := make([]string, 0, len(r.fields))
+    for k := range r.fields {
+        if !seen[k] {
+            extras = append(extras, k)
+        }
+    }
+    sort.Strings(extras)
+    for _, k := range extras {
+        v := r.fields[k]
+        if strings.TrimSpace(v) != "" || k == "verified_by" {
+            writeWrappedField(&b, k, v, lineWrap)
+        }
+    }
+    out := b.String()
+    out = strings.TrimRight(out, "\n")
+    out = strings.TrimRight(out, ",")
+    if !strings.HasSuffix(out, "\n") {
+        out += "\n"
+    }
+    out += "}\n\n"
+    return out
+}
+
+// writeWrappedField writes a BibTeX field with hard wrapping at width characters.
+// Continuation lines are indented by two spaces.
+func writeWrappedField(b *bytes.Buffer, key, val string, width int) {
+    if strings.TrimSpace(val) == "" {
+        fmt.Fprintf(b, "  %s = {},\n", key)
+        return
+    }
+    val = escapeBib(val)
+    prefix := fmt.Sprintf("  %s = {", key)
+    // remaining width for first line content
+    // width available on first line is width - prefix - closing
+    words := strings.Fields(val)
+    line := prefix
+    first := true
+    for _, w := range words {
+        add := w
+        if !first { add = " " + add }
+        if len(line)+len(add)+len("},") > width && len(line) > len(prefix) {
+            // flush line
+            fmt.Fprintln(b, line)
+            line = "    " + strings.TrimSpace(w)
+            first = false
+            continue
+        }
+        line += add
+        first = false
+    }
+    // close field
+    line += "},"
+    fmt.Fprintln(b, line)
 }
 
 func parseBib(s string) ([]bibRecord, error) {
@@ -632,4 +705,144 @@ func splitKeywords(s string) []string {
 	}
 	sort.Strings(out)
 	return out
+}
+
+// --- Metadata helpers ---
+var writeSource string = "manual"
+
+// SetWriteSource sets the write source label (e.g., "manual", "doi.org", "youtube").
+func SetWriteSource(src string) {
+    src = strings.TrimSpace(src)
+    if src == "" { src = "manual" }
+    writeSource = src
+}
+
+func currentWriteSource() string {
+    if strings.TrimSpace(writeSource) == "" { return "manual" }
+    return writeSource
+}
+
+func nowISO() string { return time.Now().UTC().Format(time.RFC3339) }
+
+func gitUserName() string {
+    cmd := exec.Command("git", "config", "--global", "user.name")
+    out, err := cmd.Output()
+    if err != nil { return "unknown" }
+    s := strings.TrimSpace(string(out))
+    if s == "" { return "unknown" }
+    return s
+}
+
+// GetGitUserName returns the configured git user.name (or "unknown").
+func GetGitUserName() string { return gitUserName() }
+
+// VerifyByID marks a record as verified=true, updates modified and verified_by.
+func VerifyByID(id string, by string) error {
+    id = strings.ToLower(strings.TrimSpace(id))
+    if id == "" { return fmt.Errorf("id is required") }
+    b, err := os.ReadFile(BibFile)
+    if err != nil { return err }
+    records, err := parseBib(string(b))
+    if err != nil { return err }
+    found := false
+    now := nowISO()
+    if strings.TrimSpace(by) == "" { by = gitUserName() }
+    for i := range records {
+        r := &records[i]
+        rid := strings.ToLower(strings.TrimSpace(r.fields["_id"]))
+        if rid == id {
+            r.fields["verified"] = "true"
+            r.fields["verified_by"] = by
+            r.fields["modified"] = now
+            if strings.TrimSpace(r.fields["created"]) == "" { r.fields["created"] = now }
+            if strings.TrimSpace(r.fields["source"]) == "" { r.fields["source"] = "manual" }
+            found = true
+            break
+        }
+    }
+    if !found { return fmt.Errorf("id not found: %s", id) }
+    sort.Slice(records, func(i, j int) bool {
+        if records[i].typ != records[j].typ { return records[i].typ < records[j].typ }
+        if records[i].fields["title"] != records[j].fields["title"] {
+            return strings.ToLower(records[i].fields["title"]) < strings.ToLower(records[j].fields["title"]) }
+        return records[i].key < records[j].key
+    })
+    var buf bytes.Buffer
+    for _, r := range records { buf.WriteString(renderRecord(r)) }
+    if err := os.MkdirAll(filepath.Dir(BibFile), 0o755); err != nil { return err }
+    return os.WriteFile(BibFile, buf.Bytes(), 0o644)
+}
+
+// UpdateSourceByID sets the 'source' field for the given id and updates modified.
+func UpdateSourceByID(id string, source string) error {
+    id = strings.ToLower(strings.TrimSpace(id))
+    if id == "" { return fmt.Errorf("id is required") }
+    b, err := os.ReadFile(BibFile)
+    if err != nil { return err }
+    records, err := parseBib(string(b))
+    if err != nil { return err }
+    now := nowISO()
+    src := strings.TrimSpace(source)
+    if src == "" { src = "manual" }
+    found := false
+    for i := range records {
+        r := &records[i]
+        rid := strings.ToLower(strings.TrimSpace(r.fields["_id"]))
+        if rid == id {
+            r.fields["source"] = src
+            r.fields["modified"] = now
+            if strings.TrimSpace(r.fields["created"]) == "" { r.fields["created"] = now }
+            found = true
+            break
+        }
+    }
+    if !found { return fmt.Errorf("id not found: %s", id) }
+    var buf bytes.Buffer
+    for _, r := range records { buf.WriteString(renderRecord(r)) }
+    if err := os.MkdirAll(filepath.Dir(BibFile), 0o755); err != nil { return err }
+    return os.WriteFile(BibFile, buf.Bytes(), 0o644)
+}
+
+// ListUnverified returns entries whose verified field is not true.
+func ListUnverified() ([]schema.Entry, error) {
+    b, err := os.ReadFile(BibFile)
+    if err != nil { return nil, err }
+    records, err := parseBib(string(b))
+    if err != nil { return nil, err }
+    var pending []bibRecord
+    for _, r := range records {
+        v := strings.ToLower(strings.TrimSpace(r.fields["verified"]))
+        if v != "true" {
+            pending = append(pending, r)
+        }
+    }
+    es := bibToEntries(pending)
+    // sort stable by title then id for display
+    sort.Slice(es, func(i, j int) bool {
+        ti := strings.ToLower(strings.TrimSpace(es[i].APA7.Title))
+        tj := strings.ToLower(strings.TrimSpace(es[j].APA7.Title))
+        if ti != tj { return ti < tj }
+        return es[i].ID < es[j].ID
+    })
+    return es, nil
+}
+
+// FormatBibLibrary rewrites the entire library with canonical ordering and wrapping.
+func FormatBibLibrary(maxWidth int) error {
+    if maxWidth > 0 { lineWrap = maxWidth }
+    b, err := os.ReadFile(BibFile)
+    if err != nil { return err }
+    records, err := parseBib(string(b))
+    if err != nil { return err }
+    sort.Slice(records, func(i, j int) bool {
+        if records[i].typ != records[j].typ { return records[i].typ < records[j].typ }
+        ti := strings.ToLower(strings.TrimSpace(records[i].fields["title"]))
+        tj := strings.ToLower(strings.TrimSpace(records[j].fields["title"]))
+        if ti != tj { return ti < tj }
+        return records[i].key < records[j].key
+    })
+    var buf bytes.Buffer
+    for _, r := range records { buf.WriteString(renderRecord(r)) }
+    if err := os.MkdirAll(filepath.Dir(BibFile), 0o755); err != nil { return err }
+    return os.WriteFile(BibFile, buf.Bytes(), 0o644)
 }
