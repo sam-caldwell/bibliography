@@ -38,6 +38,21 @@ func FetchSong(ctx context.Context, title string, artist string, date string) (s
 	return schema.Entry{}, fmt.Errorf("no song metadata provider succeeded")
 }
 
+// FetchSongWithProvider returns a song entry and provider label ("itunes" or "musicbrainz").
+func FetchSongWithProvider(ctx context.Context, title string, artist string, date string) (schema.Entry, string, error) {
+	t := strings.TrimSpace(title)
+	if t == "" {
+		return schema.Entry{}, "", fmt.Errorf("title is required")
+	}
+	if e, err := fetchFromITunes(ctx, t, artist, date); err == nil {
+		return e, "itunes", nil
+	}
+	if e, err := fetchFromMusicBrainz(ctx, t, artist, date); err == nil {
+		return e, "musicbrainz", nil
+	}
+	return schema.Entry{}, "", fmt.Errorf("no song metadata provider succeeded")
+}
+
 // fetchFromITunes queries the iTunes Search API and maps the first result to an Entry.
 func fetchFromITunes(ctx context.Context, title, artist, date string) (schema.Entry, error) {
 	term := stringsx.FirstNonEmpty(strings.TrimSpace(title+" "+artist), title)

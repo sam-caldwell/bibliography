@@ -9,19 +9,19 @@ import (
 	"os"
 	"strings"
 
-    "github.com/spf13/cobra"
+	"github.com/spf13/cobra"
 
-    "bibliography/src/internal/booksearch"
-    "bibliography/src/internal/dates"
-    "bibliography/src/internal/doi"
-    moviefetch "bibliography/src/internal/movie"
-    rfcpkg "bibliography/src/internal/rfc"
-    "bibliography/src/internal/schema"
-    songfetch "bibliography/src/internal/song"
-    "bibliography/src/internal/store"
-    "bibliography/src/internal/summarize"
-    youtube "bibliography/src/internal/video"
-    "bibliography/src/internal/webfetch"
+	"bibliography/src/internal/booksearch"
+	"bibliography/src/internal/dates"
+	"bibliography/src/internal/doi"
+	moviefetch "bibliography/src/internal/movie"
+	rfcpkg "bibliography/src/internal/rfc"
+	"bibliography/src/internal/schema"
+	songfetch "bibliography/src/internal/song"
+	"bibliography/src/internal/store"
+	"bibliography/src/internal/summarize"
+	youtube "bibliography/src/internal/video"
+	"bibliography/src/internal/webfetch"
 )
 
 type CommitFunc func(paths []string, message string) error
@@ -52,15 +52,15 @@ func (b Builder) Site() *cobra.Command {
 		Short: "Add a website by URL or prompt for manual entry",
 		Args:  cobra.ArbitraryArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
-            if len(args) >= 1 && strings.TrimSpace(args[0]) != "" {
-                store.SetWriteSource("web")
-                thisUrl := args[0]
-                return doAddWithKeywords(cmd.Context(), b.Commit, "website", map[string]string{"url": thisUrl}, parseKeywordsCSV(siteKeywords))
-            }
-            store.SetWriteSource("manual")
-            return manualAdd(cmd, b.Commit, "website", parseKeywordsCSV(siteKeywords))
-        },
-    }
+			if len(args) >= 1 && strings.TrimSpace(args[0]) != "" {
+				store.SetWriteSource("web")
+				thisUrl := args[0]
+				return doAddWithKeywords(cmd.Context(), b.Commit, "website", map[string]string{"url": thisUrl}, parseKeywordsCSV(siteKeywords))
+			}
+			store.SetWriteSource("manual")
+			return manualAdd(cmd, b.Commit, "website", parseKeywordsCSV(siteKeywords))
+		},
+	}
 	c.Flags().StringVar(&siteKeywords, "keywords", "", msgCommaDelimitedKeywords)
 	return c
 }
@@ -73,8 +73,8 @@ func (b Builder) Book() *cobra.Command {
 		Use:   "book",
 		Short: "Add a book (flags or manual entry)",
 		RunE: func(cmd *cobra.Command, args []string) error {
-            if strings.TrimSpace(bookISBN) != "" {
-                e, provider, attempts, err := booksearch.LookupBookByISBN(cmd.Context(), bookISBN)
+			if strings.TrimSpace(bookISBN) != "" {
+				e, provider, attempts, err := booksearch.LookupBookByISBN(cmd.Context(), bookISBN)
 				// Print per-provider attempt status (found/not found)
 				for _, a := range attempts {
 					status := "status: found"
@@ -85,26 +85,26 @@ func (b Builder) Book() *cobra.Command {
 						return perr
 					}
 				}
-                if err != nil {
-                    return err
-                }
-                if provider != "" {
-                    // Print provider to stdout as requested
-                    if _, perr := fmt.Fprintf(cmd.OutOrStdout(), "source: %s\n", provider); perr != nil {
-                        return perr
-                    }
-                    store.SetWriteSource(provider)
-                }
-                applyKeywordsOverride(&e, bookKeywords)
-                return b.writeCommitPrint(cmd, e)
-            }
-            if strings.TrimSpace(bookName) == "" && strings.TrimSpace(bookAuthor) == "" {
-                store.SetWriteSource("manual")
-                return manualAdd(cmd, b.Commit, "book", parseKeywordsCSV(bookKeywords))
-            }
-            // If title/author provided and lookup enabled, try online lookup chain
-            if bookLookup && strings.TrimSpace(bookISBN) == "" {
-                e, provider, attempts, err := booksearch.LookupBookByTitleAuthor(cmd.Context(), bookName, bookAuthor)
+				if err != nil {
+					return err
+				}
+				if provider != "" {
+					// Print provider to stdout as requested
+					if _, perr := fmt.Fprintf(cmd.OutOrStdout(), "source: %s\n", provider); perr != nil {
+						return perr
+					}
+					store.SetWriteSource(provider)
+				}
+				applyKeywordsOverride(&e, bookKeywords)
+				return b.writeCommitPrint(cmd, e)
+			}
+			if strings.TrimSpace(bookName) == "" && strings.TrimSpace(bookAuthor) == "" {
+				store.SetWriteSource("manual")
+				return manualAdd(cmd, b.Commit, "book", parseKeywordsCSV(bookKeywords))
+			}
+			// If title/author provided and lookup enabled, try online lookup chain
+			if bookLookup && strings.TrimSpace(bookISBN) == "" {
+				e, provider, attempts, err := booksearch.LookupBookByTitleAuthor(cmd.Context(), bookName, bookAuthor)
 				for _, a := range attempts {
 					s := "status: found"
 					if !a.Success {
@@ -114,24 +114,24 @@ func (b Builder) Book() *cobra.Command {
 						return perr
 					}
 				}
-                if err == nil {
-                    if provider != "" {
-                        if _, perr := fmt.Fprintf(cmd.OutOrStdout(), "source: %s\n", provider); perr != nil {
-                            return perr
-                        }
-                        store.SetWriteSource(provider)
-                    }
-                    applyKeywordsOverride(&e, bookKeywords)
-                    ensureTypeKeyword(&e, "book")
-                    return b.writeCommitPrint(cmd, e)
-                }
+				if err == nil {
+					if provider != "" {
+						if _, perr := fmt.Fprintf(cmd.OutOrStdout(), "source: %s\n", provider); perr != nil {
+							return perr
+						}
+						store.SetWriteSource(provider)
+					}
+					applyKeywordsOverride(&e, bookKeywords)
+					ensureTypeKeyword(&e, "book")
+					return b.writeCommitPrint(cmd, e)
+				}
 				// fall through to manual/hints if lookup failed
 			}
-            store.SetWriteSource("manual")
-            hints := hintsBook(bookName, bookAuthor, bookISBN)
-            return doAddWithKeywords(cmd.Context(), b.Commit, "book", hints, parseKeywordsCSV(bookKeywords))
-        },
-    }
+			store.SetWriteSource("manual")
+			hints := hintsBook(bookName, bookAuthor, bookISBN)
+			return doAddWithKeywords(cmd.Context(), b.Commit, "book", hints, parseKeywordsCSV(bookKeywords))
+		},
+	}
 	c.Flags().StringVar(&bookName, "name", "", "Book title")
 	c.Flags().StringVar(&bookAuthor, "author", "", "Author (Family, Given)")
 	c.Flags().StringVar(&bookISBN, "isbn", "", "ISBN")
@@ -148,22 +148,22 @@ func (b Builder) Movie() *cobra.Command {
 		Short: "Add a movie (name or manual entry)",
 		Args:  cobra.ArbitraryArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
-            if len(args) > 0 {
-                title := strings.Join(args, " ")
-                if e, ok := getMovieEntry(cmd.Context(), title, movieDate); ok {
-                    // provider unknown; default to manual for now
-                    store.SetWriteSource("manual")
-                    applyKeywordsOverride(&e, movieKeywords)
-                    ensureTypeKeyword(&e, "movie")
-                    return b.writeCommitPrint(cmd, e)
-                }
-                store.SetWriteSource("manual")
-                return doAddWithKeywords(cmd.Context(), b.Commit, "movie", hintsMovie(title, movieDate), parseKeywordsCSV(movieKeywords))
-            }
-            store.SetWriteSource("manual")
-            return manualAdd(cmd, b.Commit, "movie", parseKeywordsCSV(movieKeywords))
-        },
-    }
+			if len(args) > 0 {
+				title := strings.Join(args, " ")
+				if e, ok := getMovieEntry(cmd.Context(), title, movieDate); ok {
+					// provider unknown; default to manual for now
+					store.SetWriteSource("manual")
+					applyKeywordsOverride(&e, movieKeywords)
+					ensureTypeKeyword(&e, "movie")
+					return b.writeCommitPrint(cmd, e)
+				}
+				store.SetWriteSource("manual")
+				return doAddWithKeywords(cmd.Context(), b.Commit, "movie", hintsMovie(title, movieDate), parseKeywordsCSV(movieKeywords))
+			}
+			store.SetWriteSource("manual")
+			return manualAdd(cmd, b.Commit, "movie", parseKeywordsCSV(movieKeywords))
+		},
+	}
 	c.Flags().StringVar(&movieDate, "date", "", "release date YYYY-MM-DD")
 	c.Flags().StringVar(&movieKeywords, "keywords", "", msgCommaDelimitedKeywords)
 	return c
@@ -177,21 +177,21 @@ func (b Builder) Song() *cobra.Command {
 		Short: "Add a song (title/artist or manual entry)",
 		Args:  cobra.ArbitraryArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
-            if len(args) > 0 {
-                title := strings.Join(args, " ")
-                if e, ok := getSongEntry(cmd.Context(), title, songArtist, songDate); ok {
-                    store.SetWriteSource("itunes")
-                    applyKeywordsOverride(&e, songKeywords)
-                    ensureTypeKeyword(&e, "song")
-                    return b.writeCommitPrint(cmd, e)
-                }
-                store.SetWriteSource("manual")
-                return doAddWithKeywords(cmd.Context(), b.Commit, "song", hintsSong(title, songArtist, songDate), parseKeywordsCSV(songKeywords))
-            }
-            store.SetWriteSource("manual")
-            return manualAdd(cmd, b.Commit, "song", parseKeywordsCSV(songKeywords))
-        },
-    }
+			if len(args) > 0 {
+				title := strings.Join(args, " ")
+				if e, ok := getSongEntry(cmd.Context(), title, songArtist, songDate); ok {
+					store.SetWriteSource("itunes")
+					applyKeywordsOverride(&e, songKeywords)
+					ensureTypeKeyword(&e, "song")
+					return b.writeCommitPrint(cmd, e)
+				}
+				store.SetWriteSource("manual")
+				return doAddWithKeywords(cmd.Context(), b.Commit, "song", hintsSong(title, songArtist, songDate), parseKeywordsCSV(songKeywords))
+			}
+			store.SetWriteSource("manual")
+			return manualAdd(cmd, b.Commit, "song", parseKeywordsCSV(songKeywords))
+		},
+	}
 	c.Flags().StringVar(&songArtist, "artist", "", "Artist/performer name")
 	c.Flags().StringVar(&songDate, "date", "", "release date YYYY-MM-DD")
 	c.Flags().StringVar(&songKeywords, "keywords", "", msgCommaDelimitedKeywords)
@@ -206,22 +206,22 @@ func (b Builder) Article() *cobra.Command {
 		Short: "Add a journal or magazine article (flags or manual entry)",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			ctx := cmd.Context()
-            if strings.TrimSpace(artDOI) != "" {
-                e, err := getArticleByDOI(ctx, artDOI)
-                if err != nil {
-                    return err
-                }
-                store.SetWriteSource("doi.org")
-                return b.finalizeAndWrite(cmd, e, "article", artKeywords)
-            }
-            if strings.TrimSpace(artURL) != "" {
-                e, err := getArticleByURL(ctx, artURL)
-                if err != nil {
-                    return err
-                }
-                store.SetWriteSource("web")
-                return b.finalizeAndWrite(cmd, e, "article", artKeywords)
-            }
+			if strings.TrimSpace(artDOI) != "" {
+				e, err := getArticleByDOI(ctx, artDOI)
+				if err != nil {
+					return err
+				}
+				store.SetWriteSource("doi.org")
+				return b.finalizeAndWrite(cmd, e, "article", artKeywords)
+			}
+			if strings.TrimSpace(artURL) != "" {
+				e, err := getArticleByURL(ctx, artURL)
+				if err != nil {
+					return err
+				}
+				store.SetWriteSource("web")
+				return b.finalizeAndWrite(cmd, e, "article", artKeywords)
+			}
 			h := hintsArticle(artTitle, artAuthor, artJournal, artDate)
 			if len(h) == 0 {
 				return manualAdd(cmd, b.Commit, "article", parseKeywordsCSV(artKeywords))
@@ -247,14 +247,14 @@ func (b Builder) Patent() *cobra.Command {
 		Short: "Add a patent (flags or manual entry)",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			h := hintsPatent(patURL, patTitle, patInventor, patAssignee, patDate)
-            if len(h) == 0 {
-                store.SetWriteSource("manual")
-                return manualAdd(cmd, b.Commit, "patent", parseKeywordsCSV(patKeywords))
-            }
-            store.SetWriteSource("web")
-            return doAddWithKeywords(cmd.Context(), b.Commit, "patent", h, parseKeywordsCSV(patKeywords))
-        },
-    }
+			if len(h) == 0 {
+				store.SetWriteSource("manual")
+				return manualAdd(cmd, b.Commit, "patent", parseKeywordsCSV(patKeywords))
+			}
+			store.SetWriteSource("web")
+			return doAddWithKeywords(cmd.Context(), b.Commit, "patent", h, parseKeywordsCSV(patKeywords))
+		},
+	}
 	c.Flags().StringVar(&patURL, "url", "", "Patent URL")
 	c.Flags().StringVar(&patTitle, "title", "", "Patent title")
 	c.Flags().StringVar(&patInventor, "inventor", "", "Inventor name")
@@ -272,18 +272,18 @@ func (b Builder) RFC() *cobra.Command {
 		Short: "Add an RFC by number or prompt for manual entry",
 		Args:  cobra.ArbitraryArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
-            if len(args) == 1 && strings.TrimSpace(args[0]) != "" {
-                e, err := rfcpkg.FetchRFC(cmd.Context(), args[0])
-                if err != nil {
-                    return err
-                }
-                store.SetWriteSource("rfc-editor")
-                return b.finalizeAndWrite(cmd, e, "rfc", rfcKeywords)
-            }
-            store.SetWriteSource("manual")
-            return manualAdd(cmd, b.Commit, "rfc", parseKeywordsCSV(rfcKeywords))
-        },
-    }
+			if len(args) == 1 && strings.TrimSpace(args[0]) != "" {
+				e, err := rfcpkg.FetchRFC(cmd.Context(), args[0])
+				if err != nil {
+					return err
+				}
+				store.SetWriteSource("rfc-editor")
+				return b.finalizeAndWrite(cmd, e, "rfc", rfcKeywords)
+			}
+			store.SetWriteSource("manual")
+			return manualAdd(cmd, b.Commit, "rfc", parseKeywordsCSV(rfcKeywords))
+		},
+	}
 	c.Flags().StringVar(&rfcKeywords, "keywords", "", msgCommaDelimitedKeywords)
 	return c
 }
@@ -295,18 +295,18 @@ func (b Builder) Video() *cobra.Command {
 		Use:   "video",
 		Short: "Add a video (YouTube URL or manual entry)",
 		RunE: func(cmd *cobra.Command, args []string) error {
-            if strings.TrimSpace(ytURL) != "" {
-                e, err := youtube.FetchYouTube(cmd.Context(), ytURL)
-                if err != nil {
-                    return err
-                }
-                store.SetWriteSource("youtube")
-                return b.finalizeAndWrite(cmd, e, "video", videoKeywords)
-            }
-            store.SetWriteSource("manual")
-            return manualAdd(cmd, b.Commit, "video", parseKeywordsCSV(videoKeywords))
-        },
-    }
+			if strings.TrimSpace(ytURL) != "" {
+				e, err := youtube.FetchYouTube(cmd.Context(), ytURL)
+				if err != nil {
+					return err
+				}
+				store.SetWriteSource("youtube")
+				return b.finalizeAndWrite(cmd, e, "video", videoKeywords)
+			}
+			store.SetWriteSource("manual")
+			return manualAdd(cmd, b.Commit, "video", parseKeywordsCSV(videoKeywords))
+		},
+	}
 	c.Flags().StringVar(&ytURL, "youtube", "", "YouTube video URL to fetch via oEmbed")
 	c.Flags().StringVar(&videoKeywords, "keywords", "", msgCommaDelimitedKeywords)
 	return c

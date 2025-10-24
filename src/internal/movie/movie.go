@@ -40,6 +40,22 @@ func FetchMovie(ctx context.Context, title string, date string) (schema.Entry, e
 	return schema.Entry{}, fmt.Errorf("no movie metadata provider succeeded")
 }
 
+// FetchMovieWithProvider returns a movie entry and the provider label ("omdb" or "tmdb").
+// It tries OMDb first, then TMDb.
+func FetchMovieWithProvider(ctx context.Context, title string, date string) (schema.Entry, string, error) {
+	t := strings.TrimSpace(title)
+	if t == "" {
+		return schema.Entry{}, "", fmt.Errorf("title is required")
+	}
+	if e, err := fetchFromOMDb(ctx, t, date, strings.TrimSpace(os.Getenv("OMDB_API_KEY"))); err == nil {
+		return e, "omdb", nil
+	}
+	if e, err := fetchFromTMDb(ctx, t, date, strings.TrimSpace(os.Getenv("TMDB_API_KEY"))); err == nil {
+		return e, "tmdb", nil
+	}
+	return schema.Entry{}, "", fmt.Errorf("no movie metadata provider succeeded")
+}
+
 // fetchFromOMDb queries OMDb by title/year and maps the response to an Entry.
 func fetchFromOMDb(ctx context.Context, title string, date string, apiKey string) (schema.Entry, error) {
 	if apiKey == "" {

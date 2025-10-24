@@ -14,18 +14,18 @@ var rootCmd = &cobra.Command{
 
 // execute attaches subcommands to the root and runs the CLI.
 func execute() error {
-    // Attach subcommands
-    rootCmd.AddCommand(newAddCmd())
-    rootCmd.AddCommand(newSearchCmd())
-    rootCmd.AddCommand(newCiteCmd())
-    rootCmd.AddCommand(newIndexCmd())
-    rootCmd.AddCommand(newRepairDOICmd())
-    rootCmd.AddCommand(newSummarizeCmd())
-    // YAML edit command removed
-    rootCmd.AddCommand(newExportBibCmd())
-    rootCmd.AddCommand(newVerifyCmd())
-    rootCmd.AddCommand(newFormatCmd())
-    return rootCmd.Execute()
+	// Attach subcommands
+	rootCmd.AddCommand(newAddCmd())
+	rootCmd.AddCommand(newSearchCmd())
+	rootCmd.AddCommand(newCiteCmd())
+	rootCmd.AddCommand(newIndexCmd())
+	rootCmd.AddCommand(newRepairDOICmd())
+	rootCmd.AddCommand(newSummarizeCmd())
+	// YAML edit command removed
+	rootCmd.AddCommand(newExportBibCmd())
+	rootCmd.AddCommand(newVerifyCmd())
+	rootCmd.AddCommand(newFormatCmd())
+	return rootCmd.Execute()
 }
 
 // main is the entrypoint that executes the CLI and reports errors.

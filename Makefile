@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: build fmt test cover clean tag tag/patch tag/minor tag/major
+.PHONY: build fmt test cover cover-check clean tag tag/patch tag/minor tag/major
 
 build: clean
 	go fmt ./src/...
@@ -11,9 +11,26 @@ fmt:
 
 test:
 	go test ./src/... -coverprofile=coverage.out -covermode=atomic
+	$(MAKE) cover-check
 
 cover: test
 	go tool cover -func=coverage.out | tail -n 1
+
+# Verify total coverage is above threshold (default 80%).
+# Usage: make cover-check [COVER_THRESHOLD=85]
+cover-check:
+	@set -euo pipefail; \
+	if [ ! -f coverage.out ]; then \
+	  echo "coverage.out not found. Run 'make test' first." >&2; \
+	  exit 2; \
+	fi; \
+	pct=$$(go tool cover -func=coverage.out | awk '/^total:/ {gsub(/%/,"",$$NF); print $$NF}'); \
+	thresh=$${COVER_THRESHOLD:-80}; \
+	echo "Coverage: $$pct% (threshold $$thresh%)"; \
+	awk -v p="$$pct" -v t="$$thresh" 'BEGIN { if ((p+0) < (t+0)) { exit 1 } }' || { \
+	  echo "ERROR: coverage $$pct% is below threshold $$thresh%" >&2; \
+	  exit 1; \
+	}
 
 clean:
 	rm -rf bin
